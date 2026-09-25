@@ -1,0 +1,18 @@
+services:
+  db:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_USER: rotation
+      POSTGRES_PASSWORD: rotation
+      POSTGRES_DB: rotation
+    ports:
+      - "127.0.0.1:55432:5432"
+    volumes:
+      - rotation_pg:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U rotation -d rotation"]
+      interval: 2s
+      timeout: 2s
+      retries: 15
+volumes:
+  rotation_pg:

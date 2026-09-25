@@ -1,0 +1,13 @@
+# No real collection starts without user-provided wallet addresses.
+rpc_url: https://api.mainnet.solana.com
+wallets: []
+control_address: Vote111111111111111111111111111111111111111
+max_wallets: 3
+max_token_accounts: 20
+max_calls: 100
+max_pages: 2
+page_size: 20
+max_minutes: 30
+max_cycles: 1
+poll_seconds: 60
+earliest_at: 2026-06-27T00:00:00Z

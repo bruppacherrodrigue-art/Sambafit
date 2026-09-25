@@ -1,0 +1,4 @@
+dataset: DEMO
+until: 2026-01-01T12:04:00Z
+horizons_minutes: [1, 2, 3]
+latency_scenario: actual_fixture_availability
