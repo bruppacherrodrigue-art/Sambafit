@@ -78,6 +78,10 @@ def test_market_and_operations_respect_availability_and_dataset(store):
     )
     assert [b["price_usd"] for b in store.list_market_bars("B", at, "DEMO")] == [Decimal("2")]
     assert store.list_market_bars("B", at, "REPLAY") == []
+    with pytest.raises(ValueError, match="before close"):
+        store.add_market_bar(
+            "B", at + timedelta(minutes=1), at, Decimal("2"), Decimal("100"), None, "bad", "REAL"
+        )
 
 
 def test_latest_decoder_version_and_wallet_scoped_evidence(store):

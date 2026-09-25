@@ -257,6 +257,12 @@ class Store:
         dataset: str,
         source_version: str = "import-1",
     ) -> bool:
+        if available_at < close_at:
+            raise ValueError("market bar cannot be available before close")
+        if price_usd <= 0 or volume_usd is not None and volume_usd < 0:
+            raise ValueError("invalid market price or volume")
+        if liquidity_usd is not None and liquidity_usd < 0:
+            raise ValueError("invalid market liquidity")
         with self.connect() as conn:
             row = conn.execute(
                 """INSERT INTO market_bars(mint,close_at,available_at,price_usd,
@@ -387,7 +393,9 @@ class Store:
                 ).fetchone()["n"],
                 "open_gaps": conn.execute(
                     "SELECT count(*) AS n FROM coverage_gaps WHERE resolved_at IS NULL"
-                ).fetchone()["n"],
+                ).fetchone()["n"]
+                if source_dataset == "REAL"
+                else 0,
             }
 
     def save_experiment(

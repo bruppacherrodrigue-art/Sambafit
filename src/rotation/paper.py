@@ -1,6 +1,7 @@
 """Deterministic paper ledger. No network or execution capability."""
 
 from dataclasses import dataclass, field
+from datetime import timedelta
 from decimal import Decimal
 
 from .replay import DecisionRecord
@@ -86,6 +87,7 @@ def simulate_paper(
     max_positions: int = 3,
     reserve_fraction: Decimal = Decimal("0.20"),
     max_loss_fraction: Decimal = Decimal("0.20"),
+    max_mark_age: timedelta = timedelta(minutes=30),
 ) -> PaperSimulation:
     """Reserve-funded policy; process all fills by quote availability time."""
     if (
@@ -97,6 +99,7 @@ def simulate_paper(
         or max_positions < 1
         or not 0 <= reserve_fraction < 1
         or not 0 < max_loss_fraction < 1
+        or max_mark_age <= timedelta(0)
     ):
         raise ValueError("invalid paper policy")
     book = PaperBook(initial_cash)
@@ -145,19 +148,26 @@ def simulate_paper(
             elif mint in book.positions or len(book.positions) >= max_positions:
                 reason = "position limit"
             latest = {
-                bar.mint: bar.close_usd
+                bar.mint: bar
                 for bar in ordered
-                if bar.available_at <= next_bar.available_at
+                if bar.available_at <= next_bar.available_at and bar.close_at <= bar.available_at
             }
-            equity = book.cash + sum(
-                (
-                    quantity * latest.get(asset, Decimal(0))
-                    for asset, quantity in book.positions.items()
-                ),
-                Decimal(0),
-            )
-            if equity < initial_cash * (Decimal(1) - max_loss_fraction):
-                reason = "loss suspension"
+            if any(
+                asset not in latest
+                or next_bar.available_at - latest[asset].available_at > max_mark_age
+                for asset in book.positions
+            ):
+                reason = "missing or stale position mark"
+            else:
+                equity = book.cash + sum(
+                    (
+                        quantity * latest[asset].close_usd
+                        for asset, quantity in book.positions.items()
+                    ),
+                    Decimal(0),
+                )
+                if equity < initial_cash * (Decimal(1) - max_loss_fraction):
+                    reason = "loss suspension"
             budget = min(
                 book.cash * allocation_fraction, book.cash - initial_cash * reserve_fraction
             )

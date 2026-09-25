@@ -74,3 +74,35 @@ def test_paper_fills_follow_quote_time_not_signal_list_order():
     )
     assert [order["mint"] for order in result.orders] == ["B", "A"]
     assert result.book.positions == {"B": D("500"), "A": D("250")}
+
+
+def test_stale_existing_position_mark_blocks_second_entry():
+    confirmed = Decision("confirmed", "complete", 60, (), ())
+    records = (
+        DecisionRecord(T, "X:A", confirmed),
+        DecisionRecord(T + timedelta(minutes=1), "X:B", confirmed),
+    )
+    bars = [
+        MarketBar(
+            "A",
+            T + timedelta(minutes=1),
+            T + timedelta(minutes=1),
+            D("1"),
+            D("10000"),
+            D("1000000"),
+        ),
+        MarketBar(
+            "B",
+            T + timedelta(minutes=40),
+            T + timedelta(minutes=40),
+            D("1"),
+            D("10000"),
+            D("1000000"),
+        ),
+    ]
+    result = simulate_paper(
+        records, bars, D("1000"), fee_rate=D(0), impact_rate=D(0), network_fee=D(0)
+    )
+    assert [o["status"] for o in result.orders] == ["filled", "unfilled"]
+    assert result.orders[1]["reason"] == "missing or stale position mark"
+    assert result.book.positions == {"A": D("250")}

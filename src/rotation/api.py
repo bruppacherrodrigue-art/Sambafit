@@ -70,12 +70,12 @@ def create_app(store: Store | None = None) -> FastAPI:
         return store.overview(dataset)
 
     @app.get("/api/tokens")
-    def tokens():
-        return store.list_tokens()
+    def tokens(dataset: Dataset = "REAL"):
+        return store.list_tokens() if dataset != "DEMO" else []
 
     @app.get("/api/wallets")
-    def wallets():
-        return store.list_wallets()
+    def wallets(dataset: Dataset = "REAL"):
+        return store.list_wallets() if dataset != "DEMO" else []
 
     @app.get("/api/signals")
     def signals(dataset: Dataset = "DEMO"):

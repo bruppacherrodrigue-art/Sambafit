@@ -77,7 +77,7 @@ function App() {
     const sourceQ = `?dataset=${dataset === 'REPLAY' ? 'REAL' : dataset}`
     Promise.all([get<Overview>('/api/overview' + q), get<Signal[]>('/api/signals' + q),
       get<Rotation[]>('/api/rotations' + sourceQ), get<Operation[]>('/api/operations' + sourceQ),
-      get<Wallet[]>('/api/wallets'), get<Token[]>('/api/tokens'),
+      get<Wallet[]>('/api/wallets' + q), get<Token[]>('/api/tokens' + q),
       get<Experiment[]>('/api/experiments' + sourceQ), get<Coverage>('/api/coverage' + sourceQ)])
       .then(([o, s, r, ops, w, t, ex, c]) => { if (mounted) { setOverview(o); setSignals(s); setRotations(r); setOperations(ops); setWallets(w); setTokens(t); setExperiments(ex); setCoverage(c); setSelected(s[0] || null); setError('') } })
       .catch(e => mounted && setError(`API locale indisponible : ${e.message}`))

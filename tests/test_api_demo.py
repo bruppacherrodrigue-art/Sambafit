@@ -28,6 +28,10 @@ def test_demo_data_is_visible_only_in_demo_dataset(monkeypatch):
         store.import_wallets([{"address": "11111111111111111111111111111111"}])
         assert client.get("/api/overview", params={"dataset": "DEMO"}).json()["wallets"] == 0
         assert client.get("/api/overview", params={"dataset": "REAL"}).json()["wallets"] == 1
+        assert client.get("/api/wallets", params={"dataset": "DEMO"}).json() == []
+        assert len(client.get("/api/wallets", params={"dataset": "REAL"}).json()) == 1
+        store.add_coverage_gap("w", "synthetic test gap")
+        assert client.get("/api/overview", params={"dataset": "DEMO"}).json()["open_gaps"] == 0
         monkeypatch.setenv("DATABASE_URL", URL)
         monkeypatch.setenv("ROTATION_SCHEMA", store.schema)
         assert (
