@@ -27,6 +27,7 @@ class Features:
     volume_acceleration: Decimal | None
     liquidity_usd: Decimal | None
     last_available_at: datetime | None
+    last_close_at: datetime | None
 
 
 @dataclass(frozen=True)
@@ -49,7 +50,7 @@ def market_features(bars: list[MarketBar], mint: str, at: datetime, lookback: in
         key=lambda b: b.close_at,
     )[-lookback:]
     if not past:
-        return Features(None, None, None, None, None, None)
+        return Features(None, None, None, None, None, None, None)
     prices = [b.close_usd for b in past]
     low, high = min(prices), max(prices)
     position = (prices[-1] - low) / (high - low) if high > low else None
@@ -60,7 +61,13 @@ def market_features(bars: list[MarketBar], mint: str, at: datetime, lookback: in
         else None
     )
     return Features(
-        prices[-1], position, change, accel, past[-1].liquidity_usd, past[-1].available_at
+        prices[-1],
+        position,
+        change,
+        accel,
+        past[-1].liquidity_usd,
+        past[-1].available_at,
+        past[-1].close_at,
     )
 
 
@@ -84,7 +91,7 @@ def decide(
     features = market_features(bars, destination, at)
     if features.last_available_at is None:
         return Decision("observing", "missing_market", 0, (), ("missing closed market bar",))
-    if at - features.last_available_at > max_age:
+    if features.last_close_at is None or at - features.last_close_at > max_age:
         return Decision("observing", "stale", 0, (), ("market data stale",))
     if features.liquidity_usd is None or features.liquidity_usd < min_liquidity_usd:
         return Decision("observing", "missing_liquidity", 0, (), ("liquidity unavailable or low",))

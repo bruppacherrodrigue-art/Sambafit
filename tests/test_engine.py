@@ -104,6 +104,14 @@ def test_stale_market_blocks_decision_and_future_data_cannot_change_past_decisio
     assert stale.state == "observing" and stale.quality == "stale"
 
 
+def test_old_market_bar_imported_now_stays_stale():
+    rotation = attribute_rotations([op("direct", "swap", T, [leg("A", -100), leg("B", 100)])])[0]
+    decision_at = T + timedelta(hours=2)
+    late_import = [MarketBar("B", T, decision_at, D("1"), D("100"), D("100000"))]
+    decision = decide([rotation], late_import, decision_at, max_age=timedelta(minutes=5))
+    assert decision.state == "observing" and decision.quality == "stale"
+
+
 def test_paper_sale_filled_buy_failed_keeps_cash_and_no_fake_position():
     book = PaperBook(cash=D("0"), positions={"A": D("10")})
     book.sell("A", D("10"), D("10"), D("1"), "sell-1")
