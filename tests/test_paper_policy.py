@@ -3,8 +3,8 @@ from decimal import Decimal
 
 from rotation.demo import scenario
 from rotation.paper import simulate_paper
-from rotation.replay import replay
-from rotation.signals import MarketBar
+from rotation.replay import DecisionRecord, replay
+from rotation.signals import Decision, MarketBar
 
 D = Decimal
 T = datetime(2026, 1, 1, 12, tzinfo=timezone.utc)
@@ -37,3 +37,40 @@ def test_missing_liquidity_rejects_entry_without_spending_cash():
     simulation = simulate_paper(result.decisions, dry, D("1000"))
     assert simulation.book.cash == D("1000") and simulation.book.positions == {}
     assert not [o for o in simulation.orders if o["status"] == "filled"]
+
+
+def test_paper_fills_follow_quote_time_not_signal_list_order():
+    confirmed = Decision("confirmed", "complete", 60, (), ())
+    records = (
+        DecisionRecord(T, "X:A", confirmed),
+        DecisionRecord(T + timedelta(minutes=1), "X:B", confirmed),
+    )
+    bars = [
+        MarketBar(
+            "B",
+            T + timedelta(minutes=2),
+            T + timedelta(minutes=2),
+            D("1"),
+            D("10000"),
+            D("1000000"),
+        ),
+        MarketBar(
+            "A",
+            T + timedelta(minutes=10),
+            T + timedelta(minutes=10),
+            D("1"),
+            D("10000"),
+            D("1000000"),
+        ),
+    ]
+    result = simulate_paper(
+        records,
+        bars,
+        D("1000"),
+        allocation_fraction=D("0.5"),
+        fee_rate=D("0"),
+        impact_rate=D("0"),
+        network_fee=D("0"),
+    )
+    assert [order["mint"] for order in result.orders] == ["B", "A"]
+    assert result.book.positions == {"B": D("500"), "A": D("250")}

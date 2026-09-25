@@ -1,6 +1,6 @@
 from datetime import datetime, timezone
 
-from rotation.collect import backfill_wallet
+from rotation.collect import backfill_wallet, collect_wallet_once
 
 
 class FakeRpc:
@@ -84,3 +84,26 @@ def test_backfill_pages_checkpoint_replay_idempotent_and_records_partial_coverag
     )
     assert second["new_raw"] == 0
     assert rpc.before_seen == [None, "sig1"]
+
+
+def test_null_transaction_does_not_advance_checkpoint_or_live_head():
+    class TransientNullRpc(FakeRpc):
+        def __init__(self):
+            super().__init__()
+            self.null_once = True
+
+        def transaction(self, signature):
+            if self.null_once:
+                self.null_once = False
+                return None
+            return super().transaction(signature)
+
+    store, rpc = FakeStore(), TransientNullRpc()
+    first = backfill_wallet(store, rpc, "wallet", page_size=2, max_pages=1, max_calls=3)
+    assert first["new_raw"] == 0
+    assert store.get_checkpoint("wallet|wallet") is None
+    second = backfill_wallet(store, rpc, "wallet", page_size=2, max_pages=1, max_calls=3)
+    assert second["new_raw"] == 2
+    live_store, live_rpc = FakeStore(), TransientNullRpc()
+    collect_wallet_once(live_store, live_rpc, "wallet", page_size=2)
+    assert live_store.get_checkpoint("live:wallet") is None

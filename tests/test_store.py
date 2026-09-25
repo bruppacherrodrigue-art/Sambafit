@@ -1,10 +1,11 @@
 import os
 import uuid
-from datetime import datetime, timezone
+from datetime import datetime, timedelta, timezone
 from decimal import Decimal
 
 import pytest
 
+from rotation.engine import Leg, Operation
 from rotation.store import Store
 
 URL = os.getenv("TEST_DATABASE_URL", "postgresql://rotation:rotation@127.0.0.1:55432/rotation")
@@ -77,3 +78,48 @@ def test_market_and_operations_respect_availability_and_dataset(store):
     )
     assert [b["price_usd"] for b in store.list_market_bars("B", at, "DEMO")] == [Decimal("2")]
     assert store.list_market_bars("B", at, "REPLAY") == []
+
+
+def test_latest_decoder_version_and_wallet_scoped_evidence(store):
+    at = datetime(2026, 1, 1, tzinfo=timezone.utc)
+    for wallet in ("w1", "w2"):
+        store.add_raw(
+            "shared",
+            wallet,
+            {"slot": 1, "blockTime": int(at.timestamp()), "owner": wallet},
+            "rpc",
+            "v1",
+        )
+        first = Operation("shared", wallet, "shared", at, at, "unknown", (), True, "partial")
+        last = Operation(
+            "shared",
+            wallet,
+            "shared",
+            at,
+            at,
+            "swap",
+            (Leg("A", -10, 0, Decimal(1)), Leg("B", 10, 0, Decimal(1))),
+            True,
+            "complete",
+        )
+        store.add_operation("shared", wallet, first, 0, "v1", decoded_at=at)
+        store.add_operation("shared", wallet, last, 0, "v2", decoded_at=at + timedelta(seconds=1))
+    assert len(store.list_operations(at)) == 2
+    assert all(row["decoder_version"] == "v1" for row in store.list_operations(at))
+    assert all(
+        row["decoder_version"] == "v2" for row in store.list_operations(at + timedelta(seconds=1))
+    )
+    assert store.get_evidence("shared", "REAL", "w2")["raw"]["payload"]["owner"] == "w2"
+
+
+def test_existing_demo_operations_repaired_for_historical_replay(store):
+    from rotation.demo import seed_demo
+
+    seed_demo(store)
+    at = datetime(2026, 1, 1, 12, 4, tzinfo=timezone.utc)
+    with store.connect() as conn:
+        conn.execute("UPDATE operations SET decoded_at=now()")
+        conn.execute("DELETE FROM schema_migrations WHERE version=3")
+    assert store.list_operations(at, "DEMO") == []
+    store.migrate()
+    assert len(store.list_operations(at, "DEMO")) == 3

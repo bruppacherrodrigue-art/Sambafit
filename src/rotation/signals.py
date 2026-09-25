@@ -70,6 +70,8 @@ def decide(
     at: datetime,
     max_age: timedelta = timedelta(minutes=30),
     min_liquidity_usd: Decimal = Decimal("10000"),
+    entity_groups: dict[str, str] | None = None,
+    max_entity_usd: Decimal = Decimal("10000"),
 ) -> Decision:
     visible = [
         r
@@ -91,8 +93,12 @@ def decide(
         for r in visible
         if r.destination == destination and at - r.available_at <= timedelta(hours=6)
     ]
-    entities = len({r.wallet for r in recent})
-    amount = sum((r.amount_usd for r in recent), Decimal(0))
+    groups: dict[str, Decimal] = {}
+    for rotation in recent:
+        group = (entity_groups or {}).get(rotation.wallet, rotation.wallet)
+        groups[group] = groups.get(group, Decimal(0)) + rotation.amount_usd
+    entities = len(groups)
+    amount = sum((min(value, max_entity_usd) for value in groups.values()), Decimal(0))
     components = (
         ("flow", min(30, int(amount / Decimal("1000")))),
         ("diversity", min(25, entities * 8)),
@@ -110,5 +116,9 @@ def decide(
         "complete",
         score,
         components,
-        (f"{entities} observed entities", f"attributed USD {amount}"),
+        (
+            f"{entities} observed entities",
+            f"capped attributed USD {amount}",
+            "unknown links do not prove independence",
+        ),
     )

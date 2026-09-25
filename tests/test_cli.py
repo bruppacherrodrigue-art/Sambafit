@@ -23,6 +23,8 @@ def test_cli_doctor_seed_replay_and_report(capsys, monkeypatch, tmp_path):
         lines = [line for line in capsys.readouterr().out.splitlines() if line.startswith("{")]
         run = json.loads(lines[-1])
         assert run["dataset"] == "DEMO" and run["status"] == "completed"
+        assert store.list_signals("DEMO")
+        assert store.list_signals("REPLAY") == []
         assert main(["report", "--run-id", run["run_id"]]) == 0
         assert "synthetic" in capsys.readouterr().out
         paper_config = tmp_path / "paper.yaml"

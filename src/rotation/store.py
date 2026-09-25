@@ -42,6 +42,16 @@ class Store:
             if exists is None:
                 script = (Path(__file__).parent / "migrations" / "001_init.sql").read_text()
                 conn.execute(script)
+            applied = conn.execute("SELECT 1 FROM schema_migrations WHERE version=2").fetchone()
+            if applied is None:
+                script = (Path(__file__).parent / "migrations" / "002_decoder_time.sql").read_text()
+                conn.execute(script)
+            applied = conn.execute("SELECT 1 FROM schema_migrations WHERE version=3").fetchone()
+            if applied is None:
+                script = (
+                    Path(__file__).parent / "migrations" / "003_demo_decoded_time.sql"
+                ).read_text()
+                conn.execute(script)
 
     def drop_test_schema(self):
         if not self.schema.startswith("test_"):
@@ -292,6 +302,7 @@ class Store:
         fee_lamports: int,
         decoder_version: str,
         dataset: str = "REAL",
+        decoded_at: datetime | None = None,
     ):
         legs = [
             {
@@ -311,8 +322,8 @@ class Store:
                 raise ValueError("raw event required before operation")
             conn.execute(
                 """INSERT INTO operations(raw_event_id,wallet,economic_at,available_at,
-                kind,status,quality,fee_lamports,legs,decoder_version) VALUES
-                (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s) ON CONFLICT DO NOTHING""",
+                kind,status,quality,fee_lamports,legs,decoder_version,decoded_at) VALUES
+                (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,COALESCE(%s,now())) ON CONFLICT DO NOTHING""",
                 (
                     raw["id"],
                     wallet,
@@ -324,17 +335,23 @@ class Store:
                     fee_lamports,
                     Jsonb(legs),
                     decoder_version,
+                    decoded_at or (operation.available_at if dataset == "DEMO" else None),
                 ),
             )
 
     def list_operations(self, at: datetime, dataset: str = "REAL") -> list[dict]:
         with self.connect() as conn:
             return conn.execute(
-                """SELECT r.signature,o.wallet,o.economic_at,o.available_at,
-                o.kind,o.status,o.quality,o.fee_lamports,o.legs,o.decoder_version
-                FROM operations o JOIN raw_events r ON r.id=o.raw_event_id
-                WHERE o.available_at<=%s AND r.dataset=%s ORDER BY o.available_at,o.id""",
-                (at, dataset),
+                """SELECT signature,wallet,economic_at,available_at,kind,status,quality,
+                fee_lamports,legs,decoder_version,decoded_at FROM (
+                  SELECT DISTINCT ON (o.raw_event_id,o.wallet)
+                    r.signature,o.wallet,o.economic_at,o.available_at,o.kind,o.status,
+                    o.quality,o.fee_lamports,o.legs,o.decoder_version,o.decoded_at,o.id
+                  FROM operations o JOIN raw_events r ON r.id=o.raw_event_id
+                  WHERE o.available_at<=%s AND o.decoded_at<=%s AND r.dataset=%s
+                  ORDER BY o.raw_event_id,o.wallet,o.decoded_at DESC,o.id DESC
+                ) latest ORDER BY available_at,id""",
+                (at, at, dataset),
             ).fetchall()
 
     def add_coverage_gap(self, wallet: str, reason: str, start_at: datetime | None = None):
@@ -345,20 +362,25 @@ class Store:
             )
 
     def overview(self, dataset: str) -> dict:
+        source_dataset = "REAL" if dataset == "REPLAY" else dataset
         with self.connect() as conn:
             return {
                 "dataset": dataset,
-                "wallets": conn.execute("SELECT count(*) AS n FROM wallets").fetchone()["n"],
-                "tokens": conn.execute("SELECT count(*) AS n FROM tokens").fetchone()["n"],
+                "wallets": conn.execute("SELECT count(*) AS n FROM wallets").fetchone()["n"]
+                if source_dataset == "REAL"
+                else 0,
+                "tokens": conn.execute("SELECT count(*) AS n FROM tokens").fetchone()["n"]
+                if source_dataset == "REAL"
+                else 0,
                 "raw_events": conn.execute(
-                    "SELECT count(*) AS n FROM raw_events WHERE dataset=%s", (dataset,)
+                    "SELECT count(*) AS n FROM raw_events WHERE dataset=%s", (source_dataset,)
                 ).fetchone()["n"],
                 "operations": conn.execute(
                     "SELECT count(*) AS n FROM operations o JOIN raw_events r ON r.id=o.raw_event_id WHERE r.dataset=%s",
-                    (dataset,),
+                    (source_dataset,),
                 ).fetchone()["n"],
                 "market_bars": conn.execute(
-                    "SELECT count(*) AS n FROM market_bars WHERE dataset=%s", (dataset,)
+                    "SELECT count(*) AS n FROM market_bars WHERE dataset=%s", (source_dataset,)
                 ).fetchone()["n"],
                 "signals": conn.execute(
                     "SELECT count(*) AS n FROM signal_revisions WHERE dataset=%s", (dataset,)
@@ -426,20 +448,21 @@ class Store:
                     ),
                 )
 
-    def get_evidence(self, signature: str, dataset: str) -> dict | None:
+    def get_evidence(self, signature: str, dataset: str, wallet: str | None = None) -> dict | None:
         with self.connect() as conn:
             raw = conn.execute(
                 """SELECT id,signature,wallet,slot,block_time,first_seen_at,
                 ingested_at,source,parser_version,response_hash,payload,dataset FROM raw_events
-                WHERE signature=%s AND dataset=%s LIMIT 1""",
-                (signature, dataset),
+                WHERE signature=%s AND dataset=%s AND (%s::text IS NULL OR wallet=%s)
+                ORDER BY id LIMIT 1""",
+                (signature, dataset, wallet, wallet),
             ).fetchone()
             if not raw:
                 return None
             operation = conn.execute(
                 """SELECT economic_at,available_at,kind,status,quality,
-                fee_lamports,legs,decoder_version FROM operations WHERE raw_event_id=%s
-                ORDER BY id DESC LIMIT 1""",
+                fee_lamports,legs,decoder_version,decoded_at FROM operations WHERE raw_event_id=%s
+                ORDER BY decoded_at DESC,id DESC LIMIT 1""",
                 (raw["id"],),
             ).fetchone()
             return {"raw": raw, "operation": operation}

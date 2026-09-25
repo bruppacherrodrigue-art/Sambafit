@@ -46,6 +46,75 @@ class Rotation:
     available_at: datetime
 
 
+@dataclass(frozen=True)
+class AggregateFlow:
+    source: str
+    destination: str
+    evidence: str
+    amount_usd: Decimal
+    seller_entities: int
+    buyer_entities: int
+    concentration: Decimal
+    independence_uncertain: bool
+    available_at: datetime
+
+
+def aggregate_convergence(
+    operations: list[Operation],
+    at: datetime,
+    window: timedelta = timedelta(hours=6),
+    entity_groups: dict[str, str] | None = None,
+    max_entity_usd: Decimal = Decimal("10000"),
+) -> list[AggregateFlow]:
+    """Compare bounded reductions and additions; never imply same funds moved A→B."""
+    entity_groups = entity_groups or {}
+    sold: dict[str, dict[str, Decimal]] = {}
+    bought: dict[str, dict[str, Decimal]] = {}
+    for operation in operations:
+        if (
+            not operation.finalized
+            or operation.quality != "complete"
+            or operation.kind not in {"swap", "sale", "buy"}
+            or operation.available_at > at
+            or operation.available_at < at - window
+        ):
+            continue
+        group = entity_groups.get(operation.wallet, operation.wallet)
+        for leg in operation.legs:
+            if leg.value_usd is None or leg.value_usd <= 0:
+                continue
+            target = sold if leg.delta_base < 0 else bought
+            group_values = target.setdefault(leg.mint, {})
+            group_values[group] = group_values.get(group, Decimal(0)) + leg.value_usd
+    flows = []
+    for source, sellers in sold.items():
+        seller_values = [min(value, max_entity_usd) for value in sellers.values()]
+        seller_total = sum(seller_values, Decimal(0))
+        for destination, buyers in bought.items():
+            if source == destination:
+                continue
+            buyer_values = [min(value, max_entity_usd) for value in buyers.values()]
+            buyer_total = sum(buyer_values, Decimal(0))
+            amount = min(seller_total, buyer_total)
+            if amount <= 0:
+                continue
+            concentration = max([*seller_values, *buyer_values]) / max(seller_total, buyer_total)
+            flows.append(
+                AggregateFlow(
+                    source,
+                    destination,
+                    "aggregate",
+                    amount,
+                    len(sellers),
+                    len(buyers),
+                    concentration,
+                    not bool(entity_groups),
+                    at,
+                )
+            )
+    return flows
+
+
 def attribute_rotations(
     operations: list[Operation],
     window: timedelta = timedelta(hours=6),

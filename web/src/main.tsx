@@ -2,7 +2,7 @@ import React, { useEffect, useMemo, useState } from 'react'
 import { createRoot } from 'react-dom/client'
 import './style.css'
 
-type Dataset = 'DEMO' | 'REAL'
+type Dataset = 'DEMO' | 'REAL' | 'REPLAY'
 type Tab = 'Vue générale' | 'Flux et signaux' | 'Marché' | 'Expériences' | 'Configuration'
 type Overview = { dataset: Dataset; wallets: number; tokens: number; raw_events: number; operations: number; market_bars: number; signals: number; open_gaps: number }
 type Signal = { pair: string; decision_at: string; state: string; quality: string; score: number; components: Record<string, number>; reasons: string[]; config_hash: string; dataset: string }
@@ -74,10 +74,11 @@ function App() {
   useEffect(() => {
     let mounted = true
     const q = `?dataset=${encodeURIComponent(dataset)}`
+    const sourceQ = `?dataset=${dataset === 'REPLAY' ? 'REAL' : dataset}`
     Promise.all([get<Overview>('/api/overview' + q), get<Signal[]>('/api/signals' + q),
-      get<Rotation[]>('/api/rotations' + q), get<Operation[]>('/api/operations' + q),
+      get<Rotation[]>('/api/rotations' + sourceQ), get<Operation[]>('/api/operations' + sourceQ),
       get<Wallet[]>('/api/wallets'), get<Token[]>('/api/tokens'),
-      get<Experiment[]>('/api/experiments' + q), get<Coverage>('/api/coverage' + q)])
+      get<Experiment[]>('/api/experiments' + sourceQ), get<Coverage>('/api/coverage' + sourceQ)])
       .then(([o, s, r, ops, w, t, ex, c]) => { if (mounted) { setOverview(o); setSignals(s); setRotations(r); setOperations(ops); setWallets(w); setTokens(t); setExperiments(ex); setCoverage(c); setSelected(s[0] || null); setError('') } })
       .catch(e => mounted && setError(`API locale indisponible : ${e.message}`))
     return () => { mounted = false }
@@ -87,14 +88,15 @@ function App() {
   const [source, destination] = pair.split(':')
   useEffect(() => {
     if (!source || !destination) { setSourceBars([]); setDestBars([]); return }
-    Promise.all([get<Bar[]>(`/api/market/${encodeURIComponent(source)}?dataset=${dataset}`),
-      get<Bar[]>(`/api/market/${encodeURIComponent(destination)}?dataset=${dataset}`)])
+    const sourceDataset = dataset === 'REPLAY' ? 'REAL' : dataset
+    Promise.all([get<Bar[]>(`/api/market/${encodeURIComponent(source)}?dataset=${sourceDataset}`),
+      get<Bar[]>(`/api/market/${encodeURIComponent(destination)}?dataset=${sourceDataset}`)])
       .then(([a, b]) => { setSourceBars(a); setDestBars(b) }).catch(() => { setSourceBars([]); setDestBars([]) })
   }, [source, destination, dataset])
   useEffect(() => {
     const related = rotations.find(r => `${r.source}:${r.destination}` === selected?.pair)
     if (!related) { setEvidence(null); return }
-    get<Record<string, unknown>>(`/api/evidence/${encodeURIComponent(related.source_op)}?dataset=${dataset}`)
+    get<Record<string, unknown>>(`/api/evidence/${encodeURIComponent(related.source_op)}?dataset=${dataset === 'REPLAY' ? 'REAL' : dataset}&wallet=${encodeURIComponent(related.wallet)}`)
       .then(setEvidence).catch(() => setEvidence(null))
   }, [selected, rotations, dataset])
 
@@ -125,8 +127,8 @@ function App() {
 
   return <div className="app">
     <header className="topbar"><div className="brand"><div className="brand-mark">↗</div><div><strong>ROTATION</strong><small>RESEARCH ENGINE</small></div></div>
-      <div className="top-actions"><span className="local-pill">● LOCAL / PRIVÉ</span><span className={`mode-pill ${dataset.toLowerCase()}`}>{dataset === 'DEMO' ? 'DEMO · SYNTHÉTIQUE' : 'RECHERCHE · RÉEL'}</span></div></header>
-    <main className="main"><section className="intro"><div><div className="eyebrow">SOLANA · ANALYSE DES FLUX</div><h1>Observer les rotations,<br/><em>vérifier les preuves.</em></h1><p>Décisions déterministes à partir des flux attribués, du marché disponible et de leur qualité. Aucun ordre réel.</p></div><div className="mode-switch"><label>JEU DE DONNÉES</label><button className={dataset === 'DEMO' ? 'active' : ''} onClick={() => setDataset('DEMO')}>Démo</button><button className={dataset === 'REAL' ? 'active' : ''} onClick={() => setDataset('REAL')}>Réel</button></div></section>
+      <div className="top-actions"><span className="local-pill">● LOCAL / PRIVÉ</span><span className={`mode-pill ${dataset.toLowerCase()}`}>{dataset === 'DEMO' ? 'DEMO · SYNTHÉTIQUE' : dataset === 'REPLAY' ? 'REPLAY · HISTORIQUE' : 'RECHERCHE · RÉEL'}</span></div></header>
+    <main className="main"><section className="intro"><div><div className="eyebrow">SOLANA · ANALYSE DES FLUX</div><h1>Observer les rotations,<br/><em>vérifier les preuves.</em></h1><p>Décisions déterministes à partir des flux attribués, du marché disponible et de leur qualité. Aucun ordre réel.</p></div><div className="mode-switch"><label>JEU DE DONNÉES</label><button className={dataset === 'DEMO' ? 'active' : ''} onClick={() => setDataset('DEMO')}>Démo</button><button className={dataset === 'REAL' ? 'active' : ''} onClick={() => setDataset('REAL')}>Réel</button><button className={dataset === 'REPLAY' ? 'active' : ''} onClick={() => setDataset('REPLAY')}>Replay</button></div></section>
       {error && <div className="error-box">{error}<br/><code>rotation doctor</code> puis démarrez l’API locale.</div>}
       <div className="disclosure"><strong>{dataset === 'DEMO' ? 'Scénario synthétique' : 'Données réelles non qualifiées'}</strong><span>{dataset === 'DEMO' ? 'Les wallets, mints, prix et résultats de cette vue sont fictifs. Ils démontrent le logiciel, pas une stratégie.' : 'Aucun signal ne vaut preuve d’avantage financier. La couverture des comptes et la liquidité historique restent à qualifier.'}</span></div>
       <nav className="tabs">{tabs.map(t => <button key={t} className={tab === t ? 'active' : ''} onClick={() => setTab(t)}>{t}</button>)}</nav>

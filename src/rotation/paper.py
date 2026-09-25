@@ -83,21 +83,28 @@ def simulate_paper(
     impact_rate: Decimal = Decimal("0.005"),
     network_fee: Decimal = Decimal("0.01"),
     min_liquidity_multiple: Decimal = Decimal("10"),
+    max_positions: int = 3,
+    reserve_fraction: Decimal = Decimal("0.20"),
+    max_loss_fraction: Decimal = Decimal("0.20"),
 ) -> PaperSimulation:
-    """Reserve-funded single-position policy. Next *available* bar is a quote proxy."""
+    """Reserve-funded policy; process all fills by quote availability time."""
     if (
         initial_cash < 0
         or not 0 < allocation_fraction <= 1
         or fee_rate < 0
         or impact_rate < 0
         or network_fee < 0
+        or max_positions < 1
+        or not 0 <= reserve_fraction < 1
+        or not 0 < max_loss_fraction < 1
     ):
         raise ValueError("invalid paper policy")
     book = PaperBook(initial_cash)
     orders: list[dict] = []
     ordered = sorted(bars, key=lambda b: (b.available_at, b.close_at))
+    planned: list[tuple] = []
     for index, record in enumerate(decisions):
-        if ":" not in record.pair:
+        if ":" not in record.pair or record.decision.state not in ("confirmed", "invalidated"):
             continue
         mint = record.pair.split(":", 1)[1]
         next_bar = next(
@@ -108,53 +115,78 @@ def simulate_paper(
             ),
             None,
         )
-        if record.decision.state == "confirmed" and mint not in book.positions:
-            if next_bar is None:
-                orders.append(
-                    {
-                        "id": f"entry-{index}",
-                        "side": "buy",
-                        "status": "unfilled",
-                        "reason": "no later quote",
-                    }
-                )
-                continue
+        side = "buy" if record.decision.state == "confirmed" else "sell"
+        order_id = f"entry-{index}" if side == "buy" else f"exit-{index}"
+        if next_bar is None:
+            orders.append(
+                {
+                    "id": order_id,
+                    "side": side,
+                    "mint": mint,
+                    "status": "unfilled",
+                    "reason": "no later quote",
+                    "intended_at": record.at,
+                }
+            )
+        else:
+            planned.append((next_bar.available_at, index, record, next_bar))
+    for _, index, record, next_bar in sorted(planned, key=lambda x: (x[0], x[1])):
+        mint = record.pair.split(":", 1)[1]
+        if record.decision.state == "confirmed":
+            order_id = f"entry-{index}"
+            reason = None
             if any(
                 r.decision.state == "invalidated"
                 and r.pair == record.pair
                 and record.at < r.at <= next_bar.available_at
                 for r in decisions
             ):
-                orders.append(
-                    {
-                        "id": f"entry-{index}",
-                        "side": "buy",
-                        "status": "unfilled",
-                        "reason": "invalidated before quote",
-                    }
-                )
-                continue
-            budget = book.cash * allocation_fraction
+                reason = "invalidated before quote"
+            elif mint in book.positions or len(book.positions) >= max_positions:
+                reason = "position limit"
+            latest = {
+                bar.mint: bar.close_usd
+                for bar in ordered
+                if bar.available_at <= next_bar.available_at
+            }
+            equity = book.cash + sum(
+                (
+                    quantity * latest.get(asset, Decimal(0))
+                    for asset, quantity in book.positions.items()
+                ),
+                Decimal(0),
+            )
+            if equity < initial_cash * (Decimal(1) - max_loss_fraction):
+                reason = "loss suspension"
+            budget = min(
+                book.cash * allocation_fraction, book.cash - initial_cash * reserve_fraction
+            )
+            if budget <= network_fee:
+                reason = "stable reserve"
             if (
                 next_bar.liquidity_usd is None
                 or next_bar.liquidity_usd < budget * min_liquidity_multiple
             ):
+                reason = "liquidity unavailable"
+            if reason:
                 orders.append(
                     {
-                        "id": f"entry-{index}",
+                        "id": order_id,
                         "side": "buy",
+                        "mint": mint,
                         "status": "unfilled",
-                        "reason": "liquidity unavailable",
+                        "reason": reason,
+                        "intended_at": record.at,
                     }
                 )
                 continue
             price = next_bar.close_usd * (Decimal(1) + impact_rate)
             quantity = (budget - network_fee) / (price + next_bar.close_usd * fee_rate)
             fee = quantity * next_bar.close_usd * fee_rate + network_fee
-            book.buy(mint, quantity, price, fee, f"entry-{index}")
+            book.buy(mint, quantity, price, fee, order_id)
             orders.append(
                 {
-                    "id": f"entry-{index}",
+                    "id": order_id,
                     "side": "buy",
                     "status": "filled",
                     "mint": mint,
@@ -162,18 +194,11 @@ def simulate_paper(
                     "price": str(price),
                     "fee": str(fee),
                     "at": next_bar.available_at,
+                    "intended_at": record.at,
                 }
             )
-        elif record.decision.state == "invalidated" and mint in book.positions:
-            if next_bar is None:
-                orders.append(
-                    {
-                        "id": f"exit-{index}",
-                        "side": "sell",
-                        "status": "unfilled",
-                        "reason": "no later quote",
-                    }
-                )
+        elif record.decision.state == "invalidated":
+            if mint not in book.positions:
                 continue
             quantity = book.positions[mint]
             price = next_bar.close_usd * (Decimal(1) - impact_rate)
@@ -189,6 +214,7 @@ def simulate_paper(
                     "price": str(price),
                     "fee": str(fee),
                     "at": next_bar.available_at,
+                    "intended_at": record.at,
                 }
             )
     return PaperSimulation(book, tuple(orders))

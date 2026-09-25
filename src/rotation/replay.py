@@ -36,7 +36,7 @@ def replay(
     events.extend((o.available_at, 0, o) for o in operations if o.available_at <= until)
     events.extend((b.available_at, 1, b) for b in bars if b.available_at <= until)
     events.sort(key=lambda x: (x[0], x[1]))
-    active: dict[str, Operation] = {}
+    active: dict[tuple[str, str], Operation] = {}
     visible_bars: list[MarketBar] = []
     records: list[DecisionRecord] = []
     current_pair: str | None = None
@@ -48,9 +48,9 @@ def replay(
         for _, _, event in batch:
             if isinstance(event, Operation):
                 if event.kind == "retracted":
-                    retracted = active.pop(event.signature, None) is not None
+                    retracted = active.pop((event.wallet, event.signature), None) is not None
                 else:
-                    active[event.signature] = event
+                    active[(event.wallet, event.signature)] = event
             else:
                 visible_bars.append(event)
         rotations = attribute_rotations(

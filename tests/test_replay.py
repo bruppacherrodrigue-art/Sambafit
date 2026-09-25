@@ -62,3 +62,11 @@ def test_retraction_revises_signal_without_duplicate_trade():
     result = replay([swap("s1", "w1", T), withdrawal], [bar(T, "100")], T + timedelta(minutes=2))
     assert [r.decision.state for r in result.decisions] == ["candidate", "observing"]
     assert result.decisions[-1].decision.quality == "retracted"
+
+
+def test_same_signature_for_two_wallets_preserves_two_entities():
+    a = swap("same", "w1", T)
+    b = swap("same", "w2", T)
+    result = replay([a, b], [bar(T, "100")], T)
+    assert len(result.rotations) == 2
+    assert result.decisions[-1].decision.state == "confirmed"

@@ -6,5 +6,6 @@ __pycache__/
 *.db
 web/node_modules/
 web/dist/
+web/*.tsbuildinfo
 output/
 .playwright-cli/

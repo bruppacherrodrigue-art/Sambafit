@@ -81,7 +81,7 @@ def backfill_wallet(
             calls += 1
             if tx is None:
                 store.add_coverage_gap(wallet, f"transaction unavailable: {item['signature']}")
-                continue
+                break
             if store.add_raw(
                 item["signature"],
                 wallet,
@@ -141,7 +141,12 @@ def collect_wallet_once(
         tx = rpc.transaction(item["signature"])
         if tx is None:
             store.add_coverage_gap(wallet, f"live transaction unavailable: {item['signature']}")
-            continue
+            return {
+                "wallet": wallet,
+                "new_raw": fetched,
+                "head": head,
+                "coverage": "retry_required",
+            }
         inserted = store.add_raw(
             item["signature"], wallet, tx, "solana_rpc", PARSER_VERSION, first_seen_at=observed_at
         )

@@ -133,12 +133,12 @@ class SolanaDecoder:
             }
             neg = [leg for leg in legs if leg.delta_base < 0]
             pos = [leg for leg in legs if leg.delta_base > 0]
-            if "syncNative" in types or "closeAccount" in types:
-                quality, kind = "complete", "wrap"
-            elif "deposit" in types or "withdraw" in types:
+            if "deposit" in types or "withdraw" in types:
                 quality, kind = "complete", "lp_add" if "deposit" in types else "lp_remove"
             elif programs & self.swap_program_ids and len(neg) == 1 and len(pos) == 1:
                 quality, kind = "complete", "swap"
+            elif "syncNative" in types or "closeAccount" in types:
+                quality, kind = "complete", "wrap"
             elif types & {"transfer", "transferChecked"} and len(legs) <= 1:
                 quality, kind = "complete", "transfer"
             else:

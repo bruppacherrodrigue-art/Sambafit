@@ -69,6 +69,18 @@ def test_allowlisted_swap_is_single_operation_even_with_inner_instructions():
     assert len(decoded.operation.legs) == 2
 
 
+def test_swap_with_technical_wrap_remains_swap():
+    raw = transaction(
+        [balance("A", 1_000_000), balance("B", 0)],
+        [balance("A", 0), balance("B", 2_000_000)],
+        [
+            {"programId": "KnownDex", "parsed": {"type": "route"}},
+            {"programId": "TokenProgram", "parsed": {"type": "syncNative"}},
+        ],
+    )
+    assert SolanaDecoder({"KnownDex"}).decode(raw, WALLET, T).operation.kind == "swap"
+
+
 def test_failed_unsupported_and_missing_meta_do_not_claim_execution():
     good = transaction([balance("A", 100)], [balance("A", 0)], err={"InstructionError": [0, "x"]})
     failed = SolanaDecoder(set()).decode(good, WALLET, T)
@@ -98,3 +110,14 @@ def test_rpc_rejects_unexpected_errors_and_never_calls_send_transaction():
     assert rpc.calls == 1
     with pytest.raises(RpcError):
         rpc.transaction("signature")
+
+
+def test_rpc_rejects_broadcast_before_network_call():
+    class NoNetwork:
+        def post(self, *args, **kwargs):
+            raise AssertionError("network must not be reached")
+
+    rpc = SolanaRpc("https://example.invalid", client=NoNetwork())
+    with pytest.raises(RpcError, match="allowlisted"):
+        rpc.call("sendTransaction", ["signed-payload"])
+    assert rpc.calls == 0

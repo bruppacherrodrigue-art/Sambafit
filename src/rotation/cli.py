@@ -16,6 +16,7 @@ from .collect import backfill_wallet, collect_wallet_once, discover_token_accoun
 from .demo import seed_demo
 from .paper import simulate_paper
 from .replay import replay
+from .research import price_operations, study_events
 from .signals import MarketBar
 from .solana import RpcError, SolanaRpc
 from .store import Store, digest
@@ -185,6 +186,7 @@ def main(argv: list[str] | None = None) -> int:
                                 page_size=int(config.get("page_size", 20)),
                                 max_pages=int(config.get("max_pages", 2)),
                                 max_calls=rpc.max_calls - rpc.calls,
+                                swap_program_ids=set(config.get("swap_program_ids", [])),
                                 earliest_at=_dt(config["earliest_at"])
                                 if config.get("earliest_at")
                                 else None,
@@ -201,7 +203,11 @@ def main(argv: list[str] | None = None) -> int:
                             break
                         results.append(
                             collect_wallet_once(
-                                store, rpc, wallet, page_size=int(config.get("page_size", 20))
+                                store,
+                                rpc,
+                                wallet,
+                                page_size=int(config.get("page_size", 20)),
+                                swap_program_ids=set(config.get("swap_program_ids", [])),
                             )
                         )
                     cycles += 1
@@ -226,8 +232,26 @@ def main(argv: list[str] | None = None) -> int:
             until = _dt(config.get("until", datetime.now(timezone.utc)))
             operations = _operations(store.list_operations(until, dataset))
             bars = _bars(store.all_market_bars(until, dataset))
+            operations = price_operations(operations, bars)
             result = replay(operations, bars, until)
+            study = study_events(
+                result, bars, tuple(int(x) for x in config.get("horizons_minutes", [60, 240, 1440]))
+            )
             run_id = str(uuid.uuid4())
+            config_hash = digest(config)
+            revision_dataset = "DEMO" if dataset == "DEMO" else "REPLAY"
+            for record in result.decisions:
+                store.record_decision(
+                    record.pair,
+                    record.at,
+                    record.decision.state,
+                    record.decision.quality,
+                    record.decision.score,
+                    dict(record.decision.components),
+                    config_hash,
+                    revision_dataset,
+                    list(record.decision.reasons),
+                )
             payload = {
                 "synthetic": dataset == "DEMO",
                 "operations": len(operations),
@@ -235,10 +259,11 @@ def main(argv: list[str] | None = None) -> int:
                 "rotations": len(result.rotations),
                 "signal_revisions": len(result.decisions),
                 "states": [r.decision.state for r in result.decisions],
+                "event_study": study,
                 "financial_edge": "not_evaluated",
                 "historical_coverage": "insufficient" if dataset == "REAL" else "synthetic",
             }
-            store.save_experiment(run_id, digest(config), dataset, "completed", payload)
+            store.save_experiment(run_id, config_hash, dataset, "completed", payload)
             _print({"run_id": run_id, "dataset": dataset, "status": "completed", **payload})
         elif args.command == "paper":
             config = _read(args.config)
@@ -250,7 +275,7 @@ def main(argv: list[str] | None = None) -> int:
             until = _dt(config.get("until", datetime.now(timezone.utc)))
             operations = _operations(store.list_operations(until, dataset))
             bars = _bars(store.all_market_bars(until, dataset))
-            decisions = replay(operations, bars, until).decisions
+            decisions = replay(price_operations(operations, bars), bars, until).decisions
             initial_cash = Decimal(str(config.get("initial_cash", "1000")))
             simulation = simulate_paper(
                 decisions,

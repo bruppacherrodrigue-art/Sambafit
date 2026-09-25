@@ -2,6 +2,9 @@
 rpc_url: https://api.mainnet.solana.com
 wallets: []
 control_address: Vote111111111111111111111111111111111111111
+# Documented Jupiter Swap program ID; other DEX programs require explicit validation.
+swap_program_ids:
+  - JUP6LkbZbjS1jKKwapdHNy74zcZ3tLUZoi5QNyVTaV4
 max_wallets: 3
 max_token_accounts: 20
 max_calls: 100
