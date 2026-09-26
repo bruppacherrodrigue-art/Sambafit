@@ -47,7 +47,46 @@ npm ci
 VITE_API_PROXY_TARGET=http://127.0.0.1:8009 npm run dev -- --host 127.0.0.1 --port 5174
 ```
 
-Ouvrir `http://127.0.0.1:5174`, choisir **Réel → Opérations**, puis ouvrir une signature. La fiche montre les deux horloges, les soldes du propriétaire, le prix de clôture disponible, la direction et la décision. **Démo** reste une fixture séparée. Arrêter ces deux serveurs avec `Ctrl-C`, ou `fuser -k 8009/tcp 5174/tcp` s'ils ont été lancés en arrière-plan. Aucun worker de collecte n'est lancé par ces commandes.
+Ouvrir `http://127.0.0.1:5174`, choisir **Réel → Opérations**, puis ouvrir une signature. La fiche montre les deux horloges, les soldes du propriétaire, le prix de clôture disponible, la direction et la décision. **Démo** reste une fixture séparée. Arrêter uniquement les processus Uvicorn/Vite de ce worktree avec `Ctrl-C` dans leurs terminaux ou leurs PID identifiés. Aucun worker de collecte n'est lancé par ces commandes.
+
+## R2 : univers, cohorte et suivi borné
+
+Le [nouvel univers de recherche](docs/r2-universe-candidates.md) propose 11 coins spéculatifs à mint exact ; il n'est pas la watchlist approuvée de l'utilisateur. Le [classement de cohorte](docs/r2-wallet-cohort.md) est limité aux swaps effectivement attribuables dans l'échantillon. Les profils Fomo ont un [parcours de preuve distinct](docs/r2-fomo-linking.md). Le [rapport R2](docs/r2-report.md) distingue données réelles, routes partielles et métriques indisponibles.
+
+Reconstruction **hors ligne et sans nouvel appel de données** depuis les réponses et hashes archivés :
+
+```bash
+uv sync --frozen
+uv run rotation r2-universe --root data/r2-20260926
+uv run rotation r2-verify --root data/r2-20260926
+uv run rotation r2-sequences --root data/r2-20260926
+uv run rotation r2-budget --root data/r2-20260926
+uv run pytest -q tests/test_r2_real_corpus.py tests/test_r2_sequences.py tests/test_r2_fomo.py tests/test_r2_follow.py
+```
+
+Le corpus R2 reste dans `data/r2-20260926/` et n'écrit pas dans les tables PostgreSQL du pilote R1. `cohort.json`, `sequences.json`, `tx-selection.json`, les réponses `source/` et `raw/`, ainsi que `follow-checkpoint.json` portent la provenance. `sequences.sqlite` conserve les ventes en attente et les allocations entre sessions. Toute reconstruction de la cohorte garde sa date de connaissance et marque l'analyse passée comme exploratoire. Une vente ne finance jamais plusieurs achats au-delà de son montant attribuable.
+
+Un **nouveau** cycle de suivi fait de vrais appels et consomme le même `budget.json` global de 2 000 tentatives/1 800 secondes actives, avec 0 USD de dépense payante autorisée. Il relève d'abord un pool, puis les signatures et transactions des wallets strictement qualifiés ; il s'arrête avec un checkpoint et un motif visible. Aucun service longue durée ne démarre automatiquement :
+
+```bash
+uv run rotation r2-follow-once --root data/r2-20260926 --wallets 3 --pools 1 --transactions 10
+```
+
+Le suivi par adresse du wallet ne reconstitue pas à lui seul les comptes de tokens fermés. Les nouvelles opérations sans référence de trade restent sans USD et ne rejoignent pas le classement strict. Un snapshot de pool porte son heure de réception et un volume **glissant 24 h**, jamais une profondeur historique ou une bougie indépendante. La collecte s'arrête par `ROTATION_KILL_SWITCH=1` avant tout nouvel appel, par épuisement de limite, ou en terminant la commande. Le [budget et le profil de plusieurs jours non activé](docs/r2-collection-plan.md) détaillent les quotas.
+
+Pour le tableau de bord R2 local, lancer l'API du **présent worktree** dans un terminal, puis le frontend dans un second :
+
+```bash
+ROTATION_SCHEMA=pilot_20260926 ROTATION_MODE=REAL ROTATION_KILL_SWITCH=1 uv run uvicorn rotation.api:app --host 127.0.0.1 --port 8010
+```
+
+```bash
+cd web
+npm ci
+VITE_API_PROXY_TARGET=http://127.0.0.1:8010 npm run dev -- --host 127.0.0.1 --port 5175
+```
+
+Ouvrir `http://127.0.0.1:5175/`, onglet **R2 réel**. Le formulaire de preuves Fomo crée seulement des dossiers `pending_review`. Aucun ordre réel n'est disponible. Arrêter avec `Ctrl-C` dans **ces** deux terminaux ; si lancés autrement, identifier leurs PID et chemins de commande avant `kill`, sans interrompre les services d'autres projets.
 
 ## Démarrage local
 

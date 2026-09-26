@@ -8,6 +8,7 @@ import time
 import uuid
 from datetime import datetime, timezone
 from decimal import Decimal
+from pathlib import Path
 
 import yaml
 
@@ -17,6 +18,14 @@ from .comparison import compare_variants
 from .demo import seed_demo
 from .paper import simulate_paper
 from .pilot_collection import run_pilot_collection
+from .r2_budget import R2Budget
+from .r2_collect import collect_selected_transactions
+from .r2_corpus import finalize_corpus
+from .r2_follow import follow_once
+from .r2_fomo import FomoProofStore
+from .r2_sequences import SequenceStore
+from .r2_sources import R2Http
+from .r2_universe import build_universe
 from .real_corpus import import_corpus, summarize_corpus, verify_manifest
 from .replay import replay
 from .research import price_operations, study_events
@@ -90,9 +99,101 @@ def main(argv: list[str] | None = None) -> int:
     pilot_collect.add_argument("--output", required=True)
     pilot_collect.add_argument("--per-pool", type=int, default=30)
     pilot_collect.add_argument("--rpc-url")
+    for name in ("r2-universe", "r2-verify", "r2-sequences", "r2-budget"):
+        sub.add_parser(name).add_argument("--root", default="data/r2-20260926")
+    r2_collect = sub.add_parser("r2-collect-tx")
+    r2_collect.add_argument("--root", default="data/r2-20260926")
+    r2_collect.add_argument("--limit", type=int, default=10)
+    r2_follow = sub.add_parser("r2-follow-once")
+    r2_follow.add_argument("--root", default="data/r2-20260926")
+    r2_follow.add_argument("--wallets", type=int, default=3)
+    r2_follow.add_argument("--pools", type=int, default=2)
+    r2_follow.add_argument("--transactions", type=int, default=10)
+    proof_import = sub.add_parser("r2-fomo-import")
+    proof_import.add_argument("--root", default="data/r2-20260926")
+    proof_import.add_argument("--file", required=True)
+    proof_review = sub.add_parser("r2-fomo-review")
+    proof_review.add_argument("--root", default="data/r2-20260926")
+    proof_review.add_argument("--id", required=True)
+    proof_review.add_argument("--reviewer", required=True)
+    proof_review.add_argument("--decision", choices=("verified", "rejected"), required=True)
+    proof_review.add_argument("--comment", required=True)
     sub.choices["report"] = sub.add_parser("report")
     sub.choices["report"].add_argument("--run-id", required=True)
     args = parser.parse_args(argv)
+    if args.command == "r2-budget":
+        _print(R2Budget(Path(args.root) / "budget.json").snapshot())
+        return 0
+    if args.command == "r2-universe":
+        result = build_universe(args.root)
+        _print(result)
+        return 0
+    if args.command == "r2-verify":
+        result = finalize_corpus(args.root)
+        _print(result["summary"])
+        return 0
+    if args.command == "r2-sequences":
+        root = Path(args.root)
+        corpus = json.loads((root / "cohort.json").read_text())
+        with SequenceStore(root / "sequences.sqlite") as sequences:
+            inserted = sequences.add(corpus["events"])
+            state = sequences.snapshot()
+        _print({"inserted": inserted, "state": state})
+        return 0
+    if args.command == "r2-collect-tx":
+        root = Path(args.root)
+        with R2Budget(root / "budget.json").session(
+            "cli_tx_followup", max_calls=min(args.limit, 100), max_seconds=120
+        ) as session:
+            _print(
+                collect_selected_transactions(
+                    root, R2Http(session, root / "source", min_interval_seconds=4), limit=args.limit
+                )
+            )
+        return 0
+    if args.command == "r2-follow-once":
+        root = Path(args.root)
+        calls = args.wallets + args.pools + args.transactions
+        if not 1 <= calls <= 100:
+            raise ValueError("R2 follow cycle exceeds local call bound")
+        with R2Budget(root / "budget.json").session(
+            "cli_follow_once", max_calls=calls, max_seconds=180
+        ) as session:
+            result = follow_once(
+                root,
+                R2Http(session, root / "source", min_interval_seconds=4),
+                wallets_limit=args.wallets,
+                pools_limit=args.pools,
+                transactions_limit=args.transactions,
+            )
+            _print(
+                {
+                    "wallets_checked": len(result["wallets"]),
+                    "transactions": len(result["transactions"]),
+                    "market_snapshots": len(result["market_snapshots"]),
+                    "gaps": len(result["gaps"]),
+                    "stop_reason": result["stop_reason"],
+                }
+            )
+        return 0
+    if args.command == "r2-fomo-import":
+        with FomoProofStore(Path(args.root) / "fomo-proofs.sqlite") as proofs:
+            data = _read(args.file)
+            _print(
+                [proofs.add(row) for row in (data if isinstance(data, list) else data["proofs"])]
+            )
+        return 0
+    if args.command == "r2-fomo-review":
+        with FomoProofStore(Path(args.root) / "fomo-proofs.sqlite") as proofs:
+            _print(
+                proofs.review(
+                    args.id,
+                    reviewer=args.reviewer,
+                    decision=args.decision,
+                    review_comment=args.comment,
+                )
+            )
+        return 0
     if args.command == "pilot-collect":
         _print(run_pilot_collection(args.output, per_pool=args.per_pool, rpc_url=args.rpc_url))
         return 0

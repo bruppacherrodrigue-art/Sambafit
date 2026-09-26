@@ -1,14 +1,18 @@
 """Local read API and bounded registry editing. No execution endpoints."""
 
+import json
 import os
 from datetime import datetime, timezone
 from decimal import Decimal
+from pathlib import Path
 from typing import Literal
 
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel, Field
 
 from .engine import Leg, Operation, aggregate_convergence, attribute_rotations
+from .market import parse_candles
+from .r2_fomo import FomoProofStore
 from .research import price_operations
 from .signals import MarketBar, decide, market_features
 from .store import Store
@@ -56,6 +60,124 @@ def create_app(store: Store | None = None) -> FastAPI:
         os.getenv("ROTATION_SCHEMA", "public"),
     )
     app = FastAPI(title="Rotation Engine — local research", version="0.1.0")
+    r2_root = Path(
+        os.getenv(
+            "ROTATION_R2_DIR", str(Path(__file__).resolve().parents[2] / "data" / "r2-20260926")
+        )
+    )
+
+    def r2_file(name: str):
+        path = r2_root / name
+        if not path.exists():
+            raise HTTPException(404, "R2 corpus unavailable")
+        return json.loads(path.read_text())
+
+    @app.get("/api/r2/universe")
+    def r2_universe():
+        path = r2_root.parent.parent / "config" / "r2-candidates.json"
+        if not path.exists():
+            raise HTTPException(404, "R2 universe unavailable")
+        return json.loads(path.read_text())
+
+    @app.get("/api/r2/cohort")
+    def r2_cohort():
+        value = r2_file("cohort.json")
+        return {
+            "scope": value["scope"],
+            "summary": value["summary"],
+            "cohort_known_at": value["cohort_known_at"],
+            "wallets": value["wallets"],
+            "per_coin_ranking": value.get("per_coin_ranking", {}),
+            "ranking_note": value.get("ranking_note"),
+        }
+
+    @app.get("/api/r2/market/{mint}")
+    def r2_market(mint: str):
+        universe = r2_universe()
+        record = next(
+            (
+                r
+                for r in universe["records"]
+                if r["mint"] == mint and r["status"] == "research_candidate"
+            ),
+            None,
+        )
+        if record is None:
+            raise HTTPException(404, "candidate mint unavailable")
+        attempt = record["source_attempts"][1]
+        source = r2_file(f"source/attempt-{attempt:04}.json")
+        candles = parse_candles(
+            json.loads(source["body"], parse_float=Decimal),
+            record["primary_pool"],
+            mint,
+            datetime.fromisoformat(source["received_at"]),
+            seconds=86400,
+        )
+        return [
+            {
+                "mint": mint,
+                "close_at": c.close_at,
+                "available_at": c.received_at,
+                "price_usd": c.close_usd,
+                "volume_usd": c.volume_usd,
+                "liquidity_usd": None,
+                "source": "GeckoTerminal closed daily OHLCV; archival receipt",
+                "dataset": "REAL",
+            }
+            for c in candles
+        ]
+
+    @app.get("/api/r2/sequences")
+    def r2_sequences():
+        return r2_file("sequences.json")
+
+    @app.get("/api/r2/budget")
+    def r2_budget():
+        value = r2_file("budget.json")
+        return {
+            "limits": value["limits"],
+            "calls_used": value["calls_used"],
+            "active_seconds": value["active_seconds"],
+            "active_session": value["active_session"],
+            "errors": [a for a in value["attempts"] if a["status"] not in {"http_200"}],
+        }
+
+    @app.get("/api/r2/follow")
+    def r2_follow():
+        return r2_file("follow-checkpoint.json")
+
+    @app.get("/api/r2/evidence/{signature}")
+    def r2_evidence(signature: str):
+        rows = r2_file("tx-selection.json")["records"]
+        row = next(
+            (r for r in rows if r["signature"] == signature and r["status"] == "fetched"), None
+        )
+        if row is None:
+            raise HTTPException(404, "R2 signature unavailable")
+        return {
+            "dataset": "REAL",
+            "selection": row,
+            "raw": r2_file(f"raw/{signature}.json"),
+            "events": [e for e in r2_file("cohort.json")["events"] if e["signature"] == signature],
+            "allocations": [
+                a
+                for a in r2_file("sequences.json")["allocations"]
+                if signature in (a["source_signature"], a["destination_signature"])
+            ],
+        }
+
+    @app.get("/api/r2/fomo-proofs")
+    def r2_fomo_proofs():
+        with FomoProofStore(r2_root / "fomo-proofs.sqlite") as proofs:
+            return proofs.list()
+
+    @app.post("/api/r2/fomo-proofs")
+    def r2_add_fomo_proof(record: dict):
+        try:
+            with FomoProofStore(r2_root / "fomo-proofs.sqlite") as proofs:
+                return proofs.add(record)
+        except ValueError as exc:
+            raise HTTPException(422, str(exc)) from exc
 
     @app.get("/api/health")
     def health():
