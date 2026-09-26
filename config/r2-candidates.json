@@ -1,0 +1,376 @@
+{
+  "scope": "research_proposal_not_user_watchlist",
+  "criteria_version": "r2-preregistered-1",
+  "records": [
+    {
+      "network": "solana",
+      "symbol": "BONK",
+      "mint": "DezXAZ8z7PnrnRJjz3wXBoRgixCa6xjnB7YaB1pPB263",
+      "name": "Bonk",
+      "decimals": 5,
+      "status": "research_candidate",
+      "reasons": [],
+      "known_at": "2026-09-26T09:00:42.600288+00:00",
+      "primary_pool": "5zpyutJu9ee6jFymDGoK7F6S5Kczqtc9FomP3ueKuyA9",
+      "pool_name": "Bonk / SOL",
+      "pool_created_at": "2023-07-05T14:41:09Z",
+      "token_age_verified": false,
+      "dex": "orca",
+      "quote_mint": "So11111111111111111111111111111111111111112",
+      "reserve_usd_snapshot": "420586.543",
+      "rolling_h24_volume_usd": "1045559.61812105",
+      "rolling_h24_trades": 21058,
+      "closed_daily_candles": 13,
+      "market_received_at": "2026-09-26T09:00:42.600288+00:00",
+      "source_attempts": [
+        3,
+        15,
+        26
+      ],
+      "source_hashes": [
+        "94cf5bf7168409aac7a390b0635cca243fc980774e82f17e4080e29455593a15",
+        "c3072d359548c72628bb8a0f5208cb513eb4a7c803b7ec57f99c02288f74495b",
+        "34ec65d8195f20153133d5aef0b97c5af8c99ff9426897e33360a2a4f7b4f1c7"
+      ]
+    },
+    {
+      "network": "solana",
+      "symbol": "WIF",
+      "mint": "EKpQGSJtjMFqKZ9KQanSqYXRcF8fBopzLHYxdM65zcjm",
+      "name": "$WIF",
+      "decimals": 6,
+      "status": "research_candidate",
+      "reasons": [],
+      "known_at": "2026-09-26T09:00:53.554860+00:00",
+      "primary_pool": "EP2ib6dYdEeqD8MfE2ezHCxX3kP3K2eLKkirfPm5eyMx",
+      "pool_name": "$WIF / SOL",
+      "pool_created_at": "2023-11-20T20:10:04Z",
+      "token_age_verified": false,
+      "dex": "raydium",
+      "quote_mint": "So11111111111111111111111111111111111111112",
+      "reserve_usd_snapshot": "6864106.7068",
+      "rolling_h24_volume_usd": "899625.849066296",
+      "rolling_h24_trades": 4013,
+      "closed_daily_candles": 13,
+      "market_received_at": "2026-09-26T09:00:53.554860+00:00",
+      "source_attempts": [
+        4,
+        16,
+        27
+      ],
+      "source_hashes": [
+        "eb14fe6de4703b0cf921323c4a8fe00908c1b91b06fa3825d43c8613373a2f52",
+        "00bdd9474ab1ffea05813c781040fd0af308d768ab3b7f47f5ed3c6c5e8326be",
+        "3912ff8cf8fa08021efd55378d89ae2daa8064620e506c471ac1640eb255df13"
+      ]
+    },
+    {
+      "network": "solana",
+      "symbol": "PENGU",
+      "mint": "2zMMhcVQEXDtdE6vsFS7S7D5oUodfJHE8vd1gnBouauv",
+      "name": "PENGU",
+      "decimals": 6,
+      "status": "research_candidate",
+      "reasons": [],
+      "known_at": "2026-09-26T09:01:03.668383+00:00",
+      "primary_pool": "DdMA1cHcHEqYfttc1z1sJEY978CcU1pyjNuTWTNmdvzU",
+      "pool_name": "PENGU / USDC",
+      "pool_created_at": "2025-11-26T18:12:06Z",
+      "token_age_verified": false,
+      "dex": "meteora",
+      "quote_mint": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+      "reserve_usd_snapshot": "4376720.153",
+      "rolling_h24_volume_usd": "5966267.08766265",
+      "rolling_h24_trades": 10741,
+      "closed_daily_candles": 13,
+      "market_received_at": "2026-09-26T09:01:03.668383+00:00",
+      "source_attempts": [
+        5,
+        17,
+        28
+      ],
+      "source_hashes": [
+        "8552a924423aaddedf703443b2c59fd2ddee63df3621e24d144ae6b473891627",
+        "ab88a91c14cd264bf368a8940089436a1eacbb4dbd38c25c03fb7463df436677",
+        "fe94b5cd13992abc889e817d741ea78513a9d58b3a7ffd0ccb4338a3c863760c"
+      ]
+    },
+    {
+      "network": "solana",
+      "symbol": "POPCAT",
+      "mint": "7GCihgDB8fe6KNjn2MYtkzZcRjQy3t9GHdC8uHYmW2hr",
+      "name": "POPCAT",
+      "decimals": 9,
+      "status": "research_candidate",
+      "reasons": [],
+      "known_at": "2026-09-26T09:01:13.751530+00:00",
+      "primary_pool": "FRhB8L7Y9Qq41qZXYLtC2nw8An1RJfLLxRF2x9RwLLMo",
+      "pool_name": "POPCAT / SOL",
+      "pool_created_at": "2023-12-12T22:00:11Z",
+      "token_age_verified": false,
+      "dex": "raydium",
+      "quote_mint": "So11111111111111111111111111111111111111112",
+      "reserve_usd_snapshot": "4307263.4779",
+      "rolling_h24_volume_usd": "326258.839421842",
+      "rolling_h24_trades": 1291,
+      "closed_daily_candles": 13,
+      "market_received_at": "2026-09-26T09:01:13.751530+00:00",
+      "source_attempts": [
+        6,
+        18,
+        29
+      ],
+      "source_hashes": [
+        "b6455b6a2852627d98575dd91bb2cc059259bedf2be2f673f020a43b459addf8",
+        "fb80d7e65918ca9ed22059089526217a7044f70d6b85a24c87786165ab8bba87",
+        "71acf8ceb13f3f89b969ee5b88550101cb46c7f11fee5ebd87a1d0b29785da68"
+      ]
+    },
+    {
+      "network": "solana",
+      "symbol": "FARTCOIN",
+      "mint": "9BB6NFEcjBCtnNLFko2FqVQBq8HHM13kCyYcdQbgpump",
+      "name": "Fartcoin",
+      "decimals": 6,
+      "status": "research_candidate",
+      "reasons": [],
+      "known_at": "2026-09-26T09:01:23.781063+00:00",
+      "primary_pool": "Bzc9NZfMqkXR6fz1DBph7BDf9BroyEf6pnzESP7v5iiw",
+      "pool_name": "Fartcoin / SOL",
+      "pool_created_at": "2024-10-18T06:09:47Z",
+      "token_age_verified": false,
+      "dex": "raydium",
+      "quote_mint": "So11111111111111111111111111111111111111112",
+      "reserve_usd_snapshot": "9277414.5111",
+      "rolling_h24_volume_usd": "1564930.21849035",
+      "rolling_h24_trades": 4131,
+      "closed_daily_candles": 13,
+      "market_received_at": "2026-09-26T09:01:23.781063+00:00",
+      "source_attempts": [
+        7,
+        19,
+        30
+      ],
+      "source_hashes": [
+        "c714d23d38102f745d4a1bfe4882cb37fe865d5cec465fc938b3d70cf0676a50",
+        "8678f1e9bcf7e0e4b2b7b1ac4fb85475db59c63378f252a898f939efaaa2c056",
+        "a8c2d4e765d1e5fa781d08835d0ae5f218872820102b739983ae2f03e4679963"
+      ]
+    },
+    {
+      "network": "solana",
+      "symbol": "MEW",
+      "mint": "MEW1gQWJ3nEXg2qgERiKu7FAFj79PHvQVREQUzScPP5",
+      "name": "MEW",
+      "decimals": 5,
+      "status": "research_candidate",
+      "reasons": [],
+      "known_at": "2026-09-26T09:01:34.561622+00:00",
+      "primary_pool": "879F697iuDJGMevRkRcnW21fcXiAeLJK1ffsw2ATebce",
+      "pool_name": "MEW / SOL",
+      "pool_created_at": "2024-03-26T05:26:00Z",
+      "token_age_verified": false,
+      "dex": "raydium",
+      "quote_mint": "So11111111111111111111111111111111111111112",
+      "reserve_usd_snapshot": "10499171.821",
+      "rolling_h24_volume_usd": "234557.489403265",
+      "rolling_h24_trades": 1556,
+      "closed_daily_candles": 13,
+      "market_received_at": "2026-09-26T09:01:34.561622+00:00",
+      "source_attempts": [
+        8,
+        20,
+        31
+      ],
+      "source_hashes": [
+        "74ef14a5df5160e82be73ba8c6c651c4171cf865b253bd920fe494cfeead59ac",
+        "99252a44dd845d96bab0a1769b44c0954868c137881ca30e379f41e8368b278e",
+        "6cb5979ed0e2f0bd38f1815de2f4722741b305c393d21b78af6fe0e69961eb83"
+      ]
+    },
+    {
+      "network": "solana",
+      "symbol": "BOME",
+      "mint": "ukHH6c7mMyiWCf1b9pnWe25TSpkDDt3H5pQZgZ74J82",
+      "name": "BOME",
+      "decimals": 6,
+      "status": "research_candidate",
+      "reasons": [],
+      "known_at": "2026-09-26T09:01:44.348470+00:00",
+      "primary_pool": "DSUvc5qf5LJHHV5e2tD184ixotSnCnwj7i4jJa4Xsrmt",
+      "pool_name": "BOME / SOL",
+      "pool_created_at": "2024-03-14T07:30:00Z",
+      "token_age_verified": false,
+      "dex": "raydium",
+      "quote_mint": "So11111111111111111111111111111111111111112",
+      "reserve_usd_snapshot": "18486530.2941",
+      "rolling_h24_volume_usd": "1096867.88283274",
+      "rolling_h24_trades": 5628,
+      "closed_daily_candles": 13,
+      "market_received_at": "2026-09-26T09:01:44.348470+00:00",
+      "source_attempts": [
+        9,
+        21,
+        32
+      ],
+      "source_hashes": [
+        "74dd83ed805cf627a185d4658f64b5cc47147e4e6f0df0ebc719499c872a9f51",
+        "ece5539a73fad5db997e4a99f02eae3e5b2357421d3ff58d3fe3ad641c0ea387",
+        "aa4dc12df2787adb315efdc15b6d469cf45b3aa37e5867142717d4017446e242"
+      ]
+    },
+    {
+      "network": "solana",
+      "symbol": "PNUT",
+      "mint": "2qEHjDLDLbuBgRYvsxhc5D6uDWAivNFZGan56P1tpump",
+      "name": "Pnut",
+      "decimals": 6,
+      "status": "research_candidate",
+      "reasons": [],
+      "known_at": "2026-09-26T09:01:56.112139+00:00",
+      "primary_pool": "4AZRPNEfCJ7iw28rJu5aUyeQhYcvdcNm8cswyL51AY9i",
+      "pool_name": "Pnut / SOL",
+      "pool_created_at": "2024-10-31T15:06:47Z",
+      "token_age_verified": false,
+      "dex": "raydium",
+      "quote_mint": "So11111111111111111111111111111111111111112",
+      "reserve_usd_snapshot": "3804027.8685",
+      "rolling_h24_volume_usd": "199847.918987699",
+      "rolling_h24_trades": 2044,
+      "closed_daily_candles": 13,
+      "market_received_at": "2026-09-26T09:01:56.112139+00:00",
+      "source_attempts": [
+        10,
+        22,
+        33
+      ],
+      "source_hashes": [
+        "03f06667add7a0f8553646c3a2e3103335fc103753cf126720c07a95362ac74d",
+        "1991ceaf55283b6a8dcc87b1513d03f3deb68d24b710a845a632d02d8e7c4b9f",
+        "0fc3642eb689bce587c8914da618be8f47e5b4d07e77fa8e87e5f5546ef93f27"
+      ]
+    },
+    {
+      "network": "solana",
+      "symbol": "GOAT",
+      "mint": "CzLSujWBLFsSjncfkh59rUFqvafWcY5tzedWJSuypump",
+      "name": "GOAT",
+      "decimals": 6,
+      "status": "research_candidate",
+      "reasons": [],
+      "known_at": "2026-09-26T09:02:06.792079+00:00",
+      "primary_pool": "9Tb2ohu5P16BpBarqd3N27WnkF51Ukfs8Z1GzzLDxVZW",
+      "pool_name": "GOAT / SOL",
+      "pool_created_at": "2024-10-10T21:19:05Z",
+      "token_age_verified": false,
+      "dex": "raydium",
+      "quote_mint": "So11111111111111111111111111111111111111112",
+      "reserve_usd_snapshot": "1818189.3136",
+      "rolling_h24_volume_usd": "318468.528077695",
+      "rolling_h24_trades": 3069,
+      "closed_daily_candles": 13,
+      "market_received_at": "2026-09-26T09:02:06.792079+00:00",
+      "source_attempts": [
+        11,
+        23,
+        34
+      ],
+      "source_hashes": [
+        "8766e02d9986410ce7b91bea8794bd605793af605ebafe7cde7b7cc273555f3f",
+        "9e565d6ed0e2f546c70e8e6c90598fa338a2f78ac90c81307381bd5eba0b65b8",
+        "4ad3f803ef3fb2e74be6a6ba472d8bdb801d20a11ccfb9c13f6ac3052547db2d"
+      ]
+    },
+    {
+      "network": "solana",
+      "symbol": "PUMP",
+      "mint": "pumpCmXqMfrsAkQ5r49WcJnRayYRqmXz6ae8H7H9Dfn",
+      "name": "PUMP",
+      "decimals": null,
+      "status": "research_excluded",
+      "reasons": [
+        "platform_token_outside_speculative_coin_scope"
+      ],
+      "known_at": "2026-09-26T09:02:22.517663+00:00",
+      "primary_pool": "2uF4Xh61rDwxnG9woyxsVQP7zuA6kLFpb3NvnRQeoiSd",
+      "pool_name": "PUMP / USDC",
+      "pool_created_at": "2025-07-14T16:55:54Z",
+      "token_age_verified": false,
+      "dex": "pumpswap",
+      "quote_mint": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+      "reserve_usd_snapshot": "23210381.4694",
+      "rolling_h24_volume_usd": "7608515.26395542",
+      "rolling_h24_trades": 41087,
+      "closed_daily_candles": 0,
+      "market_received_at": "2026-09-26T09:02:22.517663+00:00",
+      "source_attempts": [
+        12
+      ],
+      "source_hashes": [
+        "ab15548132d6dd086a444336f2519b8a208779051e9489d70ff4774198579d73"
+      ]
+    },
+    {
+      "network": "solana",
+      "symbol": "GIGA",
+      "mint": "63LfDmNb3MQ8mw9MtZ2To9bEA2M71kZUUGq5tiJxcqj9",
+      "name": "GIGA",
+      "decimals": 5,
+      "status": "research_candidate",
+      "reasons": [],
+      "known_at": "2026-09-26T09:02:26.690695+00:00",
+      "primary_pool": "4xxM4cdb6MEsCxM52xvYqkNbzvdeWWsPDZrBcTqVGUar",
+      "pool_name": "GIGA / SOL",
+      "pool_created_at": "2024-01-04T22:40:41Z",
+      "token_age_verified": false,
+      "dex": "raydium",
+      "quote_mint": "So11111111111111111111111111111111111111112",
+      "reserve_usd_snapshot": "1850832.1548",
+      "rolling_h24_volume_usd": "195698.414847953",
+      "rolling_h24_trades": 2239,
+      "closed_daily_candles": 13,
+      "market_received_at": "2026-09-26T09:02:26.690695+00:00",
+      "source_attempts": [
+        13,
+        24,
+        35
+      ],
+      "source_hashes": [
+        "8068d066881ef387f2eb927f3beee5694affaf64bc23224c4f90f05d894bbfcb",
+        "8b3d4ca7d48a3610f31338b3b9c54738993009ce75b81b9317b12007d9281fce",
+        "8f5313ae38e5ff4a0c9a302282883b57eb4365fa088c26b58421898ccaf573a4"
+      ]
+    },
+    {
+      "network": "solana",
+      "symbol": "MOODENG",
+      "mint": "ED5nyyWEzpPPiWimP8vYm7sD7TD3LAt3Q3gRTWHzPJBY",
+      "name": "MOODENG",
+      "decimals": 6,
+      "status": "research_candidate",
+      "reasons": [],
+      "known_at": "2026-09-26T09:02:36.592539+00:00",
+      "primary_pool": "22WrmyTj8x2TRVQen3fxxi2r4Rn6JDHWoMTpsSmn8RUd",
+      "pool_name": "MOODENG / SOL",
+      "pool_created_at": "2024-09-10T18:53:08Z",
+      "token_age_verified": false,
+      "dex": "raydium",
+      "quote_mint": "So11111111111111111111111111111111111111112",
+      "reserve_usd_snapshot": "3168510.3718",
+      "rolling_h24_volume_usd": "408450.200941451",
+      "rolling_h24_trades": 1969,
+      "closed_daily_candles": 13,
+      "market_received_at": "2026-09-26T09:02:36.592539+00:00",
+      "source_attempts": [
+        14,
+        25,
+        36
+      ],
+      "source_hashes": [
+        "2849a7e0ea8ea0fc8c4acfef77580d8bffecb35cef67c2ed3a7c4d5b5353d6ec",
+        "813ab39b5177754b45addca947d0001235440d1001abfb6e648d2aa72c8cd716",
+        "672d4ad6f4f042e1c640d3ca59e4a8d21162d3bf7ea71cb92b2e318a6cf75ce6"
+      ]
+    }
+  ]
+}

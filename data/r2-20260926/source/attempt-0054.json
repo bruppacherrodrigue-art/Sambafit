@@ -1,0 +1,9 @@
+{
+  "attempt": 54,
+  "body": "{\"status\":{\"error_code\":429,\"error_message\":\"You've exceeded the Rate Limit. Please visit https://www.coingecko.com/en/api/pricing to subscribe to our API plans for higher rate limits and use the onchain endpoints: https://docs.coingecko.com/reference/endpoint-overview\"}}",
+  "http_status": 429,
+  "received_at": "2026-09-26T09:09:51.459431+00:00",
+  "request": "GET /networks/solana/pools/DSUvc5qf5LJHHV5e2tD184ixotSnCnwj7i4jJa4Xsrmt/ohlcv/minute {\"aggregate\": 1, \"currency\": \"usd\", \"limit\": 100, \"token\": \"ukHH6c7mMyiWCf1b9pnWe25TSpkDDt3H5pQZgZ74J82\"}",
+  "response_hash": "fe01ad53fdd7d0cfad305454076eac66eb2621cb75eea3d52130e35f2b7a2542",
+  "source": "gecko"
+}

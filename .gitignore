@@ -9,3 +9,7 @@ web/dist/
 web/*.tsbuildinfo
 output/
 .playwright-cli/
+data/r2-*/budget.json.lock
+data/r2-*/*.sqlite
+data/r2-*/*.pid
+data/r2-*/*.log

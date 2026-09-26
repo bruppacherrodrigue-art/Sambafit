@@ -1,0 +1,1938 @@
+{
+  "gaps": [
+    {
+      "at": "2026-09-26T09:33:48.091898+00:00",
+      "reason": "page_full_all_unseen; older missed signatures possible",
+      "wallet": "CreQJ2t94QK5dsxUZGXfPJ8Nx7wA9LHr5chxjSMkbNft"
+    },
+    {
+      "at": "2026-09-26T09:35:06.525428+00:00",
+      "reason": "page_full_all_unseen; older missed signatures possible",
+      "wallet": "CreQJ2t94QK5dsxUZGXfPJ8Nx7wA9LHr5chxjSMkbNft"
+    },
+    {
+      "at": "2026-09-26T09:38:40.518785+00:00",
+      "reason": "page_full_all_unseen; older missed signatures possible",
+      "wallet": "MfDuWeqSHEqTFVYZ7LoexgAK9dxk7cy4DFJWjWMGVWa"
+    }
+  ],
+  "market_snapshots": [
+    {
+      "attempt": 121,
+      "historical_depth_usd": null,
+      "measured_at": null,
+      "mint": "DezXAZ8z7PnrnRJjz3wXBoRgixCa6xjnB7YaB1pPB263",
+      "pool": "5zpyutJu9ee6jFymDGoK7F6S5Kczqtc9FomP3ueKuyA9",
+      "price_usd": "0.00000364727258424061112448860715403048006155604632",
+      "received_at": "2026-09-26T09:33:47.996304+00:00",
+      "reserve_usd_snapshot": "416447.0427",
+      "rolling_h24_volume_usd": "1020901.72008278",
+      "source_hash": "c20428e5455b0787c0603d3aa2ac69324b00e5adce6d76e2ce8ce1226db69cc2",
+      "volume_interval": "rolling_24h_not_additive"
+    },
+    {
+      "attempt": 126,
+      "historical_depth_usd": null,
+      "measured_at": null,
+      "mint": "EKpQGSJtjMFqKZ9KQanSqYXRcF8fBopzLHYxdM65zcjm",
+      "pool": "EP2ib6dYdEeqD8MfE2ezHCxX3kP3K2eLKkirfPm5eyMx",
+      "price_usd": "0.245919297523740200295722758916978107458576192",
+      "received_at": "2026-09-26T09:35:06.424712+00:00",
+      "reserve_usd_snapshot": "6787075.2261",
+      "rolling_h24_volume_usd": "902586.289881114",
+      "source_hash": "90ff654596c4edc09c0ddb51b7f37aba8ac2c8871dfcde8772aa4ae906167a8c",
+      "volume_interval": "rolling_24h_not_additive"
+    },
+    {
+      "attempt": 151,
+      "historical_depth_usd": null,
+      "measured_at": null,
+      "mint": "2zMMhcVQEXDtdE6vsFS7S7D5oUodfJHE8vd1gnBouauv",
+      "pool": "DdMA1cHcHEqYfttc1z1sJEY978CcU1pyjNuTWTNmdvzU",
+      "price_usd": "0.00999617515009855228000399836322738320276927780645235820546492403",
+      "received_at": "2026-09-26T09:39:53.717787+00:00",
+      "reserve_usd_snapshot": "4342110.2192",
+      "rolling_h24_volume_usd": "5865487.18023399",
+      "source_hash": "08c4f694a6606e298f3af7111e671439bb8e7f8ef0e5e0bce31ae2a9e4263942",
+      "volume_interval": "rolling_24h_not_additive"
+    },
+    {
+      "attempt": 179,
+      "historical_depth_usd": null,
+      "measured_at": null,
+      "mint": "7GCihgDB8fe6KNjn2MYtkzZcRjQy3t9GHdC8uHYmW2hr",
+      "pool": "FRhB8L7Y9Qq41qZXYLtC2nw8An1RJfLLxRF2x9RwLLMo",
+      "price_usd": "0.0578111429459563743301461261306",
+      "received_at": "2026-09-26T09:41:53.240637+00:00",
+      "reserve_usd_snapshot": "4283126.3168",
+      "rolling_h24_volume_usd": "322970.54539216",
+      "source_hash": "be508b947b37dcdb5346a64d6340a0a0a9a2ab9db1856b15c8312ff43307c97c",
+      "volume_interval": "rolling_24h_not_additive"
+    }
+  ],
+  "next_pool_index": 4,
+  "observable_inventory_delta_base": {
+    "CreQJ2t94QK5dsxUZGXfPJ8Nx7wA9LHr5chxjSMkbNft": {
+      "2qEHjDLDLbuBgRYvsxhc5D6uDWAivNFZGan56P1tpump": "749824125",
+      "2zMMhcVQEXDtdE6vsFS7S7D5oUodfJHE8vd1gnBouauv": "648234121507",
+      "6p6xgHyF7AeE6TZkSmFsko444wqoP15icUSqi2jfGiPN": "-595438913",
+      "9BB6NFEcjBCtnNLFko2FqVQBq8HHM13kCyYcdQbgpump": "-137702481",
+      "Dz9mQ9NzkBcCsuGPFJ3r1bS4wgqKMHBPiVuniW8Mbonk": "1799513647",
+      "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v": "-7164123380",
+      "Es9vMFrzaCERmJfrF4H2FYD4KCoNkY11McCe8BenwNYB": "1941315881",
+      "HZ1JovNiVvGrGNiiYvEozEVgZ58xaU3RKwX8eACQBCt3": "-6641303431",
+      "J3NKxxXZcnNiMjKw9hYb2K4LUxgwB6t1FtPtQVsv3KFr": "110123796463",
+      "JUPyiwrYJFskUPiHa7hkeR8VUtAeFoSYbKedZNsDvCN": "8883081251",
+      "KENJSUYLASHUMfHyy5o4Hp2FdNqZg1AsUPhfH2kYvEP": "27755775601",
+      "So11111111111111111111111111111111111111112": "-33909007350",
+      "rndrizKT3MK1iimdxRdWabcF7Zg7AR5T4nud4EkHBof": "-25125435930",
+      "ukHH6c7mMyiWCf1b9pnWe25TSpkDDt3H5pQZgZ74J82": "477499367076"
+    },
+    "MfDuWeqSHEqTFVYZ7LoexgAK9dxk7cy4DFJWjWMGVWa": {
+      "4k3Dyjzvzp8eMZWUXbBCjEvwSkkk59S5iCNLY3QrkX6R": "-44546095",
+      "98sMhvDwXj1RQi5c5Mndm3vPe9cBqPrbLaufMXFNMh5g": "3384222419",
+      "9BB6NFEcjBCtnNLFko2FqVQBq8HHM13kCyYcdQbgpump": "6828739145",
+      "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v": "4616613393",
+      "GJAFwWjJ3vnTsrQVabjBVK2TYB1YtRCQXRDfDgUnpump": "14581591158",
+      "KMNo3nJsBXfcpJTVhZcXLW7RmTwTt4GVFE7suUBo9sS": "22534821722",
+      "So11111111111111111111111111111111111111112": "-69340169146"
+    }
+  },
+  "opening_positions_unknown": true,
+  "started_at": "2026-09-26T09:33:47.705843+00:00",
+  "stop_reason": "transaction_cycle_limit; resume required",
+  "transactions": {
+    "1SQKsZMKQwJiuMzsuvgXG1xBJguEx1gDBvbad8nLMkpy39L9A2hFh7goK68KH6uQMaHPsvdrkQnHoKXKEv2RivM": {
+      "decoder_version": "r2-raydium-amm-v4-owner-balances-1",
+      "economic_at": "2026-09-26T09:38:15+00:00",
+      "fee_lamports": 5000,
+      "kind": "unknown",
+      "legs": [
+        {
+          "decimals": 6,
+          "delta_base": "-44546095",
+          "mint": "4k3Dyjzvzp8eMZWUXbBCjEvwSkkk59S5iCNLY3QrkX6R"
+        },
+        {
+          "decimals": 9,
+          "delta_base": "728135070",
+          "mint": "So11111111111111111111111111111111111111112"
+        }
+      ],
+      "quality": "partial",
+      "receipt": {
+        "archive": "data/r2-20260926/source/attempt-0149.json",
+        "attempt": 149,
+        "received_at": "2026-09-26T09:38:51.164181+00:00",
+        "response_hash": "aa7964a6ed2d0360b4fea035b7910c521fcf22888d75e34009d4742e7936ea17"
+      },
+      "status": "fetched",
+      "usd_value": null,
+      "wallet": "MfDuWeqSHEqTFVYZ7LoexgAK9dxk7cy4DFJWjWMGVWa"
+    },
+    "23nLj2hm1V1mHeqK6XSJCFf8hn1NH8teh5i9yYUKT1VNDdkH1Sb1rejTzzmVqpenBJST5LSTDXfR9pv56zWXNcPH": {
+      "decoder_version": "r2-raydium-amm-v4-owner-balances-1",
+      "economic_at": "2026-09-26T09:40:45+00:00",
+      "fee_lamports": 127575,
+      "kind": "swap_balance_candidate",
+      "legs": [
+        {
+          "decimals": 6,
+          "delta_base": "28616910781",
+          "mint": "KENJSUYLASHUMfHyy5o4Hp2FdNqZg1AsUPhfH2kYvEP"
+        },
+        {
+          "decimals": 9,
+          "delta_base": "-4148209979",
+          "mint": "So11111111111111111111111111111111111111112"
+        }
+      ],
+      "quality": "requires_trade_reference",
+      "receipt": {
+        "archive": "data/r2-20260926/source/attempt-0182.json",
+        "attempt": 182,
+        "received_at": "2026-09-26T09:42:01.289749+00:00",
+        "response_hash": "3118f8563251482d58f42f46d41197177d642472796874855928a8af604b1c2a"
+      },
+      "status": "fetched",
+      "usd_value": null,
+      "wallet": "CreQJ2t94QK5dsxUZGXfPJ8Nx7wA9LHr5chxjSMkbNft"
+    },
+    "25ubero4Fpzd3HDcHpia1KcN8qzT3FLd3buErpRMshj3oJoKfxVK5mS3P8obCKTJeFtZUP6rSxubUea2DP5Pbaji": {
+      "decoder_version": "r2-raydium-amm-v4-owner-balances-1",
+      "economic_at": "2026-09-26T09:34:31+00:00",
+      "fee_lamports": 5000,
+      "kind": "unknown",
+      "legs": [
+        {
+          "decimals": 6,
+          "delta_base": "124706938764",
+          "mint": "2zMMhcVQEXDtdE6vsFS7S7D5oUodfJHE8vd1gnBouauv"
+        },
+        {
+          "decimals": 6,
+          "delta_base": "-1251367298",
+          "mint": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v"
+        }
+      ],
+      "quality": "partial_route",
+      "receipt": {
+        "archive": "data/r2-20260926/source/attempt-0135.json",
+        "attempt": 135,
+        "received_at": "2026-09-26T09:36:27.887412+00:00",
+        "response_hash": "2cc98d677e5b32305d6247e6925ab9e84cc57c2d8b14ed2b7aa8e815d8364bfa"
+      },
+      "status": "fetched",
+      "usd_value": null,
+      "wallet": "CreQJ2t94QK5dsxUZGXfPJ8Nx7wA9LHr5chxjSMkbNft"
+    },
+    "2AG54haYnUrjEdBP64a1dqh1n7CxRox4QsDMdrim8Gb643EmWkHNr6Yxv9CVaABofgNWuKHfUZHJNcSxcP9yS69M": {
+      "decoder_version": "r2-raydium-amm-v4-owner-balances-1",
+      "economic_at": "2026-09-26T09:34:35+00:00",
+      "fee_lamports": 5000,
+      "kind": "swap_balance_candidate",
+      "legs": [
+        {
+          "decimals": 9,
+          "delta_base": "-4170212160",
+          "mint": "So11111111111111111111111111111111111111112"
+        },
+        {
+          "decimals": 6,
+          "delta_base": "477499367076",
+          "mint": "ukHH6c7mMyiWCf1b9pnWe25TSpkDDt3H5pQZgZ74J82"
+        }
+      ],
+      "quality": "requires_trade_reference",
+      "receipt": {
+        "archive": "data/r2-20260926/source/attempt-0143.json",
+        "attempt": 143,
+        "received_at": "2026-09-26T09:37:49.849265+00:00",
+        "response_hash": "70fcdb691e697429e49bedd87762e014d71930769550525482d1d1d10adebea6"
+      },
+      "status": "fetched",
+      "usd_value": null,
+      "wallet": "CreQJ2t94QK5dsxUZGXfPJ8Nx7wA9LHr5chxjSMkbNft"
+    },
+    "2Bf5UVMDG7TMuy17P8oLYFq7eHYeAWy5WaDe7SwTZsRq6FWHnXVyuL5KreGFWNoaxS9teqM2Ah6EsV38sjRB5eK8": {
+      "decoder_version": "r2-raydium-amm-v4-owner-balances-1",
+      "economic_at": "2026-09-26T09:37:44+00:00",
+      "fee_lamports": 19722,
+      "kind": "failed",
+      "legs": [],
+      "quality": "complete",
+      "receipt": {
+        "archive": "data/r2-20260926/source/attempt-0162.json",
+        "attempt": 162,
+        "received_at": "2026-09-26T09:40:35.088848+00:00",
+        "response_hash": "bc867c9d6cadec2a3c57e2955ecdd84a393e26bbb50e7d00357ab961c37958ad"
+      },
+      "status": "fetched",
+      "usd_value": null,
+      "wallet": "CreQJ2t94QK5dsxUZGXfPJ8Nx7wA9LHr5chxjSMkbNft"
+    },
+    "2ByFtw2YTt68pHbD8qnGCGPxBujwykVftpkLbipkAv94EVLbXdZu49vQtU2SDhXH5ULSgkLE5YSW25JcVFUVhXVY": {
+      "decoder_version": "r2-raydium-amm-v4-owner-balances-1",
+      "economic_at": "2026-09-26T09:40:54+00:00",
+      "fee_lamports": 5000,
+      "kind": "unknown",
+      "legs": [
+        {
+          "decimals": 9,
+          "delta_base": "3384222419",
+          "mint": "98sMhvDwXj1RQi5c5Mndm3vPe9cBqPrbLaufMXFNMh5g"
+        },
+        {
+          "decimals": 9,
+          "delta_base": "-2586077960",
+          "mint": "So11111111111111111111111111111111111111112"
+        }
+      ],
+      "quality": "unsupported_program",
+      "receipt": {
+        "archive": "data/r2-20260926/source/attempt-0174.json",
+        "attempt": 174,
+        "received_at": "2026-09-26T09:41:23.770375+00:00",
+        "response_hash": "128b4a2de6b8112ccc689cd8a5f8117de341417ee32bec4eb043982e1c33f9b0"
+      },
+      "status": "fetched",
+      "usd_value": null,
+      "wallet": "MfDuWeqSHEqTFVYZ7LoexgAK9dxk7cy4DFJWjWMGVWa"
+    },
+    "2DSvoAJiBBx9uNyR9eyVnYGrrPhVJZLNjqtL8egsvbrCzeYhTmpdiB2ey3uKEFRxdaDFhSyVRXsjohDJrM528YxN": {
+      "decoder_version": "r2-raydium-amm-v4-owner-balances-1",
+      "economic_at": "2026-09-26T09:31:10+00:00",
+      "fee_lamports": 220391,
+      "kind": "failed",
+      "legs": [],
+      "quality": "complete",
+      "receipt": {
+        "archive": "data/r2-20260926/source/attempt-0123.json",
+        "attempt": 123,
+        "received_at": "2026-09-26T09:33:58.741184+00:00",
+        "response_hash": "91ce277a633986fb5dda0fa05a4359913404447975ff957eb1e356b2e3308fee"
+      },
+      "status": "fetched",
+      "usd_value": null,
+      "wallet": "CreQJ2t94QK5dsxUZGXfPJ8Nx7wA9LHr5chxjSMkbNft"
+    },
+    "2HdHdKQDVsVh58hnB2WzjtvphU3AUCMgYr2Hk4UMeUtUpej7Gh2H6oZ66vgRrhpXiANpygeanVLEx3tvfNTHG2Jy": {
+      "decoder_version": "r2-raydium-amm-v4-owner-balances-1",
+      "economic_at": "2026-09-26T09:38:15+00:00",
+      "fee_lamports": 9197,
+      "kind": "failed",
+      "legs": [],
+      "quality": "complete",
+      "receipt": {
+        "archive": "data/r2-20260926/source/attempt-0150.json",
+        "attempt": 150,
+        "received_at": "2026-09-26T09:39:01.171256+00:00",
+        "response_hash": "d375279f926e0b91870f3dda3036b031a532e86efac98d2accf0de125911a9f5"
+      },
+      "status": "fetched",
+      "usd_value": null,
+      "wallet": "MfDuWeqSHEqTFVYZ7LoexgAK9dxk7cy4DFJWjWMGVWa"
+    },
+    "2NBZUkv5fKeSyh4yCxgK5JSArGMge6YGj5kUCMiqqJZoQ8gfEP3MgFbC2NJL3Lt2YPFDjnkDUHKsNoqEn3mDYuCg": {
+      "decoder_version": "r2-raydium-amm-v4-owner-balances-1",
+      "economic_at": "2026-09-26T09:34:05+00:00",
+      "fee_lamports": 10262,
+      "kind": "unknown",
+      "legs": [
+        {
+          "decimals": 6,
+          "delta_base": "-3416417774",
+          "mint": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v"
+        },
+        {
+          "decimals": 6,
+          "delta_base": "3416844273",
+          "mint": "Es9vMFrzaCERmJfrF4H2FYD4KCoNkY11McCe8BenwNYB"
+        }
+      ],
+      "quality": "partial",
+      "receipt": {
+        "archive": "data/r2-20260926/source/attempt-0131.json",
+        "attempt": 131,
+        "received_at": "2026-09-26T09:35:47.251668+00:00",
+        "response_hash": "0016e79a6d43e01b1b1cc7fdce6b7b6dd0a63fd0cbfd6806060cc732ae21bb5e"
+      },
+      "status": "fetched",
+      "usd_value": null,
+      "wallet": "CreQJ2t94QK5dsxUZGXfPJ8Nx7wA9LHr5chxjSMkbNft"
+    },
+    "2SKvciLQvcbPvLo9S75F85oyfi6rcTF3g9HzXzkduXm5TtDks5NLYGUdSGLw2dUiz1Wv8oWJHuSnB5U3eeJ7mTfb": {
+      "decoder_version": "r2-raydium-amm-v4-owner-balances-1",
+      "economic_at": "2026-09-26T09:36:25+00:00",
+      "fee_lamports": 29206,
+      "kind": "failed",
+      "legs": [],
+      "quality": "complete",
+      "receipt": {
+        "archive": "data/r2-20260926/source/attempt-0156.json",
+        "attempt": 156,
+        "received_at": "2026-09-26T09:40:10.421759+00:00",
+        "response_hash": "93bcaa80083bbb862dba155af16ab065751f0b60f574c87b7d1ad6363959a587"
+      },
+      "status": "fetched",
+      "usd_value": null,
+      "wallet": "CreQJ2t94QK5dsxUZGXfPJ8Nx7wA9LHr5chxjSMkbNft"
+    },
+    "2WWDSYf2tY9umb9a2L9apB2chpqsUMgVbn94VcQbwnD4ZdbJ8hd83DzWEZi3PWLpJJ1UbL9ZKVMne6z3YYUESoHV": {
+      "decoder_version": "r2-raydium-amm-v4-owner-balances-1",
+      "economic_at": "2026-09-26T09:42:05+00:00",
+      "fee_lamports": 18185,
+      "kind": "failed",
+      "legs": [],
+      "quality": "complete",
+      "receipt": {
+        "archive": "data/r2-20260926/source/attempt-0191.json",
+        "attempt": 191,
+        "received_at": "2026-09-26T09:42:38.027011+00:00",
+        "response_hash": "d239d55739d98b7c89d8efaf06439ef2ea44a1b4827323937dded3f616b4d720"
+      },
+      "status": "fetched",
+      "usd_value": null,
+      "wallet": "MfDuWeqSHEqTFVYZ7LoexgAK9dxk7cy4DFJWjWMGVWa"
+    },
+    "2bGEsaCgwo5ixbpcr1gioiYcsDnkYP6PPUDCkYZzR5BrWydELcNmvV1MhvMbQ9SwopCmdEXTYDH2uuKbSkhw2dF3": {
+      "decoder_version": "r2-raydium-amm-v4-owner-balances-1",
+      "economic_at": "2026-09-26T09:42:16+00:00",
+      "fee_lamports": 197139,
+      "kind": "unknown",
+      "legs": [
+        {
+          "decimals": 6,
+          "delta_base": "1634116431",
+          "mint": "9BB6NFEcjBCtnNLFko2FqVQBq8HHM13kCyYcdQbgpump"
+        },
+        {
+          "decimals": 9,
+          "delta_base": "-2609707646",
+          "mint": "So11111111111111111111111111111111111111112"
+        }
+      ],
+      "quality": "unsupported_program",
+      "receipt": {
+        "archive": "data/r2-20260926/source/attempt-0206.json",
+        "attempt": 206,
+        "received_at": "2026-09-26T09:43:39.359071+00:00",
+        "response_hash": "2b3afe3dec7aee3a2884093ef06eb781f80074035099ba3941c448a0d5b86276"
+      },
+      "status": "fetched",
+      "usd_value": null,
+      "wallet": "MfDuWeqSHEqTFVYZ7LoexgAK9dxk7cy4DFJWjWMGVWa"
+    },
+    "2hLAnUZ6gXtTJWCZ9uDwmuMGSazpqQUSLuy6xukYDnTRRWoPqoe1vb8dRCth9bT2aSLGWwk9M2WwpdKZWV7dMFBt": {
+      "decoder_version": "r2-raydium-amm-v4-owner-balances-1",
+      "economic_at": "2026-09-26T09:42:12+00:00",
+      "fee_lamports": 5000,
+      "kind": "swap_balance_candidate",
+      "legs": [
+        {
+          "decimals": 6,
+          "delta_base": "7166537059",
+          "mint": "GJAFwWjJ3vnTsrQVabjBVK2TYB1YtRCQXRDfDgUnpump"
+        },
+        {
+          "decimals": 9,
+          "delta_base": "-670040819",
+          "mint": "So11111111111111111111111111111111111111112"
+        }
+      ],
+      "quality": "requires_trade_reference",
+      "receipt": {
+        "archive": "data/r2-20260926/source/attempt-0199.json",
+        "attempt": 199,
+        "received_at": "2026-09-26T09:43:10.747401+00:00",
+        "response_hash": "6fe4f3b4a5e6563a3fce53203eb0ba6d88a10afa6309df942f990f1780451404"
+      },
+      "status": "fetched",
+      "usd_value": null,
+      "wallet": "MfDuWeqSHEqTFVYZ7LoexgAK9dxk7cy4DFJWjWMGVWa"
+    },
+    "2mHzDsSuJtFLsYk18c3Lay1xwmC2Zcr1zmSBdkeWBGG6ag42QaNQujGkZR7zvz4UYr8b72wMyMVYUqmgQfzHuHvE": {
+      "decoder_version": "r2-raydium-amm-v4-owner-balances-1",
+      "economic_at": "2026-09-26T09:34:31+00:00",
+      "fee_lamports": 7170,
+      "kind": "unknown",
+      "legs": [
+        {
+          "decimals": 6,
+          "delta_base": "49852934120",
+          "mint": "2zMMhcVQEXDtdE6vsFS7S7D5oUodfJHE8vd1gnBouauv"
+        },
+        {
+          "decimals": 6,
+          "delta_base": "-500247694",
+          "mint": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v"
+        }
+      ],
+      "quality": "partial_route",
+      "receipt": {
+        "archive": "data/r2-20260926/source/attempt-0138.json",
+        "attempt": 138,
+        "received_at": "2026-09-26T09:36:58.797802+00:00",
+        "response_hash": "499ee000e23c8543971d8411c62ca8c3ec36afa0fc95318f37be82759b50174c"
+      },
+      "status": "fetched",
+      "usd_value": null,
+      "wallet": "CreQJ2t94QK5dsxUZGXfPJ8Nx7wA9LHr5chxjSMkbNft"
+    },
+    "2mSHsjUuPZz4X19boAYXB8AyXcCg6hpj6LJUjMGxb9TZYjBMNCUbS8RyRPoBHM7HGJAYwsCxUwgVVyqVDKPRu9zb": {
+      "decoder_version": "r2-raydium-amm-v4-owner-balances-1",
+      "economic_at": "2026-09-26T09:40:54+00:00",
+      "fee_lamports": 38755,
+      "kind": "failed",
+      "legs": [],
+      "quality": "complete",
+      "receipt": {
+        "archive": "data/r2-20260926/source/attempt-0175.json",
+        "attempt": 175,
+        "received_at": "2026-09-26T09:41:27.773486+00:00",
+        "response_hash": "8969df2d632d2fcc2b6e1e09d000d3437546adea6f159d8519ea94a7ee806b42"
+      },
+      "status": "fetched",
+      "usd_value": null,
+      "wallet": "MfDuWeqSHEqTFVYZ7LoexgAK9dxk7cy4DFJWjWMGVWa"
+    },
+    "2mpNEUknaE8c6RpbqEjXNd34n3nD7KWNML64H5EywK9miYcYrXqH3jofM2NkJgPqud44ikGpeHpPAK5QMEtZa23h": {
+      "decoder_version": "r2-raydium-amm-v4-owner-balances-1",
+      "economic_at": "2026-09-26T09:34:31+00:00",
+      "fee_lamports": 6508,
+      "kind": "unknown",
+      "legs": [
+        {
+          "decimals": 6,
+          "delta_base": "49852934120",
+          "mint": "2zMMhcVQEXDtdE6vsFS7S7D5oUodfJHE8vd1gnBouauv"
+        },
+        {
+          "decimals": 6,
+          "delta_base": "-500247694",
+          "mint": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v"
+        }
+      ],
+      "quality": "partial_route",
+      "receipt": {
+        "archive": "data/r2-20260926/source/attempt-0139.json",
+        "attempt": 139,
+        "received_at": "2026-09-26T09:37:08.545180+00:00",
+        "response_hash": "ba4871da9eb978e77b16129e3cb313339536a2c93e01e166e4442576b137d23c"
+      },
+      "status": "fetched",
+      "usd_value": null,
+      "wallet": "CreQJ2t94QK5dsxUZGXfPJ8Nx7wA9LHr5chxjSMkbNft"
+    },
+    "2nXJncLbS8aNAYQnM8i6QkkZAFHESMKB4K2ujrPCrXrHH7r1v9HAzzfqiVTYDoqZNgdx4MRf6oFpsTYRZoXf4M1S": {
+      "decoder_version": "r2-raydium-amm-v4-owner-balances-1",
+      "economic_at": "2026-09-26T09:34:49+00:00",
+      "fee_lamports": 5000,
+      "kind": "unknown",
+      "legs": [
+        {
+          "decimals": 6,
+          "delta_base": "-901056561",
+          "mint": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v"
+        },
+        {
+          "decimals": 6,
+          "delta_base": "2656762157",
+          "mint": "JUPyiwrYJFskUPiHa7hkeR8VUtAeFoSYbKedZNsDvCN"
+        }
+      ],
+      "quality": "partial_route",
+      "receipt": {
+        "archive": "data/r2-20260926/source/attempt-0144.json",
+        "attempt": 144,
+        "received_at": "2026-09-26T09:37:59.850126+00:00",
+        "response_hash": "f9a31d182f99500bcbbecba4fe405ab4b8b43d88d7ad6f6915166338d0d15e31"
+      },
+      "status": "fetched",
+      "usd_value": null,
+      "wallet": "CreQJ2t94QK5dsxUZGXfPJ8Nx7wA9LHr5chxjSMkbNft"
+    },
+    "2nYh3nbbE9zjZv6Fs7gm6ka478jkpr2xGk8G2HL8qFSY4DZBbQQrhbzhh7ERWaXDvt4DuoJhZVpGWuZoLQw2sofQ": {
+      "decoder_version": "r2-raydium-amm-v4-owner-balances-1",
+      "economic_at": "2026-09-26T09:34:31+00:00",
+      "fee_lamports": 5000,
+      "kind": "unknown",
+      "legs": [
+        {
+          "decimals": 6,
+          "delta_base": "99705868240",
+          "mint": "2zMMhcVQEXDtdE6vsFS7S7D5oUodfJHE8vd1gnBouauv"
+        },
+        {
+          "decimals": 6,
+          "delta_base": "-1000495387",
+          "mint": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v"
+        }
+      ],
+      "quality": "partial_route",
+      "receipt": {
+        "archive": "data/r2-20260926/source/attempt-0137.json",
+        "attempt": 137,
+        "received_at": "2026-09-26T09:36:48.539079+00:00",
+        "response_hash": "06081bd2e61392f0998d7a072cffd480611e07d16611bf8616035d3046191bd3"
+      },
+      "status": "fetched",
+      "usd_value": null,
+      "wallet": "CreQJ2t94QK5dsxUZGXfPJ8Nx7wA9LHr5chxjSMkbNft"
+    },
+    "2uoTFgoNpekVHyU2PtrBhJE2AGuhvMGKAnbb16Ew2gypsesGVgbsKVRBqcrgUJKW6uPQHsRLVkzBN4DNBPCCV5gt": {
+      "decoder_version": "r2-raydium-amm-v4-owner-balances-1",
+      "economic_at": "2026-09-26T09:34:55+00:00",
+      "fee_lamports": 5000,
+      "kind": "unknown",
+      "legs": [
+        {
+          "decimals": 6,
+          "delta_base": "49852212786",
+          "mint": "2zMMhcVQEXDtdE6vsFS7S7D5oUodfJHE8vd1gnBouauv"
+        },
+        {
+          "decimals": 6,
+          "delta_base": "-500240456",
+          "mint": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v"
+        }
+      ],
+      "quality": "partial_route",
+      "receipt": {
+        "archive": "data/r2-20260926/source/attempt-0147.json",
+        "attempt": 147,
+        "received_at": "2026-09-26T09:38:30.528762+00:00",
+        "response_hash": "6183444195735f311fae187b2092936fcd6affa966e996786aa71463db744135"
+      },
+      "status": "fetched",
+      "usd_value": null,
+      "wallet": "CreQJ2t94QK5dsxUZGXfPJ8Nx7wA9LHr5chxjSMkbNft"
+    },
+    "2xPhj6rETFPPMVR9aSBYZvBnfYXGuR8xLniRgcTPjmWoLuoVVPKgXg1jiqbLJhuCX2jNzVYpH8YsPwyqrPWPcBMg": {
+      "decoder_version": "r2-raydium-amm-v4-owner-balances-1",
+      "economic_at": "2026-09-26T09:41:22+00:00",
+      "fee_lamports": 29470,
+      "kind": "unknown",
+      "legs": [
+        {
+          "decimals": 6,
+          "delta_base": "-1469939732",
+          "mint": "JUPyiwrYJFskUPiHa7hkeR8VUtAeFoSYbKedZNsDvCN"
+        },
+        {
+          "decimals": 9,
+          "delta_base": "4173200794",
+          "mint": "So11111111111111111111111111111111111111112"
+        }
+      ],
+      "quality": "unsupported_program",
+      "receipt": {
+        "archive": "data/r2-20260926/source/attempt-0186.json",
+        "attempt": 186,
+        "received_at": "2026-09-26T09:42:18.008156+00:00",
+        "response_hash": "46b674fe019bf8cc936c06ea189b60dd5453b2d3d5c51bacd1598402bf40d374"
+      },
+      "status": "fetched",
+      "usd_value": null,
+      "wallet": "CreQJ2t94QK5dsxUZGXfPJ8Nx7wA9LHr5chxjSMkbNft"
+    },
+    "2yFDVp7wbixih2RX2iPWrzkLGnenVADL4zDkrqeswgQtDwRGZYjFm23YkDr9yHECA8HVJxtKZZz7dgiLFFggjo8L": {
+      "decoder_version": "r2-raydium-amm-v4-owner-balances-1",
+      "economic_at": "2026-09-26T09:38:15+00:00",
+      "fee_lamports": 5000,
+      "kind": "swap_balance_candidate",
+      "legs": [
+        {
+          "decimals": 6,
+          "delta_base": "-29452214639",
+          "mint": "KENJSUYLASHUMfHyy5o4Hp2FdNqZg1AsUPhfH2kYvEP"
+        },
+        {
+          "decimals": 9,
+          "delta_base": "4160146501",
+          "mint": "So11111111111111111111111111111111111111112"
+        }
+      ],
+      "quality": "requires_trade_reference",
+      "receipt": {
+        "archive": "data/r2-20260926/source/attempt-0169.json",
+        "attempt": 169,
+        "received_at": "2026-09-26T09:41:03.754172+00:00",
+        "response_hash": "61d141389fa36baa6a8d0410fd8aa9b1aa2eb90379d5c0796c226b9366f86cb2"
+      },
+      "status": "fetched",
+      "usd_value": null,
+      "wallet": "CreQJ2t94QK5dsxUZGXfPJ8Nx7wA9LHr5chxjSMkbNft"
+    },
+    "3HZpZA7yWFMrp6A4ZQ8AvwudceCXUHuYuC2AX7H52avmRJ6hrN7apQwNG6eF36gtgLH8hMxyFqdsceA3w4n6HHmY": {
+      "decoder_version": "r2-raydium-amm-v4-owner-balances-1",
+      "economic_at": "2026-09-26T09:42:05+00:00",
+      "fee_lamports": 5000,
+      "kind": "unknown",
+      "legs": [
+        {
+          "decimals": 6,
+          "delta_base": "2432119910",
+          "mint": "9BB6NFEcjBCtnNLFko2FqVQBq8HHM13kCyYcdQbgpump"
+        },
+        {
+          "decimals": 9,
+          "delta_base": "-3883334812",
+          "mint": "So11111111111111111111111111111111111111112"
+        }
+      ],
+      "quality": "unsupported_program",
+      "receipt": {
+        "archive": "data/r2-20260926/source/attempt-0193.json",
+        "attempt": 193,
+        "received_at": "2026-09-26T09:42:46.742063+00:00",
+        "response_hash": "846b4cbbe4567b650d6a92a98bf8426ae09b478a6c38a04b5199f6e2741522e9"
+      },
+      "status": "fetched",
+      "usd_value": null,
+      "wallet": "MfDuWeqSHEqTFVYZ7LoexgAK9dxk7cy4DFJWjWMGVWa"
+    },
+    "3X12tpNjpnoiwTPYog5n2KGD3W9vyDqHj2Q5dyQDGLpjs1d1fvqWHMTH2eevzK1v6bhU8CM5VdGPLL4w7CLik1Ty": {
+      "decoder_version": "r2-raydium-amm-v4-owner-balances-1",
+      "economic_at": "2026-09-26T09:42:16+00:00",
+      "fee_lamports": 12599,
+      "kind": "failed",
+      "legs": [],
+      "quality": "complete",
+      "receipt": {
+        "archive": "data/r2-20260926/source/attempt-0204.json",
+        "attempt": 204,
+        "received_at": "2026-09-26T09:43:31.349702+00:00",
+        "response_hash": "2e2d8e205b21eecbfa74d027770b49e3f85c429fbc135d01594510d7efa78b03"
+      },
+      "status": "fetched",
+      "usd_value": null,
+      "wallet": "MfDuWeqSHEqTFVYZ7LoexgAK9dxk7cy4DFJWjWMGVWa"
+    },
+    "3X8JCQE4FuRwi3BLokq9KbxMFPWnh2JZd4vUxGL9JjeJMDEqYYoWo6bD5pGcrYsccbNAKYA3syQZV3Uu9hJpvvWe": {
+      "decoder_version": "r2-raydium-amm-v4-owner-balances-1",
+      "economic_at": "2026-09-26T09:38:21+00:00",
+      "fee_lamports": 5860,
+      "kind": "failed",
+      "legs": [],
+      "quality": "complete",
+      "receipt": {
+        "archive": "data/r2-20260926/source/attempt-0170.json",
+        "attempt": 170,
+        "received_at": "2026-09-26T09:41:07.905564+00:00",
+        "response_hash": "da9ee7edb02104e750c08302c930ce74f6c31c7b3e930fa3da7d974d95f94acd"
+      },
+      "status": "fetched",
+      "usd_value": null,
+      "wallet": "CreQJ2t94QK5dsxUZGXfPJ8Nx7wA9LHr5chxjSMkbNft"
+    },
+    "3bLhzn8Pvi5yH76TdTN8gG8KF4rRhDw31ULWSZ1WESBofFftDgpWyDBHWkkhH5we3oJ9DpKgYxmxBNvBHJSysdN9": {
+      "decoder_version": "r2-raydium-amm-v4-owner-balances-1",
+      "economic_at": "2026-09-26T09:42:05+00:00",
+      "fee_lamports": 12496,
+      "kind": "failed",
+      "legs": [],
+      "quality": "complete",
+      "receipt": {
+        "archive": "data/r2-20260926/source/attempt-0192.json",
+        "attempt": 192,
+        "received_at": "2026-09-26T09:42:42.721222+00:00",
+        "response_hash": "51304f079a7fc8e4b7c73b12dda8ecaa4895847f186f79c0999f2f02ce705e04"
+      },
+      "status": "fetched",
+      "usd_value": null,
+      "wallet": "MfDuWeqSHEqTFVYZ7LoexgAK9dxk7cy4DFJWjWMGVWa"
+    },
+    "3gSpiJdCr9Rs62ss7vAUQaPHsjzE3Px8ZSFnR666zKVggMxBZeQvWP8oWGQjLTRQYyuqMJ6B5TruWTTuZSFpR5Hp": {
+      "decoder_version": "r2-raydium-amm-v4-owner-balances-1",
+      "economic_at": "2026-09-26T09:38:15+00:00",
+      "fee_lamports": 9277,
+      "kind": "failed",
+      "legs": [],
+      "quality": "complete",
+      "receipt": {
+        "archive": "data/r2-20260926/source/attempt-0167.json",
+        "attempt": 167,
+        "received_at": "2026-09-26T09:40:55.107307+00:00",
+        "response_hash": "81378671a47d7495bdd8ffa6614f7c9eb31af3eac06ca404f7f2453527e4d78d"
+      },
+      "status": "fetched",
+      "usd_value": null,
+      "wallet": "CreQJ2t94QK5dsxUZGXfPJ8Nx7wA9LHr5chxjSMkbNft"
+    },
+    "3gbPtJvofuXhAsewYDjc4Z6FQdKbUhxQXA8SNS1F5XEHGwgyjQjoraMxvEaFXomc44cyHdLuACWAAPVg94TeAtrB": {
+      "decoder_version": "r2-raydium-amm-v4-owner-balances-1",
+      "economic_at": "2026-09-26T09:41:27+00:00",
+      "fee_lamports": 38637,
+      "kind": "failed",
+      "legs": [],
+      "quality": "complete",
+      "receipt": {
+        "archive": "data/r2-20260926/source/attempt-0187.json",
+        "attempt": 187,
+        "received_at": "2026-09-26T09:42:22.018856+00:00",
+        "response_hash": "1e2f02f7810677a4f866eda53f7e5c6f46f5294fe127eb367a217945bfc7ece7"
+      },
+      "status": "fetched",
+      "usd_value": null,
+      "wallet": "CreQJ2t94QK5dsxUZGXfPJ8Nx7wA9LHr5chxjSMkbNft"
+    },
+    "3kUdsUJsXSHNfgAiiJ4R66EzXvsTRPyAgAqnKDftpJDWNVXCUsk33QEqAHsmWtyu3xoNF2sAbaKy2MqeMoSQqQb7": {
+      "decoder_version": "r2-raydium-amm-v4-owner-balances-1",
+      "economic_at": "2026-09-26T09:40:54+00:00",
+      "fee_lamports": 5000,
+      "kind": "unknown",
+      "legs": [
+        {
+          "decimals": 6,
+          "delta_base": "864093243",
+          "mint": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v"
+        },
+        {
+          "decimals": 9,
+          "delta_base": "-7206049143",
+          "mint": "So11111111111111111111111111111111111111112"
+        }
+      ],
+      "quality": "partial",
+      "receipt": {
+        "archive": "data/r2-20260926/source/attempt-0178.json",
+        "attempt": 178,
+        "received_at": "2026-09-26T09:41:40.425106+00:00",
+        "response_hash": "969c1565862585f9cc0c6c3411624d5e39649fa290307b23dffa209605c8b805"
+      },
+      "status": "fetched",
+      "usd_value": null,
+      "wallet": "MfDuWeqSHEqTFVYZ7LoexgAK9dxk7cy4DFJWjWMGVWa"
+    },
+    "3tsH7DVx3L3T4hH4FcFk6osjDvw7GpU1sxQKXhFa2EzE9YhceY2LBfHHJjVQinG9t7trsciPKegR147SRVpDPXnC": {
+      "decoder_version": "r2-raydium-amm-v4-owner-balances-1",
+      "economic_at": "2026-09-26T09:37:55+00:00",
+      "fee_lamports": 10124,
+      "kind": "unknown",
+      "legs": [
+        {
+          "decimals": 6,
+          "delta_base": "749824125",
+          "mint": "2qEHjDLDLbuBgRYvsxhc5D6uDWAivNFZGan56P1tpump"
+        },
+        {
+          "decimals": 6,
+          "delta_base": "-41790621",
+          "mint": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v"
+        }
+      ],
+      "quality": "partial",
+      "receipt": {
+        "archive": "data/r2-20260926/source/attempt-0165.json",
+        "attempt": 165,
+        "received_at": "2026-09-26T09:40:47.095956+00:00",
+        "response_hash": "a90b60030ca692f50e9253062baebe9ca2428e890aa113ab040cc1454a9fd620"
+      },
+      "status": "fetched",
+      "usd_value": null,
+      "wallet": "CreQJ2t94QK5dsxUZGXfPJ8Nx7wA9LHr5chxjSMkbNft"
+    },
+    "3vYqoVjH6X84RW6ZD6xLktCW1RZ3AcJv7ZaBMCf3EwwznUEktqSDSbWn97XmgmaBJt7NGzsKGAVZDjecgVa3vK5J": {
+      "decoder_version": "r2-raydium-amm-v4-owner-balances-1",
+      "economic_at": "2026-09-26T09:42:06+00:00",
+      "fee_lamports": 8914,
+      "kind": "unknown",
+      "legs": [
+        {
+          "decimals": 6,
+          "delta_base": "-546710697",
+          "mint": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v"
+        },
+        {
+          "decimals": 6,
+          "delta_base": "12272312907",
+          "mint": "KMNo3nJsBXfcpJTVhZcXLW7RmTwTt4GVFE7suUBo9sS"
+        }
+      ],
+      "quality": "unsupported_program",
+      "receipt": {
+        "archive": "data/r2-20260926/source/attempt-0195.json",
+        "attempt": 195,
+        "received_at": "2026-09-26T09:42:54.736132+00:00",
+        "response_hash": "3e70a5f2f1f49ec4ab4641a14ce47a8b5f60b80d02fee15065ea67741840177b"
+      },
+      "status": "fetched",
+      "usd_value": null,
+      "wallet": "MfDuWeqSHEqTFVYZ7LoexgAK9dxk7cy4DFJWjWMGVWa"
+    },
+    "3vqRLgq4YJKMNqV5H4Gfj3rGr1D2TScQbMX8nwBBqiwp9Rc9oztK3TVnskHv7yfLCHM1GnW4AK5VWYVUDivMJ2Rh": {
+      "decoder_version": "r2-raydium-amm-v4-owner-balances-1",
+      "economic_at": "2026-09-26T09:37:47+00:00",
+      "fee_lamports": 5069,
+      "kind": "failed",
+      "legs": [],
+      "quality": "complete",
+      "receipt": {
+        "archive": "data/r2-20260926/source/attempt-0164.json",
+        "attempt": 164,
+        "received_at": "2026-09-26T09:40:43.106658+00:00",
+        "response_hash": "a75e6d56a0a0c8b4fb61f720d3114919f005be90a146adf94eb33045d4ba3526"
+      },
+      "status": "fetched",
+      "usd_value": null,
+      "wallet": "CreQJ2t94QK5dsxUZGXfPJ8Nx7wA9LHr5chxjSMkbNft"
+    },
+    "3zgAYaRyaes2ahV4TFACd25ZjEnFpxYMx1eEusFHAjYqfFZwTK5uSK1fbAnVRezLAJbEsF8Mq1EwVk2V9zzCcSx6": {
+      "decoder_version": "r2-raydium-amm-v4-owner-balances-1",
+      "economic_at": "2026-09-26T09:42:16+00:00",
+      "fee_lamports": 8348,
+      "kind": "failed",
+      "legs": [],
+      "quality": "complete",
+      "receipt": {
+        "archive": "data/r2-20260926/source/attempt-0205.json",
+        "attempt": 205,
+        "received_at": "2026-09-26T09:43:35.351448+00:00",
+        "response_hash": "331d64457854e04edf010269cbb6367ee0f90157fc6e15c2e793fd36cf9256ff"
+      },
+      "status": "fetched",
+      "usd_value": null,
+      "wallet": "MfDuWeqSHEqTFVYZ7LoexgAK9dxk7cy4DFJWjWMGVWa"
+    },
+    "43aqKFjqpMog4TJa3ZTP19JaZQbnP1vJtF1PHfdtzV9tnUJE2XSeESsAc6Y4SykoJUog2ogr87zk7yt92S2H4TRQ": {
+      "decoder_version": "r2-raydium-amm-v4-owner-balances-1",
+      "economic_at": "2026-09-26T09:34:09+00:00",
+      "fee_lamports": 10001,
+      "kind": "failed",
+      "legs": [],
+      "quality": "complete",
+      "receipt": {
+        "archive": "data/r2-20260926/source/attempt-0133.json",
+        "attempt": 133,
+        "received_at": "2026-09-26T09:36:07.885255+00:00",
+        "response_hash": "a1349be310715904f355d127d18aef9f11053eab9522ccc6e7ab9f1874500ffa"
+      },
+      "status": "fetched",
+      "usd_value": null,
+      "wallet": "CreQJ2t94QK5dsxUZGXfPJ8Nx7wA9LHr5chxjSMkbNft"
+    },
+    "46kMdBuj1f21oQHMdyEiZ6kdWPWbssTctejdJSWLLW2AobT8LPGbTfpdKQpcMtRaiVCiqXVijkPCL15wEvd3pERC": {
+      "decoder_version": "r2-raydium-amm-v4-owner-balances-1",
+      "economic_at": "2026-09-26T09:36:24+00:00",
+      "fee_lamports": 5777,
+      "kind": "unknown",
+      "legs": [
+        {
+          "decimals": 6,
+          "delta_base": "878992089",
+          "mint": "JUPyiwrYJFskUPiHa7hkeR8VUtAeFoSYbKedZNsDvCN"
+        },
+        {
+          "decimals": 9,
+          "delta_base": "-2500423550",
+          "mint": "So11111111111111111111111111111111111111112"
+        }
+      ],
+      "quality": "partial_route",
+      "receipt": {
+        "archive": "data/r2-20260926/source/attempt-0153.json",
+        "attempt": 153,
+        "received_at": "2026-09-26T09:39:58.412085+00:00",
+        "response_hash": "8d1bd5aa0b0144d977a4f6b7c42328415f7049644cb58451a2feeba354daeee8"
+      },
+      "status": "fetched",
+      "usd_value": null,
+      "wallet": "CreQJ2t94QK5dsxUZGXfPJ8Nx7wA9LHr5chxjSMkbNft"
+    },
+    "4AMqXyMdrn33wd8XiWhQ3YH1NYqoe5J3tgiHtbD7Ary4vUdAN1jgjZe7ooHc4ThY5gZUB8S6R8AFjhY3pUZyxZUP": {
+      "decoder_version": "r2-raydium-amm-v4-owner-balances-1",
+      "economic_at": "2026-09-26T09:39:29+00:00",
+      "fee_lamports": 10091,
+      "kind": "unknown",
+      "legs": [
+        {
+          "decimals": 6,
+          "delta_base": "474889281",
+          "mint": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v"
+        },
+        {
+          "decimals": 6,
+          "delta_base": "-1395731944",
+          "mint": "JUPyiwrYJFskUPiHa7hkeR8VUtAeFoSYbKedZNsDvCN"
+        }
+      ],
+      "quality": "partial",
+      "receipt": {
+        "archive": "data/r2-20260926/source/attempt-0172.json",
+        "attempt": 172,
+        "received_at": "2026-09-26T09:41:15.762401+00:00",
+        "response_hash": "12a26b45974a38f31926e5cd3e216628dfae6d3102a10e9748740272740e36ad"
+      },
+      "status": "fetched",
+      "usd_value": null,
+      "wallet": "CreQJ2t94QK5dsxUZGXfPJ8Nx7wA9LHr5chxjSMkbNft"
+    },
+    "4EzVR5PwG2WCbF8h9X4yYW9v8Ai8fA66wb5cMRSocjZVgGPaG61PqBuyK1ww34MMtjDye8cV8pZqJVefdSsGCnGh": {
+      "decoder_version": "r2-raydium-amm-v4-owner-balances-1",
+      "economic_at": "2026-09-26T09:36:25+00:00",
+      "fee_lamports": 5000,
+      "kind": "unknown",
+      "legs": [
+        {
+          "decimals": 6,
+          "delta_base": "4394960445",
+          "mint": "JUPyiwrYJFskUPiHa7hkeR8VUtAeFoSYbKedZNsDvCN"
+        },
+        {
+          "decimals": 9,
+          "delta_base": "-12502117744",
+          "mint": "So11111111111111111111111111111111111111112"
+        }
+      ],
+      "quality": "partial_route",
+      "receipt": {
+        "archive": "data/r2-20260926/source/attempt-0155.json",
+        "attempt": 155,
+        "received_at": "2026-09-26T09:40:06.421572+00:00",
+        "response_hash": "efb04b1f8527f5eced5a816016839a75f8a20594b40dcb8b8ca427d8e83e8d7f"
+      },
+      "status": "fetched",
+      "usd_value": null,
+      "wallet": "CreQJ2t94QK5dsxUZGXfPJ8Nx7wA9LHr5chxjSMkbNft"
+    },
+    "4HNw4UUpayDYjjbtKkcMKGWuNWuPyukyXQNzjk3d4A85uo4suNaX3UnZDS4TThn8TcqEnkdGfAUE8eNFgjgxkVjL": {
+      "decoder_version": "r2-raydium-amm-v4-owner-balances-1",
+      "economic_at": "2026-09-26T09:42:06+00:00",
+      "fee_lamports": 5326,
+      "kind": "failed",
+      "legs": [],
+      "quality": "complete",
+      "receipt": {
+        "archive": "data/r2-20260926/source/attempt-0198.json",
+        "attempt": 198,
+        "received_at": "2026-09-26T09:43:06.749696+00:00",
+        "response_hash": "d54095c10aa94f13df6372e7efdd7ae662c67f0dc51b5216e98a1f4805064e66"
+      },
+      "status": "fetched",
+      "usd_value": null,
+      "wallet": "MfDuWeqSHEqTFVYZ7LoexgAK9dxk7cy4DFJWjWMGVWa"
+    },
+    "4NiS91iczbBhDU2M29WYNsnH6EWq5pkAfvrryD6DjqVrHhdYDFq4xZvsDHxSnPxUvLCykUmiSZu38YRH5ofGU18F": {
+      "decoder_version": "r2-raydium-amm-v4-owner-balances-1",
+      "economic_at": "2026-09-26T09:34:05+00:00",
+      "fee_lamports": 6510,
+      "kind": "failed",
+      "legs": [],
+      "quality": "complete",
+      "receipt": {
+        "archive": "data/r2-20260926/source/attempt-0130.json",
+        "attempt": 130,
+        "received_at": "2026-09-26T09:35:37.236138+00:00",
+        "response_hash": "b8b9edfe4dd0e2369c771cf7ae35750d030e00d4acca2481a52b90c98bcb4ebf"
+      },
+      "status": "fetched",
+      "usd_value": null,
+      "wallet": "CreQJ2t94QK5dsxUZGXfPJ8Nx7wA9LHr5chxjSMkbNft"
+    },
+    "4Rs9Mci9AgS1zfGEBaondhLsFWBgL9SkAXQ9C6XkRHnwRZnuTVh3U6yTqNXaCoxdWjR3F7vnLiD8mP1EbG8H6Rk5": {
+      "decoder_version": "r2-raydium-amm-v4-owner-balances-1",
+      "economic_at": "2026-09-26T09:42:06+00:00",
+      "fee_lamports": 5000,
+      "kind": "transfer",
+      "legs": [
+        {
+          "decimals": 9,
+          "delta_base": "-8340283532",
+          "mint": "So11111111111111111111111111111111111111112"
+        }
+      ],
+      "quality": "complete",
+      "receipt": {
+        "archive": "data/r2-20260926/source/attempt-0194.json",
+        "attempt": 194,
+        "received_at": "2026-09-26T09:42:50.729253+00:00",
+        "response_hash": "d548c9af842d697301d8310eac26320b1f58237b70e0574ff74790bd77f9766d"
+      },
+      "status": "fetched",
+      "usd_value": null,
+      "wallet": "MfDuWeqSHEqTFVYZ7LoexgAK9dxk7cy4DFJWjWMGVWa"
+    },
+    "4SRfcwPnsEahCBj5RorSkW16dbMyvuUHmWzAFsWHeJMK7JwPcjB4DJyYB5kmCCsmtTsJjAD8GJKKzduKgT9aDn4W": {
+      "decoder_version": "r2-raydium-amm-v4-owner-balances-1",
+      "economic_at": "2026-09-26T09:37:44+00:00",
+      "fee_lamports": 17846,
+      "kind": "failed",
+      "legs": [],
+      "quality": "complete",
+      "receipt": {
+        "archive": "data/r2-20260926/source/attempt-0160.json",
+        "attempt": 160,
+        "received_at": "2026-09-26T09:40:26.429955+00:00",
+        "response_hash": "e2b22af598818f362194ee08710eebfc6904727a5163598dbbcb5996820ce335"
+      },
+      "status": "fetched",
+      "usd_value": null,
+      "wallet": "CreQJ2t94QK5dsxUZGXfPJ8Nx7wA9LHr5chxjSMkbNft"
+    },
+    "4ZRidCvBwMXCAVZCUjvB6D3PEtdeetHDL4fam9mu2rkWhmgcM3WU6rLofdgb4QjTckDx7eAyNVvJPAHLoFf3NUoi": {
+      "decoder_version": "r2-raydium-amm-v4-owner-balances-1",
+      "economic_at": "2026-09-26T09:40:54+00:00",
+      "fee_lamports": 6066,
+      "kind": "failed",
+      "legs": [],
+      "quality": "complete",
+      "receipt": {
+        "archive": "data/r2-20260926/source/attempt-0177.json",
+        "attempt": 177,
+        "received_at": "2026-09-26T09:41:36.427858+00:00",
+        "response_hash": "80b2777d76dd7e93bc3ad5cf894fd7413c7e66430a881596271195ab79bf78fd"
+      },
+      "status": "fetched",
+      "usd_value": null,
+      "wallet": "MfDuWeqSHEqTFVYZ7LoexgAK9dxk7cy4DFJWjWMGVWa"
+    },
+    "4ZS3c1Cdm7eD5nyGcYCzebHa5tmQaqoz4dW6Lt9FtZRK1mPrKfiYjk7BKwfwfzqd65hZF8K6BCLSdhKE5abMG5LM": {
+      "decoder_version": "r2-raydium-amm-v4-owner-balances-1",
+      "economic_at": "2026-09-26T09:34:51+00:00",
+      "fee_lamports": 23604,
+      "kind": "unknown",
+      "legs": [
+        {
+          "decimals": 6,
+          "delta_base": "1474273920",
+          "mint": "JUPyiwrYJFskUPiHa7hkeR8VUtAeFoSYbKedZNsDvCN"
+        },
+        {
+          "decimals": 9,
+          "delta_base": "-4167578680",
+          "mint": "So11111111111111111111111111111111111111112"
+        }
+      ],
+      "quality": "unsupported_program",
+      "receipt": {
+        "archive": "data/r2-20260926/source/attempt-0145.json",
+        "attempt": 145,
+        "received_at": "2026-09-26T09:38:09.854265+00:00",
+        "response_hash": "3ca9ce8d0b96a41f7efc105ebfb69a9e6d9a3441a22983399787cc6dd7c5aac3"
+      },
+      "status": "fetched",
+      "usd_value": null,
+      "wallet": "CreQJ2t94QK5dsxUZGXfPJ8Nx7wA9LHr5chxjSMkbNft"
+    },
+    "4ZqHr89ZLmkWjKpbHjriLTiMkvNBmgkyQwK98petJoioFbHhbYE2csB3kQ4x7mToaEQ9qw5QNxQfyXGc5FoSnzmw": {
+      "decoder_version": "r2-raydium-amm-v4-owner-balances-1",
+      "economic_at": "2026-09-26T09:36:24+00:00",
+      "fee_lamports": 5296,
+      "kind": "unknown",
+      "legs": [
+        {
+          "decimals": 6,
+          "delta_base": "878992089",
+          "mint": "JUPyiwrYJFskUPiHa7hkeR8VUtAeFoSYbKedZNsDvCN"
+        },
+        {
+          "decimals": 9,
+          "delta_base": "-2500423550",
+          "mint": "So11111111111111111111111111111111111111112"
+        }
+      ],
+      "quality": "partial_route",
+      "receipt": {
+        "archive": "data/r2-20260926/source/attempt-0154.json",
+        "attempt": 154,
+        "received_at": "2026-09-26T09:40:02.418150+00:00",
+        "response_hash": "9691723a1987517038556dacc7fba93c7d2d4ee01b34415d459e040858eb8624"
+      },
+      "status": "fetched",
+      "usd_value": null,
+      "wallet": "CreQJ2t94QK5dsxUZGXfPJ8Nx7wA9LHr5chxjSMkbNft"
+    },
+    "4ghuhHqLtfpkVPN1UUsWZ5ipidiGUfSpfagtrSaCZ1qNYMT3GoaLqpntexVJLeXFaEPSbqZxdrwNRdYAkX2N5tdj": {
+      "decoder_version": "r2-raydium-amm-v4-owner-balances-1",
+      "economic_at": "2026-09-26T09:36:35+00:00",
+      "fee_lamports": 20277,
+      "kind": "failed",
+      "legs": [],
+      "quality": "complete",
+      "receipt": {
+        "archive": "data/r2-20260926/source/attempt-0157.json",
+        "attempt": 157,
+        "received_at": "2026-09-26T09:40:14.425607+00:00",
+        "response_hash": "5a4f334352518ce0985293d0ba1d94c0fef0b1d7a83fbf942d389e2e9efff1e7"
+      },
+      "status": "fetched",
+      "usd_value": null,
+      "wallet": "CreQJ2t94QK5dsxUZGXfPJ8Nx7wA9LHr5chxjSMkbNft"
+    },
+    "4i7Ud7wD7MMVfCtkARyhAEcjWQLzh3GLmKw6oqb4K7BrtAFnRVF5LHNA3Ymy74MTKhRtGFxrs2Nh6eptS4qBGEXk": {
+      "decoder_version": "r2-raydium-amm-v4-owner-balances-1",
+      "economic_at": "2026-09-26T09:41:15+00:00",
+      "fee_lamports": 12050,
+      "kind": "unknown",
+      "legs": [
+        {
+          "decimals": 9,
+          "delta_base": "4171597588",
+          "mint": "So11111111111111111111111111111111111111112"
+        },
+        {
+          "decimals": 8,
+          "delta_base": "-25125435930",
+          "mint": "rndrizKT3MK1iimdxRdWabcF7Zg7AR5T4nud4EkHBof"
+        }
+      ],
+      "quality": "partial",
+      "receipt": {
+        "archive": "data/r2-20260926/source/attempt-0185.json",
+        "attempt": 185,
+        "received_at": "2026-09-26T09:42:14.014849+00:00",
+        "response_hash": "c2b347d3602235bb4094a880feb60559e594627e304daa6a65b908d7cf61515f"
+      },
+      "status": "fetched",
+      "usd_value": null,
+      "wallet": "CreQJ2t94QK5dsxUZGXfPJ8Nx7wA9LHr5chxjSMkbNft"
+    },
+    "4jXoseicBZh1ESitBZMmKKowDEvPqVrBYhVCyXZzgdg2PGvbktckng7i8v3R2BxaMpSBkXs7YGAcr9jek7eBSAAN": {
+      "decoder_version": "r2-raydium-amm-v4-owner-balances-1",
+      "economic_at": "2026-09-26T09:37:57+00:00",
+      "fee_lamports": 10105,
+      "kind": "unknown",
+      "legs": [
+        {
+          "decimals": 6,
+          "delta_base": "1000001100",
+          "mint": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v"
+        },
+        {
+          "decimals": 6,
+          "delta_base": "-1000125196",
+          "mint": "Es9vMFrzaCERmJfrF4H2FYD4KCoNkY11McCe8BenwNYB"
+        }
+      ],
+      "quality": "partial",
+      "receipt": {
+        "archive": "data/r2-20260926/source/attempt-0166.json",
+        "attempt": 166,
+        "received_at": "2026-09-26T09:40:51.105890+00:00",
+        "response_hash": "c64c0472fe5235d18b162949ff64a934e0c4d727497826ef53e4e648d9196963"
+      },
+      "status": "fetched",
+      "usd_value": null,
+      "wallet": "CreQJ2t94QK5dsxUZGXfPJ8Nx7wA9LHr5chxjSMkbNft"
+    },
+    "4pA2oi2Me6ovs7rDpQXbZvmyZTCwCxGWym2uqSdEHofJpHXQ92dHVhgKADaoH4YJN8BfKcZP6qP2dE9n6u7HqQv6": {
+      "decoder_version": "r2-raydium-amm-v4-owner-balances-1",
+      "economic_at": "2026-09-26T09:42:12+00:00",
+      "fee_lamports": 39406,
+      "kind": "swap_balance_candidate",
+      "legs": [
+        {
+          "decimals": 6,
+          "delta_base": "7415054099",
+          "mint": "GJAFwWjJ3vnTsrQVabjBVK2TYB1YtRCQXRDfDgUnpump"
+        },
+        {
+          "decimals": 9,
+          "delta_base": "-693416738",
+          "mint": "So11111111111111111111111111111111111111112"
+        }
+      ],
+      "quality": "requires_trade_reference",
+      "receipt": {
+        "archive": "data/r2-20260926/source/attempt-0200.json",
+        "attempt": 200,
+        "received_at": "2026-09-26T09:43:15.345215+00:00",
+        "response_hash": "c889d8e74076a98d4d5090a1076e2906ddac72dd5da9145f6e855a59c3a826e0"
+      },
+      "status": "fetched",
+      "usd_value": null,
+      "wallet": "MfDuWeqSHEqTFVYZ7LoexgAK9dxk7cy4DFJWjWMGVWa"
+    },
+    "4zPr4Withfad1YRwX236PH1iDxU1FVRVB7DdSux1yXpWYQq1tthFycppWhbBawusbqn9pBKtK3dNrcvtZKqroEVR": {
+      "decoder_version": "r2-raydium-amm-v4-owner-balances-1",
+      "economic_at": "2026-09-26T09:42:06+00:00",
+      "fee_lamports": 5000,
+      "kind": "unknown",
+      "legs": [
+        {
+          "decimals": 6,
+          "delta_base": "-457444011",
+          "mint": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v"
+        },
+        {
+          "decimals": 6,
+          "delta_base": "10262508815",
+          "mint": "KMNo3nJsBXfcpJTVhZcXLW7RmTwTt4GVFE7suUBo9sS"
+        }
+      ],
+      "quality": "unsupported_program",
+      "receipt": {
+        "archive": "data/r2-20260926/source/attempt-0197.json",
+        "attempt": 197,
+        "received_at": "2026-09-26T09:43:02.739254+00:00",
+        "response_hash": "89a5fd60a2739d2d0b4bf7ba9c51568dbb40aaf159b014cede0e8113abc56acd"
+      },
+      "status": "fetched",
+      "usd_value": null,
+      "wallet": "MfDuWeqSHEqTFVYZ7LoexgAK9dxk7cy4DFJWjWMGVWa"
+    },
+    "52t1jgNdyUF8J8jhNzvEF9U199aXbCRbGJ4y3d9JgJgKm5H7gz9hhZ4TGTaVstvjj3mxyEh9ZC4h7fMMFHWYubEa": {
+      "decoder_version": "r2-raydium-amm-v4-owner-balances-1",
+      "economic_at": "2026-09-26T09:34:32+00:00",
+      "fee_lamports": 5906,
+      "kind": "unknown",
+      "legs": [
+        {
+          "decimals": 6,
+          "delta_base": "49850480486",
+          "mint": "2zMMhcVQEXDtdE6vsFS7S7D5oUodfJHE8vd1gnBouauv"
+        },
+        {
+          "decimals": 6,
+          "delta_base": "-500223073",
+          "mint": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v"
+        }
+      ],
+      "quality": "partial_route",
+      "receipt": {
+        "archive": "data/r2-20260926/source/attempt-0142.json",
+        "attempt": 142,
+        "received_at": "2026-09-26T09:37:39.197490+00:00",
+        "response_hash": "042fdbef95b93bebbe213a1b505cae18e4d1311bbffc4f8b273a9c6742e1c435"
+      },
+      "status": "fetched",
+      "usd_value": null,
+      "wallet": "CreQJ2t94QK5dsxUZGXfPJ8Nx7wA9LHr5chxjSMkbNft"
+    },
+    "53nc8yNpWXRqFcKXWwBThcFGXhZAuPnzCTiCHzdkMaxKq7MCLEkNRPEgQHZvaPhWbFikGgKhY781ExSCw4KBfehw": {
+      "decoder_version": "r2-raydium-amm-v4-owner-balances-1",
+      "economic_at": "2026-09-26T09:40:54+00:00",
+      "fee_lamports": 6066,
+      "kind": "unknown",
+      "legs": [
+        {
+          "decimals": 6,
+          "delta_base": "4756674858",
+          "mint": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v"
+        },
+        {
+          "decimals": 9,
+          "delta_base": "-39667978525",
+          "mint": "So11111111111111111111111111111111111111112"
+        }
+      ],
+      "quality": "unsupported_program",
+      "receipt": {
+        "archive": "data/r2-20260926/source/attempt-0176.json",
+        "attempt": 176,
+        "received_at": "2026-09-26T09:41:31.774022+00:00",
+        "response_hash": "be9d636d6361a3c50428106cfbe69f09a7725e7edde6bbe378198a34fdeaf964"
+      },
+      "status": "fetched",
+      "usd_value": null,
+      "wallet": "MfDuWeqSHEqTFVYZ7LoexgAK9dxk7cy4DFJWjWMGVWa"
+    },
+    "55oM3LjyAM6enUXSK7invQWkaCkmYYk8Tx3CuhTXHsNkbTSef9dYLBMfTRs7h1UsEaEAViaYt2P173Zgw8mEU8tu": {
+      "decoder_version": "r2-raydium-amm-v4-owner-balances-1",
+      "economic_at": "2026-09-26T09:38:25+00:00",
+      "fee_lamports": 5754,
+      "kind": "failed",
+      "legs": [],
+      "quality": "complete",
+      "receipt": {
+        "archive": "data/r2-20260926/source/attempt-0171.json",
+        "attempt": 171,
+        "received_at": "2026-09-26T09:41:11.759613+00:00",
+        "response_hash": "8b6151695f90935ac9f689d20ac36599d27470e58e641337ef224b0850a03521"
+      },
+      "status": "fetched",
+      "usd_value": null,
+      "wallet": "CreQJ2t94QK5dsxUZGXfPJ8Nx7wA9LHr5chxjSMkbNft"
+    },
+    "55r4qpM9aCFN8W2otE5EyH6VUPNvRSRN1G91fDzJCEyteiynM8wf7jLNTuHRY3WXz8RMTAF6JXYcMHdRqtZL1hir": {
+      "decoder_version": "r2-raydium-amm-v4-owner-balances-1",
+      "economic_at": "2026-09-26T09:42:05+00:00",
+      "fee_lamports": 33254,
+      "kind": "failed",
+      "legs": [],
+      "quality": "complete",
+      "receipt": {
+        "archive": "data/r2-20260926/source/attempt-0190.json",
+        "attempt": 190,
+        "received_at": "2026-09-26T09:42:34.047540+00:00",
+        "response_hash": "b1bee0db3c54f02eec026e6533d074583dc7f783d10d8f77e073228940975019"
+      },
+      "status": "fetched",
+      "usd_value": null,
+      "wallet": "MfDuWeqSHEqTFVYZ7LoexgAK9dxk7cy4DFJWjWMGVWa"
+    },
+    "56o3MnmZtUZPwmUXUSYHxqgf9H6xEcY5sfay872QQJ7PNSf12998xbLRQeVcJyxsqgpJBJPzMtQEDyQZb6uhtWff": {
+      "decoder_version": "r2-raydium-amm-v4-owner-balances-1",
+      "economic_at": "2026-09-26T09:34:32+00:00",
+      "fee_lamports": 6772,
+      "kind": "unknown",
+      "legs": [
+        {
+          "decimals": 6,
+          "delta_base": "49852934120",
+          "mint": "2zMMhcVQEXDtdE6vsFS7S7D5oUodfJHE8vd1gnBouauv"
+        },
+        {
+          "decimals": 6,
+          "delta_base": "-500247694",
+          "mint": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v"
+        }
+      ],
+      "quality": "partial_route",
+      "receipt": {
+        "archive": "data/r2-20260926/source/attempt-0141.json",
+        "attempt": 141,
+        "received_at": "2026-09-26T09:37:29.299600+00:00",
+        "response_hash": "226cc3a118329cedb40134d3b833bfab2e6fbe34bc5a0a3f0ce5903665e5e3cb"
+      },
+      "status": "fetched",
+      "usd_value": null,
+      "wallet": "CreQJ2t94QK5dsxUZGXfPJ8Nx7wA9LHr5chxjSMkbNft"
+    },
+    "58j1jTc71Qk9L7KWa58YkR4XKm3LWRodSQSEvTj3i6LkVMX6LCgxEm3J87qJk1MBgujHr2qgMU7fUCufjQWhfAeK": {
+      "decoder_version": "r2-raydium-amm-v4-owner-balances-1",
+      "economic_at": "2026-09-26T09:37:47+00:00",
+      "fee_lamports": 9174,
+      "kind": "failed",
+      "legs": [],
+      "quality": "complete",
+      "receipt": {
+        "archive": "data/r2-20260926/source/attempt-0163.json",
+        "attempt": 163,
+        "received_at": "2026-09-26T09:40:39.094405+00:00",
+        "response_hash": "92496748298e1cf7773c6fb535e3aa68c87772b1c77dba1d96970cec0b4d19f2"
+      },
+      "status": "fetched",
+      "usd_value": null,
+      "wallet": "CreQJ2t94QK5dsxUZGXfPJ8Nx7wA9LHr5chxjSMkbNft"
+    },
+    "5Ef3BaHy8AdZpuGzwK8MtLWfZGvRBwAmNLDsffPDzZUnu1NT23p8M1F2DU9KVTKbSgRpknpHf9m5NqVnW5xwopzP": {
+      "decoder_version": "r2-raydium-amm-v4-owner-balances-1",
+      "economic_at": "2026-09-26T09:38:15+00:00",
+      "fee_lamports": 8013,
+      "kind": "failed",
+      "legs": [],
+      "quality": "complete",
+      "receipt": {
+        "archive": "data/r2-20260926/source/attempt-0168.json",
+        "attempt": 168,
+        "received_at": "2026-09-26T09:40:59.095836+00:00",
+        "response_hash": "3c02c95f9037bec2875d9055b31ac73eb6861058b0f2727e94980f6f79fd4680"
+      },
+      "status": "fetched",
+      "usd_value": null,
+      "wallet": "CreQJ2t94QK5dsxUZGXfPJ8Nx7wA9LHr5chxjSMkbNft"
+    },
+    "5KVTcYEL1gxLKWdqrDojubs8iwF3cf4SWtqkr32y9XZtsSBBXnMhCTY6peNBC2yLi9HD2LqKZ1vgBVgDi4ZEQtUP": {
+      "decoder_version": "r2-raydium-amm-v4-owner-balances-1",
+      "economic_at": "2026-09-26T09:42:16+00:00",
+      "fee_lamports": 407008,
+      "kind": "swap_balance_candidate",
+      "legs": [
+        {
+          "decimals": 6,
+          "delta_base": "2762502804",
+          "mint": "9BB6NFEcjBCtnNLFko2FqVQBq8HHM13kCyYcdQbgpump"
+        },
+        {
+          "decimals": 9,
+          "delta_base": "-4411415041",
+          "mint": "So11111111111111111111111111111111111111112"
+        }
+      ],
+      "quality": "requires_trade_reference",
+      "receipt": {
+        "archive": "data/r2-20260926/source/attempt-0202.json",
+        "attempt": 202,
+        "received_at": "2026-09-26T09:43:23.353872+00:00",
+        "response_hash": "059d9b86aa56f9605b09e623b6f7a65e887baa99efaaa7c302b6e83e1c5e2451"
+      },
+      "status": "fetched",
+      "usd_value": null,
+      "wallet": "MfDuWeqSHEqTFVYZ7LoexgAK9dxk7cy4DFJWjWMGVWa"
+    },
+    "5XHGMbmFY3i9ttKoGv73C4QPfA2Rn5iVFt98hmVrRGWAeVqVawTLSMAgCwQnyKHFcFXdYgwHGYgWsAHVBWBr3gpC": {
+      "decoder_version": "r2-raydium-amm-v4-owner-balances-1",
+      "economic_at": "2026-09-26T09:34:03+00:00",
+      "fee_lamports": 10597,
+      "kind": "failed",
+      "legs": [],
+      "quality": "complete",
+      "receipt": {
+        "archive": "data/r2-20260926/source/attempt-0129.json",
+        "attempt": 129,
+        "received_at": "2026-09-26T09:35:26.609833+00:00",
+        "response_hash": "504951e920478ea36c6bd7709619991c4f511c4f3f90aa685210fd48774a4dde"
+      },
+      "status": "fetched",
+      "usd_value": null,
+      "wallet": "CreQJ2t94QK5dsxUZGXfPJ8Nx7wA9LHr5chxjSMkbNft"
+    },
+    "5YassxMu4QexVjbuLuYVXD7JZATinCcYCBy6i8YcxMJGE8Lmie7G5zFiV8EFTP6xeU2xgPJN8qofSUe8ef9tvjjX": {
+      "decoder_version": "r2-raydium-amm-v4-owner-balances-1",
+      "economic_at": "2026-09-26T09:42:16+00:00",
+      "fee_lamports": 22789,
+      "kind": "failed",
+      "legs": [],
+      "quality": "complete",
+      "receipt": {
+        "archive": "data/r2-20260926/source/attempt-0203.json",
+        "attempt": 203,
+        "received_at": "2026-09-26T09:43:27.352626+00:00",
+        "response_hash": "30019ce187bee0950826957df8f943f311b0a3c1e9ab6e56fe5707572905297b"
+      },
+      "status": "fetched",
+      "usd_value": null,
+      "wallet": "MfDuWeqSHEqTFVYZ7LoexgAK9dxk7cy4DFJWjWMGVWa"
+    },
+    "5fHhC1sHdAMasrDjR1T19aCXPhuPjs5s3QCYLe5C6GUfTg9m91c9tDzSRwMA5USwVZ8oZeFUKzZqZJH3aoK9Ljnz": {
+      "decoder_version": "r2-raydium-amm-v4-owner-balances-1",
+      "economic_at": "2026-09-26T09:31:19+00:00",
+      "fee_lamports": 10088,
+      "kind": "unknown",
+      "legs": [
+        {
+          "decimals": 6,
+          "delta_base": "475345482",
+          "mint": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v"
+        },
+        {
+          "decimals": 6,
+          "delta_base": "-475403196",
+          "mint": "Es9vMFrzaCERmJfrF4H2FYD4KCoNkY11McCe8BenwNYB"
+        }
+      ],
+      "quality": "partial",
+      "receipt": {
+        "archive": "data/r2-20260926/source/attempt-0125.json",
+        "attempt": 125,
+        "received_at": "2026-09-26T09:34:18.739670+00:00",
+        "response_hash": "915fbdd0dc6d09d686e4d0d1466fc482bc126f4524f51b50e55da77415f43657"
+      },
+      "status": "fetched",
+      "usd_value": null,
+      "wallet": "CreQJ2t94QK5dsxUZGXfPJ8Nx7wA9LHr5chxjSMkbNft"
+    },
+    "5gsw9hpZ7xHfpxSMZQBZT7Y4MxmtfyePB3hSatzcmGKb85PwA1j9yUFKNqWYBduk49EJ3vFnekMHNJ3tnYmo86eu": {
+      "decoder_version": "r2-raydium-amm-v4-owner-balances-1",
+      "economic_at": "2026-09-26T09:37:11+00:00",
+      "fee_lamports": 5000,
+      "kind": "unknown",
+      "legs": [
+        {
+          "decimals": 6,
+          "delta_base": "1464772227",
+          "mint": "JUPyiwrYJFskUPiHa7hkeR8VUtAeFoSYbKedZNsDvCN"
+        },
+        {
+          "decimals": 9,
+          "delta_base": "-4168462003",
+          "mint": "So11111111111111111111111111111111111111112"
+        }
+      ],
+      "quality": "unsupported_program",
+      "receipt": {
+        "archive": "data/r2-20260926/source/attempt-0159.json",
+        "attempt": 159,
+        "received_at": "2026-09-26T09:40:22.432726+00:00",
+        "response_hash": "e4b5ee174bbd0a57d9c7cb96cb60a694098f91d51e1b6111ab4f24ac63053de4"
+      },
+      "status": "fetched",
+      "usd_value": null,
+      "wallet": "CreQJ2t94QK5dsxUZGXfPJ8Nx7wA9LHr5chxjSMkbNft"
+    },
+    "5jRBmip5NUdBz1Pttq73zp89eUa2Kvssdt1zoWBT7wUh5TsWLUfyJyS7UEqVzM5961y82u2ynDZTwxyVzLsWgqbo": {
+      "decoder_version": "r2-raydium-amm-v4-owner-balances-1",
+      "economic_at": "2026-09-26T09:34:09+00:00",
+      "fee_lamports": 12324,
+      "kind": "failed",
+      "legs": [],
+      "quality": "complete",
+      "receipt": {
+        "archive": "data/r2-20260926/source/attempt-0132.json",
+        "attempt": 132,
+        "received_at": "2026-09-26T09:35:57.359885+00:00",
+        "response_hash": "4cfb05540b711cd6c669e5a7bbd360cde45574a57f7d38e98c27d94870e898b0"
+      },
+      "status": "fetched",
+      "usd_value": null,
+      "wallet": "CreQJ2t94QK5dsxUZGXfPJ8Nx7wA9LHr5chxjSMkbNft"
+    },
+    "5m3wGzMkdzyVXRSndidbPnTdSUmxjWVvPNwSRJWijmwcMQEhxmcMg6ejY3pRtoXyntczuwb4YRGVgLNhPLNEtq3o": {
+      "decoder_version": "r2-raydium-amm-v4-owner-balances-1",
+      "economic_at": "2026-09-26T09:41:38+00:00",
+      "fee_lamports": 10137,
+      "kind": "wrap",
+      "legs": [
+        {
+          "decimals": 6,
+          "delta_base": "-137702481",
+          "mint": "9BB6NFEcjBCtnNLFko2FqVQBq8HHM13kCyYcdQbgpump"
+        },
+        {
+          "decimals": 9,
+          "delta_base": "220000000",
+          "mint": "So11111111111111111111111111111111111111112"
+        }
+      ],
+      "quality": "complete",
+      "receipt": {
+        "archive": "data/r2-20260926/source/attempt-0188.json",
+        "attempt": 188,
+        "received_at": "2026-09-26T09:42:26.015203+00:00",
+        "response_hash": "9b1f6b14f56fc4a7754fd1b597c1786938e17d4b93ecce14d3dabf559e8dbde9"
+      },
+      "status": "fetched",
+      "usd_value": null,
+      "wallet": "CreQJ2t94QK5dsxUZGXfPJ8Nx7wA9LHr5chxjSMkbNft"
+    },
+    "5m5b4ywuG5Agv3z3SMVtMzdmyUfDaNqNyJSqzdMw8c9be8FvcXp7PrGZUJejJo3GApXcEwDPdtFudc2xE17t7SPh": {
+      "decoder_version": "r2-raydium-amm-v4-owner-balances-1",
+      "economic_at": "2026-09-26T09:42:12+00:00",
+      "fee_lamports": 5000,
+      "kind": "failed",
+      "legs": [],
+      "quality": "complete",
+      "receipt": {
+        "archive": "data/r2-20260926/source/attempt-0201.json",
+        "attempt": 201,
+        "received_at": "2026-09-26T09:43:19.512533+00:00",
+        "response_hash": "6eaccbedd544a9d21141df2b18d55295ef959a3f864ed7c33bd12185ab2d22ed"
+      },
+      "status": "fetched",
+      "usd_value": null,
+      "wallet": "MfDuWeqSHEqTFVYZ7LoexgAK9dxk7cy4DFJWjWMGVWa"
+    },
+    "5mN7Ruz1MW7qgpFgNbP7F3SYo6tqC4AtHebfdZsc4yCiMAVoH5FD5QYFUwZJcxWxCYB51qsuawVg6bhb3u9X9DKg": {
+      "decoder_version": "r2-raydium-amm-v4-owner-balances-1",
+      "economic_at": "2026-09-26T09:34:52+00:00",
+      "fee_lamports": 9263,
+      "kind": "failed",
+      "legs": [],
+      "quality": "complete",
+      "receipt": {
+        "archive": "data/r2-20260926/source/attempt-0146.json",
+        "attempt": 146,
+        "received_at": "2026-09-26T09:38:20.513097+00:00",
+        "response_hash": "b985849a6654d06ebbc28d0c88ba84771bf36408f2a561decfe4a4a761d7f7d0"
+      },
+      "status": "fetched",
+      "usd_value": null,
+      "wallet": "CreQJ2t94QK5dsxUZGXfPJ8Nx7wA9LHr5chxjSMkbNft"
+    },
+    "61afpwXaPBDyWY6jsQSEDuoUAysvhhwESceX9CxUKjx9bkVH7tUaNeU2dKcZno93RDmxFhB6LVcK9AeT2AbtYhQr": {
+      "decoder_version": "r2-raydium-amm-v4-owner-balances-1",
+      "economic_at": "2026-09-26T09:34:11+00:00",
+      "fee_lamports": 7352,
+      "kind": "unknown",
+      "legs": [
+        {
+          "decimals": 6,
+          "delta_base": "1799513647",
+          "mint": "Dz9mQ9NzkBcCsuGPFJ3r1bS4wgqKMHBPiVuniW8Mbonk"
+        },
+        {
+          "decimals": 9,
+          "delta_base": "-4161783563",
+          "mint": "So11111111111111111111111111111111111111112"
+        }
+      ],
+      "quality": "unsupported_program",
+      "receipt": {
+        "archive": "data/r2-20260926/source/attempt-0134.json",
+        "attempt": 134,
+        "received_at": "2026-09-26T09:36:17.877925+00:00",
+        "response_hash": "91d1d3af115fd63ef4fd75ce288d40e3c0e082a475994a06f0f94eb969d6fc1d"
+      },
+      "status": "fetched",
+      "usd_value": null,
+      "wallet": "CreQJ2t94QK5dsxUZGXfPJ8Nx7wA9LHr5chxjSMkbNft"
+    },
+    "67H7w2a9PDkaK5BEjcQK56ef2RmHasQXkd4HubceGEThp62S2eS9HgqLaT6BpMQTbDQXZXSAG3PWDa785uWKUhE5": {
+      "decoder_version": "r2-raydium-amm-v4-owner-balances-1",
+      "economic_at": "2026-09-26T09:37:06+00:00",
+      "fee_lamports": 41663504,
+      "kind": "failed",
+      "legs": [],
+      "quality": "complete",
+      "receipt": {
+        "archive": "data/r2-20260926/source/attempt-0158.json",
+        "attempt": 158,
+        "received_at": "2026-09-26T09:40:18.425332+00:00",
+        "response_hash": "0b7e718a4865995f5f78008280f2a95b63e80ec13677668946cbce84af4d9ed0"
+      },
+      "status": "fetched",
+      "usd_value": null,
+      "wallet": "CreQJ2t94QK5dsxUZGXfPJ8Nx7wA9LHr5chxjSMkbNft"
+    },
+    "ANytPf9BfCWCDXWkBMQa2bJUSi3M1vCpAGXFhvcK5QfcUdU24XFdqTF2VHtwHugZVtW5ab5rV1ADq9cR8dsQFvR": {
+      "decoder_version": "r2-raydium-amm-v4-owner-balances-1",
+      "economic_at": "2026-09-26T09:40:45+00:00",
+      "fee_lamports": 100121,
+      "kind": "swap_balance_candidate",
+      "legs": [
+        {
+          "decimals": 6,
+          "delta_base": "28591079459",
+          "mint": "KENJSUYLASHUMfHyy5o4Hp2FdNqZg1AsUPhfH2kYvEP"
+        },
+        {
+          "decimals": 9,
+          "delta_base": "-4148209979",
+          "mint": "So11111111111111111111111111111111111111112"
+        }
+      ],
+      "quality": "requires_trade_reference",
+      "receipt": {
+        "archive": "data/r2-20260926/source/attempt-0183.json",
+        "attempt": 183,
+        "received_at": "2026-09-26T09:42:05.294078+00:00",
+        "response_hash": "543af34ffb5e22040abd817f05f6488feb0a3c017bc57b40add8a498e5625c65"
+      },
+      "status": "fetched",
+      "usd_value": null,
+      "wallet": "CreQJ2t94QK5dsxUZGXfPJ8Nx7wA9LHr5chxjSMkbNft"
+    },
+    "GHK7DeqQNjcP9GiWgTuwGJi6yHhvzwvf1Es6UZSWXBBYbvTVpXEQcUbSQ4FAcg2xD48UmZ48xjE2RDGDUp6h73B": {
+      "decoder_version": "r2-raydium-amm-v4-owner-balances-1",
+      "economic_at": "2026-09-26T09:37:44+00:00",
+      "fee_lamports": 6169,
+      "kind": "failed",
+      "legs": [],
+      "quality": "complete",
+      "receipt": {
+        "archive": "data/r2-20260926/source/attempt-0161.json",
+        "attempt": 161,
+        "received_at": "2026-09-26T09:40:31.080727+00:00",
+        "response_hash": "b524edf573196bd7775c26acfc4fa498c994c377566cc6d5db59f5a6a79ac914"
+      },
+      "status": "fetched",
+      "usd_value": null,
+      "wallet": "CreQJ2t94QK5dsxUZGXfPJ8Nx7wA9LHr5chxjSMkbNft"
+    },
+    "VCjhUjB1mLka9JBmxLoe4SiGztg7Eyb4LjiUqGwVYvKexijpfGYoRYeE5PTzVg9dLvkRviFTdXhTR5D3eLpfNmY": {
+      "decoder_version": "r2-raydium-amm-v4-owner-balances-1",
+      "economic_at": "2026-09-26T09:34:31+00:00",
+      "fee_lamports": 5621,
+      "kind": "unknown",
+      "legs": [
+        {
+          "decimals": 6,
+          "delta_base": "49852934120",
+          "mint": "2zMMhcVQEXDtdE6vsFS7S7D5oUodfJHE8vd1gnBouauv"
+        },
+        {
+          "decimals": 6,
+          "delta_base": "-500247694",
+          "mint": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v"
+        }
+      ],
+      "quality": "partial_route",
+      "receipt": {
+        "archive": "data/r2-20260926/source/attempt-0140.json",
+        "attempt": 140,
+        "received_at": "2026-09-26T09:37:19.193467+00:00",
+        "response_hash": "6513a794390d7274ef097f5a65a9fdae0b7289a1f72263d5ff10506540156d7a"
+      },
+      "status": "fetched",
+      "usd_value": null,
+      "wallet": "CreQJ2t94QK5dsxUZGXfPJ8Nx7wA9LHr5chxjSMkbNft"
+    },
+    "czEBEqjhmASAe7ZSmxWn9jgrVxy8TRiRCVjsWcgwS79hH3fiLycU7mm5bP9Yp2v2xbzwmAdFd7rdYhbHWXRdLw5": {
+      "decoder_version": "r2-raydium-amm-v4-owner-balances-1",
+      "economic_at": "2026-09-26T09:31:10+00:00",
+      "fee_lamports": 59505,
+      "kind": "unknown",
+      "legs": [
+        {
+          "decimals": 6,
+          "delta_base": "-595438913",
+          "mint": "6p6xgHyF7AeE6TZkSmFsko444wqoP15icUSqi2jfGiPN"
+        },
+        {
+          "decimals": 6,
+          "delta_base": "1250590001",
+          "mint": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v"
+        }
+      ],
+      "quality": "partial_route",
+      "receipt": {
+        "archive": "data/r2-20260926/source/attempt-0124.json",
+        "attempt": 124,
+        "received_at": "2026-09-26T09:34:08.740884+00:00",
+        "response_hash": "a0ee9dbf1d9d6e6fbd02ce3f39429e5bab9cff23616488ce6b06bfc161ff244d"
+      },
+      "status": "fetched",
+      "usd_value": null,
+      "wallet": "CreQJ2t94QK5dsxUZGXfPJ8Nx7wA9LHr5chxjSMkbNft"
+    },
+    "fAVtMrTybab8ZdQfrXmrHumYvGLA1ty7XtwQtiEFhwmSgd8rPywPrVrVCNgWdWSrjv8xJWPDjrGCh2jxb2ASqhV": {
+      "decoder_version": "r2-raydium-amm-v4-owner-balances-1",
+      "economic_at": "2026-09-26T09:42:06+00:00",
+      "fee_lamports": 7072,
+      "kind": "failed",
+      "legs": [],
+      "quality": "complete",
+      "receipt": {
+        "archive": "data/r2-20260926/source/attempt-0196.json",
+        "attempt": 196,
+        "received_at": "2026-09-26T09:42:58.735939+00:00",
+        "response_hash": "90df84f93271b8f3774c004563e69728ac2d1faa49b1308e6af1cf494e6d84df"
+      },
+      "status": "fetched",
+      "usd_value": null,
+      "wallet": "MfDuWeqSHEqTFVYZ7LoexgAK9dxk7cy4DFJWjWMGVWa"
+    },
+    "iN59EARFMyLsUd1f1nyPvrC8xG7NxNGjrrGXutceYzLU6Fdu1TH9hSkWL1QAY43ZLw7iSQ1duRYi4SEsXUukkp4": {
+      "decoder_version": "r2-raydium-amm-v4-owner-balances-1",
+      "economic_at": "2026-09-26T09:39:53+00:00",
+      "fee_lamports": 10045,
+      "kind": "unknown",
+      "legs": [
+        {
+          "decimals": 6,
+          "delta_base": "499000000",
+          "mint": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v"
+        },
+        {
+          "decimals": 6,
+          "delta_base": "-6641303431",
+          "mint": "HZ1JovNiVvGrGNiiYvEozEVgZ58xaU3RKwX8eACQBCt3"
+        }
+      ],
+      "quality": "partial",
+      "receipt": {
+        "archive": "data/r2-20260926/source/attempt-0181.json",
+        "attempt": 181,
+        "received_at": "2026-09-26T09:41:57.303557+00:00",
+        "response_hash": "99103bdc27c8a611592aff4a3cf2488bb0e5ae23b0fd1ea137906cfec7e83301"
+      },
+      "status": "fetched",
+      "usd_value": null,
+      "wallet": "CreQJ2t94QK5dsxUZGXfPJ8Nx7wA9LHr5chxjSMkbNft"
+    },
+    "ioZsUxGNost46JvJU9LdqUpRqWzkqZjvNZcyYZXVv9tRRQkqBRthya4r3Xt8ZWgk46fr78dvY2Ddr81YzX72dkp": {
+      "decoder_version": "r2-raydium-amm-v4-owner-balances-1",
+      "economic_at": "2026-09-26T09:34:31+00:00",
+      "fee_lamports": 5000,
+      "kind": "unknown",
+      "legs": [
+        {
+          "decimals": 6,
+          "delta_base": "124706884751",
+          "mint": "2zMMhcVQEXDtdE6vsFS7S7D5oUodfJHE8vd1gnBouauv"
+        },
+        {
+          "decimals": 6,
+          "delta_base": "-1251367298",
+          "mint": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v"
+        }
+      ],
+      "quality": "partial_route",
+      "receipt": {
+        "archive": "data/r2-20260926/source/attempt-0136.json",
+        "attempt": 136,
+        "received_at": "2026-09-26T09:36:38.543847+00:00",
+        "response_hash": "2f80993c2ec6a4e6ffa58fa418ab6387a51881781c7246d3af48b313982461ae"
+      },
+      "status": "fetched",
+      "usd_value": null,
+      "wallet": "CreQJ2t94QK5dsxUZGXfPJ8Nx7wA9LHr5chxjSMkbNft"
+    },
+    "taBf3o6rnyuETnYdN2N7vexp5wffSTuqtpZGyN6Uy9WJ98WUf4U9JfhSVvurn9rAcn64a4yAeGmPLPvSXD2QpAs": {
+      "decoder_version": "r2-raydium-amm-v4-owner-balances-1",
+      "economic_at": "2026-09-26T09:34:02+00:00",
+      "fee_lamports": 5000,
+      "kind": "swap_balance_candidate",
+      "legs": [
+        {
+          "decimals": 8,
+          "delta_base": "110123796463",
+          "mint": "J3NKxxXZcnNiMjKw9hYb2K4LUxgwB6t1FtPtQVsv3KFr"
+        },
+        {
+          "decimals": 9,
+          "delta_base": "-4166531025",
+          "mint": "So11111111111111111111111111111111111111112"
+        }
+      ],
+      "quality": "requires_trade_reference",
+      "receipt": {
+        "archive": "data/r2-20260926/source/attempt-0128.json",
+        "attempt": 128,
+        "received_at": "2026-09-26T09:35:16.538461+00:00",
+        "response_hash": "b1e6fd6340848ffbdf49237bbd7bfe5601c1831dbb31eaeceb867f65ae01b682"
+      },
+      "status": "fetched",
+      "usd_value": null,
+      "wallet": "CreQJ2t94QK5dsxUZGXfPJ8Nx7wA9LHr5chxjSMkbNft"
+    },
+    "wmVgEq1AspUdYgGB4Y5izWUk8YhvJp7eWo7P4mPLP3JVS1VW6ZU924eR7YDhkB9uQx8DcHoPUkeAAu3xAVbZ9C9": {
+      "decoder_version": "r2-raydium-amm-v4-owner-balances-1",
+      "economic_at": "2026-09-26T09:41:00+00:00",
+      "fee_lamports": 5042,
+      "kind": "failed",
+      "legs": [],
+      "quality": "complete",
+      "receipt": {
+        "archive": "data/r2-20260926/source/attempt-0184.json",
+        "attempt": 184,
+        "received_at": "2026-09-26T09:42:10.004852+00:00",
+        "response_hash": "a704bc5feeb7475af3551129121662ed1560749e28525f9e151b554ae9da3527"
+      },
+      "status": "fetched",
+      "usd_value": null,
+      "wallet": "CreQJ2t94QK5dsxUZGXfPJ8Nx7wA9LHr5chxjSMkbNft"
+    }
+  },
+  "wallets": {
+    "CreQJ2t94QK5dsxUZGXfPJ8Nx7wA9LHr5chxjSMkbNft": {
+      "coverage_started_at": "2026-09-26T09:33:47.705843+00:00",
+      "last_checked_at": "2026-09-26T09:41:53.339760+00:00",
+      "seen": [
+        "2DSvoAJiBBx9uNyR9eyVnYGrrPhVJZLNjqtL8egsvbrCzeYhTmpdiB2ey3uKEFRxdaDFhSyVRXsjohDJrM528YxN",
+        "czEBEqjhmASAe7ZSmxWn9jgrVxy8TRiRCVjsWcgwS79hH3fiLycU7mm5bP9Yp2v2xbzwmAdFd7rdYhbHWXRdLw5",
+        "5fHhC1sHdAMasrDjR1T19aCXPhuPjs5s3QCYLe5C6GUfTg9m91c9tDzSRwMA5USwVZ8oZeFUKzZqZJH3aoK9Ljnz",
+        "taBf3o6rnyuETnYdN2N7vexp5wffSTuqtpZGyN6Uy9WJ98WUf4U9JfhSVvurn9rAcn64a4yAeGmPLPvSXD2QpAs",
+        "5XHGMbmFY3i9ttKoGv73C4QPfA2Rn5iVFt98hmVrRGWAeVqVawTLSMAgCwQnyKHFcFXdYgwHGYgWsAHVBWBr3gpC",
+        "4NiS91iczbBhDU2M29WYNsnH6EWq5pkAfvrryD6DjqVrHhdYDFq4xZvsDHxSnPxUvLCykUmiSZu38YRH5ofGU18F",
+        "2NBZUkv5fKeSyh4yCxgK5JSArGMge6YGj5kUCMiqqJZoQ8gfEP3MgFbC2NJL3Lt2YPFDjnkDUHKsNoqEn3mDYuCg",
+        "5jRBmip5NUdBz1Pttq73zp89eUa2Kvssdt1zoWBT7wUh5TsWLUfyJyS7UEqVzM5961y82u2ynDZTwxyVzLsWgqbo",
+        "43aqKFjqpMog4TJa3ZTP19JaZQbnP1vJtF1PHfdtzV9tnUJE2XSeESsAc6Y4SykoJUog2ogr87zk7yt92S2H4TRQ",
+        "61afpwXaPBDyWY6jsQSEDuoUAysvhhwESceX9CxUKjx9bkVH7tUaNeU2dKcZno93RDmxFhB6LVcK9AeT2AbtYhQr",
+        "25ubero4Fpzd3HDcHpia1KcN8qzT3FLd3buErpRMshj3oJoKfxVK5mS3P8obCKTJeFtZUP6rSxubUea2DP5Pbaji",
+        "ioZsUxGNost46JvJU9LdqUpRqWzkqZjvNZcyYZXVv9tRRQkqBRthya4r3Xt8ZWgk46fr78dvY2Ddr81YzX72dkp",
+        "2nYh3nbbE9zjZv6Fs7gm6ka478jkpr2xGk8G2HL8qFSY4DZBbQQrhbzhh7ERWaXDvt4DuoJhZVpGWuZoLQw2sofQ",
+        "2mHzDsSuJtFLsYk18c3Lay1xwmC2Zcr1zmSBdkeWBGG6ag42QaNQujGkZR7zvz4UYr8b72wMyMVYUqmgQfzHuHvE",
+        "2mpNEUknaE8c6RpbqEjXNd34n3nD7KWNML64H5EywK9miYcYrXqH3jofM2NkJgPqud44ikGpeHpPAK5QMEtZa23h",
+        "VCjhUjB1mLka9JBmxLoe4SiGztg7Eyb4LjiUqGwVYvKexijpfGYoRYeE5PTzVg9dLvkRviFTdXhTR5D3eLpfNmY",
+        "56o3MnmZtUZPwmUXUSYHxqgf9H6xEcY5sfay872QQJ7PNSf12998xbLRQeVcJyxsqgpJBJPzMtQEDyQZb6uhtWff",
+        "52t1jgNdyUF8J8jhNzvEF9U199aXbCRbGJ4y3d9JgJgKm5H7gz9hhZ4TGTaVstvjj3mxyEh9ZC4h7fMMFHWYubEa",
+        "2AG54haYnUrjEdBP64a1dqh1n7CxRox4QsDMdrim8Gb643EmWkHNr6Yxv9CVaABofgNWuKHfUZHJNcSxcP9yS69M",
+        "2nXJncLbS8aNAYQnM8i6QkkZAFHESMKB4K2ujrPCrXrHH7r1v9HAzzfqiVTYDoqZNgdx4MRf6oFpsTYRZoXf4M1S",
+        "4ZS3c1Cdm7eD5nyGcYCzebHa5tmQaqoz4dW6Lt9FtZRK1mPrKfiYjk7BKwfwfzqd65hZF8K6BCLSdhKE5abMG5LM",
+        "5mN7Ruz1MW7qgpFgNbP7F3SYo6tqC4AtHebfdZsc4yCiMAVoH5FD5QYFUwZJcxWxCYB51qsuawVg6bhb3u9X9DKg",
+        "2uoTFgoNpekVHyU2PtrBhJE2AGuhvMGKAnbb16Ew2gypsesGVgbsKVRBqcrgUJKW6uPQHsRLVkzBN4DNBPCCV5gt",
+        "46kMdBuj1f21oQHMdyEiZ6kdWPWbssTctejdJSWLLW2AobT8LPGbTfpdKQpcMtRaiVCiqXVijkPCL15wEvd3pERC",
+        "4ZqHr89ZLmkWjKpbHjriLTiMkvNBmgkyQwK98petJoioFbHhbYE2csB3kQ4x7mToaEQ9qw5QNxQfyXGc5FoSnzmw",
+        "4EzVR5PwG2WCbF8h9X4yYW9v8Ai8fA66wb5cMRSocjZVgGPaG61PqBuyK1ww34MMtjDye8cV8pZqJVefdSsGCnGh",
+        "2SKvciLQvcbPvLo9S75F85oyfi6rcTF3g9HzXzkduXm5TtDks5NLYGUdSGLw2dUiz1Wv8oWJHuSnB5U3eeJ7mTfb",
+        "4ghuhHqLtfpkVPN1UUsWZ5ipidiGUfSpfagtrSaCZ1qNYMT3GoaLqpntexVJLeXFaEPSbqZxdrwNRdYAkX2N5tdj",
+        "67H7w2a9PDkaK5BEjcQK56ef2RmHasQXkd4HubceGEThp62S2eS9HgqLaT6BpMQTbDQXZXSAG3PWDa785uWKUhE5",
+        "5gsw9hpZ7xHfpxSMZQBZT7Y4MxmtfyePB3hSatzcmGKb85PwA1j9yUFKNqWYBduk49EJ3vFnekMHNJ3tnYmo86eu",
+        "4SRfcwPnsEahCBj5RorSkW16dbMyvuUHmWzAFsWHeJMK7JwPcjB4DJyYB5kmCCsmtTsJjAD8GJKKzduKgT9aDn4W",
+        "GHK7DeqQNjcP9GiWgTuwGJi6yHhvzwvf1Es6UZSWXBBYbvTVpXEQcUbSQ4FAcg2xD48UmZ48xjE2RDGDUp6h73B",
+        "2Bf5UVMDG7TMuy17P8oLYFq7eHYeAWy5WaDe7SwTZsRq6FWHnXVyuL5KreGFWNoaxS9teqM2Ah6EsV38sjRB5eK8",
+        "58j1jTc71Qk9L7KWa58YkR4XKm3LWRodSQSEvTj3i6LkVMX6LCgxEm3J87qJk1MBgujHr2qgMU7fUCufjQWhfAeK",
+        "3vqRLgq4YJKMNqV5H4Gfj3rGr1D2TScQbMX8nwBBqiwp9Rc9oztK3TVnskHv7yfLCHM1GnW4AK5VWYVUDivMJ2Rh",
+        "3tsH7DVx3L3T4hH4FcFk6osjDvw7GpU1sxQKXhFa2EzE9YhceY2LBfHHJjVQinG9t7trsciPKegR147SRVpDPXnC",
+        "4jXoseicBZh1ESitBZMmKKowDEvPqVrBYhVCyXZzgdg2PGvbktckng7i8v3R2BxaMpSBkXs7YGAcr9jek7eBSAAN",
+        "3gSpiJdCr9Rs62ss7vAUQaPHsjzE3Px8ZSFnR666zKVggMxBZeQvWP8oWGQjLTRQYyuqMJ6B5TruWTTuZSFpR5Hp",
+        "5Ef3BaHy8AdZpuGzwK8MtLWfZGvRBwAmNLDsffPDzZUnu1NT23p8M1F2DU9KVTKbSgRpknpHf9m5NqVnW5xwopzP",
+        "2yFDVp7wbixih2RX2iPWrzkLGnenVADL4zDkrqeswgQtDwRGZYjFm23YkDr9yHECA8HVJxtKZZz7dgiLFFggjo8L",
+        "3X8JCQE4FuRwi3BLokq9KbxMFPWnh2JZd4vUxGL9JjeJMDEqYYoWo6bD5pGcrYsccbNAKYA3syQZV3Uu9hJpvvWe",
+        "55oM3LjyAM6enUXSK7invQWkaCkmYYk8Tx3CuhTXHsNkbTSef9dYLBMfTRs7h1UsEaEAViaYt2P173Zgw8mEU8tu",
+        "4AMqXyMdrn33wd8XiWhQ3YH1NYqoe5J3tgiHtbD7Ary4vUdAN1jgjZe7ooHc4ThY5gZUB8S6R8AFjhY3pUZyxZUP",
+        "iN59EARFMyLsUd1f1nyPvrC8xG7NxNGjrrGXutceYzLU6Fdu1TH9hSkWL1QAY43ZLw7iSQ1duRYi4SEsXUukkp4",
+        "23nLj2hm1V1mHeqK6XSJCFf8hn1NH8teh5i9yYUKT1VNDdkH1Sb1rejTzzmVqpenBJST5LSTDXfR9pv56zWXNcPH",
+        "ANytPf9BfCWCDXWkBMQa2bJUSi3M1vCpAGXFhvcK5QfcUdU24XFdqTF2VHtwHugZVtW5ab5rV1ADq9cR8dsQFvR",
+        "wmVgEq1AspUdYgGB4Y5izWUk8YhvJp7eWo7P4mPLP3JVS1VW6ZU924eR7YDhkB9uQx8DcHoPUkeAAu3xAVbZ9C9",
+        "4i7Ud7wD7MMVfCtkARyhAEcjWQLzh3GLmKw6oqb4K7BrtAFnRVF5LHNA3Ymy74MTKhRtGFxrs2Nh6eptS4qBGEXk",
+        "2xPhj6rETFPPMVR9aSBYZvBnfYXGuR8xLniRgcTPjmWoLuoVVPKgXg1jiqbLJhuCX2jNzVYpH8YsPwyqrPWPcBMg",
+        "3gbPtJvofuXhAsewYDjc4Z6FQdKbUhxQXA8SNS1F5XEHGwgyjQjoraMxvEaFXomc44cyHdLuACWAAPVg94TeAtrB",
+        "5m3wGzMkdzyVXRSndidbPnTdSUmxjWVvPNwSRJWijmwcMQEhxmcMg6ejY3pRtoXyntczuwb4YRGVgLNhPLNEtq3o"
+      ]
+    },
+    "MfDuWeqSHEqTFVYZ7LoexgAK9dxk7cy4DFJWjWMGVWa": {
+      "coverage_started_at": "2026-09-26T09:33:47.705843+00:00",
+      "last_checked_at": null,
+      "seen": [
+        "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"
+      ]
+    }
+  }
+}

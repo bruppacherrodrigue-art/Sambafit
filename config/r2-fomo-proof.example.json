@@ -1,0 +1,15 @@
+{
+  "proofs": [
+    {
+      "profile": "https://fomo.family/REPLACE_WITH_ACTUAL_PROFILE_URL",
+      "network": "solana",
+      "address": "REPLACE_WITH_PUBLIC_SOLANA_ADDRESS",
+      "proof_type": "authenticated_profile_and_deposit_screen",
+      "proof_reference": "evidence/REPLACE_WITH_LOCAL_SCREENSHOT.png",
+      "verified_at": "2026-09-26T00:00:00Z",
+      "verified_by": "REPLACE_WITH_REVIEWER_NAME",
+      "status": "proposed",
+      "comment": "Describe exactly how the profile and address are linked in the evidence."
+    }
+  ]
+}

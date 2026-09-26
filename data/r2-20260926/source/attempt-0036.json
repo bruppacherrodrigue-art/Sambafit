@@ -1,0 +1,9 @@
+{
+  "attempt": 36,
+  "body": "{\"jsonrpc\":\"2.0\",\"result\":{\"context\":{\"apiVersion\":\"4.2.2\",\"slot\":450629135},\"value\":{\"data\":{\"parsed\":{\"info\":{\"decimals\":6,\"freezeAuthority\":null,\"isInitialized\":true,\"mintAuthority\":null,\"supply\":\"989936565438324\"},\"type\":\"mint\"},\"program\":\"spl-token\",\"space\":82},\"executable\":false,\"lamports\":162054091652,\"owner\":\"TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA\",\"rentEpoch\":18446744073709551615,\"space\":82}},\"id\":1}\n",
+  "http_status": 200,
+  "received_at": "2026-09-26T09:06:03.253204+00:00",
+  "request": "getAccountInfo:",
+  "response_hash": "672d4ad6f4f042e1c640d3ca59e4a8d21162d3bf7ea71cb92b2e318a6cf75ce6",
+  "source": "rpc"
+}
