@@ -176,7 +176,7 @@ def verify_manifest(root: str | Path) -> dict:
             }
         )
     temp = manifest_path.with_suffix(".json.tmp")
-    temp.write_text(json.dumps(manifest, indent=2, sort_keys=True))
+    temp.write_text(json.dumps(manifest, indent=2, sort_keys=True) + "\n")
     os.replace(temp, manifest_path)
     audit_path = root / "verification.json"
     temp = audit_path.with_suffix(".json.tmp")

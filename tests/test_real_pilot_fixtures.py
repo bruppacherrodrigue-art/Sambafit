@@ -1,6 +1,7 @@
 """Frozen public RPC fixtures. No network calls during these tests."""
 
 import os
+import shutil
 import uuid
 from datetime import datetime, timezone
 
@@ -16,6 +17,7 @@ from rotation.real_corpus import (
     import_corpus,
     load_verified,
     summarize_corpus,
+    verify_manifest,
     verify_source_receipts,
 )
 from rotation.replay import replay
@@ -25,6 +27,14 @@ from rotation.store import Store
 
 ROOT = "data/real-pilot-20260926"
 URL = os.getenv("TEST_DATABASE_URL", "postgresql://rotation:rotation@127.0.0.1:55432/rotation")
+
+
+def test_reverification_of_frozen_manifest_does_not_change_it(tmp_path):
+    copied = tmp_path / "corpus"
+    shutil.copytree(ROOT, copied)
+    before = (copied / "manifest.json").read_bytes()
+    verify_manifest(copied)
+    assert (copied / "manifest.json").read_bytes() == before
 
 
 def test_frozen_rpc_hashes_and_ten_independent_owner_balance_checks():
