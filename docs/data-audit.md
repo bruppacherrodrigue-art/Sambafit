@@ -27,3 +27,18 @@ Le périmètre initial est Solana. Deux requêtes de contrôle ont été faites 
 1. 10–20 mints Solana choisis avec dates d'éligibilité et un jeu de prix/volumes/quotes historiques horodatés, si disponible.
 2. 30–50 adresses publiques candidates et, pour tout lien Fomo revendiqué, URL/capture ou autre preuve datée et vérifiable.
 3. Éventuel accès RPC déjà payé/autorisée avec politique d'historique et quotas, et éventuel fournisseur de liquidité historique.
+
+## Mise à jour bornée du 26 septembre 2026
+
+Cette section remplace, pour le pilote technique, les lignes initiales « aucun prix réel » et « aucun swap réel ». Le [rapport détaillé](real-pilot-report.md) conserve les comptes exacts et les limites.
+
+| Donnée | Source documentée et méthode testée | Couverture obtenue | Limite résiduelle |
+|---|---|---|---|
+| Trades de pools publics | [GeckoTerminal Public API](https://api.geckoterminal.com/docs/index.html), `pools/{id}/trades` | 30 références récentes sur JUP/wSOL et 30 sur JUP/USDC, avec signature, slot et temps de bloc | Libellé de pool non équivalent au trajet entier du wallet ; pas d'exhaustivité des wallets |
+| Transactions finalisées | [getTransaction Solana](https://solana.com/docs/rpc/http/gettransaction) puis [PublicNode](https://solana.publicnode.com/) au même plafond après 429 | 60 réponses brutes, 53 v0 et 7 v1, hash et programmes archivés | RPC public sans SLA ; SOL natif, comptes clos et routes multiples partiels |
+| Programme DLMM | [Documentation Meteora](https://github.com/MeteoraAg/docs/blob/main/developer-guides/dlmm/index.mdx), [IDL v0.12.0](https://github.com/MeteoraAg/dlmm-sdk/blob/main/idls/dlmm.json) | Discriminants de swap vérifiés ; 18 swaps à deux variations SPL chez 5 signataires | Multi-swap sous parent inconnu quarantiné ; dénominateur global de swaps inconnu |
+| Bougies USD et volume | [GeckoTerminal OHLCV](https://api.geckoterminal.com/docs/index.html), mesure/réception conservées | 89 observations JUP, wSOL, USDC, parfois espacées | Profondeur historique absente ; séries non continues et trop courtes pour étude d'issue |
+| Réserve et volume 24 h du pool | Même API, snapshot au moment de la découverte | Mesure actuelle distincte de l'OHLCV | Aucune utilisation comme liquidité ou volume de bougie dans le passé |
+| Profil Fomo / export | [Guide social](https://fomo.family/blog/learn/leveraging-fomos-social-features), [navigation](https://fomo.family/blog/learn/navigating-your-fomo-app), pages publiques seulement | Zéro lien profil-adresse prouvé ; application connectée non inspectée | Import manuel daté ; demander une preuve d'adresse depuis le profil connecté si disponible |
+
+Le pilote a tenté 69 appels en 12 min 51 s, sans frais. Le budget persistant est dans `data/real-pilot-20260926/budget.json`. Une heure de `blockTime` passée n'est jamais présentée comme un horodatage de réception historique ; la première observation archivée est celle de ce pilote. Les 60 réponses sont conservées dans le corpus reproductible ; la politique cible de purge à 30 jours du projet initial n'est pas encore automatisée et ne doit pas supprimer ces fixtures figées.

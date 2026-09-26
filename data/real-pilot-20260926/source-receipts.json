@@ -1,0 +1,42 @@
+{
+  "first-tx.json": {
+    "archived_at": "2026-09-26T06:30:22.207511+00:00",
+    "raw_sha256": "d358c502bc63cb957a0780575ba5a0eb41b710ac89c18750f09eac3c00504941",
+    "source": "Solana finalized getTransaction"
+  },
+  "jup-pools.json": {
+    "archived_at": "2026-09-26T06:29:59.089272+00:00",
+    "raw_sha256": "06c52bd91f042b54b955244dfcf739689f71fc033829027809d83f9d3c0b75fd",
+    "source": "GeckoTerminal Public API"
+  },
+  "jup-sol-ohlcv.json": {
+    "archived_at": "2026-09-26T06:30:48.149950+00:00",
+    "raw_sha256": "1c98c5d0643713f1450d344dfd9a545d75a637c7c410589316c49e892034134e",
+    "source": "GeckoTerminal Public API"
+  },
+  "jup-sol-trades.json": {
+    "archived_at": "2026-09-26T06:30:12.945365+00:00",
+    "raw_sha256": "9cfc55204aa4eb85a97a2ab099d1722a934c83f661d876ce083600f886a72e2a",
+    "source": "GeckoTerminal Public API"
+  },
+  "jup-usdc-ohlcv.json": {
+    "archived_at": "2026-09-26T06:42:30.212970+00:00",
+    "raw_sha256": "ec9ca9daca4882e061e2d8b8fc611a19a935e66c84d1f5a25453226d0a4ff1f1",
+    "source": "GeckoTerminal Public API"
+  },
+  "jup-usdc-trades.json": {
+    "archived_at": "2026-09-26T06:33:43.084836+00:00",
+    "raw_sha256": "36ad650d58726c63728f2a25462b12575c30d6257f85a8b72bb55485b09a2f5e",
+    "source": "GeckoTerminal Public API"
+  },
+  "sol-usd-ohlcv.json": {
+    "archived_at": "2026-09-26T06:42:40.530850+00:00",
+    "raw_sha256": "674316ed936a282f0df1cb71215456d2c9d9be1ddf6d2bc6fe870a1990a14cd8",
+    "source": "GeckoTerminal Public API"
+  },
+  "usdc-usd-ohlcv.json": {
+    "archived_at": "2026-09-26T06:42:51.958920+00:00",
+    "raw_sha256": "458a1d2557cb2a223371855a6f5ccf66a16e3ee174e23c080bbbc9de7f08d4f4",
+    "source": "GeckoTerminal Public API"
+  }
+}

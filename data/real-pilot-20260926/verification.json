@@ -1,0 +1,2711 @@
+{
+  "audits": [
+    {
+      "actor_signed": true,
+      "balances_match": true,
+      "decoded_kind": "swap",
+      "decoder_legs": [
+        [
+          "JUPyiwrYJFskUPiHa7hkeR8VUtAeFoSYbKedZNsDvCN",
+          271452511,
+          6
+        ],
+        [
+          "So11111111111111111111111111111111111111112",
+          -784506780,
+          9
+        ]
+      ],
+      "economic_at": "2026-09-26T06:27:59+00:00",
+      "fee_lamports": 5000,
+      "payer": "MfDuWeqSHEqTFVYZ7LoexgAK9dxk7cy4DFJWjWMGVWa",
+      "programs": [
+        "11111111111111111111111111111111",
+        "ComputeBudget111111111111111111111111111111",
+        "GKybPT5ZzV5NgkXy1Pa8Bnu14MS7euEtK8j9zWHzYJpx",
+        "LBUZKhRxPF3XUpBCjp4YzTKgLccjZhTSDM9YuVaPwxo",
+        "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA"
+      ],
+      "quality": "complete",
+      "raw_owner_deltas": [
+        [
+          "JUPyiwrYJFskUPiHa7hkeR8VUtAeFoSYbKedZNsDvCN",
+          271452511,
+          6
+        ],
+        [
+          "So11111111111111111111111111111111111111112",
+          -784506780,
+          9
+        ]
+      ],
+      "reference_kind": "buy",
+      "reported_actor": "MfDuWeqSHEqTFVYZ7LoexgAK9dxk7cy4DFJWjWMGVWa",
+      "signature": "5a6MpzMXHW4McZdrWt1b1bhQJY5Psdn9xofuaF42MVGhpU2e7LXrAybN552nfnKevUn5aCgzFkZrcNJ8Yp7iAsmE",
+      "signers": [
+        "MfDuWeqSHEqTFVYZ7LoexgAK9dxk7cy4DFJWjWMGVWa"
+      ],
+      "slot": 450593773,
+      "version": 0
+    },
+    {
+      "actor_signed": true,
+      "balances_match": true,
+      "decoded_kind": "unknown",
+      "decoder_legs": [
+        [
+          "9V2rU978cfrWo3igcmq7EpAH9NmZG1GVwNeNKbjgjupx",
+          -13484624905886,
+          6
+        ]
+      ],
+      "economic_at": "2026-09-26T06:25:39+00:00",
+      "fee_lamports": 49452,
+      "payer": "AL6vtNUPbpdZGSMdhQN6WXmZJu64RP8AwRKgYvi8ptoh",
+      "programs": [
+        "11111111111111111111111111111111",
+        "FLASHX8DrLbgeR8FcfNV1F5krxYcYMUdBkrP1EPBtxB9",
+        "LBUZKhRxPF3XUpBCjp4YzTKgLccjZhTSDM9YuVaPwxo",
+        "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA",
+        "cpamdpZCGKUy5JxQXB4dcpGPiikHawvSWAd6mEn1sGG"
+      ],
+      "quality": "partial",
+      "raw_owner_deltas": [
+        [
+          "9V2rU978cfrWo3igcmq7EpAH9NmZG1GVwNeNKbjgjupx",
+          -13484624905886,
+          6
+        ]
+      ],
+      "reference_kind": "sell",
+      "reported_actor": "AL6vtNUPbpdZGSMdhQN6WXmZJu64RP8AwRKgYvi8ptoh",
+      "signature": "2Mi4dLygRsQiAdq9ikfNbmh1PcQCgoX16d68BC6RZgsBdPd7m6PjtCEDKkq7XcChvbGzxHoX9MXTqKFfdnXXycit",
+      "signers": [
+        "AL6vtNUPbpdZGSMdhQN6WXmZJu64RP8AwRKgYvi8ptoh"
+      ],
+      "slot": 450593253,
+      "version": 1
+    },
+    {
+      "actor_signed": true,
+      "balances_match": true,
+      "decoded_kind": "unknown",
+      "decoder_legs": [
+        [
+          "JUPyiwrYJFskUPiHa7hkeR8VUtAeFoSYbKedZNsDvCN",
+          -34329360,
+          6
+        ]
+      ],
+      "economic_at": "2026-09-26T06:20:28+00:00",
+      "fee_lamports": 46600,
+      "payer": "3eZER9sSfkkXEtbfNMXR8NHvq6GAnsMQ4exUJUb2Nq4p",
+      "programs": [
+        "11111111111111111111111111111111",
+        "FLASHX8DrLbgeR8FcfNV1F5krxYcYMUdBkrP1EPBtxB9",
+        "LBUZKhRxPF3XUpBCjp4YzTKgLccjZhTSDM9YuVaPwxo",
+        "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA"
+      ],
+      "quality": "partial",
+      "raw_owner_deltas": [
+        [
+          "JUPyiwrYJFskUPiHa7hkeR8VUtAeFoSYbKedZNsDvCN",
+          -34329360,
+          6
+        ]
+      ],
+      "reference_kind": "sell",
+      "reported_actor": "3eZER9sSfkkXEtbfNMXR8NHvq6GAnsMQ4exUJUb2Nq4p",
+      "signature": "5Yg1AiQbBMj1QPpdfFMoGtaDCY488U7uvinVDYVeDoK3rPPGZ9m7WeGbXvGkUnav6FQdZ2fwUGzdPGPRMCP4dH38",
+      "signers": [
+        "3eZER9sSfkkXEtbfNMXR8NHvq6GAnsMQ4exUJUb2Nq4p"
+      ],
+      "slot": 450592079,
+      "version": 1
+    },
+    {
+      "actor_signed": true,
+      "balances_match": true,
+      "decoded_kind": "unknown",
+      "decoder_legs": [
+        [
+          "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+          2816,
+          6
+        ]
+      ],
+      "economic_at": "2026-09-26T06:20:28+00:00",
+      "fee_lamports": 5002,
+      "payer": "4jjEXcFPXw7WVGXSTb227HW6wfLprjh2RtiHty4GbetE",
+      "programs": [
+        "11111111111111111111111111111111",
+        "BiSoNHVpsVZW2F7rx2eQ59yQwKxzU5NvBcmKshCSUypi",
+        "ComputeBudget111111111111111111111111111111",
+        "DF1ow4tspfHX9JwWJsAb9epbkA8hmpSEAtxXy1V27QBH",
+        "EpEEdmjbLsZFCaGgHHnwaysW9bKWNcdm3bxs6HXAQwSk",
+        "LBUZKhRxPF3XUpBCjp4YzTKgLccjZhTSDM9YuVaPwxo",
+        "T1TANpTeScyeqVzzgNViGDNrkQ6qHz9KrSBS4aNXvGT",
+        "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA",
+        "ZERor4xhbUycZ6gb9ntrhqscUcZmAbQDjEAtCf4hbZY"
+      ],
+      "quality": "partial",
+      "raw_owner_deltas": [
+        [
+          "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+          2816,
+          6
+        ]
+      ],
+      "reference_kind": "buy",
+      "reported_actor": "4jjEXcFPXw7WVGXSTb227HW6wfLprjh2RtiHty4GbetE",
+      "signature": "3jSY4x81ujBKqqdp8YLRibp4joi2KvYszHHQn4id7RmRsCAdWEsX4CL88KMTUivNjc3wgYhxMevLce7HFu3xbS3K",
+      "signers": [
+        "4jjEXcFPXw7WVGXSTb227HW6wfLprjh2RtiHty4GbetE"
+      ],
+      "slot": 450592079,
+      "version": 0
+    },
+    {
+      "actor_signed": true,
+      "balances_match": true,
+      "decoded_kind": "unknown",
+      "decoder_legs": [
+        [
+          "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+          8,
+          6
+        ],
+        [
+          "So11111111111111111111111111111111111111112",
+          3,
+          9
+        ]
+      ],
+      "economic_at": "2026-09-26T06:20:06+00:00",
+      "fee_lamports": 5025,
+      "payer": "Gw416WZtWmFACX12L1f3RcSMTygktLgYxTL5GV2uAA3Z",
+      "programs": [
+        "9H6tua7jkLhdm3w8BvgpTn5LZNU7g4ZynDmCiNN3q6Rp",
+        "CkvEApcoFPWUgBDheYvUzHqtUj58AXop7vwizEieXXSE",
+        "FLUX6xBayGxLX9UcimVRxXFMHH6q43mAbRvDzSpCsvfK",
+        "JUP6LkbZbjS1jKKwapdHNy74zcZ3tLUZoi5QNyVTaV4",
+        "LBUZKhRxPF3XUpBCjp4YzTKgLccjZhTSDM9YuVaPwxo",
+        "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA"
+      ],
+      "quality": "partial",
+      "raw_owner_deltas": [
+        [
+          "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+          8,
+          6
+        ],
+        [
+          "So11111111111111111111111111111111111111112",
+          3,
+          9
+        ]
+      ],
+      "reference_kind": "buy",
+      "reported_actor": "Gw416WZtWmFACX12L1f3RcSMTygktLgYxTL5GV2uAA3Z",
+      "signature": "5TSQqxzyabHRKqNhykotnGXmqJpoCVxpGNt2Mg2n7pp74tsat2MuE1tV2VaZRx3J8vB6jrx3VcTGH1UeGuwA37EP",
+      "signers": [
+        "Gw416WZtWmFACX12L1f3RcSMTygktLgYxTL5GV2uAA3Z"
+      ],
+      "slot": 450591998,
+      "version": 1
+    },
+    {
+      "actor_signed": true,
+      "balances_match": true,
+      "decoded_kind": "unknown",
+      "decoder_legs": [
+        [
+          "So11111111111111111111111111111111111111112",
+          58098,
+          9
+        ]
+      ],
+      "economic_at": "2026-09-26T06:20:06+00:00",
+      "fee_lamports": 5000,
+      "payer": "NALUnJA2AJUYa6xJL1HsorEeFgxxDsfUgYBCX8Pp2zD",
+      "programs": [
+        "ComputeBudget111111111111111111111111111111",
+        "HpNfyc2Saw7RKkQd8nEL4khUcuPhQ7WwY1B2qjx8jxFq",
+        "JUP6LkbZbjS1jKKwapdHNy74zcZ3tLUZoi5QNyVTaV4",
+        "LBUZKhRxPF3XUpBCjp4YzTKgLccjZhTSDM9YuVaPwxo",
+        "SCoRcH8c2dpjvcJD6FiPbCSQyQgu3PcUAWj2Xxx3mqn",
+        "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA",
+        "ojh19ojaKduoJZuaJADhcVGp4xt1TcdAvZmpVsCorch"
+      ],
+      "quality": "partial",
+      "raw_owner_deltas": [
+        [
+          "So11111111111111111111111111111111111111112",
+          58098,
+          9
+        ]
+      ],
+      "reference_kind": "buy",
+      "reported_actor": "NALUnJA2AJUYa6xJL1HsorEeFgxxDsfUgYBCX8Pp2zD",
+      "signature": "3ZVVu2HXgRaQAXqEVZ34i2zxLgaUUDz2EHd3VdfShnGk5zuTzFScDS5SGH3U9WLrFPJZMX3dVprAUGeU74N6o1Cj",
+      "signers": [
+        "NALUnJA2AJUYa6xJL1HsorEeFgxxDsfUgYBCX8Pp2zD"
+      ],
+      "slot": 450591998,
+      "version": 0
+    },
+    {
+      "actor_signed": true,
+      "balances_match": true,
+      "decoded_kind": "unknown",
+      "decoder_legs": [
+        [
+          "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+          134349,
+          6
+        ],
+        [
+          "So11111111111111111111111111111111111111112",
+          64779,
+          9
+        ]
+      ],
+      "economic_at": "2026-09-26T06:20:06+00:00",
+      "fee_lamports": 6867,
+      "payer": "Hz7KY4XrZs7A5XHonoUwBhqarVZJCnm4ByDvQzcDr7sz",
+      "programs": [
+        "9H6tua7jkLhdm3w8BvgpTn5LZNU7g4ZynDmCiNN3q6Rp",
+        "BiSoNHVpsVZW2F7rx2eQ59yQwKxzU5NvBcmKshCSUypi",
+        "ComputeBudget111111111111111111111111111111",
+        "JUP6LkbZbjS1jKKwapdHNy74zcZ3tLUZoi5QNyVTaV4",
+        "LBUZKhRxPF3XUpBCjp4YzTKgLccjZhTSDM9YuVaPwxo",
+        "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA"
+      ],
+      "quality": "partial",
+      "raw_owner_deltas": [
+        [
+          "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+          134349,
+          6
+        ],
+        [
+          "So11111111111111111111111111111111111111112",
+          64779,
+          9
+        ]
+      ],
+      "reference_kind": "buy",
+      "reported_actor": "Hz7KY4XrZs7A5XHonoUwBhqarVZJCnm4ByDvQzcDr7sz",
+      "signature": "HLqeSKeY6ZVEQLoc6sydA6ER24npbWxZRPKW6VUNrFtyDXuTxCdMjXyCUFzKWQzMySerta9bXYmipQSM8iz1jhT",
+      "signers": [
+        "Hz7KY4XrZs7A5XHonoUwBhqarVZJCnm4ByDvQzcDr7sz"
+      ],
+      "slot": 450591997,
+      "version": 0
+    },
+    {
+      "actor_signed": true,
+      "balances_match": true,
+      "decoded_kind": "unknown",
+      "decoder_legs": [
+        [
+          "So11111111111111111111111111111111111111112",
+          2794445,
+          9
+        ]
+      ],
+      "economic_at": "2026-09-26T06:20:06+00:00",
+      "fee_lamports": 5000,
+      "payer": "98mbfPN77nd2DPQv8A16ep5CyZktrALKD7fPFEVqtLeJ",
+      "programs": [
+        "11111111111111111111111111111111",
+        "ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL",
+        "JUP6LkbZbjS1jKKwapdHNy74zcZ3tLUZoi5QNyVTaV4",
+        "LBUZKhRxPF3XUpBCjp4YzTKgLccjZhTSDM9YuVaPwxo",
+        "SCoRcH8c2dpjvcJD6FiPbCSQyQgu3PcUAWj2Xxx3mqn",
+        "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA",
+        "ojh19ojaKduoJZuaJADhcVGp4xt1TcdAvZmpVsCorch"
+      ],
+      "quality": "partial",
+      "raw_owner_deltas": [
+        [
+          "So11111111111111111111111111111111111111112",
+          2794445,
+          9
+        ]
+      ],
+      "reference_kind": "buy",
+      "reported_actor": "98mbfPN77nd2DPQv8A16ep5CyZktrALKD7fPFEVqtLeJ",
+      "signature": "632BRfCLzjhwXSUNmxQUUeGifixpauzHssX9K6xPcAg5UgymzZ8YzWz6xrrJbQat6q1xauJmtvezPxAhxAZJJvAD",
+      "signers": [
+        "98mbfPN77nd2DPQv8A16ep5CyZktrALKD7fPFEVqtLeJ"
+      ],
+      "slot": 450591997,
+      "version": 1
+    },
+    {
+      "actor_signed": true,
+      "balances_match": true,
+      "decoded_kind": "unknown",
+      "decoder_legs": [
+        [
+          "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+          37928,
+          6
+        ]
+      ],
+      "economic_at": "2026-09-26T06:20:06+00:00",
+      "fee_lamports": 6238,
+      "payer": "FtFtF8iamFC3gCv5VYUTBd1G4r1XEc1TbcHyuy6hkJPQ",
+      "programs": [
+        "11111111111111111111111111111111",
+        "9H6tua7jkLhdm3w8BvgpTn5LZNU7g4ZynDmCiNN3q6Rp",
+        "ComputeBudget111111111111111111111111111111",
+        "FLUX6xBayGxLX9UcimVRxXFMHH6q43mAbRvDzSpCsvfK",
+        "JUP6LkbZbjS1jKKwapdHNy74zcZ3tLUZoi5QNyVTaV4",
+        "LBUZKhRxPF3XUpBCjp4YzTKgLccjZhTSDM9YuVaPwxo",
+        "TTTTmv2kmJsGzwVaoJim1cuebaUDaNGAzgexGGAgVLi",
+        "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA"
+      ],
+      "quality": "partial",
+      "raw_owner_deltas": [
+        [
+          "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+          37928,
+          6
+        ]
+      ],
+      "reference_kind": "buy",
+      "reported_actor": "FtFtF8iamFC3gCv5VYUTBd1G4r1XEc1TbcHyuy6hkJPQ",
+      "signature": "4oQhKmPXASpQffNdwgVcJjQYrKGwveXsXXPF9VkrvEsuiEqBLVQYUfkCZKZYHwwXXwWtTjtJLENSkvpPUuLkkaxh",
+      "signers": [
+        "FtFtF8iamFC3gCv5VYUTBd1G4r1XEc1TbcHyuy6hkJPQ"
+      ],
+      "slot": 450591997,
+      "version": 1
+    },
+    {
+      "actor_signed": true,
+      "balances_match": true,
+      "decoded_kind": "unknown",
+      "decoder_legs": [
+        [
+          "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+          81505,
+          6
+        ]
+      ],
+      "economic_at": "2026-09-26T06:20:06+00:00",
+      "fee_lamports": 6238,
+      "payer": "FtFtF8iamFC3gCv5VYUTBd1G4r1XEc1TbcHyuy6hkJPQ",
+      "programs": [
+        "11111111111111111111111111111111",
+        "9H6tua7jkLhdm3w8BvgpTn5LZNU7g4ZynDmCiNN3q6Rp",
+        "ComputeBudget111111111111111111111111111111",
+        "FLUX6xBayGxLX9UcimVRxXFMHH6q43mAbRvDzSpCsvfK",
+        "JUP6LkbZbjS1jKKwapdHNy74zcZ3tLUZoi5QNyVTaV4",
+        "LBUZKhRxPF3XUpBCjp4YzTKgLccjZhTSDM9YuVaPwxo",
+        "TTTTmv2kmJsGzwVaoJim1cuebaUDaNGAzgexGGAgVLi",
+        "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA"
+      ],
+      "quality": "partial",
+      "raw_owner_deltas": [
+        [
+          "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+          81505,
+          6
+        ]
+      ],
+      "reference_kind": "buy",
+      "reported_actor": "FtFtF8iamFC3gCv5VYUTBd1G4r1XEc1TbcHyuy6hkJPQ",
+      "signature": "4Crms34WHprBh4LcSoR9PbetP2R33jWi2YWZT5YNbMS9iQJ4VHumKyJTotmqxrei9vbk6SDc6WPGPTWvCLEr8cW7",
+      "signers": [
+        "FtFtF8iamFC3gCv5VYUTBd1G4r1XEc1TbcHyuy6hkJPQ"
+      ],
+      "slot": 450591997,
+      "version": 1
+    },
+    {
+      "actor_signed": true,
+      "balances_match": true,
+      "decoded_kind": "swap",
+      "decoder_legs": [
+        [
+          "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+          -133180798,
+          6
+        ],
+        [
+          "JUPyiwrYJFskUPiHa7hkeR8VUtAeFoSYbKedZNsDvCN",
+          382638749,
+          6
+        ]
+      ],
+      "economic_at": "2026-09-26T06:20:06+00:00",
+      "fee_lamports": 5139,
+      "payer": "GJvewfRjqTUPtx6WsBSUnaFbdgXwgXnWfpDyLm65T4YA",
+      "programs": [
+        "11111111111111111111111111111111",
+        "BiSoNHVpsVZW2F7rx2eQ59yQwKxzU5NvBcmKshCSUypi",
+        "ComputeBudget111111111111111111111111111111",
+        "FrLmhMwyYQJVivt2EsVZwEEVspxoVhYj22Cxxst4hWVf",
+        "JUP6LkbZbjS1jKKwapdHNy74zcZ3tLUZoi5QNyVTaV4",
+        "LBUZKhRxPF3XUpBCjp4YzTKgLccjZhTSDM9YuVaPwxo",
+        "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA"
+      ],
+      "quality": "complete",
+      "raw_owner_deltas": [
+        [
+          "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+          -133180798,
+          6
+        ],
+        [
+          "JUPyiwrYJFskUPiHa7hkeR8VUtAeFoSYbKedZNsDvCN",
+          382638749,
+          6
+        ]
+      ],
+      "reference_kind": "buy",
+      "reported_actor": "GJvewfRjqTUPtx6WsBSUnaFbdgXwgXnWfpDyLm65T4YA",
+      "signature": "3iEGPkdRQCETdiFYxyD4Wm1YdoWJEowpNAZ67MJrU6kiSKG2CrMDz1hea4FgpfZgqVek77DSA4fE4bTs4Q5oJtek",
+      "signers": [
+        "GJvewfRjqTUPtx6WsBSUnaFbdgXwgXnWfpDyLm65T4YA"
+      ],
+      "slot": 450591997,
+      "version": 0
+    },
+    {
+      "actor_signed": true,
+      "balances_match": true,
+      "decoded_kind": "unknown",
+      "decoder_legs": [
+        [
+          "So11111111111111111111111111111111111111112",
+          1539796,
+          9
+        ]
+      ],
+      "economic_at": "2026-09-26T06:20:06+00:00",
+      "fee_lamports": 5000,
+      "payer": "C2wezAHikMgfvXJRqPuDvS7KZwLvKRr6xNR3U431GWas",
+      "programs": [
+        "11111111111111111111111111111111",
+        "ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL",
+        "ComputeBudget111111111111111111111111111111",
+        "JUP6LkbZbjS1jKKwapdHNy74zcZ3tLUZoi5QNyVTaV4",
+        "LBUZKhRxPF3XUpBCjp4YzTKgLccjZhTSDM9YuVaPwxo",
+        "SCoRcH8c2dpjvcJD6FiPbCSQyQgu3PcUAWj2Xxx3mqn",
+        "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA",
+        "ZERor4xhbUycZ6gb9ntrhqscUcZmAbQDjEAtCf4hbZY",
+        "ojh19ojaKduoJZuaJADhcVGp4xt1TcdAvZmpVsCorch"
+      ],
+      "quality": "partial",
+      "raw_owner_deltas": [
+        [
+          "So11111111111111111111111111111111111111112",
+          1539796,
+          9
+        ]
+      ],
+      "reference_kind": "buy",
+      "reported_actor": "C2wezAHikMgfvXJRqPuDvS7KZwLvKRr6xNR3U431GWas",
+      "signature": "2M1vKQ9PPwjGuCtuTeXJxrBzF7xGyNbSVowXfoLjQ6ukMuVbWUoZ2i9bsKzhH33hnCHQsH5YNMkBQna4jE8gxd2W",
+      "signers": [
+        "C2wezAHikMgfvXJRqPuDvS7KZwLvKRr6xNR3U431GWas"
+      ],
+      "slot": 450591997,
+      "version": 0
+    },
+    {
+      "actor_signed": true,
+      "balances_match": true,
+      "decoded_kind": "swap",
+      "decoder_legs": [
+        [
+          "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+          -266431553,
+          6
+        ],
+        [
+          "JUPyiwrYJFskUPiHa7hkeR8VUtAeFoSYbKedZNsDvCN",
+          765478494,
+          6
+        ]
+      ],
+      "economic_at": "2026-09-26T06:20:06+00:00",
+      "fee_lamports": 5318,
+      "payer": "GJvewfRjqTUPtx6WsBSUnaFbdgXwgXnWfpDyLm65T4YA",
+      "programs": [
+        "11111111111111111111111111111111",
+        "BiSoNHVpsVZW2F7rx2eQ59yQwKxzU5NvBcmKshCSUypi",
+        "ComputeBudget111111111111111111111111111111",
+        "FrLmhMwyYQJVivt2EsVZwEEVspxoVhYj22Cxxst4hWVf",
+        "JUP6LkbZbjS1jKKwapdHNy74zcZ3tLUZoi5QNyVTaV4",
+        "LBUZKhRxPF3XUpBCjp4YzTKgLccjZhTSDM9YuVaPwxo",
+        "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA"
+      ],
+      "quality": "complete",
+      "raw_owner_deltas": [
+        [
+          "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+          -266431553,
+          6
+        ],
+        [
+          "JUPyiwrYJFskUPiHa7hkeR8VUtAeFoSYbKedZNsDvCN",
+          765478494,
+          6
+        ]
+      ],
+      "reference_kind": "buy",
+      "reported_actor": "GJvewfRjqTUPtx6WsBSUnaFbdgXwgXnWfpDyLm65T4YA",
+      "signature": "2jehsSszmEaUpnwaYjThBfAshEenqN6NqeqnTa2sutQnsTj2SQcTFvwhf3c2Zg3mf1veP36zKrN2znvkAda4DcgJ",
+      "signers": [
+        "GJvewfRjqTUPtx6WsBSUnaFbdgXwgXnWfpDyLm65T4YA"
+      ],
+      "slot": 450591997,
+      "version": 0
+    },
+    {
+      "actor_signed": true,
+      "balances_match": true,
+      "decoded_kind": "unknown",
+      "decoder_legs": [
+        [
+          "So11111111111111111111111111111111111111112",
+          355925,
+          9
+        ]
+      ],
+      "economic_at": "2026-09-26T06:20:06+00:00",
+      "fee_lamports": 5000,
+      "payer": "NALUnJA2AJUYa6xJL1HsorEeFgxxDsfUgYBCX8Pp2zD",
+      "programs": [
+        "CAMMCzo5YL8w4VFF8KVHrK22GGUsp5VTaW7grrKgrWqK",
+        "ComputeBudget111111111111111111111111111111",
+        "JUP6LkbZbjS1jKKwapdHNy74zcZ3tLUZoi5QNyVTaV4",
+        "LBUZKhRxPF3XUpBCjp4YzTKgLccjZhTSDM9YuVaPwxo",
+        "SCoRcH8c2dpjvcJD6FiPbCSQyQgu3PcUAWj2Xxx3mqn",
+        "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA",
+        "ojh19ojaKduoJZuaJADhcVGp4xt1TcdAvZmpVsCorch"
+      ],
+      "quality": "partial",
+      "raw_owner_deltas": [
+        [
+          "So11111111111111111111111111111111111111112",
+          355925,
+          9
+        ]
+      ],
+      "reference_kind": "buy",
+      "reported_actor": "NALUnJA2AJUYa6xJL1HsorEeFgxxDsfUgYBCX8Pp2zD",
+      "signature": "2gENimXT3vGZmxYGeMAuaAGLtGLxKeuy9wnzHPZoAuS8RJbyMXXTzw2fM9zuwT2s9GVFmb6dzbB6gZkbauRhmjnF",
+      "signers": [
+        "NALUnJA2AJUYa6xJL1HsorEeFgxxDsfUgYBCX8Pp2zD"
+      ],
+      "slot": 450591997,
+      "version": 0
+    },
+    {
+      "actor_signed": true,
+      "balances_match": true,
+      "decoded_kind": "swap",
+      "decoder_legs": [
+        [
+          "JUPyiwrYJFskUPiHa7hkeR8VUtAeFoSYbKedZNsDvCN",
+          633726465,
+          6
+        ],
+        [
+          "So11111111111111111111111111111111111111112",
+          -1831636727,
+          9
+        ]
+      ],
+      "economic_at": "2026-09-26T06:20:05+00:00",
+      "fee_lamports": 5000,
+      "payer": "MfDuWeqSHEqTFVYZ7LoexgAK9dxk7cy4DFJWjWMGVWa",
+      "programs": [
+        "11111111111111111111111111111111",
+        "ComputeBudget111111111111111111111111111111",
+        "GKybPT5ZzV5NgkXy1Pa8Bnu14MS7euEtK8j9zWHzYJpx",
+        "LBUZKhRxPF3XUpBCjp4YzTKgLccjZhTSDM9YuVaPwxo",
+        "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA"
+      ],
+      "quality": "complete",
+      "raw_owner_deltas": [
+        [
+          "JUPyiwrYJFskUPiHa7hkeR8VUtAeFoSYbKedZNsDvCN",
+          633726465,
+          6
+        ],
+        [
+          "So11111111111111111111111111111111111111112",
+          -1831636727,
+          9
+        ]
+      ],
+      "reference_kind": "buy",
+      "reported_actor": "MfDuWeqSHEqTFVYZ7LoexgAK9dxk7cy4DFJWjWMGVWa",
+      "signature": "5SrCCwkftz8QfqWq3ZjW1RNJk6hM4j5U29tAonCAu1cqx11ygGp98fJVG5ZTt3wnwvEiThRyLi6jAS6NvxRf5ALr",
+      "signers": [
+        "MfDuWeqSHEqTFVYZ7LoexgAK9dxk7cy4DFJWjWMGVWa"
+      ],
+      "slot": 450591996,
+      "version": 0
+    },
+    {
+      "actor_signed": true,
+      "balances_match": true,
+      "decoded_kind": "swap",
+      "decoder_legs": [
+        [
+          "JUPyiwrYJFskUPiHa7hkeR8VUtAeFoSYbKedZNsDvCN",
+          545099221,
+          6
+        ],
+        [
+          "So11111111111111111111111111111111111111112",
+          -1575480604,
+          9
+        ]
+      ],
+      "economic_at": "2026-09-26T06:20:05+00:00",
+      "fee_lamports": 5000,
+      "payer": "MfDuWeqSHEqTFVYZ7LoexgAK9dxk7cy4DFJWjWMGVWa",
+      "programs": [
+        "11111111111111111111111111111111",
+        "ComputeBudget111111111111111111111111111111",
+        "GKybPT5ZzV5NgkXy1Pa8Bnu14MS7euEtK8j9zWHzYJpx",
+        "LBUZKhRxPF3XUpBCjp4YzTKgLccjZhTSDM9YuVaPwxo",
+        "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA"
+      ],
+      "quality": "complete",
+      "raw_owner_deltas": [
+        [
+          "JUPyiwrYJFskUPiHa7hkeR8VUtAeFoSYbKedZNsDvCN",
+          545099221,
+          6
+        ],
+        [
+          "So11111111111111111111111111111111111111112",
+          -1575480604,
+          9
+        ]
+      ],
+      "reference_kind": "buy",
+      "reported_actor": "MfDuWeqSHEqTFVYZ7LoexgAK9dxk7cy4DFJWjWMGVWa",
+      "signature": "5KgGTEjrjg6JHPeTwggU6ziQJiW7HREKEiczBhBvXwYXaHFL6KkiVubAyVvvyhDV5Cduoh6Dz5Y87C9Dhpd2jjQB",
+      "signers": [
+        "MfDuWeqSHEqTFVYZ7LoexgAK9dxk7cy4DFJWjWMGVWa"
+      ],
+      "slot": 450591996,
+      "version": 0
+    },
+    {
+      "actor_signed": true,
+      "balances_match": true,
+      "decoded_kind": "swap",
+      "decoder_legs": [
+        [
+          "JUPyiwrYJFskUPiHa7hkeR8VUtAeFoSYbKedZNsDvCN",
+          3066947150,
+          6
+        ],
+        [
+          "So11111111111111111111111111111111111111112",
+          -8864286643,
+          9
+        ]
+      ],
+      "economic_at": "2026-09-26T06:20:05+00:00",
+      "fee_lamports": 5000,
+      "payer": "MfDuWeqSHEqTFVYZ7LoexgAK9dxk7cy4DFJWjWMGVWa",
+      "programs": [
+        "11111111111111111111111111111111",
+        "ComputeBudget111111111111111111111111111111",
+        "GKybPT5ZzV5NgkXy1Pa8Bnu14MS7euEtK8j9zWHzYJpx",
+        "LBUZKhRxPF3XUpBCjp4YzTKgLccjZhTSDM9YuVaPwxo",
+        "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA"
+      ],
+      "quality": "complete",
+      "raw_owner_deltas": [
+        [
+          "JUPyiwrYJFskUPiHa7hkeR8VUtAeFoSYbKedZNsDvCN",
+          3066947150,
+          6
+        ],
+        [
+          "So11111111111111111111111111111111111111112",
+          -8864286643,
+          9
+        ]
+      ],
+      "reference_kind": "buy",
+      "reported_actor": "MfDuWeqSHEqTFVYZ7LoexgAK9dxk7cy4DFJWjWMGVWa",
+      "signature": "3VXcDFCBKCj6ngZHcWDedu2yX7MWHEC1qRQt7JNBMjLzdwxGMAPMkYqU8bGH3nwZUARRuNhVbY8rczGfME8zmdXY",
+      "signers": [
+        "MfDuWeqSHEqTFVYZ7LoexgAK9dxk7cy4DFJWjWMGVWa"
+      ],
+      "slot": 450591996,
+      "version": 0
+    },
+    {
+      "actor_signed": true,
+      "balances_match": true,
+      "decoded_kind": "unknown",
+      "decoder_legs": [],
+      "economic_at": "2026-09-26T06:20:01+00:00",
+      "fee_lamports": 5000,
+      "payer": "64fcNUtAAockLpMJZ1DudHCMHJhLRBmgrmGvbrwmQzQw",
+      "programs": [
+        "11111111111111111111111111111111",
+        "6Vo3245eszAb5wuqEMw8mGdbfRUdKbHhDHP5LcaGuTAB",
+        "ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL",
+        "ComputeBudget111111111111111111111111111111",
+        "JUP6LkbZbjS1jKKwapdHNy74zcZ3tLUZoi5QNyVTaV4",
+        "LBUZKhRxPF3XUpBCjp4YzTKgLccjZhTSDM9YuVaPwxo",
+        "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA",
+        "TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb",
+        "ZERor4xhbUycZ6gb9ntrhqscUcZmAbQDjEAtCf4hbZY",
+        "pAMMBay6oceH9fJKBRHGP5D4bD4sWpmSwMn52FMfXEA",
+        "pfeeUxB6jkeY1Hxd7CsFCAjcbHA9rWtchMGdZ6VojVZ"
+      ],
+      "quality": "partial",
+      "raw_owner_deltas": [],
+      "reference_kind": "buy",
+      "reported_actor": "64fcNUtAAockLpMJZ1DudHCMHJhLRBmgrmGvbrwmQzQw",
+      "signature": "aDJPZofwoKyfGGAEKoJ5fuyEf14bKtCkbX6kcYCHZUek5S3RN3bTGDCXm6JzVutFgBvqeuh6QVbPQ1kbtJFPcZi",
+      "signers": [
+        "64fcNUtAAockLpMJZ1DudHCMHJhLRBmgrmGvbrwmQzQw"
+      ],
+      "slot": 450591981,
+      "version": 0
+    },
+    {
+      "actor_signed": true,
+      "balances_match": true,
+      "decoded_kind": "swap",
+      "decoder_legs": [
+        [
+          "JUPyiwrYJFskUPiHa7hkeR8VUtAeFoSYbKedZNsDvCN",
+          504832825,
+          6
+        ],
+        [
+          "So11111111111111111111111111111111111111112",
+          -1459100094,
+          9
+        ]
+      ],
+      "economic_at": "2026-09-26T06:20:01+00:00",
+      "fee_lamports": 5000,
+      "payer": "MfDuWeqSHEqTFVYZ7LoexgAK9dxk7cy4DFJWjWMGVWa",
+      "programs": [
+        "11111111111111111111111111111111",
+        "ComputeBudget111111111111111111111111111111",
+        "GKybPT5ZzV5NgkXy1Pa8Bnu14MS7euEtK8j9zWHzYJpx",
+        "LBUZKhRxPF3XUpBCjp4YzTKgLccjZhTSDM9YuVaPwxo",
+        "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA"
+      ],
+      "quality": "complete",
+      "raw_owner_deltas": [
+        [
+          "JUPyiwrYJFskUPiHa7hkeR8VUtAeFoSYbKedZNsDvCN",
+          504832825,
+          6
+        ],
+        [
+          "So11111111111111111111111111111111111111112",
+          -1459100094,
+          9
+        ]
+      ],
+      "reference_kind": "buy",
+      "reported_actor": "MfDuWeqSHEqTFVYZ7LoexgAK9dxk7cy4DFJWjWMGVWa",
+      "signature": "5WPg66xjUJ4xM7w6GEEQH21ziPYpoPo4cp4BrsacaX4QM1QUzkpqFzvzZwqi6NuVJe3hrYHQcYS5wzpSzK9izVGz",
+      "signers": [
+        "MfDuWeqSHEqTFVYZ7LoexgAK9dxk7cy4DFJWjWMGVWa"
+      ],
+      "slot": 450591981,
+      "version": 0
+    },
+    {
+      "actor_signed": true,
+      "balances_match": true,
+      "decoded_kind": "unknown",
+      "decoder_legs": [
+        [
+          "So11111111111111111111111111111111111111112",
+          34946,
+          9
+        ]
+      ],
+      "economic_at": "2026-09-26T06:20:01+00:00",
+      "fee_lamports": 5216,
+      "payer": "77777nPhGvFUVAj6uq8MGyLneBt4SMwCScYZDzzztdsa",
+      "programs": [
+        "9H6tua7jkLhdm3w8BvgpTn5LZNU7g4ZynDmCiNN3q6Rp",
+        "BiSoNHVpsVZW2F7rx2eQ59yQwKxzU5NvBcmKshCSUypi",
+        "ComputeBudget111111111111111111111111111111",
+        "JUP6LkbZbjS1jKKwapdHNy74zcZ3tLUZoi5QNyVTaV4",
+        "LBUZKhRxPF3XUpBCjp4YzTKgLccjZhTSDM9YuVaPwxo",
+        "MemoSq4gqABAXKb96qnH8TysNcWxMyWCqXgDLGmfcHr",
+        "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA"
+      ],
+      "quality": "partial",
+      "raw_owner_deltas": [
+        [
+          "So11111111111111111111111111111111111111112",
+          34946,
+          9
+        ]
+      ],
+      "reference_kind": "buy",
+      "reported_actor": "77777nPhGvFUVAj6uq8MGyLneBt4SMwCScYZDzzztdsa",
+      "signature": "3iyuzvCCWjLuvg7p8bitoNXBrTaxspxx7bhJRkbtYB8DqoKmVPqs84wDmiEHV8YyHMCDEtxhJustt5CYRXDHX1dx",
+      "signers": [
+        "77777nPhGvFUVAj6uq8MGyLneBt4SMwCScYZDzzztdsa"
+      ],
+      "slot": 450591981,
+      "version": 0
+    },
+    {
+      "actor_signed": true,
+      "balances_match": true,
+      "decoded_kind": "unknown",
+      "decoder_legs": [
+        [
+          "So11111111111111111111111111111111111111112",
+          162307,
+          9
+        ]
+      ],
+      "economic_at": "2026-09-26T06:20:01+00:00",
+      "fee_lamports": 8678,
+      "payer": "4XBqViD1XYF1qHrErrsXBzDrCapvP9fEFX4LPjXZi9YU",
+      "programs": [
+        "9H6tua7jkLhdm3w8BvgpTn5LZNU7g4ZynDmCiNN3q6Rp",
+        "ComputeBudget111111111111111111111111111111",
+        "JUP6LkbZbjS1jKKwapdHNy74zcZ3tLUZoi5QNyVTaV4",
+        "LBUZKhRxPF3XUpBCjp4YzTKgLccjZhTSDM9YuVaPwxo",
+        "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA"
+      ],
+      "quality": "partial",
+      "raw_owner_deltas": [
+        [
+          "So11111111111111111111111111111111111111112",
+          162307,
+          9
+        ]
+      ],
+      "reference_kind": "buy",
+      "reported_actor": "4XBqViD1XYF1qHrErrsXBzDrCapvP9fEFX4LPjXZi9YU",
+      "signature": "5cvhfqSja3DGSA4pJ7ZQXTu9SarqkCFSy8zxxwoy3ZxS52BU4fN8cAohvjDq2AAfKKhLSZWRB1uktBYrATCQrNva",
+      "signers": [
+        "4XBqViD1XYF1qHrErrsXBzDrCapvP9fEFX4LPjXZi9YU"
+      ],
+      "slot": 450591980,
+      "version": 0
+    },
+    {
+      "actor_signed": true,
+      "balances_match": true,
+      "decoded_kind": "swap",
+      "decoder_legs": [
+        [
+          "JUPyiwrYJFskUPiHa7hkeR8VUtAeFoSYbKedZNsDvCN",
+          2595209437,
+          6
+        ],
+        [
+          "So11111111111111111111111111111111111111112",
+          -7500840157,
+          9
+        ]
+      ],
+      "economic_at": "2026-09-26T06:20:01+00:00",
+      "fee_lamports": 11969,
+      "payer": "MfDuWeqSHEqTFVYZ7LoexgAK9dxk7cy4DFJWjWMGVWa",
+      "programs": [
+        "ComputeBudget111111111111111111111111111111",
+        "GKybPT5ZzV5NgkXy1Pa8Bnu14MS7euEtK8j9zWHzYJpx",
+        "LBUZKhRxPF3XUpBCjp4YzTKgLccjZhTSDM9YuVaPwxo",
+        "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA"
+      ],
+      "quality": "complete",
+      "raw_owner_deltas": [
+        [
+          "JUPyiwrYJFskUPiHa7hkeR8VUtAeFoSYbKedZNsDvCN",
+          2595209437,
+          6
+        ],
+        [
+          "So11111111111111111111111111111111111111112",
+          -7500840157,
+          9
+        ]
+      ],
+      "reference_kind": "buy",
+      "reported_actor": "MfDuWeqSHEqTFVYZ7LoexgAK9dxk7cy4DFJWjWMGVWa",
+      "signature": "3Chgw12dSrYVTkv1Kdi9cv1vYSRd7dFCQLQX5c44dVbM4f5WQQjdXuqkBQCqqZD3Y2mH95MYR1b7auCgu8ZzF6bd",
+      "signers": [
+        "MfDuWeqSHEqTFVYZ7LoexgAK9dxk7cy4DFJWjWMGVWa"
+      ],
+      "slot": 450591980,
+      "version": 0
+    },
+    {
+      "actor_signed": true,
+      "balances_match": true,
+      "decoded_kind": "swap",
+      "decoder_legs": [
+        [
+          "JUPyiwrYJFskUPiHa7hkeR8VUtAeFoSYbKedZNsDvCN",
+          1584500957,
+          6
+        ],
+        [
+          "So11111111111111111111111111111111111111112",
+          -4579625923,
+          9
+        ]
+      ],
+      "economic_at": "2026-09-26T06:20:01+00:00",
+      "fee_lamports": 5000,
+      "payer": "MfDuWeqSHEqTFVYZ7LoexgAK9dxk7cy4DFJWjWMGVWa",
+      "programs": [
+        "11111111111111111111111111111111",
+        "ComputeBudget111111111111111111111111111111",
+        "GKybPT5ZzV5NgkXy1Pa8Bnu14MS7euEtK8j9zWHzYJpx",
+        "LBUZKhRxPF3XUpBCjp4YzTKgLccjZhTSDM9YuVaPwxo",
+        "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA"
+      ],
+      "quality": "complete",
+      "raw_owner_deltas": [
+        [
+          "JUPyiwrYJFskUPiHa7hkeR8VUtAeFoSYbKedZNsDvCN",
+          1584500957,
+          6
+        ],
+        [
+          "So11111111111111111111111111111111111111112",
+          -4579625923,
+          9
+        ]
+      ],
+      "reference_kind": "buy",
+      "reported_actor": "MfDuWeqSHEqTFVYZ7LoexgAK9dxk7cy4DFJWjWMGVWa",
+      "signature": "5Fr21pbGg1qM7miXgmE8xi33uhab9iW7SzA3Y6rv7rDcNVHzKKz5LAjQB1UiSSsk92fub1vz5CwFUMpSBjjyRA8f",
+      "signers": [
+        "MfDuWeqSHEqTFVYZ7LoexgAK9dxk7cy4DFJWjWMGVWa"
+      ],
+      "slot": 450591979,
+      "version": 0
+    },
+    {
+      "actor_signed": true,
+      "balances_match": true,
+      "decoded_kind": "unknown",
+      "decoder_legs": [
+        [
+          "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+          3486,
+          6
+        ]
+      ],
+      "economic_at": "2026-09-26T06:20:01+00:00",
+      "fee_lamports": 7229,
+      "payer": "FtFtF8iamFC3gCv5VYUTBd1G4r1XEc1TbcHyuy6hkJPQ",
+      "programs": [
+        "11111111111111111111111111111111",
+        "9H6tua7jkLhdm3w8BvgpTn5LZNU7g4ZynDmCiNN3q6Rp",
+        "BiSoNHVpsVZW2F7rx2eQ59yQwKxzU5NvBcmKshCSUypi",
+        "ComputeBudget111111111111111111111111111111",
+        "JUP6LkbZbjS1jKKwapdHNy74zcZ3tLUZoi5QNyVTaV4",
+        "LBUZKhRxPF3XUpBCjp4YzTKgLccjZhTSDM9YuVaPwxo",
+        "TTTTmv2kmJsGzwVaoJim1cuebaUDaNGAzgexGGAgVLi",
+        "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA"
+      ],
+      "quality": "partial",
+      "raw_owner_deltas": [
+        [
+          "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+          3486,
+          6
+        ]
+      ],
+      "reference_kind": "buy",
+      "reported_actor": "FtFtF8iamFC3gCv5VYUTBd1G4r1XEc1TbcHyuy6hkJPQ",
+      "signature": "4tDvS4FiiQEk2BfQSmxiXtfERa9LcWbS8s2Yrf3jK23ogeYNQQCuC1K5Y6QKnZUktpV38mk4NWMR9cw2qyVjEDPp",
+      "signers": [
+        "FtFtF8iamFC3gCv5VYUTBd1G4r1XEc1TbcHyuy6hkJPQ"
+      ],
+      "slot": 450591979,
+      "version": 1
+    },
+    {
+      "actor_signed": true,
+      "balances_match": true,
+      "decoded_kind": "unknown",
+      "decoder_legs": [
+        [
+          "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+          1940,
+          6
+        ],
+        [
+          "So11111111111111111111111111111111111111112",
+          234844,
+          9
+        ]
+      ],
+      "economic_at": "2026-09-26T06:20:01+00:00",
+      "fee_lamports": 8630,
+      "payer": "4XBqViD1XYF1qHrErrsXBzDrCapvP9fEFX4LPjXZi9YU",
+      "programs": [
+        "11111111111111111111111111111111",
+        "9H6tua7jkLhdm3w8BvgpTn5LZNU7g4ZynDmCiNN3q6Rp",
+        "ComputeBudget111111111111111111111111111111",
+        "JUP6LkbZbjS1jKKwapdHNy74zcZ3tLUZoi5QNyVTaV4",
+        "LBUZKhRxPF3XUpBCjp4YzTKgLccjZhTSDM9YuVaPwxo",
+        "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA"
+      ],
+      "quality": "partial_route",
+      "raw_owner_deltas": [
+        [
+          "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+          1940,
+          6
+        ],
+        [
+          "So11111111111111111111111111111111111111112",
+          234844,
+          9
+        ]
+      ],
+      "reference_kind": "buy",
+      "reported_actor": "4XBqViD1XYF1qHrErrsXBzDrCapvP9fEFX4LPjXZi9YU",
+      "signature": "3nU4BQpxyzhtktmAnzTg5y44d6oS3rZCEKFiSKKntCJ7FYwkWphtKnnYUG9qLGiGPqyGpykhZe15FMZ4P2qyAEES",
+      "signers": [
+        "4XBqViD1XYF1qHrErrsXBzDrCapvP9fEFX4LPjXZi9YU"
+      ],
+      "slot": 450591979,
+      "version": 0
+    },
+    {
+      "actor_signed": true,
+      "balances_match": true,
+      "decoded_kind": "unknown",
+      "decoder_legs": [
+        [
+          "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+          270290,
+          6
+        ],
+        [
+          "So11111111111111111111111111111111111111112",
+          796974,
+          9
+        ]
+      ],
+      "economic_at": "2026-09-26T06:20:01+00:00",
+      "fee_lamports": 9383,
+      "payer": "Hz7KY4XrZs7A5XHonoUwBhqarVZJCnm4ByDvQzcDr7sz",
+      "programs": [
+        "11111111111111111111111111111111",
+        "9H6tua7jkLhdm3w8BvgpTn5LZNU7g4ZynDmCiNN3q6Rp",
+        "ComputeBudget111111111111111111111111111111",
+        "JUP6LkbZbjS1jKKwapdHNy74zcZ3tLUZoi5QNyVTaV4",
+        "LBUZKhRxPF3XUpBCjp4YzTKgLccjZhTSDM9YuVaPwxo",
+        "TessVdML9pBGgG9yGks7o4HewRaXVAMuoVj4x83GLQH",
+        "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA"
+      ],
+      "quality": "partial",
+      "raw_owner_deltas": [
+        [
+          "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+          270290,
+          6
+        ],
+        [
+          "So11111111111111111111111111111111111111112",
+          796974,
+          9
+        ]
+      ],
+      "reference_kind": "buy",
+      "reported_actor": "Hz7KY4XrZs7A5XHonoUwBhqarVZJCnm4ByDvQzcDr7sz",
+      "signature": "3aSicQnTEWkRz2kP3GamQh8q6a2tzXdA9hs7zQMX2qPLwRwD5kqjvb2XrseeFW2ETctKd9FFQwexpKTgKxZCUDjj",
+      "signers": [
+        "Hz7KY4XrZs7A5XHonoUwBhqarVZJCnm4ByDvQzcDr7sz"
+      ],
+      "slot": 450591979,
+      "version": 0
+    },
+    {
+      "actor_signed": true,
+      "balances_match": true,
+      "decoded_kind": "unknown",
+      "decoder_legs": [
+        [
+          "So11111111111111111111111111111111111111112",
+          383919,
+          9
+        ]
+      ],
+      "economic_at": "2026-09-26T06:20:01+00:00",
+      "fee_lamports": 9094,
+      "payer": "4XBqViD1XYF1qHrErrsXBzDrCapvP9fEFX4LPjXZi9YU",
+      "programs": [
+        "9H6tua7jkLhdm3w8BvgpTn5LZNU7g4ZynDmCiNN3q6Rp",
+        "BiSoNHVpsVZW2F7rx2eQ59yQwKxzU5NvBcmKshCSUypi",
+        "ComputeBudget111111111111111111111111111111",
+        "JUP6LkbZbjS1jKKwapdHNy74zcZ3tLUZoi5QNyVTaV4",
+        "LBUZKhRxPF3XUpBCjp4YzTKgLccjZhTSDM9YuVaPwxo",
+        "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA"
+      ],
+      "quality": "partial",
+      "raw_owner_deltas": [
+        [
+          "So11111111111111111111111111111111111111112",
+          383919,
+          9
+        ]
+      ],
+      "reference_kind": "buy",
+      "reported_actor": "4XBqViD1XYF1qHrErrsXBzDrCapvP9fEFX4LPjXZi9YU",
+      "signature": "1v13X34pu5ccZgm7oSQWNBBfGvT6Sj9sbjKWtNmXZ8QF4tdmgJ49Wj9Foo62v8sksykSZjBf6ysxgx4shVq3JXE",
+      "signers": [
+        "4XBqViD1XYF1qHrErrsXBzDrCapvP9fEFX4LPjXZi9YU"
+      ],
+      "slot": 450591979,
+      "version": 0
+    },
+    {
+      "actor_signed": true,
+      "balances_match": true,
+      "decoded_kind": "swap",
+      "decoder_legs": [
+        [
+          "JUPyiwrYJFskUPiHa7hkeR8VUtAeFoSYbKedZNsDvCN",
+          472578815,
+          6
+        ],
+        [
+          "So11111111111111111111111111111111111111112",
+          -1365877491,
+          9
+        ]
+      ],
+      "economic_at": "2026-09-26T06:20:01+00:00",
+      "fee_lamports": 5000,
+      "payer": "MfDuWeqSHEqTFVYZ7LoexgAK9dxk7cy4DFJWjWMGVWa",
+      "programs": [
+        "11111111111111111111111111111111",
+        "ComputeBudget111111111111111111111111111111",
+        "GKybPT5ZzV5NgkXy1Pa8Bnu14MS7euEtK8j9zWHzYJpx",
+        "LBUZKhRxPF3XUpBCjp4YzTKgLccjZhTSDM9YuVaPwxo",
+        "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA"
+      ],
+      "quality": "complete",
+      "raw_owner_deltas": [
+        [
+          "JUPyiwrYJFskUPiHa7hkeR8VUtAeFoSYbKedZNsDvCN",
+          472578815,
+          6
+        ],
+        [
+          "So11111111111111111111111111111111111111112",
+          -1365877491,
+          9
+        ]
+      ],
+      "reference_kind": "buy",
+      "reported_actor": "MfDuWeqSHEqTFVYZ7LoexgAK9dxk7cy4DFJWjWMGVWa",
+      "signature": "wghBWVfirCYKnUyi5xLuyixuNpx8RYh6r9CKFzVRRhmCco92oH4gXwT1deGxpWoGagvm5s2kdGr3fnigXG2dxKf",
+      "signers": [
+        "MfDuWeqSHEqTFVYZ7LoexgAK9dxk7cy4DFJWjWMGVWa"
+      ],
+      "slot": 450591978,
+      "version": 0
+    },
+    {
+      "actor_signed": true,
+      "balances_match": true,
+      "decoded_kind": "swap",
+      "decoder_legs": [
+        [
+          "JUPyiwrYJFskUPiHa7hkeR8VUtAeFoSYbKedZNsDvCN",
+          255039815,
+          6
+        ],
+        [
+          "So11111111111111111111111111111111111111112",
+          -737132374,
+          9
+        ]
+      ],
+      "economic_at": "2026-09-26T06:20:01+00:00",
+      "fee_lamports": 5000,
+      "payer": "MfDuWeqSHEqTFVYZ7LoexgAK9dxk7cy4DFJWjWMGVWa",
+      "programs": [
+        "11111111111111111111111111111111",
+        "ComputeBudget111111111111111111111111111111",
+        "GKybPT5ZzV5NgkXy1Pa8Bnu14MS7euEtK8j9zWHzYJpx",
+        "LBUZKhRxPF3XUpBCjp4YzTKgLccjZhTSDM9YuVaPwxo",
+        "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA"
+      ],
+      "quality": "complete",
+      "raw_owner_deltas": [
+        [
+          "JUPyiwrYJFskUPiHa7hkeR8VUtAeFoSYbKedZNsDvCN",
+          255039815,
+          6
+        ],
+        [
+          "So11111111111111111111111111111111111111112",
+          -737132374,
+          9
+        ]
+      ],
+      "reference_kind": "buy",
+      "reported_actor": "MfDuWeqSHEqTFVYZ7LoexgAK9dxk7cy4DFJWjWMGVWa",
+      "signature": "44UZ6QfGzSot7Z3bn8P6XYjxYxEqQNPJBkbedFSdfs85AaKpeDMkxoawxspsmSVjPhJYDXHkPUAqDN3qq6KmDEK5",
+      "signers": [
+        "MfDuWeqSHEqTFVYZ7LoexgAK9dxk7cy4DFJWjWMGVWa"
+      ],
+      "slot": 450591978,
+      "version": 0
+    },
+    {
+      "actor_signed": true,
+      "balances_match": true,
+      "decoded_kind": "swap",
+      "decoder_legs": [
+        [
+          "JUPyiwrYJFskUPiHa7hkeR8VUtAeFoSYbKedZNsDvCN",
+          931838064,
+          6
+        ],
+        [
+          "So11111111111111111111111111111111111111112",
+          -2693257923,
+          9
+        ]
+      ],
+      "economic_at": "2026-09-26T06:20:01+00:00",
+      "fee_lamports": 5000,
+      "payer": "MfDuWeqSHEqTFVYZ7LoexgAK9dxk7cy4DFJWjWMGVWa",
+      "programs": [
+        "11111111111111111111111111111111",
+        "ComputeBudget111111111111111111111111111111",
+        "GKybPT5ZzV5NgkXy1Pa8Bnu14MS7euEtK8j9zWHzYJpx",
+        "LBUZKhRxPF3XUpBCjp4YzTKgLccjZhTSDM9YuVaPwxo",
+        "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA"
+      ],
+      "quality": "complete",
+      "raw_owner_deltas": [
+        [
+          "JUPyiwrYJFskUPiHa7hkeR8VUtAeFoSYbKedZNsDvCN",
+          931838064,
+          6
+        ],
+        [
+          "So11111111111111111111111111111111111111112",
+          -2693257923,
+          9
+        ]
+      ],
+      "reference_kind": "buy",
+      "reported_actor": "MfDuWeqSHEqTFVYZ7LoexgAK9dxk7cy4DFJWjWMGVWa",
+      "signature": "2fFkRvSZTYRiQPrnMsVupQPoybeKq6cZ17UTvb6xrVTrPdZFwAhGguhkCpUfCMY2Yg6jruaWi6wcho6ECeFvjesS",
+      "signers": [
+        "MfDuWeqSHEqTFVYZ7LoexgAK9dxk7cy4DFJWjWMGVWa"
+      ],
+      "slot": 450591978,
+      "version": 0
+    },
+    {
+      "actor_signed": true,
+      "balances_match": true,
+      "decoded_kind": "transfer",
+      "decoder_legs": [
+        [
+          "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+          -15500000,
+          6
+        ]
+      ],
+      "economic_at": "2026-09-26T06:33:13+00:00",
+      "fee_lamports": 24171,
+      "payer": "DAqCpTpQN1JNCDYLXWir28q1J2eXSufiNNADsSnUQTBZ",
+      "programs": [
+        "ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL",
+        "ComputeBudget111111111111111111111111111111",
+        "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA",
+        "ZERor4xhbUycZ6gb9ntrhqscUcZmAbQDjEAtCf4hbZY",
+        "proVF4pMXVaYqmy4NjniPh4pqKNfMmsihgd4wdkCX3u",
+        "whirLbMiicVdio4qvUfM5KAg6Ct8VwpYzGff3uctyCc"
+      ],
+      "quality": "complete",
+      "raw_owner_deltas": [
+        [
+          "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+          -15500000,
+          6
+        ]
+      ],
+      "reference_kind": "buy",
+      "reported_actor": "DAqCpTpQN1JNCDYLXWir28q1J2eXSufiNNADsSnUQTBZ",
+      "signature": "61mGyAzahY4yB6BdReVZPWXp9WmLFirMc7uNKy9vfwiBzP2VpY3JfngvEfFqbt1UtY922qK3XvweggA3B1kdbCPD",
+      "signers": [
+        "DAqCpTpQN1JNCDYLXWir28q1J2eXSufiNNADsSnUQTBZ"
+      ],
+      "slot": 450594955,
+      "version": 0
+    },
+    {
+      "actor_signed": true,
+      "balances_match": true,
+      "decoded_kind": "swap",
+      "decoder_legs": [
+        [
+          "6GmAFSYs4gk3FDao5FzzySQpPZaWsa4rUJHacpMpUNgx",
+          179161097941,
+          9
+        ],
+        [
+          "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+          -49998792,
+          6
+        ]
+      ],
+      "economic_at": "2026-09-26T06:33:02+00:00",
+      "fee_lamports": 5000,
+      "payer": "CKuBTzPwzrCisqQMQfAjNn6jKcfny8ny4rJVN3cxLjcf",
+      "programs": [
+        "11111111111111111111111111111111",
+        "ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL",
+        "ComputeBudget111111111111111111111111111111",
+        "JUP6LkbZbjS1jKKwapdHNy74zcZ3tLUZoi5QNyVTaV4",
+        "LBUZKhRxPF3XUpBCjp4YzTKgLccjZhTSDM9YuVaPwxo",
+        "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA",
+        "ZERor4xhbUycZ6gb9ntrhqscUcZmAbQDjEAtCf4hbZY",
+        "whirLbMiicVdio4qvUfM5KAg6Ct8VwpYzGff3uctyCc"
+      ],
+      "quality": "complete",
+      "raw_owner_deltas": [
+        [
+          "6GmAFSYs4gk3FDao5FzzySQpPZaWsa4rUJHacpMpUNgx",
+          179161097941,
+          9
+        ],
+        [
+          "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+          -49998792,
+          6
+        ]
+      ],
+      "reference_kind": "buy",
+      "reported_actor": "CKuBTzPwzrCisqQMQfAjNn6jKcfny8ny4rJVN3cxLjcf",
+      "signature": "8bqJC4NAFqNL9FECWZNicQskBweCib9vq5pidQZAPZKd53eRpLmXJMdexw1h3WYMtPX3QWzkZnpCLcu8SBCRw5T",
+      "signers": [
+        "CKuBTzPwzrCisqQMQfAjNn6jKcfny8ny4rJVN3cxLjcf"
+      ],
+      "slot": 450594912,
+      "version": 0
+    },
+    {
+      "actor_signed": true,
+      "balances_match": true,
+      "decoded_kind": "unknown",
+      "decoder_legs": [
+        [
+          "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+          -38904582,
+          6
+        ],
+        [
+          "So11111111111111111111111111111111111111112",
+          323041016,
+          9
+        ]
+      ],
+      "economic_at": "2026-09-26T06:33:01+00:00",
+      "fee_lamports": 5001,
+      "payer": "4jjEXcFPXw7WVGXSTb227HW6wfLprjh2RtiHty4GbetE",
+      "programs": [
+        "ComputeBudget111111111111111111111111111111",
+        "EpEEdmjbLsZFCaGgHHnwaysW9bKWNcdm3bxs6HXAQwSk",
+        "JUP6LkbZbjS1jKKwapdHNy74zcZ3tLUZoi5QNyVTaV4",
+        "LBUZKhRxPF3XUpBCjp4YzTKgLccjZhTSDM9YuVaPwxo",
+        "T1TANpTeScyeqVzzgNViGDNrkQ6qHz9KrSBS4aNXvGT",
+        "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA",
+        "ZERor4xhbUycZ6gb9ntrhqscUcZmAbQDjEAtCf4hbZY"
+      ],
+      "quality": "partial_route",
+      "raw_owner_deltas": [
+        [
+          "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+          -38904582,
+          6
+        ],
+        [
+          "So11111111111111111111111111111111111111112",
+          323041016,
+          9
+        ]
+      ],
+      "reference_kind": "buy",
+      "reported_actor": "4jjEXcFPXw7WVGXSTb227HW6wfLprjh2RtiHty4GbetE",
+      "signature": "5H819kiETEGQfLBdNgngpoZhnABvQXPk8QHeNp7AfsnZpNCyohkoryDPvrZbvEHiULkGnzQrPGx416TSnJHBrsE9",
+      "signers": [
+        "4jjEXcFPXw7WVGXSTb227HW6wfLprjh2RtiHty4GbetE"
+      ],
+      "slot": 450594911,
+      "version": 0
+    },
+    {
+      "actor_signed": true,
+      "balances_match": true,
+      "decoded_kind": "unknown",
+      "decoder_legs": [
+        [
+          "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+          -91143432,
+          6
+        ],
+        [
+          "So11111111111111111111111111111111111111112",
+          756900596,
+          9
+        ]
+      ],
+      "economic_at": "2026-09-26T06:32:35+00:00",
+      "fee_lamports": 5001,
+      "payer": "4jjEXcFPXw7WVGXSTb227HW6wfLprjh2RtiHty4GbetE",
+      "programs": [
+        "ComputeBudget111111111111111111111111111111",
+        "EpEEdmjbLsZFCaGgHHnwaysW9bKWNcdm3bxs6HXAQwSk",
+        "JUP6LkbZbjS1jKKwapdHNy74zcZ3tLUZoi5QNyVTaV4",
+        "LBUZKhRxPF3XUpBCjp4YzTKgLccjZhTSDM9YuVaPwxo",
+        "T1TANpTeScyeqVzzgNViGDNrkQ6qHz9KrSBS4aNXvGT",
+        "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA",
+        "ZERor4xhbUycZ6gb9ntrhqscUcZmAbQDjEAtCf4hbZY",
+        "cpamdpZCGKUy5JxQXB4dcpGPiikHawvSWAd6mEn1sGG"
+      ],
+      "quality": "partial_route",
+      "raw_owner_deltas": [
+        [
+          "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+          -91143432,
+          6
+        ],
+        [
+          "So11111111111111111111111111111111111111112",
+          756900596,
+          9
+        ]
+      ],
+      "reference_kind": "buy",
+      "reported_actor": "4jjEXcFPXw7WVGXSTb227HW6wfLprjh2RtiHty4GbetE",
+      "signature": "5MoNjSbs64zzWaVkVABowuu9eXSTTHkZXF91stN9SvCwvPBMoVF62e5LyTrPSVmKW8P1qxEUrB9PBF5iuQ6v1ici",
+      "signers": [
+        "4jjEXcFPXw7WVGXSTb227HW6wfLprjh2RtiHty4GbetE"
+      ],
+      "slot": 450594814,
+      "version": 0
+    },
+    {
+      "actor_signed": true,
+      "balances_match": true,
+      "decoded_kind": "unknown",
+      "decoder_legs": [
+        [
+          "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+          -19689743,
+          6
+        ],
+        [
+          "So11111111111111111111111111111111111111112",
+          163564298,
+          9
+        ]
+      ],
+      "economic_at": "2026-09-26T06:32:31+00:00",
+      "fee_lamports": 5001,
+      "payer": "4jjEXcFPXw7WVGXSTb227HW6wfLprjh2RtiHty4GbetE",
+      "programs": [
+        "ComputeBudget111111111111111111111111111111",
+        "EpEEdmjbLsZFCaGgHHnwaysW9bKWNcdm3bxs6HXAQwSk",
+        "LBUZKhRxPF3XUpBCjp4YzTKgLccjZhTSDM9YuVaPwxo",
+        "T1TANpTeScyeqVzzgNViGDNrkQ6qHz9KrSBS4aNXvGT",
+        "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA",
+        "ZERor4xhbUycZ6gb9ntrhqscUcZmAbQDjEAtCf4hbZY",
+        "whirLbMiicVdio4qvUfM5KAg6Ct8VwpYzGff3uctyCc"
+      ],
+      "quality": "partial_route",
+      "raw_owner_deltas": [
+        [
+          "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+          -19689743,
+          6
+        ],
+        [
+          "So11111111111111111111111111111111111111112",
+          163564298,
+          9
+        ]
+      ],
+      "reference_kind": "buy",
+      "reported_actor": "4jjEXcFPXw7WVGXSTb227HW6wfLprjh2RtiHty4GbetE",
+      "signature": "dgCt9gGF2NZSQyZ7HYNNa2Cc4qaQQHnWAwmfY2fJgmT7cbhN6hRYYYhut6wmncpDJkwoGU5BrhBc1vNeiWbMrcF",
+      "signers": [
+        "4jjEXcFPXw7WVGXSTb227HW6wfLprjh2RtiHty4GbetE"
+      ],
+      "slot": 450594796,
+      "version": 0
+    },
+    {
+      "actor_signed": true,
+      "balances_match": true,
+      "decoded_kind": "unknown",
+      "decoder_legs": [
+        [
+          "DNUTsCvKbKwu2RM72cUuW3TD9YpzArzACcqYQssjPLSk",
+          -18945249,
+          6
+        ]
+      ],
+      "economic_at": "2026-09-26T06:32:30+00:00",
+      "fee_lamports": 21995,
+      "payer": "BCCwRKh4MLBKH5MpdJ1TAcjUK4hfPDSAyuyBViBBU6rf",
+      "programs": [
+        "11111111111111111111111111111111",
+        "ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL",
+        "CAMMCzo5YL8w4VFF8KVHrK22GGUsp5VTaW7grrKgrWqK",
+        "ComputeBudget111111111111111111111111111111",
+        "JUP6LkbZbjS1jKKwapdHNy74zcZ3tLUZoi5QNyVTaV4",
+        "LBUZKhRxPF3XUpBCjp4YzTKgLccjZhTSDM9YuVaPwxo",
+        "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA",
+        "TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb",
+        "ZERor4xhbUycZ6gb9ntrhqscUcZmAbQDjEAtCf4hbZY"
+      ],
+      "quality": "partial",
+      "raw_owner_deltas": [
+        [
+          "DNUTsCvKbKwu2RM72cUuW3TD9YpzArzACcqYQssjPLSk",
+          -18945249,
+          6
+        ]
+      ],
+      "reference_kind": "buy",
+      "reported_actor": "BCCwRKh4MLBKH5MpdJ1TAcjUK4hfPDSAyuyBViBBU6rf",
+      "signature": "ZHdkoURjBi86gscoChN7ZSDUV2pFmac1RcrqPBPHBWKGhkUyL4vhMxtcDAUevFtbYtJu4oezKQZL7rVnVdXPT1E",
+      "signers": [
+        "BCCwRKh4MLBKH5MpdJ1TAcjUK4hfPDSAyuyBViBBU6rf"
+      ],
+      "slot": 450594793,
+      "version": 0
+    },
+    {
+      "actor_signed": true,
+      "balances_match": true,
+      "decoded_kind": "unknown",
+      "decoder_legs": [
+        [
+          "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+          12214121,
+          6
+        ],
+        [
+          "MEW1gQWJ3nEXg2qgERiKu7FAFj79PHvQVREQUzScPP5",
+          10746459,
+          5
+        ]
+      ],
+      "economic_at": "2026-09-26T06:32:27+00:00",
+      "fee_lamports": 193294,
+      "payer": "7rtiKSUDLBm59b1SBmD9oajcP8xE64vAGSMbAN5CXy1q",
+      "programs": [
+        "11111111111111111111111111111111",
+        "675kPX9MHTjS2zt1qfr1NYHuzeLXfQM9H24wFSUt1Mp8",
+        "ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL",
+        "CAMMCzo5YL8w4VFF8KVHrK22GGUsp5VTaW7grrKgrWqK",
+        "ComputeBudget111111111111111111111111111111",
+        "JUP6LkbZbjS1jKKwapdHNy74zcZ3tLUZoi5QNyVTaV4",
+        "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA",
+        "ZERor4xhbUycZ6gb9ntrhqscUcZmAbQDjEAtCf4hbZY"
+      ],
+      "quality": "partial",
+      "raw_owner_deltas": [
+        [
+          "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+          12214121,
+          6
+        ],
+        [
+          "MEW1gQWJ3nEXg2qgERiKu7FAFj79PHvQVREQUzScPP5",
+          10746459,
+          5
+        ]
+      ],
+      "reference_kind": "buy",
+      "reported_actor": "2Rjbj4tD1kFyn1sWwzc51pJfYeqcU54UFsDg1Vx6QYUD",
+      "signature": "5M8w5VvDFT9RstVoNvZPkatLxcjKX9fZAfkFVtV1yUZHN2hFCuMPjnJuygDJBangEn49PouAjuejGddiEygRKqzi",
+      "signers": [
+        "7rtiKSUDLBm59b1SBmD9oajcP8xE64vAGSMbAN5CXy1q",
+        "2Rjbj4tD1kFyn1sWwzc51pJfYeqcU54UFsDg1Vx6QYUD",
+        "CTxi1aG1tQJsfLq1SFoqc3n7XK1FbmsWjYvEugDCgCDQ"
+      ],
+      "slot": 450594782,
+      "version": 0
+    },
+    {
+      "actor_signed": true,
+      "balances_match": true,
+      "decoded_kind": "unknown",
+      "decoder_legs": [
+        [
+          "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+          -6005299,
+          6
+        ],
+        [
+          "JUPyiwrYJFskUPiHa7hkeR8VUtAeFoSYbKedZNsDvCN",
+          17220479,
+          6
+        ]
+      ],
+      "economic_at": "2026-09-26T06:32:26+00:00",
+      "fee_lamports": 5001,
+      "payer": "4jjEXcFPXw7WVGXSTb227HW6wfLprjh2RtiHty4GbetE",
+      "programs": [
+        "CPMMoo8L3F4NbTegBCKVNunggL7H1ZpdTHKxQB5qKP1C",
+        "ComputeBudget111111111111111111111111111111",
+        "EpEEdmjbLsZFCaGgHHnwaysW9bKWNcdm3bxs6HXAQwSk",
+        "T1TANpTeScyeqVzzgNViGDNrkQ6qHz9KrSBS4aNXvGT",
+        "TessVdML9pBGgG9yGks7o4HewRaXVAMuoVj4x83GLQH",
+        "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA",
+        "ZERor4xhbUycZ6gb9ntrhqscUcZmAbQDjEAtCf4hbZY"
+      ],
+      "quality": "partial",
+      "raw_owner_deltas": [
+        [
+          "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+          -6005299,
+          6
+        ],
+        [
+          "JUPyiwrYJFskUPiHa7hkeR8VUtAeFoSYbKedZNsDvCN",
+          17220479,
+          6
+        ]
+      ],
+      "reference_kind": "buy",
+      "reported_actor": "4jjEXcFPXw7WVGXSTb227HW6wfLprjh2RtiHty4GbetE",
+      "signature": "3DyH13CMU7uJsnx9ZLBYXbx4sQi3iwa6TT4dt5pgvqmxe558YxMGQKDjWqRZgjuJ6d8BddsuBjv89ftFtLpCVxCU",
+      "signers": [
+        "4jjEXcFPXw7WVGXSTb227HW6wfLprjh2RtiHty4GbetE"
+      ],
+      "slot": 450594779,
+      "version": 0
+    },
+    {
+      "actor_signed": true,
+      "balances_match": true,
+      "decoded_kind": "swap",
+      "decoder_legs": [
+        [
+          "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+          -10114032,
+          6
+        ],
+        [
+          "HSUMi4rMgjrx7zRUabw3ogGu1pa5hmF2eVcXj9Apump",
+          11325236488,
+          6
+        ]
+      ],
+      "economic_at": "2026-09-26T06:32:25+00:00",
+      "fee_lamports": 6216,
+      "payer": "EYvwg12vXcUN7pF1fASQZZgQ9RbVUMLjKqqCfi961ptw",
+      "programs": [
+        "CAMMCzo5YL8w4VFF8KVHrK22GGUsp5VTaW7grrKgrWqK",
+        "ComputeBudget111111111111111111111111111111",
+        "JUP6LkbZbjS1jKKwapdHNy74zcZ3tLUZoi5QNyVTaV4",
+        "LBUZKhRxPF3XUpBCjp4YzTKgLccjZhTSDM9YuVaPwxo",
+        "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA",
+        "TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb",
+        "ZERor4xhbUycZ6gb9ntrhqscUcZmAbQDjEAtCf4hbZY"
+      ],
+      "quality": "complete",
+      "raw_owner_deltas": [
+        [
+          "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+          -10114032,
+          6
+        ],
+        [
+          "HSUMi4rMgjrx7zRUabw3ogGu1pa5hmF2eVcXj9Apump",
+          11325236488,
+          6
+        ]
+      ],
+      "reference_kind": "buy",
+      "reported_actor": "EYvwg12vXcUN7pF1fASQZZgQ9RbVUMLjKqqCfi961ptw",
+      "signature": "5Mz1Q2Xi2Uh8nPFM9k6z34XhpDmFpR9eUjMr8feHu5Azun6vWtZxskdYkKMBtMS5qVaBHnRgRikq21ved8ZTfaYC",
+      "signers": [
+        "EYvwg12vXcUN7pF1fASQZZgQ9RbVUMLjKqqCfi961ptw"
+      ],
+      "slot": 450594775,
+      "version": 0
+    },
+    {
+      "actor_signed": true,
+      "balances_match": true,
+      "decoded_kind": "unknown",
+      "decoder_legs": [
+        [
+          "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+          1405,
+          6
+        ]
+      ],
+      "economic_at": "2026-09-26T06:32:25+00:00",
+      "fee_lamports": 5002,
+      "payer": "4jjEXcFPXw7WVGXSTb227HW6wfLprjh2RtiHty4GbetE",
+      "programs": [
+        "11111111111111111111111111111111",
+        "ComputeBudget111111111111111111111111111111",
+        "LBUZKhRxPF3XUpBCjp4YzTKgLccjZhTSDM9YuVaPwxo",
+        "T1TANpTeScyeqVzzgNViGDNrkQ6qHz9KrSBS4aNXvGT",
+        "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA",
+        "ZERor4xhbUycZ6gb9ntrhqscUcZmAbQDjEAtCf4hbZY"
+      ],
+      "quality": "partial",
+      "raw_owner_deltas": [
+        [
+          "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+          1405,
+          6
+        ]
+      ],
+      "reference_kind": "buy",
+      "reported_actor": "4jjEXcFPXw7WVGXSTb227HW6wfLprjh2RtiHty4GbetE",
+      "signature": "wszeEYDRjWnYWnifdmRxBnSm42XoVN6vraPoZKTD68v5iXnoPGRpqqsEAJ3wT3k8JEvA2oAPnxztTXetdzxXEzE",
+      "signers": [
+        "4jjEXcFPXw7WVGXSTb227HW6wfLprjh2RtiHty4GbetE"
+      ],
+      "slot": 450594774,
+      "version": 0
+    },
+    {
+      "actor_signed": true,
+      "balances_match": true,
+      "decoded_kind": "swap",
+      "decoder_legs": [
+        [
+          "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+          -6679775,
+          6
+        ],
+        [
+          "So11111111111111111111111111111111111111112",
+          55506902,
+          9
+        ]
+      ],
+      "economic_at": "2026-09-26T06:32:22+00:00",
+      "fee_lamports": 5001,
+      "payer": "4jjEXcFPXw7WVGXSTb227HW6wfLprjh2RtiHty4GbetE",
+      "programs": [
+        "24Uqj9JCLxUeoC3hGfh5W3s9FM9uCHDS2SG3LYwBpyTi",
+        "CAMMCzo5YL8w4VFF8KVHrK22GGUsp5VTaW7grrKgrWqK",
+        "ComputeBudget111111111111111111111111111111",
+        "Eo7WjKq67rjJQSZxS6z3YkapzY3eMj6Xy8X5EQVn5UaB",
+        "EpEEdmjbLsZFCaGgHHnwaysW9bKWNcdm3bxs6HXAQwSk",
+        "LBUZKhRxPF3XUpBCjp4YzTKgLccjZhTSDM9YuVaPwxo",
+        "T1TANpTeScyeqVzzgNViGDNrkQ6qHz9KrSBS4aNXvGT",
+        "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA",
+        "ZERor4xhbUycZ6gb9ntrhqscUcZmAbQDjEAtCf4hbZY"
+      ],
+      "quality": "complete",
+      "raw_owner_deltas": [
+        [
+          "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+          -6679775,
+          6
+        ],
+        [
+          "So11111111111111111111111111111111111111112",
+          55506902,
+          9
+        ]
+      ],
+      "reference_kind": "buy",
+      "reported_actor": "4jjEXcFPXw7WVGXSTb227HW6wfLprjh2RtiHty4GbetE",
+      "signature": "4PT85QjozHxG4aZbhBS77PhAuzGB2xy644MXcsbMWtCM2HsAXQ2TFDVNf9PvwGqrzdz3Mczq9s8yFbPG5a9Mxj1A",
+      "signers": [
+        "4jjEXcFPXw7WVGXSTb227HW6wfLprjh2RtiHty4GbetE"
+      ],
+      "slot": 450594763,
+      "version": 0
+    },
+    {
+      "actor_signed": true,
+      "balances_match": true,
+      "decoded_kind": "wrap",
+      "decoder_legs": [
+        [
+          "So11111111111111111111111111111111111111112",
+          28181,
+          9
+        ]
+      ],
+      "economic_at": "2026-09-26T06:32:17+00:00",
+      "fee_lamports": 5000,
+      "payer": "C2wezAHikMgfvXJRqPuDvS7KZwLvKRr6xNR3U431GWas",
+      "programs": [
+        "11111111111111111111111111111111",
+        "ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL",
+        "CAMMCzo5YL8w4VFF8KVHrK22GGUsp5VTaW7grrKgrWqK",
+        "ComputeBudget111111111111111111111111111111",
+        "FLUX6xBayGxLX9UcimVRxXFMHH6q43mAbRvDzSpCsvfK",
+        "JUP6LkbZbjS1jKKwapdHNy74zcZ3tLUZoi5QNyVTaV4",
+        "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA",
+        "ZERor4xhbUycZ6gb9ntrhqscUcZmAbQDjEAtCf4hbZY"
+      ],
+      "quality": "complete",
+      "raw_owner_deltas": [
+        [
+          "So11111111111111111111111111111111111111112",
+          28181,
+          9
+        ]
+      ],
+      "reference_kind": "buy",
+      "reported_actor": "C2wezAHikMgfvXJRqPuDvS7KZwLvKRr6xNR3U431GWas",
+      "signature": "5bzhKSM719SuXv1mM5h4AzLSdHAo18tVMkfQsqZRNjZy32fwuPppvBmMfRWRUJr4buw724G2A3rXj3DXniM8FBty",
+      "signers": [
+        "C2wezAHikMgfvXJRqPuDvS7KZwLvKRr6xNR3U431GWas"
+      ],
+      "slot": 450594745,
+      "version": 0
+    },
+    {
+      "actor_signed": true,
+      "balances_match": true,
+      "decoded_kind": "unknown",
+      "decoder_legs": [
+        [
+          "So11111111111111111111111111111111111111112",
+          11232,
+          9
+        ]
+      ],
+      "economic_at": "2026-09-26T06:32:17+00:00",
+      "fee_lamports": 5965,
+      "payer": "BoTEtBusBdBFWqfiZiJiCqdcxSttbwrW7mLLdoTFXBBh",
+      "programs": [
+        "11111111111111111111111111111111",
+        "BiSoNHVpsVZW2F7rx2eQ59yQwKxzU5NvBcmKshCSUypi",
+        "ComputeBudget111111111111111111111111111111",
+        "DF1ow4tspfHX9JwWJsAb9epbkA8hmpSEAtxXy1V27QBH",
+        "Ho71FM91QfRYze2bMdCZC4PzxSNsoeTduPxr35zU7msT",
+        "LBUZKhRxPF3XUpBCjp4YzTKgLccjZhTSDM9YuVaPwxo",
+        "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA",
+        "ZERor4xhbUycZ6gb9ntrhqscUcZmAbQDjEAtCf4hbZY"
+      ],
+      "quality": "partial",
+      "raw_owner_deltas": [
+        [
+          "So11111111111111111111111111111111111111112",
+          11232,
+          9
+        ]
+      ],
+      "reference_kind": "buy",
+      "reported_actor": "BoTEtBusBdBFWqfiZiJiCqdcxSttbwrW7mLLdoTFXBBh",
+      "signature": "2tRtRwpX7iqDLyJMt31WCEeNHZqSA9XdyoosrDtoW7CSKT8yzDwSdT5PgQLo3wu6jyFXx3mgn1gye3EfjixJfVBs",
+      "signers": [
+        "BoTEtBusBdBFWqfiZiJiCqdcxSttbwrW7mLLdoTFXBBh"
+      ],
+      "slot": 450594745,
+      "version": 0
+    },
+    {
+      "actor_signed": true,
+      "balances_match": true,
+      "decoded_kind": "transfer",
+      "decoder_legs": [
+        [
+          "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+          34237,
+          6
+        ]
+      ],
+      "economic_at": "2026-09-26T06:32:17+00:00",
+      "fee_lamports": 5002,
+      "payer": "4jjEXcFPXw7WVGXSTb227HW6wfLprjh2RtiHty4GbetE",
+      "programs": [
+        "11111111111111111111111111111111",
+        "ComputeBudget111111111111111111111111111111",
+        "T1TANpTeScyeqVzzgNViGDNrkQ6qHz9KrSBS4aNXvGT",
+        "TessVdML9pBGgG9yGks7o4HewRaXVAMuoVj4x83GLQH",
+        "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA",
+        "ZERor4xhbUycZ6gb9ntrhqscUcZmAbQDjEAtCf4hbZY",
+        "whirLbMiicVdio4qvUfM5KAg6Ct8VwpYzGff3uctyCc"
+      ],
+      "quality": "complete",
+      "raw_owner_deltas": [
+        [
+          "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+          34237,
+          6
+        ]
+      ],
+      "reference_kind": "buy",
+      "reported_actor": "4jjEXcFPXw7WVGXSTb227HW6wfLprjh2RtiHty4GbetE",
+      "signature": "5Q667pqniKQuL5ogHYunwXsw8Mafq23KNQf7yRHiEKGortzWyehbTWWNQSSsSs9owqLVi5efK23pWaNMsrhjdcxd",
+      "signers": [
+        "4jjEXcFPXw7WVGXSTb227HW6wfLprjh2RtiHty4GbetE"
+      ],
+      "slot": 450594744,
+      "version": 0
+    },
+    {
+      "actor_signed": true,
+      "balances_match": true,
+      "decoded_kind": "swap",
+      "decoder_legs": [
+        [
+          "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+          -37380042,
+          6
+        ],
+        [
+          "So11111111111111111111111111111111111111112",
+          310637365,
+          9
+        ]
+      ],
+      "economic_at": "2026-09-26T06:32:10+00:00",
+      "fee_lamports": 5001,
+      "payer": "4jjEXcFPXw7WVGXSTb227HW6wfLprjh2RtiHty4GbetE",
+      "programs": [
+        "ComputeBudget111111111111111111111111111111",
+        "EpEEdmjbLsZFCaGgHHnwaysW9bKWNcdm3bxs6HXAQwSk",
+        "LBUZKhRxPF3XUpBCjp4YzTKgLccjZhTSDM9YuVaPwxo",
+        "T1TANpTeScyeqVzzgNViGDNrkQ6qHz9KrSBS4aNXvGT",
+        "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA",
+        "ZERor4xhbUycZ6gb9ntrhqscUcZmAbQDjEAtCf4hbZY"
+      ],
+      "quality": "complete",
+      "raw_owner_deltas": [
+        [
+          "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+          -37380042,
+          6
+        ],
+        [
+          "So11111111111111111111111111111111111111112",
+          310637365,
+          9
+        ]
+      ],
+      "reference_kind": "buy",
+      "reported_actor": "4jjEXcFPXw7WVGXSTb227HW6wfLprjh2RtiHty4GbetE",
+      "signature": "4NRoq2qVesgK6RPoYEBNrEEQPQG35jQZ5KYQwTeURRocPf3oAvraGLZKHCKMHwwLA1bCgo6HLNcAkgzA5G3SWj5Y",
+      "signers": [
+        "4jjEXcFPXw7WVGXSTb227HW6wfLprjh2RtiHty4GbetE"
+      ],
+      "slot": 450594720,
+      "version": 0
+    },
+    {
+      "actor_signed": true,
+      "balances_match": true,
+      "decoded_kind": "unknown",
+      "decoder_legs": [
+        [
+          "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+          -96240136,
+          6
+        ],
+        [
+          "JUPyiwrYJFskUPiHa7hkeR8VUtAeFoSYbKedZNsDvCN",
+          275646225,
+          6
+        ]
+      ],
+      "economic_at": "2026-09-26T06:32:10+00:00",
+      "fee_lamports": 5001,
+      "payer": "4jjEXcFPXw7WVGXSTb227HW6wfLprjh2RtiHty4GbetE",
+      "programs": [
+        "CAMMCzo5YL8w4VFF8KVHrK22GGUsp5VTaW7grrKgrWqK",
+        "ComputeBudget111111111111111111111111111111",
+        "EpEEdmjbLsZFCaGgHHnwaysW9bKWNcdm3bxs6HXAQwSk",
+        "REALQqNEomY6cQGZJUGwywTBD2UmDT32rZcNnfxQ5N2",
+        "T1TANpTeScyeqVzzgNViGDNrkQ6qHz9KrSBS4aNXvGT",
+        "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA",
+        "ZERor4xhbUycZ6gb9ntrhqscUcZmAbQDjEAtCf4hbZY",
+        "whirLbMiicVdio4qvUfM5KAg6Ct8VwpYzGff3uctyCc"
+      ],
+      "quality": "partial",
+      "raw_owner_deltas": [
+        [
+          "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+          -96240136,
+          6
+        ],
+        [
+          "JUPyiwrYJFskUPiHa7hkeR8VUtAeFoSYbKedZNsDvCN",
+          275646225,
+          6
+        ]
+      ],
+      "reference_kind": "buy",
+      "reported_actor": "4jjEXcFPXw7WVGXSTb227HW6wfLprjh2RtiHty4GbetE",
+      "signature": "2cnpNMh257ieb3SNH8hTkUqKJQqKabEhaUcngB9adBjNK9LtTmUjzd6M5CmTEaYFXBhrhU2SxFKHzHTDKVCYKQ1g",
+      "signers": [
+        "4jjEXcFPXw7WVGXSTb227HW6wfLprjh2RtiHty4GbetE"
+      ],
+      "slot": 450594720,
+      "version": 0
+    },
+    {
+      "actor_signed": true,
+      "balances_match": true,
+      "decoded_kind": "transfer",
+      "decoder_legs": [
+        [
+          "3NZ9JMVBmGAqocybic2c7LQCJScmgsAZ6vQqTDzcqmJh",
+          -32110,
+          8
+        ]
+      ],
+      "economic_at": "2026-09-26T06:31:45+00:00",
+      "fee_lamports": 5000,
+      "payer": "7JQeyNK55fkUPUmEotupBFpiBGpgEQYLe8Ht1VdSfxcP",
+      "programs": [
+        "11111111111111111111111111111111",
+        "ComputeBudget111111111111111111111111111111",
+        "JUP6LkbZbjS1jKKwapdHNy74zcZ3tLUZoi5QNyVTaV4",
+        "MNFSTqtC93rEfYHB6hF82sKdZpUDFWkViLByLd1k1Ms",
+        "TessVdML9pBGgG9yGks7o4HewRaXVAMuoVj4x83GLQH",
+        "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA",
+        "ZERor4xhbUycZ6gb9ntrhqscUcZmAbQDjEAtCf4hbZY"
+      ],
+      "quality": "complete",
+      "raw_owner_deltas": [
+        [
+          "3NZ9JMVBmGAqocybic2c7LQCJScmgsAZ6vQqTDzcqmJh",
+          -32110,
+          8
+        ]
+      ],
+      "reference_kind": "buy",
+      "reported_actor": "7JQeyNK55fkUPUmEotupBFpiBGpgEQYLe8Ht1VdSfxcP",
+      "signature": "2mmtigk6CrKm23bJHGyuxnURnan4qXsfzVBfJnYxL2GBjC2ebhp51GeDqNnuP6HcJyhtUY5KL7xCcugbHkMVWT4c",
+      "signers": [
+        "7JQeyNK55fkUPUmEotupBFpiBGpgEQYLe8Ht1VdSfxcP"
+      ],
+      "slot": 450594623,
+      "version": 0
+    },
+    {
+      "actor_signed": true,
+      "balances_match": true,
+      "decoded_kind": "unknown",
+      "decoder_legs": [
+        [
+          "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+          11005,
+          6
+        ]
+      ],
+      "economic_at": "2026-09-26T06:31:24+00:00",
+      "fee_lamports": 5000,
+      "payer": "C2wezAHikMgfvXJRqPuDvS7KZwLvKRr6xNR3U431GWas",
+      "programs": [
+        "11111111111111111111111111111111",
+        "ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL",
+        "ComputeBudget111111111111111111111111111111",
+        "HpNfyc2Saw7RKkQd8nEL4khUcuPhQ7WwY1B2qjx8jxFq",
+        "JUP6LkbZbjS1jKKwapdHNy74zcZ3tLUZoi5QNyVTaV4",
+        "LBUZKhRxPF3XUpBCjp4YzTKgLccjZhTSDM9YuVaPwxo",
+        "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA",
+        "ZERor4xhbUycZ6gb9ntrhqscUcZmAbQDjEAtCf4hbZY"
+      ],
+      "quality": "partial",
+      "raw_owner_deltas": [
+        [
+          "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+          11005,
+          6
+        ]
+      ],
+      "reference_kind": "buy",
+      "reported_actor": "C2wezAHikMgfvXJRqPuDvS7KZwLvKRr6xNR3U431GWas",
+      "signature": "mxP3TRn7HvfwuSLak59hP1HE6eFFtsawPJU7yk7h53cwdgsTM11nu7QriSeeGiEFvgRCRMyjNKhfYB1ChBdY2Y6",
+      "signers": [
+        "C2wezAHikMgfvXJRqPuDvS7KZwLvKRr6xNR3U431GWas"
+      ],
+      "slot": 450594546,
+      "version": 0
+    },
+    {
+      "actor_signed": true,
+      "balances_match": true,
+      "decoded_kind": "transfer",
+      "decoder_legs": [
+        [
+          "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+          41831,
+          6
+        ]
+      ],
+      "economic_at": "2026-09-26T06:31:24+00:00",
+      "fee_lamports": 5002,
+      "payer": "4jjEXcFPXw7WVGXSTb227HW6wfLprjh2RtiHty4GbetE",
+      "programs": [
+        "11111111111111111111111111111111",
+        "ComputeBudget111111111111111111111111111111",
+        "DRVSpZ2YUYYKgZP8XtLhAGtT1zYSCKzeHfb4DgRnrgqD",
+        "T1TANpTeScyeqVzzgNViGDNrkQ6qHz9KrSBS4aNXvGT",
+        "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA",
+        "ZERor4xhbUycZ6gb9ntrhqscUcZmAbQDjEAtCf4hbZY",
+        "whirLbMiicVdio4qvUfM5KAg6Ct8VwpYzGff3uctyCc"
+      ],
+      "quality": "complete",
+      "raw_owner_deltas": [
+        [
+          "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+          41831,
+          6
+        ]
+      ],
+      "reference_kind": "buy",
+      "reported_actor": "4jjEXcFPXw7WVGXSTb227HW6wfLprjh2RtiHty4GbetE",
+      "signature": "5kPkcTjBir8SzzoBXcuUzMoiHDM2bM8KFJmEsaZSg5idxY9UNwDzFR73QsacXhjXRERxtsjfUWsgLfZHoHFykCoX",
+      "signers": [
+        "4jjEXcFPXw7WVGXSTb227HW6wfLprjh2RtiHty4GbetE"
+      ],
+      "slot": 450594546,
+      "version": 0
+    },
+    {
+      "actor_signed": true,
+      "balances_match": true,
+      "decoded_kind": "unknown",
+      "decoder_legs": [
+        [
+          "JAtFQn9yiSxCPBRnECvhaF8Vz3YtNq8Sk8nbCZ9ra54k",
+          502059383832,
+          6
+        ]
+      ],
+      "economic_at": "2026-09-26T06:30:47+00:00",
+      "fee_lamports": 24297,
+      "payer": "F4r3EHtqHHKExyDBD6NSgWLF62hP2vdaHwJst2QLFAJh",
+      "programs": [
+        "11111111111111111111111111111111",
+        "ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL",
+        "CPMMoo8L3F4NbTegBCKVNunggL7H1ZpdTHKxQB5qKP1C",
+        "ComputeBudget111111111111111111111111111111",
+        "JUP6LkbZbjS1jKKwapdHNy74zcZ3tLUZoi5QNyVTaV4",
+        "LBUZKhRxPF3XUpBCjp4YzTKgLccjZhTSDM9YuVaPwxo",
+        "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA",
+        "TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb",
+        "ZERor4xhbUycZ6gb9ntrhqscUcZmAbQDjEAtCf4hbZY"
+      ],
+      "quality": "partial",
+      "raw_owner_deltas": [
+        [
+          "JAtFQn9yiSxCPBRnECvhaF8Vz3YtNq8Sk8nbCZ9ra54k",
+          502059383832,
+          6
+        ]
+      ],
+      "reference_kind": "buy",
+      "reported_actor": "F4r3EHtqHHKExyDBD6NSgWLF62hP2vdaHwJst2QLFAJh",
+      "signature": "grXPVYHX4hX5XGConG4GzbyDpeNd7x2JJxMUCUu1jXXYBU3yfXSzpEg5YAnLKh8H9kHVNKArM914FmvP6ufKfkA",
+      "signers": [
+        "F4r3EHtqHHKExyDBD6NSgWLF62hP2vdaHwJst2QLFAJh",
+        "sighWH8KaiT7QhtV4w29ReVF8kG6D5yG3EQP1KYyGVF"
+      ],
+      "slot": 450594404,
+      "version": 0
+    },
+    {
+      "actor_signed": true,
+      "balances_match": true,
+      "decoded_kind": "wrap",
+      "decoder_legs": [
+        [
+          "WXMRyRZhsa19ety5erZhHg4N3xj3EVN92u94422teJp",
+          -282675049,
+          12
+        ]
+      ],
+      "economic_at": "2026-09-26T06:29:45+00:00",
+      "fee_lamports": 605000,
+      "payer": "7oYiwwTzb2CiqQnYFpQghuYZXsGQmchXxyTXXSgeUdvG",
+      "programs": [
+        "11111111111111111111111111111111",
+        "ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL",
+        "CAMMCzo5YL8w4VFF8KVHrK22GGUsp5VTaW7grrKgrWqK",
+        "ComputeBudget111111111111111111111111111111",
+        "JUP6LkbZbjS1jKKwapdHNy74zcZ3tLUZoi5QNyVTaV4",
+        "MNFSTqtC93rEfYHB6hF82sKdZpUDFWkViLByLd1k1Ms",
+        "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA",
+        "ZERor4xhbUycZ6gb9ntrhqscUcZmAbQDjEAtCf4hbZY"
+      ],
+      "quality": "complete",
+      "raw_owner_deltas": [
+        [
+          "WXMRyRZhsa19ety5erZhHg4N3xj3EVN92u94422teJp",
+          -282675049,
+          12
+        ]
+      ],
+      "reference_kind": "buy",
+      "reported_actor": "7oYiwwTzb2CiqQnYFpQghuYZXsGQmchXxyTXXSgeUdvG",
+      "signature": "REPVPbdKtDwPzgfJ6YrPEjet29fv6UK7N1Wdr1LDdBah97cAvK6i93UcY6BA1ibFD2LY43UejLP4NM3fV8Zp733",
+      "signers": [
+        "7oYiwwTzb2CiqQnYFpQghuYZXsGQmchXxyTXXSgeUdvG"
+      ],
+      "slot": 450594172,
+      "version": 0
+    },
+    {
+      "actor_signed": true,
+      "balances_match": true,
+      "decoded_kind": "wrap",
+      "decoder_legs": [
+        [
+          "6GmAFSYs4gk3FDao5FzzySQpPZaWsa4rUJHacpMpUNgx",
+          -3515631687,
+          9
+        ]
+      ],
+      "economic_at": "2026-09-26T06:29:44+00:00",
+      "fee_lamports": 80001,
+      "payer": "E66wneSrb7dmcFN4rKLgHjVfqSwbFCa1dxkxgRF6dukZ",
+      "programs": [
+        "11111111111111111111111111111111",
+        "ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL",
+        "CAMMCzo5YL8w4VFF8KVHrK22GGUsp5VTaW7grrKgrWqK",
+        "ComputeBudget111111111111111111111111111111",
+        "JUP6LkbZbjS1jKKwapdHNy74zcZ3tLUZoi5QNyVTaV4",
+        "QuaNtZsgYRe5Z9Bk4LZ4cTD9tbkVoyCNf1R2BN9bBDv",
+        "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA",
+        "ZERor4xhbUycZ6gb9ntrhqscUcZmAbQDjEAtCf4hbZY"
+      ],
+      "quality": "complete",
+      "raw_owner_deltas": [
+        [
+          "6GmAFSYs4gk3FDao5FzzySQpPZaWsa4rUJHacpMpUNgx",
+          -3515631687,
+          9
+        ]
+      ],
+      "reference_kind": "buy",
+      "reported_actor": "E66wneSrb7dmcFN4rKLgHjVfqSwbFCa1dxkxgRF6dukZ",
+      "signature": "3iqJ33RF2Bi8vcFi7yszW3sJT7wjZrLMqZuMLnpVrcaAXVKdKZfFcNEEz3kW2Pq2pX97BpARphY4YvybN37WdiEi",
+      "signers": [
+        "E66wneSrb7dmcFN4rKLgHjVfqSwbFCa1dxkxgRF6dukZ"
+      ],
+      "slot": 450594169,
+      "version": 0
+    },
+    {
+      "actor_signed": true,
+      "balances_match": true,
+      "decoded_kind": "unknown",
+      "decoder_legs": [
+        [
+          "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+          -244714424,
+          6
+        ],
+        [
+          "Hg5Ja55T5wESq4vyFoiVCMeHXtGyVA69X2UHq8hgpump",
+          107939855578,
+          6
+        ]
+      ],
+      "economic_at": "2026-09-26T06:29:41+00:00",
+      "fee_lamports": 14461,
+      "payer": "AgmLJBMDCqWynYnQiPCuj9ewsNNsBJXyzoUhD9LJzN51",
+      "programs": [
+        "ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL",
+        "ComputeBudget111111111111111111111111111111",
+        "JUP6LkbZbjS1jKKwapdHNy74zcZ3tLUZoi5QNyVTaV4",
+        "LBUZKhRxPF3XUpBCjp4YzTKgLccjZhTSDM9YuVaPwxo",
+        "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA",
+        "TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb",
+        "ZERor4xhbUycZ6gb9ntrhqscUcZmAbQDjEAtCf4hbZY",
+        "whirLbMiicVdio4qvUfM5KAg6Ct8VwpYzGff3uctyCc"
+      ],
+      "quality": "partial_route",
+      "raw_owner_deltas": [
+        [
+          "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+          -244714424,
+          6
+        ],
+        [
+          "Hg5Ja55T5wESq4vyFoiVCMeHXtGyVA69X2UHq8hgpump",
+          107939855578,
+          6
+        ]
+      ],
+      "reference_kind": "buy",
+      "reported_actor": "8Jcfek7Ej27SqJEAPTchVxx5D7GBTfsn47BjRQb52VNx",
+      "signature": "3uwTuAeRzfqgTue4jVb2CWV4fp4SttQo5PnbwVNjgi1PGj8oYdX2BDzuhaBLkKNWKERe73umSCVqurMBTE5wQRXi",
+      "signers": [
+        "AgmLJBMDCqWynYnQiPCuj9ewsNNsBJXyzoUhD9LJzN51",
+        "8Jcfek7Ej27SqJEAPTchVxx5D7GBTfsn47BjRQb52VNx"
+      ],
+      "slot": 450594156,
+      "version": 0
+    },
+    {
+      "actor_signed": true,
+      "balances_match": true,
+      "decoded_kind": "transfer",
+      "decoder_legs": [
+        [
+          "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+          3696,
+          6
+        ]
+      ],
+      "economic_at": "2026-09-26T06:29:39+00:00",
+      "fee_lamports": 5002,
+      "payer": "4jjEXcFPXw7WVGXSTb227HW6wfLprjh2RtiHty4GbetE",
+      "programs": [
+        "11111111111111111111111111111111",
+        "B3111yJCeHBcA1bizdJjUFPALfhAfSRnAbJzGUtnt56A",
+        "ComputeBudget111111111111111111111111111111",
+        "EpEEdmjbLsZFCaGgHHnwaysW9bKWNcdm3bxs6HXAQwSk",
+        "FLUX6xBayGxLX9UcimVRxXFMHH6q43mAbRvDzSpCsvfK",
+        "JUP6LkbZbjS1jKKwapdHNy74zcZ3tLUZoi5QNyVTaV4",
+        "T1TANpTeScyeqVzzgNViGDNrkQ6qHz9KrSBS4aNXvGT",
+        "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA",
+        "ZERor4xhbUycZ6gb9ntrhqscUcZmAbQDjEAtCf4hbZY",
+        "whirLbMiicVdio4qvUfM5KAg6Ct8VwpYzGff3uctyCc"
+      ],
+      "quality": "complete",
+      "raw_owner_deltas": [
+        [
+          "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+          3696,
+          6
+        ]
+      ],
+      "reference_kind": "buy",
+      "reported_actor": "4jjEXcFPXw7WVGXSTb227HW6wfLprjh2RtiHty4GbetE",
+      "signature": "21c3P5NaAS8TMNTjeq5FZ31xEMgDGqxXE7gop9V1xLSK5GiuDj141KuSuJbS54nS36ec8yGTUCCuKWZnM1zypvYN",
+      "signers": [
+        "4jjEXcFPXw7WVGXSTb227HW6wfLprjh2RtiHty4GbetE"
+      ],
+      "slot": 450594150,
+      "version": 0
+    },
+    {
+      "actor_signed": true,
+      "balances_match": true,
+      "decoded_kind": "wrap",
+      "decoder_legs": [
+        [
+          "PEPEqnuuCDbBC89p1u9vpnP1KQ2oj1xTcQBsjt9X55m",
+          -36691663437,
+          4
+        ]
+      ],
+      "economic_at": "2026-09-26T06:28:31+00:00",
+      "fee_lamports": 5001,
+      "payer": "3kVPeCbpbVjsiQeRPDqoZXbu7DQtp8o1eiXRHiN3FnjV",
+      "programs": [
+        "11111111111111111111111111111111",
+        "ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL",
+        "BiSoNHVpsVZW2F7rx2eQ59yQwKxzU5NvBcmKshCSUypi",
+        "ComputeBudget111111111111111111111111111111",
+        "DNL1tgEj3nJovHw9jtyCCQD3arssCJzkmpDizknwzey4",
+        "T1TANpTeScyeqVzzgNViGDNrkQ6qHz9KrSBS4aNXvGT",
+        "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA",
+        "ZERor4xhbUycZ6gb9ntrhqscUcZmAbQDjEAtCf4hbZY",
+        "whirLbMiicVdio4qvUfM5KAg6Ct8VwpYzGff3uctyCc"
+      ],
+      "quality": "complete",
+      "raw_owner_deltas": [
+        [
+          "PEPEqnuuCDbBC89p1u9vpnP1KQ2oj1xTcQBsjt9X55m",
+          -36691663437,
+          4
+        ]
+      ],
+      "reference_kind": "buy",
+      "reported_actor": "3kVPeCbpbVjsiQeRPDqoZXbu7DQtp8o1eiXRHiN3FnjV",
+      "signature": "QZH7PAHD8YK29mkhev2BDrn5dpis9kQUnxwYsoabhW3Mdwov8X2kYTuL7ALb9frgZP9LMeMnzXzfbNmJbRFJpJD",
+      "signers": [
+        "3kVPeCbpbVjsiQeRPDqoZXbu7DQtp8o1eiXRHiN3FnjV"
+      ],
+      "slot": 450593895,
+      "version": 0
+    },
+    {
+      "actor_signed": true,
+      "balances_match": true,
+      "decoded_kind": "wrap",
+      "decoder_legs": [
+        [
+          "4k3Dyjzvzp8eMZWUXbBCjEvwSkkk59S5iCNLY3QrkX6R",
+          991761,
+          6
+        ]
+      ],
+      "economic_at": "2026-09-26T06:28:30+00:00",
+      "fee_lamports": 80001,
+      "payer": "LkarmvS4GWRQZi9qFPM7qhUPyH1RBgNqPj6LCfP2mRX",
+      "programs": [
+        "11111111111111111111111111111111",
+        "ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL",
+        "CAMMCzo5YL8w4VFF8KVHrK22GGUsp5VTaW7grrKgrWqK",
+        "ComputeBudget111111111111111111111111111111",
+        "HyaB3W9q6XdA5xwpU4XnSZV94htfmbmqJXZcEbRaJutt",
+        "JUP6LkbZbjS1jKKwapdHNy74zcZ3tLUZoi5QNyVTaV4",
+        "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA",
+        "ZERor4xhbUycZ6gb9ntrhqscUcZmAbQDjEAtCf4hbZY"
+      ],
+      "quality": "complete",
+      "raw_owner_deltas": [
+        [
+          "4k3Dyjzvzp8eMZWUXbBCjEvwSkkk59S5iCNLY3QrkX6R",
+          991761,
+          6
+        ]
+      ],
+      "reference_kind": "buy",
+      "reported_actor": "LkarmvS4GWRQZi9qFPM7qhUPyH1RBgNqPj6LCfP2mRX",
+      "signature": "4vHYrQF55h4Re4v8JDwgzJX5DFs8GvUjnxMw7z6kjwGH2a9RgfyDyp6u4WH4Q7qt2Xu53kiHi9p4VUz5dSdSAvSn",
+      "signers": [
+        "LkarmvS4GWRQZi9qFPM7qhUPyH1RBgNqPj6LCfP2mRX"
+      ],
+      "slot": 450593890,
+      "version": 0
+    },
+    {
+      "actor_signed": true,
+      "balances_match": true,
+      "decoded_kind": "swap",
+      "decoder_legs": [
+        [
+          "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+          -6740068,
+          6
+        ],
+        [
+          "JUPyiwrYJFskUPiHa7hkeR8VUtAeFoSYbKedZNsDvCN",
+          19453256,
+          6
+        ]
+      ],
+      "economic_at": "2026-09-26T06:28:28+00:00",
+      "fee_lamports": 5001,
+      "payer": "4jjEXcFPXw7WVGXSTb227HW6wfLprjh2RtiHty4GbetE",
+      "programs": [
+        "ComputeBudget111111111111111111111111111111",
+        "EpEEdmjbLsZFCaGgHHnwaysW9bKWNcdm3bxs6HXAQwSk",
+        "JUP6LkbZbjS1jKKwapdHNy74zcZ3tLUZoi5QNyVTaV4",
+        "LBUZKhRxPF3XUpBCjp4YzTKgLccjZhTSDM9YuVaPwxo",
+        "T1TANpTeScyeqVzzgNViGDNrkQ6qHz9KrSBS4aNXvGT",
+        "TessVdML9pBGgG9yGks7o4HewRaXVAMuoVj4x83GLQH",
+        "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA",
+        "ZERor4xhbUycZ6gb9ntrhqscUcZmAbQDjEAtCf4hbZY"
+      ],
+      "quality": "complete",
+      "raw_owner_deltas": [
+        [
+          "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+          -6740068,
+          6
+        ],
+        [
+          "JUPyiwrYJFskUPiHa7hkeR8VUtAeFoSYbKedZNsDvCN",
+          19453256,
+          6
+        ]
+      ],
+      "reference_kind": "buy",
+      "reported_actor": "4jjEXcFPXw7WVGXSTb227HW6wfLprjh2RtiHty4GbetE",
+      "signature": "2pVhxiqUyFrHkpBZEKJsCoUvMLLtCiUDJhuFpTRBPUrsbEUDt5p8DkpxAzSNQyLkbkF9TPdryCqM4WXX74XNnjKr",
+      "signers": [
+        "4jjEXcFPXw7WVGXSTb227HW6wfLprjh2RtiHty4GbetE"
+      ],
+      "slot": 450593882,
+      "version": 0
+    },
+    {
+      "actor_signed": true,
+      "balances_match": true,
+      "decoded_kind": "swap",
+      "decoder_legs": [
+        [
+          "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+          -37966889,
+          6
+        ],
+        [
+          "JUPyiwrYJFskUPiHa7hkeR8VUtAeFoSYbKedZNsDvCN",
+          109585001,
+          6
+        ]
+      ],
+      "economic_at": "2026-09-26T06:28:27+00:00",
+      "fee_lamports": 5001,
+      "payer": "4jjEXcFPXw7WVGXSTb227HW6wfLprjh2RtiHty4GbetE",
+      "programs": [
+        "ComputeBudget111111111111111111111111111111",
+        "EpEEdmjbLsZFCaGgHHnwaysW9bKWNcdm3bxs6HXAQwSk",
+        "LBUZKhRxPF3XUpBCjp4YzTKgLccjZhTSDM9YuVaPwxo",
+        "T1TANpTeScyeqVzzgNViGDNrkQ6qHz9KrSBS4aNXvGT",
+        "TessVdML9pBGgG9yGks7o4HewRaXVAMuoVj4x83GLQH",
+        "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA",
+        "ZERor4xhbUycZ6gb9ntrhqscUcZmAbQDjEAtCf4hbZY"
+      ],
+      "quality": "complete",
+      "raw_owner_deltas": [
+        [
+          "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+          -37966889,
+          6
+        ],
+        [
+          "JUPyiwrYJFskUPiHa7hkeR8VUtAeFoSYbKedZNsDvCN",
+          109585001,
+          6
+        ]
+      ],
+      "reference_kind": "buy",
+      "reported_actor": "4jjEXcFPXw7WVGXSTb227HW6wfLprjh2RtiHty4GbetE",
+      "signature": "jXrwuLmVVPmJVkze6Xn12ZESS6g4HGJU5iKbftqdCNM7cwGngPsNebgM2K5MzD4xKmfS1G5ZsTozP9AXvWCkE2s",
+      "signers": [
+        "4jjEXcFPXw7WVGXSTb227HW6wfLprjh2RtiHty4GbetE"
+      ],
+      "slot": 450593881,
+      "version": 0
+    },
+    {
+      "actor_signed": true,
+      "balances_match": true,
+      "decoded_kind": "unknown",
+      "decoder_legs": [
+        [
+          "HiMSSzzwkZkrXJ4PGVJRdtfLaANeAztjjcgk5Dxe7Lwx",
+          -345107,
+          6
+        ]
+      ],
+      "economic_at": "2026-09-26T06:28:27+00:00",
+      "fee_lamports": 5779,
+      "payer": "555wmA5fyteF5asad9KW5WjEYRC5mu1KqQCi16JwEAPC",
+      "programs": [
+        "11111111111111111111111111111111",
+        "ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL",
+        "CAMMCzo5YL8w4VFF8KVHrK22GGUsp5VTaW7grrKgrWqK",
+        "ComputeBudget111111111111111111111111111111",
+        "JUP6LkbZbjS1jKKwapdHNy74zcZ3tLUZoi5QNyVTaV4",
+        "LBUZKhRxPF3XUpBCjp4YzTKgLccjZhTSDM9YuVaPwxo",
+        "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA",
+        "TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb",
+        "ZERor4xhbUycZ6gb9ntrhqscUcZmAbQDjEAtCf4hbZY",
+        "whirLbMiicVdio4qvUfM5KAg6Ct8VwpYzGff3uctyCc"
+      ],
+      "quality": "partial",
+      "raw_owner_deltas": [
+        [
+          "HiMSSzzwkZkrXJ4PGVJRdtfLaANeAztjjcgk5Dxe7Lwx",
+          -345107,
+          6
+        ]
+      ],
+      "reference_kind": "buy",
+      "reported_actor": "555wmA5fyteF5asad9KW5WjEYRC5mu1KqQCi16JwEAPC",
+      "signature": "5xxfUzdhBNoaBXR2q2LJEidCoq9bDSVExZDEGci4Z8y4k12CEWKWfHgGwKpKmdZReEPLSnBWYB6vkEbsqrEmAkib",
+      "signers": [
+        "555wmA5fyteF5asad9KW5WjEYRC5mu1KqQCi16JwEAPC"
+      ],
+      "slot": 450593880,
+      "version": 0
+    },
+    {
+      "actor_signed": true,
+      "balances_match": true,
+      "decoded_kind": "unknown",
+      "decoder_legs": [
+        [
+          "EicWvteVi2fWepEzS3FYWsnuPoP6caZfjnKqNvydLjCH",
+          -47435155,
+          8
+        ]
+      ],
+      "economic_at": "2026-09-26T06:28:27+00:00",
+      "fee_lamports": 193955,
+      "payer": "5pog8yAn9kjUd4zFvr2W2oYWmAqZ9HJMjxMPMxT9mNYh",
+      "programs": [
+        "11111111111111111111111111111111",
+        "ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL",
+        "BiSoNHVpsVZW2F7rx2eQ59yQwKxzU5NvBcmKshCSUypi",
+        "ComputeBudget111111111111111111111111111111",
+        "DNL1tgEj3nJovHw9jtyCCQD3arssCJzkmpDizknwzey4",
+        "JUP6LkbZbjS1jKKwapdHNy74zcZ3tLUZoi5QNyVTaV4",
+        "LBUZKhRxPF3XUpBCjp4YzTKgLccjZhTSDM9YuVaPwxo",
+        "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA",
+        "ZERor4xhbUycZ6gb9ntrhqscUcZmAbQDjEAtCf4hbZY",
+        "whirLbMiicVdio4qvUfM5KAg6Ct8VwpYzGff3uctyCc"
+      ],
+      "quality": "partial",
+      "raw_owner_deltas": [
+        [
+          "EicWvteVi2fWepEzS3FYWsnuPoP6caZfjnKqNvydLjCH",
+          -47435155,
+          8
+        ]
+      ],
+      "reference_kind": "buy",
+      "reported_actor": "5pog8yAn9kjUd4zFvr2W2oYWmAqZ9HJMjxMPMxT9mNYh",
+      "signature": "4MNtedV6EQBdn1GhVtBHdrRRoQ8sU6cvzwBBJc5pitni9huiewFUHDoawfp5VsvAvJc84HBewLjAfXcrw6ZeZRhC",
+      "signers": [
+        "5pog8yAn9kjUd4zFvr2W2oYWmAqZ9HJMjxMPMxT9mNYh",
+        "sighWH8KaiT7QhtV4w29ReVF8kG6D5yG3EQP1KYyGVF"
+      ],
+      "slot": 450593879,
+      "version": 0
+    }
+  ],
+  "balance_mismatches": [],
+  "classification_counts": {
+    "swap:complete": 18,
+    "transfer:complete": 5,
+    "unknown:partial": 27,
+    "unknown:partial_route": 5,
+    "wrap:complete": 5
+  },
+  "decoded_swaps": 18,
+  "provider_trade_references": 60,
+  "transactions_fetched": 60,
+  "wallet_addresses": [
+    "4jjEXcFPXw7WVGXSTb227HW6wfLprjh2RtiHty4GbetE",
+    "CKuBTzPwzrCisqQMQfAjNn6jKcfny8ny4rJVN3cxLjcf",
+    "EYvwg12vXcUN7pF1fASQZZgQ9RbVUMLjKqqCfi961ptw",
+    "GJvewfRjqTUPtx6WsBSUnaFbdgXwgXnWfpDyLm65T4YA",
+    "MfDuWeqSHEqTFVYZ7LoexgAK9dxk7cy4DFJWjWMGVWa"
+  ],
+  "wallets_with_complete_swaps": 5
+}
