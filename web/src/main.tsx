@@ -3,16 +3,19 @@ import { createRoot } from 'react-dom/client'
 import './style.css'
 
 type Dataset = 'DEMO' | 'REAL' | 'REPLAY'
-type Tab = 'Vue générale' | 'Flux et signaux' | 'Marché' | 'Expériences' | 'Configuration'
+type Tab = 'Vue générale' | 'Opérations' | 'Flux et signaux' | 'Marché' | 'Expériences' | 'Configuration'
 type Overview = { dataset: Dataset; wallets: number; tokens: number; raw_events: number; operations: number; market_bars: number; signals: number; open_gaps: number }
 type Signal = { pair: string; decision_at: string; state: string; quality: string; score: number; components: Record<string, number>; reasons: string[]; config_hash: string; dataset: string }
 type Rotation = { source: string; destination: string | null; evidence: string; direction: string; amount_usd: string; wallet: string; source_op: string; destination_op: string | null; economic_at: string; available_at: string }
+type AggregateFlow = { source: string; destination: string; evidence: 'aggregate'; amount_usd: string; seller_entities: number; buyer_entities: number; concentration: string; independence_uncertain: boolean; available_at: string }
 type Bar = { mint: string; close_at: string; available_at: string; price_usd: string; volume_usd: string; liquidity_usd: string | null; source: string; dataset: string }
 type Wallet = { address: string; category: string; fomo_profile: string | null; proof: string | null; confidence: string | null }
 type Token = { mint: string; symbol: string | null; decimals: number; active: boolean }
 type Experiment = { id: string; dataset: string; status: string; config_hash: string; result: Record<string, unknown>; started_at: string }
 type Coverage = { checkpoints: Array<Record<string, unknown>>; gaps: Array<Record<string, unknown>>; note?: string }
-type Operation = { signature: string; wallet: string; kind: string; quality: string; economic_at: string; available_at: string; legs: Array<{ mint: string; delta_base: string; usd_price: string | null }> }
+type Operation = { signature: string; wallet: string; kind: string; quality: string; status: string; fee_lamports: number; decoder_version: string; economic_at: string; available_at: string; decoded_at: string; legs: Array<{ mint: string; delta_base: string; decimals: number; usd_price: string | null }> }
+type Evidence = { raw: { signature: string; wallet: string; slot: number; block_time: string; first_seen_at: string; ingested_at: string; source: string; parser_version: string; response_hash: string; dataset: string; payload: Record<string, unknown> }; operation: Operation | null }
+type OperationContext = { rotations: Rotation[]; market_features: Record<string, { last_price: string | null; last_close_at: string | null; liquidity_usd: string | null }>; decision: { state: string; quality: string; reasons: string[] }; note: string }
 
 async function get<T>(path: string): Promise<T> {
   const response = await fetch(path)
@@ -20,7 +23,7 @@ async function get<T>(path: string): Promise<T> {
   return response.json() as Promise<T>
 }
 const fmt = (value: number, digits = 0) => new Intl.NumberFormat('fr-CH', { maximumFractionDigits: digits }).format(value)
-const time = (value?: string) => value ? new Date(value).toLocaleString('fr-CH', { dateStyle: 'short', timeStyle: 'short', timeZone: 'UTC' }) + ' UTC' : '—'
+const time = (value?: string | null) => value ? new Date(value).toLocaleString('fr-CH', { dateStyle: 'short', timeStyle: 'short', timeZone: 'UTC' }) + ' UTC' : '—'
 const stateName: Record<string, string> = { observing: 'Observation', candidate: 'Candidate', confirmed: 'Confirmée', invalidated: 'Invalidée', expired: 'Expirée' }
 
 function LineChart({ bars, title, events }: { bars: Bar[]; title: string; events?: Signal[] }) {
@@ -57,6 +60,7 @@ function App() {
   const [overview, setOverview] = useState<Overview | null>(null)
   const [signals, setSignals] = useState<Signal[]>([])
   const [rotations, setRotations] = useState<Rotation[]>([])
+  const [aggregateFlows, setAggregateFlows] = useState<AggregateFlow[]>([])
   const [operations, setOperations] = useState<Operation[]>([])
   const [wallets, setWallets] = useState<Wallet[]>([])
   const [tokens, setTokens] = useState<Token[]>([])
@@ -66,6 +70,9 @@ function App() {
   const [destBars, setDestBars] = useState<Bar[]>([])
   const [selected, setSelected] = useState<Signal | null>(null)
   const [evidence, setEvidence] = useState<Record<string, unknown> | null>(null)
+  const [selectedOperation, setSelectedOperation] = useState<Operation | null>(null)
+  const [operationEvidence, setOperationEvidence] = useState<Evidence | null>(null)
+  const [operationContext, setOperationContext] = useState<OperationContext | null>(null)
   const [error, setError] = useState('')
   const [draft, setDraft] = useState('[\n  {\n    "network": "solana",\n    "mint": "",\n    "symbol": "",\n    "decimals": 6,\n    "eligible_from": "2026-09-25T00:00:00Z"\n  }\n]')
   const [importKind, setImportKind] = useState<'watchlist' | 'wallets'>('watchlist')
@@ -76,10 +83,10 @@ function App() {
     const q = `?dataset=${encodeURIComponent(dataset)}`
     const sourceQ = `?dataset=${dataset === 'REPLAY' ? 'REAL' : dataset}`
     Promise.all([get<Overview>('/api/overview' + q), get<Signal[]>('/api/signals' + q),
-      get<Rotation[]>('/api/rotations' + sourceQ), get<Operation[]>('/api/operations' + sourceQ),
+      get<Rotation[]>('/api/rotations' + sourceQ), get<AggregateFlow[]>('/api/aggregate-flows' + sourceQ), get<Operation[]>('/api/operations' + sourceQ),
       get<Wallet[]>('/api/wallets' + q), get<Token[]>('/api/tokens' + q),
       get<Experiment[]>('/api/experiments' + sourceQ), get<Coverage>('/api/coverage' + sourceQ)])
-      .then(([o, s, r, ops, w, t, ex, c]) => { if (mounted) { setOverview(o); setSignals(s); setRotations(r); setOperations(ops); setWallets(w); setTokens(t); setExperiments(ex); setCoverage(c); setSelected(s[0] || null); setError('') } })
+      .then(([o, s, r, ag, ops, w, t, ex, c]) => { if (mounted) { setOverview(o); setSignals(s); setRotations(r); setAggregateFlows(ag); setOperations(ops); setSelectedOperation(null); setWallets(w); setTokens(t); setExperiments(ex); setCoverage(c); setSelected(s[0] || null); setError('') } })
       .catch(e => mounted && setError(`API locale indisponible : ${e.message}`))
     return () => { mounted = false }
   }, [dataset])
@@ -99,6 +106,15 @@ function App() {
     get<Record<string, unknown>>(`/api/evidence/${encodeURIComponent(related.source_op)}?dataset=${dataset === 'REPLAY' ? 'REAL' : dataset}&wallet=${encodeURIComponent(related.wallet)}`)
       .then(setEvidence).catch(() => setEvidence(null))
   }, [selected, rotations, dataset])
+  useEffect(() => {
+    if (!selectedOperation) { setOperationEvidence(null); setOperationContext(null); return }
+    const sourceDataset = dataset === 'REPLAY' ? 'REAL' : dataset
+    const query = `?dataset=${sourceDataset}&wallet=${encodeURIComponent(selectedOperation.wallet)}`
+    get<Evidence>(`/api/evidence/${encodeURIComponent(selectedOperation.signature)}${query}`)
+      .then(setOperationEvidence).catch(() => setOperationEvidence(null))
+    get<OperationContext>(`/api/operation-context/${encodeURIComponent(selectedOperation.signature)}${query}`)
+      .then(setOperationContext).catch(() => setOperationContext(null))
+  }, [selectedOperation, dataset])
 
   const ratioBars = useMemo(() => {
     const a = new Map(sourceBars.map(b => [b.close_at, Number(b.price_usd)]))
@@ -109,7 +125,7 @@ function App() {
     const item = acc[r.wallet] || { usd: 0, count: 0, direct: 0 }
     item.usd += Number(r.amount_usd); item.count += 1; item.direct += Number(r.evidence === 'direct'); acc[r.wallet] = item; return acc
   }, {})).sort((a, b) => b[1].usd - a[1].usd), [rotations])
-  const tabs: Tab[] = ['Vue générale', 'Flux et signaux', 'Marché', 'Expériences', 'Configuration']
+  const tabs: Tab[] = ['Vue générale', 'Opérations', 'Flux et signaux', 'Marché', 'Expériences', 'Configuration']
 
   async function submitImport() {
     try {
@@ -143,9 +159,12 @@ function App() {
         <div className="note">{coverage?.note || (coverage?.gaps.length ? `${coverage.gaps.length} trou(s) de collecte demandent vérification.` : 'Aucun trou enregistré. Cela ne prouve pas une couverture complète des comptes de tokens fermés.')}</div></section>
         <section className="panel"><div className="section-head"><div><span className="eyebrow">DÉCISIONS</span><h2>Chronologie récente</h2></div><button className="text-button" onClick={() => setTab('Flux et signaux')}>Voir les preuves →</button></div>{signals.length ? signals.slice(-5).reverse().map((s, i) => <button key={`${s.pair}-${i}`} className="timeline-item" onClick={() => { setSelected(s); setTab('Flux et signaux') }}><span className={`state-dot ${s.state}`}></span><span><strong>{s.pair}</strong><small>{time(s.decision_at)} · {s.quality}</small></span><b>{stateName[s.state] || s.state}</b></button>) : <div className="empty">Aucun signal enregistré dans ce jeu de données.</div>}</section></div></>}
 
+      {tab === 'Opérations' && <div className="two-col flow-layout"><section className="panel"><div className="section-head"><div><span className="eyebrow">{dataset} · RPC FINALISÉ</span><h2>Opérations observées</h2></div><button className="text-button" onClick={() => download(`operations-${dataset}.json`, operations)}>Exporter JSON ↗</button></div><p className="muted">Un wallet affiché ici est une adresse on-chain non attribuée à Fomo sauf preuve datée dans son registre. Les transactions partielles ne créent pas de flux exécutable.</p>{operations.length ? <div className="operation-list">{operations.map(op => <button key={`${op.signature}:${op.wallet}`} className={`operation-row ${selectedOperation?.signature === op.signature ? 'selected' : ''}`} onClick={() => setSelectedOperation(op)}><span><strong>{op.signature.slice(0, 14)}…</strong><small>{time(op.economic_at)} → disponible {time(op.available_at)}</small></span><span className={`evidence-pill ${op.quality === 'complete' ? 'direct' : 'inferred'}`}>{op.kind} · {op.quality}</span></button>)}</div> : <div className="empty">Aucune opération dans ce jeu de données.</div>}</section><section className="panel evidence-panel"><div className="section-head"><div><span className="eyebrow">PREUVE ET CHRONOLOGIE</span><h2>{selectedOperation ? `${selectedOperation.signature.slice(0, 12)}…` : 'Choisir une opération'}</h2></div></div>{selectedOperation ? <><div className="quality-row"><span>Jeu / provenance</span><strong>{dataset} · {operationEvidence?.raw.source || 'chargement'}</strong></div><div className="quality-row"><span>Wallet observé</span><strong className="mono small">{selectedOperation.wallet}</strong></div><div className="quality-row"><span>Attribution Fomo</span><strong>{wallets.find(w => w.address === selectedOperation.wallet)?.fomo_profile || 'Aucune preuve'}</strong></div><div className="quality-row"><span>Bloc / première réception</span><strong>{time(selectedOperation.economic_at)} / {time(operationEvidence?.raw.first_seen_at)}</strong></div><div className="quality-row"><span>Disponible / décodé</span><strong>{time(selectedOperation.available_at)} / {time(selectedOperation.decoded_at)}</strong></div><div className="quality-row"><span>Slot / frais réseau</span><strong>{operationEvidence?.raw.slot ?? '—'} / {selectedOperation.fee_lamports} lamports</strong></div><div className="quality-row"><span>Qualité / version</span><strong>{selectedOperation.quality} · {selectedOperation.decoder_version}</strong></div><h3>Variations des comptes du wallet</h3>{selectedOperation.legs.length ? selectedOperation.legs.map((leg, i) => <div className="quality-row" key={`${leg.mint}-${i}`}><span className="mono small">{leg.mint}</span><strong>{leg.delta_base} base · {leg.decimals} décimales</strong></div>) : <div className="empty">Aucune variation SPL attribuable.</div>}<h3>Marché, attribution et décision</h3>{operationContext ? <><p className="muted">{operationContext.rotations.length ? operationContext.rotations.map(r => `${r.evidence}: ${r.direction} ${r.source} → ${r.destination}`).join(' · ') : 'Aucune réallocation USD attribuable à cette opération.'}</p>{Object.entries(operationContext.market_features).map(([mint, f]) => <div className="quality-row" key={mint}><span className="mono small">{mint.slice(0, 12)}… · close {time(f.last_close_at)}</span><strong>{f.last_price ?? 'prix inconnu'} $ · liquidité {f.liquidity_usd ?? 'inconnue'}</strong></div>)}<div className="quality-row"><span>Décision</span><strong>{operationContext.decision.state} · {operationContext.decision.quality}</strong></div><p className="muted">{operationContext.note}</p></> : <p className="muted">Contexte non disponible.</p>}<p className="muted">Le payeur de frais, les signataires et le propriétaire des comptes sont distincts dans la réponse brute. Une jambe SOL native ou un compte fermé peut rester non attribué.</p>{operationEvidence && <details><summary>Réponse RPC, hash et opération normalisée</summary><pre>{JSON.stringify(operationEvidence, null, 2)}</pre></details>}</> : <div className="empty">Cliquez sur une transaction pour ouvrir sa preuve brute et ses deux horloges.</div>}</section></div>}
+
       {tab === 'Flux et signaux' && <><div className="two-col flow-layout"><section className="panel"><div className="section-head"><div><span className="eyebrow">ATTRIBUTION</span><h2>Flux entre coins</h2></div><button className="text-button" onClick={() => download(`rotations-${dataset}.json`, rotations)}>Exporter JSON ↗</button></div>
         {rotations.length ? <div className="table-wrap"><table><thead><tr><th>Origine → destination</th><th>Preuve</th><th>Montant attribué</th><th>Wallet</th></tr></thead><tbody>{rotations.map((r, i) => <tr key={i}><td><strong>{r.source} → {r.destination || 'inconnue'}</strong><small>{r.direction}</small></td><td><span className={`evidence-pill ${r.evidence}`}>{r.evidence}</span></td><td>{fmt(Number(r.amount_usd), 2)} $</td><td>{r.wallet}</td></tr>)}</tbody></table></div> : <div className="empty">Aucun flux attribuable. Un transfert ou un décodage partiel ne devient pas une rotation.</div>}</section>
-        <section className="panel"><div className="section-head"><div><span className="eyebrow">COHORTE</span><h2>Wallets par capital réalloué</h2></div></div>{ranking.length ? ranking.map(([wallet, item], i) => <div className="rank-row" key={wallet}><span className="rank-num">{String(i + 1).padStart(2, '0')}</span><div><strong>{wallet}</strong><small>{wallets.find(w => w.address === wallet)?.category || 'inconnu'} · {item.count} attribution(s) · {item.direct} directe(s)</small></div><b>{fmt(item.usd)} $</b></div>) : <div className="empty">Aucun wallet classable. Le P&amp;L Fomo seul ne qualifie pas un gros trader.</div>}</section></div>
+        <section className="panel"><div className="section-head"><div><span className="eyebrow">ÉCHANTILLON BORNÉ</span><h2>Wallets candidats dans l’échantillon</h2></div></div><p className="muted">Classement par flux directionnels valorisés observés ici. Il ne représente pas les plus gros traders de Solana.</p>{ranking.length ? ranking.map(([wallet, item], i) => <div className="rank-row" key={wallet}><span className="rank-num">{String(i + 1).padStart(2, '0')}</span><div><strong>{wallet}</strong><small>{wallets.find(w => w.address === wallet)?.fomo_profile ? 'Profil Fomo avec preuve' : 'On-chain non attribué à Fomo'} · {item.count} attribution(s) · {item.direct} directe(s)</small></div><b>{fmt(item.usd)} $</b></div>) : <div className="empty">Aucun wallet classable. Le P&amp;L Fomo seul ne qualifie pas un gros trader.</div>}</section></div>
+        <section className="panel"><div className="section-head"><div><span className="eyebrow">PREUVE AGRÉGÉE DISTINCTE</span><h2>Convergence des entités</h2></div><button className="text-button" onClick={() => download(`aggregats-${dataset}.json`, aggregateFlows)}>Exporter JSON ↗</button></div><p className="muted">Ces flux ne prouvent pas que les mêmes fonds ont quitté A pour B. Les liens inconnus entre wallets rendent l’indépendance incertaine.</p>{aggregateFlows.length ? <div className="table-wrap"><table><thead><tr><th>Paire</th><th>Vendeurs / acheteurs</th><th>Montant borné</th><th>Concentration</th></tr></thead><tbody>{aggregateFlows.map((flow, i) => <tr key={i}><td>{flow.source} → {flow.destination}</td><td>{flow.seller_entities} / {flow.buyer_entities}</td><td>{fmt(Number(flow.amount_usd), 2)} $</td><td>{fmt(Number(flow.concentration) * 100, 1)} %</td></tr>)}</tbody></table></div> : <div className="empty">Aucune convergence multi-entités vérifiable.</div>}</section>
         <div className="two-col"><section className="panel"><div className="section-head"><div><span className="eyebrow">MACHINE D’ÉTATS</span><h2>Révisions des signaux</h2></div><button className="text-button" onClick={() => download(`signaux-${dataset}.csv`, signals, true)}>Exporter CSV ↗</button></div>{signals.length ? signals.map((s, i) => <button key={i} className={`signal-row ${selected === s ? 'selected' : ''}`} onClick={() => setSelected(s)}><span className={`state-dot ${s.state}`}></span><div><strong>{s.pair}</strong><small>{time(s.decision_at)} · {s.quality}</small></div><b>{stateName[s.state] || s.state}</b><span className="score">{s.score}/100</span></button>) : <div className="empty">Aucune révision.</div>}</section>
         <section className="panel evidence-panel"><div className="section-head"><div><span className="eyebrow">POURQUOI / PREUVES</span><h2>{selected?.pair || 'Sélectionner un signal'}</h2></div>{selected && <span className={`state-label ${selected.state}`}>{stateName[selected.state] || selected.state}</span>}</div>
         {selected ? <><p className="muted">Score hypothétique {selected.score}/100. Ce score n’est pas une probabilité de réussite.</p><div className="component-list">{Object.entries(selected.components).map(([name, score]) => <div key={name}><span>{name.replaceAll('_', ' ')}</span><b>{score}</b></div>)}</div><h3>Raisons</h3><ul>{selected.reasons.map((reason, i) => <li key={i}>{reason}</li>)}</ul><h3>Traçabilité</h3><p className="mono small">Config {selected.config_hash.slice(0, 18)}…<br/>Décision {time(selected.decision_at)}<br/>Qualité {selected.quality}<br/>Source {evidence ? String((evidence.raw as Record<string, unknown>).source) : 'indisponible'}</p>{evidence && <details><summary>Réponse brute et opération normalisée</summary><pre>{JSON.stringify(evidence, null, 2)}</pre></details>}</> : <div className="empty">Cliquez sur une révision pour inspecter ses raisons.</div>}</section></div></>}

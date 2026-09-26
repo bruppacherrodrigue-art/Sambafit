@@ -13,8 +13,11 @@ import yaml
 
 from .api import _operations
 from .collect import backfill_wallet, collect_wallet_once, discover_token_accounts, stopped
+from .comparison import compare_variants
 from .demo import seed_demo
 from .paper import simulate_paper
+from .pilot_collection import run_pilot_collection
+from .real_corpus import import_corpus, summarize_corpus, verify_manifest
 from .replay import replay
 from .research import price_operations, study_events
 from .signals import MarketBar
@@ -81,13 +84,31 @@ def main(argv: list[str] | None = None) -> int:
         sub.add_parser(name).add_argument("--file", required=True)
     for name in ("audit-data", "backfill", "collect", "replay", "paper"):
         sub.add_parser(name).add_argument("--config", required=True)
+    for name in ("pilot-audit", "pilot-import", "pilot-verify"):
+        sub.add_parser(name).add_argument("--corpus", required=True)
+    pilot_collect = sub.add_parser("pilot-collect")
+    pilot_collect.add_argument("--output", required=True)
+    pilot_collect.add_argument("--per-pool", type=int, default=30)
+    pilot_collect.add_argument("--rpc-url")
     sub.choices["report"] = sub.add_parser("report")
     sub.choices["report"].add_argument("--run-id", required=True)
     args = parser.parse_args(argv)
+    if args.command == "pilot-collect":
+        _print(run_pilot_collection(args.output, per_pool=args.per_pool, rpc_url=args.rpc_url))
+        return 0
+    if args.command == "pilot-audit":
+        result = summarize_corpus(args.corpus)
+        _print({key: value for key, value in result.items() if key != "audits"})
+        return 0
+    if args.command == "pilot-verify":
+        _print(verify_manifest(args.corpus))
+        return 0
     store = _db()
     try:
         store.migrate()
-        if args.command == "doctor":
+        if args.command == "pilot-import":
+            _print(import_corpus(store, args.corpus))
+        elif args.command == "doctor":
             _print(
                 {
                     "database": "ok",
@@ -233,9 +254,46 @@ def main(argv: list[str] | None = None) -> int:
             operations = _operations(store.list_operations(until, dataset))
             bars = _bars(store.all_market_bars(until, dataset))
             operations = price_operations(operations, bars)
-            result = replay(operations, bars, until)
+            result = replay(
+                operations,
+                bars,
+                until,
+                stable_mints=set(
+                    config.get("stable_mints", ["EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v"])
+                ),
+                reserve_mints=set(
+                    config.get("reserve_mints", ["So11111111111111111111111111111111111111112"])
+                ),
+                eligible_mints=set(config["eligible_mints"])
+                if "eligible_mints" in config
+                else None,
+                eligible_wallets=set(config["eligible_wallets"])
+                if "eligible_wallets" in config
+                else None,
+                mint_known_at={
+                    mint: _dt(value) for mint, value in config.get("mint_known_at", {}).items()
+                },
+                wallet_known_at={
+                    wallet: _dt(value)
+                    for wallet, value in config.get("wallet_known_at", {}).items()
+                },
+            )
             study = study_events(
                 result, bars, tuple(int(x) for x in config.get("horizons_minutes", [60, 240, 1440]))
+            )
+            universe = {bar.mint for bar in bars}
+            comparison = (
+                compare_variants(
+                    result.rotations,
+                    bars,
+                    Decimal(str(config.get("initial_cash", "1000"))),
+                    universe,
+                )
+                if universe
+                else {
+                    name: {"status": "not_evaluated_no_market_data"}
+                    for name in ("basket", "market_only", "wallets_only", "combined")
+                }
             )
             run_id = str(uuid.uuid4())
             config_hash = digest(config)
@@ -257,9 +315,11 @@ def main(argv: list[str] | None = None) -> int:
                 "operations": len(operations),
                 "market_bars": len(bars),
                 "rotations": len(result.rotations),
+                "aggregate_flows": len(result.aggregate_flows),
                 "signal_revisions": len(result.decisions),
                 "states": [r.decision.state for r in result.decisions],
                 "event_study": study,
+                "comparison": comparison,
                 "financial_edge": "not_evaluated",
                 "historical_coverage": "insufficient" if dataset == "REAL" else "synthetic",
             }
@@ -275,7 +335,13 @@ def main(argv: list[str] | None = None) -> int:
             until = _dt(config.get("until", datetime.now(timezone.utc)))
             operations = _operations(store.list_operations(until, dataset))
             bars = _bars(store.all_market_bars(until, dataset))
-            decisions = replay(price_operations(operations, bars), bars, until).decisions
+            decisions = replay(
+                price_operations(operations, bars),
+                bars,
+                until,
+                stable_mints={"EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v"},
+                reserve_mints={"So11111111111111111111111111111111111111112"},
+            ).decisions
             initial_cash = Decimal(str(config.get("initial_cash", "1000")))
             simulation = simulate_paper(
                 decisions,

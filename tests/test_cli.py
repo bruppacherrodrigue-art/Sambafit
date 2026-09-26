@@ -8,6 +8,21 @@ from rotation.store import Store
 URL = os.getenv("TEST_DATABASE_URL", "postgresql://rotation:rotation@127.0.0.1:55432/rotation")
 
 
+def test_pilot_collect_cli_requires_explicit_output_and_stays_db_independent(
+    monkeypatch, capsys, tmp_path
+):
+    captured = {}
+
+    def fake_collect(output, *, per_pool, rpc_url):
+        captured.update(output=output, per_pool=per_pool, rpc_url=rpc_url)
+        return {"attempts_total": 0}
+
+    monkeypatch.setattr("rotation.cli.run_pilot_collection", fake_collect)
+    assert main(["pilot-collect", "--output", str(tmp_path), "--per-pool", "2"]) == 0
+    assert captured == {"output": str(tmp_path), "per_pool": 2, "rpc_url": None}
+    assert json.loads(capsys.readouterr().out)["attempts_total"] == 0
+
+
 def test_cli_doctor_seed_replay_and_report(capsys, monkeypatch, tmp_path):
     schema = "test_" + uuid.uuid4().hex[:12]
     store = Store(URL, schema=schema)
@@ -23,6 +38,7 @@ def test_cli_doctor_seed_replay_and_report(capsys, monkeypatch, tmp_path):
         lines = [line for line in capsys.readouterr().out.splitlines() if line.startswith("{")]
         run = json.loads(lines[-1])
         assert run["dataset"] == "DEMO" and run["status"] == "completed"
+        assert set(run["comparison"]) == {"basket", "market_only", "wallets_only", "combined"}
         assert store.list_signals("DEMO")
         assert store.list_signals("REPLAY") == []
         assert main(["report", "--run-id", run["run_id"]]) == 0

@@ -70,3 +70,54 @@ def test_same_signature_for_two_wallets_preserves_two_entities():
     result = replay([a, b], [bar(T, "100")], T)
     assert len(result.rotations) == 2
     assert result.decisions[-1].decision.state == "confirmed"
+    assert result.aggregate_flows and result.aggregate_flows[0].evidence == "aggregate"
+
+
+def test_future_watchlist_or_wallet_selection_cannot_retroactively_emit_signal():
+    operations = [swap("s1", "w1", T)]
+    bars = [bar(T, "100")]
+    later = T + timedelta(days=1)
+    assert replay(operations, bars, later, mint_known_at={"A": later}).rotations == ()
+    assert replay(operations, bars, later, wallet_known_at={"w1": later}).rotations == ()
+    assert (
+        len(
+            replay(
+                operations, bars, later, mint_known_at={"A": T, "B": T}, wallet_known_at={"w1": T}
+            ).rotations
+        )
+        == 1
+    )
+    assert replay(operations, bars, later, eligible_mints={"B"}).rotations == ()
+    assert replay(operations, bars, later, eligible_wallets={"other"}).rotations == ()
+
+
+def test_late_sale_cannot_emit_inferred_signal_before_sale_is_observed():
+    sale = Operation(
+        "sale",
+        "w1",
+        "sale",
+        T,
+        T + timedelta(minutes=10),
+        "sale",
+        (Leg("A", -100, 0, D("1")),),
+        True,
+        "complete",
+    )
+    buy = Operation(
+        "buy",
+        "w1",
+        "buy",
+        T + timedelta(minutes=1),
+        T + timedelta(minutes=2),
+        "buy",
+        (Leg("B", 100, 0, D("1")),),
+        True,
+        "complete",
+    )
+    bars = [bar(T + timedelta(minutes=10), "100")]
+    before = replay([sale, buy], bars, T + timedelta(minutes=9))
+    after = replay([sale, buy], bars, T + timedelta(minutes=10))
+    assert before.rotations == () and before.decisions == ()
+    assert len(after.rotations) == 1
+    assert after.rotations[0].available_at == T + timedelta(minutes=10)
+    assert after.decisions[0].at == T + timedelta(minutes=10)

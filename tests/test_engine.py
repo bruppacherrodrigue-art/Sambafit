@@ -36,6 +36,23 @@ def test_inferred_split_conserves_sale_value_and_orders_by_availability():
     assert sum(r.amount_usd for r in rotations) == D("100")
 
 
+def test_late_sale_pairs_by_economic_order_only_after_both_events_are_available():
+    sale = op("sell", "sale", T, [leg("A", -100)], available=T + timedelta(minutes=10))
+    buy = op(
+        "buy",
+        "buy",
+        T + timedelta(minutes=1),
+        [leg("B", 100)],
+        available=T + timedelta(minutes=2),
+    )
+    assert attribute_rotations([buy]) == []
+    rotations = attribute_rotations([buy, sale])
+    assert len(rotations) == 1
+    assert rotations[0].evidence == "inferred"
+    assert rotations[0].economic_at == buy.economic_at
+    assert rotations[0].available_at == sale.available_at
+
+
 def test_nontrades_failed_partial_and_unpriced_do_not_rotate():
     kinds = ("transfer", "wrap", "airdrop", "lp_add", "lp_remove", "unknown")
     events = [op(str(i), kind, T, [leg("A", -100), leg("B", 100)]) for i, kind in enumerate(kinds)]
@@ -62,6 +79,15 @@ def test_stable_exit_has_no_fictitious_destination_coin():
     assert rotations[0].destination == "USDC" and rotations[0].direction == "to_stable"
 
 
+def test_usdc_and_sol_entries_are_not_between_coin_rotations():
+    events = [
+        op("stable-entry", "swap", T, [leg("USDC", -100), leg("JUP", 100)]),
+        op("sol-entry", "swap", T, [leg("SOL", -100), leg("JUP", 100)]),
+    ]
+    rotations = attribute_rotations(events, stable_mints={"USDC"}, reserve_mints={"SOL"})
+    assert {r.direction for r in rotations} == {"from_stable", "from_reserve"}
+
+
 def test_market_features_exclude_future_and_unclosed_bars():
     bars = [
         MarketBar(
@@ -82,6 +108,16 @@ def test_market_features_exclude_future_and_unclosed_bars():
     features = market_features(bars, "B", T + timedelta(minutes=2), lookback=3)
     assert features.last_price == D("3")
     assert features.range_position == D("1")
+
+
+def test_sparse_minute_bars_do_not_claim_volume_acceleration():
+    bars = [
+        MarketBar("B", T, T, D("1"), D("100"), None),
+        MarketBar(
+            "B", T + timedelta(minutes=10), T + timedelta(minutes=10), D("2"), D("200"), None
+        ),
+    ]
+    assert market_features(bars, "B", T + timedelta(minutes=10)).volume_acceleration is None
 
 
 def test_stale_market_blocks_decision_and_future_data_cannot_change_past_decision():

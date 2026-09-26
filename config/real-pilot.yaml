@@ -1,0 +1,33 @@
+# Technical, retrospective corpus. This is not the user's watchlist or a qualified cohort.
+dataset: REAL
+until: 2026-09-26T07:11:00Z
+initial_cash: "1000"
+horizons_minutes: [60, 240, 1440]
+stable_mints:
+  - EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v
+reserve_mints:
+  - So11111111111111111111111111111111111111112
+eligible_mints:
+  - JUPyiwrYJFskUPiHa7hkeR8VUtAeFoSYbKedZNsDvCN
+  - So11111111111111111111111111111111111111112
+  - EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v
+mint_known_at:
+  JUPyiwrYJFskUPiHa7hkeR8VUtAeFoSYbKedZNsDvCN: 2026-09-26T06:29:58Z
+  So11111111111111111111111111111111111111112: 2026-09-26T06:29:58Z
+  EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v: 2026-09-26T06:29:58Z
+# These six signers were selected from the same observed sample at 06:43 UTC.
+# Any replay of earlier periods using them is exploratory and selection-biased.
+eligible_wallets:
+  - 4jjEXcFPXw7WVGXSTb227HW6wfLprjh2RtiHty4GbetE
+  - 8Jcfek7Ej27SqJEAPTchVxx5D7GBTfsn47BjRQb52VNx
+  - CKuBTzPwzrCisqQMQfAjNn6jKcfny8ny4rJVN3cxLjcf
+  - EYvwg12vXcUN7pF1fASQZZgQ9RbVUMLjKqqCfi961ptw
+  - GJvewfRjqTUPtx6WsBSUnaFbdgXwgXnWfpDyLm65T4YA
+  - MfDuWeqSHEqTFVYZ7LoexgAK9dxk7cy4DFJWjWMGVWa
+wallet_known_at:
+  4jjEXcFPXw7WVGXSTb227HW6wfLprjh2RtiHty4GbetE: 2026-09-26T06:43:00Z
+  8Jcfek7Ej27SqJEAPTchVxx5D7GBTfsn47BjRQb52VNx: 2026-09-26T06:43:00Z
+  CKuBTzPwzrCisqQMQfAjNn6jKcfny8ny4rJVN3cxLjcf: 2026-09-26T06:43:00Z
+  EYvwg12vXcUN7pF1fASQZZgQ9RbVUMLjKqqCfi961ptw: 2026-09-26T06:43:00Z
+  GJvewfRjqTUPtx6WsBSUnaFbdgXwgXnWfpDyLm65T4YA: 2026-09-26T06:43:00Z
+  MfDuWeqSHEqTFVYZ7LoexgAK9dxk7cy4DFJWjWMGVWa: 2026-09-26T06:43:00Z

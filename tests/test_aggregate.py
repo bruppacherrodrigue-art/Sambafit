@@ -28,6 +28,21 @@ def test_aggregate_convergence_is_separate_from_inferred_transfer():
     assert flows[0].evidence == "aggregate" and flows[0].independence_uncertain is True
 
 
+def test_single_wallet_direct_swap_cannot_create_aggregate_consensus():
+    direct = Operation(
+        "one",
+        "only",
+        "one",
+        T,
+        T,
+        "swap",
+        (Leg("A", -100, 0, D("1")), Leg("B", 100, 0, D("1"))),
+        True,
+        "complete",
+    )
+    assert aggregate_convergence([direct], T) == []
+
+
 def test_linked_wallets_cannot_confirm_by_simulating_diversity():
     operations = [
         Operation(

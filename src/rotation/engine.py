@@ -93,6 +93,8 @@ def aggregate_convergence(
         for destination, buyers in bought.items():
             if source == destination:
                 continue
+            if len(set(sellers) | set(buyers)) < 2:
+                continue
             buyer_values = [min(value, max_entity_usd) for value in buyers.values()]
             buyer_total = sum(buyer_values, Decimal(0))
             amount = min(seller_total, buyer_total)
@@ -120,13 +122,27 @@ def attribute_rotations(
     window: timedelta = timedelta(hours=6),
     stable_mints: set[str] | None = None,
     bridge_mints: set[str] | None = None,
+    reserve_mints: set[str] | None = None,
 ) -> list[Rotation]:
     """Pair bounded sells/buys FIFO. Swaps never seed inference."""
     stable_mints = stable_mints or set()
     bridge_mints = bridge_mints or set()
+    reserve_mints = reserve_mints or set()
+
+    def direction(source: str, destination: str) -> str:
+        if destination in stable_mints:
+            return "to_stable"
+        if source in stable_mints:
+            return "from_stable"
+        if destination in reserve_mints:
+            return "to_reserve"
+        if source in reserve_mints:
+            return "from_reserve"
+        return "between_coins"
+
     rotations: list[Rotation] = []
     sales: dict[str, list[dict]] = {}
-    for op in sorted(operations, key=lambda x: (x.available_at, x.economic_at, x.id)):
+    for op in sorted(operations, key=lambda x: (x.economic_at, x.available_at, x.id)):
         if not op.finalized or op.quality != "complete":
             continue
         negative = [x for x in op.legs if x.delta_base < 0 and x.mint not in bridge_mints]
@@ -137,19 +153,12 @@ def attribute_rotations(
             source, dest = negative[0], positive[0]
             if source.mint == dest.mint or source.value_usd is None or dest.value_usd is None:
                 continue
-            direction = (
-                "to_stable"
-                if dest.mint in stable_mints
-                else "from_stable"
-                if source.mint in stable_mints
-                else "between_coins"
-            )
             rotations.append(
                 Rotation(
                     source.mint,
                     dest.mint,
                     "direct",
-                    direction,
+                    direction(source.mint, dest.mint),
                     min(source.value_usd, dest.value_usd),
                     op.wallet,
                     op.id,
@@ -182,13 +191,13 @@ def attribute_rotations(
                         sale["leg"].mint,
                         buy.mint,
                         "inferred",
-                        "between_coins",
+                        direction(sale["leg"].mint, buy.mint),
                         amount,
                         op.wallet,
                         prev.id,
                         op.id,
                         op.economic_at,
-                        op.available_at,
+                        max(prev.available_at, op.available_at),
                     )
                 )
                 sale["remaining"] -= amount

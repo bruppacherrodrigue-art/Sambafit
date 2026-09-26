@@ -382,7 +382,7 @@ class Store:
                     "SELECT count(*) AS n FROM raw_events WHERE dataset=%s", (source_dataset,)
                 ).fetchone()["n"],
                 "operations": conn.execute(
-                    "SELECT count(*) AS n FROM operations o JOIN raw_events r ON r.id=o.raw_event_id WHERE r.dataset=%s",
+                    "SELECT count(DISTINCT o.raw_event_id) AS n FROM operations o JOIN raw_events r ON r.id=o.raw_event_id WHERE r.dataset=%s",
                     (source_dataset,),
                 ).fetchone()["n"],
                 "market_bars": conn.execute(

@@ -57,7 +57,9 @@ def market_features(bars: list[MarketBar], mint: str, at: datetime, lookback: in
     change = prices[-1] / prices[0] - 1 if len(prices) > 1 else None
     accel = (
         past[-1].volume_usd / past[-2].volume_usd
-        if len(past) > 1 and past[-2].volume_usd > 0
+        if len(past) > 1
+        and past[-2].volume_usd > 0
+        and past[-1].close_at - past[-2].close_at == timedelta(minutes=1)
         else None
     )
     return Features(
@@ -87,7 +89,10 @@ def decide(
     ]
     if not visible:
         return Decision("observing", "insufficient", 0, (), ("no visible rotation",))
-    destination = visible[-1].destination
+    destination = max(
+        visible,
+        key=lambda r: (r.available_at, r.economic_at, r.source_op, r.destination_op or ""),
+    ).destination
     features = market_features(bars, destination, at)
     if features.last_available_at is None:
         return Decision("observing", "missing_market", 0, (), ("missing closed market bar",))
