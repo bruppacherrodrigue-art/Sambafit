@@ -8,8 +8,9 @@ Le [rapport du pilote](docs/real-pilot-report.md) décrit un prélèvement techn
 
 Pour rejouer **sans nouvel appel externe**, dans ce worktree :
 
+La base PostgreSQL de la livraison initiale écoute déjà sur `127.0.0.1:55432` dans l'environnement remis. Si elle est arrêtée, lancer `docker compose up -d db` depuis un seul des deux dossiers du projet avant les commandes ci-dessous ; ne pas essayer de démarrer deux bases sur le même port.
+
 ```bash
-docker compose up -d db
 uv sync --frozen
 uv run rotation pilot-audit --corpus data/real-pilot-20260926
 ROTATION_SCHEMA=pilot_20260926 uv run rotation pilot-import --corpus data/real-pilot-20260926
