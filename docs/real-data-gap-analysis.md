@@ -1,0 +1,23 @@
+# Écarts vers un pilote réel — audit du code du 26 septembre 2026
+
+Base vérifiée : `54cbbee9638aae8b7ed1191672af94fbca945bbf`, branche `feat/rotation-engine`, dépôt propre. Les 36 tests initiaux utilisent des fixtures synthétiques ; aucune ne prouve un swap réel. Cette matrice est révisée après le pilote, sans confondre capacité logicielle et résultat empirique.
+
+| Exigence | Chemin de code | Preuve existante | Statut initial | Correction nécessaire |
+|---|---|---|---|---|
+| Réponses Solana finalisées et pagination | `solana.SolanaRpc`, `collect.backfill_wallet` | Contrat RPC sur 1 vote ; tests avec faux RPC | Implémenté non validé sur données réelles de swaps | Collecter un corpus de signatures de trades et publier compteurs, erreurs, checkpoints |
+| Opérations normalisées issues de la collecte | `collect.backfill_wallet` → `SolanaDecoder.decode` → `Store.add_operation` | 36 tests, tous synthétiques | Implémenté non validé sur données réelles | Vérifier au moins 10 opérations contre soldes et instructions bruts |
+| Programmes et versions | `solana.SolanaDecoder` | Legacy/v0 seulement ; allowlist Jupiter dans `config/research.yaml` | Partiel | Documenter programmes du corpus ; inconnu si version/programme non couvert |
+| Signataire, payeur, propriétaire et bénéficiaire | `solana._balances` sélectionne `owner == wallet` | Aucun test réel ; payeur ignoré dans la décision | Partiel | Séparer rôles, rejeter attribution ambiguë, ne jamais inférer trader du payeur seul |
+| Swap routé et instructions internes | `SolanaDecoder.decode` classe sur présence d'un programme et deux deltas SPL ; `engine.attribute_rotations` crée une rotation | Tests synthétiques de route | Partiel | Réconcilier comptes et mouvements internes ; documenter routes complexes non couvertes |
+| SOL natif, wSOL, frais et échecs | `SolanaDecoder.decode` lit SPL et `meta.fee` ; ignore `preBalances/postBalances` | Tests wrap et échec synthétiques | Partiel | Rapprocher SOL natif, frais et création/fermeture de comptes ; distinguer les cas non sûrs |
+| Prix, volume et liquidité réels | `Store.add_market_bar`, `cli.import-market` | Fichiers importés ou fixture DEMO ; aucune source connectée | Absent | Adaptateur de marché documenté, OHLCV et relevés de liquidité horodatés |
+| Trois niveaux de rotation | `engine.attribute_rotations`, `aggregate_convergence` | Tests synthétiques ; agrégat absent du replay et de l'API | Partiel | Conserver les trois preuves séparées dans le corpus et la vue |
+| Marché à l'instant et B/A | `signals.market_features`, `research.price_operations` | Position de fourchette, rendement, volume relatif d'un coin ; pas B/A, volatilité ni SOL | Partiel | Ajouter contexte B/A et qualité temporelle sans inventer les données manquantes |
+| Replay strictement temporel | `replay.replay`, `Store.list_operations` | Tests d'absence de bougie future et versions de décodeur | Implémenté et testé | Marquer la latence historique hypothétique, figer cohortes/watchlist connues à chaque décision |
+| Quatre variantes comparables | Aucun comparateur ; `paper.simulate_paper` consomme le replay combiné | Aucun test | Absent | Panier, marché seul, wallets seuls, combiné sur mêmes bars/capital/coûts |
+| Paper trading et exécution | `paper.PaperBook`, `simulate_paper`, `cli.paper` | Ordres fictifs sur fixture ; pas de signal prospectif connecté | Partiel | Comparateurs et statut d'exécution inconnu sans profondeur historique ; aucun ordre réel |
+| Fomo → wallet | `Store.import_wallets`, `wallet_profile_links` | Validation de preuve datée seulement ; [pages sociales Fomo](https://fomo.family/blog/learn/leveraging-fomos-social-features) lues | Implémenté non validé sur données réelles | Garder profils prouvés distincts des candidats on-chain ; action manuelle dans l'app si nécessaire |
+| Vue d'une transaction réelle | `api.evidence`, `web/src/main.tsx` | Fiche de preuve DEMO ; pas de chronologie réelle accessible sans signal | Partiel | Liste d'opérations réelles ouvrable par signature avec rôles, soldes, statut et chronologie |
+| Budget et reprise | `SolanaRpc.calls`, `collect`, `checkpoints` | Tests synthétiques de checkpoint ; pas de budget partagé multi-source/durée de backfill | Partiel | Budget global tentatives, transactions uniques, durée et manifeste persistant |
+
+Les [pages officielles Fomo](https://fomo.family/blog/learn/navigating-your-fomo-app) consultées décrivent la recherche de profils et le classement dans l'application. Elles ne documentent pas, dans leur contenu public inspecté, un export de liaison profil → adresse. Cela ne démontre pas l'absence d'une voie autorisée dans l'application connectée. Aucun profil Fomo n'est attribué dans ce pilote.
