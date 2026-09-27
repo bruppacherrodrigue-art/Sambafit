@@ -39,7 +39,11 @@ class SequenceStore:
         with self.db:
             for event in events:
                 amount = event.get("reserve_quantity_base", event.get("amount_usd"))
-                if event["direction"] not in {"buy", "sell"} or amount is None or Decimal(amount) <= 0:
+                if (
+                    event["direction"] not in {"buy", "sell"}
+                    or amount is None
+                    or Decimal(amount) <= 0
+                ):
                     raise ValueError("invalid directional event")
                 canonical = json.dumps(event, sort_keys=True, separators=(",", ":"))
                 prior = self.db.execute(
@@ -110,15 +114,25 @@ class SequenceStore:
                         if source_value is not None and destination_value is not None
                         else None,
                         "reserve_quantity_base": str(matched) if unit == "reserve_base" else None,
-                        "reserve_decimals": debit["reserve_decimals"] if unit == "reserve_base" else None,
+                        "reserve_decimals": debit["reserve_decimals"]
+                        if unit == "reserve_base"
+                        else None,
                         "sale_value_usd": str(source_value) if source_value is not None else None,
-                        "buy_value_usd": str(destination_value) if destination_value is not None else None,
-                        "valuation_method": "historical_source_values" if unit == "reserve_base" else "legacy_usd_proxy",
+                        "buy_value_usd": str(destination_value)
+                        if destination_value is not None
+                        else None,
+                        "valuation_method": "historical_source_values"
+                        if unit == "reserve_base"
+                        else "legacy_usd_proxy",
                         "evidence": "inferred_via_reserve",
                         "economic_at": event["economic_at"],
                         "available_at": max(source["available_at"], event["available_at"]),
                         "warning": "fund_identity_unproven; exploratory_backfill; "
-                        + ("reserve_base_conserved" if unit == "reserve_base" else "legacy_usd_proxy"),
+                        + (
+                            "reserve_base_conserved"
+                            if unit == "reserve_base"
+                            else "legacy_usd_proxy"
+                        ),
                     }
                 )
         self.db.execute("DELETE FROM allocations")

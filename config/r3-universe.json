@@ -1,0 +1,363 @@
+{
+  "known_at": "2026-09-27T03:37:55.532699+00:00",
+  "records": [
+    {
+      "category": "memecoin",
+      "effective_from": "2026-09-27T03:37:55.532699+00:00",
+      "known_at": "2026-09-27T03:37:55.532699+00:00",
+      "mint": "DezXAZ8z7PnrnRJjz3wXBoRgixCa6xjnB7YaB1pPB263",
+      "network": "solana",
+      "proof": {
+        "classification_source": "R3 user-designated candidate universe with R2 research review",
+        "mint_source": "config/r2-candidates.json",
+        "r2_attempts": [
+          3,
+          15,
+          26
+        ],
+        "r2_hashes": [
+          "94cf5bf7168409aac7a390b0635cca243fc980774e82f17e4080e29455593a15",
+          "c3072d359548c72628bb8a0f5208cb513eb4a7c803b7ec57f99c02288f74495b",
+          "34ec65d8195f20153133d5aef0b97c5af8c99ff9426897e33360a2a4f7b4f1c7"
+        ]
+      },
+      "proof_at": "2026-09-27T03:37:55.532699+00:00",
+      "reason": "dog-themed community meme token; research hypothesis only",
+      "role": "target",
+      "status": "research_candidate",
+      "symbol": "BONK"
+    },
+    {
+      "category": "memecoin",
+      "effective_from": "2026-09-27T03:37:55.532699+00:00",
+      "known_at": "2026-09-27T03:37:55.532699+00:00",
+      "mint": "EKpQGSJtjMFqKZ9KQanSqYXRcF8fBopzLHYxdM65zcjm",
+      "network": "solana",
+      "proof": {
+        "classification_source": "R3 user-designated candidate universe with R2 research review",
+        "mint_source": "config/r2-candidates.json",
+        "r2_attempts": [
+          4,
+          16,
+          27
+        ],
+        "r2_hashes": [
+          "eb14fe6de4703b0cf921323c4a8fe00908c1b91b06fa3825d43c8613373a2f52",
+          "00bdd9474ab1ffea05813c781040fd0af308d768ab3b7f47f5ed3c6c5e8326be",
+          "3912ff8cf8fa08021efd55378d89ae2daa8064620e506c471ac1640eb255df13"
+        ]
+      },
+      "proof_at": "2026-09-27T03:37:55.532699+00:00",
+      "reason": "dog-with-hat meme token; research hypothesis only",
+      "role": "target",
+      "status": "research_candidate",
+      "symbol": "WIF"
+    },
+    {
+      "category": "uncertain",
+      "effective_from": "2026-09-27T03:37:55.532699+00:00",
+      "known_at": "2026-09-27T03:37:55.532699+00:00",
+      "mint": "2zMMhcVQEXDtdE6vsFS7S7D5oUodfJHE8vd1gnBouauv",
+      "network": "solana",
+      "proof": {
+        "classification_source": "R3 user-designated candidate universe with R2 research review",
+        "mint_source": "config/r2-candidates.json",
+        "r2_attempts": [
+          5,
+          17,
+          28
+        ],
+        "r2_hashes": [
+          "8552a924423aaddedf703443b2c59fd2ddee63df3621e24d144ae6b473891627",
+          "ab88a91c14cd264bf368a8940089436a1eacbb4dbd38c25c03fb7463df436677",
+          "fe94b5cd13992abc889e817d741ea78513a9d58b3a7ffd0ccb4338a3c863760c"
+        ]
+      },
+      "proof_at": "2026-09-27T03:37:55.532699+00:00",
+      "reason": "Pudgy Penguins branded ecosystem token; memecoin classification requires review",
+      "role": "target",
+      "status": "uncertain",
+      "symbol": "PENGU"
+    },
+    {
+      "category": "memecoin",
+      "effective_from": "2026-09-27T03:37:55.532699+00:00",
+      "known_at": "2026-09-27T03:37:55.532699+00:00",
+      "mint": "7GCihgDB8fe6KNjn2MYtkzZcRjQy3t9GHdC8uHYmW2hr",
+      "network": "solana",
+      "proof": {
+        "classification_source": "R3 user-designated candidate universe with R2 research review",
+        "mint_source": "config/r2-candidates.json",
+        "r2_attempts": [
+          6,
+          18,
+          29
+        ],
+        "r2_hashes": [
+          "b6455b6a2852627d98575dd91bb2cc059259bedf2be2f673f020a43b459addf8",
+          "fb80d7e65918ca9ed22059089526217a7044f70d6b85a24c87786165ab8bba87",
+          "71acf8ceb13f3f89b969ee5b88550101cb46c7f11fee5ebd87a1d0b29785da68"
+        ]
+      },
+      "proof_at": "2026-09-27T03:37:55.532699+00:00",
+      "reason": "cat meme token; research hypothesis only",
+      "role": "target",
+      "status": "research_candidate",
+      "symbol": "POPCAT"
+    },
+    {
+      "category": "memecoin",
+      "effective_from": "2026-09-27T03:37:55.532699+00:00",
+      "known_at": "2026-09-27T03:37:55.532699+00:00",
+      "mint": "9BB6NFEcjBCtnNLFko2FqVQBq8HHM13kCyYcdQbgpump",
+      "network": "solana",
+      "proof": {
+        "classification_source": "R3 user-designated candidate universe with R2 research review",
+        "mint_source": "config/r2-candidates.json",
+        "r2_attempts": [
+          7,
+          19,
+          30
+        ],
+        "r2_hashes": [
+          "c714d23d38102f745d4a1bfe4882cb37fe865d5cec465fc938b3d70cf0676a50",
+          "8678f1e9bcf7e0e4b2b7b1ac4fb85475db59c63378f252a898f939efaaa2c056",
+          "a8c2d4e765d1e5fa781d08835d0ae5f218872820102b739983ae2f03e4679963"
+        ]
+      },
+      "proof_at": "2026-09-27T03:37:55.532699+00:00",
+      "reason": "humorous meme token; research hypothesis only",
+      "role": "target",
+      "status": "research_candidate",
+      "symbol": "FARTCOIN"
+    },
+    {
+      "category": "memecoin",
+      "effective_from": "2026-09-27T03:37:55.532699+00:00",
+      "known_at": "2026-09-27T03:37:55.532699+00:00",
+      "mint": "MEW1gQWJ3nEXg2qgERiKu7FAFj79PHvQVREQUzScPP5",
+      "network": "solana",
+      "proof": {
+        "classification_source": "R3 user-designated candidate universe with R2 research review",
+        "mint_source": "config/r2-candidates.json",
+        "r2_attempts": [
+          8,
+          20,
+          31
+        ],
+        "r2_hashes": [
+          "74ef14a5df5160e82be73ba8c6c651c4171cf865b253bd920fe494cfeead59ac",
+          "99252a44dd845d96bab0a1769b44c0954868c137881ca30e379f41e8368b278e",
+          "6cb5979ed0e2f0bd38f1815de2f4722741b305c393d21b78af6fe0e69961eb83"
+        ]
+      },
+      "proof_at": "2026-09-27T03:37:55.532699+00:00",
+      "reason": "cat-themed meme token; research hypothesis only",
+      "role": "target",
+      "status": "research_candidate",
+      "symbol": "MEW"
+    },
+    {
+      "category": "memecoin",
+      "effective_from": "2026-09-27T03:37:55.532699+00:00",
+      "known_at": "2026-09-27T03:37:55.532699+00:00",
+      "mint": "ukHH6c7mMyiWCf1b9pnWe25TSpkDDt3H5pQZgZ74J82",
+      "network": "solana",
+      "proof": {
+        "classification_source": "R3 user-designated candidate universe with R2 research review",
+        "mint_source": "config/r2-candidates.json",
+        "r2_attempts": [
+          9,
+          21,
+          32
+        ],
+        "r2_hashes": [
+          "74dd83ed805cf627a185d4658f64b5cc47147e4e6f0df0ebc719499c872a9f51",
+          "ece5539a73fad5db997e4a99f02eae3e5b2357421d3ff58d3fe3ad641c0ea387",
+          "aa4dc12df2787adb315efdc15b6d469cf45b3aa37e5867142717d4017446e242"
+        ]
+      },
+      "proof_at": "2026-09-27T03:37:55.532699+00:00",
+      "reason": "meme-book themed token; research hypothesis only",
+      "role": "target",
+      "status": "research_candidate",
+      "symbol": "BOME"
+    },
+    {
+      "category": "memecoin",
+      "effective_from": "2026-09-27T03:37:55.532699+00:00",
+      "known_at": "2026-09-27T03:37:55.532699+00:00",
+      "mint": "2qEHjDLDLbuBgRYvsxhc5D6uDWAivNFZGan56P1tpump",
+      "network": "solana",
+      "proof": {
+        "classification_source": "R3 user-designated candidate universe with R2 research review",
+        "mint_source": "config/r2-candidates.json",
+        "r2_attempts": [
+          10,
+          22,
+          33
+        ],
+        "r2_hashes": [
+          "03f06667add7a0f8553646c3a2e3103335fc103753cf126720c07a95362ac74d",
+          "1991ceaf55283b6a8dcc87b1513d03f3deb68d24b710a845a632d02d8e7c4b9f",
+          "0fc3642eb689bce587c8914da618be8f47e5b4d07e77fa8e87e5f5546ef93f27"
+        ]
+      },
+      "proof_at": "2026-09-27T03:37:55.532699+00:00",
+      "reason": "squirrel meme token; research hypothesis only",
+      "role": "target",
+      "status": "research_candidate",
+      "symbol": "PNUT"
+    },
+    {
+      "category": "memecoin",
+      "effective_from": "2026-09-27T03:37:55.532699+00:00",
+      "known_at": "2026-09-27T03:37:55.532699+00:00",
+      "mint": "CzLSujWBLFsSjncfkh59rUFqvafWcY5tzedWJSuypump",
+      "network": "solana",
+      "proof": {
+        "classification_source": "R3 user-designated candidate universe with R2 research review",
+        "mint_source": "config/r2-candidates.json",
+        "r2_attempts": [
+          11,
+          23,
+          34
+        ],
+        "r2_hashes": [
+          "8766e02d9986410ce7b91bea8794bd605793af605ebafe7cde7b7cc273555f3f",
+          "9e565d6ed0e2f546c70e8e6c90598fa338a2f78ac90c81307381bd5eba0b65b8",
+          "4ad3f803ef3fb2e74be6a6ba472d8bdb801d20a11ccfb9c13f6ac3052547db2d"
+        ]
+      },
+      "proof_at": "2026-09-27T03:37:55.532699+00:00",
+      "reason": "AI-generated meme token; research hypothesis only",
+      "role": "target",
+      "status": "research_candidate",
+      "symbol": "GOAT"
+    },
+    {
+      "category": "platform_token",
+      "effective_from": "2026-09-27T03:37:55.532699+00:00",
+      "known_at": "2026-09-27T03:37:55.532699+00:00",
+      "mint": "pumpCmXqMfrsAkQ5r49WcJnRayYRqmXz6ae8H7H9Dfn",
+      "network": "solana",
+      "proof": {
+        "classification_source": "R3 user-designated candidate universe with R2 research review",
+        "mint_source": "config/r2-candidates.json",
+        "r2_attempts": [
+          12
+        ],
+        "r2_hashes": [
+          "ab15548132d6dd086a444336f2519b8a208779051e9489d70ff4774198579d73"
+        ]
+      },
+      "proof_at": "2026-09-27T03:37:55.532699+00:00",
+      "reason": "Pump.fun platform token, not a memecoin study endpoint",
+      "role": "out_of_scope",
+      "status": "excluded",
+      "symbol": "PUMP"
+    },
+    {
+      "category": "memecoin",
+      "effective_from": "2026-09-27T03:37:55.532699+00:00",
+      "known_at": "2026-09-27T03:37:55.532699+00:00",
+      "mint": "63LfDmNb3MQ8mw9MtZ2To9bEA2M71kZUUGq5tiJxcqj9",
+      "network": "solana",
+      "proof": {
+        "classification_source": "R3 user-designated candidate universe with R2 research review",
+        "mint_source": "config/r2-candidates.json",
+        "r2_attempts": [
+          13,
+          24,
+          35
+        ],
+        "r2_hashes": [
+          "8068d066881ef387f2eb927f3beee5694affaf64bc23224c4f90f05d894bbfcb",
+          "8b3d4ca7d48a3610f31338b3b9c54738993009ce75b81b9317b12007d9281fce",
+          "8f5313ae38e5ff4a0c9a302282883b57eb4365fa088c26b58421898ccaf573a4"
+        ]
+      },
+      "proof_at": "2026-09-27T03:37:55.532699+00:00",
+      "reason": "Gigachad meme token; research hypothesis only",
+      "role": "target",
+      "status": "research_candidate",
+      "symbol": "GIGA"
+    },
+    {
+      "category": "memecoin",
+      "effective_from": "2026-09-27T03:37:55.532699+00:00",
+      "known_at": "2026-09-27T03:37:55.532699+00:00",
+      "mint": "ED5nyyWEzpPPiWimP8vYm7sD7TD3LAt3Q3gRTWHzPJBY",
+      "network": "solana",
+      "proof": {
+        "classification_source": "R3 user-designated candidate universe with R2 research review",
+        "mint_source": "config/r2-candidates.json",
+        "r2_attempts": [
+          14,
+          25,
+          36
+        ],
+        "r2_hashes": [
+          "2849a7e0ea8ea0fc8c4acfef77580d8bffecb35cef67c2ed3a7c4d5b5353d6ec",
+          "813ab39b5177754b45addca947d0001235440d1001abfb6e648d2aa72c8cd716",
+          "672d4ad6f4f042e1c640d3ca59e4a8d21162d3bf7ea71cb92b2e318a6cf75ce6"
+        ]
+      },
+      "proof_at": "2026-09-27T03:37:55.532699+00:00",
+      "reason": "pygmy-hippo meme token; research hypothesis only",
+      "role": "target",
+      "status": "research_candidate",
+      "symbol": "MOODENG"
+    },
+    {
+      "category": "native_wrapped",
+      "effective_from": "2026-09-27T03:37:55.532699+00:00",
+      "known_at": "2026-09-27T03:37:55.532699+00:00",
+      "mint": "So11111111111111111111111111111111111111112",
+      "network": "solana",
+      "proof": {
+        "classification_source": "docs/real-pilot-protocol.md",
+        "mint_source": "docs/real-pilot-protocol.md"
+      },
+      "proof_at": "2026-09-27T03:37:55.532699+00:00",
+      "reason": "wrapped SOL transit/reserve",
+      "role": "reserve",
+      "status": "excluded",
+      "symbol": "wSOL"
+    },
+    {
+      "category": "stablecoin",
+      "effective_from": "2026-09-27T03:37:55.532699+00:00",
+      "known_at": "2026-09-27T03:37:55.532699+00:00",
+      "mint": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+      "network": "solana",
+      "proof": {
+        "classification_source": "docs/real-pilot-protocol.md",
+        "mint_source": "docs/real-pilot-protocol.md"
+      },
+      "proof_at": "2026-09-27T03:37:55.532699+00:00",
+      "reason": "native Solana USDC reserve",
+      "role": "reserve",
+      "status": "excluded",
+      "symbol": "USDC"
+    },
+    {
+      "category": "protocol_token",
+      "effective_from": "2026-09-27T03:37:55.532699+00:00",
+      "known_at": "2026-09-27T03:37:55.532699+00:00",
+      "mint": "JUPyiwrYJFskUPiHa7hkeR8VUtAeFoSYbKedZNsDvCN",
+      "network": "solana",
+      "proof": {
+        "classification_source": "docs/real-pilot-protocol.md",
+        "mint_source": "docs/real-pilot-protocol.md"
+      },
+      "proof_at": "2026-09-27T03:37:55.532699+00:00",
+      "reason": "Jupiter protocol token, not a memecoin endpoint",
+      "role": "out_of_scope",
+      "status": "excluded",
+      "symbol": "JUP"
+    }
+  ],
+  "scope": "research_only_not_user_approved",
+  "version": "r3-research-classification-1"
+}

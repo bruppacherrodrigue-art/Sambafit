@@ -84,6 +84,19 @@ def test_market_and_operations_respect_availability_and_dataset(store):
         )
 
 
+def test_r3_classification_is_versioned_and_mint_keyed(store):
+    from rotation.r3_registry import ResearchRegistry
+
+    registry = ResearchRegistry.load("config/r3-universe.json")
+    assert store.import_research_registry(registry) == 15
+    assert store.import_research_registry(registry) == 0
+    rows = store.list_research_registry(registry.version)
+    assert len(rows) == 15
+    assert {
+        r["mint"] for r in rows if r["status"] == "research_candidate"
+    } == registry.eligible_mints(datetime.fromisoformat(registry.known_at))
+
+
 def test_latest_decoder_version_and_wallet_scoped_evidence(store):
     at = datetime(2026, 1, 1, tzinfo=timezone.utc)
     for wallet in ("w1", "w2"):

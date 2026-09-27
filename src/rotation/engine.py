@@ -174,11 +174,21 @@ def attribute_rotations(
                     op.id,
                     op.economic_at,
                     op.available_at,
-                    source.mint if source.mint in reserve_mints else dest.mint if dest.mint in reserve_mints else None,
-                    abs(source.delta_base) if source.mint in reserve_mints else dest.delta_base if dest.mint in reserve_mints else None,
+                    source.mint
+                    if source.mint in reserve_mints
+                    else dest.mint
+                    if dest.mint in reserve_mints
+                    else None,
+                    abs(source.delta_base)
+                    if source.mint in reserve_mints
+                    else dest.delta_base
+                    if dest.mint in reserve_mints
+                    else None,
                     source.value_usd,
                     dest.value_usd,
-                    "two_legs_point_in_time" if source.value_usd is not None and dest.value_usd is not None else None,
+                    "two_legs_point_in_time"
+                    if source.value_usd is not None and dest.value_usd is not None
+                    else None,
                 )
             )
         is_sale = op.kind == "sale" or (

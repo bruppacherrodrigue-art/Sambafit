@@ -25,7 +25,15 @@ def test_confirmed_demo_enters_next_bar_and_exits_after_invalidation():
     assert [o["side"] for o in simulation.orders if o["status"] == "filled"] == ["buy", "sell"]
     assert simulation.book.positions == {}
     assert simulation.book.cash < D("1000")
-    assert simulation.orders[0]["at"] > result.decisions[1].at
+    filled_buy = next(
+        order
+        for order in simulation.orders
+        if order["side"] == "buy" and order["status"] == "filled"
+    )
+    confirmed_at = next(
+        record.at for record in result.decisions if record.decision.state == "confirmed"
+    )
+    assert filled_buy["at"] > confirmed_at
 
 
 def test_missing_liquidity_rejects_entry_without_spending_cash():

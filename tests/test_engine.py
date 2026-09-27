@@ -133,7 +133,10 @@ def test_sparse_minute_bars_do_not_claim_volume_acceleration():
 
 def test_stale_market_blocks_decision_and_future_data_cannot_change_past_decision():
     rotation = attribute_rotations([op("direct", "swap", T, [leg("A", -100), leg("B", 100)])])[0]
-    bars = [MarketBar("B", T, T, D("1"), D("100"), D("1000"))]
+    bars = [
+        MarketBar("A", T, T, D("1"), D("100"), D("1000")),
+        MarketBar("B", T, T, D("1"), D("100"), D("1000")),
+    ]
     before = decide([rotation], bars, T + timedelta(minutes=1), max_age=timedelta(minutes=5))
     with_future = decide(
         [rotation],
@@ -154,7 +157,9 @@ def test_stale_market_blocks_decision_and_future_data_cannot_change_past_decisio
 def test_old_market_bar_imported_now_stays_stale():
     rotation = attribute_rotations([op("direct", "swap", T, [leg("A", -100), leg("B", 100)])])[0]
     decision_at = T + timedelta(hours=2)
-    late_import = [MarketBar("B", T, decision_at, D("1"), D("100"), D("100000"))]
+    late_import = [
+        MarketBar(mint, T, decision_at, D("1"), D("100"), D("100000")) for mint in ("A", "B")
+    ]
     decision = decide([rotation], late_import, decision_at, max_age=timedelta(minutes=5))
     assert decision.state == "observing" and decision.quality == "stale"
 

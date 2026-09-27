@@ -27,6 +27,18 @@ def bar(at, price):
     return MarketBar("B", at, at, D(price), D("100000"), D("1000000"))
 
 
+def pair_history():
+    return [
+        MarketBar(
+            "A", T + timedelta(minutes=i), T + timedelta(minutes=i), D(a), D(100000), D(1000000)
+        )
+        for i, a in zip((-3, -2, -1, 0, 1, 2), ("5", "10", "9", "9", "9", "9"))
+    ] + [
+        bar(T + timedelta(minutes=i), b)
+        for i, b in zip((-3, -2, -1, 0, 1, 2), ("10", "5", "5", "5.5", "5.6", "4"))
+    ]
+
+
 def test_replay_and_direct_share_decision_and_ignore_future_bar_changes():
     operations = [swap("s1", "w1", T)]
     bars = [bar(T, "100")]
@@ -41,13 +53,9 @@ def test_replay_and_direct_share_decision_and_ignore_future_bar_changes():
 
 def test_false_signal_invalidates_only_after_loss_observed():
     operations = [swap("s1", "w1", T), swap("s2", "w2", T + timedelta(minutes=1))]
-    bars = [
-        bar(T, "100"),
-        bar(T + timedelta(minutes=1), "100"),
-        bar(T + timedelta(minutes=2), "80"),
-    ]
+    bars = pair_history()
     result = replay(operations, bars, T + timedelta(minutes=2))
-    assert [record.decision.state for record in result.decisions] == [
+    assert [record.decision.state for record in result.decisions if record.at >= T] == [
         "candidate",
         "confirmed",
         "invalidated",
@@ -59,15 +67,17 @@ def test_retraction_revises_signal_without_duplicate_trade():
     withdrawal = Operation(
         "s1", "w1", "s1", T, T + timedelta(minutes=2), "retracted", (), True, "complete"
     )
-    result = replay([swap("s1", "w1", T), withdrawal], [bar(T, "100")], T + timedelta(minutes=2))
-    assert [r.decision.state for r in result.decisions] == ["candidate", "observing"]
+    result = replay([swap("s1", "w1", T), withdrawal], pair_history(), T + timedelta(minutes=2))
+    assert result.decisions[0].decision.state == "candidate"
+    assert result.decisions[-1].decision.state == "observing"
+    assert sum(r.decision.quality == "retracted" for r in result.decisions) == 1
     assert result.decisions[-1].decision.quality == "retracted"
 
 
 def test_same_signature_for_two_wallets_preserves_two_entities():
     a = swap("same", "w1", T)
     b = swap("same", "w2", T)
-    result = replay([a, b], [bar(T, "100")], T)
+    result = replay([a, b], pair_history(), T)
     assert len(result.rotations) == 2
     assert result.decisions[-1].decision.state == "confirmed"
     assert result.aggregate_flows and result.aggregate_flows[0].evidence == "aggregate"

@@ -1,4 +1,4 @@
-"""Point-in-time market features and versioned hypothesis score."""
+"""Availability-clock, versioned research decisions for exact memecoin pairs."""
 
 from dataclasses import dataclass
 from datetime import datetime, timedelta
@@ -6,7 +6,7 @@ from decimal import Decimal
 
 from .engine import Rotation
 
-SCORE_VERSION = "hypothesis-1"
+SCORE_VERSION = "r3-pair-hypothesis-1"
 
 
 @dataclass(frozen=True)
@@ -15,8 +15,10 @@ class MarketBar:
     close_at: datetime
     available_at: datetime
     close_usd: Decimal
-    volume_usd: Decimal
+    volume_usd: Decimal | None
     liquidity_usd: Decimal | None
+    interval_seconds: int = 60
+    volume_kind: str = "interval"
 
 
 @dataclass(frozen=True)
@@ -28,6 +30,10 @@ class Features:
     liquidity_usd: Decimal | None
     last_available_at: datetime | None
     last_close_at: datetime | None
+    last_return_fraction: Decimal | None = None
+    volatility: Decimal | None = None
+    volume_usd: Decimal | None = None
+    coverage_reason: str | None = None
 
 
 @dataclass(frozen=True)
@@ -38,28 +44,65 @@ class Decision:
     components: tuple[tuple[str, int], ...]
     reasons: tuple[str, ...]
     version: str = SCORE_VERSION
+    execution_quality: str = "not_evaluated"
+
+
+@dataclass(frozen=True)
+class PairPolicy:
+    lookback_bars: int = 24
+    min_bars: int = 3
+    max_age: timedelta = timedelta(minutes=30)
+    max_pair_skew: timedelta = timedelta(seconds=0)
+    flow_window: timedelta = timedelta(hours=6)
+    min_flow_usd: Decimal = Decimal("1000")
+    max_entity_usd: Decimal = Decimal("10000")
+    min_source_range: Decimal = Decimal("0.65")
+    max_destination_range: Decimal = Decimal("0.45")
+    min_relative_step: Decimal = Decimal("0")
+    min_liquidity_usd: Decimal = Decimal("10000")
+    confirmed_entities: int = 2
+    confirmed_score: int = 55
+
+
+def _visible_bars(bars: list[MarketBar], mint: str, at: datetime, lookback: int) -> list[MarketBar]:
+    latest: dict[datetime, MarketBar] = {}
+    for bar in bars:
+        if bar.mint != mint or bar.close_at > at or bar.available_at > at or bar.close_usd <= 0:
+            continue
+        previous = latest.get(bar.close_at)
+        if previous is None or bar.available_at > previous.available_at:
+            latest[bar.close_at] = bar
+    return sorted(latest.values(), key=lambda bar: bar.close_at)[-lookback:]
 
 
 def market_features(bars: list[MarketBar], mint: str, at: datetime, lookback: int = 24) -> Features:
-    past = sorted(
-        (
-            b
-            for b in bars
-            if b.mint == mint and b.close_at <= at and b.available_at <= at and b.close_usd > 0
-        ),
-        key=lambda b: b.close_at,
-    )[-lookback:]
+    past = _visible_bars(bars, mint, at, lookback)
     if not past:
-        return Features(None, None, None, None, None, None, None)
-    prices = [b.close_usd for b in past]
+        return Features(
+            None, None, None, None, None, None, None, coverage_reason="missing_closed_bar"
+        )
+    prices = [bar.close_usd for bar in past]
     low, high = min(prices), max(prices)
     position = (prices[-1] - low) / (high - low) if high > low else None
     change = prices[-1] / prices[0] - 1 if len(prices) > 1 else None
+    interval = past[-1].interval_seconds
+    regular = all(
+        bar.interval_seconds == interval
+        and bar.close_at - previous.close_at == timedelta(seconds=interval)
+        for previous, bar in zip(past, past[1:])
+    )
+    interval_volume = all(
+        bar.volume_kind == "interval" and bar.volume_usd is not None for bar in past
+    )
     accel = (
         past[-1].volume_usd / past[-2].volume_usd
-        if len(past) > 1
-        and past[-2].volume_usd > 0
-        and past[-1].close_at - past[-2].close_at == timedelta(minutes=1)
+        if len(past) > 1 and regular and interval_volume and past[-2].volume_usd > 0
+        else None
+    )
+    returns = [prices[i] / prices[i - 1] - 1 for i in range(1, len(prices))]
+    volatility = (
+        sum((abs(value) for value in returns), Decimal(0)) / len(returns)
+        if returns and regular
         else None
     )
     return Features(
@@ -70,67 +113,190 @@ def market_features(bars: list[MarketBar], mint: str, at: datetime, lookback: in
         past[-1].liquidity_usd,
         past[-1].available_at,
         past[-1].close_at,
+        returns[-1] if returns and regular else None,
+        volatility,
+        past[-1].volume_usd if interval_volume else None,
+        None if regular and interval_volume else "gap_or_overlapping_volume",
     )
+
+
+def decide_pairs(
+    rotations: list[Rotation],
+    bars: list[MarketBar],
+    at: datetime,
+    *,
+    eligible_mints: set[str] | None = None,
+    policy: PairPolicy = PairPolicy(),
+    entity_groups: dict[str, str] | None = None,
+) -> dict[tuple[str, str], Decision]:
+    visible = [
+        r
+        for r in rotations
+        if r.available_at <= at
+        and r.destination is not None
+        and r.source != r.destination
+        and r.direction == "between_coins"
+        and (
+            eligible_mints is None
+            or (r.source in eligible_mints and r.destination in eligible_mints)
+        )
+    ]
+    return {
+        pair: decide(visible, bars, at, pair=pair, policy=policy, entity_groups=entity_groups)
+        for pair in sorted({(r.source, r.destination) for r in visible})
+    }
 
 
 def decide(
     rotations: list[Rotation],
     bars: list[MarketBar],
     at: datetime,
-    max_age: timedelta = timedelta(minutes=30),
-    min_liquidity_usd: Decimal = Decimal("10000"),
+    max_age: timedelta | None = None,
+    min_liquidity_usd: Decimal | None = None,
     entity_groups: dict[str, str] | None = None,
-    max_entity_usd: Decimal = Decimal("10000"),
+    max_entity_usd: Decimal | None = None,
+    *,
+    pair: tuple[str, str] | None = None,
+    policy: PairPolicy = PairPolicy(),
 ) -> Decision:
+    """Evaluate one pair; an ambiguous call never selects a destination silently."""
+    if max_age is not None or min_liquidity_usd is not None or max_entity_usd is not None:
+        policy = PairPolicy(
+            **{
+                **policy.__dict__,
+                **({"max_age": max_age} if max_age is not None else {}),
+                **(
+                    {"min_liquidity_usd": min_liquidity_usd}
+                    if min_liquidity_usd is not None
+                    else {}
+                ),
+                **({"max_entity_usd": max_entity_usd} if max_entity_usd is not None else {}),
+            }
+        )
     visible = [
         r
         for r in rotations
-        if r.available_at <= at and r.destination is not None and r.direction == "between_coins"
+        if r.available_at <= at
+        and r.destination is not None
+        and r.source != r.destination
+        and r.direction == "between_coins"
     ]
-    if not visible:
-        return Decision("observing", "insufficient", 0, (), ("no visible rotation",))
-    destination = max(
-        visible,
-        key=lambda r: (r.available_at, r.economic_at, r.source_op, r.destination_op or ""),
-    ).destination
-    features = market_features(bars, destination, at)
-    if features.last_available_at is None:
-        return Decision("observing", "missing_market", 0, (), ("missing closed market bar",))
-    if features.last_close_at is None or at - features.last_close_at > max_age:
-        return Decision("observing", "stale", 0, (), ("market data stale",))
-    if features.liquidity_usd is None or features.liquidity_usd < min_liquidity_usd:
-        return Decision("observing", "missing_liquidity", 0, (), ("liquidity unavailable or low",))
+    pairs = {(r.source, r.destination) for r in visible}
+    if pair is None:
+        if not pairs:
+            return Decision("observing", "insufficient", 0, (), ("no_visible_rotation",))
+        if len(pairs) != 1:
+            return Decision("observing", "ambiguous_pair", 0, (), ("explicit_pair_required",))
+        pair = next(iter(pairs))
     recent = [
         r
         for r in visible
-        if r.destination == destination and at - r.available_at <= timedelta(hours=6)
+        if (r.source, r.destination) == pair and at - r.available_at <= policy.flow_window
     ]
+    if not recent:
+        return Decision("expired", "complete", 0, (), ("flow_window_expired",))
+    source_bars = _visible_bars(bars, pair[0], at, policy.lookback_bars)
+    destination_bars = _visible_bars(bars, pair[1], at, policy.lookback_bars)
+    if not source_bars or not destination_bars:
+        return Decision("observing", "missing_market", 0, (), ("missing_A_or_B_closed_bar",))
+    if (
+        at - source_bars[-1].close_at > policy.max_age
+        or at - destination_bars[-1].close_at > policy.max_age
+    ):
+        return Decision("observing", "stale", 0, (), ("A_or_B_market_stale",))
+    source = market_features(bars, pair[0], at, policy.lookback_bars)
+    destination = market_features(bars, pair[1], at, policy.lookback_bars)
+    if (
+        len(source_bars) < policy.min_bars
+        or len(destination_bars) < policy.min_bars
+        or source.coverage_reason
+        or destination.coverage_reason
+        or source.range_position is None
+        or destination.range_position is None
+        or source.volume_acceleration is None
+        or destination.volume_acceleration is None
+    ):
+        return Decision("observing", "incomplete_market", 0, (), ("A_or_B_history_incomplete",))
+    if (
+        abs(source_bars[-1].close_at - destination_bars[-1].close_at) > policy.max_pair_skew
+        or abs(source_bars[-2].close_at - destination_bars[-2].close_at) > policy.max_pair_skew
+        or source_bars[-1].interval_seconds != destination_bars[-1].interval_seconds
+    ):
+        return Decision("observing", "misaligned_market", 0, (), ("A_B_close_times_misaligned",))
+    relative_step = (destination_bars[-1].close_usd / source_bars[-1].close_usd) / (
+        destination_bars[-2].close_usd / source_bars[-2].close_usd
+    ) - 1
     groups: dict[str, Decimal] = {}
+    missing_value = False
     for rotation in recent:
+        if rotation.amount_usd is None:
+            missing_value = True
+            continue
         group = (entity_groups or {}).get(rotation.wallet, rotation.wallet)
         groups[group] = groups.get(group, Decimal(0)) + rotation.amount_usd
-    entities = len(groups)
-    amount = sum((min(value, max_entity_usd) for value in groups.values()), Decimal(0))
+    amount = sum((min(value, policy.max_entity_usd) for value in groups.values()), Decimal(0))
+    execution = (
+        "liquidity_snapshot_available"
+        if source.liquidity_usd is not None
+        and destination.liquidity_usd is not None
+        and min(source.liquidity_usd, destination.liquidity_usd) >= policy.min_liquidity_usd
+        else "blocked_missing_or_low_liquidity"
+    )
+    if missing_value:
+        return Decision(
+            "observing",
+            "unvalued_flow",
+            0,
+            (),
+            ("rotation_USD_unknown",),
+            execution_quality=execution,
+        )
+    reasons = []
+    if source.range_position < policy.min_source_range:
+        reasons.append("source_not_high_in_range")
+    if destination.range_position > policy.max_destination_range:
+        reasons.append("destination_not_low_in_range")
+    if source.last_return_fraction is None or source.last_return_fraction > 0:
+        reasons.append("source_not_reducing")
+    if destination.last_return_fraction is None or destination.last_return_fraction <= 0:
+        reasons.append("destination_not_recovering")
+    if relative_step <= policy.min_relative_step:
+        reasons.append("relative_force_not_improving")
+    if amount < policy.min_flow_usd:
+        reasons.append("flow_below_research_threshold")
     components = (
-        ("flow", min(30, int(amount / Decimal("1000")))),
-        ("diversity", min(25, entities * 8)),
+        ("flow", min(30, int(amount / Decimal("100")))),
+        ("entity_diversity", min(20, len(groups) * 10)),
         ("direct_evidence", 15 if any(r.evidence == "direct" for r in recent) else 5),
+        ("source_range", 10 if source.range_position >= policy.min_source_range else 0),
         (
-            "market",
-            15 if features.return_fraction is not None and features.return_fraction > 0 else 5,
+            "destination_range",
+            10 if destination.range_position <= policy.max_destination_range else 0,
         ),
-        ("persistence", 0),  # Only a later observed revision may add this.
+        ("relative_force", 10 if relative_step > policy.min_relative_step else 0),
+        ("persistence", 0),
     )
     score = sum(value for _, value in components)
-    state = "confirmed" if entities >= 2 and score >= 55 else "candidate"
+    state = (
+        "observing"
+        if reasons
+        else "confirmed"
+        if len(groups) >= policy.confirmed_entities and score >= policy.confirmed_score
+        else "candidate"
+    )
     return Decision(
         state,
         "complete",
         score,
         components,
-        (
-            f"{entities} observed entities",
-            f"capped attributed USD {amount}",
-            "unknown links do not prove independence",
+        tuple(reasons)
+        + (
+            f"pair={pair[0]}:{pair[1]}",
+            f"capped_flow_usd={amount}",
+            f"relative_step={relative_step}",
+            f"source_range={source.range_position}",
+            f"destination_range={destination.range_position}",
+            f"entities={len(groups)}; links_uncertain",
         ),
+        execution_quality=execution,
     )

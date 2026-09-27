@@ -52,6 +52,12 @@ class Store:
                     Path(__file__).parent / "migrations" / "003_demo_decoded_time.sql"
                 ).read_text()
                 conn.execute(script)
+            applied = conn.execute("SELECT 1 FROM schema_migrations WHERE version=4").fetchone()
+            if applied is None:
+                script = (
+                    Path(__file__).parent / "migrations" / "004_r3_classification.sql"
+                ).read_text()
+                conn.execute(script)
 
     def drop_test_schema(self):
         if not self.schema.startswith("test_"):
@@ -110,6 +116,45 @@ class Store:
         with self.connect() as conn:
             return conn.execute(
                 "SELECT network,mint,symbol,decimals,active,exclusion_reason FROM tokens ORDER BY mint"
+            ).fetchall()
+
+    def import_research_registry(self, registry) -> int:
+        inserted = 0
+        with self.connect() as conn:
+            for row in registry.payload["records"]:
+                inserted += int(
+                    conn.execute(
+                        """INSERT INTO research_classifications
+                        (version,network,mint,symbol,category,study_role,status,known_at,
+                         effective_from,proof_at,proof,reason)
+                        VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)
+                        ON CONFLICT(version,network,mint) DO NOTHING RETURNING id""",
+                        (
+                            registry.version,
+                            row["network"],
+                            row["mint"],
+                            row["symbol"],
+                            row["category"],
+                            row["role"],
+                            row["status"],
+                            row["known_at"],
+                            row["effective_from"],
+                            row["proof_at"],
+                            Jsonb(row["proof"]),
+                            row["reason"],
+                        ),
+                    ).fetchone()
+                    is not None
+                )
+        return inserted
+
+    def list_research_registry(self, version: str) -> list[dict]:
+        with self.connect() as conn:
+            return conn.execute(
+                """SELECT version,network,mint,symbol,category,study_role AS role,status,
+                known_at,effective_from,proof_at,proof,reason
+                FROM research_classifications WHERE version=%s ORDER BY symbol,mint""",
+                (version,),
             ).fetchall()
 
     def import_wallets(self, entries: list[dict]):

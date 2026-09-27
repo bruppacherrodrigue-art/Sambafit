@@ -60,3 +60,44 @@ def test_realistic_missing_liquidity_blocks_all_variant_execution():
     assert all(row["cash"] == "1000" for row in result.values())
     assert all(row["execution_status"] == "blocked_missing_liquidity" for row in result.values())
     assert all(row["net_return"] is None for row in result.values())
+
+
+def test_combined_variant_evaluates_each_pair_instead_of_ambiguous_destination():
+    start = datetime(2026, 1, 1, tzinfo=timezone.utc)
+    bars = [
+        MarketBar(
+            mint,
+            start + timedelta(minutes=i),
+            start + timedelta(minutes=i),
+            Decimal(price),
+            Decimal(1000),
+            Decimal(100000),
+        )
+        for mint, prices in (
+            ("A", ("5", "10", "9", "9")),
+            ("C", ("5", "10", "9", "9")),
+            ("B", ("10", "5", "5", "5.5")),
+        )
+        for i, price in zip(range(4), prices)
+    ]
+    rotations = [
+        Rotation(
+            source,
+            "B",
+            "direct",
+            "between_coins",
+            Decimal(1500),
+            wallet,
+            wallet,
+            wallet,
+            start + timedelta(minutes=3),
+            start + timedelta(minutes=3),
+        )
+        for source, wallet in (("A", "w1"), ("C", "w2"))
+    ]
+    result = compare_variants(rotations, bars, Decimal(1000), {"A", "B", "C"})
+    assert result["combined"]["signals"] == 2
+    assert {(row["pair"], row["state"]) for row in result["combined"]["decision_states"]} == {
+        ("A:B", "candidate"),
+        ("C:B", "candidate"),
+    }

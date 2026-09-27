@@ -83,6 +83,7 @@ def compare_variants(
             [r for r in eligible if r.available_at <= rotation.available_at],
             ordered,
             rotation.available_at,
+            pair=(rotation.source, rotation.destination),
         )
         combined.append(
             DecisionRecord(
@@ -144,6 +145,14 @@ def compare_variants(
             if late_rotation_count
             else "aligned_within_observed_period",
             "signals": len(decisions),
+            "decision_states": [
+                {
+                    "pair": record.pair,
+                    "state": record.decision.state,
+                    "quality": record.decision.quality,
+                }
+                for record in decisions
+            ],
             "filled_orders": len(filled),
             "unfilled_orders": len(simulation.orders) - len(filled),
             "cash": str(simulation.book.cash),

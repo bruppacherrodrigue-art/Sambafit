@@ -26,6 +26,7 @@ from .r2_fomo import FomoProofStore
 from .r2_sequences import SequenceStore
 from .r2_sources import R2Http
 from .r2_universe import build_universe
+from .r3_registry import ResearchRegistry
 from .real_corpus import import_corpus, summarize_corpus, verify_manifest
 from .replay import replay
 from .research import price_operations, study_events
@@ -355,6 +356,20 @@ def main(argv: list[str] | None = None) -> int:
             operations = _operations(store.list_operations(until, dataset))
             bars = _bars(store.all_market_bars(until, dataset))
             operations = price_operations(operations, bars)
+            registry = (
+                ResearchRegistry.load(config.get("registry_file", "config/r3-universe.json"))
+                if dataset == "REAL"
+                else None
+            )
+            registry_mints = registry.eligible_mints(until) if registry else None
+            requested_mints = set(config["eligible_mints"]) if "eligible_mints" in config else None
+            eligible_mints = (
+                registry_mints & requested_mints
+                if registry_mints is not None and requested_mints is not None
+                else registry_mints
+                if registry_mints is not None
+                else requested_mints
+            )
             result = replay(
                 operations,
                 bars,
@@ -365,9 +380,7 @@ def main(argv: list[str] | None = None) -> int:
                 reserve_mints=set(
                     config.get("reserve_mints", ["So11111111111111111111111111111111111111112"])
                 ),
-                eligible_mints=set(config["eligible_mints"])
-                if "eligible_mints" in config
-                else None,
+                eligible_mints=eligible_mints,
                 eligible_wallets=set(config["eligible_wallets"])
                 if "eligible_wallets" in config
                 else None,
@@ -378,11 +391,14 @@ def main(argv: list[str] | None = None) -> int:
                     wallet: _dt(value)
                     for wallet, value in config.get("wallet_known_at", {}).items()
                 },
+                registry=registry,
             )
             study = study_events(
                 result, bars, tuple(int(x) for x in config.get("horizons_minutes", [60, 240, 1440]))
             )
             universe = {bar.mint for bar in bars}
+            if eligible_mints is not None:
+                universe &= eligible_mints
             comparison = (
                 compare_variants(
                     result.rotations,

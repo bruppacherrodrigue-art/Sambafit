@@ -91,8 +91,7 @@ def test_fifo_partial_buyback_and_outside_universe_consumption(tmp_path):
             ]
         )
         assert {
-            a["destination_mint"]: Decimal(a["amount_usd"])
-            for a in store.snapshot()["allocations"]
+            a["destination_mint"]: Decimal(a["amount_usd"]) for a in store.snapshot()["allocations"]
         } == {"PLATFORM": Decimal(20), "B": Decimal(40)}
         assert store.snapshot()["pending"] == []
 

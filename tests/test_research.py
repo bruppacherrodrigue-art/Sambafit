@@ -41,17 +41,17 @@ def test_event_study_requires_distinct_episode_and_reports_relative_return():
         "x",
         "w",
         "x",
-        T,
-        T,
+        T + timedelta(minutes=3),
+        T + timedelta(minutes=3),
         "swap",
         (Leg("A", -100, 0, D("100")), Leg("B", 100, 0, D("100"))),
         True,
         "complete",
     )
-    bars = [bar("A", i, "100") for i in range(4)] + [
-        bar("B", i, p) for i, p in enumerate(("100", "100", "110", "90"))
+    bars = [bar("A", i, p) for i, p in enumerate(("50", "100", "90", "90", "90", "90", "90"))] + [
+        bar("B", i, p) for i, p in enumerate(("110", "95", "95", "100", "100", "110", "90"))
     ]
-    result = replay([op], bars, T + timedelta(minutes=3))
+    result = replay([op], bars, T + timedelta(minutes=6))
     report = study_events(result, bars, horizons_minutes=(2, 3))
     assert report["distinct_episodes"] == 1
     assert report["horizons"]["2"]["mean_relative_return"] == "0.1"
