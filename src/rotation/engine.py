@@ -4,6 +4,7 @@ from dataclasses import dataclass
 from datetime import datetime, timedelta
 from decimal import Decimal
 
+from .flow_clock import assess_flow_clock
 from .reserve_fifo import consume
 
 
@@ -72,6 +73,7 @@ def aggregate_convergence(
     window: timedelta = timedelta(hours=6),
     entity_groups: dict[str, str] | None = None,
     max_entity_usd: Decimal = Decimal("10000"),
+    max_observation_delay: timedelta = timedelta(minutes=15),
 ) -> list[AggregateFlow]:
     """Compare bounded reductions and additions; never imply same funds moved A→B."""
     entity_groups = entity_groups or {}
@@ -82,8 +84,13 @@ def aggregate_convergence(
             not operation.finalized
             or operation.quality != "complete"
             or operation.kind not in {"swap", "sale", "buy"}
-            or operation.available_at > at
-            or operation.available_at < at - window
+            or assess_flow_clock(
+                operation.economic_at,
+                operation.available_at,
+                at,
+                max_economic_age=window,
+                max_observation_delay=max_observation_delay,
+            ).reasons
         ):
             continue
         group = entity_groups.get(operation.wallet, operation.wallet)

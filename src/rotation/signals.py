@@ -5,8 +5,9 @@ from datetime import datetime, timedelta
 from decimal import Decimal
 
 from .engine import Operation, Rotation
+from .flow_clock import assess_flow_clock
 
-SCORE_VERSION = "r3-pair-hypothesis-1"
+SCORE_VERSION = "r3.1-pair-hypothesis-2"
 
 
 @dataclass(frozen=True)
@@ -55,6 +56,8 @@ class PairPolicy:
     max_age: timedelta = timedelta(minutes=30)
     max_pair_skew: timedelta = timedelta(seconds=0)
     flow_window: timedelta = timedelta(hours=6)
+    max_economic_flow_age: timedelta = timedelta(hours=6)
+    max_observation_delay: timedelta = timedelta(minutes=15)
     min_flow_usd: Decimal = Decimal("1000")
     max_entity_usd: Decimal = Decimal("10000")
     min_source_range: Decimal = Decimal("0.65")
@@ -187,7 +190,7 @@ def decide(
     visible = [
         r
         for r in rotations
-        if r.available_at <= at
+        if (r.available_at <= at or pair is not None)
         and r.destination is not None
         and r.source != r.destination
         and r.direction == "between_coins"
@@ -199,13 +202,48 @@ def decide(
         if len(pairs) != 1:
             return Decision("observing", "ambiguous_pair", 0, (), ("explicit_pair_required",))
         pair = next(iter(pairs))
+    matching = [r for r in visible if (r.source, r.destination) == pair]
+    clocks = [
+        assess_flow_clock(
+            r.economic_at,
+            r.available_at,
+            at,
+            max_economic_age=policy.max_economic_flow_age,
+            max_observation_delay=policy.max_observation_delay,
+        )
+        for r in matching
+    ]
     recent = [
         r
-        for r in visible
-        if (r.source, r.destination) == pair and at - r.available_at <= policy.flow_window
+        for r, clock in zip(matching, clocks)
+        if not clock.reasons and clock.economic_age <= policy.flow_window
     ]
     if not recent:
-        return Decision("expired", "complete", 0, (), ("flow_window_expired",))
+        reasons = tuple(sorted({reason for clock in clocks for reason in clock.reasons}))
+        latest = (
+            max(clocks, key=lambda clock: -clock.economic_age.total_seconds()) if clocks else None
+        )
+        return Decision(
+            "expired" if not reasons or "economic_flow_stale" in reasons else "observing",
+            "invalid_clock"
+            if "incoherent_or_future_economic_clock" in reasons
+            else "stale_flow"
+            if reasons
+            else "complete",
+            0,
+            (),
+            reasons or ("flow_window_expired",),
+            metrics=(
+                (
+                    "economic_age_seconds",
+                    str(latest.economic_age.total_seconds()) if latest else None,
+                ),
+                (
+                    "observation_delay_seconds",
+                    str(latest.observation_delay.total_seconds()) if latest else None,
+                ),
+            ),
+        )
     source_bars = _visible_bars(bars, pair[0], at, policy.lookback_bars)
     destination_bars = _visible_bars(bars, pair[1], at, policy.lookback_bars)
     if not source_bars or not destination_bars:
@@ -252,7 +290,9 @@ def decide(
         if (
             not operation.finalized
             or operation.quality != "complete"
-            or not at - policy.flow_window <= operation.available_at <= at
+            or not at - policy.flow_window <= operation.economic_at <= at
+            or not operation.available_at <= at
+            or operation.available_at - operation.economic_at > policy.max_observation_delay
         ):
             continue
         for leg in operation.legs:
@@ -274,6 +314,19 @@ def decide(
 
     prior_a, prior_b = prior_price(pair[0]), prior_price(pair[1])
     metrics = (
+        (
+            "attributed_amount_usd",
+            str(sum((r.amount_usd or Decimal(0) for r in recent), Decimal(0))),
+        ),
+        (
+            "evidence_operations",
+            ",".join(sorted({f"{r.source_op}>{r.destination_op}" for r in recent})),
+        ),
+        ("economic_age_seconds", str((at - first_economic_at).total_seconds())),
+        (
+            "observation_delay_seconds",
+            str(max((r.available_at - r.economic_at).total_seconds() for r in recent)),
+        ),
         ("source_range", str(source.range_position)),
         ("destination_range", str(destination.range_position)),
         ("source_return", str(source.return_fraction)),
