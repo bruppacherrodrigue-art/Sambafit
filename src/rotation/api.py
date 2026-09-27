@@ -71,11 +71,38 @@ def create_app(store: Store | None = None) -> FastAPI:
             "ROTATION_R3_DIR", str(Path(__file__).resolve().parents[2] / "data" / "r3-20260927")
         )
     )
+    r31_root = Path(
+        os.getenv(
+            "ROTATION_R31_DIR", str(Path(__file__).resolve().parents[2] / "data" / "r3-1-20260927")
+        )
+    )
 
     def r3_file(name: str):
         path = r3_root / name
         if not path.exists():
             raise HTTPException(404, "R3 corpus unavailable")
+        return json.loads(path.read_text())
+
+    def r31_file(name: str):
+        path = r31_root / name
+        if not path.exists():
+            raise HTTPException(404, "R3.1 offline replay unavailable")
+        value = json.loads(path.read_text())
+        if value.get("dataset") != "REAL" or value.get("synthetic") is True:
+            raise HTTPException(409, "R3.1 REAL endpoint rejects DEMO artifacts")
+        return value
+
+    @app.get("/api/r3-1/replay")
+    def r31_replay():
+        return r31_file("replay.json")
+
+    @app.get("/api/r3-1/prospective")
+    def r31_prospective():
+        return r31_file("prospective.json")
+
+    @app.get("/api/r3-1/strategy")
+    def r31_strategy():
+        path = Path(__file__).resolve().parents[2] / "config" / "strategy-r3-1.json"
         return json.loads(path.read_text())
 
     @app.get("/api/r3/universe")

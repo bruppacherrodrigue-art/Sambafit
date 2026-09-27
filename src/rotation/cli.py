@@ -136,6 +136,12 @@ def main(argv: list[str] | None = None) -> int:
         command.add_argument("--r2-root", default="data/r2-20260926")
         command.add_argument("--root", default="data/r3-20260927")
         command.add_argument("--registry", default="config/r3-universe.json")
+    for name in ("r3-1-replay", "r3-1-process-follow"):
+        command = sub.add_parser(name)
+        command.add_argument("--r2-root", default="data/r2-20260926")
+        command.add_argument("--root", default="data/r3-20260927")
+        command.add_argument("--out", default="data/r3-1-20260927")
+        command.add_argument("--registry", default="config/r3-universe.json")
     sub.choices["r3-audit"].add_argument("--max-new-calls", type=int, default=24)
     r3_follow = sub.add_parser("r3-follow-once")
     r3_follow.add_argument("--root", default="data/r3-20260927")
@@ -149,6 +155,36 @@ def main(argv: list[str] | None = None) -> int:
     sub.choices["report"] = sub.add_parser("report")
     sub.choices["report"].add_argument("--run-id", required=True)
     args = parser.parse_args(argv)
+    if args.command == "r3-1-replay":
+        registry = ResearchRegistry.load(args.registry)
+        comparison = replay_r2_attribution(args.r2_root, args.out, registry)
+        result = replay_verified_corpus(args.root, args.out, registry, r2_root=args.r2_root)
+        _print(
+            {
+                "dataset": "REAL",
+                "mode": "REPLAY",
+                "output": args.out,
+                "r2_allocations": comparison["r3_allocation_count"],
+                "target_rotations": result["target_rotations"],
+                "pairs_evaluated": result["pairs_evaluated"],
+                "strategy_config_hash": result["strategy_config_hash"],
+            }
+        )
+        return 0
+    if args.command == "r3-1-process-follow":
+        result = process_follow(
+            args.root, ResearchRegistry.load(args.registry), output_root=args.out
+        )
+        _print(
+            {
+                "dataset": result["dataset"],
+                "mode": result["mode"],
+                "output": args.out,
+                "stages": result["stages"],
+                "strategy_config_hash": result["strategy_config_hash"],
+            }
+        )
+        return 0
     if args.command == "r3-budget":
         _print(R2Budget(Path(args.root) / "budget.json").snapshot())
         return 0

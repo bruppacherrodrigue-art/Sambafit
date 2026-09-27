@@ -4,10 +4,14 @@ type UniverseRow = { symbol: string; mint: string; network: string; category: st
 type WalletRow = { wallet: string; provenance: string; strict_swaps: number; attributed_between_memecoins_usd: string | null; attributed_reserve_base_by_mint: Record<string, number>; gross_buy_usd: string | null; gross_sell_usd: string | null; passes_amount_screen: boolean; qualified_large_reallocator: boolean; holding_duration: string | null; opening_position_unknown: boolean; sample_signatures: string[] }
 type RotationRow = { source: string; destination: string | null; source_op: string; destination_op: string | null; economic_at: string; available_at: string; amount_usd: string | null; reserve_quantity_base: number; reserve_mint: string; evidence: string; wallet: string }
 type DecisionRow = { pair: string; at: string; state: string; quality: string; score: number; components: Record<string, number>; metrics: Record<string, string | null>; reasons: string[]; execution_quality: string; version: string }
+type StrategyRow = { version: string; research_state: string; admission: string; paper_status: string; reasons: string[]; source_range: { qualified: boolean; reasons: string[]; observations: number }; destination_range: { qualified: boolean; reasons: string[]; observations: number }; qualified_wallets: string[] }
+type R31DecisionRow = DecisionRow & { strategy: StrategyRow }
 type Bar = { close_at: string; available_at: string; price_usd: string; volume_usd: string | null; liquidity_usd: string | null; interval_seconds: number; source: string }
 type Cohort = { cohort_known_at: string; sample_window: { start: string; end: string }; strict_swap_count: number; amount_screen_wallets: number; qualified_wallets: number; threshold_usd: string; wallets: WalletRow[]; sequences: { allocations: Array<{ source_signature: string; destination_signature: string }> } }
 type Replay = { verified_operations: number; closed_market_bars: number; target_rotations: number; rotations: RotationRow[]; pairs_evaluated: string[]; decisions: DecisionRow[]; comparators: Record<string, { net_return: string | null; status?: string }> | null; execution_evidence: string; price_study_status: string }
+type R31Replay = Omit<Replay, 'decisions'> & { decisions: R31DecisionRow[]; strategy_version: string; strategy_config_hash: string; availability_clock_quality: string }
 type Prospective = { stages: Record<string, number>; stop_reason: string; missing_transitions: string[]; coverage_gaps: unknown[]; incomplete_operations: Array<{ signature: string; reason: string; source_attempt: number; status: string }>; rotations: RotationRow[]; decisions: DecisionRow[]; execution_status: string }
+type R31Prospective = Omit<Prospective, 'decisions'> & { decisions: R31DecisionRow[]; unknown_decode_time_signatures: string[]; valuation_revisions: Array<{operation_id: string; raw_received_at: string; decoded_at: string | null; effective_available_at: string; valued_legs: number}> }
 type Budget = { limits: { max_calls: number; max_active_seconds: number }; calls_used: number; active_seconds: number; errors: unknown[] }
 type Proof = { operation: Record<string, unknown>; raw: Record<string, unknown>; allocations: unknown[]; decisions: unknown[]; provenance: string; limitations: string[]; mode: string }
 
@@ -54,6 +58,8 @@ export default function R3Panel() {
   const [universe, setUniverse] = useState<UniverseRow[]>([])
   const [cohort, setCohort] = useState<Cohort | null>(null)
   const [replay, setReplay] = useState<Replay | null>(null)
+  const [r31Replay, setR31Replay] = useState<R31Replay | null>(null)
+  const [r31Prospective, setR31Prospective] = useState<R31Prospective | null>(null)
   const [prospective, setProspective] = useState<Prospective | null>(null)
   const [budget, setBudget] = useState<Budget | null>(null)
   const [proof, setProof] = useState<Proof | null>(null)
@@ -67,6 +73,12 @@ export default function R3Panel() {
     ]).then(([u, c, r, p, b]) => { setUniverse(u.records); setCohort(c); setReplay(r); setProspective(p); setBudget(b) })
       .catch(e => setError(String(e)))
   }, [])
+  useEffect(() => {
+    Promise.all([
+      request<R31Replay>('/api/r3-1/replay'),
+      request<R31Prospective>('/api/r3-1/prospective'),
+    ]).then(([r, p]) => { setR31Replay(r); setR31Prospective(p) }).catch(() => { /* R3.1 remains explicitly unavailable until the offline replay runs. */ })
+  }, [])
   const name = (mint: string) => universe.find(row => row.mint === mint)?.symbol || short(mint)
   function openProof(sig: string) { request<Proof>(`/api/r3/operations/${sig}`).then(setProof).catch(e => setError(String(e))) }
   function save(name: string, value: unknown) {
@@ -75,6 +87,22 @@ export default function R3Panel() {
   }
   return <>
     {error && <div className="error-box">Corpus R3 indisponible : {error}</div>}
+    <section className="panel"><span className="eyebrow">REAL · R3.1 · {r31Replay?.decisions.some(row => row.strategy.admission === 'admitted') ? 'STRATÉGIE EN ÉTUDE' : 'STRATÉGIE NON ADMISE'}</span><h2>Horloges, révisions et conditions d’admission</h2>
+      <p className="muted">Une candidate de recherche n’autorise aucune exécution. Ranges récurrents, actifs admis, gros wallets directionnels, coûts et profondeur demandent des preuves datées. Configuration {r31Replay?.strategy_version || 'indisponible'} · hash {r31Replay?.strategy_config_hash?.slice(0, 12) || '—'}.</p>
+      <p className="muted">Qualité de l’horloge historique : {r31Replay?.availability_clock_quality || 'indisponible'}. La réception brute et le décodage ne sont pas confondus dans le suivi R3.1.</p>
+      {!r31Replay && <div className="empty">Replay R3.1 hors ligne non encore généré. Commande : <code>uv run rotation r3-1-replay</code>.</div>}
+      {r31Replay?.rotations.map((row, index) => <div className="quality-row" key={`${row.source_op}-${row.destination_op}-${index}`}><span>{name(row.source)} → {name(row.destination || '')}<br/><small>Économique {when(row.economic_at)} · preuve utilisable au plus tôt {when(row.available_at)}</small></span><strong>{money(row.amount_usd)}</strong></div>)}
+      {r31Replay?.decisions.map((row, index) => <div className="signal-row" key={`${row.pair}-${row.at}-${index}`}><div><strong>{row.pair.split(':').map(name).join(' → ')} · {row.state}</strong>
+        <small>Temps économique relatif : {row.metrics.economic_age_seconds ?? 'inconnu'} s · retard d’observation : {row.metrics.observation_delay_seconds ?? 'inconnu'} s · décision {when(row.at)}</small>
+        <small>Admission {row.strategy.admission} · paper {row.strategy.paper_status} · wallets qualifiés {row.strategy.qualified_wallets.length}</small>
+        <small>{[...row.reasons, ...row.strategy.reasons].join(', ') || 'aucun motif'}</small>
+        <details><summary>Révision, ranges et provenance</summary><pre>{JSON.stringify({ research: row, strategy: row.strategy }, null, 2)}</pre></details></div></div>)}
+      <div className="quality-row"><span>Suivi réel R3.1 · opérations à horloge de décodage historique inconnue</span><strong>{r31Prospective?.unknown_decode_time_signatures?.length ?? '—'}</strong></div>
+      {r31Prospective?.decisions?.map((row, index) => <div className="signal-row" key={`follow-${row.pair}-${row.at}-${index}`}><div><strong>{row.pair.split(':').map(name).join(' → ')} · {row.state}</strong><small>Décision {when(row.at)} · âge économique {row.metrics.economic_age_seconds ?? 'inconnu'} s · retard d’observation {row.metrics.observation_delay_seconds ?? 'inconnu'} s</small><small>Admission {row.strategy.admission} · {row.strategy.reasons.join(', ')}</small><details><summary>Révision du suivi</summary><pre>{JSON.stringify(row, null, 2)}</pre></details></div></div>)}
+      <details><summary>Révisions de valorisation ({r31Prospective?.valuation_revisions?.length ?? 0})</summary><pre>{JSON.stringify(r31Prospective?.valuation_revisions || [], null, 2)}</pre></details>
+      <p className="muted">Aucun ordre réel ; prix d’exécution et rendements non évaluables sans quote et profondeur appropriées.</p>
+      {r31Replay && <button className="button-secondary" onClick={() => save('r3-1-replay.json', r31Replay)}>Exporter le replay R3.1</button>}
+    </section>
     <section className="panel"><span className="eyebrow">REAL · R3 · RECHERCHE EXPLORATOIRE</span><h2>Univers memecoin Solana</h2><p className="muted">Classification candidate, sourcée et datée ; aucune allocation approuvée. SOL/wSOL et USDC sont des réserves, JUP/PUMP sont hors cible. PENGU reste en revue.</p>
       <div className="quality-row"><span>Appels R3 / plafond global</span><strong>{budget ? `${budget.calls_used} / ${budget.limits.max_calls}` : 'indisponible'}</strong></div>
       <div className="quality-row"><span>Collecte active / plafond</span><strong>{budget ? `${Math.round(budget.active_seconds)} / ${budget.limits.max_active_seconds} s` : 'indisponible'}</strong></div>
