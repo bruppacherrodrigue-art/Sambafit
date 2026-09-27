@@ -69,9 +69,9 @@ def test_retraction_revises_signal_without_duplicate_trade():
     )
     result = replay([swap("s1", "w1", T), withdrawal], pair_history(), T + timedelta(minutes=2))
     assert result.decisions[0].decision.state == "candidate"
-    assert result.decisions[-1].decision.state == "observing"
-    assert sum(r.decision.quality == "retracted" for r in result.decisions) == 1
-    assert result.decisions[-1].decision.quality == "retracted"
+    assert result.decisions[-1].decision.state == "invalidated"
+    assert sum(r.decision.quality == "proof_removed" for r in result.decisions) == 1
+    assert result.decisions[-1].decision.reasons == ("source_transaction_retracted",)
 
 
 def test_same_signature_for_two_wallets_preserves_two_entities():
