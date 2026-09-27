@@ -1,0 +1,3484 @@
+{
+  "availability_clock_quality": "raw_receipt_lower_bound_decoder_timestamp_unknown",
+  "closed_market_bars": 597,
+  "comparators": {
+    "basket": {
+      "cash": "1000",
+      "decision_states": [
+        {
+          "pair": "CASH:7GCihgDB8fe6KNjn2MYtkzZcRjQy3t9GHdC8uHYmW2hr",
+          "quality": "complete",
+          "state": "confirmed"
+        },
+        {
+          "pair": "CASH:9BB6NFEcjBCtnNLFko2FqVQBq8HHM13kCyYcdQbgpump",
+          "quality": "complete",
+          "state": "confirmed"
+        },
+        {
+          "pair": "CASH:DezXAZ8z7PnrnRJjz3wXBoRgixCa6xjnB7YaB1pPB263",
+          "quality": "complete",
+          "state": "confirmed"
+        },
+        {
+          "pair": "CASH:EKpQGSJtjMFqKZ9KQanSqYXRcF8fBopzLHYxdM65zcjm",
+          "quality": "complete",
+          "state": "confirmed"
+        },
+        {
+          "pair": "CASH:MEW1gQWJ3nEXg2qgERiKu7FAFj79PHvQVREQUzScPP5",
+          "quality": "complete",
+          "state": "confirmed"
+        }
+      ],
+      "ending_equity": "1000",
+      "execution_status": "blocked_missing_liquidity",
+      "fees_usd": "0",
+      "filled_orders": 0,
+      "holdings": {},
+      "initial_cash": "1000",
+      "input_alignment": "market_ends_before_wallet_observation",
+      "mean_exposure": "0",
+      "mean_stable_fraction": "1",
+      "net_return": null,
+      "period_end": "2026-09-26T09:09:41.426819+00:00",
+      "period_start": "2026-09-26T09:08:52.496671+00:00",
+      "signals": 5,
+      "turnover": "0",
+      "unfilled_orders": 5,
+      "universe": [
+        "7GCihgDB8fe6KNjn2MYtkzZcRjQy3t9GHdC8uHYmW2hr",
+        "9BB6NFEcjBCtnNLFko2FqVQBq8HHM13kCyYcdQbgpump",
+        "DezXAZ8z7PnrnRJjz3wXBoRgixCa6xjnB7YaB1pPB263",
+        "EKpQGSJtjMFqKZ9KQanSqYXRcF8fBopzLHYxdM65zcjm",
+        "MEW1gQWJ3nEXg2qgERiKu7FAFj79PHvQVREQUzScPP5"
+      ],
+      "wallet_events_after_market_end": 5
+    },
+    "combined": {
+      "cash": "1000",
+      "decision_states": [],
+      "ending_equity": "1000",
+      "execution_status": "blocked_missing_liquidity",
+      "fees_usd": "0",
+      "filled_orders": 0,
+      "holdings": {},
+      "initial_cash": "1000",
+      "input_alignment": "market_ends_before_wallet_observation",
+      "mean_exposure": "0",
+      "mean_stable_fraction": "1",
+      "net_return": null,
+      "period_end": "2026-09-26T09:09:41.426819+00:00",
+      "period_start": "2026-09-26T09:08:52.496671+00:00",
+      "signals": 0,
+      "turnover": "0",
+      "unfilled_orders": 0,
+      "universe": [
+        "7GCihgDB8fe6KNjn2MYtkzZcRjQy3t9GHdC8uHYmW2hr",
+        "9BB6NFEcjBCtnNLFko2FqVQBq8HHM13kCyYcdQbgpump",
+        "DezXAZ8z7PnrnRJjz3wXBoRgixCa6xjnB7YaB1pPB263",
+        "EKpQGSJtjMFqKZ9KQanSqYXRcF8fBopzLHYxdM65zcjm",
+        "MEW1gQWJ3nEXg2qgERiKu7FAFj79PHvQVREQUzScPP5"
+      ],
+      "wallet_events_after_market_end": 5
+    },
+    "market_only": {
+      "cash": "1000",
+      "decision_states": [
+        {
+          "pair": "CASH:DezXAZ8z7PnrnRJjz3wXBoRgixCa6xjnB7YaB1pPB263",
+          "quality": "complete",
+          "state": "confirmed"
+        },
+        {
+          "pair": "CASH:DezXAZ8z7PnrnRJjz3wXBoRgixCa6xjnB7YaB1pPB263",
+          "quality": "complete",
+          "state": "invalidated"
+        },
+        {
+          "pair": "CASH:DezXAZ8z7PnrnRJjz3wXBoRgixCa6xjnB7YaB1pPB263",
+          "quality": "complete",
+          "state": "confirmed"
+        },
+        {
+          "pair": "CASH:DezXAZ8z7PnrnRJjz3wXBoRgixCa6xjnB7YaB1pPB263",
+          "quality": "complete",
+          "state": "confirmed"
+        },
+        {
+          "pair": "CASH:DezXAZ8z7PnrnRJjz3wXBoRgixCa6xjnB7YaB1pPB263",
+          "quality": "complete",
+          "state": "invalidated"
+        },
+        {
+          "pair": "CASH:DezXAZ8z7PnrnRJjz3wXBoRgixCa6xjnB7YaB1pPB263",
+          "quality": "complete",
+          "state": "confirmed"
+        },
+        {
+          "pair": "CASH:DezXAZ8z7PnrnRJjz3wXBoRgixCa6xjnB7YaB1pPB263",
+          "quality": "complete",
+          "state": "confirmed"
+        },
+        {
+          "pair": "CASH:DezXAZ8z7PnrnRJjz3wXBoRgixCa6xjnB7YaB1pPB263",
+          "quality": "complete",
+          "state": "confirmed"
+        },
+        {
+          "pair": "CASH:DezXAZ8z7PnrnRJjz3wXBoRgixCa6xjnB7YaB1pPB263",
+          "quality": "complete",
+          "state": "invalidated"
+        },
+        {
+          "pair": "CASH:DezXAZ8z7PnrnRJjz3wXBoRgixCa6xjnB7YaB1pPB263",
+          "quality": "complete",
+          "state": "confirmed"
+        },
+        {
+          "pair": "CASH:DezXAZ8z7PnrnRJjz3wXBoRgixCa6xjnB7YaB1pPB263",
+          "quality": "complete",
+          "state": "confirmed"
+        },
+        {
+          "pair": "CASH:DezXAZ8z7PnrnRJjz3wXBoRgixCa6xjnB7YaB1pPB263",
+          "quality": "complete",
+          "state": "invalidated"
+        },
+        {
+          "pair": "CASH:DezXAZ8z7PnrnRJjz3wXBoRgixCa6xjnB7YaB1pPB263",
+          "quality": "complete",
+          "state": "confirmed"
+        },
+        {
+          "pair": "CASH:DezXAZ8z7PnrnRJjz3wXBoRgixCa6xjnB7YaB1pPB263",
+          "quality": "complete",
+          "state": "confirmed"
+        },
+        {
+          "pair": "CASH:DezXAZ8z7PnrnRJjz3wXBoRgixCa6xjnB7YaB1pPB263",
+          "quality": "complete",
+          "state": "invalidated"
+        },
+        {
+          "pair": "CASH:DezXAZ8z7PnrnRJjz3wXBoRgixCa6xjnB7YaB1pPB263",
+          "quality": "complete",
+          "state": "invalidated"
+        },
+        {
+          "pair": "CASH:DezXAZ8z7PnrnRJjz3wXBoRgixCa6xjnB7YaB1pPB263",
+          "quality": "complete",
+          "state": "confirmed"
+        },
+        {
+          "pair": "CASH:DezXAZ8z7PnrnRJjz3wXBoRgixCa6xjnB7YaB1pPB263",
+          "quality": "complete",
+          "state": "invalidated"
+        },
+        {
+          "pair": "CASH:DezXAZ8z7PnrnRJjz3wXBoRgixCa6xjnB7YaB1pPB263",
+          "quality": "complete",
+          "state": "invalidated"
+        },
+        {
+          "pair": "CASH:DezXAZ8z7PnrnRJjz3wXBoRgixCa6xjnB7YaB1pPB263",
+          "quality": "complete",
+          "state": "invalidated"
+        },
+        {
+          "pair": "CASH:DezXAZ8z7PnrnRJjz3wXBoRgixCa6xjnB7YaB1pPB263",
+          "quality": "complete",
+          "state": "confirmed"
+        },
+        {
+          "pair": "CASH:DezXAZ8z7PnrnRJjz3wXBoRgixCa6xjnB7YaB1pPB263",
+          "quality": "complete",
+          "state": "invalidated"
+        },
+        {
+          "pair": "CASH:DezXAZ8z7PnrnRJjz3wXBoRgixCa6xjnB7YaB1pPB263",
+          "quality": "complete",
+          "state": "invalidated"
+        },
+        {
+          "pair": "CASH:DezXAZ8z7PnrnRJjz3wXBoRgixCa6xjnB7YaB1pPB263",
+          "quality": "complete",
+          "state": "invalidated"
+        },
+        {
+          "pair": "CASH:DezXAZ8z7PnrnRJjz3wXBoRgixCa6xjnB7YaB1pPB263",
+          "quality": "complete",
+          "state": "invalidated"
+        },
+        {
+          "pair": "CASH:DezXAZ8z7PnrnRJjz3wXBoRgixCa6xjnB7YaB1pPB263",
+          "quality": "complete",
+          "state": "confirmed"
+        },
+        {
+          "pair": "CASH:DezXAZ8z7PnrnRJjz3wXBoRgixCa6xjnB7YaB1pPB263",
+          "quality": "complete",
+          "state": "confirmed"
+        },
+        {
+          "pair": "CASH:DezXAZ8z7PnrnRJjz3wXBoRgixCa6xjnB7YaB1pPB263",
+          "quality": "complete",
+          "state": "invalidated"
+        },
+        {
+          "pair": "CASH:DezXAZ8z7PnrnRJjz3wXBoRgixCa6xjnB7YaB1pPB263",
+          "quality": "complete",
+          "state": "invalidated"
+        },
+        {
+          "pair": "CASH:DezXAZ8z7PnrnRJjz3wXBoRgixCa6xjnB7YaB1pPB263",
+          "quality": "complete",
+          "state": "confirmed"
+        },
+        {
+          "pair": "CASH:DezXAZ8z7PnrnRJjz3wXBoRgixCa6xjnB7YaB1pPB263",
+          "quality": "complete",
+          "state": "invalidated"
+        },
+        {
+          "pair": "CASH:DezXAZ8z7PnrnRJjz3wXBoRgixCa6xjnB7YaB1pPB263",
+          "quality": "complete",
+          "state": "invalidated"
+        },
+        {
+          "pair": "CASH:DezXAZ8z7PnrnRJjz3wXBoRgixCa6xjnB7YaB1pPB263",
+          "quality": "complete",
+          "state": "invalidated"
+        },
+        {
+          "pair": "CASH:DezXAZ8z7PnrnRJjz3wXBoRgixCa6xjnB7YaB1pPB263",
+          "quality": "complete",
+          "state": "confirmed"
+        },
+        {
+          "pair": "CASH:DezXAZ8z7PnrnRJjz3wXBoRgixCa6xjnB7YaB1pPB263",
+          "quality": "complete",
+          "state": "invalidated"
+        },
+        {
+          "pair": "CASH:DezXAZ8z7PnrnRJjz3wXBoRgixCa6xjnB7YaB1pPB263",
+          "quality": "complete",
+          "state": "confirmed"
+        },
+        {
+          "pair": "CASH:DezXAZ8z7PnrnRJjz3wXBoRgixCa6xjnB7YaB1pPB263",
+          "quality": "complete",
+          "state": "confirmed"
+        },
+        {
+          "pair": "CASH:DezXAZ8z7PnrnRJjz3wXBoRgixCa6xjnB7YaB1pPB263",
+          "quality": "complete",
+          "state": "invalidated"
+        },
+        {
+          "pair": "CASH:DezXAZ8z7PnrnRJjz3wXBoRgixCa6xjnB7YaB1pPB263",
+          "quality": "complete",
+          "state": "invalidated"
+        },
+        {
+          "pair": "CASH:DezXAZ8z7PnrnRJjz3wXBoRgixCa6xjnB7YaB1pPB263",
+          "quality": "complete",
+          "state": "confirmed"
+        },
+        {
+          "pair": "CASH:DezXAZ8z7PnrnRJjz3wXBoRgixCa6xjnB7YaB1pPB263",
+          "quality": "complete",
+          "state": "invalidated"
+        },
+        {
+          "pair": "CASH:DezXAZ8z7PnrnRJjz3wXBoRgixCa6xjnB7YaB1pPB263",
+          "quality": "complete",
+          "state": "invalidated"
+        },
+        {
+          "pair": "CASH:DezXAZ8z7PnrnRJjz3wXBoRgixCa6xjnB7YaB1pPB263",
+          "quality": "complete",
+          "state": "confirmed"
+        },
+        {
+          "pair": "CASH:DezXAZ8z7PnrnRJjz3wXBoRgixCa6xjnB7YaB1pPB263",
+          "quality": "complete",
+          "state": "invalidated"
+        },
+        {
+          "pair": "CASH:DezXAZ8z7PnrnRJjz3wXBoRgixCa6xjnB7YaB1pPB263",
+          "quality": "complete",
+          "state": "confirmed"
+        },
+        {
+          "pair": "CASH:DezXAZ8z7PnrnRJjz3wXBoRgixCa6xjnB7YaB1pPB263",
+          "quality": "complete",
+          "state": "invalidated"
+        },
+        {
+          "pair": "CASH:DezXAZ8z7PnrnRJjz3wXBoRgixCa6xjnB7YaB1pPB263",
+          "quality": "complete",
+          "state": "invalidated"
+        },
+        {
+          "pair": "CASH:DezXAZ8z7PnrnRJjz3wXBoRgixCa6xjnB7YaB1pPB263",
+          "quality": "complete",
+          "state": "confirmed"
+        },
+        {
+          "pair": "CASH:DezXAZ8z7PnrnRJjz3wXBoRgixCa6xjnB7YaB1pPB263",
+          "quality": "complete",
+          "state": "invalidated"
+        },
+        {
+          "pair": "CASH:DezXAZ8z7PnrnRJjz3wXBoRgixCa6xjnB7YaB1pPB263",
+          "quality": "complete",
+          "state": "invalidated"
+        },
+        {
+          "pair": "CASH:DezXAZ8z7PnrnRJjz3wXBoRgixCa6xjnB7YaB1pPB263",
+          "quality": "complete",
+          "state": "invalidated"
+        },
+        {
+          "pair": "CASH:DezXAZ8z7PnrnRJjz3wXBoRgixCa6xjnB7YaB1pPB263",
+          "quality": "complete",
+          "state": "confirmed"
+        },
+        {
+          "pair": "CASH:DezXAZ8z7PnrnRJjz3wXBoRgixCa6xjnB7YaB1pPB263",
+          "quality": "complete",
+          "state": "invalidated"
+        },
+        {
+          "pair": "CASH:DezXAZ8z7PnrnRJjz3wXBoRgixCa6xjnB7YaB1pPB263",
+          "quality": "complete",
+          "state": "confirmed"
+        },
+        {
+          "pair": "CASH:DezXAZ8z7PnrnRJjz3wXBoRgixCa6xjnB7YaB1pPB263",
+          "quality": "complete",
+          "state": "invalidated"
+        },
+        {
+          "pair": "CASH:DezXAZ8z7PnrnRJjz3wXBoRgixCa6xjnB7YaB1pPB263",
+          "quality": "complete",
+          "state": "invalidated"
+        },
+        {
+          "pair": "CASH:DezXAZ8z7PnrnRJjz3wXBoRgixCa6xjnB7YaB1pPB263",
+          "quality": "complete",
+          "state": "confirmed"
+        },
+        {
+          "pair": "CASH:DezXAZ8z7PnrnRJjz3wXBoRgixCa6xjnB7YaB1pPB263",
+          "quality": "complete",
+          "state": "invalidated"
+        },
+        {
+          "pair": "CASH:DezXAZ8z7PnrnRJjz3wXBoRgixCa6xjnB7YaB1pPB263",
+          "quality": "complete",
+          "state": "confirmed"
+        },
+        {
+          "pair": "CASH:DezXAZ8z7PnrnRJjz3wXBoRgixCa6xjnB7YaB1pPB263",
+          "quality": "complete",
+          "state": "confirmed"
+        },
+        {
+          "pair": "CASH:DezXAZ8z7PnrnRJjz3wXBoRgixCa6xjnB7YaB1pPB263",
+          "quality": "complete",
+          "state": "confirmed"
+        },
+        {
+          "pair": "CASH:DezXAZ8z7PnrnRJjz3wXBoRgixCa6xjnB7YaB1pPB263",
+          "quality": "complete",
+          "state": "confirmed"
+        },
+        {
+          "pair": "CASH:DezXAZ8z7PnrnRJjz3wXBoRgixCa6xjnB7YaB1pPB263",
+          "quality": "complete",
+          "state": "confirmed"
+        },
+        {
+          "pair": "CASH:DezXAZ8z7PnrnRJjz3wXBoRgixCa6xjnB7YaB1pPB263",
+          "quality": "complete",
+          "state": "confirmed"
+        },
+        {
+          "pair": "CASH:DezXAZ8z7PnrnRJjz3wXBoRgixCa6xjnB7YaB1pPB263",
+          "quality": "complete",
+          "state": "confirmed"
+        },
+        {
+          "pair": "CASH:DezXAZ8z7PnrnRJjz3wXBoRgixCa6xjnB7YaB1pPB263",
+          "quality": "complete",
+          "state": "confirmed"
+        },
+        {
+          "pair": "CASH:DezXAZ8z7PnrnRJjz3wXBoRgixCa6xjnB7YaB1pPB263",
+          "quality": "complete",
+          "state": "confirmed"
+        },
+        {
+          "pair": "CASH:DezXAZ8z7PnrnRJjz3wXBoRgixCa6xjnB7YaB1pPB263",
+          "quality": "complete",
+          "state": "confirmed"
+        },
+        {
+          "pair": "CASH:DezXAZ8z7PnrnRJjz3wXBoRgixCa6xjnB7YaB1pPB263",
+          "quality": "complete",
+          "state": "confirmed"
+        },
+        {
+          "pair": "CASH:DezXAZ8z7PnrnRJjz3wXBoRgixCa6xjnB7YaB1pPB263",
+          "quality": "complete",
+          "state": "confirmed"
+        },
+        {
+          "pair": "CASH:DezXAZ8z7PnrnRJjz3wXBoRgixCa6xjnB7YaB1pPB263",
+          "quality": "complete",
+          "state": "confirmed"
+        },
+        {
+          "pair": "CASH:DezXAZ8z7PnrnRJjz3wXBoRgixCa6xjnB7YaB1pPB263",
+          "quality": "complete",
+          "state": "confirmed"
+        },
+        {
+          "pair": "CASH:DezXAZ8z7PnrnRJjz3wXBoRgixCa6xjnB7YaB1pPB263",
+          "quality": "complete",
+          "state": "confirmed"
+        },
+        {
+          "pair": "CASH:DezXAZ8z7PnrnRJjz3wXBoRgixCa6xjnB7YaB1pPB263",
+          "quality": "complete",
+          "state": "confirmed"
+        },
+        {
+          "pair": "CASH:DezXAZ8z7PnrnRJjz3wXBoRgixCa6xjnB7YaB1pPB263",
+          "quality": "complete",
+          "state": "confirmed"
+        },
+        {
+          "pair": "CASH:DezXAZ8z7PnrnRJjz3wXBoRgixCa6xjnB7YaB1pPB263",
+          "quality": "complete",
+          "state": "invalidated"
+        },
+        {
+          "pair": "CASH:DezXAZ8z7PnrnRJjz3wXBoRgixCa6xjnB7YaB1pPB263",
+          "quality": "complete",
+          "state": "invalidated"
+        },
+        {
+          "pair": "CASH:DezXAZ8z7PnrnRJjz3wXBoRgixCa6xjnB7YaB1pPB263",
+          "quality": "complete",
+          "state": "confirmed"
+        },
+        {
+          "pair": "CASH:DezXAZ8z7PnrnRJjz3wXBoRgixCa6xjnB7YaB1pPB263",
+          "quality": "complete",
+          "state": "confirmed"
+        },
+        {
+          "pair": "CASH:DezXAZ8z7PnrnRJjz3wXBoRgixCa6xjnB7YaB1pPB263",
+          "quality": "complete",
+          "state": "invalidated"
+        },
+        {
+          "pair": "CASH:DezXAZ8z7PnrnRJjz3wXBoRgixCa6xjnB7YaB1pPB263",
+          "quality": "complete",
+          "state": "invalidated"
+        },
+        {
+          "pair": "CASH:DezXAZ8z7PnrnRJjz3wXBoRgixCa6xjnB7YaB1pPB263",
+          "quality": "complete",
+          "state": "confirmed"
+        },
+        {
+          "pair": "CASH:DezXAZ8z7PnrnRJjz3wXBoRgixCa6xjnB7YaB1pPB263",
+          "quality": "complete",
+          "state": "invalidated"
+        },
+        {
+          "pair": "CASH:DezXAZ8z7PnrnRJjz3wXBoRgixCa6xjnB7YaB1pPB263",
+          "quality": "complete",
+          "state": "confirmed"
+        },
+        {
+          "pair": "CASH:DezXAZ8z7PnrnRJjz3wXBoRgixCa6xjnB7YaB1pPB263",
+          "quality": "complete",
+          "state": "invalidated"
+        },
+        {
+          "pair": "CASH:DezXAZ8z7PnrnRJjz3wXBoRgixCa6xjnB7YaB1pPB263",
+          "quality": "complete",
+          "state": "invalidated"
+        },
+        {
+          "pair": "CASH:DezXAZ8z7PnrnRJjz3wXBoRgixCa6xjnB7YaB1pPB263",
+          "quality": "complete",
+          "state": "invalidated"
+        },
+        {
+          "pair": "CASH:DezXAZ8z7PnrnRJjz3wXBoRgixCa6xjnB7YaB1pPB263",
+          "quality": "complete",
+          "state": "invalidated"
+        },
+        {
+          "pair": "CASH:DezXAZ8z7PnrnRJjz3wXBoRgixCa6xjnB7YaB1pPB263",
+          "quality": "complete",
+          "state": "invalidated"
+        },
+        {
+          "pair": "CASH:DezXAZ8z7PnrnRJjz3wXBoRgixCa6xjnB7YaB1pPB263",
+          "quality": "complete",
+          "state": "invalidated"
+        },
+        {
+          "pair": "CASH:DezXAZ8z7PnrnRJjz3wXBoRgixCa6xjnB7YaB1pPB263",
+          "quality": "complete",
+          "state": "invalidated"
+        },
+        {
+          "pair": "CASH:DezXAZ8z7PnrnRJjz3wXBoRgixCa6xjnB7YaB1pPB263",
+          "quality": "complete",
+          "state": "confirmed"
+        },
+        {
+          "pair": "CASH:DezXAZ8z7PnrnRJjz3wXBoRgixCa6xjnB7YaB1pPB263",
+          "quality": "complete",
+          "state": "invalidated"
+        },
+        {
+          "pair": "CASH:DezXAZ8z7PnrnRJjz3wXBoRgixCa6xjnB7YaB1pPB263",
+          "quality": "complete",
+          "state": "invalidated"
+        },
+        {
+          "pair": "CASH:DezXAZ8z7PnrnRJjz3wXBoRgixCa6xjnB7YaB1pPB263",
+          "quality": "complete",
+          "state": "invalidated"
+        },
+        {
+          "pair": "CASH:DezXAZ8z7PnrnRJjz3wXBoRgixCa6xjnB7YaB1pPB263",
+          "quality": "complete",
+          "state": "confirmed"
+        },
+        {
+          "pair": "CASH:DezXAZ8z7PnrnRJjz3wXBoRgixCa6xjnB7YaB1pPB263",
+          "quality": "complete",
+          "state": "invalidated"
+        },
+        {
+          "pair": "CASH:DezXAZ8z7PnrnRJjz3wXBoRgixCa6xjnB7YaB1pPB263",
+          "quality": "complete",
+          "state": "invalidated"
+        },
+        {
+          "pair": "CASH:EKpQGSJtjMFqKZ9KQanSqYXRcF8fBopzLHYxdM65zcjm",
+          "quality": "complete",
+          "state": "confirmed"
+        },
+        {
+          "pair": "CASH:EKpQGSJtjMFqKZ9KQanSqYXRcF8fBopzLHYxdM65zcjm",
+          "quality": "complete",
+          "state": "invalidated"
+        },
+        {
+          "pair": "CASH:EKpQGSJtjMFqKZ9KQanSqYXRcF8fBopzLHYxdM65zcjm",
+          "quality": "complete",
+          "state": "invalidated"
+        },
+        {
+          "pair": "CASH:EKpQGSJtjMFqKZ9KQanSqYXRcF8fBopzLHYxdM65zcjm",
+          "quality": "complete",
+          "state": "invalidated"
+        },
+        {
+          "pair": "CASH:EKpQGSJtjMFqKZ9KQanSqYXRcF8fBopzLHYxdM65zcjm",
+          "quality": "complete",
+          "state": "confirmed"
+        },
+        {
+          "pair": "CASH:EKpQGSJtjMFqKZ9KQanSqYXRcF8fBopzLHYxdM65zcjm",
+          "quality": "complete",
+          "state": "invalidated"
+        },
+        {
+          "pair": "CASH:EKpQGSJtjMFqKZ9KQanSqYXRcF8fBopzLHYxdM65zcjm",
+          "quality": "complete",
+          "state": "confirmed"
+        },
+        {
+          "pair": "CASH:EKpQGSJtjMFqKZ9KQanSqYXRcF8fBopzLHYxdM65zcjm",
+          "quality": "complete",
+          "state": "invalidated"
+        },
+        {
+          "pair": "CASH:EKpQGSJtjMFqKZ9KQanSqYXRcF8fBopzLHYxdM65zcjm",
+          "quality": "complete",
+          "state": "invalidated"
+        },
+        {
+          "pair": "CASH:EKpQGSJtjMFqKZ9KQanSqYXRcF8fBopzLHYxdM65zcjm",
+          "quality": "complete",
+          "state": "confirmed"
+        },
+        {
+          "pair": "CASH:EKpQGSJtjMFqKZ9KQanSqYXRcF8fBopzLHYxdM65zcjm",
+          "quality": "complete",
+          "state": "invalidated"
+        },
+        {
+          "pair": "CASH:EKpQGSJtjMFqKZ9KQanSqYXRcF8fBopzLHYxdM65zcjm",
+          "quality": "complete",
+          "state": "confirmed"
+        },
+        {
+          "pair": "CASH:EKpQGSJtjMFqKZ9KQanSqYXRcF8fBopzLHYxdM65zcjm",
+          "quality": "complete",
+          "state": "confirmed"
+        },
+        {
+          "pair": "CASH:EKpQGSJtjMFqKZ9KQanSqYXRcF8fBopzLHYxdM65zcjm",
+          "quality": "complete",
+          "state": "confirmed"
+        },
+        {
+          "pair": "CASH:EKpQGSJtjMFqKZ9KQanSqYXRcF8fBopzLHYxdM65zcjm",
+          "quality": "complete",
+          "state": "confirmed"
+        },
+        {
+          "pair": "CASH:EKpQGSJtjMFqKZ9KQanSqYXRcF8fBopzLHYxdM65zcjm",
+          "quality": "complete",
+          "state": "confirmed"
+        },
+        {
+          "pair": "CASH:EKpQGSJtjMFqKZ9KQanSqYXRcF8fBopzLHYxdM65zcjm",
+          "quality": "complete",
+          "state": "invalidated"
+        },
+        {
+          "pair": "CASH:EKpQGSJtjMFqKZ9KQanSqYXRcF8fBopzLHYxdM65zcjm",
+          "quality": "complete",
+          "state": "invalidated"
+        },
+        {
+          "pair": "CASH:EKpQGSJtjMFqKZ9KQanSqYXRcF8fBopzLHYxdM65zcjm",
+          "quality": "complete",
+          "state": "invalidated"
+        },
+        {
+          "pair": "CASH:EKpQGSJtjMFqKZ9KQanSqYXRcF8fBopzLHYxdM65zcjm",
+          "quality": "complete",
+          "state": "confirmed"
+        },
+        {
+          "pair": "CASH:EKpQGSJtjMFqKZ9KQanSqYXRcF8fBopzLHYxdM65zcjm",
+          "quality": "complete",
+          "state": "invalidated"
+        },
+        {
+          "pair": "CASH:EKpQGSJtjMFqKZ9KQanSqYXRcF8fBopzLHYxdM65zcjm",
+          "quality": "complete",
+          "state": "invalidated"
+        },
+        {
+          "pair": "CASH:EKpQGSJtjMFqKZ9KQanSqYXRcF8fBopzLHYxdM65zcjm",
+          "quality": "complete",
+          "state": "invalidated"
+        },
+        {
+          "pair": "CASH:EKpQGSJtjMFqKZ9KQanSqYXRcF8fBopzLHYxdM65zcjm",
+          "quality": "complete",
+          "state": "confirmed"
+        },
+        {
+          "pair": "CASH:EKpQGSJtjMFqKZ9KQanSqYXRcF8fBopzLHYxdM65zcjm",
+          "quality": "complete",
+          "state": "invalidated"
+        },
+        {
+          "pair": "CASH:EKpQGSJtjMFqKZ9KQanSqYXRcF8fBopzLHYxdM65zcjm",
+          "quality": "complete",
+          "state": "invalidated"
+        },
+        {
+          "pair": "CASH:EKpQGSJtjMFqKZ9KQanSqYXRcF8fBopzLHYxdM65zcjm",
+          "quality": "complete",
+          "state": "invalidated"
+        },
+        {
+          "pair": "CASH:EKpQGSJtjMFqKZ9KQanSqYXRcF8fBopzLHYxdM65zcjm",
+          "quality": "complete",
+          "state": "confirmed"
+        },
+        {
+          "pair": "CASH:EKpQGSJtjMFqKZ9KQanSqYXRcF8fBopzLHYxdM65zcjm",
+          "quality": "complete",
+          "state": "invalidated"
+        },
+        {
+          "pair": "CASH:EKpQGSJtjMFqKZ9KQanSqYXRcF8fBopzLHYxdM65zcjm",
+          "quality": "complete",
+          "state": "invalidated"
+        },
+        {
+          "pair": "CASH:EKpQGSJtjMFqKZ9KQanSqYXRcF8fBopzLHYxdM65zcjm",
+          "quality": "complete",
+          "state": "confirmed"
+        },
+        {
+          "pair": "CASH:EKpQGSJtjMFqKZ9KQanSqYXRcF8fBopzLHYxdM65zcjm",
+          "quality": "complete",
+          "state": "invalidated"
+        },
+        {
+          "pair": "CASH:EKpQGSJtjMFqKZ9KQanSqYXRcF8fBopzLHYxdM65zcjm",
+          "quality": "complete",
+          "state": "confirmed"
+        },
+        {
+          "pair": "CASH:EKpQGSJtjMFqKZ9KQanSqYXRcF8fBopzLHYxdM65zcjm",
+          "quality": "complete",
+          "state": "confirmed"
+        },
+        {
+          "pair": "CASH:EKpQGSJtjMFqKZ9KQanSqYXRcF8fBopzLHYxdM65zcjm",
+          "quality": "complete",
+          "state": "confirmed"
+        },
+        {
+          "pair": "CASH:EKpQGSJtjMFqKZ9KQanSqYXRcF8fBopzLHYxdM65zcjm",
+          "quality": "complete",
+          "state": "confirmed"
+        },
+        {
+          "pair": "CASH:EKpQGSJtjMFqKZ9KQanSqYXRcF8fBopzLHYxdM65zcjm",
+          "quality": "complete",
+          "state": "invalidated"
+        },
+        {
+          "pair": "CASH:EKpQGSJtjMFqKZ9KQanSqYXRcF8fBopzLHYxdM65zcjm",
+          "quality": "complete",
+          "state": "invalidated"
+        },
+        {
+          "pair": "CASH:EKpQGSJtjMFqKZ9KQanSqYXRcF8fBopzLHYxdM65zcjm",
+          "quality": "complete",
+          "state": "confirmed"
+        },
+        {
+          "pair": "CASH:EKpQGSJtjMFqKZ9KQanSqYXRcF8fBopzLHYxdM65zcjm",
+          "quality": "complete",
+          "state": "invalidated"
+        },
+        {
+          "pair": "CASH:EKpQGSJtjMFqKZ9KQanSqYXRcF8fBopzLHYxdM65zcjm",
+          "quality": "complete",
+          "state": "invalidated"
+        },
+        {
+          "pair": "CASH:EKpQGSJtjMFqKZ9KQanSqYXRcF8fBopzLHYxdM65zcjm",
+          "quality": "complete",
+          "state": "invalidated"
+        },
+        {
+          "pair": "CASH:EKpQGSJtjMFqKZ9KQanSqYXRcF8fBopzLHYxdM65zcjm",
+          "quality": "complete",
+          "state": "confirmed"
+        },
+        {
+          "pair": "CASH:EKpQGSJtjMFqKZ9KQanSqYXRcF8fBopzLHYxdM65zcjm",
+          "quality": "complete",
+          "state": "invalidated"
+        },
+        {
+          "pair": "CASH:EKpQGSJtjMFqKZ9KQanSqYXRcF8fBopzLHYxdM65zcjm",
+          "quality": "complete",
+          "state": "confirmed"
+        },
+        {
+          "pair": "CASH:EKpQGSJtjMFqKZ9KQanSqYXRcF8fBopzLHYxdM65zcjm",
+          "quality": "complete",
+          "state": "confirmed"
+        },
+        {
+          "pair": "CASH:EKpQGSJtjMFqKZ9KQanSqYXRcF8fBopzLHYxdM65zcjm",
+          "quality": "complete",
+          "state": "confirmed"
+        },
+        {
+          "pair": "CASH:EKpQGSJtjMFqKZ9KQanSqYXRcF8fBopzLHYxdM65zcjm",
+          "quality": "complete",
+          "state": "confirmed"
+        },
+        {
+          "pair": "CASH:EKpQGSJtjMFqKZ9KQanSqYXRcF8fBopzLHYxdM65zcjm",
+          "quality": "complete",
+          "state": "confirmed"
+        },
+        {
+          "pair": "CASH:EKpQGSJtjMFqKZ9KQanSqYXRcF8fBopzLHYxdM65zcjm",
+          "quality": "complete",
+          "state": "confirmed"
+        },
+        {
+          "pair": "CASH:EKpQGSJtjMFqKZ9KQanSqYXRcF8fBopzLHYxdM65zcjm",
+          "quality": "complete",
+          "state": "confirmed"
+        },
+        {
+          "pair": "CASH:EKpQGSJtjMFqKZ9KQanSqYXRcF8fBopzLHYxdM65zcjm",
+          "quality": "complete",
+          "state": "confirmed"
+        },
+        {
+          "pair": "CASH:EKpQGSJtjMFqKZ9KQanSqYXRcF8fBopzLHYxdM65zcjm",
+          "quality": "complete",
+          "state": "confirmed"
+        },
+        {
+          "pair": "CASH:EKpQGSJtjMFqKZ9KQanSqYXRcF8fBopzLHYxdM65zcjm",
+          "quality": "complete",
+          "state": "invalidated"
+        },
+        {
+          "pair": "CASH:EKpQGSJtjMFqKZ9KQanSqYXRcF8fBopzLHYxdM65zcjm",
+          "quality": "complete",
+          "state": "confirmed"
+        },
+        {
+          "pair": "CASH:EKpQGSJtjMFqKZ9KQanSqYXRcF8fBopzLHYxdM65zcjm",
+          "quality": "complete",
+          "state": "invalidated"
+        },
+        {
+          "pair": "CASH:EKpQGSJtjMFqKZ9KQanSqYXRcF8fBopzLHYxdM65zcjm",
+          "quality": "complete",
+          "state": "confirmed"
+        },
+        {
+          "pair": "CASH:EKpQGSJtjMFqKZ9KQanSqYXRcF8fBopzLHYxdM65zcjm",
+          "quality": "complete",
+          "state": "confirmed"
+        },
+        {
+          "pair": "CASH:EKpQGSJtjMFqKZ9KQanSqYXRcF8fBopzLHYxdM65zcjm",
+          "quality": "complete",
+          "state": "confirmed"
+        },
+        {
+          "pair": "CASH:EKpQGSJtjMFqKZ9KQanSqYXRcF8fBopzLHYxdM65zcjm",
+          "quality": "complete",
+          "state": "confirmed"
+        },
+        {
+          "pair": "CASH:EKpQGSJtjMFqKZ9KQanSqYXRcF8fBopzLHYxdM65zcjm",
+          "quality": "complete",
+          "state": "confirmed"
+        },
+        {
+          "pair": "CASH:EKpQGSJtjMFqKZ9KQanSqYXRcF8fBopzLHYxdM65zcjm",
+          "quality": "complete",
+          "state": "confirmed"
+        },
+        {
+          "pair": "CASH:EKpQGSJtjMFqKZ9KQanSqYXRcF8fBopzLHYxdM65zcjm",
+          "quality": "complete",
+          "state": "invalidated"
+        },
+        {
+          "pair": "CASH:EKpQGSJtjMFqKZ9KQanSqYXRcF8fBopzLHYxdM65zcjm",
+          "quality": "complete",
+          "state": "confirmed"
+        },
+        {
+          "pair": "CASH:EKpQGSJtjMFqKZ9KQanSqYXRcF8fBopzLHYxdM65zcjm",
+          "quality": "complete",
+          "state": "confirmed"
+        },
+        {
+          "pair": "CASH:EKpQGSJtjMFqKZ9KQanSqYXRcF8fBopzLHYxdM65zcjm",
+          "quality": "complete",
+          "state": "invalidated"
+        },
+        {
+          "pair": "CASH:EKpQGSJtjMFqKZ9KQanSqYXRcF8fBopzLHYxdM65zcjm",
+          "quality": "complete",
+          "state": "confirmed"
+        },
+        {
+          "pair": "CASH:EKpQGSJtjMFqKZ9KQanSqYXRcF8fBopzLHYxdM65zcjm",
+          "quality": "complete",
+          "state": "confirmed"
+        },
+        {
+          "pair": "CASH:EKpQGSJtjMFqKZ9KQanSqYXRcF8fBopzLHYxdM65zcjm",
+          "quality": "complete",
+          "state": "confirmed"
+        },
+        {
+          "pair": "CASH:EKpQGSJtjMFqKZ9KQanSqYXRcF8fBopzLHYxdM65zcjm",
+          "quality": "complete",
+          "state": "invalidated"
+        },
+        {
+          "pair": "CASH:EKpQGSJtjMFqKZ9KQanSqYXRcF8fBopzLHYxdM65zcjm",
+          "quality": "complete",
+          "state": "confirmed"
+        },
+        {
+          "pair": "CASH:EKpQGSJtjMFqKZ9KQanSqYXRcF8fBopzLHYxdM65zcjm",
+          "quality": "complete",
+          "state": "invalidated"
+        },
+        {
+          "pair": "CASH:EKpQGSJtjMFqKZ9KQanSqYXRcF8fBopzLHYxdM65zcjm",
+          "quality": "complete",
+          "state": "confirmed"
+        },
+        {
+          "pair": "CASH:EKpQGSJtjMFqKZ9KQanSqYXRcF8fBopzLHYxdM65zcjm",
+          "quality": "complete",
+          "state": "confirmed"
+        },
+        {
+          "pair": "CASH:EKpQGSJtjMFqKZ9KQanSqYXRcF8fBopzLHYxdM65zcjm",
+          "quality": "complete",
+          "state": "confirmed"
+        },
+        {
+          "pair": "CASH:EKpQGSJtjMFqKZ9KQanSqYXRcF8fBopzLHYxdM65zcjm",
+          "quality": "complete",
+          "state": "invalidated"
+        },
+        {
+          "pair": "CASH:EKpQGSJtjMFqKZ9KQanSqYXRcF8fBopzLHYxdM65zcjm",
+          "quality": "complete",
+          "state": "invalidated"
+        },
+        {
+          "pair": "CASH:EKpQGSJtjMFqKZ9KQanSqYXRcF8fBopzLHYxdM65zcjm",
+          "quality": "complete",
+          "state": "invalidated"
+        },
+        {
+          "pair": "CASH:EKpQGSJtjMFqKZ9KQanSqYXRcF8fBopzLHYxdM65zcjm",
+          "quality": "complete",
+          "state": "invalidated"
+        },
+        {
+          "pair": "CASH:EKpQGSJtjMFqKZ9KQanSqYXRcF8fBopzLHYxdM65zcjm",
+          "quality": "complete",
+          "state": "confirmed"
+        },
+        {
+          "pair": "CASH:EKpQGSJtjMFqKZ9KQanSqYXRcF8fBopzLHYxdM65zcjm",
+          "quality": "complete",
+          "state": "invalidated"
+        },
+        {
+          "pair": "CASH:EKpQGSJtjMFqKZ9KQanSqYXRcF8fBopzLHYxdM65zcjm",
+          "quality": "complete",
+          "state": "confirmed"
+        },
+        {
+          "pair": "CASH:EKpQGSJtjMFqKZ9KQanSqYXRcF8fBopzLHYxdM65zcjm",
+          "quality": "complete",
+          "state": "confirmed"
+        },
+        {
+          "pair": "CASH:EKpQGSJtjMFqKZ9KQanSqYXRcF8fBopzLHYxdM65zcjm",
+          "quality": "complete",
+          "state": "confirmed"
+        },
+        {
+          "pair": "CASH:EKpQGSJtjMFqKZ9KQanSqYXRcF8fBopzLHYxdM65zcjm",
+          "quality": "complete",
+          "state": "confirmed"
+        },
+        {
+          "pair": "CASH:EKpQGSJtjMFqKZ9KQanSqYXRcF8fBopzLHYxdM65zcjm",
+          "quality": "complete",
+          "state": "confirmed"
+        },
+        {
+          "pair": "CASH:EKpQGSJtjMFqKZ9KQanSqYXRcF8fBopzLHYxdM65zcjm",
+          "quality": "complete",
+          "state": "confirmed"
+        },
+        {
+          "pair": "CASH:EKpQGSJtjMFqKZ9KQanSqYXRcF8fBopzLHYxdM65zcjm",
+          "quality": "complete",
+          "state": "confirmed"
+        },
+        {
+          "pair": "CASH:EKpQGSJtjMFqKZ9KQanSqYXRcF8fBopzLHYxdM65zcjm",
+          "quality": "complete",
+          "state": "invalidated"
+        },
+        {
+          "pair": "CASH:EKpQGSJtjMFqKZ9KQanSqYXRcF8fBopzLHYxdM65zcjm",
+          "quality": "complete",
+          "state": "confirmed"
+        },
+        {
+          "pair": "CASH:EKpQGSJtjMFqKZ9KQanSqYXRcF8fBopzLHYxdM65zcjm",
+          "quality": "complete",
+          "state": "confirmed"
+        },
+        {
+          "pair": "CASH:EKpQGSJtjMFqKZ9KQanSqYXRcF8fBopzLHYxdM65zcjm",
+          "quality": "complete",
+          "state": "invalidated"
+        },
+        {
+          "pair": "CASH:EKpQGSJtjMFqKZ9KQanSqYXRcF8fBopzLHYxdM65zcjm",
+          "quality": "complete",
+          "state": "invalidated"
+        },
+        {
+          "pair": "CASH:EKpQGSJtjMFqKZ9KQanSqYXRcF8fBopzLHYxdM65zcjm",
+          "quality": "complete",
+          "state": "invalidated"
+        },
+        {
+          "pair": "CASH:EKpQGSJtjMFqKZ9KQanSqYXRcF8fBopzLHYxdM65zcjm",
+          "quality": "complete",
+          "state": "invalidated"
+        },
+        {
+          "pair": "CASH:EKpQGSJtjMFqKZ9KQanSqYXRcF8fBopzLHYxdM65zcjm",
+          "quality": "complete",
+          "state": "invalidated"
+        },
+        {
+          "pair": "CASH:EKpQGSJtjMFqKZ9KQanSqYXRcF8fBopzLHYxdM65zcjm",
+          "quality": "complete",
+          "state": "invalidated"
+        },
+        {
+          "pair": "CASH:EKpQGSJtjMFqKZ9KQanSqYXRcF8fBopzLHYxdM65zcjm",
+          "quality": "complete",
+          "state": "invalidated"
+        },
+        {
+          "pair": "CASH:EKpQGSJtjMFqKZ9KQanSqYXRcF8fBopzLHYxdM65zcjm",
+          "quality": "complete",
+          "state": "invalidated"
+        },
+        {
+          "pair": "CASH:7GCihgDB8fe6KNjn2MYtkzZcRjQy3t9GHdC8uHYmW2hr",
+          "quality": "complete",
+          "state": "invalidated"
+        },
+        {
+          "pair": "CASH:7GCihgDB8fe6KNjn2MYtkzZcRjQy3t9GHdC8uHYmW2hr",
+          "quality": "complete",
+          "state": "confirmed"
+        },
+        {
+          "pair": "CASH:7GCihgDB8fe6KNjn2MYtkzZcRjQy3t9GHdC8uHYmW2hr",
+          "quality": "complete",
+          "state": "confirmed"
+        },
+        {
+          "pair": "CASH:7GCihgDB8fe6KNjn2MYtkzZcRjQy3t9GHdC8uHYmW2hr",
+          "quality": "complete",
+          "state": "invalidated"
+        },
+        {
+          "pair": "CASH:7GCihgDB8fe6KNjn2MYtkzZcRjQy3t9GHdC8uHYmW2hr",
+          "quality": "complete",
+          "state": "invalidated"
+        },
+        {
+          "pair": "CASH:7GCihgDB8fe6KNjn2MYtkzZcRjQy3t9GHdC8uHYmW2hr",
+          "quality": "complete",
+          "state": "confirmed"
+        },
+        {
+          "pair": "CASH:7GCihgDB8fe6KNjn2MYtkzZcRjQy3t9GHdC8uHYmW2hr",
+          "quality": "complete",
+          "state": "confirmed"
+        },
+        {
+          "pair": "CASH:7GCihgDB8fe6KNjn2MYtkzZcRjQy3t9GHdC8uHYmW2hr",
+          "quality": "complete",
+          "state": "invalidated"
+        },
+        {
+          "pair": "CASH:7GCihgDB8fe6KNjn2MYtkzZcRjQy3t9GHdC8uHYmW2hr",
+          "quality": "complete",
+          "state": "invalidated"
+        },
+        {
+          "pair": "CASH:7GCihgDB8fe6KNjn2MYtkzZcRjQy3t9GHdC8uHYmW2hr",
+          "quality": "complete",
+          "state": "confirmed"
+        },
+        {
+          "pair": "CASH:7GCihgDB8fe6KNjn2MYtkzZcRjQy3t9GHdC8uHYmW2hr",
+          "quality": "complete",
+          "state": "invalidated"
+        },
+        {
+          "pair": "CASH:7GCihgDB8fe6KNjn2MYtkzZcRjQy3t9GHdC8uHYmW2hr",
+          "quality": "complete",
+          "state": "confirmed"
+        },
+        {
+          "pair": "CASH:7GCihgDB8fe6KNjn2MYtkzZcRjQy3t9GHdC8uHYmW2hr",
+          "quality": "complete",
+          "state": "confirmed"
+        },
+        {
+          "pair": "CASH:7GCihgDB8fe6KNjn2MYtkzZcRjQy3t9GHdC8uHYmW2hr",
+          "quality": "complete",
+          "state": "confirmed"
+        },
+        {
+          "pair": "CASH:7GCihgDB8fe6KNjn2MYtkzZcRjQy3t9GHdC8uHYmW2hr",
+          "quality": "complete",
+          "state": "confirmed"
+        },
+        {
+          "pair": "CASH:7GCihgDB8fe6KNjn2MYtkzZcRjQy3t9GHdC8uHYmW2hr",
+          "quality": "complete",
+          "state": "invalidated"
+        },
+        {
+          "pair": "CASH:7GCihgDB8fe6KNjn2MYtkzZcRjQy3t9GHdC8uHYmW2hr",
+          "quality": "complete",
+          "state": "confirmed"
+        },
+        {
+          "pair": "CASH:7GCihgDB8fe6KNjn2MYtkzZcRjQy3t9GHdC8uHYmW2hr",
+          "quality": "complete",
+          "state": "invalidated"
+        },
+        {
+          "pair": "CASH:7GCihgDB8fe6KNjn2MYtkzZcRjQy3t9GHdC8uHYmW2hr",
+          "quality": "complete",
+          "state": "invalidated"
+        },
+        {
+          "pair": "CASH:7GCihgDB8fe6KNjn2MYtkzZcRjQy3t9GHdC8uHYmW2hr",
+          "quality": "complete",
+          "state": "confirmed"
+        },
+        {
+          "pair": "CASH:7GCihgDB8fe6KNjn2MYtkzZcRjQy3t9GHdC8uHYmW2hr",
+          "quality": "complete",
+          "state": "invalidated"
+        },
+        {
+          "pair": "CASH:7GCihgDB8fe6KNjn2MYtkzZcRjQy3t9GHdC8uHYmW2hr",
+          "quality": "complete",
+          "state": "invalidated"
+        },
+        {
+          "pair": "CASH:7GCihgDB8fe6KNjn2MYtkzZcRjQy3t9GHdC8uHYmW2hr",
+          "quality": "complete",
+          "state": "invalidated"
+        },
+        {
+          "pair": "CASH:7GCihgDB8fe6KNjn2MYtkzZcRjQy3t9GHdC8uHYmW2hr",
+          "quality": "complete",
+          "state": "confirmed"
+        },
+        {
+          "pair": "CASH:7GCihgDB8fe6KNjn2MYtkzZcRjQy3t9GHdC8uHYmW2hr",
+          "quality": "complete",
+          "state": "confirmed"
+        },
+        {
+          "pair": "CASH:7GCihgDB8fe6KNjn2MYtkzZcRjQy3t9GHdC8uHYmW2hr",
+          "quality": "complete",
+          "state": "confirmed"
+        },
+        {
+          "pair": "CASH:7GCihgDB8fe6KNjn2MYtkzZcRjQy3t9GHdC8uHYmW2hr",
+          "quality": "complete",
+          "state": "invalidated"
+        },
+        {
+          "pair": "CASH:7GCihgDB8fe6KNjn2MYtkzZcRjQy3t9GHdC8uHYmW2hr",
+          "quality": "complete",
+          "state": "confirmed"
+        },
+        {
+          "pair": "CASH:7GCihgDB8fe6KNjn2MYtkzZcRjQy3t9GHdC8uHYmW2hr",
+          "quality": "complete",
+          "state": "invalidated"
+        },
+        {
+          "pair": "CASH:7GCihgDB8fe6KNjn2MYtkzZcRjQy3t9GHdC8uHYmW2hr",
+          "quality": "complete",
+          "state": "confirmed"
+        },
+        {
+          "pair": "CASH:7GCihgDB8fe6KNjn2MYtkzZcRjQy3t9GHdC8uHYmW2hr",
+          "quality": "complete",
+          "state": "invalidated"
+        },
+        {
+          "pair": "CASH:7GCihgDB8fe6KNjn2MYtkzZcRjQy3t9GHdC8uHYmW2hr",
+          "quality": "complete",
+          "state": "confirmed"
+        },
+        {
+          "pair": "CASH:7GCihgDB8fe6KNjn2MYtkzZcRjQy3t9GHdC8uHYmW2hr",
+          "quality": "complete",
+          "state": "invalidated"
+        },
+        {
+          "pair": "CASH:7GCihgDB8fe6KNjn2MYtkzZcRjQy3t9GHdC8uHYmW2hr",
+          "quality": "complete",
+          "state": "invalidated"
+        },
+        {
+          "pair": "CASH:7GCihgDB8fe6KNjn2MYtkzZcRjQy3t9GHdC8uHYmW2hr",
+          "quality": "complete",
+          "state": "confirmed"
+        },
+        {
+          "pair": "CASH:7GCihgDB8fe6KNjn2MYtkzZcRjQy3t9GHdC8uHYmW2hr",
+          "quality": "complete",
+          "state": "confirmed"
+        },
+        {
+          "pair": "CASH:7GCihgDB8fe6KNjn2MYtkzZcRjQy3t9GHdC8uHYmW2hr",
+          "quality": "complete",
+          "state": "invalidated"
+        },
+        {
+          "pair": "CASH:7GCihgDB8fe6KNjn2MYtkzZcRjQy3t9GHdC8uHYmW2hr",
+          "quality": "complete",
+          "state": "invalidated"
+        },
+        {
+          "pair": "CASH:7GCihgDB8fe6KNjn2MYtkzZcRjQy3t9GHdC8uHYmW2hr",
+          "quality": "complete",
+          "state": "invalidated"
+        },
+        {
+          "pair": "CASH:7GCihgDB8fe6KNjn2MYtkzZcRjQy3t9GHdC8uHYmW2hr",
+          "quality": "complete",
+          "state": "invalidated"
+        },
+        {
+          "pair": "CASH:7GCihgDB8fe6KNjn2MYtkzZcRjQy3t9GHdC8uHYmW2hr",
+          "quality": "complete",
+          "state": "invalidated"
+        },
+        {
+          "pair": "CASH:7GCihgDB8fe6KNjn2MYtkzZcRjQy3t9GHdC8uHYmW2hr",
+          "quality": "complete",
+          "state": "invalidated"
+        },
+        {
+          "pair": "CASH:7GCihgDB8fe6KNjn2MYtkzZcRjQy3t9GHdC8uHYmW2hr",
+          "quality": "complete",
+          "state": "confirmed"
+        },
+        {
+          "pair": "CASH:7GCihgDB8fe6KNjn2MYtkzZcRjQy3t9GHdC8uHYmW2hr",
+          "quality": "complete",
+          "state": "confirmed"
+        },
+        {
+          "pair": "CASH:7GCihgDB8fe6KNjn2MYtkzZcRjQy3t9GHdC8uHYmW2hr",
+          "quality": "complete",
+          "state": "invalidated"
+        },
+        {
+          "pair": "CASH:7GCihgDB8fe6KNjn2MYtkzZcRjQy3t9GHdC8uHYmW2hr",
+          "quality": "complete",
+          "state": "confirmed"
+        },
+        {
+          "pair": "CASH:7GCihgDB8fe6KNjn2MYtkzZcRjQy3t9GHdC8uHYmW2hr",
+          "quality": "complete",
+          "state": "confirmed"
+        },
+        {
+          "pair": "CASH:7GCihgDB8fe6KNjn2MYtkzZcRjQy3t9GHdC8uHYmW2hr",
+          "quality": "complete",
+          "state": "confirmed"
+        },
+        {
+          "pair": "CASH:7GCihgDB8fe6KNjn2MYtkzZcRjQy3t9GHdC8uHYmW2hr",
+          "quality": "complete",
+          "state": "invalidated"
+        },
+        {
+          "pair": "CASH:7GCihgDB8fe6KNjn2MYtkzZcRjQy3t9GHdC8uHYmW2hr",
+          "quality": "complete",
+          "state": "invalidated"
+        },
+        {
+          "pair": "CASH:7GCihgDB8fe6KNjn2MYtkzZcRjQy3t9GHdC8uHYmW2hr",
+          "quality": "complete",
+          "state": "invalidated"
+        },
+        {
+          "pair": "CASH:7GCihgDB8fe6KNjn2MYtkzZcRjQy3t9GHdC8uHYmW2hr",
+          "quality": "complete",
+          "state": "invalidated"
+        },
+        {
+          "pair": "CASH:7GCihgDB8fe6KNjn2MYtkzZcRjQy3t9GHdC8uHYmW2hr",
+          "quality": "complete",
+          "state": "confirmed"
+        },
+        {
+          "pair": "CASH:7GCihgDB8fe6KNjn2MYtkzZcRjQy3t9GHdC8uHYmW2hr",
+          "quality": "complete",
+          "state": "confirmed"
+        },
+        {
+          "pair": "CASH:7GCihgDB8fe6KNjn2MYtkzZcRjQy3t9GHdC8uHYmW2hr",
+          "quality": "complete",
+          "state": "confirmed"
+        },
+        {
+          "pair": "CASH:7GCihgDB8fe6KNjn2MYtkzZcRjQy3t9GHdC8uHYmW2hr",
+          "quality": "complete",
+          "state": "confirmed"
+        },
+        {
+          "pair": "CASH:7GCihgDB8fe6KNjn2MYtkzZcRjQy3t9GHdC8uHYmW2hr",
+          "quality": "complete",
+          "state": "confirmed"
+        },
+        {
+          "pair": "CASH:7GCihgDB8fe6KNjn2MYtkzZcRjQy3t9GHdC8uHYmW2hr",
+          "quality": "complete",
+          "state": "invalidated"
+        },
+        {
+          "pair": "CASH:7GCihgDB8fe6KNjn2MYtkzZcRjQy3t9GHdC8uHYmW2hr",
+          "quality": "complete",
+          "state": "confirmed"
+        },
+        {
+          "pair": "CASH:7GCihgDB8fe6KNjn2MYtkzZcRjQy3t9GHdC8uHYmW2hr",
+          "quality": "complete",
+          "state": "invalidated"
+        },
+        {
+          "pair": "CASH:7GCihgDB8fe6KNjn2MYtkzZcRjQy3t9GHdC8uHYmW2hr",
+          "quality": "complete",
+          "state": "confirmed"
+        },
+        {
+          "pair": "CASH:7GCihgDB8fe6KNjn2MYtkzZcRjQy3t9GHdC8uHYmW2hr",
+          "quality": "complete",
+          "state": "confirmed"
+        },
+        {
+          "pair": "CASH:7GCihgDB8fe6KNjn2MYtkzZcRjQy3t9GHdC8uHYmW2hr",
+          "quality": "complete",
+          "state": "invalidated"
+        },
+        {
+          "pair": "CASH:7GCihgDB8fe6KNjn2MYtkzZcRjQy3t9GHdC8uHYmW2hr",
+          "quality": "complete",
+          "state": "confirmed"
+        },
+        {
+          "pair": "CASH:7GCihgDB8fe6KNjn2MYtkzZcRjQy3t9GHdC8uHYmW2hr",
+          "quality": "complete",
+          "state": "confirmed"
+        },
+        {
+          "pair": "CASH:7GCihgDB8fe6KNjn2MYtkzZcRjQy3t9GHdC8uHYmW2hr",
+          "quality": "complete",
+          "state": "invalidated"
+        },
+        {
+          "pair": "CASH:7GCihgDB8fe6KNjn2MYtkzZcRjQy3t9GHdC8uHYmW2hr",
+          "quality": "complete",
+          "state": "confirmed"
+        },
+        {
+          "pair": "CASH:7GCihgDB8fe6KNjn2MYtkzZcRjQy3t9GHdC8uHYmW2hr",
+          "quality": "complete",
+          "state": "invalidated"
+        },
+        {
+          "pair": "CASH:7GCihgDB8fe6KNjn2MYtkzZcRjQy3t9GHdC8uHYmW2hr",
+          "quality": "complete",
+          "state": "confirmed"
+        },
+        {
+          "pair": "CASH:7GCihgDB8fe6KNjn2MYtkzZcRjQy3t9GHdC8uHYmW2hr",
+          "quality": "complete",
+          "state": "invalidated"
+        },
+        {
+          "pair": "CASH:7GCihgDB8fe6KNjn2MYtkzZcRjQy3t9GHdC8uHYmW2hr",
+          "quality": "complete",
+          "state": "confirmed"
+        },
+        {
+          "pair": "CASH:7GCihgDB8fe6KNjn2MYtkzZcRjQy3t9GHdC8uHYmW2hr",
+          "quality": "complete",
+          "state": "invalidated"
+        },
+        {
+          "pair": "CASH:7GCihgDB8fe6KNjn2MYtkzZcRjQy3t9GHdC8uHYmW2hr",
+          "quality": "complete",
+          "state": "confirmed"
+        },
+        {
+          "pair": "CASH:7GCihgDB8fe6KNjn2MYtkzZcRjQy3t9GHdC8uHYmW2hr",
+          "quality": "complete",
+          "state": "invalidated"
+        },
+        {
+          "pair": "CASH:7GCihgDB8fe6KNjn2MYtkzZcRjQy3t9GHdC8uHYmW2hr",
+          "quality": "complete",
+          "state": "confirmed"
+        },
+        {
+          "pair": "CASH:7GCihgDB8fe6KNjn2MYtkzZcRjQy3t9GHdC8uHYmW2hr",
+          "quality": "complete",
+          "state": "invalidated"
+        },
+        {
+          "pair": "CASH:7GCihgDB8fe6KNjn2MYtkzZcRjQy3t9GHdC8uHYmW2hr",
+          "quality": "complete",
+          "state": "invalidated"
+        },
+        {
+          "pair": "CASH:7GCihgDB8fe6KNjn2MYtkzZcRjQy3t9GHdC8uHYmW2hr",
+          "quality": "complete",
+          "state": "invalidated"
+        },
+        {
+          "pair": "CASH:7GCihgDB8fe6KNjn2MYtkzZcRjQy3t9GHdC8uHYmW2hr",
+          "quality": "complete",
+          "state": "confirmed"
+        },
+        {
+          "pair": "CASH:7GCihgDB8fe6KNjn2MYtkzZcRjQy3t9GHdC8uHYmW2hr",
+          "quality": "complete",
+          "state": "invalidated"
+        },
+        {
+          "pair": "CASH:7GCihgDB8fe6KNjn2MYtkzZcRjQy3t9GHdC8uHYmW2hr",
+          "quality": "complete",
+          "state": "invalidated"
+        },
+        {
+          "pair": "CASH:7GCihgDB8fe6KNjn2MYtkzZcRjQy3t9GHdC8uHYmW2hr",
+          "quality": "complete",
+          "state": "confirmed"
+        },
+        {
+          "pair": "CASH:7GCihgDB8fe6KNjn2MYtkzZcRjQy3t9GHdC8uHYmW2hr",
+          "quality": "complete",
+          "state": "invalidated"
+        },
+        {
+          "pair": "CASH:7GCihgDB8fe6KNjn2MYtkzZcRjQy3t9GHdC8uHYmW2hr",
+          "quality": "complete",
+          "state": "confirmed"
+        },
+        {
+          "pair": "CASH:7GCihgDB8fe6KNjn2MYtkzZcRjQy3t9GHdC8uHYmW2hr",
+          "quality": "complete",
+          "state": "confirmed"
+        },
+        {
+          "pair": "CASH:7GCihgDB8fe6KNjn2MYtkzZcRjQy3t9GHdC8uHYmW2hr",
+          "quality": "complete",
+          "state": "confirmed"
+        },
+        {
+          "pair": "CASH:7GCihgDB8fe6KNjn2MYtkzZcRjQy3t9GHdC8uHYmW2hr",
+          "quality": "complete",
+          "state": "confirmed"
+        },
+        {
+          "pair": "CASH:7GCihgDB8fe6KNjn2MYtkzZcRjQy3t9GHdC8uHYmW2hr",
+          "quality": "complete",
+          "state": "invalidated"
+        },
+        {
+          "pair": "CASH:7GCihgDB8fe6KNjn2MYtkzZcRjQy3t9GHdC8uHYmW2hr",
+          "quality": "complete",
+          "state": "invalidated"
+        },
+        {
+          "pair": "CASH:7GCihgDB8fe6KNjn2MYtkzZcRjQy3t9GHdC8uHYmW2hr",
+          "quality": "complete",
+          "state": "invalidated"
+        },
+        {
+          "pair": "CASH:7GCihgDB8fe6KNjn2MYtkzZcRjQy3t9GHdC8uHYmW2hr",
+          "quality": "complete",
+          "state": "confirmed"
+        },
+        {
+          "pair": "CASH:7GCihgDB8fe6KNjn2MYtkzZcRjQy3t9GHdC8uHYmW2hr",
+          "quality": "complete",
+          "state": "invalidated"
+        },
+        {
+          "pair": "CASH:7GCihgDB8fe6KNjn2MYtkzZcRjQy3t9GHdC8uHYmW2hr",
+          "quality": "complete",
+          "state": "invalidated"
+        },
+        {
+          "pair": "CASH:7GCihgDB8fe6KNjn2MYtkzZcRjQy3t9GHdC8uHYmW2hr",
+          "quality": "complete",
+          "state": "invalidated"
+        },
+        {
+          "pair": "CASH:7GCihgDB8fe6KNjn2MYtkzZcRjQy3t9GHdC8uHYmW2hr",
+          "quality": "complete",
+          "state": "confirmed"
+        },
+        {
+          "pair": "CASH:7GCihgDB8fe6KNjn2MYtkzZcRjQy3t9GHdC8uHYmW2hr",
+          "quality": "complete",
+          "state": "invalidated"
+        },
+        {
+          "pair": "CASH:7GCihgDB8fe6KNjn2MYtkzZcRjQy3t9GHdC8uHYmW2hr",
+          "quality": "complete",
+          "state": "invalidated"
+        },
+        {
+          "pair": "CASH:7GCihgDB8fe6KNjn2MYtkzZcRjQy3t9GHdC8uHYmW2hr",
+          "quality": "complete",
+          "state": "invalidated"
+        },
+        {
+          "pair": "CASH:7GCihgDB8fe6KNjn2MYtkzZcRjQy3t9GHdC8uHYmW2hr",
+          "quality": "complete",
+          "state": "confirmed"
+        },
+        {
+          "pair": "CASH:9BB6NFEcjBCtnNLFko2FqVQBq8HHM13kCyYcdQbgpump",
+          "quality": "complete",
+          "state": "invalidated"
+        },
+        {
+          "pair": "CASH:9BB6NFEcjBCtnNLFko2FqVQBq8HHM13kCyYcdQbgpump",
+          "quality": "complete",
+          "state": "invalidated"
+        },
+        {
+          "pair": "CASH:9BB6NFEcjBCtnNLFko2FqVQBq8HHM13kCyYcdQbgpump",
+          "quality": "complete",
+          "state": "confirmed"
+        },
+        {
+          "pair": "CASH:9BB6NFEcjBCtnNLFko2FqVQBq8HHM13kCyYcdQbgpump",
+          "quality": "complete",
+          "state": "invalidated"
+        },
+        {
+          "pair": "CASH:9BB6NFEcjBCtnNLFko2FqVQBq8HHM13kCyYcdQbgpump",
+          "quality": "complete",
+          "state": "confirmed"
+        },
+        {
+          "pair": "CASH:9BB6NFEcjBCtnNLFko2FqVQBq8HHM13kCyYcdQbgpump",
+          "quality": "complete",
+          "state": "invalidated"
+        },
+        {
+          "pair": "CASH:9BB6NFEcjBCtnNLFko2FqVQBq8HHM13kCyYcdQbgpump",
+          "quality": "complete",
+          "state": "invalidated"
+        },
+        {
+          "pair": "CASH:9BB6NFEcjBCtnNLFko2FqVQBq8HHM13kCyYcdQbgpump",
+          "quality": "complete",
+          "state": "invalidated"
+        },
+        {
+          "pair": "CASH:9BB6NFEcjBCtnNLFko2FqVQBq8HHM13kCyYcdQbgpump",
+          "quality": "complete",
+          "state": "invalidated"
+        },
+        {
+          "pair": "CASH:9BB6NFEcjBCtnNLFko2FqVQBq8HHM13kCyYcdQbgpump",
+          "quality": "complete",
+          "state": "invalidated"
+        },
+        {
+          "pair": "CASH:9BB6NFEcjBCtnNLFko2FqVQBq8HHM13kCyYcdQbgpump",
+          "quality": "complete",
+          "state": "invalidated"
+        },
+        {
+          "pair": "CASH:9BB6NFEcjBCtnNLFko2FqVQBq8HHM13kCyYcdQbgpump",
+          "quality": "complete",
+          "state": "invalidated"
+        },
+        {
+          "pair": "CASH:9BB6NFEcjBCtnNLFko2FqVQBq8HHM13kCyYcdQbgpump",
+          "quality": "complete",
+          "state": "confirmed"
+        },
+        {
+          "pair": "CASH:9BB6NFEcjBCtnNLFko2FqVQBq8HHM13kCyYcdQbgpump",
+          "quality": "complete",
+          "state": "invalidated"
+        },
+        {
+          "pair": "CASH:9BB6NFEcjBCtnNLFko2FqVQBq8HHM13kCyYcdQbgpump",
+          "quality": "complete",
+          "state": "confirmed"
+        },
+        {
+          "pair": "CASH:9BB6NFEcjBCtnNLFko2FqVQBq8HHM13kCyYcdQbgpump",
+          "quality": "complete",
+          "state": "confirmed"
+        },
+        {
+          "pair": "CASH:9BB6NFEcjBCtnNLFko2FqVQBq8HHM13kCyYcdQbgpump",
+          "quality": "complete",
+          "state": "confirmed"
+        },
+        {
+          "pair": "CASH:9BB6NFEcjBCtnNLFko2FqVQBq8HHM13kCyYcdQbgpump",
+          "quality": "complete",
+          "state": "invalidated"
+        },
+        {
+          "pair": "CASH:9BB6NFEcjBCtnNLFko2FqVQBq8HHM13kCyYcdQbgpump",
+          "quality": "complete",
+          "state": "confirmed"
+        },
+        {
+          "pair": "CASH:9BB6NFEcjBCtnNLFko2FqVQBq8HHM13kCyYcdQbgpump",
+          "quality": "complete",
+          "state": "confirmed"
+        },
+        {
+          "pair": "CASH:9BB6NFEcjBCtnNLFko2FqVQBq8HHM13kCyYcdQbgpump",
+          "quality": "complete",
+          "state": "invalidated"
+        },
+        {
+          "pair": "CASH:9BB6NFEcjBCtnNLFko2FqVQBq8HHM13kCyYcdQbgpump",
+          "quality": "complete",
+          "state": "confirmed"
+        },
+        {
+          "pair": "CASH:9BB6NFEcjBCtnNLFko2FqVQBq8HHM13kCyYcdQbgpump",
+          "quality": "complete",
+          "state": "invalidated"
+        },
+        {
+          "pair": "CASH:9BB6NFEcjBCtnNLFko2FqVQBq8HHM13kCyYcdQbgpump",
+          "quality": "complete",
+          "state": "invalidated"
+        },
+        {
+          "pair": "CASH:9BB6NFEcjBCtnNLFko2FqVQBq8HHM13kCyYcdQbgpump",
+          "quality": "complete",
+          "state": "invalidated"
+        },
+        {
+          "pair": "CASH:9BB6NFEcjBCtnNLFko2FqVQBq8HHM13kCyYcdQbgpump",
+          "quality": "complete",
+          "state": "invalidated"
+        },
+        {
+          "pair": "CASH:9BB6NFEcjBCtnNLFko2FqVQBq8HHM13kCyYcdQbgpump",
+          "quality": "complete",
+          "state": "confirmed"
+        },
+        {
+          "pair": "CASH:9BB6NFEcjBCtnNLFko2FqVQBq8HHM13kCyYcdQbgpump",
+          "quality": "complete",
+          "state": "invalidated"
+        },
+        {
+          "pair": "CASH:9BB6NFEcjBCtnNLFko2FqVQBq8HHM13kCyYcdQbgpump",
+          "quality": "complete",
+          "state": "invalidated"
+        },
+        {
+          "pair": "CASH:9BB6NFEcjBCtnNLFko2FqVQBq8HHM13kCyYcdQbgpump",
+          "quality": "complete",
+          "state": "invalidated"
+        },
+        {
+          "pair": "CASH:9BB6NFEcjBCtnNLFko2FqVQBq8HHM13kCyYcdQbgpump",
+          "quality": "complete",
+          "state": "confirmed"
+        },
+        {
+          "pair": "CASH:9BB6NFEcjBCtnNLFko2FqVQBq8HHM13kCyYcdQbgpump",
+          "quality": "complete",
+          "state": "confirmed"
+        },
+        {
+          "pair": "CASH:9BB6NFEcjBCtnNLFko2FqVQBq8HHM13kCyYcdQbgpump",
+          "quality": "complete",
+          "state": "invalidated"
+        },
+        {
+          "pair": "CASH:9BB6NFEcjBCtnNLFko2FqVQBq8HHM13kCyYcdQbgpump",
+          "quality": "complete",
+          "state": "confirmed"
+        },
+        {
+          "pair": "CASH:9BB6NFEcjBCtnNLFko2FqVQBq8HHM13kCyYcdQbgpump",
+          "quality": "complete",
+          "state": "invalidated"
+        },
+        {
+          "pair": "CASH:9BB6NFEcjBCtnNLFko2FqVQBq8HHM13kCyYcdQbgpump",
+          "quality": "complete",
+          "state": "confirmed"
+        },
+        {
+          "pair": "CASH:9BB6NFEcjBCtnNLFko2FqVQBq8HHM13kCyYcdQbgpump",
+          "quality": "complete",
+          "state": "confirmed"
+        },
+        {
+          "pair": "CASH:9BB6NFEcjBCtnNLFko2FqVQBq8HHM13kCyYcdQbgpump",
+          "quality": "complete",
+          "state": "invalidated"
+        },
+        {
+          "pair": "CASH:9BB6NFEcjBCtnNLFko2FqVQBq8HHM13kCyYcdQbgpump",
+          "quality": "complete",
+          "state": "invalidated"
+        },
+        {
+          "pair": "CASH:9BB6NFEcjBCtnNLFko2FqVQBq8HHM13kCyYcdQbgpump",
+          "quality": "complete",
+          "state": "invalidated"
+        },
+        {
+          "pair": "CASH:9BB6NFEcjBCtnNLFko2FqVQBq8HHM13kCyYcdQbgpump",
+          "quality": "complete",
+          "state": "invalidated"
+        },
+        {
+          "pair": "CASH:9BB6NFEcjBCtnNLFko2FqVQBq8HHM13kCyYcdQbgpump",
+          "quality": "complete",
+          "state": "invalidated"
+        },
+        {
+          "pair": "CASH:9BB6NFEcjBCtnNLFko2FqVQBq8HHM13kCyYcdQbgpump",
+          "quality": "complete",
+          "state": "invalidated"
+        },
+        {
+          "pair": "CASH:9BB6NFEcjBCtnNLFko2FqVQBq8HHM13kCyYcdQbgpump",
+          "quality": "complete",
+          "state": "confirmed"
+        },
+        {
+          "pair": "CASH:9BB6NFEcjBCtnNLFko2FqVQBq8HHM13kCyYcdQbgpump",
+          "quality": "complete",
+          "state": "confirmed"
+        },
+        {
+          "pair": "CASH:9BB6NFEcjBCtnNLFko2FqVQBq8HHM13kCyYcdQbgpump",
+          "quality": "complete",
+          "state": "invalidated"
+        },
+        {
+          "pair": "CASH:9BB6NFEcjBCtnNLFko2FqVQBq8HHM13kCyYcdQbgpump",
+          "quality": "complete",
+          "state": "confirmed"
+        },
+        {
+          "pair": "CASH:9BB6NFEcjBCtnNLFko2FqVQBq8HHM13kCyYcdQbgpump",
+          "quality": "complete",
+          "state": "invalidated"
+        },
+        {
+          "pair": "CASH:9BB6NFEcjBCtnNLFko2FqVQBq8HHM13kCyYcdQbgpump",
+          "quality": "complete",
+          "state": "invalidated"
+        },
+        {
+          "pair": "CASH:9BB6NFEcjBCtnNLFko2FqVQBq8HHM13kCyYcdQbgpump",
+          "quality": "complete",
+          "state": "confirmed"
+        },
+        {
+          "pair": "CASH:9BB6NFEcjBCtnNLFko2FqVQBq8HHM13kCyYcdQbgpump",
+          "quality": "complete",
+          "state": "confirmed"
+        },
+        {
+          "pair": "CASH:9BB6NFEcjBCtnNLFko2FqVQBq8HHM13kCyYcdQbgpump",
+          "quality": "complete",
+          "state": "confirmed"
+        },
+        {
+          "pair": "CASH:9BB6NFEcjBCtnNLFko2FqVQBq8HHM13kCyYcdQbgpump",
+          "quality": "complete",
+          "state": "invalidated"
+        },
+        {
+          "pair": "CASH:9BB6NFEcjBCtnNLFko2FqVQBq8HHM13kCyYcdQbgpump",
+          "quality": "complete",
+          "state": "confirmed"
+        },
+        {
+          "pair": "CASH:9BB6NFEcjBCtnNLFko2FqVQBq8HHM13kCyYcdQbgpump",
+          "quality": "complete",
+          "state": "confirmed"
+        },
+        {
+          "pair": "CASH:9BB6NFEcjBCtnNLFko2FqVQBq8HHM13kCyYcdQbgpump",
+          "quality": "complete",
+          "state": "confirmed"
+        },
+        {
+          "pair": "CASH:9BB6NFEcjBCtnNLFko2FqVQBq8HHM13kCyYcdQbgpump",
+          "quality": "complete",
+          "state": "invalidated"
+        },
+        {
+          "pair": "CASH:9BB6NFEcjBCtnNLFko2FqVQBq8HHM13kCyYcdQbgpump",
+          "quality": "complete",
+          "state": "confirmed"
+        },
+        {
+          "pair": "CASH:9BB6NFEcjBCtnNLFko2FqVQBq8HHM13kCyYcdQbgpump",
+          "quality": "complete",
+          "state": "confirmed"
+        },
+        {
+          "pair": "CASH:9BB6NFEcjBCtnNLFko2FqVQBq8HHM13kCyYcdQbgpump",
+          "quality": "complete",
+          "state": "invalidated"
+        },
+        {
+          "pair": "CASH:9BB6NFEcjBCtnNLFko2FqVQBq8HHM13kCyYcdQbgpump",
+          "quality": "complete",
+          "state": "confirmed"
+        },
+        {
+          "pair": "CASH:9BB6NFEcjBCtnNLFko2FqVQBq8HHM13kCyYcdQbgpump",
+          "quality": "complete",
+          "state": "invalidated"
+        },
+        {
+          "pair": "CASH:9BB6NFEcjBCtnNLFko2FqVQBq8HHM13kCyYcdQbgpump",
+          "quality": "complete",
+          "state": "confirmed"
+        },
+        {
+          "pair": "CASH:9BB6NFEcjBCtnNLFko2FqVQBq8HHM13kCyYcdQbgpump",
+          "quality": "complete",
+          "state": "invalidated"
+        },
+        {
+          "pair": "CASH:9BB6NFEcjBCtnNLFko2FqVQBq8HHM13kCyYcdQbgpump",
+          "quality": "complete",
+          "state": "confirmed"
+        },
+        {
+          "pair": "CASH:9BB6NFEcjBCtnNLFko2FqVQBq8HHM13kCyYcdQbgpump",
+          "quality": "complete",
+          "state": "invalidated"
+        },
+        {
+          "pair": "CASH:9BB6NFEcjBCtnNLFko2FqVQBq8HHM13kCyYcdQbgpump",
+          "quality": "complete",
+          "state": "invalidated"
+        },
+        {
+          "pair": "CASH:9BB6NFEcjBCtnNLFko2FqVQBq8HHM13kCyYcdQbgpump",
+          "quality": "complete",
+          "state": "confirmed"
+        },
+        {
+          "pair": "CASH:9BB6NFEcjBCtnNLFko2FqVQBq8HHM13kCyYcdQbgpump",
+          "quality": "complete",
+          "state": "confirmed"
+        },
+        {
+          "pair": "CASH:9BB6NFEcjBCtnNLFko2FqVQBq8HHM13kCyYcdQbgpump",
+          "quality": "complete",
+          "state": "invalidated"
+        },
+        {
+          "pair": "CASH:9BB6NFEcjBCtnNLFko2FqVQBq8HHM13kCyYcdQbgpump",
+          "quality": "complete",
+          "state": "confirmed"
+        },
+        {
+          "pair": "CASH:9BB6NFEcjBCtnNLFko2FqVQBq8HHM13kCyYcdQbgpump",
+          "quality": "complete",
+          "state": "invalidated"
+        },
+        {
+          "pair": "CASH:9BB6NFEcjBCtnNLFko2FqVQBq8HHM13kCyYcdQbgpump",
+          "quality": "complete",
+          "state": "invalidated"
+        },
+        {
+          "pair": "CASH:9BB6NFEcjBCtnNLFko2FqVQBq8HHM13kCyYcdQbgpump",
+          "quality": "complete",
+          "state": "invalidated"
+        },
+        {
+          "pair": "CASH:9BB6NFEcjBCtnNLFko2FqVQBq8HHM13kCyYcdQbgpump",
+          "quality": "complete",
+          "state": "confirmed"
+        },
+        {
+          "pair": "CASH:9BB6NFEcjBCtnNLFko2FqVQBq8HHM13kCyYcdQbgpump",
+          "quality": "complete",
+          "state": "confirmed"
+        },
+        {
+          "pair": "CASH:9BB6NFEcjBCtnNLFko2FqVQBq8HHM13kCyYcdQbgpump",
+          "quality": "complete",
+          "state": "invalidated"
+        },
+        {
+          "pair": "CASH:9BB6NFEcjBCtnNLFko2FqVQBq8HHM13kCyYcdQbgpump",
+          "quality": "complete",
+          "state": "confirmed"
+        },
+        {
+          "pair": "CASH:9BB6NFEcjBCtnNLFko2FqVQBq8HHM13kCyYcdQbgpump",
+          "quality": "complete",
+          "state": "confirmed"
+        },
+        {
+          "pair": "CASH:9BB6NFEcjBCtnNLFko2FqVQBq8HHM13kCyYcdQbgpump",
+          "quality": "complete",
+          "state": "confirmed"
+        },
+        {
+          "pair": "CASH:9BB6NFEcjBCtnNLFko2FqVQBq8HHM13kCyYcdQbgpump",
+          "quality": "complete",
+          "state": "confirmed"
+        },
+        {
+          "pair": "CASH:9BB6NFEcjBCtnNLFko2FqVQBq8HHM13kCyYcdQbgpump",
+          "quality": "complete",
+          "state": "confirmed"
+        },
+        {
+          "pair": "CASH:9BB6NFEcjBCtnNLFko2FqVQBq8HHM13kCyYcdQbgpump",
+          "quality": "complete",
+          "state": "invalidated"
+        },
+        {
+          "pair": "CASH:9BB6NFEcjBCtnNLFko2FqVQBq8HHM13kCyYcdQbgpump",
+          "quality": "complete",
+          "state": "confirmed"
+        },
+        {
+          "pair": "CASH:9BB6NFEcjBCtnNLFko2FqVQBq8HHM13kCyYcdQbgpump",
+          "quality": "complete",
+          "state": "confirmed"
+        },
+        {
+          "pair": "CASH:9BB6NFEcjBCtnNLFko2FqVQBq8HHM13kCyYcdQbgpump",
+          "quality": "complete",
+          "state": "invalidated"
+        },
+        {
+          "pair": "CASH:9BB6NFEcjBCtnNLFko2FqVQBq8HHM13kCyYcdQbgpump",
+          "quality": "complete",
+          "state": "invalidated"
+        },
+        {
+          "pair": "CASH:9BB6NFEcjBCtnNLFko2FqVQBq8HHM13kCyYcdQbgpump",
+          "quality": "complete",
+          "state": "invalidated"
+        },
+        {
+          "pair": "CASH:9BB6NFEcjBCtnNLFko2FqVQBq8HHM13kCyYcdQbgpump",
+          "quality": "complete",
+          "state": "invalidated"
+        },
+        {
+          "pair": "CASH:9BB6NFEcjBCtnNLFko2FqVQBq8HHM13kCyYcdQbgpump",
+          "quality": "complete",
+          "state": "invalidated"
+        },
+        {
+          "pair": "CASH:9BB6NFEcjBCtnNLFko2FqVQBq8HHM13kCyYcdQbgpump",
+          "quality": "complete",
+          "state": "invalidated"
+        },
+        {
+          "pair": "CASH:9BB6NFEcjBCtnNLFko2FqVQBq8HHM13kCyYcdQbgpump",
+          "quality": "complete",
+          "state": "invalidated"
+        },
+        {
+          "pair": "CASH:9BB6NFEcjBCtnNLFko2FqVQBq8HHM13kCyYcdQbgpump",
+          "quality": "complete",
+          "state": "invalidated"
+        },
+        {
+          "pair": "CASH:9BB6NFEcjBCtnNLFko2FqVQBq8HHM13kCyYcdQbgpump",
+          "quality": "complete",
+          "state": "invalidated"
+        },
+        {
+          "pair": "CASH:9BB6NFEcjBCtnNLFko2FqVQBq8HHM13kCyYcdQbgpump",
+          "quality": "complete",
+          "state": "invalidated"
+        },
+        {
+          "pair": "CASH:9BB6NFEcjBCtnNLFko2FqVQBq8HHM13kCyYcdQbgpump",
+          "quality": "complete",
+          "state": "confirmed"
+        },
+        {
+          "pair": "CASH:9BB6NFEcjBCtnNLFko2FqVQBq8HHM13kCyYcdQbgpump",
+          "quality": "complete",
+          "state": "invalidated"
+        },
+        {
+          "pair": "CASH:9BB6NFEcjBCtnNLFko2FqVQBq8HHM13kCyYcdQbgpump",
+          "quality": "complete",
+          "state": "invalidated"
+        },
+        {
+          "pair": "CASH:MEW1gQWJ3nEXg2qgERiKu7FAFj79PHvQVREQUzScPP5",
+          "quality": "complete",
+          "state": "invalidated"
+        },
+        {
+          "pair": "CASH:MEW1gQWJ3nEXg2qgERiKu7FAFj79PHvQVREQUzScPP5",
+          "quality": "complete",
+          "state": "invalidated"
+        },
+        {
+          "pair": "CASH:MEW1gQWJ3nEXg2qgERiKu7FAFj79PHvQVREQUzScPP5",
+          "quality": "complete",
+          "state": "confirmed"
+        },
+        {
+          "pair": "CASH:MEW1gQWJ3nEXg2qgERiKu7FAFj79PHvQVREQUzScPP5",
+          "quality": "complete",
+          "state": "invalidated"
+        },
+        {
+          "pair": "CASH:MEW1gQWJ3nEXg2qgERiKu7FAFj79PHvQVREQUzScPP5",
+          "quality": "complete",
+          "state": "invalidated"
+        },
+        {
+          "pair": "CASH:MEW1gQWJ3nEXg2qgERiKu7FAFj79PHvQVREQUzScPP5",
+          "quality": "complete",
+          "state": "confirmed"
+        },
+        {
+          "pair": "CASH:MEW1gQWJ3nEXg2qgERiKu7FAFj79PHvQVREQUzScPP5",
+          "quality": "complete",
+          "state": "confirmed"
+        },
+        {
+          "pair": "CASH:MEW1gQWJ3nEXg2qgERiKu7FAFj79PHvQVREQUzScPP5",
+          "quality": "complete",
+          "state": "invalidated"
+        },
+        {
+          "pair": "CASH:MEW1gQWJ3nEXg2qgERiKu7FAFj79PHvQVREQUzScPP5",
+          "quality": "complete",
+          "state": "invalidated"
+        },
+        {
+          "pair": "CASH:MEW1gQWJ3nEXg2qgERiKu7FAFj79PHvQVREQUzScPP5",
+          "quality": "complete",
+          "state": "invalidated"
+        },
+        {
+          "pair": "CASH:MEW1gQWJ3nEXg2qgERiKu7FAFj79PHvQVREQUzScPP5",
+          "quality": "complete",
+          "state": "confirmed"
+        },
+        {
+          "pair": "CASH:MEW1gQWJ3nEXg2qgERiKu7FAFj79PHvQVREQUzScPP5",
+          "quality": "complete",
+          "state": "invalidated"
+        },
+        {
+          "pair": "CASH:MEW1gQWJ3nEXg2qgERiKu7FAFj79PHvQVREQUzScPP5",
+          "quality": "complete",
+          "state": "invalidated"
+        },
+        {
+          "pair": "CASH:MEW1gQWJ3nEXg2qgERiKu7FAFj79PHvQVREQUzScPP5",
+          "quality": "complete",
+          "state": "confirmed"
+        },
+        {
+          "pair": "CASH:MEW1gQWJ3nEXg2qgERiKu7FAFj79PHvQVREQUzScPP5",
+          "quality": "complete",
+          "state": "invalidated"
+        },
+        {
+          "pair": "CASH:MEW1gQWJ3nEXg2qgERiKu7FAFj79PHvQVREQUzScPP5",
+          "quality": "complete",
+          "state": "confirmed"
+        },
+        {
+          "pair": "CASH:MEW1gQWJ3nEXg2qgERiKu7FAFj79PHvQVREQUzScPP5",
+          "quality": "complete",
+          "state": "invalidated"
+        },
+        {
+          "pair": "CASH:MEW1gQWJ3nEXg2qgERiKu7FAFj79PHvQVREQUzScPP5",
+          "quality": "complete",
+          "state": "invalidated"
+        },
+        {
+          "pair": "CASH:MEW1gQWJ3nEXg2qgERiKu7FAFj79PHvQVREQUzScPP5",
+          "quality": "complete",
+          "state": "invalidated"
+        },
+        {
+          "pair": "CASH:MEW1gQWJ3nEXg2qgERiKu7FAFj79PHvQVREQUzScPP5",
+          "quality": "complete",
+          "state": "confirmed"
+        },
+        {
+          "pair": "CASH:MEW1gQWJ3nEXg2qgERiKu7FAFj79PHvQVREQUzScPP5",
+          "quality": "complete",
+          "state": "confirmed"
+        },
+        {
+          "pair": "CASH:MEW1gQWJ3nEXg2qgERiKu7FAFj79PHvQVREQUzScPP5",
+          "quality": "complete",
+          "state": "invalidated"
+        },
+        {
+          "pair": "CASH:MEW1gQWJ3nEXg2qgERiKu7FAFj79PHvQVREQUzScPP5",
+          "quality": "complete",
+          "state": "invalidated"
+        },
+        {
+          "pair": "CASH:MEW1gQWJ3nEXg2qgERiKu7FAFj79PHvQVREQUzScPP5",
+          "quality": "complete",
+          "state": "invalidated"
+        },
+        {
+          "pair": "CASH:MEW1gQWJ3nEXg2qgERiKu7FAFj79PHvQVREQUzScPP5",
+          "quality": "complete",
+          "state": "confirmed"
+        },
+        {
+          "pair": "CASH:MEW1gQWJ3nEXg2qgERiKu7FAFj79PHvQVREQUzScPP5",
+          "quality": "complete",
+          "state": "confirmed"
+        },
+        {
+          "pair": "CASH:MEW1gQWJ3nEXg2qgERiKu7FAFj79PHvQVREQUzScPP5",
+          "quality": "complete",
+          "state": "confirmed"
+        },
+        {
+          "pair": "CASH:MEW1gQWJ3nEXg2qgERiKu7FAFj79PHvQVREQUzScPP5",
+          "quality": "complete",
+          "state": "confirmed"
+        },
+        {
+          "pair": "CASH:MEW1gQWJ3nEXg2qgERiKu7FAFj79PHvQVREQUzScPP5",
+          "quality": "complete",
+          "state": "invalidated"
+        },
+        {
+          "pair": "CASH:MEW1gQWJ3nEXg2qgERiKu7FAFj79PHvQVREQUzScPP5",
+          "quality": "complete",
+          "state": "confirmed"
+        },
+        {
+          "pair": "CASH:MEW1gQWJ3nEXg2qgERiKu7FAFj79PHvQVREQUzScPP5",
+          "quality": "complete",
+          "state": "invalidated"
+        },
+        {
+          "pair": "CASH:MEW1gQWJ3nEXg2qgERiKu7FAFj79PHvQVREQUzScPP5",
+          "quality": "complete",
+          "state": "confirmed"
+        },
+        {
+          "pair": "CASH:MEW1gQWJ3nEXg2qgERiKu7FAFj79PHvQVREQUzScPP5",
+          "quality": "complete",
+          "state": "invalidated"
+        },
+        {
+          "pair": "CASH:MEW1gQWJ3nEXg2qgERiKu7FAFj79PHvQVREQUzScPP5",
+          "quality": "complete",
+          "state": "confirmed"
+        },
+        {
+          "pair": "CASH:MEW1gQWJ3nEXg2qgERiKu7FAFj79PHvQVREQUzScPP5",
+          "quality": "complete",
+          "state": "invalidated"
+        },
+        {
+          "pair": "CASH:MEW1gQWJ3nEXg2qgERiKu7FAFj79PHvQVREQUzScPP5",
+          "quality": "complete",
+          "state": "confirmed"
+        },
+        {
+          "pair": "CASH:MEW1gQWJ3nEXg2qgERiKu7FAFj79PHvQVREQUzScPP5",
+          "quality": "complete",
+          "state": "confirmed"
+        },
+        {
+          "pair": "CASH:MEW1gQWJ3nEXg2qgERiKu7FAFj79PHvQVREQUzScPP5",
+          "quality": "complete",
+          "state": "invalidated"
+        },
+        {
+          "pair": "CASH:MEW1gQWJ3nEXg2qgERiKu7FAFj79PHvQVREQUzScPP5",
+          "quality": "complete",
+          "state": "invalidated"
+        },
+        {
+          "pair": "CASH:MEW1gQWJ3nEXg2qgERiKu7FAFj79PHvQVREQUzScPP5",
+          "quality": "complete",
+          "state": "confirmed"
+        },
+        {
+          "pair": "CASH:MEW1gQWJ3nEXg2qgERiKu7FAFj79PHvQVREQUzScPP5",
+          "quality": "complete",
+          "state": "confirmed"
+        },
+        {
+          "pair": "CASH:MEW1gQWJ3nEXg2qgERiKu7FAFj79PHvQVREQUzScPP5",
+          "quality": "complete",
+          "state": "confirmed"
+        },
+        {
+          "pair": "CASH:MEW1gQWJ3nEXg2qgERiKu7FAFj79PHvQVREQUzScPP5",
+          "quality": "complete",
+          "state": "confirmed"
+        },
+        {
+          "pair": "CASH:MEW1gQWJ3nEXg2qgERiKu7FAFj79PHvQVREQUzScPP5",
+          "quality": "complete",
+          "state": "confirmed"
+        },
+        {
+          "pair": "CASH:MEW1gQWJ3nEXg2qgERiKu7FAFj79PHvQVREQUzScPP5",
+          "quality": "complete",
+          "state": "invalidated"
+        },
+        {
+          "pair": "CASH:MEW1gQWJ3nEXg2qgERiKu7FAFj79PHvQVREQUzScPP5",
+          "quality": "complete",
+          "state": "confirmed"
+        },
+        {
+          "pair": "CASH:MEW1gQWJ3nEXg2qgERiKu7FAFj79PHvQVREQUzScPP5",
+          "quality": "complete",
+          "state": "invalidated"
+        },
+        {
+          "pair": "CASH:MEW1gQWJ3nEXg2qgERiKu7FAFj79PHvQVREQUzScPP5",
+          "quality": "complete",
+          "state": "confirmed"
+        },
+        {
+          "pair": "CASH:MEW1gQWJ3nEXg2qgERiKu7FAFj79PHvQVREQUzScPP5",
+          "quality": "complete",
+          "state": "invalidated"
+        },
+        {
+          "pair": "CASH:MEW1gQWJ3nEXg2qgERiKu7FAFj79PHvQVREQUzScPP5",
+          "quality": "complete",
+          "state": "invalidated"
+        },
+        {
+          "pair": "CASH:MEW1gQWJ3nEXg2qgERiKu7FAFj79PHvQVREQUzScPP5",
+          "quality": "complete",
+          "state": "confirmed"
+        },
+        {
+          "pair": "CASH:MEW1gQWJ3nEXg2qgERiKu7FAFj79PHvQVREQUzScPP5",
+          "quality": "complete",
+          "state": "invalidated"
+        },
+        {
+          "pair": "CASH:MEW1gQWJ3nEXg2qgERiKu7FAFj79PHvQVREQUzScPP5",
+          "quality": "complete",
+          "state": "invalidated"
+        },
+        {
+          "pair": "CASH:MEW1gQWJ3nEXg2qgERiKu7FAFj79PHvQVREQUzScPP5",
+          "quality": "complete",
+          "state": "confirmed"
+        },
+        {
+          "pair": "CASH:MEW1gQWJ3nEXg2qgERiKu7FAFj79PHvQVREQUzScPP5",
+          "quality": "complete",
+          "state": "invalidated"
+        },
+        {
+          "pair": "CASH:MEW1gQWJ3nEXg2qgERiKu7FAFj79PHvQVREQUzScPP5",
+          "quality": "complete",
+          "state": "invalidated"
+        },
+        {
+          "pair": "CASH:MEW1gQWJ3nEXg2qgERiKu7FAFj79PHvQVREQUzScPP5",
+          "quality": "complete",
+          "state": "confirmed"
+        },
+        {
+          "pair": "CASH:MEW1gQWJ3nEXg2qgERiKu7FAFj79PHvQVREQUzScPP5",
+          "quality": "complete",
+          "state": "invalidated"
+        },
+        {
+          "pair": "CASH:MEW1gQWJ3nEXg2qgERiKu7FAFj79PHvQVREQUzScPP5",
+          "quality": "complete",
+          "state": "invalidated"
+        },
+        {
+          "pair": "CASH:MEW1gQWJ3nEXg2qgERiKu7FAFj79PHvQVREQUzScPP5",
+          "quality": "complete",
+          "state": "confirmed"
+        },
+        {
+          "pair": "CASH:MEW1gQWJ3nEXg2qgERiKu7FAFj79PHvQVREQUzScPP5",
+          "quality": "complete",
+          "state": "confirmed"
+        },
+        {
+          "pair": "CASH:MEW1gQWJ3nEXg2qgERiKu7FAFj79PHvQVREQUzScPP5",
+          "quality": "complete",
+          "state": "confirmed"
+        },
+        {
+          "pair": "CASH:MEW1gQWJ3nEXg2qgERiKu7FAFj79PHvQVREQUzScPP5",
+          "quality": "complete",
+          "state": "invalidated"
+        },
+        {
+          "pair": "CASH:MEW1gQWJ3nEXg2qgERiKu7FAFj79PHvQVREQUzScPP5",
+          "quality": "complete",
+          "state": "invalidated"
+        },
+        {
+          "pair": "CASH:MEW1gQWJ3nEXg2qgERiKu7FAFj79PHvQVREQUzScPP5",
+          "quality": "complete",
+          "state": "invalidated"
+        },
+        {
+          "pair": "CASH:MEW1gQWJ3nEXg2qgERiKu7FAFj79PHvQVREQUzScPP5",
+          "quality": "complete",
+          "state": "confirmed"
+        },
+        {
+          "pair": "CASH:MEW1gQWJ3nEXg2qgERiKu7FAFj79PHvQVREQUzScPP5",
+          "quality": "complete",
+          "state": "confirmed"
+        },
+        {
+          "pair": "CASH:MEW1gQWJ3nEXg2qgERiKu7FAFj79PHvQVREQUzScPP5",
+          "quality": "complete",
+          "state": "invalidated"
+        },
+        {
+          "pair": "CASH:MEW1gQWJ3nEXg2qgERiKu7FAFj79PHvQVREQUzScPP5",
+          "quality": "complete",
+          "state": "invalidated"
+        },
+        {
+          "pair": "CASH:MEW1gQWJ3nEXg2qgERiKu7FAFj79PHvQVREQUzScPP5",
+          "quality": "complete",
+          "state": "confirmed"
+        },
+        {
+          "pair": "CASH:MEW1gQWJ3nEXg2qgERiKu7FAFj79PHvQVREQUzScPP5",
+          "quality": "complete",
+          "state": "invalidated"
+        },
+        {
+          "pair": "CASH:MEW1gQWJ3nEXg2qgERiKu7FAFj79PHvQVREQUzScPP5",
+          "quality": "complete",
+          "state": "confirmed"
+        },
+        {
+          "pair": "CASH:MEW1gQWJ3nEXg2qgERiKu7FAFj79PHvQVREQUzScPP5",
+          "quality": "complete",
+          "state": "invalidated"
+        },
+        {
+          "pair": "CASH:MEW1gQWJ3nEXg2qgERiKu7FAFj79PHvQVREQUzScPP5",
+          "quality": "complete",
+          "state": "confirmed"
+        },
+        {
+          "pair": "CASH:MEW1gQWJ3nEXg2qgERiKu7FAFj79PHvQVREQUzScPP5",
+          "quality": "complete",
+          "state": "invalidated"
+        },
+        {
+          "pair": "CASH:MEW1gQWJ3nEXg2qgERiKu7FAFj79PHvQVREQUzScPP5",
+          "quality": "complete",
+          "state": "invalidated"
+        },
+        {
+          "pair": "CASH:MEW1gQWJ3nEXg2qgERiKu7FAFj79PHvQVREQUzScPP5",
+          "quality": "complete",
+          "state": "confirmed"
+        },
+        {
+          "pair": "CASH:MEW1gQWJ3nEXg2qgERiKu7FAFj79PHvQVREQUzScPP5",
+          "quality": "complete",
+          "state": "confirmed"
+        },
+        {
+          "pair": "CASH:MEW1gQWJ3nEXg2qgERiKu7FAFj79PHvQVREQUzScPP5",
+          "quality": "complete",
+          "state": "invalidated"
+        },
+        {
+          "pair": "CASH:MEW1gQWJ3nEXg2qgERiKu7FAFj79PHvQVREQUzScPP5",
+          "quality": "complete",
+          "state": "confirmed"
+        },
+        {
+          "pair": "CASH:MEW1gQWJ3nEXg2qgERiKu7FAFj79PHvQVREQUzScPP5",
+          "quality": "complete",
+          "state": "invalidated"
+        },
+        {
+          "pair": "CASH:MEW1gQWJ3nEXg2qgERiKu7FAFj79PHvQVREQUzScPP5",
+          "quality": "complete",
+          "state": "invalidated"
+        },
+        {
+          "pair": "CASH:MEW1gQWJ3nEXg2qgERiKu7FAFj79PHvQVREQUzScPP5",
+          "quality": "complete",
+          "state": "confirmed"
+        },
+        {
+          "pair": "CASH:MEW1gQWJ3nEXg2qgERiKu7FAFj79PHvQVREQUzScPP5",
+          "quality": "complete",
+          "state": "invalidated"
+        },
+        {
+          "pair": "CASH:MEW1gQWJ3nEXg2qgERiKu7FAFj79PHvQVREQUzScPP5",
+          "quality": "complete",
+          "state": "invalidated"
+        },
+        {
+          "pair": "CASH:MEW1gQWJ3nEXg2qgERiKu7FAFj79PHvQVREQUzScPP5",
+          "quality": "complete",
+          "state": "confirmed"
+        },
+        {
+          "pair": "CASH:MEW1gQWJ3nEXg2qgERiKu7FAFj79PHvQVREQUzScPP5",
+          "quality": "complete",
+          "state": "invalidated"
+        },
+        {
+          "pair": "CASH:MEW1gQWJ3nEXg2qgERiKu7FAFj79PHvQVREQUzScPP5",
+          "quality": "complete",
+          "state": "confirmed"
+        },
+        {
+          "pair": "CASH:MEW1gQWJ3nEXg2qgERiKu7FAFj79PHvQVREQUzScPP5",
+          "quality": "complete",
+          "state": "invalidated"
+        },
+        {
+          "pair": "CASH:MEW1gQWJ3nEXg2qgERiKu7FAFj79PHvQVREQUzScPP5",
+          "quality": "complete",
+          "state": "invalidated"
+        },
+        {
+          "pair": "CASH:MEW1gQWJ3nEXg2qgERiKu7FAFj79PHvQVREQUzScPP5",
+          "quality": "complete",
+          "state": "invalidated"
+        },
+        {
+          "pair": "CASH:MEW1gQWJ3nEXg2qgERiKu7FAFj79PHvQVREQUzScPP5",
+          "quality": "complete",
+          "state": "invalidated"
+        },
+        {
+          "pair": "CASH:MEW1gQWJ3nEXg2qgERiKu7FAFj79PHvQVREQUzScPP5",
+          "quality": "complete",
+          "state": "invalidated"
+        },
+        {
+          "pair": "CASH:MEW1gQWJ3nEXg2qgERiKu7FAFj79PHvQVREQUzScPP5",
+          "quality": "complete",
+          "state": "confirmed"
+        },
+        {
+          "pair": "CASH:MEW1gQWJ3nEXg2qgERiKu7FAFj79PHvQVREQUzScPP5",
+          "quality": "complete",
+          "state": "confirmed"
+        },
+        {
+          "pair": "CASH:MEW1gQWJ3nEXg2qgERiKu7FAFj79PHvQVREQUzScPP5",
+          "quality": "complete",
+          "state": "invalidated"
+        },
+        {
+          "pair": "CASH:MEW1gQWJ3nEXg2qgERiKu7FAFj79PHvQVREQUzScPP5",
+          "quality": "complete",
+          "state": "invalidated"
+        },
+        {
+          "pair": "CASH:MEW1gQWJ3nEXg2qgERiKu7FAFj79PHvQVREQUzScPP5",
+          "quality": "complete",
+          "state": "invalidated"
+        }
+      ],
+      "ending_equity": "1000",
+      "execution_status": "blocked_missing_liquidity",
+      "fees_usd": "0",
+      "filled_orders": 0,
+      "holdings": {},
+      "initial_cash": "1000",
+      "input_alignment": "market_ends_before_wallet_observation",
+      "mean_exposure": "0",
+      "mean_stable_fraction": "1",
+      "net_return": null,
+      "period_end": "2026-09-26T09:09:41.426819+00:00",
+      "period_start": "2026-09-26T09:08:52.496671+00:00",
+      "signals": 492,
+      "turnover": "0",
+      "unfilled_orders": 492,
+      "universe": [
+        "7GCihgDB8fe6KNjn2MYtkzZcRjQy3t9GHdC8uHYmW2hr",
+        "9BB6NFEcjBCtnNLFko2FqVQBq8HHM13kCyYcdQbgpump",
+        "DezXAZ8z7PnrnRJjz3wXBoRgixCa6xjnB7YaB1pPB263",
+        "EKpQGSJtjMFqKZ9KQanSqYXRcF8fBopzLHYxdM65zcjm",
+        "MEW1gQWJ3nEXg2qgERiKu7FAFj79PHvQVREQUzScPP5"
+      ],
+      "wallet_events_after_market_end": 5
+    },
+    "wallets_only": {
+      "cash": "1000",
+      "decision_states": [],
+      "ending_equity": "1000",
+      "execution_status": "blocked_missing_liquidity",
+      "fees_usd": "0",
+      "filled_orders": 0,
+      "holdings": {},
+      "initial_cash": "1000",
+      "input_alignment": "market_ends_before_wallet_observation",
+      "mean_exposure": "0",
+      "mean_stable_fraction": "1",
+      "net_return": null,
+      "period_end": "2026-09-26T09:09:41.426819+00:00",
+      "period_start": "2026-09-26T09:08:52.496671+00:00",
+      "signals": 0,
+      "turnover": "0",
+      "unfilled_orders": 0,
+      "universe": [
+        "7GCihgDB8fe6KNjn2MYtkzZcRjQy3t9GHdC8uHYmW2hr",
+        "9BB6NFEcjBCtnNLFko2FqVQBq8HHM13kCyYcdQbgpump",
+        "DezXAZ8z7PnrnRJjz3wXBoRgixCa6xjnB7YaB1pPB263",
+        "EKpQGSJtjMFqKZ9KQanSqYXRcF8fBopzLHYxdM65zcjm",
+        "MEW1gQWJ3nEXg2qgERiKu7FAFj79PHvQVREQUzScPP5"
+      ],
+      "wallet_events_after_market_end": 5
+    }
+  },
+  "dataset": "REAL",
+  "decisions": [
+    {
+      "at": "2026-09-27T03:45:44.031660+00:00",
+      "components": {},
+      "execution_quality": "not_evaluated",
+      "metrics": {
+        "attributed_amount_usd": "1003.132839778149262937669722",
+        "economic_age_seconds": "69098.03166",
+        "evidence_operations": "solana:38hWoMyfMEQy9tRiVVEvxyj6j5SKy7i7jEPnGHawXGug77eT1pGEYqPYrRmvhnQ2b9U8AfTJNaNLiBbsE8VnEr3U:0:CreQJ2t94QK5dsxUZGXfPJ8Nx7wA9LHr5chxjSMkbNft>solana:666LnkBsd28TzoSwF2S7SHnQ2uqA6UxyFdyXzx5MXrqKeGybHoGTEfnfbfHjHfaNz5NyLzBB8dbWrnR4HJcK4uJk:0:CreQJ2t94QK5dsxUZGXfPJ8Nx7wA9LHr5chxjSMkbNft",
+        "observation_delay_seconds": "69098.03166"
+      },
+      "pair": "9BB6NFEcjBCtnNLFko2FqVQBq8HHM13kCyYcdQbgpump:EKpQGSJtjMFqKZ9KQanSqYXRcF8fBopzLHYxdM65zcjm",
+      "quality": "stale_flow",
+      "reasons": [
+        "economic_flow_stale",
+        "observation_delay_excessive"
+      ],
+      "score": 0,
+      "state": "expired",
+      "strategy": {
+        "admission": "blocked",
+        "destination_range": {
+          "high": "0.2509824116933453",
+          "high_visits": 1,
+          "last_price": "0.24637988068280806",
+          "low": "0.24309525260068793",
+          "low_visits": 1,
+          "observations": 100,
+          "qualified": false,
+          "reasons": [
+            "range_span_insufficient",
+            "range_stale",
+            "range_interval_gap_or_mismatch",
+            "range_amplitude_insufficient",
+            "range_recurrent_visits_missing"
+          ]
+        },
+        "paper_status": "blocked",
+        "qualified_wallets": [],
+        "reasons": [
+          "9BB6NFEcjBCtnNLFko2FqVQBq8HHM13kCyYcdQbgpump_not_admitted",
+          "9BB6NFEcjBCtnNLFko2FqVQBq8HHM13kCyYcdQbgpump_classification_proof_at_unavailable",
+          "9BB6NFEcjBCtnNLFko2FqVQBq8HHM13kCyYcdQbgpump_liquidity_proof_at_unavailable",
+          "9BB6NFEcjBCtnNLFko2FqVQBq8HHM13kCyYcdQbgpump_coverage_proof_at_unavailable",
+          "9BB6NFEcjBCtnNLFko2FqVQBq8HHM13kCyYcdQbgpump_community_review_at_unavailable",
+          "9BB6NFEcjBCtnNLFko2FqVQBq8HHM13kCyYcdQbgpump_community_review_pending",
+          "9BB6NFEcjBCtnNLFko2FqVQBq8HHM13kCyYcdQbgpump_durability_unproven",
+          "9BB6NFEcjBCtnNLFko2FqVQBq8HHM13kCyYcdQbgpump_liquidity_unproven",
+          "EKpQGSJtjMFqKZ9KQanSqYXRcF8fBopzLHYxdM65zcjm_not_admitted",
+          "EKpQGSJtjMFqKZ9KQanSqYXRcF8fBopzLHYxdM65zcjm_classification_proof_at_unavailable",
+          "EKpQGSJtjMFqKZ9KQanSqYXRcF8fBopzLHYxdM65zcjm_liquidity_proof_at_unavailable",
+          "EKpQGSJtjMFqKZ9KQanSqYXRcF8fBopzLHYxdM65zcjm_coverage_proof_at_unavailable",
+          "EKpQGSJtjMFqKZ9KQanSqYXRcF8fBopzLHYxdM65zcjm_community_review_at_unavailable",
+          "EKpQGSJtjMFqKZ9KQanSqYXRcF8fBopzLHYxdM65zcjm_community_review_pending",
+          "EKpQGSJtjMFqKZ9KQanSqYXRcF8fBopzLHYxdM65zcjm_durability_unproven",
+          "EKpQGSJtjMFqKZ9KQanSqYXRcF8fBopzLHYxdM65zcjm_liquidity_unproven",
+          "A_range_span_insufficient",
+          "A_range_stale",
+          "A_range_interval_gap_or_mismatch",
+          "A_range_amplitude_insufficient",
+          "A_range_recurrent_visits_missing",
+          "B_range_span_insufficient",
+          "B_range_stale",
+          "B_range_interval_gap_or_mismatch",
+          "B_range_amplitude_insufficient",
+          "B_range_recurrent_visits_missing",
+          "qualified_directional_wallet_missing",
+          "independent_wallet_confirmation_missing",
+          "research_pair_not_ready"
+        ],
+        "research_state": "expired",
+        "source_range": {
+          "high": "0.19514689542566058",
+          "high_visits": 1,
+          "last_price": "0.19257539654739037",
+          "low": "0.1911357373880977",
+          "low_visits": 1,
+          "observations": 99,
+          "qualified": false,
+          "reasons": [
+            "range_span_insufficient",
+            "range_stale",
+            "range_interval_gap_or_mismatch",
+            "range_amplitude_insufficient",
+            "range_recurrent_visits_missing"
+          ]
+        },
+        "version": "r3.1-strategy-hypothesis-1"
+      },
+      "version": "r3.1-pair-hypothesis-2"
+    },
+    {
+      "at": "2026-09-27T03:46:14.705566+00:00",
+      "components": {},
+      "execution_quality": "not_evaluated",
+      "metrics": {
+        "attributed_amount_usd": "634.2171471810447760102656238",
+        "economic_age_seconds": "68934.705566",
+        "evidence_operations": "solana:48Km3bhHfxPVzw9ffySoNULcFuxGscAjVhkd4y3fZeGPD8igx9HXqhAWdK9NW2UpBfuZiaMKQypg7nu3CSbH9Pb4:0:MfDuWeqSHEqTFVYZ7LoexgAK9dxk7cy4DFJWjWMGVWa>solana:3foYRtxezFzqkzC3M8kCYFioep7PyYnfLv29jrHK8Nk8XUpWF6Wuo3ecaonRPYzVYPDYi36wVhpHArrqHX83Jbeo:0:MfDuWeqSHEqTFVYZ7LoexgAK9dxk7cy4DFJWjWMGVWa",
+        "observation_delay_seconds": "68934.705566"
+      },
+      "pair": "2qEHjDLDLbuBgRYvsxhc5D6uDWAivNFZGan56P1tpump:9BB6NFEcjBCtnNLFko2FqVQBq8HHM13kCyYcdQbgpump",
+      "quality": "stale_flow",
+      "reasons": [
+        "economic_flow_stale",
+        "observation_delay_excessive"
+      ],
+      "score": 0,
+      "state": "expired",
+      "strategy": {
+        "admission": "blocked",
+        "destination_range": {
+          "high": "0.19514689542566058",
+          "high_visits": 1,
+          "last_price": "0.19257539654739037",
+          "low": "0.1911357373880977",
+          "low_visits": 1,
+          "observations": 99,
+          "qualified": false,
+          "reasons": [
+            "range_span_insufficient",
+            "range_stale",
+            "range_interval_gap_or_mismatch",
+            "range_amplitude_insufficient",
+            "range_recurrent_visits_missing"
+          ]
+        },
+        "paper_status": "blocked",
+        "qualified_wallets": [],
+        "reasons": [
+          "2qEHjDLDLbuBgRYvsxhc5D6uDWAivNFZGan56P1tpump_not_admitted",
+          "2qEHjDLDLbuBgRYvsxhc5D6uDWAivNFZGan56P1tpump_classification_proof_at_unavailable",
+          "2qEHjDLDLbuBgRYvsxhc5D6uDWAivNFZGan56P1tpump_liquidity_proof_at_unavailable",
+          "2qEHjDLDLbuBgRYvsxhc5D6uDWAivNFZGan56P1tpump_coverage_proof_at_unavailable",
+          "2qEHjDLDLbuBgRYvsxhc5D6uDWAivNFZGan56P1tpump_community_review_at_unavailable",
+          "2qEHjDLDLbuBgRYvsxhc5D6uDWAivNFZGan56P1tpump_community_review_pending",
+          "2qEHjDLDLbuBgRYvsxhc5D6uDWAivNFZGan56P1tpump_durability_unproven",
+          "2qEHjDLDLbuBgRYvsxhc5D6uDWAivNFZGan56P1tpump_liquidity_unproven",
+          "9BB6NFEcjBCtnNLFko2FqVQBq8HHM13kCyYcdQbgpump_not_admitted",
+          "9BB6NFEcjBCtnNLFko2FqVQBq8HHM13kCyYcdQbgpump_classification_proof_at_unavailable",
+          "9BB6NFEcjBCtnNLFko2FqVQBq8HHM13kCyYcdQbgpump_liquidity_proof_at_unavailable",
+          "9BB6NFEcjBCtnNLFko2FqVQBq8HHM13kCyYcdQbgpump_coverage_proof_at_unavailable",
+          "9BB6NFEcjBCtnNLFko2FqVQBq8HHM13kCyYcdQbgpump_community_review_at_unavailable",
+          "9BB6NFEcjBCtnNLFko2FqVQBq8HHM13kCyYcdQbgpump_community_review_pending",
+          "9BB6NFEcjBCtnNLFko2FqVQBq8HHM13kCyYcdQbgpump_durability_unproven",
+          "9BB6NFEcjBCtnNLFko2FqVQBq8HHM13kCyYcdQbgpump_liquidity_unproven",
+          "A_range_observations_insufficient",
+          "B_range_span_insufficient",
+          "B_range_stale",
+          "B_range_interval_gap_or_mismatch",
+          "B_range_amplitude_insufficient",
+          "B_range_recurrent_visits_missing",
+          "qualified_directional_wallet_missing",
+          "independent_wallet_confirmation_missing",
+          "research_pair_not_ready"
+        ],
+        "research_state": "expired",
+        "source_range": {
+          "high": null,
+          "high_visits": 0,
+          "last_price": null,
+          "low": null,
+          "low_visits": 0,
+          "observations": 0,
+          "qualified": false,
+          "reasons": [
+            "range_observations_insufficient"
+          ]
+        },
+        "version": "r3.1-strategy-hypothesis-1"
+      },
+      "version": "r3.1-pair-hypothesis-2"
+    },
+    {
+      "at": "2026-09-27T03:46:24.723316+00:00",
+      "components": {},
+      "execution_quality": "not_evaluated",
+      "metrics": {
+        "attributed_amount_usd": "634.2171471810447760102656240",
+        "economic_age_seconds": "68944.723316",
+        "evidence_operations": "solana:48Km3bhHfxPVzw9ffySoNULcFuxGscAjVhkd4y3fZeGPD8igx9HXqhAWdK9NW2UpBfuZiaMKQypg7nu3CSbH9Pb4:0:MfDuWeqSHEqTFVYZ7LoexgAK9dxk7cy4DFJWjWMGVWa>solana:3aHgDJDXWxuCzr8hWTVur2jNxBfRPHaqepBGt5cueVrtkKTZ6C2qnDpmRsmvtv98Ltgym5SGNkjhMGdfHBSwvrwT:0:MfDuWeqSHEqTFVYZ7LoexgAK9dxk7cy4DFJWjWMGVWa,solana:48Km3bhHfxPVzw9ffySoNULcFuxGscAjVhkd4y3fZeGPD8igx9HXqhAWdK9NW2UpBfuZiaMKQypg7nu3CSbH9Pb4:0:MfDuWeqSHEqTFVYZ7LoexgAK9dxk7cy4DFJWjWMGVWa>solana:3foYRtxezFzqkzC3M8kCYFioep7PyYnfLv29jrHK8Nk8XUpWF6Wuo3ecaonRPYzVYPDYi36wVhpHArrqHX83Jbeo:0:MfDuWeqSHEqTFVYZ7LoexgAK9dxk7cy4DFJWjWMGVWa",
+        "observation_delay_seconds": "68934.705566"
+      },
+      "pair": "2qEHjDLDLbuBgRYvsxhc5D6uDWAivNFZGan56P1tpump:9BB6NFEcjBCtnNLFko2FqVQBq8HHM13kCyYcdQbgpump",
+      "quality": "stale_flow",
+      "reasons": [
+        "economic_flow_stale",
+        "observation_delay_excessive"
+      ],
+      "score": 0,
+      "state": "expired",
+      "strategy": {
+        "admission": "blocked",
+        "destination_range": {
+          "high": "0.19514689542566058",
+          "high_visits": 1,
+          "last_price": "0.19257539654739037",
+          "low": "0.1911357373880977",
+          "low_visits": 1,
+          "observations": 99,
+          "qualified": false,
+          "reasons": [
+            "range_span_insufficient",
+            "range_stale",
+            "range_interval_gap_or_mismatch",
+            "range_amplitude_insufficient",
+            "range_recurrent_visits_missing"
+          ]
+        },
+        "paper_status": "blocked",
+        "qualified_wallets": [],
+        "reasons": [
+          "2qEHjDLDLbuBgRYvsxhc5D6uDWAivNFZGan56P1tpump_not_admitted",
+          "2qEHjDLDLbuBgRYvsxhc5D6uDWAivNFZGan56P1tpump_classification_proof_at_unavailable",
+          "2qEHjDLDLbuBgRYvsxhc5D6uDWAivNFZGan56P1tpump_liquidity_proof_at_unavailable",
+          "2qEHjDLDLbuBgRYvsxhc5D6uDWAivNFZGan56P1tpump_coverage_proof_at_unavailable",
+          "2qEHjDLDLbuBgRYvsxhc5D6uDWAivNFZGan56P1tpump_community_review_at_unavailable",
+          "2qEHjDLDLbuBgRYvsxhc5D6uDWAivNFZGan56P1tpump_community_review_pending",
+          "2qEHjDLDLbuBgRYvsxhc5D6uDWAivNFZGan56P1tpump_durability_unproven",
+          "2qEHjDLDLbuBgRYvsxhc5D6uDWAivNFZGan56P1tpump_liquidity_unproven",
+          "9BB6NFEcjBCtnNLFko2FqVQBq8HHM13kCyYcdQbgpump_not_admitted",
+          "9BB6NFEcjBCtnNLFko2FqVQBq8HHM13kCyYcdQbgpump_classification_proof_at_unavailable",
+          "9BB6NFEcjBCtnNLFko2FqVQBq8HHM13kCyYcdQbgpump_liquidity_proof_at_unavailable",
+          "9BB6NFEcjBCtnNLFko2FqVQBq8HHM13kCyYcdQbgpump_coverage_proof_at_unavailable",
+          "9BB6NFEcjBCtnNLFko2FqVQBq8HHM13kCyYcdQbgpump_community_review_at_unavailable",
+          "9BB6NFEcjBCtnNLFko2FqVQBq8HHM13kCyYcdQbgpump_community_review_pending",
+          "9BB6NFEcjBCtnNLFko2FqVQBq8HHM13kCyYcdQbgpump_durability_unproven",
+          "9BB6NFEcjBCtnNLFko2FqVQBq8HHM13kCyYcdQbgpump_liquidity_unproven",
+          "A_range_observations_insufficient",
+          "B_range_span_insufficient",
+          "B_range_stale",
+          "B_range_interval_gap_or_mismatch",
+          "B_range_amplitude_insufficient",
+          "B_range_recurrent_visits_missing",
+          "qualified_directional_wallet_missing",
+          "independent_wallet_confirmation_missing",
+          "research_pair_not_ready"
+        ],
+        "research_state": "expired",
+        "source_range": {
+          "high": null,
+          "high_visits": 0,
+          "last_price": null,
+          "low": null,
+          "low_visits": 0,
+          "observations": 0,
+          "qualified": false,
+          "reasons": [
+            "range_observations_insufficient"
+          ]
+        },
+        "version": "r3.1-strategy-hypothesis-1"
+      },
+      "version": "r3.1-pair-hypothesis-2"
+    },
+    {
+      "at": "2026-09-27T03:46:50.363248+00:00",
+      "components": {},
+      "execution_quality": "not_evaluated",
+      "metrics": {
+        "attributed_amount_usd": "617.9295797561381744841441658",
+        "economic_age_seconds": "69412.363248",
+        "evidence_operations": "solana:48Km3bhHfxPVzw9ffySoNULcFuxGscAjVhkd4y3fZeGPD8igx9HXqhAWdK9NW2UpBfuZiaMKQypg7nu3CSbH9Pb4:0:MfDuWeqSHEqTFVYZ7LoexgAK9dxk7cy4DFJWjWMGVWa>solana:3aHgDJDXWxuCzr8hWTVur2jNxBfRPHaqepBGt5cueVrtkKTZ6C2qnDpmRsmvtv98Ltgym5SGNkjhMGdfHBSwvrwT:0:MfDuWeqSHEqTFVYZ7LoexgAK9dxk7cy4DFJWjWMGVWa",
+        "observation_delay_seconds": "69386.723316"
+      },
+      "pair": "2qEHjDLDLbuBgRYvsxhc5D6uDWAivNFZGan56P1tpump:9BB6NFEcjBCtnNLFko2FqVQBq8HHM13kCyYcdQbgpump",
+      "quality": "stale_flow",
+      "reasons": [
+        "economic_flow_stale",
+        "observation_delay_excessive"
+      ],
+      "score": 0,
+      "state": "expired",
+      "strategy": {
+        "admission": "blocked",
+        "destination_range": {
+          "high": "0.19514689542566058",
+          "high_visits": 1,
+          "last_price": "0.19257539654739037",
+          "low": "0.1911357373880977",
+          "low_visits": 1,
+          "observations": 99,
+          "qualified": false,
+          "reasons": [
+            "range_span_insufficient",
+            "range_stale",
+            "range_interval_gap_or_mismatch",
+            "range_amplitude_insufficient",
+            "range_recurrent_visits_missing"
+          ]
+        },
+        "paper_status": "blocked",
+        "qualified_wallets": [],
+        "reasons": [
+          "2qEHjDLDLbuBgRYvsxhc5D6uDWAivNFZGan56P1tpump_not_admitted",
+          "2qEHjDLDLbuBgRYvsxhc5D6uDWAivNFZGan56P1tpump_classification_proof_at_unavailable",
+          "2qEHjDLDLbuBgRYvsxhc5D6uDWAivNFZGan56P1tpump_liquidity_proof_at_unavailable",
+          "2qEHjDLDLbuBgRYvsxhc5D6uDWAivNFZGan56P1tpump_coverage_proof_at_unavailable",
+          "2qEHjDLDLbuBgRYvsxhc5D6uDWAivNFZGan56P1tpump_community_review_at_unavailable",
+          "2qEHjDLDLbuBgRYvsxhc5D6uDWAivNFZGan56P1tpump_community_review_pending",
+          "2qEHjDLDLbuBgRYvsxhc5D6uDWAivNFZGan56P1tpump_durability_unproven",
+          "2qEHjDLDLbuBgRYvsxhc5D6uDWAivNFZGan56P1tpump_liquidity_unproven",
+          "9BB6NFEcjBCtnNLFko2FqVQBq8HHM13kCyYcdQbgpump_not_admitted",
+          "9BB6NFEcjBCtnNLFko2FqVQBq8HHM13kCyYcdQbgpump_classification_proof_at_unavailable",
+          "9BB6NFEcjBCtnNLFko2FqVQBq8HHM13kCyYcdQbgpump_liquidity_proof_at_unavailable",
+          "9BB6NFEcjBCtnNLFko2FqVQBq8HHM13kCyYcdQbgpump_coverage_proof_at_unavailable",
+          "9BB6NFEcjBCtnNLFko2FqVQBq8HHM13kCyYcdQbgpump_community_review_at_unavailable",
+          "9BB6NFEcjBCtnNLFko2FqVQBq8HHM13kCyYcdQbgpump_community_review_pending",
+          "9BB6NFEcjBCtnNLFko2FqVQBq8HHM13kCyYcdQbgpump_durability_unproven",
+          "9BB6NFEcjBCtnNLFko2FqVQBq8HHM13kCyYcdQbgpump_liquidity_unproven",
+          "A_range_observations_insufficient",
+          "B_range_span_insufficient",
+          "B_range_stale",
+          "B_range_interval_gap_or_mismatch",
+          "B_range_amplitude_insufficient",
+          "B_range_recurrent_visits_missing",
+          "qualified_directional_wallet_missing",
+          "independent_wallet_confirmation_missing",
+          "research_pair_not_ready"
+        ],
+        "research_state": "expired",
+        "source_range": {
+          "high": null,
+          "high_visits": 0,
+          "last_price": null,
+          "low": null,
+          "low_visits": 0,
+          "observations": 0,
+          "qualified": false,
+          "reasons": [
+            "range_observations_insufficient"
+          ]
+        },
+        "version": "r3.1-strategy-hypothesis-1"
+      },
+      "version": "r3.1-pair-hypothesis-2"
+    },
+    {
+      "at": "2026-09-27T03:46:50.363248+00:00",
+      "components": {},
+      "execution_quality": "not_evaluated",
+      "metrics": {
+        "attributed_amount_usd": "16.28756742490660152612145815",
+        "economic_age_seconds": "69164.363248",
+        "evidence_operations": "solana:48Km3bhHfxPVzw9ffySoNULcFuxGscAjVhkd4y3fZeGPD8igx9HXqhAWdK9NW2UpBfuZiaMKQypg7nu3CSbH9Pb4:0:MfDuWeqSHEqTFVYZ7LoexgAK9dxk7cy4DFJWjWMGVWa>solana:2waEj6uZPa4Macy38R8B61npWw1RK7UT7vuJ1Rh3QpLxH9BtKDj5FzsjJmfMB8nLjWXaoE5ZGBVwmjJ75P6isB8A:0:MfDuWeqSHEqTFVYZ7LoexgAK9dxk7cy4DFJWjWMGVWa",
+        "observation_delay_seconds": "69164.363248"
+      },
+      "pair": "2qEHjDLDLbuBgRYvsxhc5D6uDWAivNFZGan56P1tpump:EKpQGSJtjMFqKZ9KQanSqYXRcF8fBopzLHYxdM65zcjm",
+      "quality": "stale_flow",
+      "reasons": [
+        "economic_flow_stale",
+        "observation_delay_excessive"
+      ],
+      "score": 0,
+      "state": "expired",
+      "strategy": {
+        "admission": "blocked",
+        "destination_range": {
+          "high": "0.2509824116933453",
+          "high_visits": 1,
+          "last_price": "0.24637988068280806",
+          "low": "0.24309525260068793",
+          "low_visits": 1,
+          "observations": 100,
+          "qualified": false,
+          "reasons": [
+            "range_span_insufficient",
+            "range_stale",
+            "range_interval_gap_or_mismatch",
+            "range_amplitude_insufficient",
+            "range_recurrent_visits_missing"
+          ]
+        },
+        "paper_status": "blocked",
+        "qualified_wallets": [],
+        "reasons": [
+          "2qEHjDLDLbuBgRYvsxhc5D6uDWAivNFZGan56P1tpump_not_admitted",
+          "2qEHjDLDLbuBgRYvsxhc5D6uDWAivNFZGan56P1tpump_classification_proof_at_unavailable",
+          "2qEHjDLDLbuBgRYvsxhc5D6uDWAivNFZGan56P1tpump_liquidity_proof_at_unavailable",
+          "2qEHjDLDLbuBgRYvsxhc5D6uDWAivNFZGan56P1tpump_coverage_proof_at_unavailable",
+          "2qEHjDLDLbuBgRYvsxhc5D6uDWAivNFZGan56P1tpump_community_review_at_unavailable",
+          "2qEHjDLDLbuBgRYvsxhc5D6uDWAivNFZGan56P1tpump_community_review_pending",
+          "2qEHjDLDLbuBgRYvsxhc5D6uDWAivNFZGan56P1tpump_durability_unproven",
+          "2qEHjDLDLbuBgRYvsxhc5D6uDWAivNFZGan56P1tpump_liquidity_unproven",
+          "EKpQGSJtjMFqKZ9KQanSqYXRcF8fBopzLHYxdM65zcjm_not_admitted",
+          "EKpQGSJtjMFqKZ9KQanSqYXRcF8fBopzLHYxdM65zcjm_classification_proof_at_unavailable",
+          "EKpQGSJtjMFqKZ9KQanSqYXRcF8fBopzLHYxdM65zcjm_liquidity_proof_at_unavailable",
+          "EKpQGSJtjMFqKZ9KQanSqYXRcF8fBopzLHYxdM65zcjm_coverage_proof_at_unavailable",
+          "EKpQGSJtjMFqKZ9KQanSqYXRcF8fBopzLHYxdM65zcjm_community_review_at_unavailable",
+          "EKpQGSJtjMFqKZ9KQanSqYXRcF8fBopzLHYxdM65zcjm_community_review_pending",
+          "EKpQGSJtjMFqKZ9KQanSqYXRcF8fBopzLHYxdM65zcjm_durability_unproven",
+          "EKpQGSJtjMFqKZ9KQanSqYXRcF8fBopzLHYxdM65zcjm_liquidity_unproven",
+          "A_range_observations_insufficient",
+          "B_range_span_insufficient",
+          "B_range_stale",
+          "B_range_interval_gap_or_mismatch",
+          "B_range_amplitude_insufficient",
+          "B_range_recurrent_visits_missing",
+          "qualified_directional_wallet_missing",
+          "independent_wallet_confirmation_missing",
+          "research_pair_not_ready"
+        ],
+        "research_state": "expired",
+        "source_range": {
+          "high": null,
+          "high_visits": 0,
+          "last_price": null,
+          "low": null,
+          "low_visits": 0,
+          "observations": 0,
+          "qualified": false,
+          "reasons": [
+            "range_observations_insufficient"
+          ]
+        },
+        "version": "r3.1-strategy-hypothesis-1"
+      },
+      "version": "r3.1-pair-hypothesis-2"
+    },
+    {
+      "at": "2026-09-27T03:47:00.360934+00:00",
+      "components": {},
+      "execution_quality": "not_evaluated",
+      "metrics": {
+        "attributed_amount_usd": "634.2171471810447760102656240",
+        "economic_age_seconds": "69409.360934",
+        "evidence_operations": "solana:48Km3bhHfxPVzw9ffySoNULcFuxGscAjVhkd4y3fZeGPD8igx9HXqhAWdK9NW2UpBfuZiaMKQypg7nu3CSbH9Pb4:0:MfDuWeqSHEqTFVYZ7LoexgAK9dxk7cy4DFJWjWMGVWa>solana:2JCeZTc3ePgTYKnYwU1BLN3YhT7s8c8AmgVbwBALPkgiskr3671vTEE2D6QCn56iccQMsLpa3cJJEbFnmgRh9bto:0:MfDuWeqSHEqTFVYZ7LoexgAK9dxk7cy4DFJWjWMGVWa,solana:48Km3bhHfxPVzw9ffySoNULcFuxGscAjVhkd4y3fZeGPD8igx9HXqhAWdK9NW2UpBfuZiaMKQypg7nu3CSbH9Pb4:0:MfDuWeqSHEqTFVYZ7LoexgAK9dxk7cy4DFJWjWMGVWa>solana:3aHgDJDXWxuCzr8hWTVur2jNxBfRPHaqepBGt5cueVrtkKTZ6C2qnDpmRsmvtv98Ltgym5SGNkjhMGdfHBSwvrwT:0:MfDuWeqSHEqTFVYZ7LoexgAK9dxk7cy4DFJWjWMGVWa",
+        "observation_delay_seconds": "69409.360934"
+      },
+      "pair": "2qEHjDLDLbuBgRYvsxhc5D6uDWAivNFZGan56P1tpump:9BB6NFEcjBCtnNLFko2FqVQBq8HHM13kCyYcdQbgpump",
+      "quality": "stale_flow",
+      "reasons": [
+        "economic_flow_stale",
+        "observation_delay_excessive"
+      ],
+      "score": 0,
+      "state": "expired",
+      "strategy": {
+        "admission": "blocked",
+        "destination_range": {
+          "high": "0.19514689542566058",
+          "high_visits": 1,
+          "last_price": "0.19257539654739037",
+          "low": "0.1911357373880977",
+          "low_visits": 1,
+          "observations": 99,
+          "qualified": false,
+          "reasons": [
+            "range_span_insufficient",
+            "range_stale",
+            "range_interval_gap_or_mismatch",
+            "range_amplitude_insufficient",
+            "range_recurrent_visits_missing"
+          ]
+        },
+        "paper_status": "blocked",
+        "qualified_wallets": [],
+        "reasons": [
+          "2qEHjDLDLbuBgRYvsxhc5D6uDWAivNFZGan56P1tpump_not_admitted",
+          "2qEHjDLDLbuBgRYvsxhc5D6uDWAivNFZGan56P1tpump_classification_proof_at_unavailable",
+          "2qEHjDLDLbuBgRYvsxhc5D6uDWAivNFZGan56P1tpump_liquidity_proof_at_unavailable",
+          "2qEHjDLDLbuBgRYvsxhc5D6uDWAivNFZGan56P1tpump_coverage_proof_at_unavailable",
+          "2qEHjDLDLbuBgRYvsxhc5D6uDWAivNFZGan56P1tpump_community_review_at_unavailable",
+          "2qEHjDLDLbuBgRYvsxhc5D6uDWAivNFZGan56P1tpump_community_review_pending",
+          "2qEHjDLDLbuBgRYvsxhc5D6uDWAivNFZGan56P1tpump_durability_unproven",
+          "2qEHjDLDLbuBgRYvsxhc5D6uDWAivNFZGan56P1tpump_liquidity_unproven",
+          "9BB6NFEcjBCtnNLFko2FqVQBq8HHM13kCyYcdQbgpump_not_admitted",
+          "9BB6NFEcjBCtnNLFko2FqVQBq8HHM13kCyYcdQbgpump_classification_proof_at_unavailable",
+          "9BB6NFEcjBCtnNLFko2FqVQBq8HHM13kCyYcdQbgpump_liquidity_proof_at_unavailable",
+          "9BB6NFEcjBCtnNLFko2FqVQBq8HHM13kCyYcdQbgpump_coverage_proof_at_unavailable",
+          "9BB6NFEcjBCtnNLFko2FqVQBq8HHM13kCyYcdQbgpump_community_review_at_unavailable",
+          "9BB6NFEcjBCtnNLFko2FqVQBq8HHM13kCyYcdQbgpump_community_review_pending",
+          "9BB6NFEcjBCtnNLFko2FqVQBq8HHM13kCyYcdQbgpump_durability_unproven",
+          "9BB6NFEcjBCtnNLFko2FqVQBq8HHM13kCyYcdQbgpump_liquidity_unproven",
+          "A_range_observations_insufficient",
+          "B_range_span_insufficient",
+          "B_range_stale",
+          "B_range_interval_gap_or_mismatch",
+          "B_range_amplitude_insufficient",
+          "B_range_recurrent_visits_missing",
+          "qualified_directional_wallet_missing",
+          "independent_wallet_confirmation_missing",
+          "research_pair_not_ready"
+        ],
+        "research_state": "expired",
+        "source_range": {
+          "high": null,
+          "high_visits": 0,
+          "last_price": null,
+          "low": null,
+          "low_visits": 0,
+          "observations": 0,
+          "qualified": false,
+          "reasons": [
+            "range_observations_insufficient"
+          ]
+        },
+        "version": "r3.1-strategy-hypothesis-1"
+      },
+      "version": "r3.1-pair-hypothesis-2"
+    },
+    {
+      "at": "2026-09-27T03:47:00.360934+00:00",
+      "components": {},
+      "execution_quality": "not_evaluated",
+      "metrics": {},
+      "pair": "2qEHjDLDLbuBgRYvsxhc5D6uDWAivNFZGan56P1tpump:EKpQGSJtjMFqKZ9KQanSqYXRcF8fBopzLHYxdM65zcjm",
+      "quality": "proof_removed",
+      "reasons": [
+        "attribution_proof_removed"
+      ],
+      "score": 0,
+      "state": "observing",
+      "strategy": {
+        "admission": "blocked",
+        "destination_range": {
+          "high": "0.2509824116933453",
+          "high_visits": 1,
+          "last_price": "0.24637988068280806",
+          "low": "0.24309525260068793",
+          "low_visits": 1,
+          "observations": 100,
+          "qualified": false,
+          "reasons": [
+            "range_span_insufficient",
+            "range_stale",
+            "range_interval_gap_or_mismatch",
+            "range_amplitude_insufficient",
+            "range_recurrent_visits_missing"
+          ]
+        },
+        "paper_status": "blocked",
+        "qualified_wallets": [],
+        "reasons": [
+          "2qEHjDLDLbuBgRYvsxhc5D6uDWAivNFZGan56P1tpump_not_admitted",
+          "2qEHjDLDLbuBgRYvsxhc5D6uDWAivNFZGan56P1tpump_classification_proof_at_unavailable",
+          "2qEHjDLDLbuBgRYvsxhc5D6uDWAivNFZGan56P1tpump_liquidity_proof_at_unavailable",
+          "2qEHjDLDLbuBgRYvsxhc5D6uDWAivNFZGan56P1tpump_coverage_proof_at_unavailable",
+          "2qEHjDLDLbuBgRYvsxhc5D6uDWAivNFZGan56P1tpump_community_review_at_unavailable",
+          "2qEHjDLDLbuBgRYvsxhc5D6uDWAivNFZGan56P1tpump_community_review_pending",
+          "2qEHjDLDLbuBgRYvsxhc5D6uDWAivNFZGan56P1tpump_durability_unproven",
+          "2qEHjDLDLbuBgRYvsxhc5D6uDWAivNFZGan56P1tpump_liquidity_unproven",
+          "EKpQGSJtjMFqKZ9KQanSqYXRcF8fBopzLHYxdM65zcjm_not_admitted",
+          "EKpQGSJtjMFqKZ9KQanSqYXRcF8fBopzLHYxdM65zcjm_classification_proof_at_unavailable",
+          "EKpQGSJtjMFqKZ9KQanSqYXRcF8fBopzLHYxdM65zcjm_liquidity_proof_at_unavailable",
+          "EKpQGSJtjMFqKZ9KQanSqYXRcF8fBopzLHYxdM65zcjm_coverage_proof_at_unavailable",
+          "EKpQGSJtjMFqKZ9KQanSqYXRcF8fBopzLHYxdM65zcjm_community_review_at_unavailable",
+          "EKpQGSJtjMFqKZ9KQanSqYXRcF8fBopzLHYxdM65zcjm_community_review_pending",
+          "EKpQGSJtjMFqKZ9KQanSqYXRcF8fBopzLHYxdM65zcjm_durability_unproven",
+          "EKpQGSJtjMFqKZ9KQanSqYXRcF8fBopzLHYxdM65zcjm_liquidity_unproven",
+          "A_range_observations_insufficient",
+          "B_range_span_insufficient",
+          "B_range_stale",
+          "B_range_interval_gap_or_mismatch",
+          "B_range_amplitude_insufficient",
+          "B_range_recurrent_visits_missing",
+          "qualified_directional_wallet_missing",
+          "independent_wallet_confirmation_missing",
+          "research_pair_not_ready"
+        ],
+        "research_state": "observing",
+        "source_range": {
+          "high": null,
+          "high_visits": 0,
+          "last_price": null,
+          "low": null,
+          "low_visits": 0,
+          "observations": 0,
+          "qualified": false,
+          "reasons": [
+            "range_observations_insufficient"
+          ]
+        },
+        "version": "r3.1-strategy-hypothesis-1"
+      },
+      "version": "r3.1-pair-hypothesis-2"
+    },
+    {
+      "at": "2026-09-27T03:47:21.124947+00:00",
+      "components": {},
+      "execution_quality": "not_evaluated",
+      "metrics": {
+        "attributed_amount_usd": "577.1277902248598171796493201",
+        "economic_age_seconds": "69443.124947",
+        "evidence_operations": "solana:2soacGvT7dFe8xm98MdNeeRqzRwvtJBovAzg31MU4yrQhkWYSBtBFbzS1AJyV2dAS5NAa6iNgBsxT9Hdo1wScsvq:0:MfDuWeqSHEqTFVYZ7LoexgAK9dxk7cy4DFJWjWMGVWa>solana:3aHgDJDXWxuCzr8hWTVur2jNxBfRPHaqepBGt5cueVrtkKTZ6C2qnDpmRsmvtv98Ltgym5SGNkjhMGdfHBSwvrwT:0:MfDuWeqSHEqTFVYZ7LoexgAK9dxk7cy4DFJWjWMGVWa",
+        "observation_delay_seconds": "69443.124947"
+      },
+      "pair": "EKpQGSJtjMFqKZ9KQanSqYXRcF8fBopzLHYxdM65zcjm:9BB6NFEcjBCtnNLFko2FqVQBq8HHM13kCyYcdQbgpump",
+      "quality": "stale_flow",
+      "reasons": [
+        "economic_flow_stale",
+        "observation_delay_excessive"
+      ],
+      "score": 0,
+      "state": "expired",
+      "strategy": {
+        "admission": "blocked",
+        "destination_range": {
+          "high": "0.19514689542566058",
+          "high_visits": 1,
+          "last_price": "0.19257539654739037",
+          "low": "0.1911357373880977",
+          "low_visits": 1,
+          "observations": 99,
+          "qualified": false,
+          "reasons": [
+            "range_span_insufficient",
+            "range_stale",
+            "range_interval_gap_or_mismatch",
+            "range_amplitude_insufficient",
+            "range_recurrent_visits_missing"
+          ]
+        },
+        "paper_status": "blocked",
+        "qualified_wallets": [],
+        "reasons": [
+          "EKpQGSJtjMFqKZ9KQanSqYXRcF8fBopzLHYxdM65zcjm_not_admitted",
+          "EKpQGSJtjMFqKZ9KQanSqYXRcF8fBopzLHYxdM65zcjm_classification_proof_at_unavailable",
+          "EKpQGSJtjMFqKZ9KQanSqYXRcF8fBopzLHYxdM65zcjm_liquidity_proof_at_unavailable",
+          "EKpQGSJtjMFqKZ9KQanSqYXRcF8fBopzLHYxdM65zcjm_coverage_proof_at_unavailable",
+          "EKpQGSJtjMFqKZ9KQanSqYXRcF8fBopzLHYxdM65zcjm_community_review_at_unavailable",
+          "EKpQGSJtjMFqKZ9KQanSqYXRcF8fBopzLHYxdM65zcjm_community_review_pending",
+          "EKpQGSJtjMFqKZ9KQanSqYXRcF8fBopzLHYxdM65zcjm_durability_unproven",
+          "EKpQGSJtjMFqKZ9KQanSqYXRcF8fBopzLHYxdM65zcjm_liquidity_unproven",
+          "9BB6NFEcjBCtnNLFko2FqVQBq8HHM13kCyYcdQbgpump_not_admitted",
+          "9BB6NFEcjBCtnNLFko2FqVQBq8HHM13kCyYcdQbgpump_classification_proof_at_unavailable",
+          "9BB6NFEcjBCtnNLFko2FqVQBq8HHM13kCyYcdQbgpump_liquidity_proof_at_unavailable",
+          "9BB6NFEcjBCtnNLFko2FqVQBq8HHM13kCyYcdQbgpump_coverage_proof_at_unavailable",
+          "9BB6NFEcjBCtnNLFko2FqVQBq8HHM13kCyYcdQbgpump_community_review_at_unavailable",
+          "9BB6NFEcjBCtnNLFko2FqVQBq8HHM13kCyYcdQbgpump_community_review_pending",
+          "9BB6NFEcjBCtnNLFko2FqVQBq8HHM13kCyYcdQbgpump_durability_unproven",
+          "9BB6NFEcjBCtnNLFko2FqVQBq8HHM13kCyYcdQbgpump_liquidity_unproven",
+          "A_range_span_insufficient",
+          "A_range_stale",
+          "A_range_interval_gap_or_mismatch",
+          "A_range_amplitude_insufficient",
+          "A_range_recurrent_visits_missing",
+          "B_range_span_insufficient",
+          "B_range_stale",
+          "B_range_interval_gap_or_mismatch",
+          "B_range_amplitude_insufficient",
+          "B_range_recurrent_visits_missing",
+          "qualified_directional_wallet_missing",
+          "independent_wallet_confirmation_missing",
+          "research_pair_not_ready"
+        ],
+        "research_state": "expired",
+        "source_range": {
+          "high": "0.2509824116933453",
+          "high_visits": 1,
+          "last_price": "0.24637988068280806",
+          "low": "0.24309525260068793",
+          "low_visits": 1,
+          "observations": 100,
+          "qualified": false,
+          "reasons": [
+            "range_span_insufficient",
+            "range_stale",
+            "range_interval_gap_or_mismatch",
+            "range_amplitude_insufficient",
+            "range_recurrent_visits_missing"
+          ]
+        },
+        "version": "r3.1-strategy-hypothesis-1"
+      },
+      "version": "r3.1-pair-hypothesis-2"
+    },
+    {
+      "at": "2026-09-27T03:48:01.699700+00:00",
+      "components": {},
+      "execution_quality": "not_evaluated",
+      "metrics": {
+        "attributed_amount_usd": "502.2142183198436874079363715",
+        "economic_age_seconds": "68075.6997",
+        "evidence_operations": "solana:4KRe5eRLFvUSEuLp3nqnLn1B2hwWqnQ2xed2jfs3M8aoocBax4PuN9pc6wxWXCWekkfkJ6be3hwoAC9F9mcwgCAY:0:MfDuWeqSHEqTFVYZ7LoexgAK9dxk7cy4DFJWjWMGVWa>solana:z2vzDteVcns8XcdsUx6nyuB461cwJCcnJXK2nHuPX1UGSDoDbYtDfEMTrYx3Cgpqh4FGgxSTLSWyhtdZ22euTcT:0:MfDuWeqSHEqTFVYZ7LoexgAK9dxk7cy4DFJWjWMGVWa",
+        "observation_delay_seconds": "68075.6997"
+      },
+      "pair": "ukHH6c7mMyiWCf1b9pnWe25TSpkDDt3H5pQZgZ74J82:EKpQGSJtjMFqKZ9KQanSqYXRcF8fBopzLHYxdM65zcjm",
+      "quality": "stale_flow",
+      "reasons": [
+        "economic_flow_stale",
+        "observation_delay_excessive"
+      ],
+      "score": 0,
+      "state": "expired",
+      "strategy": {
+        "admission": "blocked",
+        "destination_range": {
+          "high": "0.2509824116933453",
+          "high_visits": 1,
+          "last_price": "0.24637988068280806",
+          "low": "0.24309525260068793",
+          "low_visits": 1,
+          "observations": 100,
+          "qualified": false,
+          "reasons": [
+            "range_span_insufficient",
+            "range_stale",
+            "range_interval_gap_or_mismatch",
+            "range_amplitude_insufficient",
+            "range_recurrent_visits_missing"
+          ]
+        },
+        "paper_status": "blocked",
+        "qualified_wallets": [],
+        "reasons": [
+          "ukHH6c7mMyiWCf1b9pnWe25TSpkDDt3H5pQZgZ74J82_not_admitted",
+          "ukHH6c7mMyiWCf1b9pnWe25TSpkDDt3H5pQZgZ74J82_classification_proof_at_unavailable",
+          "ukHH6c7mMyiWCf1b9pnWe25TSpkDDt3H5pQZgZ74J82_liquidity_proof_at_unavailable",
+          "ukHH6c7mMyiWCf1b9pnWe25TSpkDDt3H5pQZgZ74J82_coverage_proof_at_unavailable",
+          "ukHH6c7mMyiWCf1b9pnWe25TSpkDDt3H5pQZgZ74J82_community_review_at_unavailable",
+          "ukHH6c7mMyiWCf1b9pnWe25TSpkDDt3H5pQZgZ74J82_community_review_pending",
+          "ukHH6c7mMyiWCf1b9pnWe25TSpkDDt3H5pQZgZ74J82_durability_unproven",
+          "ukHH6c7mMyiWCf1b9pnWe25TSpkDDt3H5pQZgZ74J82_liquidity_unproven",
+          "EKpQGSJtjMFqKZ9KQanSqYXRcF8fBopzLHYxdM65zcjm_not_admitted",
+          "EKpQGSJtjMFqKZ9KQanSqYXRcF8fBopzLHYxdM65zcjm_classification_proof_at_unavailable",
+          "EKpQGSJtjMFqKZ9KQanSqYXRcF8fBopzLHYxdM65zcjm_liquidity_proof_at_unavailable",
+          "EKpQGSJtjMFqKZ9KQanSqYXRcF8fBopzLHYxdM65zcjm_coverage_proof_at_unavailable",
+          "EKpQGSJtjMFqKZ9KQanSqYXRcF8fBopzLHYxdM65zcjm_community_review_at_unavailable",
+          "EKpQGSJtjMFqKZ9KQanSqYXRcF8fBopzLHYxdM65zcjm_community_review_pending",
+          "EKpQGSJtjMFqKZ9KQanSqYXRcF8fBopzLHYxdM65zcjm_durability_unproven",
+          "EKpQGSJtjMFqKZ9KQanSqYXRcF8fBopzLHYxdM65zcjm_liquidity_unproven",
+          "A_range_observations_insufficient",
+          "B_range_span_insufficient",
+          "B_range_stale",
+          "B_range_interval_gap_or_mismatch",
+          "B_range_amplitude_insufficient",
+          "B_range_recurrent_visits_missing",
+          "qualified_directional_wallet_missing",
+          "independent_wallet_confirmation_missing",
+          "research_pair_not_ready"
+        ],
+        "research_state": "expired",
+        "source_range": {
+          "high": null,
+          "high_visits": 0,
+          "last_price": null,
+          "low": null,
+          "low_visits": 0,
+          "observations": 0,
+          "qualified": false,
+          "reasons": [
+            "range_observations_insufficient"
+          ]
+        },
+        "version": "r3.1-strategy-hypothesis-1"
+      },
+      "version": "r3.1-pair-hypothesis-2"
+    }
+  ],
+  "event_study": {
+    "distinct_episodes": 0,
+    "horizons": {
+      "1440": {
+        "confidence_interval": null,
+        "distribution": [],
+        "events_with_outcome": 0,
+        "interval_method": "insufficient independent day blocks",
+        "mean_relative_return": null
+      },
+      "240": {
+        "confidence_interval": null,
+        "distribution": [],
+        "events_with_outcome": 0,
+        "interval_method": "insufficient independent day blocks",
+        "mean_relative_return": null
+      },
+      "60": {
+        "confidence_interval": null,
+        "distribution": [],
+        "events_with_outcome": 0,
+        "interval_method": "insufficient independent day blocks",
+        "mean_relative_return": null
+      }
+    },
+    "interpretation": "descriptive association, not causality or executable P&L"
+  },
+  "execution_evidence": "historical_depth_and_quotes_unavailable",
+  "financial_edge": null,
+  "mode": "REPLAY",
+  "pairs_evaluated": [
+    "2qEHjDLDLbuBgRYvsxhc5D6uDWAivNFZGan56P1tpump:9BB6NFEcjBCtnNLFko2FqVQBq8HHM13kCyYcdQbgpump",
+    "2qEHjDLDLbuBgRYvsxhc5D6uDWAivNFZGan56P1tpump:EKpQGSJtjMFqKZ9KQanSqYXRcF8fBopzLHYxdM65zcjm",
+    "9BB6NFEcjBCtnNLFko2FqVQBq8HHM13kCyYcdQbgpump:EKpQGSJtjMFqKZ9KQanSqYXRcF8fBopzLHYxdM65zcjm",
+    "EKpQGSJtjMFqKZ9KQanSqYXRcF8fBopzLHYxdM65zcjm:9BB6NFEcjBCtnNLFko2FqVQBq8HHM13kCyYcdQbgpump",
+    "ukHH6c7mMyiWCf1b9pnWe25TSpkDDt3H5pQZgZ74J82:EKpQGSJtjMFqKZ9KQanSqYXRcF8fBopzLHYxdM65zcjm"
+  ],
+  "price_study_status": "stale_market",
+  "registry_version": "r3-research-classification-1",
+  "rotations": [
+    {
+      "amount_usd": "577.1277902248598171796493201",
+      "available_at": "2026-09-27T03:47:21.124947+00:00",
+      "buy_value_usd": "577.1277902248598171796493201",
+      "destination": "9BB6NFEcjBCtnNLFko2FqVQBq8HHM13kCyYcdQbgpump",
+      "destination_op": "solana:3aHgDJDXWxuCzr8hWTVur2jNxBfRPHaqepBGt5cueVrtkKTZ6C2qnDpmRsmvtv98Ltgym5SGNkjhMGdfHBSwvrwT:0:MfDuWeqSHEqTFVYZ7LoexgAK9dxk7cy4DFJWjWMGVWa",
+      "direction": "between_coins",
+      "economic_at": "2026-09-26T08:29:58+00:00",
+      "evidence": "inferred",
+      "reserve_mint": "So11111111111111111111111111111111111111112",
+      "reserve_quantity_base": 4794951897,
+      "sale_value_usd": "578.8082317811088056430702992",
+      "source": "EKpQGSJtjMFqKZ9KQanSqYXRcF8fBopzLHYxdM65zcjm",
+      "source_op": "solana:2soacGvT7dFe8xm98MdNeeRqzRwvtJBovAzg31MU4yrQhkWYSBtBFbzS1AJyV2dAS5NAa6iNgBsxT9Hdo1wScsvq:0:MfDuWeqSHEqTFVYZ7LoexgAK9dxk7cy4DFJWjWMGVWa",
+      "valuation_method": "reserve_base_conserved",
+      "wallet": "MfDuWeqSHEqTFVYZ7LoexgAK9dxk7cy4DFJWjWMGVWa"
+    },
+    {
+      "amount_usd": "40.85900171420340920983844810",
+      "available_at": "2026-09-27T03:46:24.723316+00:00",
+      "buy_value_usd": "40.86305257517112630408104361",
+      "destination": "9BB6NFEcjBCtnNLFko2FqVQBq8HHM13kCyYcdQbgpump",
+      "destination_op": "solana:3aHgDJDXWxuCzr8hWTVur2jNxBfRPHaqepBGt5cueVrtkKTZ6C2qnDpmRsmvtv98Ltgym5SGNkjhMGdfHBSwvrwT:0:MfDuWeqSHEqTFVYZ7LoexgAK9dxk7cy4DFJWjWMGVWa",
+      "direction": "between_coins",
+      "economic_at": "2026-09-26T08:29:58+00:00",
+      "evidence": "inferred",
+      "reserve_mint": "So11111111111111111111111111111111111111112",
+      "reserve_quantity_base": 339502576,
+      "sale_value_usd": "40.85900171420340920983844810",
+      "source": "2qEHjDLDLbuBgRYvsxhc5D6uDWAivNFZGan56P1tpump",
+      "source_op": "solana:48Km3bhHfxPVzw9ffySoNULcFuxGscAjVhkd4y3fZeGPD8igx9HXqhAWdK9NW2UpBfuZiaMKQypg7nu3CSbH9Pb4:0:MfDuWeqSHEqTFVYZ7LoexgAK9dxk7cy4DFJWjWMGVWa",
+      "valuation_method": "reserve_base_conserved",
+      "wallet": "MfDuWeqSHEqTFVYZ7LoexgAK9dxk7cy4DFJWjWMGVWa"
+    },
+    {
+      "amount_usd": "593.3581454668413668004271759",
+      "available_at": "2026-09-27T03:47:00.360934+00:00",
+      "buy_value_usd": "593.4306886676505321383773437",
+      "destination": "9BB6NFEcjBCtnNLFko2FqVQBq8HHM13kCyYcdQbgpump",
+      "destination_op": "solana:2JCeZTc3ePgTYKnYwU1BLN3YhT7s8c8AmgVbwBALPkgiskr3671vTEE2D6QCn56iccQMsLpa3cJJEbFnmgRh9bto:0:MfDuWeqSHEqTFVYZ7LoexgAK9dxk7cy4DFJWjWMGVWa",
+      "direction": "between_coins",
+      "economic_at": "2026-09-26T08:30:11+00:00",
+      "evidence": "inferred",
+      "reserve_mint": "So11111111111111111111111111111111111111112",
+      "reserve_quantity_base": 4930287340,
+      "sale_value_usd": "593.3581454668413668004271759",
+      "source": "2qEHjDLDLbuBgRYvsxhc5D6uDWAivNFZGan56P1tpump",
+      "source_op": "solana:48Km3bhHfxPVzw9ffySoNULcFuxGscAjVhkd4y3fZeGPD8igx9HXqhAWdK9NW2UpBfuZiaMKQypg7nu3CSbH9Pb4:0:MfDuWeqSHEqTFVYZ7LoexgAK9dxk7cy4DFJWjWMGVWa",
+      "valuation_method": "reserve_base_conserved",
+      "wallet": "MfDuWeqSHEqTFVYZ7LoexgAK9dxk7cy4DFJWjWMGVWa"
+    },
+    {
+      "amount_usd": "1003.132839778149262937669722",
+      "available_at": "2026-09-27T03:45:44.031660+00:00",
+      "buy_value_usd": "1003.132839778149262937669722",
+      "destination": "EKpQGSJtjMFqKZ9KQanSqYXRcF8fBopzLHYxdM65zcjm",
+      "destination_op": "solana:666LnkBsd28TzoSwF2S7SHnQ2uqA6UxyFdyXzx5MXrqKeGybHoGTEfnfbfHjHfaNz5NyLzBB8dbWrnR4HJcK4uJk:0:CreQJ2t94QK5dsxUZGXfPJ8Nx7wA9LHr5chxjSMkbNft",
+      "direction": "between_coins",
+      "economic_at": "2026-09-26T08:34:06+00:00",
+      "evidence": "inferred",
+      "reserve_mint": "So11111111111111111111111111111111111111112",
+      "reserve_quantity_base": 8316582739,
+      "sale_value_usd": "1003.911332798482503889351777",
+      "source": "9BB6NFEcjBCtnNLFko2FqVQBq8HHM13kCyYcdQbgpump",
+      "source_op": "solana:38hWoMyfMEQy9tRiVVEvxyj6j5SKy7i7jEPnGHawXGug77eT1pGEYqPYrRmvhnQ2b9U8AfTJNaNLiBbsE8VnEr3U:0:CreQJ2t94QK5dsxUZGXfPJ8Nx7wA9LHr5chxjSMkbNft",
+      "valuation_method": "reserve_base_conserved",
+      "wallet": "CreQJ2t94QK5dsxUZGXfPJ8Nx7wA9LHr5chxjSMkbNft"
+    },
+    {
+      "amount_usd": "502.2142183198436874079363715",
+      "available_at": "2026-09-27T03:48:01.699700+00:00",
+      "buy_value_usd": "502.2142183198436874079363715",
+      "destination": "EKpQGSJtjMFqKZ9KQanSqYXRcF8fBopzLHYxdM65zcjm",
+      "destination_op": "solana:z2vzDteVcns8XcdsUx6nyuB461cwJCcnJXK2nHuPX1UGSDoDbYtDfEMTrYx3Cgpqh4FGgxSTLSWyhtdZ22euTcT:0:MfDuWeqSHEqTFVYZ7LoexgAK9dxk7cy4DFJWjWMGVWa",
+      "direction": "between_coins",
+      "economic_at": "2026-09-26T08:53:26+00:00",
+      "evidence": "inferred",
+      "reserve_mint": "So11111111111111111111111111111111111111112",
+      "reserve_quantity_base": 4149803486,
+      "sale_value_usd": "502.2419369587565249561243325",
+      "source": "ukHH6c7mMyiWCf1b9pnWe25TSpkDDt3H5pQZgZ74J82",
+      "source_op": "solana:4KRe5eRLFvUSEuLp3nqnLn1B2hwWqnQ2xed2jfs3M8aoocBax4PuN9pc6wxWXCWekkfkJ6be3hwoAC9F9mcwgCAY:0:MfDuWeqSHEqTFVYZ7LoexgAK9dxk7cy4DFJWjWMGVWa",
+      "valuation_method": "reserve_base_conserved",
+      "wallet": "MfDuWeqSHEqTFVYZ7LoexgAK9dxk7cy4DFJWjWMGVWa"
+    }
+  ],
+  "selection_bias": "retrospective_cohort_from_same_sample",
+  "strategy_config_hash": "248096b910c88acc8fd4d93d9fafdbbd5611a851d7efa2eab1da0640912cc846",
+  "strategy_version": "r3.1-strategy-hypothesis-1",
+  "synthetic": false,
+  "target_rotations": 5,
+  "verified_operations": 20
+}

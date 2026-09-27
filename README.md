@@ -4,6 +4,20 @@ Moteur local de recherche sur les rotations de capital Solana. Il lit des adress
 
 ## R3 : rotations entre memecoins Solana
 
+La [spécification fonctionnelle R3.1](docs/strategy-spec.md) gouverne désormais les horloges, l'admission stricte des coins/wallets/ranges et le cycle paper. Les [résultats R3.1](docs/r3-1-validation-report.md) sont une reconstruction exploratoire **hors réseau** et restent séparés des archives R3 :
+
+```bash
+uv sync --frozen
+uv run rotation r3-1-replay --root data/r3-20260927 --r2-root data/r2-20260926 --out data/r3-1-20260927
+uv run rotation r3-1-process-follow --root data/r3-20260927 --out data/r3-1-20260927
+uv run pytest -q
+uv run ruff check src tests
+uv run ruff format --check src tests
+cd web && npm run build
+```
+
+Ces commandes R3.1 ne collectent aucune nouvelle donnée. L'API locale expose `/api/r3-1/replay`, `/api/r3-1/prospective` et `/api/r3-1/strategy` ; l'onglet **R3 réel** distingue la candidate de recherche d'une stratégie admise. Aucune des cinq paires archivées n'est une entrée paper exécutable : les retards de réception, la qualification des wallets et la profondeur historique restent insuffisants.
+
 Le [rapport de validation R3](docs/r3-validation-report.md) contient les preuves, compteurs et limites. Le [registre de recherche](config/r3-universe.json) classe les mints exacts avec provenance et date : dix memecoins candidats, PENGU incertain, réserves/transits et tokens de plateforme séparés. Il ne constitue pas une watchlist approuvée. La [politique FIFO](docs/r3-attribution-policy.md), la [règle de signal par paire](docs/r3-pair-signal-spec.md), la [cohorte](docs/r3-cohort-selection.md) et le [budget](docs/r3-collection-budget.md) sont versionnés.
 
 Reproduction hors ligne depuis les archives réelles R2/R3, sans nouvel appel réseau de données :
