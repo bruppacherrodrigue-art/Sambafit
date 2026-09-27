@@ -2,7 +2,7 @@
 
 import json
 import os
-from dataclasses import asdict
+from dataclasses import asdict, replace
 from datetime import datetime
 from decimal import Decimal
 from pathlib import Path
@@ -251,7 +251,9 @@ def replay_verified_corpus(
     return report
 
 
-def process_follow(root: str | Path, registry: ResearchRegistry) -> dict:
+def process_follow(
+    root: str | Path, registry: ResearchRegistry, *, output_root: str | Path | None = None
+) -> dict:
     """Process persisted prospective inputs through the same replay functions."""
     root = Path(root)
     follow = _json(root / "follow-checkpoint.json")
@@ -283,6 +285,8 @@ def process_follow(root: str | Path, registry: ResearchRegistry) -> dict:
     ]
     post_freeze = [row for row in strict if datetime.fromisoformat(row["economic_at"]) >= frozen_at]
     operations = []
+    valuation_revisions = []
+    unknown_decode_time = []
     reserve_reconciled = 0
     for row in post_freeze:
         wallet = row["wallet"]
@@ -304,18 +308,58 @@ def process_follow(root: str | Path, registry: ResearchRegistry) -> dict:
             reserve_reconciled += 1
         economic_at = datetime.fromisoformat(row["economic_at"])
         raw_available = datetime.fromisoformat(row["receipt"]["received_at"])
+        effective_available = datetime.fromisoformat(
+            row.get("effective_available_at", row["receipt"]["received_at"])
+        )
+        if "effective_available_at" not in row and "decoded_at" not in row:
+            unknown_decode_time.append(signature)
+        if row.get("decoded_at"):
+            effective_available = max(
+                effective_available, datetime.fromisoformat(row["decoded_at"])
+            )
+        effective_available = max(effective_available, raw_available)
         operation = Operation(
             f"solana:{signature}:0:{wallet}",
             wallet,
             signature,
             economic_at,
-            raw_available,
+            effective_available,
             "swap",
             legs,
             True,
             "complete",
         )
-        operations.extend(price_operations([operation], bars))
+        # Each later close/correction is a new knowledge revision of the same operation.
+        # Replay replaces the canonical id at that availability; it never backdates it.
+        revision_times = sorted(
+            {effective_available}
+            | {
+                bar.available_at
+                for bar in bars
+                if bar.available_at > effective_available
+                and bar.close_at <= economic_at
+                and bar.mint in {leg.mint for leg in legs}
+            }
+        )
+        previous_legs = None
+        for revision_at in revision_times:
+            revised = price_operations([replace(operation, available_at=revision_at)], bars)[0]
+            if revised.legs == previous_legs:
+                continue
+            operations.append(revised)
+            previous_legs = revised.legs
+            valuation_revisions.append(
+                {
+                    "operation_id": revised.id,
+                    "raw_received_at": raw_available.isoformat(),
+                    "decoded_at": row.get("decoded_at"),
+                    "effective_available_at": revision_at.isoformat(),
+                    "valued_legs": sum(leg.usd_price is not None for leg in revised.legs),
+                    "knowledge_time_quality": "observed"
+                    if signature not in unknown_decode_time
+                    else "legacy_unknown",
+                }
+            )
     until = max(
         [op.available_at for op in operations] + [bar.available_at for bar in bars],
         default=frozen_at,
@@ -385,6 +429,8 @@ def process_follow(root: str | Path, registry: ResearchRegistry) -> dict:
             "confirmed_decisions": sum(row["state"] == "confirmed" for row in decisions),
         },
         "coverage_gaps": follow.get("gaps", []),
+        "unknown_decode_time_signatures": unknown_decode_time,
+        "valuation_revisions": valuation_revisions,
         "incomplete_operations": follow.get("enrichment_queue", []),
         "stop_reason": follow.get("stop_reason"),
         "missing_transitions": reasons,
@@ -401,5 +447,5 @@ def process_follow(root: str | Path, registry: ResearchRegistry) -> dict:
         "paper_orders": [],
         "financial_edge": None,
     }
-    _write(root / "prospective.json", report)
+    _write(Path(output_root or root) / "prospective.json", report)
     return report

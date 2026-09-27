@@ -2,6 +2,7 @@
 
 import json
 import os
+from collections.abc import Callable
 from datetime import datetime, timezone
 from pathlib import Path
 
@@ -207,6 +208,7 @@ def follow_once(
                     "status": "unavailable",
                     "wallet": wallet,
                     "receipt": tx_receipt,
+                    "decoded_at": datetime.now(timezone.utc).isoformat(),
                     "retryable": True,
                 }
             else:
@@ -268,13 +270,19 @@ def follow_once(
     return state
 
 
-def refresh_follow_state(root: str | Path) -> dict:
+def refresh_follow_state(
+    root: str | Path,
+    *,
+    now: Callable[[], datetime] | None = None,
+    decoder: R2Decoder | None = None,
+) -> dict:
     """Rebuild observable deltas from the archived RPC responses without data calls."""
     root = Path(root)
     path = root / "follow-checkpoint.json"
     state = json.loads(path.read_text())
     state.setdefault("enrichment_queue", [])
-    decoder = R2Decoder()
+    decoder = decoder or R2Decoder()
+    clock = now or (lambda: datetime.now(timezone.utc))
     for signature, item in state["transactions"].items():
         if item.get("status") != "fetched":
             continue
@@ -282,13 +290,54 @@ def refresh_follow_state(root: str | Path) -> dict:
         decoded = decoder.decode(
             raw, item["wallet"], datetime.fromisoformat(item["receipt"]["received_at"])
         )
-        item["legs"] = [
+        revised_legs = [
             {"mint": leg.mint, "delta_base": str(leg.delta_base), "decimals": leg.decimals}
             for leg in decoded.operation.legs
         ]
-        item["kind"] = decoded.operation.kind
-        item["quality"] = decoded.operation.quality
-        item["decoder_version"] = decoded.parser_version
+        previous = {
+            "kind": item.get("kind"),
+            "quality": item.get("quality"),
+            "legs": item.get("legs", []),
+            "decoder_version": item.get("decoder_version"),
+        }
+        updated = {
+            "kind": decoded.operation.kind,
+            "quality": decoded.operation.quality,
+            "legs": revised_legs,
+            "decoder_version": decoded.parser_version,
+        }
+        if previous != updated:
+            decoded_at = clock()
+            if decoded_at.tzinfo is None:
+                raise ValueError("timezone-aware decode clock required")
+            receipt_at = datetime.fromisoformat(item["receipt"]["received_at"])
+            if decoded_at < receipt_at:
+                raise ValueError("decode cannot precede raw receipt")
+            revisions = item.setdefault(
+                "decode_revisions",
+                [
+                    {
+                        **previous,
+                        "known_at": item.get("decoded_at"),
+                        "knowledge_time_quality": "observed"
+                        if item.get("decoded_at")
+                        else "legacy_unknown",
+                    }
+                ],
+            )
+            revisions.append(
+                {
+                    **updated,
+                    "known_at": decoded_at.isoformat(),
+                    "knowledge_time_quality": "observed",
+                }
+            )
+            item.update(updated)
+            item["decoded_at"] = decoded_at.isoformat()
+            item["effective_available_at"] = decoded_at.isoformat()
+        elif "effective_available_at" not in item:
+            # Legacy archives lack a trustworthy decode clock. Preserve that uncertainty.
+            item["decode_time_quality"] = "legacy_unknown"
         if decoded.operation.kind != "unknown" and decoded.operation.quality == "complete":
             state["enrichment_queue"] = [
                 row for row in state["enrichment_queue"] if row["signature"] != signature

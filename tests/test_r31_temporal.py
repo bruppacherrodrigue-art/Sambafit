@@ -5,6 +5,8 @@ from pathlib import Path
 
 from rotation.engine import Leg, Operation, Rotation, aggregate_convergence
 from rotation.r2_follow import refresh_follow_state
+from rotation.r3_pipeline import process_follow
+from rotation.r3_registry import ResearchRegistry
 from rotation.replay import replay
 from rotation.signals import MarketBar, decide
 
@@ -226,8 +228,77 @@ def test_t3_reddecode_cannot_reuse_old_raw_receipt_as_new_proof_time(tmp_path):
             }
         )
     )
-    refreshed = refresh_follow_state(root)
+    refreshed = refresh_follow_state(root, now=lambda: T + timedelta(days=1))
     revised = refreshed["transactions"][signature]
     assert revised["kind"] == "swap" and revised["quality"] == "complete"
-    assert datetime.fromisoformat(revised["effective_available_at"]) > old_receipt
+    assert datetime.fromisoformat(revised["effective_available_at"]) == T + timedelta(days=1)
     assert len(revised["decode_revisions"]) == 2
+    assert (
+        refresh_follow_state(root, now=lambda: T + timedelta(days=2))["transactions"][signature][
+            "decode_revisions"
+        ]
+        == revised["decode_revisions"]
+    )
+
+
+def test_t3_late_price_creates_a_new_valuation_revision_at_receipt(tmp_path):
+    registry = ResearchRegistry.load("config/r3-universe.json")
+    a = registry.by_symbol["BONK"]["mint"]
+    reserve = registry.by_symbol["wSOL"]["mint"]
+    (tmp_path / "follow-checkpoint.json").write_text(
+        json.dumps(
+            {
+                "dataset": "DEMO",
+                "transactions": {
+                    "sig": {
+                        "status": "fetched",
+                        "wallet": "wallet",
+                        "kind": "swap",
+                        "quality": "complete",
+                        "economic_at": T.isoformat(),
+                        "decoded_at": (T + timedelta(minutes=1)).isoformat(),
+                        "receipt": {"received_at": T.isoformat()},
+                        "legs": [
+                            {"mint": reserve, "delta_base": "-100", "decimals": 0},
+                            {"mint": a, "delta_base": "100", "decimals": 0},
+                        ],
+                    }
+                },
+                "wallets": {"wallet": {"pending_signatures": []}},
+                "enrichment_queue": [],
+                "gaps": [],
+                "stop_reason": "cycle_complete",
+            }
+        )
+    )
+    (tmp_path / "cohort.json").write_text(
+        json.dumps({"cohort_known_at": (T - timedelta(minutes=1)).isoformat(), "wallets": []})
+    )
+    (tmp_path / "market-bars.json").write_text(
+        json.dumps(
+            {
+                "dataset": "DEMO",
+                "bars": [
+                    {
+                        "mint": a,
+                        "close_at": T.isoformat(),
+                        "available_at": (T + timedelta(hours=1)).isoformat(),
+                        "price_usd": "2",
+                        "volume_usd": "100",
+                        "liquidity_usd": None,
+                        "interval_seconds": 60,
+                        "volume_kind": "interval",
+                    }
+                ],
+            }
+        )
+    )
+    out = tmp_path / "out"
+    report = process_follow(tmp_path, registry, output_root=out)
+    revisions = report["valuation_revisions"]
+    assert [row["valued_legs"] for row in revisions] == [0, 1]
+    assert [row["effective_available_at"] for row in revisions] == [
+        (T + timedelta(minutes=1)).isoformat(),
+        (T + timedelta(hours=1)).isoformat(),
+    ]
+    assert report == process_follow(tmp_path, registry, output_root=out)
