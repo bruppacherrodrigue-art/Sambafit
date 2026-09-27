@@ -2,6 +2,42 @@
 
 Moteur local de recherche sur les rotations de capital Solana. Il lit des adresses publiques, conserve les réponses RPC et les opérations décodées, attribue les rotations, produit des signaux déterministes, rejoue une chronologie et simule un portefeuille. **Aucun chemin de code ne signe ni ne diffuse une transaction.** Le mode par défaut est une fixture `DEMO` synthétique.
 
+## R3 : rotations entre memecoins Solana
+
+Le [rapport de validation R3](docs/r3-validation-report.md) contient les preuves, compteurs et limites. Le [registre de recherche](config/r3-universe.json) classe les mints exacts avec provenance et date : dix memecoins candidats, PENGU incertain, réserves/transits et tokens de plateforme séparés. Il ne constitue pas une watchlist approuvée. La [politique FIFO](docs/r3-attribution-policy.md), la [règle de signal par paire](docs/r3-pair-signal-spec.md), la [cohorte](docs/r3-cohort-selection.md) et le [budget](docs/r3-collection-budget.md) sont versionnés.
+
+Reproduction hors ligne depuis les archives réelles R2/R3, sans nouvel appel réseau de données :
+
+```bash
+uv sync --frozen
+uv run rotation r3-cohort
+uv run rotation r3-replay
+uv run rotation r3-process-follow
+uv run rotation r3-manifest
+uv run rotation r3-budget
+uv run ruff check src tests
+uv run ruff format --check src tests
+uv run pytest -q
+cd web && npm ci && npm run build
+```
+
+Le [manifeste R3](data/r3-20260927/manifest.json) répertorie 24 signatures présélectionnées et 16 transactions prospectives, avec hashes et statuts. Le replay trouve cinq **inférences exploratoires** entre memecoins sur 20 swaps stricts ; les cinq décisions restent en observation faute de marché A/B connu à l'heure utile. Le suivi prospectif contient une seule opération de swap complète, hors univers cible, et zéro rotation cible. Les quatre rendements comparatifs sont `null`. Aucun wallet Fomo n'est vérifié et aucun gros trader durable n'est qualifié.
+
+Pour consulter l'onglet **R3 réel** en local, lancer le backend depuis la racine du présent worktree :
+
+```bash
+ROTATION_SCHEMA=pilot_20260926 ROTATION_KILL_SWITCH=1 uv run uvicorn rotation.api:app --host 127.0.0.1 --port 8011
+```
+
+Dans un second terminal :
+
+```bash
+cd web
+VITE_API_PROXY_TARGET=http://127.0.0.1:8011 npm run dev -- --host 127.0.0.1 --port 5176
+```
+
+Ouvrir `http://127.0.0.1:5176/`, onglet **R3 réel**. Les preuves publiques et heures de réception sont consultables ; la démo reste isolée. Arrêter ces deux processus par `Ctrl-C` dans leurs terminaux ou par leurs PID identifiés. Aucun worker périodique n'est lancé par le tableau de bord. Les commandes `r3-audit`, `r3-follow-once` et `r3-market-follow` font de nouveaux appels externes et consomment le budget persistant ; le kill switch les bloque.
+
 ## Pilote réel reproductible du 26 septembre 2026
 
 Le [rapport du pilote](docs/real-pilot-report.md) décrit un prélèvement technique de 60 transactions finalisées et 89 observations de marché : 18 swaps complets selon un décodage DLMM prudent, 32 opérations partielles, 5 transferts, 5 wraps. Il ne constitue ni une watchlist utilisateur ni une cohorte Fomo. Les réponses brutes et leurs SHA-256 sont dans [le corpus](data/real-pilot-20260926/manifest.json). Les cinq adresses avec swap complet restent **on-chain non attribuées à Fomo**. Il n'y a pas de signal réel confirmé ni de P&L exécutable.
