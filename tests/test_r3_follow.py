@@ -1,7 +1,7 @@
 import json
 from pathlib import Path
 
-from rotation.r2_follow import follow_once
+from rotation.r2_follow import follow_once, refresh_follow_state
 
 
 def setup_root(tmp_path, wallets):
@@ -64,6 +64,10 @@ def test_follow_paginates_more_than_twenty_and_services_second_wallet(tmp_path):
     )
     assert len(state["wallets"]["wallet1"]["pending_signatures"]) >= 23
     assert set(state["transactions"]) == {"s00", "second"}
+    assert {row["signature"] for row in state["enrichment_queue"]} == {"s00", "second"}
+    assert all(row["source_hash"] for row in state["enrichment_queue"])
+    refreshed = refresh_follow_state(root)
+    assert {row["signature"] for row in refreshed["enrichment_queue"]} == {"s00", "second"}
     assert state["wallets"]["wallet1"]["scan_cursor"] is None
     assert not state["gaps"]
 

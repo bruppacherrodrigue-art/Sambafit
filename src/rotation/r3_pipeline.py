@@ -353,6 +353,8 @@ def process_follow(root: str | Path, registry: ResearchRegistry) -> dict:
     reasons = []
     if not strict:
         reasons.append("no_supported_complete_swap")
+    if follow.get("enrichment_queue"):
+        reasons.append("incomplete_operations_await_enrichment")
     if strict and not post_freeze:
         reasons.append("no_post_cohort_freeze_swap")
     if not targets:
@@ -372,6 +374,7 @@ def process_follow(root: str | Path, registry: ResearchRegistry) -> dict:
                 len(info.get("pending_signatures", [])) for info in follow["wallets"].values()
             ),
             "transactions_fetched": len(fetched),
+            "incomplete_enrichment": len(follow.get("enrichment_queue", [])),
             "complete_swaps": len(strict),
             "post_freeze_complete_swaps": len(post_freeze),
             "reserve_reconciled": reserve_reconciled,
@@ -382,6 +385,7 @@ def process_follow(root: str | Path, registry: ResearchRegistry) -> dict:
             "confirmed_decisions": sum(row["state"] == "confirmed" for row in decisions),
         },
         "coverage_gaps": follow.get("gaps", []),
+        "incomplete_operations": follow.get("enrichment_queue", []),
         "stop_reason": follow.get("stop_reason"),
         "missing_transitions": reasons,
         "rotations": [

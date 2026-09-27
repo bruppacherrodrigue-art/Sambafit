@@ -16,6 +16,9 @@ def test_r3_api_is_real_only_and_exposes_pair_proof(monkeypatch):
     assert replay["dataset"] == "REAL" and replay["synthetic"] is False
     prospective = client.get("/api/r3/prospective").json()
     assert prospective["dataset"] == "REAL" and prospective["paper_orders"] == []
+    assert len(prospective["incomplete_operations"]) == 12
+    partial_signature = prospective["incomplete_operations"][0]["signature"]
+    assert client.get(f"/api/r3/operations/{partial_signature}").json()["dataset"] == "REAL"
     signature = cohort["wallets"][0]["sample_signatures"][0]
     evidence = client.get(f"/api/r3/operations/{signature}").json()
     assert evidence["dataset"] == "REAL"

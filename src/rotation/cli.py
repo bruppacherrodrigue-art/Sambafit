@@ -21,7 +21,7 @@ from .pilot_collection import run_pilot_collection
 from .r2_budget import R2Budget
 from .r2_collect import collect_selected_transactions
 from .r2_corpus import finalize_corpus
-from .r2_follow import follow_once
+from .r2_follow import follow_once, refresh_follow_state
 from .r2_fomo import FomoProofStore
 from .r2_sequences import SequenceStore
 from .r2_sources import R2Http
@@ -128,6 +128,7 @@ def main(argv: list[str] | None = None) -> int:
         "r3-cohort",
         "r3-replay",
         "r3-process-follow",
+        "r3-refresh-follow",
         "r3-budget",
         "r3-manifest",
     ):
@@ -240,6 +241,16 @@ def main(argv: list[str] | None = None) -> int:
                 "stages": result["stages"],
                 "missing_transitions": result["missing_transitions"],
                 "execution_status": result["execution_status"],
+            }
+        )
+        return 0
+    if args.command == "r3-refresh-follow":
+        result = refresh_follow_state(args.root)
+        _print(
+            {
+                "transactions": len(result["transactions"]),
+                "incomplete_enrichment": len(result["enrichment_queue"]),
+                "calls": 0,
             }
         )
         return 0

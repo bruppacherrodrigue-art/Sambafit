@@ -1,4 +1,114 @@
 {
+  "enrichment_queue": [
+    {
+      "decoder_version": "r2-raydium-amm-v4-owner-balances-1",
+      "reason": "partial_route",
+      "signature": "23VkYwa2VRvqjNJQnf585icPBDyQMo539ruuP7nveVmPDgS4twfoiX7RbH4afaJ8UtCESKJnBdabaG2jPeSWmtQW",
+      "source_attempt": 35,
+      "source_hash": "c115ff0f24682f53cc58e33d81f3766e89462c5d65cc9572c8bb37fbbd7f057e",
+      "status": "awaiting_supported_route_or_authorized_reference",
+      "wallet": "CreQJ2t94QK5dsxUZGXfPJ8Nx7wA9LHr5chxjSMkbNft"
+    },
+    {
+      "decoder_version": "r2-raydium-amm-v4-owner-balances-1",
+      "reason": "unsupported_program",
+      "signature": "2T8JLpeD36dWUnCzdwxfJU3qBRT8RSefqQCCGWVr6A4XcX1nTfy1y47P7qHMVJTntqWwD1FeFhY3WEd92RF458gb",
+      "source_attempt": 49,
+      "source_hash": "fd1667e309de22086b9f1223f977929ec88da730863988cf51707c5e60868f18",
+      "status": "awaiting_supported_route_or_authorized_reference",
+      "wallet": "MfDuWeqSHEqTFVYZ7LoexgAK9dxk7cy4DFJWjWMGVWa"
+    },
+    {
+      "decoder_version": "r2-raydium-amm-v4-owner-balances-1",
+      "reason": "partial",
+      "signature": "2j5ieXrocvEagceW32kMKRCxvUgcfFAruPBkSkGtjDEQk2bg3Sfmuug3j9Tiq4N68pioe7YYJ66T6mRu3x8Teo1F",
+      "source_attempt": 37,
+      "source_hash": "84d574eb85b33b602a1171ba0f9991f0b8f137ba43bdb0a97452ccb99e68b086",
+      "status": "awaiting_supported_route_or_authorized_reference",
+      "wallet": "9FMUjZHCJEeoz1Au9RB7RsgCEeaDfQ164TToKfixCSHi"
+    },
+    {
+      "decoder_version": "r2-raydium-amm-v4-owner-balances-1",
+      "reason": "partial",
+      "signature": "3CozD5wiKYhhiWKmK6oSotEMb4CA8Uv4gTbjQypUcH7NhZkx1jr5x6KfGqWGuJ9QnVGmJQFgzNwaMtgiQYERsnY1",
+      "source_attempt": 53,
+      "source_hash": "507b01e04406c49fd4438dc24da5ea2dffb610b428332a258d1ce9894b173775",
+      "status": "awaiting_supported_route_or_authorized_reference",
+      "wallet": "MfDuWeqSHEqTFVYZ7LoexgAK9dxk7cy4DFJWjWMGVWa"
+    },
+    {
+      "decoder_version": "r2-raydium-amm-v4-owner-balances-1",
+      "reason": "partial",
+      "signature": "3N8CPx5jLpaXrxTTKTbgB7iRAUkJvPDMok1EoRG1nsgXhJXANCFGHJNfk1V3wqRk5SSaLuTVTVgtpxTrD2NFpfPc",
+      "source_attempt": 33,
+      "source_hash": "d545a2f834612c03bd1e4158995db54c847ce167007ff8bd982fcbc64755adf0",
+      "status": "awaiting_supported_route_or_authorized_reference",
+      "wallet": "9FMUjZHCJEeoz1Au9RB7RsgCEeaDfQ164TToKfixCSHi"
+    },
+    {
+      "decoder_version": "r2-raydium-amm-v4-owner-balances-1",
+      "reason": "partial",
+      "signature": "3jZ5ZNnv2k3Dyk1W39oYKzbwRCfekJRPqrnbKzVdbber3xya2DhKvduwWKyfs6UNNnUsJ7QtgDLCQ68x363BcgTK",
+      "source_attempt": 46,
+      "source_hash": "8044cf2d0858a6899d22a7afb3b8c356a5af3a828de2e2971c8271466b8c9779",
+      "status": "awaiting_supported_route_or_authorized_reference",
+      "wallet": "CreQJ2t94QK5dsxUZGXfPJ8Nx7wA9LHr5chxjSMkbNft"
+    },
+    {
+      "decoder_version": "r2-raydium-amm-v4-owner-balances-1",
+      "reason": "partial",
+      "signature": "4PJRKxb9DVrquHRoQEV3pJU3qa2zq4PZt5uTG83a8LM3cMhkACApWdRseEJDGf8hbppCwBQKUBE7paTzEydzDc3w",
+      "source_attempt": 32,
+      "source_hash": "950cec996ddcaf495ac41e4ceb9af32b79270ce299e62cc6ec805f10e73e22c6",
+      "status": "awaiting_supported_route_or_authorized_reference",
+      "wallet": "FkaLnX17cXZGyeu3kZGdHCNdFMJJzBrPPYVvd18B3MZp"
+    },
+    {
+      "decoder_version": "r2-raydium-amm-v4-owner-balances-1",
+      "reason": "partial",
+      "signature": "63Jiu96K2hKoHdewxmj95qLbSrLEpZTqPtTxeXHycJvnxrbha6X785DSE74mRhWboDPsMbEbFk1zgQRr6cJzAkYV",
+      "source_attempt": 36,
+      "source_hash": "7f146b800bc546f1c2b0f22a11b0735859e7347d29b475c791716dc46f94ddae",
+      "status": "awaiting_supported_route_or_authorized_reference",
+      "wallet": "FkaLnX17cXZGyeu3kZGdHCNdFMJJzBrPPYVvd18B3MZp"
+    },
+    {
+      "decoder_version": "r2-raydium-amm-v4-owner-balances-1",
+      "reason": "partial_route",
+      "signature": "8dpdjAFHKogVzX2TzBEuXTQdBrZSXe2sFwp5BfhwoacF6XcTWqo2U3joZfdZ9RUKaYK7scfDgUTUBMpjBXYVQAq",
+      "source_attempt": 31,
+      "source_hash": "2b67b093760d3189c6d1cb76d31d67566646a88ba68c4586b1dfed90219384b4",
+      "status": "awaiting_supported_route_or_authorized_reference",
+      "wallet": "CreQJ2t94QK5dsxUZGXfPJ8Nx7wA9LHr5chxjSMkbNft"
+    },
+    {
+      "decoder_version": "r2-raydium-amm-v4-owner-balances-1",
+      "reason": "partial",
+      "signature": "GYdcEwDAzskrCFNwb69Tf6EAESncqxFY3EFBdQJyrr6H5D7441zoYMr1dsoKbevhp8CkxFALBXkjpizkXNkg5CP",
+      "source_attempt": 48,
+      "source_hash": "30238d9fa97d6ef41980c73cc2a4a1a2030b1ec2b654237cf6c53276415a4b6a",
+      "status": "awaiting_supported_route_or_authorized_reference",
+      "wallet": "9FMUjZHCJEeoz1Au9RB7RsgCEeaDfQ164TToKfixCSHi"
+    },
+    {
+      "decoder_version": "r2-raydium-amm-v4-owner-balances-1",
+      "reason": "partial",
+      "signature": "JVSbbN9somSQU8sVXz9cXLg48dF8LiEdGmeRAVAexobzErRHrxHCLhYxFjasJV8eTXXxFr5L39b87cnWmUSAnLM",
+      "source_attempt": 50,
+      "source_hash": "452c88e2117305bf6184e1f2e48ec4ec9df3e8613181db0d0308efd5353f68c3",
+      "status": "awaiting_supported_route_or_authorized_reference",
+      "wallet": "CreQJ2t94QK5dsxUZGXfPJ8Nx7wA9LHr5chxjSMkbNft"
+    },
+    {
+      "decoder_version": "r2-raydium-amm-v4-owner-balances-1",
+      "reason": "partial_route",
+      "signature": "Mamt7uEZysu2Hm5CqKjTzYgPPb6MrCPc1y24t5v5cPhTFM2ute7JEbts6ASz3VXUBWRutcTxVZUbvis71hbVikD",
+      "source_attempt": 34,
+      "source_hash": "284de49bda5b13d2b04c57f4d1cd5244e4280b1069c90e962eff8c678f73d18a",
+      "status": "awaiting_supported_route_or_authorized_reference",
+      "wallet": "MfDuWeqSHEqTFVYZ7LoexgAK9dxk7cy4DFJWjWMGVWa"
+    }
+  ],
   "gaps": [
     {
       "at": "2026-09-27T03:55:58.097844+00:00",

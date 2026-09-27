@@ -12,6 +12,7 @@ Reproduction hors ligne depuis les archives r√©elles R2/R3, sans nouvel appel r√
 uv sync --frozen
 uv run rotation r3-cohort
 uv run rotation r3-replay
+uv run rotation r3-refresh-follow
 uv run rotation r3-process-follow
 uv run rotation r3-manifest
 uv run rotation r3-budget

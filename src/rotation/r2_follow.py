@@ -57,6 +57,7 @@ def follow_once(
         else {
             "wallets": {},
             "transactions": {},
+            "enrichment_queue": [],
             "market_snapshots": [],
             "gaps": [],
             "next_pool_index": 0,
@@ -65,6 +66,7 @@ def follow_once(
         }
     )
     state["stop_reason"] = None
+    state.setdefault("enrichment_queue", [])
     fetched = 0
     decoder = R2Decoder()
     for _ in range(min(pools_limit, len(pools))):
@@ -235,6 +237,19 @@ def follow_once(
                         for leg in decoded.operation.legs
                     ],
                 }
+                if decoded.operation.kind == "unknown" or decoded.operation.quality != "complete":
+                    if not any(item["signature"] == sig for item in state["enrichment_queue"]):
+                        state["enrichment_queue"].append(
+                            {
+                                "signature": sig,
+                                "wallet": wallet,
+                                "reason": decoded.operation.quality,
+                                "source_attempt": tx_receipt["attempt"],
+                                "source_hash": tx_receipt["response_hash"],
+                                "decoder_version": decoded.parser_version,
+                                "status": "awaiting_supported_route_or_authorized_reference",
+                            }
+                        )
                 known["pending_signatures"].remove(sig)
                 if sig not in known["seen"]:
                     known["seen"].append(sig)
@@ -258,6 +273,7 @@ def refresh_follow_state(root: str | Path) -> dict:
     root = Path(root)
     path = root / "follow-checkpoint.json"
     state = json.loads(path.read_text())
+    state.setdefault("enrichment_queue", [])
     decoder = R2Decoder()
     for signature, item in state["transactions"].items():
         if item.get("status") != "fetched":
@@ -270,6 +286,25 @@ def refresh_follow_state(root: str | Path) -> dict:
             {"mint": leg.mint, "delta_base": str(leg.delta_base), "decimals": leg.decimals}
             for leg in decoded.operation.legs
         ]
+        item["kind"] = decoded.operation.kind
+        item["quality"] = decoded.operation.quality
+        item["decoder_version"] = decoded.parser_version
+        if decoded.operation.kind != "unknown" and decoded.operation.quality == "complete":
+            state["enrichment_queue"] = [
+                row for row in state["enrichment_queue"] if row["signature"] != signature
+            ]
+        elif not any(row["signature"] == signature for row in state["enrichment_queue"]):
+            state["enrichment_queue"].append(
+                {
+                    "signature": signature,
+                    "wallet": item["wallet"],
+                    "reason": decoded.operation.quality,
+                    "source_attempt": item["receipt"]["attempt"],
+                    "source_hash": item["receipt"]["response_hash"],
+                    "decoder_version": decoded.parser_version,
+                    "status": "awaiting_supported_route_or_authorized_reference",
+                }
+            )
     for wallet, info in state["wallets"].items():
         info.setdefault("coverage_started_at", state["started_at"])
     _save(path, state)
