@@ -17,7 +17,7 @@ def test_r31_api_keeps_offline_replay_separate_from_r3_and_demo(monkeypatch, tmp
     }
     (tmp_path / "replay.json").write_text(json.dumps(real))
     (tmp_path / "prospective.json").write_text(
-        json.dumps({"dataset": "REAL", "mode": "PAPER LIVE", "paper_orders": []})
+        json.dumps({"dataset": "REAL", "mode": "REPLAY", "paper_orders": []})
     )
     assert client.get("/api/r3-1/replay").json() == real
     assert client.get("/api/r3-1/prospective").json()["paper_orders"] == []

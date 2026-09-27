@@ -510,7 +510,10 @@ def process_follow(
         reasons.append("no_pair_decision")
     report = {
         "dataset": dataset,
-        "mode": "PAPER LIVE",
+        "mode": "REPLAY" if output_root is not None else "PAPER LIVE",
+        "source_mode": "archived_prospective_inputs"
+        if output_root is not None
+        else "current_follow_state",
         "synthetic": dataset == "DEMO",
         "registry_version": registry.version,
         "strategy_version": strategy_config.version,

@@ -16,7 +16,7 @@ uv run ruff format --check src tests
 cd web && npm run build
 ```
 
-Ces commandes R3.1 ne collectent aucune nouvelle donnée. L'API locale expose `/api/r3-1/replay`, `/api/r3-1/prospective` et `/api/r3-1/strategy` ; l'onglet **R3 réel** distingue la candidate de recherche d'une stratégie admise. Aucune des cinq paires archivées n'est une entrée paper exécutable : les retards de réception, la qualification des wallets et la profondeur historique restent insuffisants.
+Ces commandes R3.1 ne collectent aucune nouvelle donnée. La sortie `prospective.json` est étiquetée `REAL / REPLAY` : elle reconstruit le suivi archivé, elle n'est pas une collecte active. L'API locale expose `/api/r3-1/replay`, `/api/r3-1/prospective` et `/api/r3-1/strategy` ; l'onglet **R3 réel** distingue la candidate de recherche d'une stratégie admise. Aucune des cinq paires archivées n'est une entrée paper exécutable : les retards de réception, la qualification des wallets et la profondeur historique restent insuffisants.
 
 Le [rapport de validation R3](docs/r3-validation-report.md) contient les preuves, compteurs et limites. Le [registre de recherche](config/r3-universe.json) classe les mints exacts avec provenance et date : dix memecoins candidats, PENGU incertain, réserves/transits et tokens de plateforme séparés. Il ne constitue pas une watchlist approuvée. La [politique FIFO](docs/r3-attribution-policy.md), la [règle de signal par paire](docs/r3-pair-signal-spec.md), la [cohorte](docs/r3-cohort-selection.md) et le [budget](docs/r3-collection-budget.md) sont versionnés.
 

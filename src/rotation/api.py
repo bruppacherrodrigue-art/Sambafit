@@ -88,8 +88,12 @@ def create_app(store: Store | None = None) -> FastAPI:
         if not path.exists():
             raise HTTPException(404, "R3.1 offline replay unavailable")
         value = json.loads(path.read_text())
-        if value.get("dataset") != "REAL" or value.get("synthetic") is True:
-            raise HTTPException(409, "R3.1 REAL endpoint rejects DEMO artifacts")
+        if (
+            value.get("dataset") != "REAL"
+            or value.get("synthetic") is True
+            or value.get("mode") != "REPLAY"
+        ):
+            raise HTTPException(409, "R3.1 REAL replay endpoint rejects DEMO or live artifacts")
         return value
 
     @app.get("/api/r3-1/replay")

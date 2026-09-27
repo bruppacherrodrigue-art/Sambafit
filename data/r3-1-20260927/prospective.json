@@ -146,10 +146,11 @@
     "legacy_decode_availability_unknown",
     "no_verified_memecoin_to_memecoin_rotation"
   ],
-  "mode": "PAPER LIVE",
+  "mode": "REPLAY",
   "paper_orders": [],
   "registry_version": "r3-research-classification-1",
   "rotations": [],
+  "source_mode": "archived_prospective_inputs",
   "stages": {
     "candidate_decisions": 0,
     "complete_swaps": 1,
