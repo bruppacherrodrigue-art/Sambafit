@@ -4,6 +4,8 @@ from dataclasses import dataclass
 from datetime import datetime, timedelta
 from decimal import Decimal
 
+from .reserve_fifo import consume
+
 
 @dataclass(frozen=True)
 class Leg:
@@ -38,12 +40,17 @@ class Rotation:
     destination: str | None
     evidence: str
     direction: str
-    amount_usd: Decimal
+    amount_usd: Decimal | None
     wallet: str
     source_op: str
     destination_op: str | None
     economic_at: datetime
     available_at: datetime
+    reserve_mint: str | None = None
+    reserve_quantity_base: int | None = None
+    sale_value_usd: Decimal | None = None
+    buy_value_usd: Decimal | None = None
+    valuation_method: str | None = None
 
 
 @dataclass(frozen=True)
@@ -141,7 +148,7 @@ def attribute_rotations(
         return "between_coins"
 
     rotations: list[Rotation] = []
-    sales: dict[str, list[dict]] = {}
+    sales: list[dict] = []
     for op in sorted(operations, key=lambda x: (x.economic_at, x.available_at, x.id)):
         if not op.finalized or op.quality != "complete":
             continue
@@ -151,7 +158,7 @@ def attribute_rotations(
             if len(negative) != 1 or len(positive) != 1:
                 continue
             source, dest = negative[0], positive[0]
-            if source.mint == dest.mint or source.value_usd is None or dest.value_usd is None:
+            if source.mint == dest.mint:
                 continue
             rotations.append(
                 Rotation(
@@ -159,47 +166,96 @@ def attribute_rotations(
                     dest.mint,
                     "direct",
                     direction(source.mint, dest.mint),
-                    min(source.value_usd, dest.value_usd),
+                    min(source.value_usd, dest.value_usd)
+                    if source.value_usd is not None and dest.value_usd is not None
+                    else None,
                     op.wallet,
                     op.id,
                     op.id,
                     op.economic_at,
                     op.available_at,
+                    source.mint if source.mint in reserve_mints else dest.mint if dest.mint in reserve_mints else None,
+                    abs(source.delta_base) if source.mint in reserve_mints else dest.delta_base if dest.mint in reserve_mints else None,
+                    source.value_usd,
+                    dest.value_usd,
+                    "two_legs_point_in_time" if source.value_usd is not None and dest.value_usd is not None else None,
                 )
             )
-        elif op.kind == "sale" and len(negative) == 1 and negative[0].value_usd is not None:
-            sales.setdefault(op.wallet, []).append(
-                {"op": op, "leg": negative[0], "remaining": negative[0].value_usd}
+        is_sale = op.kind == "sale" or (
+            op.kind == "swap"
+            and len(negative) == len(positive) == 1
+            and positive[0].mint in reserve_mints
+            and negative[0].mint not in reserve_mints
+        )
+        is_buy = op.kind == "buy" or (
+            op.kind == "swap"
+            and len(negative) == len(positive) == 1
+            and negative[0].mint in reserve_mints
+            and positive[0].mint not in reserve_mints
+        )
+        if is_sale and len(negative) == 1:
+            reserve = next((leg for leg in positive if leg.mint in reserve_mints), None)
+            unit = "reserve_base" if reserve else "usd_proxy"
+            amount = Decimal(reserve.delta_base) if reserve else negative[0].value_usd
+            if amount is None or amount <= 0:
+                continue
+            sales.append(
+                {
+                    "op": op,
+                    "leg": negative[0],
+                    "wallet": op.wallet,
+                    "reserve_mint": reserve.mint if reserve else "__legacy_usd_proxy__",
+                    "unit": unit,
+                    "reserve_decimals": reserve.decimals if reserve else 0,
+                    "economic_at": op.economic_at.isoformat(),
+                    "amount": amount,
+                    "remaining": amount,
+                }
             )
-        elif op.kind == "buy" and len(positive) == 1 and positive[0].value_usd is not None:
+        elif is_buy and len(positive) == 1:
             buy = positive[0]
-            remaining = buy.value_usd
-            for sale in sales.get(op.wallet, []):
-                if remaining <= 0:
-                    break
+            reserve = next((leg for leg in negative if leg.mint in reserve_mints), None)
+            unit = "reserve_base" if reserve else "usd_proxy"
+            amount = Decimal(abs(reserve.delta_base)) if reserve else buy.value_usd
+            if amount is None or amount <= 0:
+                continue
+            debit = {
+                "wallet": op.wallet,
+                "reserve_mint": reserve.mint if reserve else "__legacy_usd_proxy__",
+                "unit": unit,
+                "reserve_decimals": reserve.decimals if reserve else 0,
+                "economic_at": op.economic_at.isoformat(),
+                "amount": amount,
+            }
+            for sale, matched in consume(sales, debit, window):
                 prev = sale["op"]
-                if (
-                    sale["remaining"] <= 0
-                    or prev.economic_at > op.economic_at
-                    or op.economic_at - prev.economic_at > window
-                    or sale["leg"].mint == buy.mint
-                ):
-                    continue
-                amount = min(remaining, sale["remaining"])
+                if sale["leg"].mint == buy.mint:
+                    continue  # Same-coin repurchase spends credit but is no rotation.
+                sale_value = (
+                    sale["leg"].value_usd * matched / sale["amount"]
+                    if sale["leg"].value_usd is not None
+                    else None
+                )
+                buy_value = buy.value_usd * matched / amount if buy.value_usd is not None else None
                 rotations.append(
                     Rotation(
                         sale["leg"].mint,
                         buy.mint,
                         "inferred",
                         direction(sale["leg"].mint, buy.mint),
-                        amount,
+                        min(sale_value, buy_value)
+                        if sale_value is not None and buy_value is not None
+                        else None,
                         op.wallet,
                         prev.id,
                         op.id,
                         op.economic_at,
                         max(prev.available_at, op.available_at),
+                        reserve.mint if reserve else None,
+                        int(matched) if reserve else None,
+                        sale_value,
+                        buy_value,
+                        "reserve_base_conserved" if reserve else "legacy_usd_proxy",
                     )
                 )
-                sale["remaining"] -= amount
-                remaining -= amount
     return rotations

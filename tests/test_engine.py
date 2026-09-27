@@ -36,6 +36,15 @@ def test_inferred_split_conserves_sale_value_and_orders_by_availability():
     assert sum(r.amount_usd for r in rotations) == D("100")
 
 
+def test_engine_fifo_buyback_consumes_sale_before_other_coin():
+    events = [
+        op("sale", "sale", T, [leg("A", -100)]),
+        op("buyback", "buy", T + timedelta(minutes=1), [leg("A", 100)]),
+        op("other", "buy", T + timedelta(minutes=2), [leg("B", 100)]),
+    ]
+    assert attribute_rotations(events) == []
+
+
 def test_late_sale_pairs_by_economic_order_only_after_both_events_are_available():
     sale = op("sell", "sale", T, [leg("A", -100)], available=T + timedelta(minutes=10))
     buy = op(
@@ -59,7 +68,9 @@ def test_nontrades_failed_partial_and_unpriced_do_not_rotate():
     events += [op("failed", "swap", T, [leg("A", -100), leg("B", 100)], finalized=False)]
     events += [op("partial", "swap", T, [leg("A", -100), leg("B", 100)], quality="partial")]
     events += [op("unpriced", "swap", T, [leg("A", -100, None), leg("B", 100)])]
-    assert attribute_rotations(events) == []
+    rotations = attribute_rotations(events)
+    assert len(rotations) == 1 and rotations[0].source_op == "unpriced"
+    assert rotations[0].amount_usd is None
 
 
 def test_direct_swap_does_not_create_inferred_pair():

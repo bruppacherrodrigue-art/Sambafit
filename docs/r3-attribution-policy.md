@@ -1,0 +1,9 @@
+# R3 — attribution économique de réserve
+
+Version initiale `reserve-fifo-1`. Le wallet et le mint de réserve forment une comptabilité séparée. Une vente d'un coin contre une réserve crée un crédit de la **quantité de réserve en unités de base**, décimales incluses. Un achat du même coin, d'un autre memecoin, ou d'un token hors univers consomme les crédits admissibles dans l'ordre économique FIFO, dans les six heures. L'achat du même coin ne crée pas A→A. Les fonds antérieurs au début de couverture restent inconnus ; un achat sans crédit observé ne prouve aucune rotation.
+
+Les swaps A→B dans une seule opération économique produisent une preuve directe et ne servent pas de crédit à l'inférence. Les swaps A→wSOL et wSOL→B peuvent alimenter une inférence si les deux deltas du propriétaire et le programme sont vérifiés. Aucune conversion wSOL↔USDC n'est supposée ; elle exige une trace économique vérifiée. SOL natif, compte wSOL temporaire, loyer et frais ne sont pas convertis en capital disponible sans rapprochement. Les frais réseau restent distincts des deltas SPL ; un décodage incomplet dégrade la qualité.
+
+Le montant USD n'est jamais l'unité de conservation. Quand deux valorisations horodatées existent, l'allocation garde `sale_value_usd`, `buy_value_usd`, et un indicateur descriptif `amount_usd = min(les deux)` ; ce minimum n'est ni un prix d'exécution ni une preuve d'identité des fonds. Une valorisation manquante reste `null`. Les anciennes inférences R2 fondées sur des proxys USD restent archivées comme `legacy_usd_proxy` ; elles ne sont pas une preuve de conservation de wSOL.
+
+L'état prospectif utilise l'heure de réception pour décider. Une opération tardive peut corriger une reconstruction rétrospective et créer une révision disponible alors, sans modifier l'heure d'une décision passée. Les identifiants d'opération sont stables et distincts de la seule signature quand une transaction contient plusieurs opérations.

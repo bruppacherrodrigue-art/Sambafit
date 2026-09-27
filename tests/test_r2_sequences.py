@@ -65,3 +65,64 @@ def test_conflicting_same_signature_is_rejected(tmp_path):
             pass
         else:
             raise AssertionError("changed history accepted")
+
+
+def test_fifo_buyback_consumes_sale_before_other_coin(tmp_path):
+    with SequenceStore(tmp_path / "buyback.sqlite") as store:
+        store.add(
+            [
+                event("sale", "sell", "A", 100, "2026-09-26T10:00:00+00:00"),
+                event("buyback", "buy", "A", 100, "2026-09-26T10:01:00+00:00"),
+                event("other", "buy", "B", 100, "2026-09-26T10:02:00+00:00"),
+            ]
+        )
+        assert store.snapshot()["allocations"] == []
+        assert store.snapshot()["pending"] == []
+
+
+def test_fifo_partial_buyback_and_outside_universe_consumption(tmp_path):
+    with SequenceStore(tmp_path / "partial.sqlite") as store:
+        store.add(
+            [
+                event("sale", "sell", "A", 100, "2026-09-26T10:00:00+00:00"),
+                event("buyback", "buy", "A", 40, "2026-09-26T10:01:00+00:00"),
+                event("outside", "buy", "PLATFORM", 20, "2026-09-26T10:02:00+00:00"),
+                event("other", "buy", "B", 100, "2026-09-26T10:03:00+00:00"),
+            ]
+        )
+        assert {
+            a["destination_mint"]: Decimal(a["amount_usd"])
+            for a in store.snapshot()["allocations"]
+        } == {"PLATFORM": Decimal(20), "B": Decimal(40)}
+        assert store.snapshot()["pending"] == []
+
+
+def test_reserve_base_units_survive_price_change_and_do_not_cross_mints(tmp_path):
+    sale = event("s", "sell", "A", 100, "2026-09-26T10:00:00+00:00")
+    sale.update(reserve_quantity_base="1000000000", reserve_decimals=9)
+    other_reserve = event("different", "buy", "B", 100, "2026-09-26T10:01:00+00:00", reserve="USDC")
+    other_reserve.update(reserve_quantity_base="1000000", reserve_decimals=6)
+    buy = event("b", "buy", "B", 150, "2026-09-26T10:02:00+00:00")
+    buy.update(reserve_quantity_base="1000000000", reserve_decimals=9)
+    with SequenceStore(tmp_path / "units.sqlite", eligible_mints={"A", "B"}) as store:
+        store.add([sale, other_reserve, buy])
+        row = store.snapshot()["allocations"][0]
+        assert row["reserve_quantity_base"] == "1000000000"
+        assert row["sale_value_usd"] == "100"
+        assert row["buy_value_usd"] == "150"
+        assert row["valuation_method"] == "historical_source_values"
+        assert store.snapshot()["pending"] == []
+
+
+def test_out_of_universe_buy_consumes_quantity_without_creating_rotation(tmp_path):
+    sale = event("s", "sell", "A", 100, "2026-09-26T10:00:00+00:00")
+    outside = event("x", "buy", "PLATFORM", 60, "2026-09-26T10:01:00+00:00")
+    buy = event("b", "buy", "B", 100, "2026-09-26T10:02:00+00:00")
+    for item, qty in ((sale, 100), (outside, 60), (buy, 100)):
+        item.update(reserve_quantity_base=str(qty), reserve_decimals=6)
+    with SequenceStore(tmp_path / "scope.sqlite", eligible_mints={"A", "B"}) as store:
+        store.add([sale, outside, buy])
+        rows = store.snapshot()["allocations"]
+        assert len(rows) == 1
+        assert rows[0]["destination_mint"] == "B"
+        assert rows[0]["reserve_quantity_base"] == "40"
