@@ -93,6 +93,8 @@ def test_synthetic_follow_chain_reaches_pair_decision_without_execution(tmp_path
     assert first["stages"]["reserve_reconciled"] == 2
     assert first["stages"]["target_rotations"] == 1
     assert any(row["state"] == "candidate" for row in first["decisions"])
+    assert all(row["strategy"]["admission"] == "blocked" for row in first["decisions"])
+    assert all(row["strategy"]["paper_status"] == "blocked" for row in first["decisions"])
     assert first["execution_status"] == "blocked_no_historical_depth_or_quote"
     prior_decisions = first["decisions"]
     bars.append(

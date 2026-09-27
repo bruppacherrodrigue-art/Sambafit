@@ -23,6 +23,25 @@ class ReplayResult:
     aggregate_flows: tuple[AggregateFlow, ...] = ()
 
 
+def _semantic_decision(decision: Decision) -> tuple:
+    # Elapsed age is displayed at issuance, but its passage alone is not a new
+    # signal revision. Proof, state, quality and market features still are.
+    return (
+        decision.state,
+        decision.quality,
+        decision.score,
+        decision.components,
+        decision.reasons,
+        decision.version,
+        decision.execution_quality,
+        tuple(
+            (key, value)
+            for key, value in decision.metrics
+            if key not in {"economic_age_seconds", "observed_delay_seconds"}
+        ),
+    )
+
+
 def replay(
     operations: list[Operation],
     bars: list[MarketBar],
@@ -71,8 +90,14 @@ def replay(
                 if event.available_at < wallet_known_at.get(event.wallet, event.available_at):
                     continue
                 if event.kind == "retracted":
-                    retracted = active.pop((event.wallet, event.id), None) is not None
+                    for old_key in [
+                        key for key in active if key[1] in {event.id, event.supersedes_id}
+                    ]:
+                        retracted = active.pop(old_key, None) is not None or retracted
                 else:
+                    if event.supersedes_id:
+                        for old_key in [key for key in active if key[1] == event.supersedes_id]:
+                            active.pop(old_key)
                     active[(event.wallet, event.id)] = event
             elif isinstance(event, MarketBar):
                 visible_bars.append(event)
@@ -154,15 +179,18 @@ def replay(
                     decision.reasons + ("loss threshold observed",),
                     execution_quality=decision.execution_quality,
                 )
-            if last_decisions.get(pair) != decision:
+            if pair not in last_decisions or _semantic_decision(
+                last_decisions[pair]
+            ) != _semantic_decision(decision):
                 records.append(DecisionRecord(at, pair, decision))
                 last_decisions[pair] = decision
             if decision.state in {"invalidated", "expired"}:
                 entry_prices.pop(pair, None)
         for pair in sorted(set(last_decisions) - current):
-            if last_decisions[pair].state != "invalidated":
+            if last_decisions[pair].quality != "proof_removed":
+                had_live_signal = last_decisions[pair].state in {"candidate", "confirmed"}
                 decision = Decision(
-                    "invalidated",
+                    "invalidated" if had_live_signal else "observing",
                     "proof_removed",
                     0,
                     (),

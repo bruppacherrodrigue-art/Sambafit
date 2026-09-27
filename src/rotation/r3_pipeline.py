@@ -12,10 +12,11 @@ from .engine import Leg, Operation
 from .market import parse_candles
 from .r2_decode import R2Decoder
 from .r2_sequences import SequenceStore
-from .r3_registry import ResearchRegistry
+from .r3_registry import ADDRESS, ResearchRegistry
 from .replay import replay
 from .research import price_operations, study_events
 from .signals import MarketBar
+from .strategy import assess_strategy, load_strategy_config
 
 RESERVE_MINTS = {
     "So11111111111111111111111111111111111111112",
@@ -178,6 +179,10 @@ def replay_verified_corpus(
     r2_root: str | Path = "data/r2-20260926",
 ) -> dict:
     root, output_root = Path(r3_root), Path(output_root)
+    strategy_config = load_strategy_config(
+        Path(__file__).resolve().parents[2] / "config" / "strategy-r3-1.json"
+    )
+    cohort = _json(root / "cohort.json")
     operations = _verified_operations(root, registry)
     bars = load_r2_market_bars(r2_root)
     until = max(
@@ -191,6 +196,7 @@ def replay_verified_corpus(
         reserve_mints=RESERVE_MINTS,
         stable_mints={"EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v"},
         registry=registry,
+        policy=strategy_config.pair_policy,
     )
     targets = [
         rotation
@@ -200,7 +206,11 @@ def replay_verified_corpus(
         and rotation.destination in registry.eligible_mints(rotation.available_at)
     ]
     universe = registry.eligible_mints(until) & {bar.mint for bar in bars}
-    comparison = compare_variants(targets, bars, Decimal("1000"), universe) if universe else None
+    comparison = (
+        compare_variants(targets, bars, Decimal("1000"), universe, strategy_config.pair_policy)
+        if universe
+        else None
+    )
     rows = [
         {
             "at": record.at.isoformat(),
@@ -213,6 +223,17 @@ def replay_verified_corpus(
             "reasons": list(record.decision.reasons),
             "execution_quality": record.decision.execution_quality,
             "version": record.decision.version,
+            "strategy": asdict(
+                assess_strategy(
+                    *record.pair.split(":", 1),
+                    record.decision,
+                    bars,
+                    record.at,
+                    registry.records_at(record.at),
+                    cohort,
+                    strategy_config.strategy_policy,
+                )
+            ),
         }
         for record in result.decisions
     ]
@@ -222,6 +243,9 @@ def replay_verified_corpus(
         "synthetic": False,
         "selection_bias": "retrospective_cohort_from_same_sample",
         "registry_version": registry.version,
+        "strategy_version": strategy_config.version,
+        "strategy_config_hash": strategy_config.sha256,
+        "availability_clock_quality": "raw_receipt_lower_bound_decoder_timestamp_unknown",
         "verified_operations": len(operations),
         "closed_market_bars": len(bars),
         "target_rotations": len(targets),
@@ -256,6 +280,9 @@ def process_follow(
 ) -> dict:
     """Process persisted prospective inputs through the same replay functions."""
     root = Path(root)
+    strategy_config = load_strategy_config(
+        Path(__file__).resolve().parents[2] / "config" / "strategy-r3-1.json"
+    )
     follow = _json(root / "follow-checkpoint.json")
     dataset = follow.get("dataset", "REAL")
     if dataset not in {"REAL", "DEMO"}:
@@ -313,14 +340,48 @@ def process_follow(
         )
         if "effective_available_at" not in row and "decoded_at" not in row:
             unknown_decode_time.append(signature)
+            if dataset == "REAL":
+                # Receipt is only a lower bound for a legacy parse. It cannot
+                # certify when the new proof was first usable by a live bot.
+                continue
         if row.get("decoded_at"):
             effective_available = max(
                 effective_available, datetime.fromisoformat(row["decoded_at"])
             )
         effective_available = max(effective_available, raw_available)
+
+        def identity_available(revision: dict) -> datetime:
+            return max(
+                datetime.fromisoformat(revision["known_at"]),
+                datetime.fromisoformat(revision["proof_at"]),
+            )
+
+        identity_revisions = list(row.get("identity_revisions", []))
+        for revision in identity_revisions:
+            if (
+                not revision.get("proof")
+                or not revision.get("wallet")
+                or not revision.get("proof_at")
+            ):
+                raise ValueError("wallet identity correction needs explicit dated proof")
+            if dataset == "REAL" and (
+                not ADDRESS.fullmatch(revision["wallet"])
+                or not isinstance(revision["proof"], dict)
+                or not revision["proof"].get("reference")
+                or not revision["proof"].get("type")
+            ):
+                raise ValueError(
+                    "REAL wallet correction needs public address and evidence reference"
+                )
+            identity_available(revision)
+        identity_revisions.sort(key=identity_available)
+        initial_wallet = wallet
+        for revision in identity_revisions:
+            if identity_available(revision) <= effective_available:
+                initial_wallet = revision["wallet"]
         operation = Operation(
-            f"solana:{signature}:0:{wallet}",
-            wallet,
+            f"solana:{signature}:0:{initial_wallet}",
+            initial_wallet,
             signature,
             economic_at,
             effective_available,
@@ -334,6 +395,11 @@ def process_follow(
         revision_times = sorted(
             {effective_available}
             | {
+                identity_available(revision)
+                for revision in identity_revisions
+                if identity_available(revision) > effective_available
+            }
+            | {
                 bar.available_at
                 for bar in bars
                 if bar.available_at > effective_available
@@ -343,14 +409,35 @@ def process_follow(
         )
         previous_legs = None
         for revision_at in revision_times:
+            prior_identity_id = operation.id
+            for identity in identity_revisions:
+                if identity_available(identity) != revision_at:
+                    continue
+                next_wallet = identity["wallet"]
+                if next_wallet != operation.wallet:
+                    operation = replace(
+                        operation,
+                        wallet=next_wallet,
+                        id=f"solana:{signature}:0:{next_wallet}",
+                    )
+            identity_changed = operation.id != prior_identity_id
+            if identity_changed:
+                operation = replace(operation, supersedes_id=prior_identity_id)
             revised = price_operations([replace(operation, available_at=revision_at)], bars)[0]
-            if revised.legs == previous_legs:
+            if revised.legs == previous_legs and not identity_changed:
                 continue
             operations.append(revised)
+            if identity_changed:
+                operation = replace(operation, supersedes_id=None)
             previous_legs = revised.legs
             valuation_revisions.append(
                 {
                     "operation_id": revised.id,
+                    "wallet": revised.wallet,
+                    "supersedes_id": revised.supersedes_id,
+                    "identity_proof_known_at": revision_at.isoformat()
+                    if identity_changed
+                    else None,
                     "raw_received_at": raw_available.isoformat(),
                     "decoded_at": row.get("decoded_at"),
                     "effective_available_at": revision_at.isoformat(),
@@ -371,6 +458,7 @@ def process_follow(
         reserve_mints=RESERVE_MINTS,
         stable_mints={"EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v"},
         registry=registry,
+        policy=strategy_config.pair_policy,
     )
     targets = [
         rotation
@@ -391,6 +479,17 @@ def process_follow(
             "reasons": list(item.decision.reasons),
             "version": item.decision.version,
             "execution_quality": item.decision.execution_quality,
+            "strategy": asdict(
+                assess_strategy(
+                    *item.pair.split(":", 1),
+                    item.decision,
+                    bars,
+                    item.at,
+                    registry.records_at(item.at),
+                    cohort,
+                    strategy_config.strategy_policy,
+                )
+            ),
         }
         for item in result.decisions
     ]
@@ -399,6 +498,8 @@ def process_follow(
         reasons.append("no_supported_complete_swap")
     if follow.get("enrichment_queue"):
         reasons.append("incomplete_operations_await_enrichment")
+    if unknown_decode_time:
+        reasons.append("legacy_decode_availability_unknown")
     if strict and not post_freeze:
         reasons.append("no_post_cohort_freeze_swap")
     if not targets:
@@ -412,6 +513,9 @@ def process_follow(
         "mode": "PAPER LIVE",
         "synthetic": dataset == "DEMO",
         "registry_version": registry.version,
+        "strategy_version": strategy_config.version,
+        "strategy_config_hash": strategy_config.sha256,
+        "availability_clock_quality": "per_operation_observed_or_legacy_unknown",
         "cohort_frozen_at": frozen_at.isoformat(),
         "stages": {
             "queued_signatures": sum(
@@ -421,6 +525,7 @@ def process_follow(
             "incomplete_enrichment": len(follow.get("enrichment_queue", [])),
             "complete_swaps": len(strict),
             "post_freeze_complete_swaps": len(post_freeze),
+            "usable_complete_swaps": len({operation.id for operation in operations}),
             "reserve_reconciled": reserve_reconciled,
             "target_rotations": len(targets),
             "market_bars": len(bars),

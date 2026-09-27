@@ -33,6 +33,7 @@ class Operation:
     legs: tuple[Leg, ...]
     finalized: bool
     quality: str
+    supersedes_id: str | None = None
 
 
 @dataclass(frozen=True)

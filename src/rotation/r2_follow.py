@@ -336,8 +336,25 @@ def refresh_follow_state(
             item["decoded_at"] = decoded_at.isoformat()
             item["effective_available_at"] = decoded_at.isoformat()
         elif "effective_available_at" not in item:
-            # Legacy archives lack a trustworthy decode clock. Preserve that uncertainty.
-            item["decode_time_quality"] = "legacy_unknown"
+            # Rechecking a legacy row proves the parse only now. Keep the old
+            # undocumented timestamp as unknown, and issue a new revision.
+            if not item.get("decoded_at"):
+                decoded_at = clock()
+                receipt_at = datetime.fromisoformat(item["receipt"]["received_at"])
+                if decoded_at.tzinfo is None or decoded_at < receipt_at:
+                    raise ValueError("decode clock must follow receipt")
+                item["decode_revisions"] = [
+                    {**previous, "known_at": None, "knowledge_time_quality": "legacy_unknown"},
+                    {
+                        **updated,
+                        "known_at": decoded_at.isoformat(),
+                        "knowledge_time_quality": "observed_reverification",
+                    },
+                ]
+                item["decoded_at"] = decoded_at.isoformat()
+                item["effective_available_at"] = decoded_at.isoformat()
+            else:
+                item["effective_available_at"] = item["decoded_at"]
         if decoded.operation.kind != "unknown" and decoded.operation.quality == "complete":
             state["enrichment_queue"] = [
                 row for row in state["enrichment_queue"] if row["signature"] != signature
