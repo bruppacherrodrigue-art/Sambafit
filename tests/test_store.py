@@ -129,6 +129,38 @@ def test_latest_decoder_version_and_wallet_scoped_evidence(store):
     assert store.get_evidence("shared", "REAL", "w2")["raw"]["payload"]["owner"] == "w2"
 
 
+def test_two_economic_operations_in_one_signature_remain_distinct(store):
+    at = datetime(2026, 1, 1, tzinfo=timezone.utc)
+    store.add_raw("shared-signature", "w1", {"slot": 1}, "rpc", "v1")
+    for index, destination in enumerate(("B", "C")):
+        operation = Operation(
+            f"solana:shared-signature:{index}:w1",
+            "w1",
+            "shared-signature",
+            at,
+            at,
+            "swap",
+            (Leg("A", -10, 0, None), Leg(destination, 10, 0, None)),
+            True,
+            "complete",
+        )
+        store.add_operation(
+            "shared-signature",
+            "w1",
+            operation,
+            0,
+            "v1",
+            decoded_at=at,
+            operation_index=index,
+        )
+    rows = store.list_operations(at)
+    assert {row["canonical_id"] for row in rows} == {
+        "solana:shared-signature:0:w1",
+        "solana:shared-signature:1:w1",
+    }
+    assert {row["legs"][1]["mint"] for row in rows} == {"B", "C"}
+
+
 def test_existing_demo_operations_repaired_for_historical_replay(store):
     from rotation.demo import seed_demo
 

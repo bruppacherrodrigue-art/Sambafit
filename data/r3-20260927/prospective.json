@@ -1,0 +1,54 @@
+{
+  "cohort_frozen_at": "2026-09-27T03:49:58.359629+00:00",
+  "coverage_gaps": [
+    {
+      "at": "2026-09-27T03:55:58.097844+00:00",
+      "reason": "page_limit_reached; older signatures queued for next cycle",
+      "resume_before": "3sty4dhzMzvaKshdDSK7gthSDn9aC7qwTZwz5b7pcBbRStiwGHX7haf3SRCHqiZKtHQwr6QiHPN9kdCVqbc9GcgH",
+      "wallet": "MfDuWeqSHEqTFVYZ7LoexgAK9dxk7cy4DFJWjWMGVWa"
+    },
+    {
+      "at": "2026-09-27T03:56:08.104201+00:00",
+      "reason": "page_limit_reached; older signatures queued for next cycle",
+      "resume_before": "8dpdjAFHKogVzX2TzBEuXTQdBrZSXe2sFwp5BfhwoacF6XcTWqo2U3joZfdZ9RUKaYK7scfDgUTUBMpjBXYVQAq",
+      "wallet": "CreQJ2t94QK5dsxUZGXfPJ8Nx7wA9LHr5chxjSMkbNft"
+    },
+    {
+      "at": "2026-09-27T03:56:18.097608+00:00",
+      "reason": "page_limit_reached; older signatures queued for next cycle",
+      "resume_before": "4PJRKxb9DVrquHRoQEV3pJU3qa2zq4PZt5uTG83a8LM3cMhkACApWdRseEJDGf8hbppCwBQKUBE7paTzEydzDc3w",
+      "wallet": "FkaLnX17cXZGyeu3kZGdHCNdFMJJzBrPPYVvd18B3MZp"
+    },
+    {
+      "at": "2026-09-27T03:56:28.838980+00:00",
+      "reason": "page_limit_reached; older signatures queued for next cycle",
+      "resume_before": "3N8CPx5jLpaXrxTTKTbgB7iRAUkJvPDMok1EoRG1nsgXhJXANCFGHJNfk1V3wqRk5SSaLuTVTVgtpxTrD2NFpfPc",
+      "wallet": "9FMUjZHCJEeoz1Au9RB7RsgCEeaDfQ164TToKfixCSHi"
+    }
+  ],
+  "dataset": "REAL",
+  "decisions": [],
+  "execution_status": "blocked_no_historical_depth_or_quote",
+  "financial_edge": null,
+  "missing_transitions": [
+    "no_verified_memecoin_to_memecoin_rotation"
+  ],
+  "mode": "PAPER LIVE",
+  "paper_orders": [],
+  "registry_version": "r3-research-classification-1",
+  "rotations": [],
+  "stages": {
+    "candidate_decisions": 0,
+    "complete_swaps": 1,
+    "confirmed_decisions": 0,
+    "market_bars": 96,
+    "pairs_evaluated": 0,
+    "post_freeze_complete_swaps": 1,
+    "queued_signatures": 144,
+    "reserve_reconciled": 0,
+    "target_rotations": 0,
+    "transactions_fetched": 16
+  },
+  "stop_reason": "transaction_cycle_limit; resume required",
+  "synthetic": false
+}

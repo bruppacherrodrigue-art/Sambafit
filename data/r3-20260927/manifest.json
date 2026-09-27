@@ -1,0 +1,1320 @@
+{
+  "attempts": [
+    {
+      "at": "2026-09-27T03:45:23.252096+00:00",
+      "number": 1,
+      "request": "getTransaction:5z6tEaYG9GxheeXekCgAhEz1JVPFkdKVwn68bmUbCvJcDGhPnXRZexRy6nUuxDaTAHFWLYPzB2Ne7eS1BgvV9G9z",
+      "response_hash": "e35c24620980356f5ac0f1e8235f7746de4f73cc4358703188b1bc7bb8ecd4ea",
+      "session_id": "10fdab7fae6c406ab1500919cc2a4fd9",
+      "source": "rpc",
+      "status": "http_200"
+    },
+    {
+      "at": "2026-09-27T03:45:33.917408+00:00",
+      "number": 2,
+      "request": "getTransaction:666LnkBsd28TzoSwF2S7SHnQ2uqA6UxyFdyXzx5MXrqKeGybHoGTEfnfbfHjHfaNz5NyLzBB8dbWrnR4HJcK4uJk",
+      "response_hash": "b070c7b6a895638594b5c13f9e5640e815192923f3b249c057b9af139a530662",
+      "session_id": "10fdab7fae6c406ab1500919cc2a4fd9",
+      "source": "rpc",
+      "status": "http_200"
+    },
+    {
+      "at": "2026-09-27T03:45:43.920619+00:00",
+      "number": 3,
+      "request": "getTransaction:38hWoMyfMEQy9tRiVVEvxyj6j5SKy7i7jEPnGHawXGug77eT1pGEYqPYrRmvhnQ2b9U8AfTJNaNLiBbsE8VnEr3U",
+      "response_hash": "72f2738f1fcbcc4580c41de9094d740e8693ec3562b1dc90e29fd6c5d4ca3c7b",
+      "session_id": "10fdab7fae6c406ab1500919cc2a4fd9",
+      "source": "rpc",
+      "status": "http_200"
+    },
+    {
+      "at": "2026-09-27T03:45:53.923763+00:00",
+      "number": 4,
+      "request": "getTransaction:3foYRtxezFzqkzC3M8kCYFioep7PyYnfLv29jrHK8Nk8XUpWF6Wuo3ecaonRPYzVYPDYi36wVhpHArrqHX83Jbeo",
+      "response_hash": "8fd966a2dadfd829dadf4eee44a91b7eaee2db4aa891aa907861446f9bcfcca8",
+      "session_id": "10fdab7fae6c406ab1500919cc2a4fd9",
+      "source": "rpc",
+      "status": "http_200"
+    },
+    {
+      "at": "2026-09-27T03:46:04.589239+00:00",
+      "number": 5,
+      "request": "getTransaction:4QogTPDzHoiPWSo6eGjUrVrG6QKC7vhhugcq22jVwFKD6fyg5ozZUXDEqwmTwGn4bDiktXsj5KnxNrkY7Mn6teG1",
+      "response_hash": "b768e3017e02c492f25818fdd128d368afc1e2df2217e6e2c28d4ce5fbd0ebab",
+      "session_id": "10fdab7fae6c406ab1500919cc2a4fd9",
+      "source": "rpc",
+      "status": "http_200"
+    },
+    {
+      "at": "2026-09-27T03:46:14.591912+00:00",
+      "number": 6,
+      "request": "getTransaction:48Km3bhHfxPVzw9ffySoNULcFuxGscAjVhkd4y3fZeGPD8igx9HXqhAWdK9NW2UpBfuZiaMKQypg7nu3CSbH9Pb4",
+      "response_hash": "25cd5d48d6433f59b2a26502444e5b96add9e89fc5800405083fe4b9f6b11bd2",
+      "session_id": "10fdab7fae6c406ab1500919cc2a4fd9",
+      "source": "rpc",
+      "status": "http_200"
+    },
+    {
+      "at": "2026-09-27T03:46:24.594716+00:00",
+      "number": 7,
+      "request": "getTransaction:3aHgDJDXWxuCzr8hWTVur2jNxBfRPHaqepBGt5cueVrtkKTZ6C2qnDpmRsmvtv98Ltgym5SGNkjhMGdfHBSwvrwT",
+      "response_hash": "6dc8edecea56a64eec85e734a0a6130496075ec9a49f761220ef9ea0a6dc8cc7",
+      "session_id": "10fdab7fae6c406ab1500919cc2a4fd9",
+      "source": "rpc",
+      "status": "http_200"
+    },
+    {
+      "at": "2026-09-27T03:46:34.599083+00:00",
+      "number": 8,
+      "request": "getTransaction:3fFsRcRGjE7RydseiYXB9W334h3rUAeKFRLZFeWdD9jzDeaktwji542WCoJtPu8qiCVhUTCDh8p6gBRcGZgDJcyk",
+      "response_hash": "9655e7e99588f7d536059eea6113faa5028775549c977fe556f035f3a845bb92",
+      "session_id": "10fdab7fae6c406ab1500919cc2a4fd9",
+      "source": "rpc",
+      "status": "http_200"
+    },
+    {
+      "at": "2026-09-27T03:46:50.246744+00:00",
+      "number": 9,
+      "request": "getTransaction:2waEj6uZPa4Macy38R8B61npWw1RK7UT7vuJ1Rh3QpLxH9BtKDj5FzsjJmfMB8nLjWXaoE5ZGBVwmjJ75P6isB8A",
+      "response_hash": "7d3656a41d41d9697d806e573eb446350f49251433d7d49cc14b657653d5cd92",
+      "session_id": "0506fbd6c96746caaae1ebcf1f8730c3",
+      "source": "rpc",
+      "status": "http_200"
+    },
+    {
+      "at": "2026-09-27T03:47:00.249914+00:00",
+      "number": 10,
+      "request": "getTransaction:2JCeZTc3ePgTYKnYwU1BLN3YhT7s8c8AmgVbwBALPkgiskr3671vTEE2D6QCn56iccQMsLpa3cJJEbFnmgRh9bto",
+      "response_hash": "e595a8ffe66e3e11c461b083bcdd571a1483b0ed6a9218042829ac371fbbe17e",
+      "session_id": "0506fbd6c96746caaae1ebcf1f8730c3",
+      "source": "rpc",
+      "status": "http_200"
+    },
+    {
+      "at": "2026-09-27T03:47:10.915647+00:00",
+      "number": 11,
+      "request": "getTransaction:3UZUHz7y6saNr8dAxKGCUNDLemAyaQCm1VtvmsWXtW3oTAkTdZ6xCK6cT7MdqFLGcoy4ttuzEVE3Q6eVxE2bDazY",
+      "response_hash": "6552f6e65b4dd910a15e873eaa0659e183870827cbc10853b56c133c028e791c",
+      "session_id": "0506fbd6c96746caaae1ebcf1f8730c3",
+      "source": "rpc",
+      "status": "http_200"
+    },
+    {
+      "at": "2026-09-27T03:47:20.919585+00:00",
+      "number": 12,
+      "request": "getTransaction:2soacGvT7dFe8xm98MdNeeRqzRwvtJBovAzg31MU4yrQhkWYSBtBFbzS1AJyV2dAS5NAa6iNgBsxT9Hdo1wScsvq",
+      "response_hash": "da42af934abc7c3ec28ec8dc509f6c6b3db9dab5bdee2eee84d42aa65c7fb89a",
+      "session_id": "0506fbd6c96746caaae1ebcf1f8730c3",
+      "source": "rpc",
+      "status": "http_200"
+    },
+    {
+      "at": "2026-09-27T03:47:30.921562+00:00",
+      "number": 13,
+      "request": "getTransaction:4xM5RwuJds9xjVPBQQi6dtpj7cgEy9UyWsr4cCBqeYZhWi3NsFfy4S9QjxvNoHczDotDsy9XpanyEUvzN7cxTCTz",
+      "response_hash": "62efcc53b915fb33dc365499164ef786a176ed145988bcddf55d72bbdbfb1574",
+      "session_id": "0506fbd6c96746caaae1ebcf1f8730c3",
+      "source": "rpc",
+      "status": "http_200"
+    },
+    {
+      "at": "2026-09-27T03:47:41.585556+00:00",
+      "number": 14,
+      "request": "getTransaction:4B31PHYH4ndWenfarMsWCvPHqRNU1MUrUL7HMrCz8HRK89qX6BkFgVhhsgUWVuAESnBqHSzS143E4mDu5EipfXTr",
+      "response_hash": "9b128dbee67579623a56e6dfff28ff3e06640f7966a78d3def1d8f7d81c3456c",
+      "session_id": "0506fbd6c96746caaae1ebcf1f8730c3",
+      "source": "rpc",
+      "status": "http_200"
+    },
+    {
+      "at": "2026-09-27T03:47:51.588892+00:00",
+      "number": 15,
+      "request": "getTransaction:22McUX4vA8XUc2S2nLWtWoqdwbozbiXa8VPojYGtuFCV6NEZnDCoHe5NZNQA9wSpbs27tnHkv9i97N3rRHhkHy9o",
+      "response_hash": "dc16d16ee3e7470781b2586a24664248480eee30cdb5b082c80dde2f34bd02eb",
+      "session_id": "0506fbd6c96746caaae1ebcf1f8730c3",
+      "source": "rpc",
+      "status": "http_200"
+    },
+    {
+      "at": "2026-09-27T03:48:01.592205+00:00",
+      "number": 16,
+      "request": "getTransaction:4KRe5eRLFvUSEuLp3nqnLn1B2hwWqnQ2xed2jfs3M8aoocBax4PuN9pc6wxWXCWekkfkJ6be3hwoAC9F9mcwgCAY",
+      "response_hash": "4f07d331c0ff51cd47fdcaf8922edf99ca32e4f4ce38213a66d002414c935499",
+      "session_id": "0506fbd6c96746caaae1ebcf1f8730c3",
+      "source": "rpc",
+      "status": "http_200"
+    },
+    {
+      "at": "2026-09-27T03:48:11.594664+00:00",
+      "number": 17,
+      "request": "getTransaction:31u5VfyhqPJ21GmB5UvW6Diy6jj2iKeUBvWWEwcwthHuWFHoECnvwuQhg1ZteBGwXhTgUXkvBpbimao4GjEmZLVa",
+      "response_hash": "31b4df4e8edf0df98e43aa4ac818cbb18cf47875dee13f3c5085e67061f13fda",
+      "session_id": "0506fbd6c96746caaae1ebcf1f8730c3",
+      "source": "rpc",
+      "status": "http_200"
+    },
+    {
+      "at": "2026-09-27T03:48:22.260932+00:00",
+      "number": 18,
+      "request": "getTransaction:3JXdPUcyr7aFwVKLFcWb6Y4itewreucXwewxTkCEbAdUgiPY5D6cARaHSvKCWcNMnSKBihdDzojWu7swebCQKKiG",
+      "response_hash": "65aaeec87bf3e258076c5c849f430e841da04a9ed364bb21b899b94176985da6",
+      "session_id": "0506fbd6c96746caaae1ebcf1f8730c3",
+      "source": "rpc",
+      "status": "http_200"
+    },
+    {
+      "at": "2026-09-27T03:48:32.264141+00:00",
+      "number": 19,
+      "request": "getTransaction:5KX8U64inSw1y9sVXmZuvt1RSATnSyiDmMGaTxns7Vze1GNpQ3REV1iMq6YoQfdy8ENgdRaZCeyagpdE2ir5N4Cx",
+      "response_hash": "81651e40b13811a569480f37a7bd768033117a9d8bb634dffa9b76223df3f6de",
+      "session_id": "0506fbd6c96746caaae1ebcf1f8730c3",
+      "source": "rpc",
+      "status": "http_200"
+    },
+    {
+      "at": "2026-09-27T03:48:42.266587+00:00",
+      "number": 20,
+      "request": "getTransaction:5ovgpv61gHjMx9EaHagvkszvh5R76skTku6FktWNB59H9BPkZB5RPq6gz3hckV4t2gQBPBrknS9RQiFfEQzDx2S6",
+      "response_hash": "49faa068a4e97d15cda143d7d84dc5a7c0b09f3f1151b5f5807e942010e97681",
+      "session_id": "0506fbd6c96746caaae1ebcf1f8730c3",
+      "source": "rpc",
+      "status": "http_200"
+    },
+    {
+      "at": "2026-09-27T03:48:52.929000+00:00",
+      "number": 21,
+      "request": "getTransaction:2BZnaLGYDdrguLejUohEqYvbh4PWZGBF2caNKzkKzjmaV9aJCTFK8bRXKE1FFZq1tDb8sRMy56C6v8hWJfHD8bLa",
+      "response_hash": "4bb44f339ea43f25a9c79d8ec6db5190c2a604f4c915fb1a749ed485486f50b9",
+      "session_id": "0506fbd6c96746caaae1ebcf1f8730c3",
+      "source": "rpc",
+      "status": "http_200"
+    },
+    {
+      "at": "2026-09-27T03:55:16.609334+00:00",
+      "number": 22,
+      "request": "getSignaturesForAddress:MfDuWeqSHEqTFVYZ7LoexgAK9dxk7cy4DFJWjWMGVWa",
+      "response_hash": "1a8f9e357bab7464c539ace33632afdbf03d6c0e4b1bbb2c52b30cf241b5fc65",
+      "session_id": "3ce1e7f90f2a4279ab0a23f8194c690e",
+      "source": "rpc",
+      "status": "http_200"
+    },
+    {
+      "at": "2026-09-27T03:55:27.284513+00:00",
+      "number": 23,
+      "request": "getSignaturesForAddress:CreQJ2t94QK5dsxUZGXfPJ8Nx7wA9LHr5chxjSMkbNft",
+      "response_hash": "5e1e7014790d351abedd1f39a5dc7f8e61ae0a2602a61daf003b8b2f512322cd",
+      "session_id": "3ce1e7f90f2a4279ab0a23f8194c690e",
+      "source": "rpc",
+      "status": "http_200"
+    },
+    {
+      "at": "2026-09-27T03:55:37.289387+00:00",
+      "number": 24,
+      "request": "getSignaturesForAddress:FkaLnX17cXZGyeu3kZGdHCNdFMJJzBrPPYVvd18B3MZp",
+      "response_hash": "989cd818a732b5f050ae053661d9ad722ad9c7032e031f50667a91b044a135f1",
+      "session_id": "3ce1e7f90f2a4279ab0a23f8194c690e",
+      "source": "rpc",
+      "status": "http_200"
+    },
+    {
+      "at": "2026-09-27T03:55:47.292952+00:00",
+      "number": 25,
+      "request": "getSignaturesForAddress:9FMUjZHCJEeoz1Au9RB7RsgCEeaDfQ164TToKfixCSHi",
+      "response_hash": "6ecb6d21b4c2739ac98c49aed1b3a5d13b8da8f7a55482f070f404731adc9d79",
+      "session_id": "3ce1e7f90f2a4279ab0a23f8194c690e",
+      "source": "rpc",
+      "status": "http_200"
+    },
+    {
+      "at": "2026-09-27T03:55:57.933974+00:00",
+      "number": 26,
+      "request": "getSignaturesForAddress:MfDuWeqSHEqTFVYZ7LoexgAK9dxk7cy4DFJWjWMGVWa",
+      "response_hash": "751d6f56a02f444c14a30150be68447132676b0d9ea578b73b678b1ebaf06094",
+      "session_id": "3ce1e7f90f2a4279ab0a23f8194c690e",
+      "source": "rpc",
+      "status": "http_200"
+    },
+    {
+      "at": "2026-09-27T03:56:07.936683+00:00",
+      "number": 27,
+      "request": "getSignaturesForAddress:CreQJ2t94QK5dsxUZGXfPJ8Nx7wA9LHr5chxjSMkbNft",
+      "response_hash": "370abdc2e36fd8b42f906225d05d4a69ddd95f47703406e92010ca0f0ffdc2eb",
+      "session_id": "3ce1e7f90f2a4279ab0a23f8194c690e",
+      "source": "rpc",
+      "status": "http_200"
+    },
+    {
+      "at": "2026-09-27T03:56:17.940919+00:00",
+      "number": 28,
+      "request": "getSignaturesForAddress:FkaLnX17cXZGyeu3kZGdHCNdFMJJzBrPPYVvd18B3MZp",
+      "response_hash": "ffc138322670369125a46aff4f4a7c441467ee09a467b730862eccb51e882b8f",
+      "session_id": "3ce1e7f90f2a4279ab0a23f8194c690e",
+      "source": "rpc",
+      "status": "http_200"
+    },
+    {
+      "at": "2026-09-27T03:56:28.618516+00:00",
+      "number": 29,
+      "request": "getSignaturesForAddress:9FMUjZHCJEeoz1Au9RB7RsgCEeaDfQ164TToKfixCSHi",
+      "response_hash": "2c416c87990ba3788506d2acd9ae4c86f1e5fde5002b862836eaceb0c137458d",
+      "session_id": "3ce1e7f90f2a4279ab0a23f8194c690e",
+      "source": "rpc",
+      "status": "http_200"
+    },
+    {
+      "at": "2026-09-27T03:56:38.622149+00:00",
+      "number": 30,
+      "request": "getTransaction:3sty4dhzMzvaKshdDSK7gthSDn9aC7qwTZwz5b7pcBbRStiwGHX7haf3SRCHqiZKtHQwr6QiHPN9kdCVqbc9GcgH",
+      "response_hash": "958f20455200fc7148ba3ab5096624add6788cb8905cf4aaa16b3650908c1c73",
+      "session_id": "3ce1e7f90f2a4279ab0a23f8194c690e",
+      "source": "rpc",
+      "status": "http_200"
+    },
+    {
+      "at": "2026-09-27T03:56:48.625007+00:00",
+      "number": 31,
+      "request": "getTransaction:8dpdjAFHKogVzX2TzBEuXTQdBrZSXe2sFwp5BfhwoacF6XcTWqo2U3joZfdZ9RUKaYK7scfDgUTUBMpjBXYVQAq",
+      "response_hash": "2b67b093760d3189c6d1cb76d31d67566646a88ba68c4586b1dfed90219384b4",
+      "session_id": "3ce1e7f90f2a4279ab0a23f8194c690e",
+      "source": "rpc",
+      "status": "http_200"
+    },
+    {
+      "at": "2026-09-27T03:56:58.626885+00:00",
+      "number": 32,
+      "request": "getTransaction:4PJRKxb9DVrquHRoQEV3pJU3qa2zq4PZt5uTG83a8LM3cMhkACApWdRseEJDGf8hbppCwBQKUBE7paTzEydzDc3w",
+      "response_hash": "950cec996ddcaf495ac41e4ceb9af32b79270ce299e62cc6ec805f10e73e22c6",
+      "session_id": "3ce1e7f90f2a4279ab0a23f8194c690e",
+      "source": "rpc",
+      "status": "http_200"
+    },
+    {
+      "at": "2026-09-27T03:57:09.301313+00:00",
+      "number": 33,
+      "request": "getTransaction:3N8CPx5jLpaXrxTTKTbgB7iRAUkJvPDMok1EoRG1nsgXhJXANCFGHJNfk1V3wqRk5SSaLuTVTVgtpxTrD2NFpfPc",
+      "response_hash": "d545a2f834612c03bd1e4158995db54c847ce167007ff8bd982fcbc64755adf0",
+      "session_id": "3ce1e7f90f2a4279ab0a23f8194c690e",
+      "source": "rpc",
+      "status": "http_200"
+    },
+    {
+      "at": "2026-09-27T03:57:19.304461+00:00",
+      "number": 34,
+      "request": "getTransaction:Mamt7uEZysu2Hm5CqKjTzYgPPb6MrCPc1y24t5v5cPhTFM2ute7JEbts6ASz3VXUBWRutcTxVZUbvis71hbVikD",
+      "response_hash": "284de49bda5b13d2b04c57f4d1cd5244e4280b1069c90e962eff8c678f73d18a",
+      "session_id": "3ce1e7f90f2a4279ab0a23f8194c690e",
+      "source": "rpc",
+      "status": "http_200"
+    },
+    {
+      "at": "2026-09-27T03:57:29.306814+00:00",
+      "number": 35,
+      "request": "getTransaction:23VkYwa2VRvqjNJQnf585icPBDyQMo539ruuP7nveVmPDgS4twfoiX7RbH4afaJ8UtCESKJnBdabaG2jPeSWmtQW",
+      "response_hash": "c115ff0f24682f53cc58e33d81f3766e89462c5d65cc9572c8bb37fbbd7f057e",
+      "session_id": "3ce1e7f90f2a4279ab0a23f8194c690e",
+      "source": "rpc",
+      "status": "http_200"
+    },
+    {
+      "at": "2026-09-27T03:57:39.985375+00:00",
+      "number": 36,
+      "request": "getTransaction:63Jiu96K2hKoHdewxmj95qLbSrLEpZTqPtTxeXHycJvnxrbha6X785DSE74mRhWboDPsMbEbFk1zgQRr6cJzAkYV",
+      "response_hash": "7f146b800bc546f1c2b0f22a11b0735859e7347d29b475c791716dc46f94ddae",
+      "session_id": "3ce1e7f90f2a4279ab0a23f8194c690e",
+      "source": "rpc",
+      "status": "http_200"
+    },
+    {
+      "at": "2026-09-27T03:57:49.989621+00:00",
+      "number": 37,
+      "request": "getTransaction:2j5ieXrocvEagceW32kMKRCxvUgcfFAruPBkSkGtjDEQk2bg3Sfmuug3j9Tiq4N68pioe7YYJ66T6mRu3x8Teo1F",
+      "response_hash": "84d574eb85b33b602a1171ba0f9991f0b8f137ba43bdb0a97452ccb99e68b086",
+      "session_id": "3ce1e7f90f2a4279ab0a23f8194c690e",
+      "source": "rpc",
+      "status": "http_200"
+    },
+    {
+      "at": "2026-09-27T03:58:14.985964+00:00",
+      "number": 38,
+      "request": "GET /networks/solana/pools/Bzc9NZfMqkXR6fz1DBph7BDf9BroyEf6pnzESP7v5iiw/ohlcv/minute {\"aggregate\": 1, \"currency\": \"usd\", \"limit\": 24, \"token\": \"9BB6NFEcjBCtnNLFko2FqVQBq8HHM13kCyYcdQbgpump\"}",
+      "response_hash": "4015435078cfdd9c6c22179304aa7ae90447c7f35137328b4ace5ea04a7f3650",
+      "session_id": "4f3b2c7225764146b1bc3c1038978447",
+      "source": "gecko",
+      "status": "http_200"
+    },
+    {
+      "at": "2026-09-27T03:58:24.989872+00:00",
+      "number": 39,
+      "request": "GET /networks/solana/pools/Bzc9NZfMqkXR6fz1DBph7BDf9BroyEf6pnzESP7v5iiw",
+      "response_hash": "c864ddaa9a44a6391ba9289cf9e2b52fe514ee3975d3043a94e2ded1a846607c",
+      "session_id": "4f3b2c7225764146b1bc3c1038978447",
+      "source": "gecko",
+      "status": "http_200"
+    },
+    {
+      "at": "2026-09-27T03:58:34.994735+00:00",
+      "number": 40,
+      "request": "GET /networks/solana/pools/EP2ib6dYdEeqD8MfE2ezHCxX3kP3K2eLKkirfPm5eyMx/ohlcv/minute {\"aggregate\": 1, \"currency\": \"usd\", \"limit\": 24, \"token\": \"EKpQGSJtjMFqKZ9KQanSqYXRcF8fBopzLHYxdM65zcjm\"}",
+      "response_hash": "0658ec9901670c377c60ec1f197063539729baf54baa579a74a6f3123f6fadf9",
+      "session_id": "4f3b2c7225764146b1bc3c1038978447",
+      "source": "gecko",
+      "status": "http_200"
+    },
+    {
+      "at": "2026-09-27T03:58:45.723928+00:00",
+      "number": 41,
+      "request": "GET /networks/solana/pools/EP2ib6dYdEeqD8MfE2ezHCxX3kP3K2eLKkirfPm5eyMx",
+      "response_hash": "db266ee34efca059ab83bffad65aa3d87af75432f589f87679d023cbe0c08edb",
+      "session_id": "4f3b2c7225764146b1bc3c1038978447",
+      "source": "gecko",
+      "status": "http_200"
+    },
+    {
+      "at": "2026-09-27T03:58:55.726404+00:00",
+      "number": 42,
+      "request": "GET /networks/solana/pools/4AZRPNEfCJ7iw28rJu5aUyeQhYcvdcNm8cswyL51AY9i/ohlcv/minute {\"aggregate\": 1, \"currency\": \"usd\", \"limit\": 24, \"token\": \"2qEHjDLDLbuBgRYvsxhc5D6uDWAivNFZGan56P1tpump\"}",
+      "response_hash": "744380528a66269529ef0f877519d8bc82cf7ca3ccdf15da106cda3504b05e12",
+      "session_id": "4f3b2c7225764146b1bc3c1038978447",
+      "source": "gecko",
+      "status": "http_200"
+    },
+    {
+      "at": "2026-09-27T03:59:05.730066+00:00",
+      "number": 43,
+      "request": "GET /networks/solana/pools/4AZRPNEfCJ7iw28rJu5aUyeQhYcvdcNm8cswyL51AY9i",
+      "response_hash": "1130475bd0b01e85e6e0378fa9b1f8495018d278c144a45e2fb72d8f2a9fa97c",
+      "session_id": "4f3b2c7225764146b1bc3c1038978447",
+      "source": "gecko",
+      "status": "http_200"
+    },
+    {
+      "at": "2026-09-27T03:59:16.446997+00:00",
+      "number": 44,
+      "request": "GET /networks/solana/pools/DSUvc5qf5LJHHV5e2tD184ixotSnCnwj7i4jJa4Xsrmt/ohlcv/minute {\"aggregate\": 1, \"currency\": \"usd\", \"limit\": 24, \"token\": \"ukHH6c7mMyiWCf1b9pnWe25TSpkDDt3H5pQZgZ74J82\"}",
+      "response_hash": "3f0d47e27b7aeaf7cfb63f7dc5d759c71a7ada4a61d44e99c03c8ac20fd9d4aa",
+      "session_id": "4f3b2c7225764146b1bc3c1038978447",
+      "source": "gecko",
+      "status": "http_200"
+    },
+    {
+      "at": "2026-09-27T03:59:26.450980+00:00",
+      "number": 45,
+      "request": "GET /networks/solana/pools/DSUvc5qf5LJHHV5e2tD184ixotSnCnwj7i4jJa4Xsrmt",
+      "response_hash": "398768bf4aeab187e22a9f4e22d573889c20419ba1317d053eed98c6b44edcf3",
+      "session_id": "4f3b2c7225764146b1bc3c1038978447",
+      "source": "gecko",
+      "status": "http_200"
+    },
+    {
+      "at": "2026-09-27T04:00:33.887757+00:00",
+      "number": 46,
+      "request": "getTransaction:3jZ5ZNnv2k3Dyk1W39oYKzbwRCfekJRPqrnbKzVdbber3xya2DhKvduwWKyfs6UNNnUsJ7QtgDLCQ68x363BcgTK",
+      "response_hash": "8044cf2d0858a6899d22a7afb3b8c356a5af3a828de2e2971c8271466b8c9779",
+      "session_id": "1c85baaa961a4551bfcbd4d399014051",
+      "source": "rpc",
+      "status": "http_200"
+    },
+    {
+      "at": "2026-09-27T04:00:43.891199+00:00",
+      "number": 47,
+      "request": "getTransaction:2WKsUBD3Sbqq8oTEm9Xa7PVssKDrySEBvU9UHsVqV3om1Hiwq3wxbXk2jGixHV9EmVJKEZurMHeFxG621wqHnXKm",
+      "response_hash": "2497693ac53acbaf60dfb913ee28356fb019c8fd780fa59a31385eb56ab1f659",
+      "session_id": "1c85baaa961a4551bfcbd4d399014051",
+      "source": "rpc",
+      "status": "http_200"
+    },
+    {
+      "at": "2026-09-27T04:00:54.565191+00:00",
+      "number": 48,
+      "request": "getTransaction:GYdcEwDAzskrCFNwb69Tf6EAESncqxFY3EFBdQJyrr6H5D7441zoYMr1dsoKbevhp8CkxFALBXkjpizkXNkg5CP",
+      "response_hash": "30238d9fa97d6ef41980c73cc2a4a1a2030b1ec2b654237cf6c53276415a4b6a",
+      "session_id": "1c85baaa961a4551bfcbd4d399014051",
+      "source": "rpc",
+      "status": "http_200"
+    },
+    {
+      "at": "2026-09-27T04:01:04.568604+00:00",
+      "number": 49,
+      "request": "getTransaction:2T8JLpeD36dWUnCzdwxfJU3qBRT8RSefqQCCGWVr6A4XcX1nTfy1y47P7qHMVJTntqWwD1FeFhY3WEd92RF458gb",
+      "response_hash": "fd1667e309de22086b9f1223f977929ec88da730863988cf51707c5e60868f18",
+      "session_id": "1c85baaa961a4551bfcbd4d399014051",
+      "source": "rpc",
+      "status": "http_200"
+    },
+    {
+      "at": "2026-09-27T04:01:14.572111+00:00",
+      "number": 50,
+      "request": "getTransaction:JVSbbN9somSQU8sVXz9cXLg48dF8LiEdGmeRAVAexobzErRHrxHCLhYxFjasJV8eTXXxFr5L39b87cnWmUSAnLM",
+      "response_hash": "452c88e2117305bf6184e1f2e48ec4ec9df3e8613181db0d0308efd5353f68c3",
+      "session_id": "1c85baaa961a4551bfcbd4d399014051",
+      "source": "rpc",
+      "status": "http_200"
+    },
+    {
+      "at": "2026-09-27T04:01:24.575178+00:00",
+      "number": 51,
+      "request": "getTransaction:8FjPjYJ9ueWJDd2VDEDorJqoXvs99W3qtM2X22H3ZLBbAHHCQ1VoJDapac2DSVkFDaWiJawNtcjyo84Ac1PsNtF",
+      "response_hash": "2206f910d2dc56446d148261b1f8dceacead04ddff35797abd615a786be64eee",
+      "session_id": "1c85baaa961a4551bfcbd4d399014051",
+      "source": "rpc",
+      "status": "http_200"
+    },
+    {
+      "at": "2026-09-27T04:01:34.580777+00:00",
+      "number": 52,
+      "request": "getTransaction:4V5XkdK4vks4SGmXsZhxayb4Yk15T9nWv5iyNm4GMqqqs66Ld5dVckgYGytBifMZb61KRs9qKDXRgEmxnGJhUtAy",
+      "response_hash": "e4e5111f6dbb8a82fc5fd037994ce50c28822d507421185cfc03a64de35bf9ce",
+      "session_id": "1c85baaa961a4551bfcbd4d399014051",
+      "source": "rpc",
+      "status": "http_200"
+    },
+    {
+      "at": "2026-09-27T04:01:45.156000+00:00",
+      "number": 53,
+      "request": "getTransaction:3CozD5wiKYhhiWKmK6oSotEMb4CA8Uv4gTbjQypUcH7NhZkx1jr5x6KfGqWGuJ9QnVGmJQFgzNwaMtgiQYERsnY1",
+      "response_hash": "507b01e04406c49fd4438dc24da5ea2dffb610b428332a258d1ce9894b173775",
+      "session_id": "1c85baaa961a4551bfcbd4d399014051",
+      "source": "rpc",
+      "status": "http_200"
+    }
+  ],
+  "calls_used": 53,
+  "dataset": "REAL",
+  "followed_count": 16,
+  "mode": "R3_CORPUS_MANIFEST",
+  "selected_count": 24,
+  "transactions": [
+    {
+      "block_at": "2026-09-26T08:50:24+00:00",
+      "decode_status": "verified_swap",
+      "decoder_version": "r2-raydium-amm-v4-owner-balances-1",
+      "operation_id": null,
+      "phase": "preselection",
+      "programs": [
+        "11111111111111111111111111111111",
+        "675kPX9MHTjS2zt1qfr1NYHuzeLXfQM9H24wFSUt1Mp8",
+        "ComputeBudget111111111111111111111111111111",
+        "DvtCHYizicjpX3dSLkXVsS1Y5RGRHGahGirAsRjVbEVg",
+        "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA"
+      ],
+      "raw_file": "raw/22McUX4vA8XUc2S2nLWtWoqdwbozbiXa8VPojYGtuFCV6NEZnDCoHe5NZNQA9wSpbs27tnHkv9i97N3rRHhkHy9o.json",
+      "raw_file_sha256": "59d4a3231fbee9b422e4b564309d9f9822db15d0ad78981e53e0b8956b7d8c15",
+      "received_at": "2026-09-27T03:47:51.709426+00:00",
+      "reference_source_hash": "e70dba7cbea8db001e0ba8b29147d83d48ac81e21bbe17aac21423bce4cf8b4f",
+      "rpc_response_hash": "dc16d16ee3e7470781b2586a24664248480eee30cdb5b082c80dde2f34bd02eb",
+      "signature": "22McUX4vA8XUc2S2nLWtWoqdwbozbiXa8VPojYGtuFCV6NEZnDCoHe5NZNQA9wSpbs27tnHkv9i97N3rRHhkHy9o",
+      "slot": 450625668
+    },
+    {
+      "block_at": "2026-09-27T03:50:30+00:00",
+      "decode_status": "partial_route",
+      "decoder_version": "r2-raydium-amm-v4-owner-balances-1",
+      "operation_id": "23VkYwa2VRvqjNJQnf585icPBDyQMo539ruuP7nveVmPDgS4twfoiX7RbH4afaJ8UtCESKJnBdabaG2jPeSWmtQW",
+      "phase": "prospective",
+      "programs": [
+        "11111111111111111111111111111111",
+        "ComputeBudget111111111111111111111111111111",
+        "DvtCHYizicjpX3dSLkXVsS1Y5RGRHGahGirAsRjVbEVg",
+        "LBUZKhRxPF3XUpBCjp4YzTKgLccjZhTSDM9YuVaPwxo",
+        "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA",
+        "TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb"
+      ],
+      "raw_file": "follow-raw/23VkYwa2VRvqjNJQnf585icPBDyQMo539ruuP7nveVmPDgS4twfoiX7RbH4afaJ8UtCESKJnBdabaG2jPeSWmtQW.json",
+      "raw_file_sha256": "a4b06f10442c51ad6b076fe6f7c584803cebb43180470bbbc733053e7490188c",
+      "received_at": "2026-09-27T03:57:29.889028+00:00",
+      "reference_source_hash": null,
+      "rpc_response_hash": "c115ff0f24682f53cc58e33d81f3766e89462c5d65cc9572c8bb37fbbd7f057e",
+      "signature": "23VkYwa2VRvqjNJQnf585icPBDyQMo539ruuP7nveVmPDgS4twfoiX7RbH4afaJ8UtCESKJnBdabaG2jPeSWmtQW",
+      "slot": 450880863
+    },
+    {
+      "block_at": "2026-09-26T08:28:10+00:00",
+      "decode_status": "partial",
+      "decoder_version": "r2-raydium-amm-v4-owner-balances-1",
+      "operation_id": null,
+      "phase": "preselection",
+      "programs": [
+        "11111111111111111111111111111111",
+        "3i5JeuZuUxeKtVysUnwQNGerJP2bSMX9fTFfS4Nxe3Br",
+        "675kPX9MHTjS2zt1qfr1NYHuzeLXfQM9H24wFSUt1Mp8",
+        "ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL",
+        "ComputeBudget111111111111111111111111111111",
+        "DF1ow4tspfHX9JwWJsAb9epbkA8hmpSEAtxXy1V27QBH",
+        "SCoRcH8c2dpjvcJD6FiPbCSQyQgu3PcUAWj2Xxx3mqn",
+        "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA",
+        "TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb",
+        "ojh19ojaKduoJZuaJADhcVGp4xt1TcdAvZmpVsCorch",
+        "whirLbMiicVdio4qvUfM5KAg6Ct8VwpYzGff3uctyCc"
+      ],
+      "raw_file": "raw/29jyKwtzKEVnaxo7mZPpbUb2MSUkcG6X3zGtoHRC3E3hJd9JdoT4k7fAqXEBGnYut3c9V6GqoMhfbPRv4mhy8sXV.json",
+      "raw_file_sha256": "727c608255194d16382c3d9910b1a51b850d0bfbd77e64d5dfe0fec69b05a069",
+      "received_at": "2026-09-26T09:15:44.517115+00:00",
+      "reference_source_hash": "e1d612f2869fcc380b9cbb943a0c43de2fcda632f1e22d259eb53a6f64c6a2f7",
+      "rpc_response_hash": null,
+      "signature": "29jyKwtzKEVnaxo7mZPpbUb2MSUkcG6X3zGtoHRC3E3hJd9JdoT4k7fAqXEBGnYut3c9V6GqoMhfbPRv4mhy8sXV",
+      "slot": 450620683
+    },
+    {
+      "block_at": "2026-09-26T08:49:12+00:00",
+      "decode_status": "verified_swap",
+      "decoder_version": "r2-raydium-amm-v4-owner-balances-1",
+      "operation_id": null,
+      "phase": "preselection",
+      "programs": [
+        "11111111111111111111111111111111",
+        "675kPX9MHTjS2zt1qfr1NYHuzeLXfQM9H24wFSUt1Mp8",
+        "ComputeBudget111111111111111111111111111111",
+        "DvtCHYizicjpX3dSLkXVsS1Y5RGRHGahGirAsRjVbEVg",
+        "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA"
+      ],
+      "raw_file": "raw/2BZnaLGYDdrguLejUohEqYvbh4PWZGBF2caNKzkKzjmaV9aJCTFK8bRXKE1FFZq1tDb8sRMy56C6v8hWJfHD8bLa.json",
+      "raw_file_sha256": "f227565dc0e38cdb2fded176f3727b204b301b765159f3d824cdf25a32812e8c",
+      "received_at": "2026-09-27T03:48:53.056275+00:00",
+      "reference_source_hash": "e70dba7cbea8db001e0ba8b29147d83d48ac81e21bbe17aac21423bce4cf8b4f",
+      "rpc_response_hash": "4bb44f339ea43f25a9c79d8ec6db5190c2a604f4c915fb1a749ed485486f50b9",
+      "signature": "2BZnaLGYDdrguLejUohEqYvbh4PWZGBF2caNKzkKzjmaV9aJCTFK8bRXKE1FFZq1tDb8sRMy56C6v8hWJfHD8bLa",
+      "slot": 450625403
+    },
+    {
+      "block_at": "2026-09-26T08:30:11+00:00",
+      "decode_status": "verified_swap",
+      "decoder_version": "r2-raydium-amm-v4-owner-balances-1",
+      "operation_id": null,
+      "phase": "preselection",
+      "programs": [
+        "675kPX9MHTjS2zt1qfr1NYHuzeLXfQM9H24wFSUt1Mp8",
+        "ComputeBudget111111111111111111111111111111",
+        "GKybPT5ZzV5NgkXy1Pa8Bnu14MS7euEtK8j9zWHzYJpx",
+        "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA"
+      ],
+      "raw_file": "raw/2JCeZTc3ePgTYKnYwU1BLN3YhT7s8c8AmgVbwBALPkgiskr3671vTEE2D6QCn56iccQMsLpa3cJJEbFnmgRh9bto.json",
+      "raw_file_sha256": "d0599dd24560b50f6647c11a259ff9ea39f0ec87ed3be92615ab8c1f9ca428f5",
+      "received_at": "2026-09-27T03:47:00.360934+00:00",
+      "reference_source_hash": "78fb618b5fb4542c6a4ac4f5f59ec58e17c0deb846746e054e28aaa7853d6b9d",
+      "rpc_response_hash": "e595a8ffe66e3e11c461b083bcdd571a1483b0ed6a9218042829ac371fbbe17e",
+      "signature": "2JCeZTc3ePgTYKnYwU1BLN3YhT7s8c8AmgVbwBALPkgiskr3671vTEE2D6QCn56iccQMsLpa3cJJEbFnmgRh9bto",
+      "slot": 450621139
+    },
+    {
+      "block_at": "2026-09-27T03:55:04+00:00",
+      "decode_status": "unsupported_program",
+      "decoder_version": "r2-raydium-amm-v4-owner-balances-1",
+      "operation_id": "2T8JLpeD36dWUnCzdwxfJU3qBRT8RSefqQCCGWVr6A4XcX1nTfy1y47P7qHMVJTntqWwD1FeFhY3WEd92RF458gb",
+      "phase": "prospective",
+      "programs": [
+        "11111111111111111111111111111111",
+        "ComputeBudget111111111111111111111111111111",
+        "GKybPT5ZzV5NgkXy1Pa8Bnu14MS7euEtK8j9zWHzYJpx",
+        "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA",
+        "whirLbMiicVdio4qvUfM5KAg6Ct8VwpYzGff3uctyCc"
+      ],
+      "raw_file": "follow-raw/2T8JLpeD36dWUnCzdwxfJU3qBRT8RSefqQCCGWVr6A4XcX1nTfy1y47P7qHMVJTntqWwD1FeFhY3WEd92RF458gb.json",
+      "raw_file_sha256": "ace3ec3fabe73cfbe1657dd986c71e96c1c67d71d65aa556bb104acc6b1e82a2",
+      "received_at": "2026-09-27T04:01:04.962331+00:00",
+      "reference_source_hash": null,
+      "rpc_response_hash": "fd1667e309de22086b9f1223f977929ec88da730863988cf51707c5e60868f18",
+      "signature": "2T8JLpeD36dWUnCzdwxfJU3qBRT8RSefqQCCGWVr6A4XcX1nTfy1y47P7qHMVJTntqWwD1FeFhY3WEd92RF458gb",
+      "slot": 450881886
+    },
+    {
+      "block_at": "2026-09-27T03:55:25+00:00",
+      "decode_status": "complete",
+      "decoder_version": "r2-raydium-amm-v4-owner-balances-1",
+      "operation_id": "2WKsUBD3Sbqq8oTEm9Xa7PVssKDrySEBvU9UHsVqV3om1Hiwq3wxbXk2jGixHV9EmVJKEZurMHeFxG621wqHnXKm",
+      "phase": "prospective",
+      "programs": [
+        "11111111111111111111111111111111",
+        "61DFfeTKM7trxYcPQCM78bJ794ddZprZpAwAnLiwTpYH",
+        "ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL",
+        "ComputeBudget111111111111111111111111111111",
+        "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA",
+        "TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb"
+      ],
+      "raw_file": "follow-raw/2WKsUBD3Sbqq8oTEm9Xa7PVssKDrySEBvU9UHsVqV3om1Hiwq3wxbXk2jGixHV9EmVJKEZurMHeFxG621wqHnXKm.json",
+      "raw_file_sha256": "02e35cfe8fbb02ffc9e86386dffe73972aab54f909fe8fd32b0bc2a76173bb3d",
+      "received_at": "2026-09-27T04:00:44.257993+00:00",
+      "reference_source_hash": null,
+      "rpc_response_hash": "2497693ac53acbaf60dfb913ee28356fb019c8fd780fa59a31385eb56ab1f659",
+      "signature": "2WKsUBD3Sbqq8oTEm9Xa7PVssKDrySEBvU9UHsVqV3om1Hiwq3wxbXk2jGixHV9EmVJKEZurMHeFxG621wqHnXKm",
+      "slot": 450881965
+    },
+    {
+      "block_at": "2026-09-27T03:27:43+00:00",
+      "decode_status": "partial",
+      "decoder_version": "r2-raydium-amm-v4-owner-balances-1",
+      "operation_id": "2j5ieXrocvEagceW32kMKRCxvUgcfFAruPBkSkGtjDEQk2bg3Sfmuug3j9Tiq4N68pioe7YYJ66T6mRu3x8Teo1F",
+      "phase": "prospective",
+      "programs": [
+        "11111111111111111111111111111111",
+        "4H9AA9ekBHkh7S5nC9PsVdNcG96a3yeVVjisP6sDHGuo",
+        "CAMMCzo5YL8w4VFF8KVHrK22GGUsp5VTaW7grrKgrWqK",
+        "ComputeBudget111111111111111111111111111111",
+        "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA"
+      ],
+      "raw_file": "follow-raw/2j5ieXrocvEagceW32kMKRCxvUgcfFAruPBkSkGtjDEQk2bg3Sfmuug3j9Tiq4N68pioe7YYJ66T6mRu3x8Teo1F.json",
+      "raw_file_sha256": "ff1ba61337796cdb0d881b25cf7695902c9184374f5308372a86d28041406508",
+      "received_at": "2026-09-27T03:57:50.096091+00:00",
+      "reference_source_hash": null,
+      "rpc_response_hash": "84d574eb85b33b602a1171ba0f9991f0b8f137ba43bdb0a97452ccb99e68b086",
+      "signature": "2j5ieXrocvEagceW32kMKRCxvUgcfFAruPBkSkGtjDEQk2bg3Sfmuug3j9Tiq4N68pioe7YYJ66T6mRu3x8Teo1F",
+      "slot": 450875808
+    },
+    {
+      "block_at": "2026-09-26T08:26:06+00:00",
+      "decode_status": "verified_swap",
+      "decoder_version": "r2-raydium-amm-v4-owner-balances-1",
+      "operation_id": null,
+      "phase": "preselection",
+      "programs": [
+        "11111111111111111111111111111111",
+        "675kPX9MHTjS2zt1qfr1NYHuzeLXfQM9H24wFSUt1Mp8",
+        "ComputeBudget111111111111111111111111111111",
+        "GKybPT5ZzV5NgkXy1Pa8Bnu14MS7euEtK8j9zWHzYJpx",
+        "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA"
+      ],
+      "raw_file": "raw/2soacGvT7dFe8xm98MdNeeRqzRwvtJBovAzg31MU4yrQhkWYSBtBFbzS1AJyV2dAS5NAa6iNgBsxT9Hdo1wScsvq.json",
+      "raw_file_sha256": "147195eafb5b4c639487521a03c18c318b704f155598b29657fc5c4a983c4789",
+      "received_at": "2026-09-27T03:47:21.124947+00:00",
+      "reference_source_hash": "e70dba7cbea8db001e0ba8b29147d83d48ac81e21bbe17aac21423bce4cf8b4f",
+      "rpc_response_hash": "da42af934abc7c3ec28ec8dc509f6c6b3db9dab5bdee2eee84d42aa65c7fb89a",
+      "signature": "2soacGvT7dFe8xm98MdNeeRqzRwvtJBovAzg31MU4yrQhkWYSBtBFbzS1AJyV2dAS5NAa6iNgBsxT9Hdo1wScsvq",
+      "slot": 450620219
+    },
+    {
+      "block_at": "2026-09-26T08:34:06+00:00",
+      "decode_status": "verified_swap",
+      "decoder_version": "r2-raydium-amm-v4-owner-balances-1",
+      "operation_id": null,
+      "phase": "preselection",
+      "programs": [
+        "11111111111111111111111111111111",
+        "675kPX9MHTjS2zt1qfr1NYHuzeLXfQM9H24wFSUt1Mp8",
+        "ComputeBudget111111111111111111111111111111",
+        "GKybPT5ZzV5NgkXy1Pa8Bnu14MS7euEtK8j9zWHzYJpx",
+        "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA"
+      ],
+      "raw_file": "raw/2waEj6uZPa4Macy38R8B61npWw1RK7UT7vuJ1Rh3QpLxH9BtKDj5FzsjJmfMB8nLjWXaoE5ZGBVwmjJ75P6isB8A.json",
+      "raw_file_sha256": "3dc7fe326615e1643467400e0b4811191a5c199652fbfdfb03354a0a50683eba",
+      "received_at": "2026-09-27T03:46:50.363248+00:00",
+      "reference_source_hash": "e70dba7cbea8db001e0ba8b29147d83d48ac81e21bbe17aac21423bce4cf8b4f",
+      "rpc_response_hash": "7d3656a41d41d9697d806e573eb446350f49251433d7d49cc14b657653d5cd92",
+      "signature": "2waEj6uZPa4Macy38R8B61npWw1RK7UT7vuJ1Rh3QpLxH9BtKDj5FzsjJmfMB8nLjWXaoE5ZGBVwmjJ75P6isB8A",
+      "slot": 450622011
+    },
+    {
+      "block_at": "2026-09-26T08:49:30+00:00",
+      "decode_status": "verified_swap",
+      "decoder_version": "r2-raydium-amm-v4-owner-balances-1",
+      "operation_id": null,
+      "phase": "preselection",
+      "programs": [
+        "11111111111111111111111111111111",
+        "675kPX9MHTjS2zt1qfr1NYHuzeLXfQM9H24wFSUt1Mp8",
+        "ComputeBudget111111111111111111111111111111",
+        "DvtCHYizicjpX3dSLkXVsS1Y5RGRHGahGirAsRjVbEVg",
+        "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA"
+      ],
+      "raw_file": "raw/31u5VfyhqPJ21GmB5UvW6Diy6jj2iKeUBvWWEwcwthHuWFHoECnvwuQhg1ZteBGwXhTgUXkvBpbimao4GjEmZLVa.json",
+      "raw_file_sha256": "bd222685ce3425d56f3c24c25d566ff9c8d17ec4fd290e4ab0104186f5fa5eab",
+      "received_at": "2026-09-27T03:48:11.718510+00:00",
+      "reference_source_hash": "e70dba7cbea8db001e0ba8b29147d83d48ac81e21bbe17aac21423bce4cf8b4f",
+      "rpc_response_hash": "31b4df4e8edf0df98e43aa4ac818cbb18cf47875dee13f3c5085e67061f13fda",
+      "signature": "31u5VfyhqPJ21GmB5UvW6Diy6jj2iKeUBvWWEwcwthHuWFHoECnvwuQhg1ZteBGwXhTgUXkvBpbimao4GjEmZLVa",
+      "slot": 450625466
+    },
+    {
+      "block_at": "2026-09-26T08:26:06+00:00",
+      "decode_status": "verified_swap",
+      "decoder_version": "r2-raydium-amm-v4-owner-balances-1",
+      "operation_id": null,
+      "phase": "preselection",
+      "programs": [
+        "11111111111111111111111111111111",
+        "675kPX9MHTjS2zt1qfr1NYHuzeLXfQM9H24wFSUt1Mp8",
+        "ComputeBudget111111111111111111111111111111",
+        "DvtCHYizicjpX3dSLkXVsS1Y5RGRHGahGirAsRjVbEVg",
+        "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA"
+      ],
+      "raw_file": "raw/38hWoMyfMEQy9tRiVVEvxyj6j5SKy7i7jEPnGHawXGug77eT1pGEYqPYrRmvhnQ2b9U8AfTJNaNLiBbsE8VnEr3U.json",
+      "raw_file_sha256": "5310f0513173110c853ea9b2339bb5ee0b323b66c7d081018cbeae6afd1c14b8",
+      "received_at": "2026-09-27T03:45:44.031660+00:00",
+      "reference_source_hash": "78fb618b5fb4542c6a4ac4f5f59ec58e17c0deb846746e054e28aaa7853d6b9d",
+      "rpc_response_hash": "72f2738f1fcbcc4580c41de9094d740e8693ec3562b1dc90e29fd6c5d4ca3c7b",
+      "signature": "38hWoMyfMEQy9tRiVVEvxyj6j5SKy7i7jEPnGHawXGug77eT1pGEYqPYrRmvhnQ2b9U8AfTJNaNLiBbsE8VnEr3U",
+      "slot": 450620221
+    },
+    {
+      "block_at": "2026-09-27T03:55:03+00:00",
+      "decode_status": "partial",
+      "decoder_version": "r2-raydium-amm-v4-owner-balances-1",
+      "operation_id": "3CozD5wiKYhhiWKmK6oSotEMb4CA8Uv4gTbjQypUcH7NhZkx1jr5x6KfGqWGuJ9QnVGmJQFgzNwaMtgiQYERsnY1",
+      "phase": "prospective",
+      "programs": [
+        "11111111111111111111111111111111",
+        "CAMMCzo5YL8w4VFF8KVHrK22GGUsp5VTaW7grrKgrWqK",
+        "ComputeBudget111111111111111111111111111111",
+        "GKybPT5ZzV5NgkXy1Pa8Bnu14MS7euEtK8j9zWHzYJpx",
+        "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA"
+      ],
+      "raw_file": "follow-raw/3CozD5wiKYhhiWKmK6oSotEMb4CA8Uv4gTbjQypUcH7NhZkx1jr5x6KfGqWGuJ9QnVGmJQFgzNwaMtgiQYERsnY1.json",
+      "raw_file_sha256": "8ff3ede7ca726998a1d10872b0803598c3e857a50ae65994e296fa8581ba79d5",
+      "received_at": "2026-09-27T04:01:45.268946+00:00",
+      "reference_source_hash": null,
+      "rpc_response_hash": "507b01e04406c49fd4438dc24da5ea2dffb610b428332a258d1ce9894b173775",
+      "signature": "3CozD5wiKYhhiWKmK6oSotEMb4CA8Uv4gTbjQypUcH7NhZkx1jr5x6KfGqWGuJ9QnVGmJQFgzNwaMtgiQYERsnY1",
+      "slot": 450881882
+    },
+    {
+      "block_at": "2026-09-26T08:49:30+00:00",
+      "decode_status": "verified_swap",
+      "decoder_version": "r2-raydium-amm-v4-owner-balances-1",
+      "operation_id": null,
+      "phase": "preselection",
+      "programs": [
+        "11111111111111111111111111111111",
+        "675kPX9MHTjS2zt1qfr1NYHuzeLXfQM9H24wFSUt1Mp8",
+        "ComputeBudget111111111111111111111111111111",
+        "DvtCHYizicjpX3dSLkXVsS1Y5RGRHGahGirAsRjVbEVg",
+        "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA"
+      ],
+      "raw_file": "raw/3JXdPUcyr7aFwVKLFcWb6Y4itewreucXwewxTkCEbAdUgiPY5D6cARaHSvKCWcNMnSKBihdDzojWu7swebCQKKiG.json",
+      "raw_file_sha256": "4e8c24cf7cc2bc2a5a8ef35f88453a3d017fc1e4818d0926d592c40041ddfd9a",
+      "received_at": "2026-09-27T03:48:22.366248+00:00",
+      "reference_source_hash": "e70dba7cbea8db001e0ba8b29147d83d48ac81e21bbe17aac21423bce4cf8b4f",
+      "rpc_response_hash": "65aaeec87bf3e258076c5c849f430e841da04a9ed364bb21b899b94176985da6",
+      "signature": "3JXdPUcyr7aFwVKLFcWb6Y4itewreucXwewxTkCEbAdUgiPY5D6cARaHSvKCWcNMnSKBihdDzojWu7swebCQKKiG",
+      "slot": 450625466
+    },
+    {
+      "block_at": "2026-09-27T03:26:38+00:00",
+      "decode_status": "partial",
+      "decoder_version": "r2-raydium-amm-v4-owner-balances-1",
+      "operation_id": "3N8CPx5jLpaXrxTTKTbgB7iRAUkJvPDMok1EoRG1nsgXhJXANCFGHJNfk1V3wqRk5SSaLuTVTVgtpxTrD2NFpfPc",
+      "phase": "prospective",
+      "programs": [
+        "4H9AA9ekBHkh7S5nC9PsVdNcG96a3yeVVjisP6sDHGuo",
+        "ComputeBudget111111111111111111111111111111"
+      ],
+      "raw_file": "follow-raw/3N8CPx5jLpaXrxTTKTbgB7iRAUkJvPDMok1EoRG1nsgXhJXANCFGHJNfk1V3wqRk5SSaLuTVTVgtpxTrD2NFpfPc.json",
+      "raw_file_sha256": "bab892c3429ff665e2376c04e1e9fe3ff306680c1602683a04d5560e9bc93056",
+      "received_at": "2026-09-27T03:57:09.566657+00:00",
+      "reference_source_hash": null,
+      "rpc_response_hash": "d545a2f834612c03bd1e4158995db54c847ce167007ff8bd982fcbc64755adf0",
+      "signature": "3N8CPx5jLpaXrxTTKTbgB7iRAUkJvPDMok1EoRG1nsgXhJXANCFGHJNfk1V3wqRk5SSaLuTVTVgtpxTrD2NFpfPc",
+      "slot": 450875567
+    },
+    {
+      "block_at": "2026-09-26T08:44:20+00:00",
+      "decode_status": "verified_swap",
+      "decoder_version": "r2-raydium-amm-v4-owner-balances-1",
+      "operation_id": null,
+      "phase": "preselection",
+      "programs": [
+        "675kPX9MHTjS2zt1qfr1NYHuzeLXfQM9H24wFSUt1Mp8",
+        "ComputeBudget111111111111111111111111111111",
+        "GKybPT5ZzV5NgkXy1Pa8Bnu14MS7euEtK8j9zWHzYJpx",
+        "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA"
+      ],
+      "raw_file": "raw/3UZUHz7y6saNr8dAxKGCUNDLemAyaQCm1VtvmsWXtW3oTAkTdZ6xCK6cT7MdqFLGcoy4ttuzEVE3Q6eVxE2bDazY.json",
+      "raw_file_sha256": "52b00bd1f31e3147e87ed83e67b7cd5918dc0fdce4f41cab2d25cfa9fc38c2dd",
+      "received_at": "2026-09-27T03:47:11.031476+00:00",
+      "reference_source_hash": "e70dba7cbea8db001e0ba8b29147d83d48ac81e21bbe17aac21423bce4cf8b4f",
+      "rpc_response_hash": "6552f6e65b4dd910a15e873eaa0659e183870827cbc10853b56c133c028e791c",
+      "signature": "3UZUHz7y6saNr8dAxKGCUNDLemAyaQCm1VtvmsWXtW3oTAkTdZ6xCK6cT7MdqFLGcoy4ttuzEVE3Q6eVxE2bDazY",
+      "slot": 450624307
+    },
+    {
+      "block_at": "2026-09-26T08:29:58+00:00",
+      "decode_status": "verified_swap",
+      "decoder_version": "r2-raydium-amm-v4-owner-balances-1",
+      "operation_id": null,
+      "phase": "preselection",
+      "programs": [
+        "675kPX9MHTjS2zt1qfr1NYHuzeLXfQM9H24wFSUt1Mp8",
+        "ComputeBudget111111111111111111111111111111",
+        "GKybPT5ZzV5NgkXy1Pa8Bnu14MS7euEtK8j9zWHzYJpx",
+        "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA"
+      ],
+      "raw_file": "raw/3aHgDJDXWxuCzr8hWTVur2jNxBfRPHaqepBGt5cueVrtkKTZ6C2qnDpmRsmvtv98Ltgym5SGNkjhMGdfHBSwvrwT.json",
+      "raw_file_sha256": "531eb12c284c86d9e02966d36c0f5d7bd06cf8a5a85bf447d8b976bbb51de24f",
+      "received_at": "2026-09-27T03:46:24.723316+00:00",
+      "reference_source_hash": "78fb618b5fb4542c6a4ac4f5f59ec58e17c0deb846746e054e28aaa7853d6b9d",
+      "rpc_response_hash": "6dc8edecea56a64eec85e734a0a6130496075ec9a49f761220ef9ea0a6dc8cc7",
+      "signature": "3aHgDJDXWxuCzr8hWTVur2jNxBfRPHaqepBGt5cueVrtkKTZ6C2qnDpmRsmvtv98Ltgym5SGNkjhMGdfHBSwvrwT",
+      "slot": 450621091
+    },
+    {
+      "block_at": "2026-09-26T08:48:31+00:00",
+      "decode_status": "verified_swap",
+      "decoder_version": "r2-raydium-amm-v4-owner-balances-1",
+      "operation_id": null,
+      "phase": "preselection",
+      "programs": [
+        "675kPX9MHTjS2zt1qfr1NYHuzeLXfQM9H24wFSUt1Mp8",
+        "ComputeBudget111111111111111111111111111111",
+        "GKybPT5ZzV5NgkXy1Pa8Bnu14MS7euEtK8j9zWHzYJpx",
+        "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA"
+      ],
+      "raw_file": "raw/3fFsRcRGjE7RydseiYXB9W334h3rUAeKFRLZFeWdD9jzDeaktwji542WCoJtPu8qiCVhUTCDh8p6gBRcGZgDJcyk.json",
+      "raw_file_sha256": "59f944a1dcf29cd86398d13598c34d8d8df36d81e8b8efabf2499d069c21027c",
+      "received_at": "2026-09-27T03:46:34.731594+00:00",
+      "reference_source_hash": "e70dba7cbea8db001e0ba8b29147d83d48ac81e21bbe17aac21423bce4cf8b4f",
+      "rpc_response_hash": "9655e7e99588f7d536059eea6113faa5028775549c977fe556f035f3a845bb92",
+      "signature": "3fFsRcRGjE7RydseiYXB9W334h3rUAeKFRLZFeWdD9jzDeaktwji542WCoJtPu8qiCVhUTCDh8p6gBRcGZgDJcyk",
+      "slot": 450625248
+    },
+    {
+      "block_at": "2026-09-26T08:37:20+00:00",
+      "decode_status": "verified_swap",
+      "decoder_version": "r2-raydium-amm-v4-owner-balances-1",
+      "operation_id": null,
+      "phase": "preselection",
+      "programs": [
+        "675kPX9MHTjS2zt1qfr1NYHuzeLXfQM9H24wFSUt1Mp8",
+        "ComputeBudget111111111111111111111111111111",
+        "GKybPT5ZzV5NgkXy1Pa8Bnu14MS7euEtK8j9zWHzYJpx",
+        "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA"
+      ],
+      "raw_file": "raw/3foYRtxezFzqkzC3M8kCYFioep7PyYnfLv29jrHK8Nk8XUpWF6Wuo3ecaonRPYzVYPDYi36wVhpHArrqHX83Jbeo.json",
+      "raw_file_sha256": "cde8a89da421e5bc5fa9be04d961cb8995ffbb83c0e91fac1c5fbbf3f317440e",
+      "received_at": "2026-09-27T03:45:54.038029+00:00",
+      "reference_source_hash": "78fb618b5fb4542c6a4ac4f5f59ec58e17c0deb846746e054e28aaa7853d6b9d",
+      "rpc_response_hash": "8fd966a2dadfd829dadf4eee44a91b7eaee2db4aa891aa907861446f9bcfcca8",
+      "signature": "3foYRtxezFzqkzC3M8kCYFioep7PyYnfLv29jrHK8Nk8XUpWF6Wuo3ecaonRPYzVYPDYi36wVhpHArrqHX83Jbeo",
+      "slot": 450622734
+    },
+    {
+      "block_at": "2026-09-27T03:55:10+00:00",
+      "decode_status": "partial",
+      "decoder_version": "r2-raydium-amm-v4-owner-balances-1",
+      "operation_id": "3jZ5ZNnv2k3Dyk1W39oYKzbwRCfekJRPqrnbKzVdbber3xya2DhKvduwWKyfs6UNNnUsJ7QtgDLCQ68x363BcgTK",
+      "phase": "prospective",
+      "programs": [
+        "61DFfeTKM7trxYcPQCM78bJ794ddZprZpAwAnLiwTpYH",
+        "ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL",
+        "ComputeBudget111111111111111111111111111111",
+        "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA"
+      ],
+      "raw_file": "follow-raw/3jZ5ZNnv2k3Dyk1W39oYKzbwRCfekJRPqrnbKzVdbber3xya2DhKvduwWKyfs6UNNnUsJ7QtgDLCQ68x363BcgTK.json",
+      "raw_file_sha256": "5c62dac78768728d4735f3eb1abd13afdd0be86c8cbb71da371ebfa9eb6963e2",
+      "received_at": "2026-09-27T04:00:33.995354+00:00",
+      "reference_source_hash": null,
+      "rpc_response_hash": "8044cf2d0858a6899d22a7afb3b8c356a5af3a828de2e2971c8271466b8c9779",
+      "signature": "3jZ5ZNnv2k3Dyk1W39oYKzbwRCfekJRPqrnbKzVdbber3xya2DhKvduwWKyfs6UNNnUsJ7QtgDLCQ68x363BcgTK",
+      "slot": 450881909
+    },
+    {
+      "block_at": "2026-09-27T03:54:54+00:00",
+      "decode_status": "complete",
+      "decoder_version": "r2-raydium-amm-v4-owner-balances-1",
+      "operation_id": "3sty4dhzMzvaKshdDSK7gthSDn9aC7qwTZwz5b7pcBbRStiwGHX7haf3SRCHqiZKtHQwr6QiHPN9kdCVqbc9GcgH",
+      "phase": "prospective",
+      "programs": [
+        "ComputeBudget111111111111111111111111111111",
+        "GKybPT5ZzV5NgkXy1Pa8Bnu14MS7euEtK8j9zWHzYJpx",
+        "whirLbMiicVdio4qvUfM5KAg6Ct8VwpYzGff3uctyCc"
+      ],
+      "raw_file": "follow-raw/3sty4dhzMzvaKshdDSK7gthSDn9aC7qwTZwz5b7pcBbRStiwGHX7haf3SRCHqiZKtHQwr6QiHPN9kdCVqbc9GcgH.json",
+      "raw_file_sha256": "deb6d76045213a3404cd0f444177af02879b6fc0565ea30c26cbeee2fab7140a",
+      "received_at": "2026-09-27T03:56:38.720242+00:00",
+      "reference_source_hash": null,
+      "rpc_response_hash": "958f20455200fc7148ba3ab5096624add6788cb8905cf4aaa16b3650908c1c73",
+      "signature": "3sty4dhzMzvaKshdDSK7gthSDn9aC7qwTZwz5b7pcBbRStiwGHX7haf3SRCHqiZKtHQwr6QiHPN9kdCVqbc9GcgH",
+      "slot": 450881848
+    },
+    {
+      "block_at": "2026-09-26T08:55:50+00:00",
+      "decode_status": "partial",
+      "decoder_version": "r2-raydium-amm-v4-owner-balances-1",
+      "operation_id": null,
+      "phase": "preselection",
+      "programs": [
+        "11111111111111111111111111111111",
+        "24Uqj9JCLxUeoC3hGfh5W3s9FM9uCHDS2SG3LYwBpyTi",
+        "3i5JeuZuUxeKtVysUnwQNGerJP2bSMX9fTFfS4Nxe3Br",
+        "675kPX9MHTjS2zt1qfr1NYHuzeLXfQM9H24wFSUt1Mp8",
+        "ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL",
+        "ComputeBudget111111111111111111111111111111",
+        "Eo7WjKq67rjJQSZxS6z3YkapzY3eMj6Xy8X5EQVn5UaB",
+        "JUP6LkbZbjS1jKKwapdHNy74zcZ3tLUZoi5QNyVTaV4",
+        "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA"
+      ],
+      "raw_file": "raw/46Zr61Svw8BQisQkoRhUTLQpkhzRBJK7RqYwMqXDiXMADZxWC7xyo752XutWkZrXf4zkvJUKGVZtypXBwNh2WPYC.json",
+      "raw_file_sha256": "94f098222b52a1b04bdf47c3a515b0b41b0e0cdf3c8da11a388caa2a756cc474",
+      "received_at": "2026-09-26T09:19:16.610695+00:00",
+      "reference_source_hash": "4887f18a9bdda8cb6c37f608a83516a56e782572dd41577b76e54e36f8783d9d",
+      "rpc_response_hash": null,
+      "signature": "46Zr61Svw8BQisQkoRhUTLQpkhzRBJK7RqYwMqXDiXMADZxWC7xyo752XutWkZrXf4zkvJUKGVZtypXBwNh2WPYC",
+      "slot": 450626893
+    },
+    {
+      "block_at": "2026-09-26T08:28:22+00:00",
+      "decode_status": "verified_swap",
+      "decoder_version": "r2-raydium-amm-v4-owner-balances-1",
+      "operation_id": null,
+      "phase": "preselection",
+      "programs": [
+        "675kPX9MHTjS2zt1qfr1NYHuzeLXfQM9H24wFSUt1Mp8",
+        "ComputeBudget111111111111111111111111111111",
+        "GKybPT5ZzV5NgkXy1Pa8Bnu14MS7euEtK8j9zWHzYJpx",
+        "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA"
+      ],
+      "raw_file": "raw/48Km3bhHfxPVzw9ffySoNULcFuxGscAjVhkd4y3fZeGPD8igx9HXqhAWdK9NW2UpBfuZiaMKQypg7nu3CSbH9Pb4.json",
+      "raw_file_sha256": "2b6b80d470bd22656276d73089e471b92e80a8a43e96693dc6631552de8a81a9",
+      "received_at": "2026-09-27T03:46:14.705566+00:00",
+      "reference_source_hash": "c7ceb88d7b44d9069ad29f2c215d03c6cb644a5bba9cbaf16593accd570e42c0",
+      "rpc_response_hash": "25cd5d48d6433f59b2a26502444e5b96add9e89fc5800405083fe4b9f6b11bd2",
+      "signature": "48Km3bhHfxPVzw9ffySoNULcFuxGscAjVhkd4y3fZeGPD8igx9HXqhAWdK9NW2UpBfuZiaMKQypg7nu3CSbH9Pb4",
+      "slot": 450620728
+    },
+    {
+      "block_at": "2026-09-26T08:52:37+00:00",
+      "decode_status": "partial",
+      "decoder_version": "r2-raydium-amm-v4-owner-balances-1",
+      "operation_id": null,
+      "phase": "preselection",
+      "programs": [
+        "11111111111111111111111111111111",
+        "3URuDiCXFYJ95YVeDW8MP3b7CKTnuqArY5GTZA2JnPWQ",
+        "675kPX9MHTjS2zt1qfr1NYHuzeLXfQM9H24wFSUt1Mp8",
+        "ComputeBudget111111111111111111111111111111",
+        "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA"
+      ],
+      "raw_file": "raw/4B31PHYH4ndWenfarMsWCvPHqRNU1MUrUL7HMrCz8HRK89qX6BkFgVhhsgUWVuAESnBqHSzS143E4mDu5EipfXTr.json",
+      "raw_file_sha256": "114400811481108bee2003f9192873fe48ad7c6d4761fbe89e868a64bd6e3691",
+      "received_at": "2026-09-27T03:47:41.688460+00:00",
+      "reference_source_hash": "78fb618b5fb4542c6a4ac4f5f59ec58e17c0deb846746e054e28aaa7853d6b9d",
+      "rpc_response_hash": "9b128dbee67579623a56e6dfff28ff3e06640f7966a78d3def1d8f7d81c3456c",
+      "signature": "4B31PHYH4ndWenfarMsWCvPHqRNU1MUrUL7HMrCz8HRK89qX6BkFgVhhsgUWVuAESnBqHSzS143E4mDu5EipfXTr",
+      "slot": 450626168
+    },
+    {
+      "block_at": "2026-09-26T08:52:55+00:00",
+      "decode_status": "verified_swap",
+      "decoder_version": "r2-raydium-amm-v4-owner-balances-1",
+      "operation_id": null,
+      "phase": "preselection",
+      "programs": [
+        "675kPX9MHTjS2zt1qfr1NYHuzeLXfQM9H24wFSUt1Mp8",
+        "ComputeBudget111111111111111111111111111111",
+        "GKybPT5ZzV5NgkXy1Pa8Bnu14MS7euEtK8j9zWHzYJpx",
+        "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA"
+      ],
+      "raw_file": "raw/4KRe5eRLFvUSEuLp3nqnLn1B2hwWqnQ2xed2jfs3M8aoocBax4PuN9pc6wxWXCWekkfkJ6be3hwoAC9F9mcwgCAY.json",
+      "raw_file_sha256": "838e76d08cf2774ade872e33f66a6ed4d8fab8aeef4447022f94bf050a98b57b",
+      "received_at": "2026-09-27T03:48:01.699700+00:00",
+      "reference_source_hash": "e1d612f2869fcc380b9cbb943a0c43de2fcda632f1e22d259eb53a6f64c6a2f7",
+      "rpc_response_hash": "4f07d331c0ff51cd47fdcaf8922edf99ca32e4f4ce38213a66d002414c935499",
+      "signature": "4KRe5eRLFvUSEuLp3nqnLn1B2hwWqnQ2xed2jfs3M8aoocBax4PuN9pc6wxWXCWekkfkJ6be3hwoAC9F9mcwgCAY",
+      "slot": 450626235
+    },
+    {
+      "block_at": "2026-09-27T03:54:15+00:00",
+      "decode_status": "partial",
+      "decoder_version": "r2-raydium-amm-v4-owner-balances-1",
+      "operation_id": "4PJRKxb9DVrquHRoQEV3pJU3qa2zq4PZt5uTG83a8LM3cMhkACApWdRseEJDGf8hbppCwBQKUBE7paTzEydzDc3w",
+      "phase": "prospective",
+      "programs": [
+        "11111111111111111111111111111111",
+        "HpNfyc2Saw7RKkQd8nEL4khUcuPhQ7WwY1B2qjx8jxFq",
+        "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA",
+        "hydHwdP54fiTbJ5QXuKDLZFLY5m8pqx15RSmWcL1yAJ"
+      ],
+      "raw_file": "follow-raw/4PJRKxb9DVrquHRoQEV3pJU3qa2zq4PZt5uTG83a8LM3cMhkACApWdRseEJDGf8hbppCwBQKUBE7paTzEydzDc3w.json",
+      "raw_file_sha256": "af87acf205b4701713b9695ef5799b967916910288cd59cc104081fe12d96f5f",
+      "received_at": "2026-09-27T03:56:58.742458+00:00",
+      "reference_source_hash": null,
+      "rpc_response_hash": "950cec996ddcaf495ac41e4ceb9af32b79270ce299e62cc6ec805f10e73e22c6",
+      "signature": "4PJRKxb9DVrquHRoQEV3pJU3qa2zq4PZt5uTG83a8LM3cMhkACApWdRseEJDGf8hbppCwBQKUBE7paTzEydzDc3w",
+      "slot": 450881699
+    },
+    {
+      "block_at": "2026-09-26T08:55:49+00:00",
+      "decode_status": "verified_swap",
+      "decoder_version": "r2-raydium-amm-v4-owner-balances-1",
+      "operation_id": null,
+      "phase": "preselection",
+      "programs": [
+        "11111111111111111111111111111111",
+        "4H9AA9ekBHkh7S5nC9PsVdNcG96a3yeVVjisP6sDHGuo",
+        "675kPX9MHTjS2zt1qfr1NYHuzeLXfQM9H24wFSUt1Mp8",
+        "ComputeBudget111111111111111111111111111111",
+        "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA"
+      ],
+      "raw_file": "raw/4QogTPDzHoiPWSo6eGjUrVrG6QKC7vhhugcq22jVwFKD6fyg5ozZUXDEqwmTwGn4bDiktXsj5KnxNrkY7Mn6teG1.json",
+      "raw_file_sha256": "9c0af7810be200d564c89c484c8ce5d2df21f45548e764ff6e576eb46205c866",
+      "received_at": "2026-09-27T03:46:04.773047+00:00",
+      "reference_source_hash": "e1d612f2869fcc380b9cbb943a0c43de2fcda632f1e22d259eb53a6f64c6a2f7",
+      "rpc_response_hash": "b768e3017e02c492f25818fdd128d368afc1e2df2217e6e2c28d4ce5fbd0ebab",
+      "signature": "4QogTPDzHoiPWSo6eGjUrVrG6QKC7vhhugcq22jVwFKD6fyg5ozZUXDEqwmTwGn4bDiktXsj5KnxNrkY7Mn6teG1",
+      "slot": 450626890
+    },
+    {
+      "block_at": "2026-09-27T03:51:10+00:00",
+      "decode_status": "complete",
+      "decoder_version": "r2-raydium-amm-v4-owner-balances-1",
+      "operation_id": "4V5XkdK4vks4SGmXsZhxayb4Yk15T9nWv5iyNm4GMqqqs66Ld5dVckgYGytBifMZb61KRs9qKDXRgEmxnGJhUtAy",
+      "phase": "prospective",
+      "programs": [
+        "11111111111111111111111111111111",
+        "4H9AA9ekBHkh7S5nC9PsVdNcG96a3yeVVjisP6sDHGuo",
+        "675kPX9MHTjS2zt1qfr1NYHuzeLXfQM9H24wFSUt1Mp8",
+        "ComputeBudget111111111111111111111111111111",
+        "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA"
+      ],
+      "raw_file": "follow-raw/4V5XkdK4vks4SGmXsZhxayb4Yk15T9nWv5iyNm4GMqqqs66Ld5dVckgYGytBifMZb61KRs9qKDXRgEmxnGJhUtAy.json",
+      "raw_file_sha256": "e8c14841fd3633f4dfe203cd41ebfb3924195e11f465bb9e8270d37f27f84cb1",
+      "received_at": "2026-09-27T04:01:34.718336+00:00",
+      "reference_source_hash": null,
+      "rpc_response_hash": "e4e5111f6dbb8a82fc5fd037994ce50c28822d507421185cfc03a64de35bf9ce",
+      "signature": "4V5XkdK4vks4SGmXsZhxayb4Yk15T9nWv5iyNm4GMqqqs66Ld5dVckgYGytBifMZb61KRs9qKDXRgEmxnGJhUtAy",
+      "slot": 450881015
+    },
+    {
+      "block_at": "2026-09-26T08:52:14+00:00",
+      "decode_status": "partial",
+      "decoder_version": "r2-raydium-amm-v4-owner-balances-1",
+      "operation_id": null,
+      "phase": "preselection",
+      "programs": [
+        "11111111111111111111111111111111",
+        "3URuDiCXFYJ95YVeDW8MP3b7CKTnuqArY5GTZA2JnPWQ",
+        "675kPX9MHTjS2zt1qfr1NYHuzeLXfQM9H24wFSUt1Mp8",
+        "ComputeBudget111111111111111111111111111111",
+        "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA"
+      ],
+      "raw_file": "raw/4xM5RwuJds9xjVPBQQi6dtpj7cgEy9UyWsr4cCBqeYZhWi3NsFfy4S9QjxvNoHczDotDsy9XpanyEUvzN7cxTCTz.json",
+      "raw_file_sha256": "32af999b3b7c64d96e5c1a2739ba62cf07dc0d345a4323da1edf6a2171bc215e",
+      "received_at": "2026-09-27T03:47:31.036893+00:00",
+      "reference_source_hash": "78fb618b5fb4542c6a4ac4f5f59ec58e17c0deb846746e054e28aaa7853d6b9d",
+      "rpc_response_hash": "62efcc53b915fb33dc365499164ef786a176ed145988bcddf55d72bbdbfb1574",
+      "signature": "4xM5RwuJds9xjVPBQQi6dtpj7cgEy9UyWsr4cCBqeYZhWi3NsFfy4S9QjxvNoHczDotDsy9XpanyEUvzN7cxTCTz",
+      "slot": 450626081
+    },
+    {
+      "block_at": "2026-09-26T08:49:09+00:00",
+      "decode_status": "verified_swap",
+      "decoder_version": "r2-raydium-amm-v4-owner-balances-1",
+      "operation_id": null,
+      "phase": "preselection",
+      "programs": [
+        "11111111111111111111111111111111",
+        "675kPX9MHTjS2zt1qfr1NYHuzeLXfQM9H24wFSUt1Mp8",
+        "ComputeBudget111111111111111111111111111111",
+        "DvtCHYizicjpX3dSLkXVsS1Y5RGRHGahGirAsRjVbEVg",
+        "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA"
+      ],
+      "raw_file": "raw/5KX8U64inSw1y9sVXmZuvt1RSATnSyiDmMGaTxns7Vze1GNpQ3REV1iMq6YoQfdy8ENgdRaZCeyagpdE2ir5N4Cx.json",
+      "raw_file_sha256": "02b19540adb95c5dbed0dfc7a5bfda56dc81d1bc6d180611638cbc4d07e17828",
+      "received_at": "2026-09-27T03:48:32.596695+00:00",
+      "reference_source_hash": "e70dba7cbea8db001e0ba8b29147d83d48ac81e21bbe17aac21423bce4cf8b4f",
+      "rpc_response_hash": "81651e40b13811a569480f37a7bd768033117a9d8bb634dffa9b76223df3f6de",
+      "signature": "5KX8U64inSw1y9sVXmZuvt1RSATnSyiDmMGaTxns7Vze1GNpQ3REV1iMq6YoQfdy8ENgdRaZCeyagpdE2ir5N4Cx",
+      "slot": 450625391
+    },
+    {
+      "block_at": "2026-09-26T08:49:09+00:00",
+      "decode_status": "verified_swap",
+      "decoder_version": "r2-raydium-amm-v4-owner-balances-1",
+      "operation_id": null,
+      "phase": "preselection",
+      "programs": [
+        "11111111111111111111111111111111",
+        "675kPX9MHTjS2zt1qfr1NYHuzeLXfQM9H24wFSUt1Mp8",
+        "ComputeBudget111111111111111111111111111111",
+        "DvtCHYizicjpX3dSLkXVsS1Y5RGRHGahGirAsRjVbEVg",
+        "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA"
+      ],
+      "raw_file": "raw/5ovgpv61gHjMx9EaHagvkszvh5R76skTku6FktWNB59H9BPkZB5RPq6gz3hckV4t2gQBPBrknS9RQiFfEQzDx2S6.json",
+      "raw_file_sha256": "8045e1777a90bd247d5ff98a7673cb84551aeaadc9f9b7b0db1b5448c9370134",
+      "received_at": "2026-09-27T03:48:42.384900+00:00",
+      "reference_source_hash": "e70dba7cbea8db001e0ba8b29147d83d48ac81e21bbe17aac21423bce4cf8b4f",
+      "rpc_response_hash": "49faa068a4e97d15cda143d7d84dc5a7c0b09f3f1151b5f5807e942010e97681",
+      "signature": "5ovgpv61gHjMx9EaHagvkszvh5R76skTku6FktWNB59H9BPkZB5RPq6gz3hckV4t2gQBPBrknS9RQiFfEQzDx2S6",
+      "slot": 450625391
+    },
+    {
+      "block_at": "2026-09-26T08:30:11+00:00",
+      "decode_status": "verified_swap",
+      "decoder_version": "r2-raydium-amm-v4-owner-balances-1",
+      "operation_id": null,
+      "phase": "preselection",
+      "programs": [
+        "675kPX9MHTjS2zt1qfr1NYHuzeLXfQM9H24wFSUt1Mp8",
+        "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA",
+        "hydHwdP54fiTbJ5QXuKDLZFLY5m8pqx15RSmWcL1yAJ"
+      ],
+      "raw_file": "raw/5z6tEaYG9GxheeXekCgAhEz1JVPFkdKVwn68bmUbCvJcDGhPnXRZexRy6nUuxDaTAHFWLYPzB2Ne7eS1BgvV9G9z.json",
+      "raw_file_sha256": "4ea446116d82963a37290ab2a8b576d13e006f3a8e5cb4574e987551cebeb8fb",
+      "received_at": "2026-09-27T03:45:23.392044+00:00",
+      "reference_source_hash": "78fb618b5fb4542c6a4ac4f5f59ec58e17c0deb846746e054e28aaa7853d6b9d",
+      "rpc_response_hash": "e35c24620980356f5ac0f1e8235f7746de4f73cc4358703188b1bc7bb8ecd4ea",
+      "signature": "5z6tEaYG9GxheeXekCgAhEz1JVPFkdKVwn68bmUbCvJcDGhPnXRZexRy6nUuxDaTAHFWLYPzB2Ne7eS1BgvV9G9z",
+      "slot": 450621140
+    },
+    {
+      "block_at": "2026-09-27T03:54:15+00:00",
+      "decode_status": "partial",
+      "decoder_version": "r2-raydium-amm-v4-owner-balances-1",
+      "operation_id": "63Jiu96K2hKoHdewxmj95qLbSrLEpZTqPtTxeXHycJvnxrbha6X785DSE74mRhWboDPsMbEbFk1zgQRr6cJzAkYV",
+      "phase": "prospective",
+      "programs": [
+        "HpNfyc2Saw7RKkQd8nEL4khUcuPhQ7WwY1B2qjx8jxFq",
+        "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA",
+        "hydHwdP54fiTbJ5QXuKDLZFLY5m8pqx15RSmWcL1yAJ"
+      ],
+      "raw_file": "follow-raw/63Jiu96K2hKoHdewxmj95qLbSrLEpZTqPtTxeXHycJvnxrbha6X785DSE74mRhWboDPsMbEbFk1zgQRr6cJzAkYV.json",
+      "raw_file_sha256": "5b3938a3f8813bda0748be81583eae5b3cd3e8c7aaf58bb60c6b2a7c39a4ca28",
+      "received_at": "2026-09-27T03:57:40.086923+00:00",
+      "reference_source_hash": null,
+      "rpc_response_hash": "7f146b800bc546f1c2b0f22a11b0735859e7347d29b475c791716dc46f94ddae",
+      "signature": "63Jiu96K2hKoHdewxmj95qLbSrLEpZTqPtTxeXHycJvnxrbha6X785DSE74mRhWboDPsMbEbFk1zgQRr6cJzAkYV",
+      "slot": 450881700
+    },
+    {
+      "block_at": "2026-09-26T08:34:06+00:00",
+      "decode_status": "verified_swap",
+      "decoder_version": "r2-raydium-amm-v4-owner-balances-1",
+      "operation_id": null,
+      "phase": "preselection",
+      "programs": [
+        "11111111111111111111111111111111",
+        "675kPX9MHTjS2zt1qfr1NYHuzeLXfQM9H24wFSUt1Mp8",
+        "ComputeBudget111111111111111111111111111111",
+        "DvtCHYizicjpX3dSLkXVsS1Y5RGRHGahGirAsRjVbEVg",
+        "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA"
+      ],
+      "raw_file": "raw/666LnkBsd28TzoSwF2S7SHnQ2uqA6UxyFdyXzx5MXrqKeGybHoGTEfnfbfHjHfaNz5NyLzBB8dbWrnR4HJcK4uJk.json",
+      "raw_file_sha256": "f209017e16b25e94916f1e7d3545cf8bd458761f4e94f752660e93398adf8f1c",
+      "received_at": "2026-09-27T03:45:34.038753+00:00",
+      "reference_source_hash": "e70dba7cbea8db001e0ba8b29147d83d48ac81e21bbe17aac21423bce4cf8b4f",
+      "rpc_response_hash": "b070c7b6a895638594b5c13f9e5640e815192923f3b249c057b9af139a530662",
+      "signature": "666LnkBsd28TzoSwF2S7SHnQ2uqA6UxyFdyXzx5MXrqKeGybHoGTEfnfbfHjHfaNz5NyLzBB8dbWrnR4HJcK4uJk",
+      "slot": 450622011
+    },
+    {
+      "block_at": "2026-09-27T03:55:22+00:00",
+      "decode_status": "complete",
+      "decoder_version": "r2-raydium-amm-v4-owner-balances-1",
+      "operation_id": "8FjPjYJ9ueWJDd2VDEDorJqoXvs99W3qtM2X22H3ZLBbAHHCQ1VoJDapac2DSVkFDaWiJawNtcjyo84Ac1PsNtF",
+      "phase": "prospective",
+      "programs": [
+        "11111111111111111111111111111111",
+        "61DFfeTKM7trxYcPQCM78bJ794ddZprZpAwAnLiwTpYH",
+        "ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL",
+        "ComputeBudget111111111111111111111111111111",
+        "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA",
+        "TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb"
+      ],
+      "raw_file": "follow-raw/8FjPjYJ9ueWJDd2VDEDorJqoXvs99W3qtM2X22H3ZLBbAHHCQ1VoJDapac2DSVkFDaWiJawNtcjyo84Ac1PsNtF.json",
+      "raw_file_sha256": "f402ca325c296f5b40876ca742311c7454af141c06c836dd06dde58369ae3eef",
+      "received_at": "2026-09-27T04:01:25.277091+00:00",
+      "reference_source_hash": null,
+      "rpc_response_hash": "2206f910d2dc56446d148261b1f8dceacead04ddff35797abd615a786be64eee",
+      "signature": "8FjPjYJ9ueWJDd2VDEDorJqoXvs99W3qtM2X22H3ZLBbAHHCQ1VoJDapac2DSVkFDaWiJawNtcjyo84Ac1PsNtF",
+      "slot": 450881953
+    },
+    {
+      "block_at": "2026-09-27T03:50:29+00:00",
+      "decode_status": "partial_route",
+      "decoder_version": "r2-raydium-amm-v4-owner-balances-1",
+      "operation_id": "8dpdjAFHKogVzX2TzBEuXTQdBrZSXe2sFwp5BfhwoacF6XcTWqo2U3joZfdZ9RUKaYK7scfDgUTUBMpjBXYVQAq",
+      "phase": "prospective",
+      "programs": [
+        "11111111111111111111111111111111",
+        "ComputeBudget111111111111111111111111111111",
+        "DvtCHYizicjpX3dSLkXVsS1Y5RGRHGahGirAsRjVbEVg",
+        "LBUZKhRxPF3XUpBCjp4YzTKgLccjZhTSDM9YuVaPwxo",
+        "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA",
+        "TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb"
+      ],
+      "raw_file": "follow-raw/8dpdjAFHKogVzX2TzBEuXTQdBrZSXe2sFwp5BfhwoacF6XcTWqo2U3joZfdZ9RUKaYK7scfDgUTUBMpjBXYVQAq.json",
+      "raw_file_sha256": "fc7bdbbad156e1fa22c78fc313a60e92850615bbfa4f8d7905b6fcd54dbb3e03",
+      "received_at": "2026-09-27T03:56:48.720338+00:00",
+      "reference_source_hash": null,
+      "rpc_response_hash": "2b67b093760d3189c6d1cb76d31d67566646a88ba68c4586b1dfed90219384b4",
+      "signature": "8dpdjAFHKogVzX2TzBEuXTQdBrZSXe2sFwp5BfhwoacF6XcTWqo2U3joZfdZ9RUKaYK7scfDgUTUBMpjBXYVQAq",
+      "slot": 450880862
+    },
+    {
+      "block_at": "2026-09-27T03:51:17+00:00",
+      "decode_status": "partial",
+      "decoder_version": "r2-raydium-amm-v4-owner-balances-1",
+      "operation_id": "GYdcEwDAzskrCFNwb69Tf6EAESncqxFY3EFBdQJyrr6H5D7441zoYMr1dsoKbevhp8CkxFALBXkjpizkXNkg5CP",
+      "phase": "prospective",
+      "programs": [
+        "4H9AA9ekBHkh7S5nC9PsVdNcG96a3yeVVjisP6sDHGuo",
+        "ComputeBudget111111111111111111111111111111"
+      ],
+      "raw_file": "follow-raw/GYdcEwDAzskrCFNwb69Tf6EAESncqxFY3EFBdQJyrr6H5D7441zoYMr1dsoKbevhp8CkxFALBXkjpizkXNkg5CP.json",
+      "raw_file_sha256": "09b91538c8114a9c4d80908dcc48ab2a242576fe03af869deb76066f2e073257",
+      "received_at": "2026-09-27T04:00:55.012198+00:00",
+      "reference_source_hash": null,
+      "rpc_response_hash": "30238d9fa97d6ef41980c73cc2a4a1a2030b1ec2b654237cf6c53276415a4b6a",
+      "signature": "GYdcEwDAzskrCFNwb69Tf6EAESncqxFY3EFBdQJyrr6H5D7441zoYMr1dsoKbevhp8CkxFALBXkjpizkXNkg5CP",
+      "slot": 450881041
+    },
+    {
+      "block_at": "2026-09-27T03:55:09+00:00",
+      "decode_status": "partial",
+      "decoder_version": "r2-raydium-amm-v4-owner-balances-1",
+      "operation_id": "JVSbbN9somSQU8sVXz9cXLg48dF8LiEdGmeRAVAexobzErRHrxHCLhYxFjasJV8eTXXxFr5L39b87cnWmUSAnLM",
+      "phase": "prospective",
+      "programs": [
+        "61DFfeTKM7trxYcPQCM78bJ794ddZprZpAwAnLiwTpYH",
+        "ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL",
+        "ComputeBudget111111111111111111111111111111",
+        "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA"
+      ],
+      "raw_file": "follow-raw/JVSbbN9somSQU8sVXz9cXLg48dF8LiEdGmeRAVAexobzErRHrxHCLhYxFjasJV8eTXXxFr5L39b87cnWmUSAnLM.json",
+      "raw_file_sha256": "5562940c000879fb5ffd4a08ed7470ac7b347d04f71337a33474fa2b09c4ed91",
+      "received_at": "2026-09-27T04:01:14.672094+00:00",
+      "reference_source_hash": null,
+      "rpc_response_hash": "452c88e2117305bf6184e1f2e48ec4ec9df3e8613181db0d0308efd5353f68c3",
+      "signature": "JVSbbN9somSQU8sVXz9cXLg48dF8LiEdGmeRAVAexobzErRHrxHCLhYxFjasJV8eTXXxFr5L39b87cnWmUSAnLM",
+      "slot": 450881905
+    },
+    {
+      "block_at": "2026-09-27T03:54:54+00:00",
+      "decode_status": "partial_route",
+      "decoder_version": "r2-raydium-amm-v4-owner-balances-1",
+      "operation_id": "Mamt7uEZysu2Hm5CqKjTzYgPPb6MrCPc1y24t5v5cPhTFM2ute7JEbts6ASz3VXUBWRutcTxVZUbvis71hbVikD",
+      "phase": "prospective",
+      "programs": [
+        "11111111111111111111111111111111",
+        "ComputeBudget111111111111111111111111111111",
+        "GKybPT5ZzV5NgkXy1Pa8Bnu14MS7euEtK8j9zWHzYJpx",
+        "LBUZKhRxPF3XUpBCjp4YzTKgLccjZhTSDM9YuVaPwxo",
+        "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA"
+      ],
+      "raw_file": "follow-raw/Mamt7uEZysu2Hm5CqKjTzYgPPb6MrCPc1y24t5v5cPhTFM2ute7JEbts6ASz3VXUBWRutcTxVZUbvis71hbVikD.json",
+      "raw_file_sha256": "2c760fb2675eb6c5635794711fec9da36749567fbcf7374e34ee1ecb0a3c38e0",
+      "received_at": "2026-09-27T03:57:19.399444+00:00",
+      "reference_source_hash": null,
+      "rpc_response_hash": "284de49bda5b13d2b04c57f4d1cd5244e4280b1069c90e962eff8c678f73d18a",
+      "signature": "Mamt7uEZysu2Hm5CqKjTzYgPPb6MrCPc1y24t5v5cPhTFM2ute7JEbts6ASz3VXUBWRutcTxVZUbvis71hbVikD",
+      "slot": 450881849
+    },
+    {
+      "block_at": "2026-09-26T08:53:26+00:00",
+      "decode_status": "verified_swap",
+      "decoder_version": "r2-raydium-amm-v4-owner-balances-1",
+      "operation_id": null,
+      "phase": "preselection",
+      "programs": [
+        "11111111111111111111111111111111",
+        "675kPX9MHTjS2zt1qfr1NYHuzeLXfQM9H24wFSUt1Mp8",
+        "ComputeBudget111111111111111111111111111111",
+        "GKybPT5ZzV5NgkXy1Pa8Bnu14MS7euEtK8j9zWHzYJpx",
+        "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA"
+      ],
+      "raw_file": "raw/z2vzDteVcns8XcdsUx6nyuB461cwJCcnJXK2nHuPX1UGSDoDbYtDfEMTrYx3Cgpqh4FGgxSTLSWyhtdZ22euTcT.json",
+      "raw_file_sha256": "68de5ec371096c4e6f755c400bf41b237af78bb858d682c172a134ac2308fdd6",
+      "received_at": "2026-09-26T09:12:13.164901+00:00",
+      "reference_source_hash": "e70dba7cbea8db001e0ba8b29147d83d48ac81e21bbe17aac21423bce4cf8b4f",
+      "rpc_response_hash": null,
+      "signature": "z2vzDteVcns8XcdsUx6nyuB461cwJCcnJXK2nHuPX1UGSDoDbYtDfEMTrYx3Cgpqh4FGgxSTLSWyhtdZ22euTcT",
+      "slot": 450626351
+    }
+  ]
+}

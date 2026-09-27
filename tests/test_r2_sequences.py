@@ -125,3 +125,19 @@ def test_out_of_universe_buy_consumes_quantity_without_creating_rotation(tmp_pat
         assert len(rows) == 1
         assert rows[0]["destination_mint"] == "B"
         assert rows[0]["reserve_quantity_base"] == "40"
+
+
+def test_two_economic_operations_in_one_signature_are_not_deduplicated(tmp_path):
+    first = event("shared", "sell", "A", 60, "2026-09-26T10:00:00+00:00")
+    second = event("shared", "sell", "C", 40, "2026-09-26T10:00:00+00:00")
+    buy = event("buy", "buy", "B", 100, "2026-09-26T10:01:00+00:00")
+    first["operation_id"] = "solana:shared:0:wallet"
+    second["operation_id"] = "solana:shared:1:wallet"
+    buy["operation_id"] = "solana:buy:0:wallet"
+    with SequenceStore(tmp_path / "multi.sqlite") as store:
+        assert store.add([first, second, buy]) == 3
+        assert store.snapshot()["event_count"] == 3
+        assert {row["source_operation_id"] for row in store.snapshot()["allocations"]} == {
+            first["operation_id"],
+            second["operation_id"],
+        }

@@ -1,0 +1,282 @@
+{
+  "amount_screen_wallets": 2,
+  "cohort_known_at": "2026-09-27T03:49:58.359629+00:00",
+  "max_wallets": 10,
+  "qualified_wallets": 0,
+  "registry_version": "r3-research-classification-1",
+  "sample_window": {
+    "end": "2026-09-26T08:55:50+00:00",
+    "start": "2026-09-26T08:13:36+00:00"
+  },
+  "scope": "wallet_candidates_in_sample_not_all_solana",
+  "selection_bias": "retrospective_on_r2_sample",
+  "sequences": {
+    "allocations": [
+      {
+        "amount_usd": "577.1277902248598171796493201",
+        "available_at": "2026-09-27T03:47:21.124947+00:00",
+        "buy_value_usd": "577.1277902248598171796493201",
+        "destination_mint": "9BB6NFEcjBCtnNLFko2FqVQBq8HHM13kCyYcdQbgpump",
+        "destination_signature": "3aHgDJDXWxuCzr8hWTVur2jNxBfRPHaqepBGt5cueVrtkKTZ6C2qnDpmRsmvtv98Ltgym5SGNkjhMGdfHBSwvrwT",
+        "economic_at": "2026-09-26T08:29:58+00:00",
+        "evidence": "inferred_via_reserve",
+        "id": "2soacGvT7dFe8xm98MdNeeRqzRwvtJBovAzg31MU4yrQhkWYSBtBFbzS1AJyV2dAS5NAa6iNgBsxT9Hdo1wScsvq:3aHgDJDXWxuCzr8hWTVur2jNxBfRPHaqepBGt5cueVrtkKTZ6C2qnDpmRsmvtv98Ltgym5SGNkjhMGdfHBSwvrwT",
+        "reserve_decimals": 9,
+        "reserve_mint": "So11111111111111111111111111111111111111112",
+        "reserve_quantity_base": "4794951897",
+        "sale_value_usd": "578.8082317811088056430702992",
+        "source_mint": "EKpQGSJtjMFqKZ9KQanSqYXRcF8fBopzLHYxdM65zcjm",
+        "source_signature": "2soacGvT7dFe8xm98MdNeeRqzRwvtJBovAzg31MU4yrQhkWYSBtBFbzS1AJyV2dAS5NAa6iNgBsxT9Hdo1wScsvq",
+        "valuation_method": "historical_source_values",
+        "wallet": "MfDuWeqSHEqTFVYZ7LoexgAK9dxk7cy4DFJWjWMGVWa",
+        "warning": "fund_identity_unproven; exploratory_backfill; reserve_base_conserved"
+      },
+      {
+        "amount_usd": "1003.132839778149262937669722",
+        "available_at": "2026-09-27T03:45:44.031660+00:00",
+        "buy_value_usd": "1003.132839778149262937669722",
+        "destination_mint": "EKpQGSJtjMFqKZ9KQanSqYXRcF8fBopzLHYxdM65zcjm",
+        "destination_signature": "666LnkBsd28TzoSwF2S7SHnQ2uqA6UxyFdyXzx5MXrqKeGybHoGTEfnfbfHjHfaNz5NyLzBB8dbWrnR4HJcK4uJk",
+        "economic_at": "2026-09-26T08:34:06+00:00",
+        "evidence": "inferred_via_reserve",
+        "id": "38hWoMyfMEQy9tRiVVEvxyj6j5SKy7i7jEPnGHawXGug77eT1pGEYqPYrRmvhnQ2b9U8AfTJNaNLiBbsE8VnEr3U:666LnkBsd28TzoSwF2S7SHnQ2uqA6UxyFdyXzx5MXrqKeGybHoGTEfnfbfHjHfaNz5NyLzBB8dbWrnR4HJcK4uJk",
+        "reserve_decimals": 9,
+        "reserve_mint": "So11111111111111111111111111111111111111112",
+        "reserve_quantity_base": "8316582739",
+        "sale_value_usd": "1003.911332798482503889351776",
+        "source_mint": "9BB6NFEcjBCtnNLFko2FqVQBq8HHM13kCyYcdQbgpump",
+        "source_signature": "38hWoMyfMEQy9tRiVVEvxyj6j5SKy7i7jEPnGHawXGug77eT1pGEYqPYrRmvhnQ2b9U8AfTJNaNLiBbsE8VnEr3U",
+        "valuation_method": "historical_source_values",
+        "wallet": "CreQJ2t94QK5dsxUZGXfPJ8Nx7wA9LHr5chxjSMkbNft",
+        "warning": "fund_identity_unproven; exploratory_backfill; reserve_base_conserved"
+      },
+      {
+        "amount_usd": "593.3581454668413668004271759",
+        "available_at": "2026-09-27T03:47:00.360934+00:00",
+        "buy_value_usd": "593.4306886676505321383773437",
+        "destination_mint": "9BB6NFEcjBCtnNLFko2FqVQBq8HHM13kCyYcdQbgpump",
+        "destination_signature": "2JCeZTc3ePgTYKnYwU1BLN3YhT7s8c8AmgVbwBALPkgiskr3671vTEE2D6QCn56iccQMsLpa3cJJEbFnmgRh9bto",
+        "economic_at": "2026-09-26T08:30:11+00:00",
+        "evidence": "inferred_via_reserve",
+        "id": "48Km3bhHfxPVzw9ffySoNULcFuxGscAjVhkd4y3fZeGPD8igx9HXqhAWdK9NW2UpBfuZiaMKQypg7nu3CSbH9Pb4:2JCeZTc3ePgTYKnYwU1BLN3YhT7s8c8AmgVbwBALPkgiskr3671vTEE2D6QCn56iccQMsLpa3cJJEbFnmgRh9bto",
+        "reserve_decimals": 9,
+        "reserve_mint": "So11111111111111111111111111111111111111112",
+        "reserve_quantity_base": "4930287340",
+        "sale_value_usd": "593.3581454668413668004271759",
+        "source_mint": "2qEHjDLDLbuBgRYvsxhc5D6uDWAivNFZGan56P1tpump",
+        "source_signature": "48Km3bhHfxPVzw9ffySoNULcFuxGscAjVhkd4y3fZeGPD8igx9HXqhAWdK9NW2UpBfuZiaMKQypg7nu3CSbH9Pb4",
+        "valuation_method": "historical_source_values",
+        "wallet": "MfDuWeqSHEqTFVYZ7LoexgAK9dxk7cy4DFJWjWMGVWa",
+        "warning": "fund_identity_unproven; exploratory_backfill; reserve_base_conserved"
+      },
+      {
+        "amount_usd": "40.85900171420340920983844810",
+        "available_at": "2026-09-27T03:46:24.723316+00:00",
+        "buy_value_usd": "40.86305257517112630408104361",
+        "destination_mint": "9BB6NFEcjBCtnNLFko2FqVQBq8HHM13kCyYcdQbgpump",
+        "destination_signature": "3aHgDJDXWxuCzr8hWTVur2jNxBfRPHaqepBGt5cueVrtkKTZ6C2qnDpmRsmvtv98Ltgym5SGNkjhMGdfHBSwvrwT",
+        "economic_at": "2026-09-26T08:29:58+00:00",
+        "evidence": "inferred_via_reserve",
+        "id": "48Km3bhHfxPVzw9ffySoNULcFuxGscAjVhkd4y3fZeGPD8igx9HXqhAWdK9NW2UpBfuZiaMKQypg7nu3CSbH9Pb4:3aHgDJDXWxuCzr8hWTVur2jNxBfRPHaqepBGt5cueVrtkKTZ6C2qnDpmRsmvtv98Ltgym5SGNkjhMGdfHBSwvrwT",
+        "reserve_decimals": 9,
+        "reserve_mint": "So11111111111111111111111111111111111111112",
+        "reserve_quantity_base": "339502576",
+        "sale_value_usd": "40.85900171420340920983844810",
+        "source_mint": "2qEHjDLDLbuBgRYvsxhc5D6uDWAivNFZGan56P1tpump",
+        "source_signature": "48Km3bhHfxPVzw9ffySoNULcFuxGscAjVhkd4y3fZeGPD8igx9HXqhAWdK9NW2UpBfuZiaMKQypg7nu3CSbH9Pb4",
+        "valuation_method": "historical_source_values",
+        "wallet": "MfDuWeqSHEqTFVYZ7LoexgAK9dxk7cy4DFJWjWMGVWa",
+        "warning": "fund_identity_unproven; exploratory_backfill; reserve_base_conserved"
+      },
+      {
+        "amount_usd": "502.2142183198436874079363715",
+        "available_at": "2026-09-27T03:48:01.699700+00:00",
+        "buy_value_usd": "502.2142183198436874079363715",
+        "destination_mint": "EKpQGSJtjMFqKZ9KQanSqYXRcF8fBopzLHYxdM65zcjm",
+        "destination_signature": "z2vzDteVcns8XcdsUx6nyuB461cwJCcnJXK2nHuPX1UGSDoDbYtDfEMTrYx3Cgpqh4FGgxSTLSWyhtdZ22euTcT",
+        "economic_at": "2026-09-26T08:53:26+00:00",
+        "evidence": "inferred_via_reserve",
+        "id": "4KRe5eRLFvUSEuLp3nqnLn1B2hwWqnQ2xed2jfs3M8aoocBax4PuN9pc6wxWXCWekkfkJ6be3hwoAC9F9mcwgCAY:z2vzDteVcns8XcdsUx6nyuB461cwJCcnJXK2nHuPX1UGSDoDbYtDfEMTrYx3Cgpqh4FGgxSTLSWyhtdZ22euTcT",
+        "reserve_decimals": 9,
+        "reserve_mint": "So11111111111111111111111111111111111111112",
+        "reserve_quantity_base": "4149803486",
+        "sale_value_usd": "502.2419369587565249561243325",
+        "source_mint": "ukHH6c7mMyiWCf1b9pnWe25TSpkDDt3H5pQZgZ74J82",
+        "source_signature": "4KRe5eRLFvUSEuLp3nqnLn1B2hwWqnQ2xed2jfs3M8aoocBax4PuN9pc6wxWXCWekkfkJ6be3hwoAC9F9mcwgCAY",
+        "valuation_method": "historical_source_values",
+        "wallet": "MfDuWeqSHEqTFVYZ7LoexgAK9dxk7cy4DFJWjWMGVWa",
+        "warning": "fund_identity_unproven; exploratory_backfill; reserve_base_conserved"
+      }
+    ],
+    "coverage": "sampled_swaps_only; opening_positions_unknown",
+    "event_count": 20,
+    "pending": [
+      {
+        "amount": "6009776682",
+        "amount_usd": "726.3916545330985503756223666626353028119454591008",
+        "available_at": "2026-09-27T03:46:04.773047+00:00",
+        "coin_mint": "ukHH6c7mMyiWCf1b9pnWe25TSpkDDt3H5pQZgZ74J82",
+        "direction": "sell",
+        "economic_at": "2026-09-26T08:55:49+00:00",
+        "remaining": "6009776682",
+        "remaining_usd": null,
+        "reserve_decimals": 9,
+        "reserve_mint": "So11111111111111111111111111111111111111112",
+        "reserve_quantity_base": "6009776682",
+        "signature": "4QogTPDzHoiPWSo6eGjUrVrG6QKC7vhhugcq22jVwFKD6fyg5ozZUXDEqwmTwGn4bDiktXsj5KnxNrkY7Mn6teG1",
+        "unit": "reserve_base",
+        "valuation": "geckoterminal_trade_proxy_at_economic_time",
+        "wallet": "9FMUjZHCJEeoz1Au9RB7RsgCEeaDfQ164TToKfixCSHi"
+      }
+    ],
+    "window_seconds": 21600
+  },
+  "strict_swap_count": 20,
+  "threshold_usd": "1000",
+  "wallets": [
+    {
+      "attributed_between_memecoins_usd": "1713.559155725748280597851316",
+      "attributed_reserve_base_by_mint": {
+        "So11111111111111111111111111111111111111112": 14214545299
+      },
+      "category": "unknown",
+      "category_reason": "high_frequency_alone_does_not_prove_arbitrage",
+      "circular_gross_fraction": "0.1873538678149394085960586825",
+      "gross_buy_usd": "4463.502714627188570959984428",
+      "gross_sell_usd": "1715.267315920910106609460255",
+      "holding_duration": null,
+      "opening_position_unknown": true,
+      "passes_amount_screen": true,
+      "per_coin": {
+        "2qEHjDLDLbuBgRYvsxhc5D6uDWAivNFZGan56P1tpump": {
+          "buy_usd": "0",
+          "sell_usd": "634.2171471810447760102656239"
+        },
+        "9BB6NFEcjBCtnNLFko2FqVQBq8HHM13kCyYcdQbgpump": {
+          "buy_usd": "2153.157551361534686658274801",
+          "sell_usd": "0"
+        },
+        "EKpQGSJtjMFqKZ9KQanSqYXRcF8fBopzLHYxdM65zcjm": {
+          "buy_usd": "2310.345163265653884301709627",
+          "sell_usd": "578.8082317811088056430702992"
+        },
+        "ukHH6c7mMyiWCf1b9pnWe25TSpkDDt3H5pQZgZ74J82": {
+          "buy_usd": "0",
+          "sell_usd": "502.2419369587565249561243324"
+        }
+      },
+      "provenance": "onchain_unattributed",
+      "qualification_status": "amount_candidate_directionality_and_persistence_unverified",
+      "qualified_large_reallocator": false,
+      "sample_signatures": [
+        "2JCeZTc3ePgTYKnYwU1BLN3YhT7s8c8AmgVbwBALPkgiskr3671vTEE2D6QCn56iccQMsLpa3cJJEbFnmgRh9bto",
+        "2soacGvT7dFe8xm98MdNeeRqzRwvtJBovAzg31MU4yrQhkWYSBtBFbzS1AJyV2dAS5NAa6iNgBsxT9Hdo1wScsvq",
+        "2waEj6uZPa4Macy38R8B61npWw1RK7UT7vuJ1Rh3QpLxH9BtKDj5FzsjJmfMB8nLjWXaoE5ZGBVwmjJ75P6isB8A",
+        "3UZUHz7y6saNr8dAxKGCUNDLemAyaQCm1VtvmsWXtW3oTAkTdZ6xCK6cT7MdqFLGcoy4ttuzEVE3Q6eVxE2bDazY",
+        "3aHgDJDXWxuCzr8hWTVur2jNxBfRPHaqepBGt5cueVrtkKTZ6C2qnDpmRsmvtv98Ltgym5SGNkjhMGdfHBSwvrwT",
+        "3fFsRcRGjE7RydseiYXB9W334h3rUAeKFRLZFeWdD9jzDeaktwji542WCoJtPu8qiCVhUTCDh8p6gBRcGZgDJcyk",
+        "3foYRtxezFzqkzC3M8kCYFioep7PyYnfLv29jrHK8Nk8XUpWF6Wuo3ecaonRPYzVYPDYi36wVhpHArrqHX83Jbeo",
+        "48Km3bhHfxPVzw9ffySoNULcFuxGscAjVhkd4y3fZeGPD8igx9HXqhAWdK9NW2UpBfuZiaMKQypg7nu3CSbH9Pb4",
+        "4KRe5eRLFvUSEuLp3nqnLn1B2hwWqnQ2xed2jfs3M8aoocBax4PuN9pc6wxWXCWekkfkJ6be3hwoAC9F9mcwgCAY",
+        "z2vzDteVcns8XcdsUx6nyuB461cwJCcnJXK2nHuPX1UGSDoDbYtDfEMTrYx3Cgpqh4FGgxSTLSWyhtdZ22euTcT"
+      ],
+      "strict_swaps": 10,
+      "uncertainty": "sampled references and only strict decoded swaps; no total wealth",
+      "wallet": "MfDuWeqSHEqTFVYZ7LoexgAK9dxk7cy4DFJWjWMGVWa"
+    },
+    {
+      "attributed_between_memecoins_usd": "1003.132839778149262937669722",
+      "attributed_reserve_base_by_mint": {
+        "So11111111111111111111111111111111111111112": 8316582739
+      },
+      "category": "unknown",
+      "category_reason": "insufficient_behavioral_coverage",
+      "circular_gross_fraction": "0E+24",
+      "gross_buy_usd": "4504.351276434471871276223368",
+      "gross_sell_usd": "1003.911332798482503889351776",
+      "holding_duration": null,
+      "opening_position_unknown": true,
+      "passes_amount_screen": true,
+      "per_coin": {
+        "9BB6NFEcjBCtnNLFko2FqVQBq8HHM13kCyYcdQbgpump": {
+          "buy_usd": "0",
+          "sell_usd": "1003.911332798482503889351776"
+        },
+        "EKpQGSJtjMFqKZ9KQanSqYXRcF8fBopzLHYxdM65zcjm": {
+          "buy_usd": "4504.351276434471871276223368",
+          "sell_usd": "0"
+        }
+      },
+      "provenance": "onchain_unattributed",
+      "qualification_status": "amount_candidate_directionality_and_persistence_unverified",
+      "qualified_large_reallocator": false,
+      "sample_signatures": [
+        "22McUX4vA8XUc2S2nLWtWoqdwbozbiXa8VPojYGtuFCV6NEZnDCoHe5NZNQA9wSpbs27tnHkv9i97N3rRHhkHy9o",
+        "2BZnaLGYDdrguLejUohEqYvbh4PWZGBF2caNKzkKzjmaV9aJCTFK8bRXKE1FFZq1tDb8sRMy56C6v8hWJfHD8bLa",
+        "31u5VfyhqPJ21GmB5UvW6Diy6jj2iKeUBvWWEwcwthHuWFHoECnvwuQhg1ZteBGwXhTgUXkvBpbimao4GjEmZLVa",
+        "38hWoMyfMEQy9tRiVVEvxyj6j5SKy7i7jEPnGHawXGug77eT1pGEYqPYrRmvhnQ2b9U8AfTJNaNLiBbsE8VnEr3U",
+        "3JXdPUcyr7aFwVKLFcWb6Y4itewreucXwewxTkCEbAdUgiPY5D6cARaHSvKCWcNMnSKBihdDzojWu7swebCQKKiG",
+        "5KX8U64inSw1y9sVXmZuvt1RSATnSyiDmMGaTxns7Vze1GNpQ3REV1iMq6YoQfdy8ENgdRaZCeyagpdE2ir5N4Cx",
+        "5ovgpv61gHjMx9EaHagvkszvh5R76skTku6FktWNB59H9BPkZB5RPq6gz3hckV4t2gQBPBrknS9RQiFfEQzDx2S6",
+        "666LnkBsd28TzoSwF2S7SHnQ2uqA6UxyFdyXzx5MXrqKeGybHoGTEfnfbfHjHfaNz5NyLzBB8dbWrnR4HJcK4uJk"
+      ],
+      "strict_swaps": 8,
+      "uncertainty": "sampled references and only strict decoded swaps; no total wealth",
+      "wallet": "CreQJ2t94QK5dsxUZGXfPJ8Nx7wA9LHr5chxjSMkbNft"
+    },
+    {
+      "attributed_between_memecoins_usd": "0",
+      "attributed_reserve_base_by_mint": {},
+      "category": "unknown",
+      "category_reason": "insufficient_behavioral_coverage",
+      "circular_gross_fraction": "0E+24",
+      "gross_buy_usd": "1965.357628184936803952094864",
+      "gross_sell_usd": "0",
+      "holding_duration": null,
+      "opening_position_unknown": true,
+      "passes_amount_screen": false,
+      "per_coin": {
+        "9BB6NFEcjBCtnNLFko2FqVQBq8HHM13kCyYcdQbgpump": {
+          "buy_usd": "1965.357628184936803952094864",
+          "sell_usd": "0"
+        }
+      },
+      "provenance": "onchain_unattributed",
+      "qualification_status": "below_amount_screen_in_sample",
+      "qualified_large_reallocator": false,
+      "sample_signatures": [
+        "5z6tEaYG9GxheeXekCgAhEz1JVPFkdKVwn68bmUbCvJcDGhPnXRZexRy6nUuxDaTAHFWLYPzB2Ne7eS1BgvV9G9z"
+      ],
+      "strict_swaps": 1,
+      "uncertainty": "sampled references and only strict decoded swaps; no total wealth",
+      "wallet": "FkaLnX17cXZGyeu3kZGdHCNdFMJJzBrPPYVvd18B3MZp"
+    },
+    {
+      "attributed_between_memecoins_usd": "0",
+      "attributed_reserve_base_by_mint": {},
+      "category": "unknown",
+      "category_reason": "insufficient_behavioral_coverage",
+      "circular_gross_fraction": "0E+25",
+      "gross_buy_usd": "0",
+      "gross_sell_usd": "726.3916545330985503756223667",
+      "holding_duration": null,
+      "opening_position_unknown": true,
+      "passes_amount_screen": false,
+      "per_coin": {
+        "ukHH6c7mMyiWCf1b9pnWe25TSpkDDt3H5pQZgZ74J82": {
+          "buy_usd": "0",
+          "sell_usd": "726.3916545330985503756223667"
+        }
+      },
+      "provenance": "onchain_unattributed",
+      "qualification_status": "below_amount_screen_in_sample",
+      "qualified_large_reallocator": false,
+      "sample_signatures": [
+        "4QogTPDzHoiPWSo6eGjUrVrG6QKC7vhhugcq22jVwFKD6fyg5ozZUXDEqwmTwGn4bDiktXsj5KnxNrkY7Mn6teG1"
+      ],
+      "strict_swaps": 1,
+      "uncertainty": "sampled references and only strict decoded swaps; no total wealth",
+      "wallet": "9FMUjZHCJEeoz1Au9RB7RsgCEeaDfQ164TToKfixCSHi"
+    }
+  ]
+}

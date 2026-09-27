@@ -4,7 +4,7 @@ from dataclasses import dataclass
 from datetime import datetime, timedelta
 from decimal import Decimal
 
-from .engine import Rotation
+from .engine import Operation, Rotation
 
 SCORE_VERSION = "r3-pair-hypothesis-1"
 
@@ -45,6 +45,7 @@ class Decision:
     reasons: tuple[str, ...]
     version: str = SCORE_VERSION
     execution_quality: str = "not_evaluated"
+    metrics: tuple[tuple[str, str | None], ...] = ()
 
 
 @dataclass(frozen=True)
@@ -128,6 +129,7 @@ def decide_pairs(
     eligible_mints: set[str] | None = None,
     policy: PairPolicy = PairPolicy(),
     entity_groups: dict[str, str] | None = None,
+    operations: list[Operation] | None = None,
 ) -> dict[tuple[str, str], Decision]:
     visible = [
         r
@@ -142,7 +144,15 @@ def decide_pairs(
         )
     ]
     return {
-        pair: decide(visible, bars, at, pair=pair, policy=policy, entity_groups=entity_groups)
+        pair: decide(
+            visible,
+            bars,
+            at,
+            pair=pair,
+            policy=policy,
+            entity_groups=entity_groups,
+            operations=operations,
+        )
         for pair in sorted({(r.source, r.destination) for r in visible})
     }
 
@@ -158,6 +168,7 @@ def decide(
     *,
     pair: tuple[str, str] | None = None,
     policy: PairPolicy = PairPolicy(),
+    operations: list[Operation] | None = None,
 ) -> Decision:
     """Evaluate one pair; an ambiguous call never selects a destination silently."""
     if max_age is not None or min_liquidity_usd is not None or max_entity_usd is not None:
@@ -235,6 +246,74 @@ def decide(
         group = (entity_groups or {}).get(rotation.wallet, rotation.wallet)
         groups[group] = groups.get(group, Decimal(0)) + rotation.amount_usd
     amount = sum((min(value, policy.max_entity_usd) for value in groups.values()), Decimal(0))
+    net = {pair[0]: Decimal(0), pair[1]: Decimal(0)}
+    net_coverage = {pair[0]: True, pair[1]: True}
+    for operation in operations or []:
+        if (
+            not operation.finalized
+            or operation.quality != "complete"
+            or not at - policy.flow_window <= operation.available_at <= at
+        ):
+            continue
+        for leg in operation.legs:
+            if leg.mint not in net:
+                continue
+            if leg.value_usd is None:
+                net_coverage[leg.mint] = False
+            else:
+                net[leg.mint] += leg.value_usd * (1 if leg.delta_base > 0 else -1)
+    first_economic_at = min(rotation.economic_at for rotation in recent)
+
+    def prior_price(mint: str) -> Decimal | None:
+        candidates = [
+            bar
+            for bar in _visible_bars(bars, mint, at, policy.lookback_bars)
+            if bar.close_at <= first_economic_at
+        ]
+        return candidates[-1].close_usd if candidates else None
+
+    prior_a, prior_b = prior_price(pair[0]), prior_price(pair[1])
+    metrics = (
+        ("source_range", str(source.range_position)),
+        ("destination_range", str(destination.range_position)),
+        ("source_return", str(source.return_fraction)),
+        ("destination_return", str(destination.return_fraction)),
+        ("source_volatility", str(source.volatility) if source.volatility is not None else None),
+        (
+            "destination_volatility",
+            str(destination.volatility) if destination.volatility is not None else None,
+        ),
+        (
+            "source_volume_interval_usd",
+            str(source.volume_usd) if source.volume_usd is not None else None,
+        ),
+        (
+            "destination_volume_interval_usd",
+            str(destination.volume_usd) if destination.volume_usd is not None else None,
+        ),
+        ("source_volume_acceleration", str(source.volume_acceleration)),
+        ("destination_volume_acceleration", str(destination.volume_acceleration)),
+        ("relative_step", str(relative_step)),
+        (
+            "source_net_observed_usd",
+            str(net[pair[0]]) if operations is not None and net_coverage[pair[0]] else None,
+        ),
+        (
+            "destination_net_observed_usd",
+            str(net[pair[1]]) if operations is not None and net_coverage[pair[1]] else None,
+        ),
+        ("observed_delay_seconds", str((at - first_economic_at).total_seconds())),
+        ("source_prior_move", str(source.last_price / prior_a - 1) if prior_a else None),
+        ("destination_prior_move", str(destination.last_price / prior_b - 1) if prior_b else None),
+        (
+            "source_liquidity_usd",
+            str(source.liquidity_usd) if source.liquidity_usd is not None else None,
+        ),
+        (
+            "destination_liquidity_usd",
+            str(destination.liquidity_usd) if destination.liquidity_usd is not None else None,
+        ),
+    )
     execution = (
         "liquidity_snapshot_available"
         if source.liquidity_usd is not None
@@ -250,6 +329,7 @@ def decide(
             (),
             ("rotation_USD_unknown",),
             execution_quality=execution,
+            metrics=metrics,
         )
     reasons = []
     if source.range_position < policy.min_source_range:
@@ -299,4 +379,5 @@ def decide(
             f"entities={len(groups)}; links_uncertain",
         ),
         execution_quality=execution,
+        metrics=metrics,
     )

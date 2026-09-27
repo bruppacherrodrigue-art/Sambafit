@@ -13,3 +13,7 @@ data/r2-*/budget.json.lock
 data/r2-*/*.sqlite
 data/r2-*/*.pid
 data/r2-*/*.log
+data/r3-*/budget.json.lock
+data/r3-*/*.sqlite
+data/r3-*/*.pid
+data/r3-*/*.log

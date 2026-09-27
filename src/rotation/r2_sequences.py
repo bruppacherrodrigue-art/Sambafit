@@ -21,6 +21,10 @@ class SequenceStore:
             "CREATE TABLE IF NOT EXISTS events(signature TEXT PRIMARY KEY,payload TEXT NOT NULL)"
         )
         self.db.execute(
+            "CREATE TABLE IF NOT EXISTS events_v3(operation_id TEXT PRIMARY KEY,payload TEXT NOT NULL)"
+        )
+        self.db.execute("INSERT OR IGNORE INTO events_v3 SELECT signature,payload FROM events")
+        self.db.execute(
             "CREATE TABLE IF NOT EXISTS allocations(id TEXT PRIMARY KEY,payload TEXT NOT NULL)"
         )
         self.db.execute(
@@ -38,6 +42,7 @@ class SequenceStore:
         count = 0
         with self.db:
             for event in events:
+                operation_id = event.get("operation_id", event["signature"])
                 amount = event.get("reserve_quantity_base", event.get("amount_usd"))
                 if (
                     event["direction"] not in {"buy", "sell"}
@@ -47,20 +52,20 @@ class SequenceStore:
                     raise ValueError("invalid directional event")
                 canonical = json.dumps(event, sort_keys=True, separators=(",", ":"))
                 prior = self.db.execute(
-                    "SELECT payload FROM events WHERE signature=?", (event["signature"],)
+                    "SELECT payload FROM events_v3 WHERE operation_id=?", (operation_id,)
                 ).fetchone()
                 if prior:
                     if prior[0] != canonical:
-                        raise ValueError("conflicting event for signature")
+                        raise ValueError("conflicting economic operation")
                     continue
-                self.db.execute("INSERT INTO events VALUES (?,?)", (event["signature"], canonical))
+                self.db.execute("INSERT INTO events_v3 VALUES (?,?)", (operation_id, canonical))
                 count += 1
             self._rebuild()
         return count
 
     def _rebuild(self):
-        rows = [json.loads(row[0]) for row in self.db.execute("SELECT payload FROM events")]
-        rows.sort(key=lambda e: (e["economic_at"], e["signature"]))
+        rows = [json.loads(row[0]) for row in self.db.execute("SELECT payload FROM events_v3")]
+        rows.sort(key=lambda e: (e["economic_at"], e.get("operation_id", e["signature"])))
         pending: dict[str, dict] = {}
         allocations = []
         for event in rows:
@@ -68,7 +73,7 @@ class SequenceStore:
             unit = "reserve_base" if base is not None else "usd_proxy"
             amount = Decimal(base if base is not None else event["amount_usd"])
             if event["direction"] == "sell":
-                pending[event["signature"]] = {
+                pending[event.get("operation_id", event["signature"])] = {
                     **event,
                     "amount": amount,
                     "remaining": amount,
@@ -103,7 +108,9 @@ class SequenceStore:
                 )
                 allocations.append(
                     {
-                        "id": f"{source['signature']}:{event['signature']}",
+                        "id": f"{source.get('operation_id', source['signature'])}:{event.get('operation_id', event['signature'])}",
+                        "source_operation_id": source.get("operation_id", source["signature"]),
+                        "destination_operation_id": event.get("operation_id", event["signature"]),
                         "source_signature": source["signature"],
                         "destination_signature": event["signature"],
                         "wallet": event["wallet"],
@@ -165,7 +172,7 @@ class SequenceStore:
 
     def snapshot(self) -> dict:
         return {
-            "event_count": self.db.execute("SELECT COUNT(*) FROM events").fetchone()[0],
+            "event_count": self.db.execute("SELECT COUNT(*) FROM events_v3").fetchone()[0],
             "allocations": [
                 json.loads(row[0])
                 for row in self.db.execute("SELECT payload FROM allocations ORDER BY id")

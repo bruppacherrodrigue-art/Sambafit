@@ -114,7 +114,13 @@ def replay(
                 )
             )
         ]
-        decisions = decide_pairs(rotations, visible_bars, at, eligible_mints=eligible_mints)
+        decisions = decide_pairs(
+            rotations,
+            visible_bars,
+            at,
+            eligible_mints=eligible_mints,
+            operations=list(active.values()),
+        )
         current = set()
         for (source, destination), decision in decisions.items():
             pair = f"{source}:{destination}"

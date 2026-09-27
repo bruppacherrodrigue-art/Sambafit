@@ -28,7 +28,7 @@ def _archived(http: R2Http, signature: str):
         ):
             continue
         payload = json.loads(record["body"])
-        if "error" not in payload:
+        if "error" not in payload and payload.get("result") is not None:
             return payload.get("result"), {
                 "attempt": record.get("attempt"),
                 "received_at": record["received_at"],
