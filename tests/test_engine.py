@@ -36,6 +36,15 @@ def test_inferred_split_conserves_sale_value_and_orders_by_availability():
     assert sum(r.amount_usd for r in rotations) == D("100")
 
 
+def test_engine_fifo_buyback_consumes_sale_before_other_coin():
+    events = [
+        op("sale", "sale", T, [leg("A", -100)]),
+        op("buyback", "buy", T + timedelta(minutes=1), [leg("A", 100)]),
+        op("other", "buy", T + timedelta(minutes=2), [leg("B", 100)]),
+    ]
+    assert attribute_rotations(events) == []
+
+
 def test_late_sale_pairs_by_economic_order_only_after_both_events_are_available():
     sale = op("sell", "sale", T, [leg("A", -100)], available=T + timedelta(minutes=10))
     buy = op(
@@ -59,7 +68,9 @@ def test_nontrades_failed_partial_and_unpriced_do_not_rotate():
     events += [op("failed", "swap", T, [leg("A", -100), leg("B", 100)], finalized=False)]
     events += [op("partial", "swap", T, [leg("A", -100), leg("B", 100)], quality="partial")]
     events += [op("unpriced", "swap", T, [leg("A", -100, None), leg("B", 100)])]
-    assert attribute_rotations(events) == []
+    rotations = attribute_rotations(events)
+    assert len(rotations) == 1 and rotations[0].source_op == "unpriced"
+    assert rotations[0].amount_usd is None
 
 
 def test_direct_swap_does_not_create_inferred_pair():
@@ -122,7 +133,10 @@ def test_sparse_minute_bars_do_not_claim_volume_acceleration():
 
 def test_stale_market_blocks_decision_and_future_data_cannot_change_past_decision():
     rotation = attribute_rotations([op("direct", "swap", T, [leg("A", -100), leg("B", 100)])])[0]
-    bars = [MarketBar("B", T, T, D("1"), D("100"), D("1000"))]
+    bars = [
+        MarketBar("A", T, T, D("1"), D("100"), D("1000")),
+        MarketBar("B", T, T, D("1"), D("100"), D("1000")),
+    ]
     before = decide([rotation], bars, T + timedelta(minutes=1), max_age=timedelta(minutes=5))
     with_future = decide(
         [rotation],
@@ -143,7 +157,9 @@ def test_stale_market_blocks_decision_and_future_data_cannot_change_past_decisio
 def test_old_market_bar_imported_now_stays_stale():
     rotation = attribute_rotations([op("direct", "swap", T, [leg("A", -100), leg("B", 100)])])[0]
     decision_at = T + timedelta(hours=2)
-    late_import = [MarketBar("B", T, decision_at, D("1"), D("100"), D("100000"))]
+    late_import = [
+        MarketBar(mint, T, decision_at, D("1"), D("100"), D("100000")) for mint in ("A", "B")
+    ]
     decision = decide([rotation], late_import, decision_at, max_age=timedelta(minutes=5))
     assert decision.state == "observing" and decision.quality == "stale"
 

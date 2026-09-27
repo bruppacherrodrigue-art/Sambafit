@@ -207,6 +207,27 @@ class _R2Session:
             )
             return number
 
+    def remaining_seconds(self) -> float:
+        """Maximum wall time available to the next sleep and request together."""
+        with self.budget._state() as state:
+            session = self._tick(state)
+            now = self.budget.now()
+            remaining = [
+                self.budget.limits["max_active_seconds"] - state["active_seconds"],
+                self.max_seconds
+                - (now - datetime.fromisoformat(session["started_at"])).total_seconds(),
+            ]
+            if self.phase:
+                previous = sum(
+                    item.get("active_seconds", 0)
+                    for item in state["sessions"]
+                    if item.get("phase") == self.phase
+                )
+                remaining.append(
+                    self.phase_limits["max_active_seconds"] - previous - session["active_seconds"]
+                )
+            return max(0.0, min(remaining))
+
     def complete(self, number: int, *, status: str, response_hash: str | None = None):
         with self.budget._state() as state:
             attempt = next(

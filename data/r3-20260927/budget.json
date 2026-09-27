@@ -1,0 +1,575 @@
+{
+  "active_seconds": 491.02981799999964,
+  "active_session": null,
+  "attempts": [
+    {
+      "at": "2026-09-27T03:45:23.252096+00:00",
+      "number": 1,
+      "request": "getTransaction:5z6tEaYG9GxheeXekCgAhEz1JVPFkdKVwn68bmUbCvJcDGhPnXRZexRy6nUuxDaTAHFWLYPzB2Ne7eS1BgvV9G9z",
+      "response_hash": "e35c24620980356f5ac0f1e8235f7746de4f73cc4358703188b1bc7bb8ecd4ea",
+      "session_id": "10fdab7fae6c406ab1500919cc2a4fd9",
+      "source": "rpc",
+      "status": "http_200"
+    },
+    {
+      "at": "2026-09-27T03:45:33.917408+00:00",
+      "number": 2,
+      "request": "getTransaction:666LnkBsd28TzoSwF2S7SHnQ2uqA6UxyFdyXzx5MXrqKeGybHoGTEfnfbfHjHfaNz5NyLzBB8dbWrnR4HJcK4uJk",
+      "response_hash": "b070c7b6a895638594b5c13f9e5640e815192923f3b249c057b9af139a530662",
+      "session_id": "10fdab7fae6c406ab1500919cc2a4fd9",
+      "source": "rpc",
+      "status": "http_200"
+    },
+    {
+      "at": "2026-09-27T03:45:43.920619+00:00",
+      "number": 3,
+      "request": "getTransaction:38hWoMyfMEQy9tRiVVEvxyj6j5SKy7i7jEPnGHawXGug77eT1pGEYqPYrRmvhnQ2b9U8AfTJNaNLiBbsE8VnEr3U",
+      "response_hash": "72f2738f1fcbcc4580c41de9094d740e8693ec3562b1dc90e29fd6c5d4ca3c7b",
+      "session_id": "10fdab7fae6c406ab1500919cc2a4fd9",
+      "source": "rpc",
+      "status": "http_200"
+    },
+    {
+      "at": "2026-09-27T03:45:53.923763+00:00",
+      "number": 4,
+      "request": "getTransaction:3foYRtxezFzqkzC3M8kCYFioep7PyYnfLv29jrHK8Nk8XUpWF6Wuo3ecaonRPYzVYPDYi36wVhpHArrqHX83Jbeo",
+      "response_hash": "8fd966a2dadfd829dadf4eee44a91b7eaee2db4aa891aa907861446f9bcfcca8",
+      "session_id": "10fdab7fae6c406ab1500919cc2a4fd9",
+      "source": "rpc",
+      "status": "http_200"
+    },
+    {
+      "at": "2026-09-27T03:46:04.589239+00:00",
+      "number": 5,
+      "request": "getTransaction:4QogTPDzHoiPWSo6eGjUrVrG6QKC7vhhugcq22jVwFKD6fyg5ozZUXDEqwmTwGn4bDiktXsj5KnxNrkY7Mn6teG1",
+      "response_hash": "b768e3017e02c492f25818fdd128d368afc1e2df2217e6e2c28d4ce5fbd0ebab",
+      "session_id": "10fdab7fae6c406ab1500919cc2a4fd9",
+      "source": "rpc",
+      "status": "http_200"
+    },
+    {
+      "at": "2026-09-27T03:46:14.591912+00:00",
+      "number": 6,
+      "request": "getTransaction:48Km3bhHfxPVzw9ffySoNULcFuxGscAjVhkd4y3fZeGPD8igx9HXqhAWdK9NW2UpBfuZiaMKQypg7nu3CSbH9Pb4",
+      "response_hash": "25cd5d48d6433f59b2a26502444e5b96add9e89fc5800405083fe4b9f6b11bd2",
+      "session_id": "10fdab7fae6c406ab1500919cc2a4fd9",
+      "source": "rpc",
+      "status": "http_200"
+    },
+    {
+      "at": "2026-09-27T03:46:24.594716+00:00",
+      "number": 7,
+      "request": "getTransaction:3aHgDJDXWxuCzr8hWTVur2jNxBfRPHaqepBGt5cueVrtkKTZ6C2qnDpmRsmvtv98Ltgym5SGNkjhMGdfHBSwvrwT",
+      "response_hash": "6dc8edecea56a64eec85e734a0a6130496075ec9a49f761220ef9ea0a6dc8cc7",
+      "session_id": "10fdab7fae6c406ab1500919cc2a4fd9",
+      "source": "rpc",
+      "status": "http_200"
+    },
+    {
+      "at": "2026-09-27T03:46:34.599083+00:00",
+      "number": 8,
+      "request": "getTransaction:3fFsRcRGjE7RydseiYXB9W334h3rUAeKFRLZFeWdD9jzDeaktwji542WCoJtPu8qiCVhUTCDh8p6gBRcGZgDJcyk",
+      "response_hash": "9655e7e99588f7d536059eea6113faa5028775549c977fe556f035f3a845bb92",
+      "session_id": "10fdab7fae6c406ab1500919cc2a4fd9",
+      "source": "rpc",
+      "status": "http_200"
+    },
+    {
+      "at": "2026-09-27T03:46:50.246744+00:00",
+      "number": 9,
+      "request": "getTransaction:2waEj6uZPa4Macy38R8B61npWw1RK7UT7vuJ1Rh3QpLxH9BtKDj5FzsjJmfMB8nLjWXaoE5ZGBVwmjJ75P6isB8A",
+      "response_hash": "7d3656a41d41d9697d806e573eb446350f49251433d7d49cc14b657653d5cd92",
+      "session_id": "0506fbd6c96746caaae1ebcf1f8730c3",
+      "source": "rpc",
+      "status": "http_200"
+    },
+    {
+      "at": "2026-09-27T03:47:00.249914+00:00",
+      "number": 10,
+      "request": "getTransaction:2JCeZTc3ePgTYKnYwU1BLN3YhT7s8c8AmgVbwBALPkgiskr3671vTEE2D6QCn56iccQMsLpa3cJJEbFnmgRh9bto",
+      "response_hash": "e595a8ffe66e3e11c461b083bcdd571a1483b0ed6a9218042829ac371fbbe17e",
+      "session_id": "0506fbd6c96746caaae1ebcf1f8730c3",
+      "source": "rpc",
+      "status": "http_200"
+    },
+    {
+      "at": "2026-09-27T03:47:10.915647+00:00",
+      "number": 11,
+      "request": "getTransaction:3UZUHz7y6saNr8dAxKGCUNDLemAyaQCm1VtvmsWXtW3oTAkTdZ6xCK6cT7MdqFLGcoy4ttuzEVE3Q6eVxE2bDazY",
+      "response_hash": "6552f6e65b4dd910a15e873eaa0659e183870827cbc10853b56c133c028e791c",
+      "session_id": "0506fbd6c96746caaae1ebcf1f8730c3",
+      "source": "rpc",
+      "status": "http_200"
+    },
+    {
+      "at": "2026-09-27T03:47:20.919585+00:00",
+      "number": 12,
+      "request": "getTransaction:2soacGvT7dFe8xm98MdNeeRqzRwvtJBovAzg31MU4yrQhkWYSBtBFbzS1AJyV2dAS5NAa6iNgBsxT9Hdo1wScsvq",
+      "response_hash": "da42af934abc7c3ec28ec8dc509f6c6b3db9dab5bdee2eee84d42aa65c7fb89a",
+      "session_id": "0506fbd6c96746caaae1ebcf1f8730c3",
+      "source": "rpc",
+      "status": "http_200"
+    },
+    {
+      "at": "2026-09-27T03:47:30.921562+00:00",
+      "number": 13,
+      "request": "getTransaction:4xM5RwuJds9xjVPBQQi6dtpj7cgEy9UyWsr4cCBqeYZhWi3NsFfy4S9QjxvNoHczDotDsy9XpanyEUvzN7cxTCTz",
+      "response_hash": "62efcc53b915fb33dc365499164ef786a176ed145988bcddf55d72bbdbfb1574",
+      "session_id": "0506fbd6c96746caaae1ebcf1f8730c3",
+      "source": "rpc",
+      "status": "http_200"
+    },
+    {
+      "at": "2026-09-27T03:47:41.585556+00:00",
+      "number": 14,
+      "request": "getTransaction:4B31PHYH4ndWenfarMsWCvPHqRNU1MUrUL7HMrCz8HRK89qX6BkFgVhhsgUWVuAESnBqHSzS143E4mDu5EipfXTr",
+      "response_hash": "9b128dbee67579623a56e6dfff28ff3e06640f7966a78d3def1d8f7d81c3456c",
+      "session_id": "0506fbd6c96746caaae1ebcf1f8730c3",
+      "source": "rpc",
+      "status": "http_200"
+    },
+    {
+      "at": "2026-09-27T03:47:51.588892+00:00",
+      "number": 15,
+      "request": "getTransaction:22McUX4vA8XUc2S2nLWtWoqdwbozbiXa8VPojYGtuFCV6NEZnDCoHe5NZNQA9wSpbs27tnHkv9i97N3rRHhkHy9o",
+      "response_hash": "dc16d16ee3e7470781b2586a24664248480eee30cdb5b082c80dde2f34bd02eb",
+      "session_id": "0506fbd6c96746caaae1ebcf1f8730c3",
+      "source": "rpc",
+      "status": "http_200"
+    },
+    {
+      "at": "2026-09-27T03:48:01.592205+00:00",
+      "number": 16,
+      "request": "getTransaction:4KRe5eRLFvUSEuLp3nqnLn1B2hwWqnQ2xed2jfs3M8aoocBax4PuN9pc6wxWXCWekkfkJ6be3hwoAC9F9mcwgCAY",
+      "response_hash": "4f07d331c0ff51cd47fdcaf8922edf99ca32e4f4ce38213a66d002414c935499",
+      "session_id": "0506fbd6c96746caaae1ebcf1f8730c3",
+      "source": "rpc",
+      "status": "http_200"
+    },
+    {
+      "at": "2026-09-27T03:48:11.594664+00:00",
+      "number": 17,
+      "request": "getTransaction:31u5VfyhqPJ21GmB5UvW6Diy6jj2iKeUBvWWEwcwthHuWFHoECnvwuQhg1ZteBGwXhTgUXkvBpbimao4GjEmZLVa",
+      "response_hash": "31b4df4e8edf0df98e43aa4ac818cbb18cf47875dee13f3c5085e67061f13fda",
+      "session_id": "0506fbd6c96746caaae1ebcf1f8730c3",
+      "source": "rpc",
+      "status": "http_200"
+    },
+    {
+      "at": "2026-09-27T03:48:22.260932+00:00",
+      "number": 18,
+      "request": "getTransaction:3JXdPUcyr7aFwVKLFcWb6Y4itewreucXwewxTkCEbAdUgiPY5D6cARaHSvKCWcNMnSKBihdDzojWu7swebCQKKiG",
+      "response_hash": "65aaeec87bf3e258076c5c849f430e841da04a9ed364bb21b899b94176985da6",
+      "session_id": "0506fbd6c96746caaae1ebcf1f8730c3",
+      "source": "rpc",
+      "status": "http_200"
+    },
+    {
+      "at": "2026-09-27T03:48:32.264141+00:00",
+      "number": 19,
+      "request": "getTransaction:5KX8U64inSw1y9sVXmZuvt1RSATnSyiDmMGaTxns7Vze1GNpQ3REV1iMq6YoQfdy8ENgdRaZCeyagpdE2ir5N4Cx",
+      "response_hash": "81651e40b13811a569480f37a7bd768033117a9d8bb634dffa9b76223df3f6de",
+      "session_id": "0506fbd6c96746caaae1ebcf1f8730c3",
+      "source": "rpc",
+      "status": "http_200"
+    },
+    {
+      "at": "2026-09-27T03:48:42.266587+00:00",
+      "number": 20,
+      "request": "getTransaction:5ovgpv61gHjMx9EaHagvkszvh5R76skTku6FktWNB59H9BPkZB5RPq6gz3hckV4t2gQBPBrknS9RQiFfEQzDx2S6",
+      "response_hash": "49faa068a4e97d15cda143d7d84dc5a7c0b09f3f1151b5f5807e942010e97681",
+      "session_id": "0506fbd6c96746caaae1ebcf1f8730c3",
+      "source": "rpc",
+      "status": "http_200"
+    },
+    {
+      "at": "2026-09-27T03:48:52.929000+00:00",
+      "number": 21,
+      "request": "getTransaction:2BZnaLGYDdrguLejUohEqYvbh4PWZGBF2caNKzkKzjmaV9aJCTFK8bRXKE1FFZq1tDb8sRMy56C6v8hWJfHD8bLa",
+      "response_hash": "4bb44f339ea43f25a9c79d8ec6db5190c2a604f4c915fb1a749ed485486f50b9",
+      "session_id": "0506fbd6c96746caaae1ebcf1f8730c3",
+      "source": "rpc",
+      "status": "http_200"
+    },
+    {
+      "at": "2026-09-27T03:55:16.609334+00:00",
+      "number": 22,
+      "request": "getSignaturesForAddress:MfDuWeqSHEqTFVYZ7LoexgAK9dxk7cy4DFJWjWMGVWa",
+      "response_hash": "1a8f9e357bab7464c539ace33632afdbf03d6c0e4b1bbb2c52b30cf241b5fc65",
+      "session_id": "3ce1e7f90f2a4279ab0a23f8194c690e",
+      "source": "rpc",
+      "status": "http_200"
+    },
+    {
+      "at": "2026-09-27T03:55:27.284513+00:00",
+      "number": 23,
+      "request": "getSignaturesForAddress:CreQJ2t94QK5dsxUZGXfPJ8Nx7wA9LHr5chxjSMkbNft",
+      "response_hash": "5e1e7014790d351abedd1f39a5dc7f8e61ae0a2602a61daf003b8b2f512322cd",
+      "session_id": "3ce1e7f90f2a4279ab0a23f8194c690e",
+      "source": "rpc",
+      "status": "http_200"
+    },
+    {
+      "at": "2026-09-27T03:55:37.289387+00:00",
+      "number": 24,
+      "request": "getSignaturesForAddress:FkaLnX17cXZGyeu3kZGdHCNdFMJJzBrPPYVvd18B3MZp",
+      "response_hash": "989cd818a732b5f050ae053661d9ad722ad9c7032e031f50667a91b044a135f1",
+      "session_id": "3ce1e7f90f2a4279ab0a23f8194c690e",
+      "source": "rpc",
+      "status": "http_200"
+    },
+    {
+      "at": "2026-09-27T03:55:47.292952+00:00",
+      "number": 25,
+      "request": "getSignaturesForAddress:9FMUjZHCJEeoz1Au9RB7RsgCEeaDfQ164TToKfixCSHi",
+      "response_hash": "6ecb6d21b4c2739ac98c49aed1b3a5d13b8da8f7a55482f070f404731adc9d79",
+      "session_id": "3ce1e7f90f2a4279ab0a23f8194c690e",
+      "source": "rpc",
+      "status": "http_200"
+    },
+    {
+      "at": "2026-09-27T03:55:57.933974+00:00",
+      "number": 26,
+      "request": "getSignaturesForAddress:MfDuWeqSHEqTFVYZ7LoexgAK9dxk7cy4DFJWjWMGVWa",
+      "response_hash": "751d6f56a02f444c14a30150be68447132676b0d9ea578b73b678b1ebaf06094",
+      "session_id": "3ce1e7f90f2a4279ab0a23f8194c690e",
+      "source": "rpc",
+      "status": "http_200"
+    },
+    {
+      "at": "2026-09-27T03:56:07.936683+00:00",
+      "number": 27,
+      "request": "getSignaturesForAddress:CreQJ2t94QK5dsxUZGXfPJ8Nx7wA9LHr5chxjSMkbNft",
+      "response_hash": "370abdc2e36fd8b42f906225d05d4a69ddd95f47703406e92010ca0f0ffdc2eb",
+      "session_id": "3ce1e7f90f2a4279ab0a23f8194c690e",
+      "source": "rpc",
+      "status": "http_200"
+    },
+    {
+      "at": "2026-09-27T03:56:17.940919+00:00",
+      "number": 28,
+      "request": "getSignaturesForAddress:FkaLnX17cXZGyeu3kZGdHCNdFMJJzBrPPYVvd18B3MZp",
+      "response_hash": "ffc138322670369125a46aff4f4a7c441467ee09a467b730862eccb51e882b8f",
+      "session_id": "3ce1e7f90f2a4279ab0a23f8194c690e",
+      "source": "rpc",
+      "status": "http_200"
+    },
+    {
+      "at": "2026-09-27T03:56:28.618516+00:00",
+      "number": 29,
+      "request": "getSignaturesForAddress:9FMUjZHCJEeoz1Au9RB7RsgCEeaDfQ164TToKfixCSHi",
+      "response_hash": "2c416c87990ba3788506d2acd9ae4c86f1e5fde5002b862836eaceb0c137458d",
+      "session_id": "3ce1e7f90f2a4279ab0a23f8194c690e",
+      "source": "rpc",
+      "status": "http_200"
+    },
+    {
+      "at": "2026-09-27T03:56:38.622149+00:00",
+      "number": 30,
+      "request": "getTransaction:3sty4dhzMzvaKshdDSK7gthSDn9aC7qwTZwz5b7pcBbRStiwGHX7haf3SRCHqiZKtHQwr6QiHPN9kdCVqbc9GcgH",
+      "response_hash": "958f20455200fc7148ba3ab5096624add6788cb8905cf4aaa16b3650908c1c73",
+      "session_id": "3ce1e7f90f2a4279ab0a23f8194c690e",
+      "source": "rpc",
+      "status": "http_200"
+    },
+    {
+      "at": "2026-09-27T03:56:48.625007+00:00",
+      "number": 31,
+      "request": "getTransaction:8dpdjAFHKogVzX2TzBEuXTQdBrZSXe2sFwp5BfhwoacF6XcTWqo2U3joZfdZ9RUKaYK7scfDgUTUBMpjBXYVQAq",
+      "response_hash": "2b67b093760d3189c6d1cb76d31d67566646a88ba68c4586b1dfed90219384b4",
+      "session_id": "3ce1e7f90f2a4279ab0a23f8194c690e",
+      "source": "rpc",
+      "status": "http_200"
+    },
+    {
+      "at": "2026-09-27T03:56:58.626885+00:00",
+      "number": 32,
+      "request": "getTransaction:4PJRKxb9DVrquHRoQEV3pJU3qa2zq4PZt5uTG83a8LM3cMhkACApWdRseEJDGf8hbppCwBQKUBE7paTzEydzDc3w",
+      "response_hash": "950cec996ddcaf495ac41e4ceb9af32b79270ce299e62cc6ec805f10e73e22c6",
+      "session_id": "3ce1e7f90f2a4279ab0a23f8194c690e",
+      "source": "rpc",
+      "status": "http_200"
+    },
+    {
+      "at": "2026-09-27T03:57:09.301313+00:00",
+      "number": 33,
+      "request": "getTransaction:3N8CPx5jLpaXrxTTKTbgB7iRAUkJvPDMok1EoRG1nsgXhJXANCFGHJNfk1V3wqRk5SSaLuTVTVgtpxTrD2NFpfPc",
+      "response_hash": "d545a2f834612c03bd1e4158995db54c847ce167007ff8bd982fcbc64755adf0",
+      "session_id": "3ce1e7f90f2a4279ab0a23f8194c690e",
+      "source": "rpc",
+      "status": "http_200"
+    },
+    {
+      "at": "2026-09-27T03:57:19.304461+00:00",
+      "number": 34,
+      "request": "getTransaction:Mamt7uEZysu2Hm5CqKjTzYgPPb6MrCPc1y24t5v5cPhTFM2ute7JEbts6ASz3VXUBWRutcTxVZUbvis71hbVikD",
+      "response_hash": "284de49bda5b13d2b04c57f4d1cd5244e4280b1069c90e962eff8c678f73d18a",
+      "session_id": "3ce1e7f90f2a4279ab0a23f8194c690e",
+      "source": "rpc",
+      "status": "http_200"
+    },
+    {
+      "at": "2026-09-27T03:57:29.306814+00:00",
+      "number": 35,
+      "request": "getTransaction:23VkYwa2VRvqjNJQnf585icPBDyQMo539ruuP7nveVmPDgS4twfoiX7RbH4afaJ8UtCESKJnBdabaG2jPeSWmtQW",
+      "response_hash": "c115ff0f24682f53cc58e33d81f3766e89462c5d65cc9572c8bb37fbbd7f057e",
+      "session_id": "3ce1e7f90f2a4279ab0a23f8194c690e",
+      "source": "rpc",
+      "status": "http_200"
+    },
+    {
+      "at": "2026-09-27T03:57:39.985375+00:00",
+      "number": 36,
+      "request": "getTransaction:63Jiu96K2hKoHdewxmj95qLbSrLEpZTqPtTxeXHycJvnxrbha6X785DSE74mRhWboDPsMbEbFk1zgQRr6cJzAkYV",
+      "response_hash": "7f146b800bc546f1c2b0f22a11b0735859e7347d29b475c791716dc46f94ddae",
+      "session_id": "3ce1e7f90f2a4279ab0a23f8194c690e",
+      "source": "rpc",
+      "status": "http_200"
+    },
+    {
+      "at": "2026-09-27T03:57:49.989621+00:00",
+      "number": 37,
+      "request": "getTransaction:2j5ieXrocvEagceW32kMKRCxvUgcfFAruPBkSkGtjDEQk2bg3Sfmuug3j9Tiq4N68pioe7YYJ66T6mRu3x8Teo1F",
+      "response_hash": "84d574eb85b33b602a1171ba0f9991f0b8f137ba43bdb0a97452ccb99e68b086",
+      "session_id": "3ce1e7f90f2a4279ab0a23f8194c690e",
+      "source": "rpc",
+      "status": "http_200"
+    },
+    {
+      "at": "2026-09-27T03:58:14.985964+00:00",
+      "number": 38,
+      "request": "GET /networks/solana/pools/Bzc9NZfMqkXR6fz1DBph7BDf9BroyEf6pnzESP7v5iiw/ohlcv/minute {\"aggregate\": 1, \"currency\": \"usd\", \"limit\": 24, \"token\": \"9BB6NFEcjBCtnNLFko2FqVQBq8HHM13kCyYcdQbgpump\"}",
+      "response_hash": "4015435078cfdd9c6c22179304aa7ae90447c7f35137328b4ace5ea04a7f3650",
+      "session_id": "4f3b2c7225764146b1bc3c1038978447",
+      "source": "gecko",
+      "status": "http_200"
+    },
+    {
+      "at": "2026-09-27T03:58:24.989872+00:00",
+      "number": 39,
+      "request": "GET /networks/solana/pools/Bzc9NZfMqkXR6fz1DBph7BDf9BroyEf6pnzESP7v5iiw",
+      "response_hash": "c864ddaa9a44a6391ba9289cf9e2b52fe514ee3975d3043a94e2ded1a846607c",
+      "session_id": "4f3b2c7225764146b1bc3c1038978447",
+      "source": "gecko",
+      "status": "http_200"
+    },
+    {
+      "at": "2026-09-27T03:58:34.994735+00:00",
+      "number": 40,
+      "request": "GET /networks/solana/pools/EP2ib6dYdEeqD8MfE2ezHCxX3kP3K2eLKkirfPm5eyMx/ohlcv/minute {\"aggregate\": 1, \"currency\": \"usd\", \"limit\": 24, \"token\": \"EKpQGSJtjMFqKZ9KQanSqYXRcF8fBopzLHYxdM65zcjm\"}",
+      "response_hash": "0658ec9901670c377c60ec1f197063539729baf54baa579a74a6f3123f6fadf9",
+      "session_id": "4f3b2c7225764146b1bc3c1038978447",
+      "source": "gecko",
+      "status": "http_200"
+    },
+    {
+      "at": "2026-09-27T03:58:45.723928+00:00",
+      "number": 41,
+      "request": "GET /networks/solana/pools/EP2ib6dYdEeqD8MfE2ezHCxX3kP3K2eLKkirfPm5eyMx",
+      "response_hash": "db266ee34efca059ab83bffad65aa3d87af75432f589f87679d023cbe0c08edb",
+      "session_id": "4f3b2c7225764146b1bc3c1038978447",
+      "source": "gecko",
+      "status": "http_200"
+    },
+    {
+      "at": "2026-09-27T03:58:55.726404+00:00",
+      "number": 42,
+      "request": "GET /networks/solana/pools/4AZRPNEfCJ7iw28rJu5aUyeQhYcvdcNm8cswyL51AY9i/ohlcv/minute {\"aggregate\": 1, \"currency\": \"usd\", \"limit\": 24, \"token\": \"2qEHjDLDLbuBgRYvsxhc5D6uDWAivNFZGan56P1tpump\"}",
+      "response_hash": "744380528a66269529ef0f877519d8bc82cf7ca3ccdf15da106cda3504b05e12",
+      "session_id": "4f3b2c7225764146b1bc3c1038978447",
+      "source": "gecko",
+      "status": "http_200"
+    },
+    {
+      "at": "2026-09-27T03:59:05.730066+00:00",
+      "number": 43,
+      "request": "GET /networks/solana/pools/4AZRPNEfCJ7iw28rJu5aUyeQhYcvdcNm8cswyL51AY9i",
+      "response_hash": "1130475bd0b01e85e6e0378fa9b1f8495018d278c144a45e2fb72d8f2a9fa97c",
+      "session_id": "4f3b2c7225764146b1bc3c1038978447",
+      "source": "gecko",
+      "status": "http_200"
+    },
+    {
+      "at": "2026-09-27T03:59:16.446997+00:00",
+      "number": 44,
+      "request": "GET /networks/solana/pools/DSUvc5qf5LJHHV5e2tD184ixotSnCnwj7i4jJa4Xsrmt/ohlcv/minute {\"aggregate\": 1, \"currency\": \"usd\", \"limit\": 24, \"token\": \"ukHH6c7mMyiWCf1b9pnWe25TSpkDDt3H5pQZgZ74J82\"}",
+      "response_hash": "3f0d47e27b7aeaf7cfb63f7dc5d759c71a7ada4a61d44e99c03c8ac20fd9d4aa",
+      "session_id": "4f3b2c7225764146b1bc3c1038978447",
+      "source": "gecko",
+      "status": "http_200"
+    },
+    {
+      "at": "2026-09-27T03:59:26.450980+00:00",
+      "number": 45,
+      "request": "GET /networks/solana/pools/DSUvc5qf5LJHHV5e2tD184ixotSnCnwj7i4jJa4Xsrmt",
+      "response_hash": "398768bf4aeab187e22a9f4e22d573889c20419ba1317d053eed98c6b44edcf3",
+      "session_id": "4f3b2c7225764146b1bc3c1038978447",
+      "source": "gecko",
+      "status": "http_200"
+    },
+    {
+      "at": "2026-09-27T04:00:33.887757+00:00",
+      "number": 46,
+      "request": "getTransaction:3jZ5ZNnv2k3Dyk1W39oYKzbwRCfekJRPqrnbKzVdbber3xya2DhKvduwWKyfs6UNNnUsJ7QtgDLCQ68x363BcgTK",
+      "response_hash": "8044cf2d0858a6899d22a7afb3b8c356a5af3a828de2e2971c8271466b8c9779",
+      "session_id": "1c85baaa961a4551bfcbd4d399014051",
+      "source": "rpc",
+      "status": "http_200"
+    },
+    {
+      "at": "2026-09-27T04:00:43.891199+00:00",
+      "number": 47,
+      "request": "getTransaction:2WKsUBD3Sbqq8oTEm9Xa7PVssKDrySEBvU9UHsVqV3om1Hiwq3wxbXk2jGixHV9EmVJKEZurMHeFxG621wqHnXKm",
+      "response_hash": "2497693ac53acbaf60dfb913ee28356fb019c8fd780fa59a31385eb56ab1f659",
+      "session_id": "1c85baaa961a4551bfcbd4d399014051",
+      "source": "rpc",
+      "status": "http_200"
+    },
+    {
+      "at": "2026-09-27T04:00:54.565191+00:00",
+      "number": 48,
+      "request": "getTransaction:GYdcEwDAzskrCFNwb69Tf6EAESncqxFY3EFBdQJyrr6H5D7441zoYMr1dsoKbevhp8CkxFALBXkjpizkXNkg5CP",
+      "response_hash": "30238d9fa97d6ef41980c73cc2a4a1a2030b1ec2b654237cf6c53276415a4b6a",
+      "session_id": "1c85baaa961a4551bfcbd4d399014051",
+      "source": "rpc",
+      "status": "http_200"
+    },
+    {
+      "at": "2026-09-27T04:01:04.568604+00:00",
+      "number": 49,
+      "request": "getTransaction:2T8JLpeD36dWUnCzdwxfJU3qBRT8RSefqQCCGWVr6A4XcX1nTfy1y47P7qHMVJTntqWwD1FeFhY3WEd92RF458gb",
+      "response_hash": "fd1667e309de22086b9f1223f977929ec88da730863988cf51707c5e60868f18",
+      "session_id": "1c85baaa961a4551bfcbd4d399014051",
+      "source": "rpc",
+      "status": "http_200"
+    },
+    {
+      "at": "2026-09-27T04:01:14.572111+00:00",
+      "number": 50,
+      "request": "getTransaction:JVSbbN9somSQU8sVXz9cXLg48dF8LiEdGmeRAVAexobzErRHrxHCLhYxFjasJV8eTXXxFr5L39b87cnWmUSAnLM",
+      "response_hash": "452c88e2117305bf6184e1f2e48ec4ec9df3e8613181db0d0308efd5353f68c3",
+      "session_id": "1c85baaa961a4551bfcbd4d399014051",
+      "source": "rpc",
+      "status": "http_200"
+    },
+    {
+      "at": "2026-09-27T04:01:24.575178+00:00",
+      "number": 51,
+      "request": "getTransaction:8FjPjYJ9ueWJDd2VDEDorJqoXvs99W3qtM2X22H3ZLBbAHHCQ1VoJDapac2DSVkFDaWiJawNtcjyo84Ac1PsNtF",
+      "response_hash": "2206f910d2dc56446d148261b1f8dceacead04ddff35797abd615a786be64eee",
+      "session_id": "1c85baaa961a4551bfcbd4d399014051",
+      "source": "rpc",
+      "status": "http_200"
+    },
+    {
+      "at": "2026-09-27T04:01:34.580777+00:00",
+      "number": 52,
+      "request": "getTransaction:4V5XkdK4vks4SGmXsZhxayb4Yk15T9nWv5iyNm4GMqqqs66Ld5dVckgYGytBifMZb61KRs9qKDXRgEmxnGJhUtAy",
+      "response_hash": "e4e5111f6dbb8a82fc5fd037994ce50c28822d507421185cfc03a64de35bf9ce",
+      "session_id": "1c85baaa961a4551bfcbd4d399014051",
+      "source": "rpc",
+      "status": "http_200"
+    },
+    {
+      "at": "2026-09-27T04:01:45.156000+00:00",
+      "number": 53,
+      "request": "getTransaction:3CozD5wiKYhhiWKmK6oSotEMb4CA8Uv4gTbjQypUcH7NhZkx1jr5x6KfGqWGuJ9QnVGmJQFgzNwaMtgiQYERsnY1",
+      "response_hash": "507b01e04406c49fd4438dc24da5ea2dffb610b428332a258d1ce9894b173775",
+      "session_id": "1c85baaa961a4551bfcbd4d399014051",
+      "source": "rpc",
+      "status": "http_200"
+    }
+  ],
+  "calls_used": 53,
+  "created_at": "2026-09-27T03:45:11.155321+00:00",
+  "limits": {
+    "max_active_seconds": 1800,
+    "max_calls": 2000
+  },
+  "phase_limits": {
+    "cohort_audit": {
+      "max_active_seconds": 300,
+      "max_calls": 30
+    },
+    "market_follow": {
+      "max_active_seconds": 180,
+      "max_calls": 20
+    },
+    "prospective_follow": {
+      "max_active_seconds": 300,
+      "max_calls": 40
+    }
+  },
+  "sessions": [
+    {
+      "active_seconds": 71.51849999999999,
+      "calls_used": 8,
+      "ended_at": "2026-09-27T03:46:34.734932+00:00",
+      "id": "10fdab7fae6c406ab1500919cc2a4fd9",
+      "label": "r3-cohort-audit",
+      "last_tick": "2026-09-27T03:46:34.734920+00:00",
+      "max_calls": 30,
+      "max_seconds": 300,
+      "phase": "cohort_audit",
+      "pid": 807141,
+      "started_at": "2026-09-27T03:45:23.216420+00:00",
+      "status": "completed"
+    },
+    {
+      "active_seconds": 122.85371099999999,
+      "calls_used": 13,
+      "ended_at": "2026-09-27T03:48:53.062030+00:00",
+      "id": "0506fbd6c96746caaae1ebcf1f8730c3",
+      "label": "r3-cohort-audit",
+      "last_tick": "2026-09-27T03:48:53.062019+00:00",
+      "max_calls": 30,
+      "max_seconds": 300,
+      "phase": "cohort_audit",
+      "pid": 815363,
+      "started_at": "2026-09-27T03:46:50.208308+00:00",
+      "status": "completed"
+    },
+    {
+      "active_seconds": 153.52186100000003,
+      "calls_used": 16,
+      "ended_at": "2026-09-27T03:57:50.098766+00:00",
+      "id": "3ce1e7f90f2a4279ab0a23f8194c690e",
+      "label": "r3-prospective-follow",
+      "last_tick": "2026-09-27T03:57:50.098757+00:00",
+      "max_calls": 40,
+      "max_seconds": 300,
+      "phase": "prospective_follow",
+      "pid": 863204,
+      "started_at": "2026-09-27T03:55:16.576896+00:00",
+      "status": "completed"
+    },
+    {
+      "active_seconds": 71.715323,
+      "calls_used": 8,
+      "ended_at": "2026-09-27T03:59:26.667344+00:00",
+      "id": "4f3b2c7225764146b1bc3c1038978447",
+      "label": "r3-pair-market",
+      "last_tick": "2026-09-27T03:59:26.667331+00:00",
+      "max_calls": 20,
+      "max_seconds": 180,
+      "phase": "market_follow",
+      "pid": 880039,
+      "started_at": "2026-09-27T03:58:14.952008+00:00",
+      "status": "completed"
+    },
+    {
+      "active_seconds": 71.420423,
+      "calls_used": 8,
+      "ended_at": "2026-09-27T04:01:45.273583+00:00",
+      "id": "1c85baaa961a4551bfcbd4d399014051",
+      "label": "r3-prospective-follow",
+      "last_tick": "2026-09-27T04:01:45.273569+00:00",
+      "max_calls": 40,
+      "max_seconds": 300,
+      "phase": "prospective_follow",
+      "pid": 893147,
+      "started_at": "2026-09-27T04:00:33.853146+00:00",
+      "status": "completed"
+    }
+  ]
+}

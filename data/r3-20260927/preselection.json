@@ -1,0 +1,980 @@
+{
+  "common_window": {
+    "end": "2026-09-26T08:55:50+00:00",
+    "start": "2026-09-26T08:13:36+00:00"
+  },
+  "eligible_references_above_threshold": 28,
+  "max_references": 24,
+  "new_rpc_calls_last_run": 13,
+  "pool_coverage": {
+    "22WrmyTj8x2TRVQen3fxxi2r4Rn6JDHWoMTpsSmn8RUd": {
+      "count": 300,
+      "first_at": "2026-09-26T03:06:10+00:00",
+      "last_at": "2026-09-26T08:55:50+00:00",
+      "mint": "ED5nyyWEzpPPiWimP8vYm7sD7TD3LAt3Q3gRTWHzPJBY",
+      "response_hash": "4887f18a9bdda8cb6c37f608a83516a56e782572dd41577b76e54e36f8783d9d",
+      "source_attempt": 47,
+      "symbol": "MOODENG"
+    },
+    "4AZRPNEfCJ7iw28rJu5aUyeQhYcvdcNm8cswyL51AY9i": {
+      "count": 300,
+      "first_at": "2026-09-26T02:26:25+00:00",
+      "last_at": "2026-09-26T09:01:35+00:00",
+      "mint": "2qEHjDLDLbuBgRYvsxhc5D6uDWAivNFZGan56P1tpump",
+      "response_hash": "c7ceb88d7b44d9069ad29f2c215d03c6cb644a5bba9cbaf16593accd570e42c0",
+      "source_attempt": 44,
+      "symbol": "PNUT"
+    },
+    "4xxM4cdb6MEsCxM52xvYqkNbzvdeWWsPDZrBcTqVGUar": {
+      "count": 300,
+      "first_at": "2026-09-26T03:14:57+00:00",
+      "last_at": "2026-09-26T09:06:50+00:00",
+      "mint": "63LfDmNb3MQ8mw9MtZ2To9bEA2M71kZUUGq5tiJxcqj9",
+      "response_hash": "46c523a469f6b7e33ba11462fe9fccd0cd33544511e77fea3c69e2694d37e5ab",
+      "source_attempt": 46,
+      "symbol": "GIGA"
+    },
+    "5zpyutJu9ee6jFymDGoK7F6S5Kczqtc9FomP3ueKuyA9": {
+      "count": 300,
+      "first_at": "2026-09-26T08:13:36+00:00",
+      "last_at": "2026-09-26T09:05:03+00:00",
+      "mint": "DezXAZ8z7PnrnRJjz3wXBoRgixCa6xjnB7YaB1pPB263",
+      "response_hash": "b5c2bb3164d30c583931ff568f5c7121197ed61fbc0abc74bb9708ceda277989",
+      "source_attempt": 37,
+      "symbol": "BONK"
+    },
+    "879F697iuDJGMevRkRcnW21fcXiAeLJK1ffsw2ATebce": {
+      "count": 300,
+      "first_at": "2026-09-26T02:14:31+00:00",
+      "last_at": "2026-09-26T09:04:02+00:00",
+      "mint": "MEW1gQWJ3nEXg2qgERiKu7FAFj79PHvQVREQUzScPP5",
+      "response_hash": "af392edda94220b95b442526197a75cec9b21454ed30749923617028d5a62feb",
+      "source_attempt": 42,
+      "symbol": "MEW"
+    },
+    "9Tb2ohu5P16BpBarqd3N27WnkF51Ukfs8Z1GzzLDxVZW": {
+      "count": 300,
+      "first_at": "2026-09-26T02:22:16+00:00",
+      "last_at": "2026-09-26T09:07:30+00:00",
+      "mint": "CzLSujWBLFsSjncfkh59rUFqvafWcY5tzedWJSuypump",
+      "response_hash": "7cce98c6330594e329580d116f31f5658167b235d451374bbfd1f773fe48544b",
+      "source_attempt": 45,
+      "symbol": "GOAT"
+    },
+    "Bzc9NZfMqkXR6fz1DBph7BDf9BroyEf6pnzESP7v5iiw": {
+      "count": 300,
+      "first_at": "2026-09-26T04:30:02+00:00",
+      "last_at": "2026-09-26T09:03:18+00:00",
+      "mint": "9BB6NFEcjBCtnNLFko2FqVQBq8HHM13kCyYcdQbgpump",
+      "response_hash": "78fb618b5fb4542c6a4ac4f5f59ec58e17c0deb846746e054e28aaa7853d6b9d",
+      "source_attempt": 41,
+      "symbol": "FARTCOIN"
+    },
+    "DSUvc5qf5LJHHV5e2tD184ixotSnCnwj7i4jJa4Xsrmt": {
+      "count": 300,
+      "first_at": "2026-09-26T06:42:48+00:00",
+      "last_at": "2026-09-26T09:05:58+00:00",
+      "mint": "ukHH6c7mMyiWCf1b9pnWe25TSpkDDt3H5pQZgZ74J82",
+      "response_hash": "e1d612f2869fcc380b9cbb943a0c43de2fcda632f1e22d259eb53a6f64c6a2f7",
+      "source_attempt": 43,
+      "symbol": "BOME"
+    },
+    "EP2ib6dYdEeqD8MfE2ezHCxX3kP3K2eLKkirfPm5eyMx": {
+      "count": 300,
+      "first_at": "2026-09-26T04:38:35+00:00",
+      "last_at": "2026-09-26T09:04:22+00:00",
+      "mint": "EKpQGSJtjMFqKZ9KQanSqYXRcF8fBopzLHYxdM65zcjm",
+      "response_hash": "e70dba7cbea8db001e0ba8b29147d83d48ac81e21bbe17aac21423bce4cf8b4f",
+      "source_attempt": 38,
+      "symbol": "WIF"
+    },
+    "FRhB8L7Y9Qq41qZXYLtC2nw8An1RJfLLxRF2x9RwLLMo": {
+      "count": 300,
+      "first_at": "2026-09-26T04:19:04+00:00",
+      "last_at": "2026-09-26T09:04:44+00:00",
+      "mint": "7GCihgDB8fe6KNjn2MYtkzZcRjQy3t9GHdC8uHYmW2hr",
+      "response_hash": "eb98247afa713be7cf872a12115cda4b9c16b1e8d9802356347622993f0c9f18",
+      "source_attempt": 40,
+      "symbol": "POPCAT"
+    }
+  },
+  "references": [
+    {
+      "attribution_status": "partial",
+      "block_at": "2026-09-26T08:28:10+00:00",
+      "decoder_version": "r2-raydium-amm-v4-owner-balances-1",
+      "fee_lamports": 25333,
+      "from_amount": "35.986066972",
+      "from_mint": "So11111111111111111111111111111111111111112",
+      "kind": "unknown",
+      "legs": [
+        {
+          "decimals": 6,
+          "delta_base": "-1231702728700",
+          "mint": "pumpCmXqMfrsAkQ5r49WcJnRayYRqmXz6ae8H7H9Dfn"
+        },
+        {
+          "decimals": 6,
+          "delta_base": "5266267603958",
+          "mint": "ukHH6c7mMyiWCf1b9pnWe25TSpkDDt3H5pQZgZ74J82"
+        }
+      ],
+      "owner_wallet": null,
+      "pool": "DSUvc5qf5LJHHV5e2tD184ixotSnCnwj7i4jJa4Xsrmt",
+      "pool_mint": "ukHH6c7mMyiWCf1b9pnWe25TSpkDDt3H5pQZgZ74J82",
+      "provider_actor": "ATEa5PcT7cEa6FDjwz7etoNQkMRbeUUynjYycR9Vmhet",
+      "provider_kind": "buy",
+      "provider_volume_usd": "4331.076146382390691283536428606432180628",
+      "quality": "partial_route",
+      "raw_received_at": "2026-09-26T09:15:44.517115+00:00",
+      "raw_source": "r2_archived_rpc",
+      "signature": "29jyKwtzKEVnaxo7mZPpbUb2MSUkcG6X3zGtoHRC3E3hJd9JdoT4k7fAqXEBGnYut3c9V6GqoMhfbPRv4mhy8sXV",
+      "slot": 450620683,
+      "source_attempt": 43,
+      "source_hash": "e1d612f2869fcc380b9cbb943a0c43de2fcda632f1e22d259eb53a6f64c6a2f7",
+      "to_amount": "4102284.603958",
+      "to_mint": "ukHH6c7mMyiWCf1b9pnWe25TSpkDDt3H5pQZgZ74J82"
+    },
+    {
+      "attribution_status": "verified_swap",
+      "block_at": "2026-09-26T08:30:11+00:00",
+      "decoder_version": "r2-raydium-amm-v4-owner-balances-1",
+      "fee_lamports": 42473,
+      "from_amount": "16.328407037",
+      "from_mint": "So11111111111111111111111111111111111111112",
+      "kind": "swap",
+      "legs": [
+        {
+          "decimals": 6,
+          "delta_base": "10123670995",
+          "mint": "9BB6NFEcjBCtnNLFko2FqVQBq8HHM13kCyYcdQbgpump"
+        },
+        {
+          "decimals": 9,
+          "delta_base": "-16328407037",
+          "mint": "So11111111111111111111111111111111111111112"
+        }
+      ],
+      "owner_wallet": "FkaLnX17cXZGyeu3kZGdHCNdFMJJzBrPPYVvd18B3MZp",
+      "pool": "Bzc9NZfMqkXR6fz1DBph7BDf9BroyEf6pnzESP7v5iiw",
+      "pool_mint": "9BB6NFEcjBCtnNLFko2FqVQBq8HHM13kCyYcdQbgpump",
+      "provider_actor": "FkaLnX17cXZGyeu3kZGdHCNdFMJJzBrPPYVvd18B3MZp",
+      "provider_kind": "buy",
+      "provider_volume_usd": "1965.357628184936803952094864336664212582",
+      "quality": "complete",
+      "raw_attempt": 1,
+      "raw_received_at": "2026-09-27T03:45:23.392044+00:00",
+      "raw_response_hash": "e35c24620980356f5ac0f1e8235f7746de4f73cc4358703188b1bc7bb8ecd4ea",
+      "raw_source": "r3_rpc",
+      "signature": "5z6tEaYG9GxheeXekCgAhEz1JVPFkdKVwn68bmUbCvJcDGhPnXRZexRy6nUuxDaTAHFWLYPzB2Ne7eS1BgvV9G9z",
+      "slot": 450621140,
+      "source_attempt": 41,
+      "source_hash": "78fb618b5fb4542c6a4ac4f5f59ec58e17c0deb846746e054e28aaa7853d6b9d",
+      "to_amount": "10123.670995",
+      "to_mint": "9BB6NFEcjBCtnNLFko2FqVQBq8HHM13kCyYcdQbgpump"
+    },
+    {
+      "attribution_status": "verified_swap",
+      "block_at": "2026-09-26T08:34:06+00:00",
+      "decoder_version": "r2-raydium-amm-v4-owner-balances-1",
+      "fee_lamports": 5000,
+      "from_amount": "12.407588025",
+      "from_mint": "So11111111111111111111111111111111111111112",
+      "kind": "swap",
+      "legs": [
+        {
+          "decimals": 6,
+          "delta_base": "6037744330",
+          "mint": "EKpQGSJtjMFqKZ9KQanSqYXRcF8fBopzLHYxdM65zcjm"
+        },
+        {
+          "decimals": 9,
+          "delta_base": "-12407588025",
+          "mint": "So11111111111111111111111111111111111111112"
+        }
+      ],
+      "owner_wallet": "CreQJ2t94QK5dsxUZGXfPJ8Nx7wA9LHr5chxjSMkbNft",
+      "pool": "EP2ib6dYdEeqD8MfE2ezHCxX3kP3K2eLKkirfPm5eyMx",
+      "pool_mint": "EKpQGSJtjMFqKZ9KQanSqYXRcF8fBopzLHYxdM65zcjm",
+      "provider_actor": "CreQJ2t94QK5dsxUZGXfPJ8Nx7wA9LHr5chxjSMkbNft",
+      "provider_kind": "buy",
+      "provider_volume_usd": "1496.58332044829650452516314041993160715",
+      "quality": "complete",
+      "raw_attempt": 2,
+      "raw_received_at": "2026-09-27T03:45:34.038753+00:00",
+      "raw_response_hash": "b070c7b6a895638594b5c13f9e5640e815192923f3b249c057b9af139a530662",
+      "raw_source": "r3_rpc",
+      "signature": "666LnkBsd28TzoSwF2S7SHnQ2uqA6UxyFdyXzx5MXrqKeGybHoGTEfnfbfHjHfaNz5NyLzBB8dbWrnR4HJcK4uJk",
+      "slot": 450622011,
+      "source_attempt": 38,
+      "source_hash": "e70dba7cbea8db001e0ba8b29147d83d48ac81e21bbe17aac21423bce4cf8b4f",
+      "to_amount": "6037.74433",
+      "to_mint": "EKpQGSJtjMFqKZ9KQanSqYXRcF8fBopzLHYxdM65zcjm"
+    },
+    {
+      "attribution_status": "verified_swap",
+      "block_at": "2026-09-26T08:26:06+00:00",
+      "decoder_version": "r2-raydium-amm-v4-owner-balances-1",
+      "fee_lamports": 17765,
+      "from_amount": "5188.707241",
+      "from_mint": "9BB6NFEcjBCtnNLFko2FqVQBq8HHM13kCyYcdQbgpump",
+      "kind": "swap",
+      "legs": [
+        {
+          "decimals": 6,
+          "delta_base": "-5188707241",
+          "mint": "9BB6NFEcjBCtnNLFko2FqVQBq8HHM13kCyYcdQbgpump"
+        },
+        {
+          "decimals": 9,
+          "delta_base": "8316582739",
+          "mint": "So11111111111111111111111111111111111111112"
+        }
+      ],
+      "owner_wallet": "CreQJ2t94QK5dsxUZGXfPJ8Nx7wA9LHr5chxjSMkbNft",
+      "pool": "Bzc9NZfMqkXR6fz1DBph7BDf9BroyEf6pnzESP7v5iiw",
+      "pool_mint": "9BB6NFEcjBCtnNLFko2FqVQBq8HHM13kCyYcdQbgpump",
+      "provider_actor": "CreQJ2t94QK5dsxUZGXfPJ8Nx7wA9LHr5chxjSMkbNft",
+      "provider_kind": "sell",
+      "provider_volume_usd": "1003.911332798482503889351776472339070031",
+      "quality": "complete",
+      "raw_attempt": 3,
+      "raw_received_at": "2026-09-27T03:45:44.031660+00:00",
+      "raw_response_hash": "72f2738f1fcbcc4580c41de9094d740e8693ec3562b1dc90e29fd6c5d4ca3c7b",
+      "raw_source": "r3_rpc",
+      "signature": "38hWoMyfMEQy9tRiVVEvxyj6j5SKy7i7jEPnGHawXGug77eT1pGEYqPYrRmvhnQ2b9U8AfTJNaNLiBbsE8VnEr3U",
+      "slot": 450620221,
+      "source_attempt": 41,
+      "source_hash": "78fb618b5fb4542c6a4ac4f5f59ec58e17c0deb846746e054e28aaa7853d6b9d",
+      "to_amount": "8.316582739",
+      "to_mint": "So11111111111111111111111111111111111111112"
+    },
+    {
+      "attribution_status": "verified_swap",
+      "block_at": "2026-09-26T08:37:20+00:00",
+      "decoder_version": "r2-raydium-amm-v4-owner-balances-1",
+      "fee_lamports": 1380056,
+      "from_amount": "7.736505982",
+      "from_mint": "So11111111111111111111111111111111111111112",
+      "kind": "swap",
+      "legs": [
+        {
+          "decimals": 6,
+          "delta_base": "4792885841",
+          "mint": "9BB6NFEcjBCtnNLFko2FqVQBq8HHM13kCyYcdQbgpump"
+        },
+        {
+          "decimals": 9,
+          "delta_base": "-7736505982",
+          "mint": "So11111111111111111111111111111111111111112"
+        }
+      ],
+      "owner_wallet": "MfDuWeqSHEqTFVYZ7LoexgAK9dxk7cy4DFJWjWMGVWa",
+      "pool": "Bzc9NZfMqkXR6fz1DBph7BDf9BroyEf6pnzESP7v5iiw",
+      "pool_mint": "9BB6NFEcjBCtnNLFko2FqVQBq8HHM13kCyYcdQbgpump",
+      "provider_actor": "MfDuWeqSHEqTFVYZ7LoexgAK9dxk7cy4DFJWjWMGVWa",
+      "provider_kind": "buy",
+      "provider_volume_usd": "935.041676160460395709895936499635059248",
+      "quality": "complete",
+      "raw_attempt": 4,
+      "raw_received_at": "2026-09-27T03:45:54.038029+00:00",
+      "raw_response_hash": "8fd966a2dadfd829dadf4eee44a91b7eaee2db4aa891aa907861446f9bcfcca8",
+      "raw_source": "r3_rpc",
+      "signature": "3foYRtxezFzqkzC3M8kCYFioep7PyYnfLv29jrHK8Nk8XUpWF6Wuo3ecaonRPYzVYPDYi36wVhpHArrqHX83Jbeo",
+      "slot": 450622734,
+      "source_attempt": 41,
+      "source_hash": "78fb618b5fb4542c6a4ac4f5f59ec58e17c0deb846746e054e28aaa7853d6b9d",
+      "to_amount": "4792.885841",
+      "to_mint": "9BB6NFEcjBCtnNLFko2FqVQBq8HHM13kCyYcdQbgpump"
+    },
+    {
+      "attribution_status": "verified_swap",
+      "block_at": "2026-09-26T08:55:49+00:00",
+      "decoder_version": "r2-raydium-amm-v4-owner-balances-1",
+      "fee_lamports": 5000,
+      "from_amount": "688660.0",
+      "from_mint": "ukHH6c7mMyiWCf1b9pnWe25TSpkDDt3H5pQZgZ74J82",
+      "kind": "swap",
+      "legs": [
+        {
+          "decimals": 9,
+          "delta_base": "6009776682",
+          "mint": "So11111111111111111111111111111111111111112"
+        },
+        {
+          "decimals": 6,
+          "delta_base": "-688660000000",
+          "mint": "ukHH6c7mMyiWCf1b9pnWe25TSpkDDt3H5pQZgZ74J82"
+        }
+      ],
+      "owner_wallet": "9FMUjZHCJEeoz1Au9RB7RsgCEeaDfQ164TToKfixCSHi",
+      "pool": "DSUvc5qf5LJHHV5e2tD184ixotSnCnwj7i4jJa4Xsrmt",
+      "pool_mint": "ukHH6c7mMyiWCf1b9pnWe25TSpkDDt3H5pQZgZ74J82",
+      "provider_actor": "9FMUjZHCJEeoz1Au9RB7RsgCEeaDfQ164TToKfixCSHi",
+      "provider_kind": "sell",
+      "provider_volume_usd": "726.3916545330985503756223666626353028119454591008",
+      "quality": "complete",
+      "raw_attempt": 5,
+      "raw_received_at": "2026-09-27T03:46:04.773047+00:00",
+      "raw_response_hash": "b768e3017e02c492f25818fdd128d368afc1e2df2217e6e2c28d4ce5fbd0ebab",
+      "raw_source": "r3_rpc",
+      "signature": "4QogTPDzHoiPWSo6eGjUrVrG6QKC7vhhugcq22jVwFKD6fyg5ozZUXDEqwmTwGn4bDiktXsj5KnxNrkY7Mn6teG1",
+      "slot": 450626890,
+      "source_attempt": 43,
+      "source_hash": "e1d612f2869fcc380b9cbb943a0c43de2fcda632f1e22d259eb53a6f64c6a2f7",
+      "to_amount": "6.009776682",
+      "to_mint": "So11111111111111111111111111111111111111112"
+    },
+    {
+      "attribution_status": "verified_swap",
+      "block_at": "2026-09-26T08:28:22+00:00",
+      "decoder_version": "r2-raydium-amm-v4-owner-balances-1",
+      "fee_lamports": 25192,
+      "from_amount": "11326.036684",
+      "from_mint": "2qEHjDLDLbuBgRYvsxhc5D6uDWAivNFZGan56P1tpump",
+      "kind": "swap",
+      "legs": [
+        {
+          "decimals": 6,
+          "delta_base": "-11326036684",
+          "mint": "2qEHjDLDLbuBgRYvsxhc5D6uDWAivNFZGan56P1tpump"
+        },
+        {
+          "decimals": 9,
+          "delta_base": "5269789916",
+          "mint": "So11111111111111111111111111111111111111112"
+        }
+      ],
+      "owner_wallet": "MfDuWeqSHEqTFVYZ7LoexgAK9dxk7cy4DFJWjWMGVWa",
+      "pool": "4AZRPNEfCJ7iw28rJu5aUyeQhYcvdcNm8cswyL51AY9i",
+      "pool_mint": "2qEHjDLDLbuBgRYvsxhc5D6uDWAivNFZGan56P1tpump",
+      "provider_actor": "MfDuWeqSHEqTFVYZ7LoexgAK9dxk7cy4DFJWjWMGVWa",
+      "provider_kind": "sell",
+      "provider_volume_usd": "634.217147181044776010265623891190718143722769451297568",
+      "quality": "complete",
+      "raw_attempt": 6,
+      "raw_received_at": "2026-09-27T03:46:14.705566+00:00",
+      "raw_response_hash": "25cd5d48d6433f59b2a26502444e5b96add9e89fc5800405083fe4b9f6b11bd2",
+      "raw_source": "r3_rpc",
+      "signature": "48Km3bhHfxPVzw9ffySoNULcFuxGscAjVhkd4y3fZeGPD8igx9HXqhAWdK9NW2UpBfuZiaMKQypg7nu3CSbH9Pb4",
+      "slot": 450620728,
+      "source_attempt": 44,
+      "source_hash": "c7ceb88d7b44d9069ad29f2c215d03c6cb644a5bba9cbaf16593accd570e42c0",
+      "to_amount": "5.269789916",
+      "to_mint": "So11111111111111111111111111111111111111112"
+    },
+    {
+      "attribution_status": "verified_swap",
+      "block_at": "2026-09-26T08:29:58+00:00",
+      "decoder_version": "r2-raydium-amm-v4-owner-balances-1",
+      "fee_lamports": 17484,
+      "from_amount": "5.134454473",
+      "from_mint": "So11111111111111111111111111111111111111112",
+      "kind": "swap",
+      "legs": [
+        {
+          "decimals": 6,
+          "delta_base": "3186319168",
+          "mint": "9BB6NFEcjBCtnNLFko2FqVQBq8HHM13kCyYcdQbgpump"
+        },
+        {
+          "decimals": 9,
+          "delta_base": "-5134454473",
+          "mint": "So11111111111111111111111111111111111111112"
+        }
+      ],
+      "owner_wallet": "MfDuWeqSHEqTFVYZ7LoexgAK9dxk7cy4DFJWjWMGVWa",
+      "pool": "Bzc9NZfMqkXR6fz1DBph7BDf9BroyEf6pnzESP7v5iiw",
+      "pool_mint": "9BB6NFEcjBCtnNLFko2FqVQBq8HHM13kCyYcdQbgpump",
+      "provider_actor": "MfDuWeqSHEqTFVYZ7LoexgAK9dxk7cy4DFJWjWMGVWa",
+      "provider_kind": "buy",
+      "provider_volume_usd": "617.990842800030943483730363650236631717",
+      "quality": "complete",
+      "raw_attempt": 7,
+      "raw_received_at": "2026-09-27T03:46:24.723316+00:00",
+      "raw_response_hash": "6dc8edecea56a64eec85e734a0a6130496075ec9a49f761220ef9ea0a6dc8cc7",
+      "raw_source": "r3_rpc",
+      "signature": "3aHgDJDXWxuCzr8hWTVur2jNxBfRPHaqepBGt5cueVrtkKTZ6C2qnDpmRsmvtv98Ltgym5SGNkjhMGdfHBSwvrwT",
+      "slot": 450621091,
+      "source_attempt": 41,
+      "source_hash": "78fb618b5fb4542c6a4ac4f5f59ec58e17c0deb846746e054e28aaa7853d6b9d",
+      "to_amount": "3186.319168",
+      "to_mint": "9BB6NFEcjBCtnNLFko2FqVQBq8HHM13kCyYcdQbgpump"
+    },
+    {
+      "attribution_status": "verified_swap",
+      "block_at": "2026-09-26T08:48:31+00:00",
+      "decoder_version": "r2-raydium-amm-v4-owner-balances-1",
+      "fee_lamports": 15303,
+      "from_amount": "5.024484847",
+      "from_mint": "So11111111111111111111111111111111111111112",
+      "kind": "swap",
+      "legs": [
+        {
+          "decimals": 6,
+          "delta_base": "2434606852",
+          "mint": "EKpQGSJtjMFqKZ9KQanSqYXRcF8fBopzLHYxdM65zcjm"
+        },
+        {
+          "decimals": 9,
+          "delta_base": "-5024484847",
+          "mint": "So11111111111111111111111111111111111111112"
+        }
+      ],
+      "owner_wallet": "MfDuWeqSHEqTFVYZ7LoexgAK9dxk7cy4DFJWjWMGVWa",
+      "pool": "EP2ib6dYdEeqD8MfE2ezHCxX3kP3K2eLKkirfPm5eyMx",
+      "pool_mint": "EKpQGSJtjMFqKZ9KQanSqYXRcF8fBopzLHYxdM65zcjm",
+      "provider_actor": "MfDuWeqSHEqTFVYZ7LoexgAK9dxk7cy4DFJWjWMGVWa",
+      "provider_kind": "buy",
+      "provider_volume_usd": "608.468428679576199458466373212779728344",
+      "quality": "complete",
+      "raw_attempt": 8,
+      "raw_received_at": "2026-09-27T03:46:34.731594+00:00",
+      "raw_response_hash": "9655e7e99588f7d536059eea6113faa5028775549c977fe556f035f3a845bb92",
+      "raw_source": "r3_rpc",
+      "signature": "3fFsRcRGjE7RydseiYXB9W334h3rUAeKFRLZFeWdD9jzDeaktwji542WCoJtPu8qiCVhUTCDh8p6gBRcGZgDJcyk",
+      "slot": 450625248,
+      "source_attempt": 38,
+      "source_hash": "e70dba7cbea8db001e0ba8b29147d83d48ac81e21bbe17aac21423bce4cf8b4f",
+      "to_amount": "2434.606852",
+      "to_mint": "EKpQGSJtjMFqKZ9KQanSqYXRcF8fBopzLHYxdM65zcjm"
+    },
+    {
+      "attribution_status": "verified_swap",
+      "block_at": "2026-09-26T08:34:06+00:00",
+      "decoder_version": "r2-raydium-amm-v4-owner-balances-1",
+      "fee_lamports": 5000,
+      "from_amount": "4.977384178",
+      "from_mint": "So11111111111111111111111111111111111111112",
+      "kind": "swap",
+      "legs": [
+        {
+          "decimals": 6,
+          "delta_base": "2423563946",
+          "mint": "EKpQGSJtjMFqKZ9KQanSqYXRcF8fBopzLHYxdM65zcjm"
+        },
+        {
+          "decimals": 9,
+          "delta_base": "-4977384178",
+          "mint": "So11111111111111111111111111111111111111112"
+        }
+      ],
+      "owner_wallet": "MfDuWeqSHEqTFVYZ7LoexgAK9dxk7cy4DFJWjWMGVWa",
+      "pool": "EP2ib6dYdEeqD8MfE2ezHCxX3kP3K2eLKkirfPm5eyMx",
+      "pool_mint": "EKpQGSJtjMFqKZ9KQanSqYXRcF8fBopzLHYxdM65zcjm",
+      "provider_actor": "MfDuWeqSHEqTFVYZ7LoexgAK9dxk7cy4DFJWjWMGVWa",
+      "provider_kind": "buy",
+      "provider_volume_usd": "600.364077631281192435969231658540649948",
+      "quality": "complete",
+      "raw_attempt": 9,
+      "raw_received_at": "2026-09-27T03:46:50.363248+00:00",
+      "raw_response_hash": "7d3656a41d41d9697d806e573eb446350f49251433d7d49cc14b657653d5cd92",
+      "raw_source": "r3_rpc",
+      "signature": "2waEj6uZPa4Macy38R8B61npWw1RK7UT7vuJ1Rh3QpLxH9BtKDj5FzsjJmfMB8nLjWXaoE5ZGBVwmjJ75P6isB8A",
+      "slot": 450622011,
+      "source_attempt": 38,
+      "source_hash": "e70dba7cbea8db001e0ba8b29147d83d48ac81e21bbe17aac21423bce4cf8b4f",
+      "to_amount": "2423.563946",
+      "to_mint": "EKpQGSJtjMFqKZ9KQanSqYXRcF8fBopzLHYxdM65zcjm"
+    },
+    {
+      "attribution_status": "verified_swap",
+      "block_at": "2026-09-26T08:30:11+00:00",
+      "decoder_version": "r2-raydium-amm-v4-owner-balances-1",
+      "fee_lamports": 13760,
+      "from_amount": "4.985904683",
+      "from_mint": "So11111111111111111111111111111111111111112",
+      "kind": "swap",
+      "legs": [
+        {
+          "decimals": 6,
+          "delta_base": "3092987805",
+          "mint": "9BB6NFEcjBCtnNLFko2FqVQBq8HHM13kCyYcdQbgpump"
+        },
+        {
+          "decimals": 9,
+          "delta_base": "-4985904683",
+          "mint": "So11111111111111111111111111111111111111112"
+        }
+      ],
+      "owner_wallet": "MfDuWeqSHEqTFVYZ7LoexgAK9dxk7cy4DFJWjWMGVWa",
+      "pool": "Bzc9NZfMqkXR6fz1DBph7BDf9BroyEf6pnzESP7v5iiw",
+      "pool_mint": "9BB6NFEcjBCtnNLFko2FqVQBq8HHM13kCyYcdQbgpump",
+      "provider_actor": "MfDuWeqSHEqTFVYZ7LoexgAK9dxk7cy4DFJWjWMGVWa",
+      "provider_kind": "buy",
+      "provider_volume_usd": "600.125032401043347464648500956916939338",
+      "quality": "complete",
+      "raw_attempt": 10,
+      "raw_received_at": "2026-09-27T03:47:00.360934+00:00",
+      "raw_response_hash": "e595a8ffe66e3e11c461b083bcdd571a1483b0ed6a9218042829ac371fbbe17e",
+      "raw_source": "r3_rpc",
+      "signature": "2JCeZTc3ePgTYKnYwU1BLN3YhT7s8c8AmgVbwBALPkgiskr3671vTEE2D6QCn56iccQMsLpa3cJJEbFnmgRh9bto",
+      "slot": 450621139,
+      "source_attempt": 41,
+      "source_hash": "78fb618b5fb4542c6a4ac4f5f59ec58e17c0deb846746e054e28aaa7853d6b9d",
+      "to_amount": "3092.987805",
+      "to_mint": "9BB6NFEcjBCtnNLFko2FqVQBq8HHM13kCyYcdQbgpump"
+    },
+    {
+      "attribution_status": "verified_swap",
+      "block_at": "2026-09-26T08:44:20+00:00",
+      "decoder_version": "r2-raydium-amm-v4-owner-balances-1",
+      "fee_lamports": 479035,
+      "from_amount": "4.834328421",
+      "from_mint": "So11111111111111111111111111111111111111112",
+      "kind": "swap",
+      "legs": [
+        {
+          "decimals": 6,
+          "delta_base": "2343551122",
+          "mint": "EKpQGSJtjMFqKZ9KQanSqYXRcF8fBopzLHYxdM65zcjm"
+        },
+        {
+          "decimals": 9,
+          "delta_base": "-4834328421",
+          "mint": "So11111111111111111111111111111111111111112"
+        }
+      ],
+      "owner_wallet": "MfDuWeqSHEqTFVYZ7LoexgAK9dxk7cy4DFJWjWMGVWa",
+      "pool": "EP2ib6dYdEeqD8MfE2ezHCxX3kP3K2eLKkirfPm5eyMx",
+      "pool_mint": "EKpQGSJtjMFqKZ9KQanSqYXRcF8fBopzLHYxdM65zcjm",
+      "provider_actor": "MfDuWeqSHEqTFVYZ7LoexgAK9dxk7cy4DFJWjWMGVWa",
+      "provider_kind": "buy",
+      "provider_volume_usd": "585.370598652362371641811108332025128306",
+      "quality": "complete",
+      "raw_attempt": 11,
+      "raw_received_at": "2026-09-27T03:47:11.031476+00:00",
+      "raw_response_hash": "6552f6e65b4dd910a15e873eaa0659e183870827cbc10853b56c133c028e791c",
+      "raw_source": "r3_rpc",
+      "signature": "3UZUHz7y6saNr8dAxKGCUNDLemAyaQCm1VtvmsWXtW3oTAkTdZ6xCK6cT7MdqFLGcoy4ttuzEVE3Q6eVxE2bDazY",
+      "slot": 450624307,
+      "source_attempt": 38,
+      "source_hash": "e70dba7cbea8db001e0ba8b29147d83d48ac81e21bbe17aac21423bce4cf8b4f",
+      "to_amount": "2343.551122",
+      "to_mint": "EKpQGSJtjMFqKZ9KQanSqYXRcF8fBopzLHYxdM65zcjm"
+    },
+    {
+      "attribution_status": "verified_swap",
+      "block_at": "2026-09-26T08:26:06+00:00",
+      "decoder_version": "r2-raydium-amm-v4-owner-balances-1",
+      "fee_lamports": 5000,
+      "from_amount": "2346.866368",
+      "from_mint": "EKpQGSJtjMFqKZ9KQanSqYXRcF8fBopzLHYxdM65zcjm",
+      "kind": "swap",
+      "legs": [
+        {
+          "decimals": 6,
+          "delta_base": "-2346866368",
+          "mint": "EKpQGSJtjMFqKZ9KQanSqYXRcF8fBopzLHYxdM65zcjm"
+        },
+        {
+          "decimals": 9,
+          "delta_base": "4794951897",
+          "mint": "So11111111111111111111111111111111111111112"
+        }
+      ],
+      "owner_wallet": "MfDuWeqSHEqTFVYZ7LoexgAK9dxk7cy4DFJWjWMGVWa",
+      "pool": "EP2ib6dYdEeqD8MfE2ezHCxX3kP3K2eLKkirfPm5eyMx",
+      "pool_mint": "EKpQGSJtjMFqKZ9KQanSqYXRcF8fBopzLHYxdM65zcjm",
+      "provider_actor": "MfDuWeqSHEqTFVYZ7LoexgAK9dxk7cy4DFJWjWMGVWa",
+      "provider_kind": "sell",
+      "provider_volume_usd": "578.808231781108805643070299155160937536",
+      "quality": "complete",
+      "raw_attempt": 12,
+      "raw_received_at": "2026-09-27T03:47:21.124947+00:00",
+      "raw_response_hash": "da42af934abc7c3ec28ec8dc509f6c6b3db9dab5bdee2eee84d42aa65c7fb89a",
+      "raw_source": "r3_rpc",
+      "signature": "2soacGvT7dFe8xm98MdNeeRqzRwvtJBovAzg31MU4yrQhkWYSBtBFbzS1AJyV2dAS5NAa6iNgBsxT9Hdo1wScsvq",
+      "slot": 450620219,
+      "source_attempt": 38,
+      "source_hash": "e70dba7cbea8db001e0ba8b29147d83d48ac81e21bbe17aac21423bce4cf8b4f",
+      "to_amount": "4.794951897",
+      "to_mint": "So11111111111111111111111111111111111111112"
+    },
+    {
+      "attribution_status": "partial",
+      "block_at": "2026-09-26T08:55:50+00:00",
+      "decoder_version": "r2-raydium-amm-v4-owner-balances-1",
+      "fee_lamports": 14686,
+      "from_amount": "11434.822663",
+      "from_mint": "ED5nyyWEzpPPiWimP8vYm7sD7TD3LAt3Q3gRTWHzPJBY",
+      "kind": "unknown",
+      "legs": [],
+      "owner_wallet": null,
+      "pool": "22WrmyTj8x2TRVQen3fxxi2r4Rn6JDHWoMTpsSmn8RUd",
+      "pool_mint": "ED5nyyWEzpPPiWimP8vYm7sD7TD3LAt3Q3gRTWHzPJBY",
+      "provider_actor": "7kEydiJ9en86ESNpwpZ45khxX8usgjUmWxbSTzkSbXkR",
+      "provider_kind": "sell",
+      "provider_volume_usd": "564.036723686421953490983416124852594127515903616195184",
+      "quality": "partial_route",
+      "raw_received_at": "2026-09-26T09:19:16.610695+00:00",
+      "raw_source": "r2_archived_rpc",
+      "signature": "46Zr61Svw8BQisQkoRhUTLQpkhzRBJK7RqYwMqXDiXMADZxWC7xyo752XutWkZrXf4zkvJUKGVZtypXBwNh2WPYC",
+      "slot": 450626893,
+      "source_attempt": 47,
+      "source_hash": "4887f18a9bdda8cb6c37f608a83516a56e782572dd41577b76e54e36f8783d9d",
+      "to_amount": "4.666538676",
+      "to_mint": "So11111111111111111111111111111111111111112"
+    },
+    {
+      "attribution_status": "partial",
+      "block_at": "2026-09-26T08:52:14+00:00",
+      "decoder_version": "r2-raydium-amm-v4-owner-balances-1",
+      "fee_lamports": 6229,
+      "from_amount": "2843.277503",
+      "from_mint": "9BB6NFEcjBCtnNLFko2FqVQBq8HHM13kCyYcdQbgpump",
+      "kind": "unknown",
+      "legs": [],
+      "owner_wallet": null,
+      "pool": "Bzc9NZfMqkXR6fz1DBph7BDf9BroyEf6pnzESP7v5iiw",
+      "pool_mint": "9BB6NFEcjBCtnNLFko2FqVQBq8HHM13kCyYcdQbgpump",
+      "provider_actor": "8StkTM9BXnsWwWcbihCL8pUn9xBePvjQfXHqTkNjuyGD",
+      "provider_kind": "sell",
+      "provider_volume_usd": "552.407052224836792737475040636052132171075812054202901",
+      "quality": "partial",
+      "raw_attempt": 13,
+      "raw_received_at": "2026-09-27T03:47:31.036893+00:00",
+      "raw_response_hash": "62efcc53b915fb33dc365499164ef786a176ed145988bcddf55d72bbdbfb1574",
+      "raw_source": "r3_rpc",
+      "signature": "4xM5RwuJds9xjVPBQQi6dtpj7cgEy9UyWsr4cCBqeYZhWi3NsFfy4S9QjxvNoHczDotDsy9XpanyEUvzN7cxTCTz",
+      "slot": 450626081,
+      "source_attempt": 41,
+      "source_hash": "78fb618b5fb4542c6a4ac4f5f59ec58e17c0deb846746e054e28aaa7853d6b9d",
+      "to_amount": "4.56374725",
+      "to_mint": "So11111111111111111111111111111111111111112"
+    },
+    {
+      "attribution_status": "partial",
+      "block_at": "2026-09-26T08:52:37+00:00",
+      "decoder_version": "r2-raydium-amm-v4-owner-balances-1",
+      "fee_lamports": 6229,
+      "from_amount": "2844.763055",
+      "from_mint": "9BB6NFEcjBCtnNLFko2FqVQBq8HHM13kCyYcdQbgpump",
+      "kind": "unknown",
+      "legs": [],
+      "owner_wallet": null,
+      "pool": "Bzc9NZfMqkXR6fz1DBph7BDf9BroyEf6pnzESP7v5iiw",
+      "pool_mint": "9BB6NFEcjBCtnNLFko2FqVQBq8HHM13kCyYcdQbgpump",
+      "provider_actor": "8StkTM9BXnsWwWcbihCL8pUn9xBePvjQfXHqTkNjuyGD",
+      "provider_kind": "sell",
+      "provider_volume_usd": "552.390076937353421360906538668531834887309086420511725",
+      "quality": "partial",
+      "raw_attempt": 14,
+      "raw_received_at": "2026-09-27T03:47:41.688460+00:00",
+      "raw_response_hash": "9b128dbee67579623a56e6dfff28ff3e06640f7966a78d3def1d8f7d81c3456c",
+      "raw_source": "r3_rpc",
+      "signature": "4B31PHYH4ndWenfarMsWCvPHqRNU1MUrUL7HMrCz8HRK89qX6BkFgVhhsgUWVuAESnBqHSzS143E4mDu5EipfXTr",
+      "slot": 450626168,
+      "source_attempt": 41,
+      "source_hash": "78fb618b5fb4542c6a4ac4f5f59ec58e17c0deb846746e054e28aaa7853d6b9d",
+      "to_amount": "4.56374725",
+      "to_mint": "So11111111111111111111111111111111111111112"
+    },
+    {
+      "attribution_status": "verified_swap",
+      "block_at": "2026-09-26T08:53:26+00:00",
+      "decoder_version": "r2-raydium-amm-v4-owner-balances-1",
+      "fee_lamports": 5000,
+      "from_amount": "4.264889433",
+      "from_mint": "So11111111111111111111111111111111111111112",
+      "kind": "swap",
+      "legs": [
+        {
+          "decimals": 6,
+          "delta_base": "2056708772",
+          "mint": "EKpQGSJtjMFqKZ9KQanSqYXRcF8fBopzLHYxdM65zcjm"
+        },
+        {
+          "decimals": 9,
+          "delta_base": "-4264889433",
+          "mint": "So11111111111111111111111111111111111111112"
+        }
+      ],
+      "owner_wallet": "MfDuWeqSHEqTFVYZ7LoexgAK9dxk7cy4DFJWjWMGVWa",
+      "pool": "EP2ib6dYdEeqD8MfE2ezHCxX3kP3K2eLKkirfPm5eyMx",
+      "pool_mint": "EKpQGSJtjMFqKZ9KQanSqYXRcF8fBopzLHYxdM65zcjm",
+      "provider_actor": "MfDuWeqSHEqTFVYZ7LoexgAK9dxk7cy4DFJWjWMGVWa",
+      "provider_kind": "buy",
+      "provider_volume_usd": "516.142058302434120765462914448042220743",
+      "quality": "complete",
+      "raw_received_at": "2026-09-26T09:12:13.164901+00:00",
+      "raw_source": "r2_archived_rpc",
+      "signature": "z2vzDteVcns8XcdsUx6nyuB461cwJCcnJXK2nHuPX1UGSDoDbYtDfEMTrYx3Cgpqh4FGgxSTLSWyhtdZ22euTcT",
+      "slot": 450626351,
+      "source_attempt": 38,
+      "source_hash": "e70dba7cbea8db001e0ba8b29147d83d48ac81e21bbe17aac21423bce4cf8b4f",
+      "to_amount": "2056.708772",
+      "to_mint": "EKpQGSJtjMFqKZ9KQanSqYXRcF8fBopzLHYxdM65zcjm"
+    },
+    {
+      "attribution_status": "verified_swap",
+      "block_at": "2026-09-26T08:50:24+00:00",
+      "decoder_version": "r2-raydium-amm-v4-owner-balances-1",
+      "fee_lamports": 9425,
+      "from_amount": "4.139425779",
+      "from_mint": "So11111111111111111111111111111111111111112",
+      "kind": "swap",
+      "legs": [
+        {
+          "decimals": 6,
+          "delta_base": "1998001998",
+          "mint": "EKpQGSJtjMFqKZ9KQanSqYXRcF8fBopzLHYxdM65zcjm"
+        },
+        {
+          "decimals": 9,
+          "delta_base": "-4139425779",
+          "mint": "So11111111111111111111111111111111111111112"
+        }
+      ],
+      "owner_wallet": "CreQJ2t94QK5dsxUZGXfPJ8Nx7wA9LHr5chxjSMkbNft",
+      "pool": "EP2ib6dYdEeqD8MfE2ezHCxX3kP3K2eLKkirfPm5eyMx",
+      "pool_mint": "EKpQGSJtjMFqKZ9KQanSqYXRcF8fBopzLHYxdM65zcjm",
+      "provider_actor": "CreQJ2t94QK5dsxUZGXfPJ8Nx7wA9LHr5chxjSMkbNft",
+      "provider_kind": "buy",
+      "provider_volume_usd": "502.345946746111356661047",
+      "quality": "complete",
+      "raw_attempt": 15,
+      "raw_received_at": "2026-09-27T03:47:51.709426+00:00",
+      "raw_response_hash": "dc16d16ee3e7470781b2586a24664248480eee30cdb5b082c80dde2f34bd02eb",
+      "raw_source": "r3_rpc",
+      "signature": "22McUX4vA8XUc2S2nLWtWoqdwbozbiXa8VPojYGtuFCV6NEZnDCoHe5NZNQA9wSpbs27tnHkv9i97N3rRHhkHy9o",
+      "slot": 450625668,
+      "source_attempt": 38,
+      "source_hash": "e70dba7cbea8db001e0ba8b29147d83d48ac81e21bbe17aac21423bce4cf8b4f",
+      "to_amount": "1998.001998",
+      "to_mint": "EKpQGSJtjMFqKZ9KQanSqYXRcF8fBopzLHYxdM65zcjm"
+    },
+    {
+      "attribution_status": "verified_swap",
+      "block_at": "2026-09-26T08:52:55+00:00",
+      "decoder_version": "r2-raydium-amm-v4-owner-balances-1",
+      "fee_lamports": 313703,
+      "from_amount": "475385.034041",
+      "from_mint": "ukHH6c7mMyiWCf1b9pnWe25TSpkDDt3H5pQZgZ74J82",
+      "kind": "swap",
+      "legs": [
+        {
+          "decimals": 9,
+          "delta_base": "4149803486",
+          "mint": "So11111111111111111111111111111111111111112"
+        },
+        {
+          "decimals": 6,
+          "delta_base": "-475385034041",
+          "mint": "ukHH6c7mMyiWCf1b9pnWe25TSpkDDt3H5pQZgZ74J82"
+        }
+      ],
+      "owner_wallet": "MfDuWeqSHEqTFVYZ7LoexgAK9dxk7cy4DFJWjWMGVWa",
+      "pool": "DSUvc5qf5LJHHV5e2tD184ixotSnCnwj7i4jJa4Xsrmt",
+      "pool_mint": "ukHH6c7mMyiWCf1b9pnWe25TSpkDDt3H5pQZgZ74J82",
+      "provider_actor": "MfDuWeqSHEqTFVYZ7LoexgAK9dxk7cy4DFJWjWMGVWa",
+      "provider_kind": "sell",
+      "provider_volume_usd": "502.24193695875652495612433238077643316020158726848622906",
+      "quality": "complete",
+      "raw_attempt": 16,
+      "raw_received_at": "2026-09-27T03:48:01.699700+00:00",
+      "raw_response_hash": "4f07d331c0ff51cd47fdcaf8922edf99ca32e4f4ce38213a66d002414c935499",
+      "raw_source": "r3_rpc",
+      "signature": "4KRe5eRLFvUSEuLp3nqnLn1B2hwWqnQ2xed2jfs3M8aoocBax4PuN9pc6wxWXCWekkfkJ6be3hwoAC9F9mcwgCAY",
+      "slot": 450626235,
+      "source_attempt": 43,
+      "source_hash": "e1d612f2869fcc380b9cbb943a0c43de2fcda632f1e22d259eb53a6f64c6a2f7",
+      "to_amount": "4.149803486",
+      "to_mint": "So11111111111111111111111111111111111111112"
+    },
+    {
+      "attribution_status": "verified_swap",
+      "block_at": "2026-09-26T08:49:30+00:00",
+      "decoder_version": "r2-raydium-amm-v4-owner-balances-1",
+      "fee_lamports": 11453,
+      "from_amount": "4.140009945",
+      "from_mint": "So11111111111111111111111111111111111111112",
+      "kind": "swap",
+      "legs": [
+        {
+          "decimals": 6,
+          "delta_base": "1999497740",
+          "mint": "EKpQGSJtjMFqKZ9KQanSqYXRcF8fBopzLHYxdM65zcjm"
+        },
+        {
+          "decimals": 9,
+          "delta_base": "-4140009945",
+          "mint": "So11111111111111111111111111111111111111112"
+        }
+      ],
+      "owner_wallet": "CreQJ2t94QK5dsxUZGXfPJ8Nx7wA9LHr5chxjSMkbNft",
+      "pool": "EP2ib6dYdEeqD8MfE2ezHCxX3kP3K2eLKkirfPm5eyMx",
+      "pool_mint": "EKpQGSJtjMFqKZ9KQanSqYXRcF8fBopzLHYxdM65zcjm",
+      "provider_actor": "CreQJ2t94QK5dsxUZGXfPJ8Nx7wA9LHr5chxjSMkbNft",
+      "provider_kind": "buy",
+      "provider_volume_usd": "501.235769232459387360154393510154139405",
+      "quality": "complete",
+      "raw_attempt": 17,
+      "raw_received_at": "2026-09-27T03:48:11.718510+00:00",
+      "raw_response_hash": "31b4df4e8edf0df98e43aa4ac818cbb18cf47875dee13f3c5085e67061f13fda",
+      "raw_source": "r3_rpc",
+      "signature": "31u5VfyhqPJ21GmB5UvW6Diy6jj2iKeUBvWWEwcwthHuWFHoECnvwuQhg1ZteBGwXhTgUXkvBpbimao4GjEmZLVa",
+      "slot": 450625466,
+      "source_attempt": 38,
+      "source_hash": "e70dba7cbea8db001e0ba8b29147d83d48ac81e21bbe17aac21423bce4cf8b4f",
+      "to_amount": "1999.49774",
+      "to_mint": "EKpQGSJtjMFqKZ9KQanSqYXRcF8fBopzLHYxdM65zcjm"
+    },
+    {
+      "attribution_status": "verified_swap",
+      "block_at": "2026-09-26T08:49:30+00:00",
+      "decoder_version": "r2-raydium-amm-v4-owner-balances-1",
+      "fee_lamports": 7387,
+      "from_amount": "4.13880664",
+      "from_mint": "So11111111111111111111111111111111111111112",
+      "kind": "swap",
+      "legs": [
+        {
+          "decimals": 6,
+          "delta_base": "1999600079",
+          "mint": "EKpQGSJtjMFqKZ9KQanSqYXRcF8fBopzLHYxdM65zcjm"
+        },
+        {
+          "decimals": 9,
+          "delta_base": "-4138806640",
+          "mint": "So11111111111111111111111111111111111111112"
+        }
+      ],
+      "owner_wallet": "CreQJ2t94QK5dsxUZGXfPJ8Nx7wA9LHr5chxjSMkbNft",
+      "pool": "EP2ib6dYdEeqD8MfE2ezHCxX3kP3K2eLKkirfPm5eyMx",
+      "pool_mint": "EKpQGSJtjMFqKZ9KQanSqYXRcF8fBopzLHYxdM65zcjm",
+      "provider_actor": "CreQJ2t94QK5dsxUZGXfPJ8Nx7wA9LHr5chxjSMkbNft",
+      "provider_kind": "buy",
+      "provider_volume_usd": "501.09008371109374616165060330187174456",
+      "quality": "complete",
+      "raw_attempt": 18,
+      "raw_received_at": "2026-09-27T03:48:22.366248+00:00",
+      "raw_response_hash": "65aaeec87bf3e258076c5c849f430e841da04a9ed364bb21b899b94176985da6",
+      "raw_source": "r3_rpc",
+      "signature": "3JXdPUcyr7aFwVKLFcWb6Y4itewreucXwewxTkCEbAdUgiPY5D6cARaHSvKCWcNMnSKBihdDzojWu7swebCQKKiG",
+      "slot": 450625466,
+      "source_attempt": 38,
+      "source_hash": "e70dba7cbea8db001e0ba8b29147d83d48ac81e21bbe17aac21423bce4cf8b4f",
+      "to_amount": "1999.600079",
+      "to_mint": "EKpQGSJtjMFqKZ9KQanSqYXRcF8fBopzLHYxdM65zcjm"
+    },
+    {
+      "attribution_status": "verified_swap",
+      "block_at": "2026-09-26T08:49:09+00:00",
+      "decoder_version": "r2-raydium-amm-v4-owner-balances-1",
+      "fee_lamports": 15816,
+      "from_amount": "4.137971476",
+      "from_mint": "So11111111111111111111111111111111111111112",
+      "kind": "swap",
+      "legs": [
+        {
+          "decimals": 6,
+          "delta_base": "2002002002",
+          "mint": "EKpQGSJtjMFqKZ9KQanSqYXRcF8fBopzLHYxdM65zcjm"
+        },
+        {
+          "decimals": 9,
+          "delta_base": "-4137971476",
+          "mint": "So11111111111111111111111111111111111111112"
+        }
+      ],
+      "owner_wallet": "CreQJ2t94QK5dsxUZGXfPJ8Nx7wA9LHr5chxjSMkbNft",
+      "pool": "EP2ib6dYdEeqD8MfE2ezHCxX3kP3K2eLKkirfPm5eyMx",
+      "pool_mint": "EKpQGSJtjMFqKZ9KQanSqYXRcF8fBopzLHYxdM65zcjm",
+      "provider_actor": "CreQJ2t94QK5dsxUZGXfPJ8Nx7wA9LHr5chxjSMkbNft",
+      "provider_kind": "buy",
+      "provider_volume_usd": "501.07272918111553068184097546956873886",
+      "quality": "complete",
+      "raw_attempt": 19,
+      "raw_received_at": "2026-09-27T03:48:32.596695+00:00",
+      "raw_response_hash": "81651e40b13811a569480f37a7bd768033117a9d8bb634dffa9b76223df3f6de",
+      "raw_source": "r3_rpc",
+      "signature": "5KX8U64inSw1y9sVXmZuvt1RSATnSyiDmMGaTxns7Vze1GNpQ3REV1iMq6YoQfdy8ENgdRaZCeyagpdE2ir5N4Cx",
+      "slot": 450625391,
+      "source_attempt": 38,
+      "source_hash": "e70dba7cbea8db001e0ba8b29147d83d48ac81e21bbe17aac21423bce4cf8b4f",
+      "to_amount": "2002.002002",
+      "to_mint": "EKpQGSJtjMFqKZ9KQanSqYXRcF8fBopzLHYxdM65zcjm"
+    },
+    {
+      "attribution_status": "verified_swap",
+      "block_at": "2026-09-26T08:49:09+00:00",
+      "decoder_version": "r2-raydium-amm-v4-owner-balances-1",
+      "fee_lamports": 7209,
+      "from_amount": "4.137971476",
+      "from_mint": "So11111111111111111111111111111111111111112",
+      "kind": "swap",
+      "legs": [
+        {
+          "decimals": 6,
+          "delta_base": "2001419908",
+          "mint": "EKpQGSJtjMFqKZ9KQanSqYXRcF8fBopzLHYxdM65zcjm"
+        },
+        {
+          "decimals": 9,
+          "delta_base": "-4137971476",
+          "mint": "So11111111111111111111111111111111111111112"
+        }
+      ],
+      "owner_wallet": "CreQJ2t94QK5dsxUZGXfPJ8Nx7wA9LHr5chxjSMkbNft",
+      "pool": "EP2ib6dYdEeqD8MfE2ezHCxX3kP3K2eLKkirfPm5eyMx",
+      "pool_mint": "EKpQGSJtjMFqKZ9KQanSqYXRcF8fBopzLHYxdM65zcjm",
+      "provider_actor": "CreQJ2t94QK5dsxUZGXfPJ8Nx7wA9LHr5chxjSMkbNft",
+      "provider_kind": "buy",
+      "provider_volume_usd": "501.07272918111553068184097546956873886",
+      "quality": "complete",
+      "raw_attempt": 20,
+      "raw_received_at": "2026-09-27T03:48:42.384900+00:00",
+      "raw_response_hash": "49faa068a4e97d15cda143d7d84dc5a7c0b09f3f1151b5f5807e942010e97681",
+      "raw_source": "r3_rpc",
+      "signature": "5ovgpv61gHjMx9EaHagvkszvh5R76skTku6FktWNB59H9BPkZB5RPq6gz3hckV4t2gQBPBrknS9RQiFfEQzDx2S6",
+      "slot": 450625391,
+      "source_attempt": 38,
+      "source_hash": "e70dba7cbea8db001e0ba8b29147d83d48ac81e21bbe17aac21423bce4cf8b4f",
+      "to_amount": "2001.419908",
+      "to_mint": "EKpQGSJtjMFqKZ9KQanSqYXRcF8fBopzLHYxdM65zcjm"
+    },
+    {
+      "attribution_status": "verified_swap",
+      "block_at": "2026-09-26T08:49:12+00:00",
+      "decoder_version": "r2-raydium-amm-v4-owner-balances-1",
+      "fee_lamports": 5000,
+      "from_amount": "4.137065532",
+      "from_mint": "So11111111111111111111111111111111111111112",
+      "kind": "swap",
+      "legs": [
+        {
+          "decimals": 6,
+          "delta_base": "1999895893",
+          "mint": "EKpQGSJtjMFqKZ9KQanSqYXRcF8fBopzLHYxdM65zcjm"
+        },
+        {
+          "decimals": 9,
+          "delta_base": "-4137065532",
+          "mint": "So11111111111111111111111111111111111111112"
+        }
+      ],
+      "owner_wallet": "CreQJ2t94QK5dsxUZGXfPJ8Nx7wA9LHr5chxjSMkbNft",
+      "pool": "EP2ib6dYdEeqD8MfE2ezHCxX3kP3K2eLKkirfPm5eyMx",
+      "pool_mint": "EKpQGSJtjMFqKZ9KQanSqYXRcF8fBopzLHYxdM65zcjm",
+      "provider_actor": "CreQJ2t94QK5dsxUZGXfPJ8Nx7wA9LHr5chxjSMkbNft",
+      "provider_kind": "buy",
+      "provider_volume_usd": "500.950697934279815204526281372103792108",
+      "quality": "complete",
+      "raw_attempt": 21,
+      "raw_received_at": "2026-09-27T03:48:53.056275+00:00",
+      "raw_response_hash": "4bb44f339ea43f25a9c79d8ec6db5190c2a604f4c915fb1a749ed485486f50b9",
+      "raw_source": "r3_rpc",
+      "signature": "2BZnaLGYDdrguLejUohEqYvbh4PWZGBF2caNKzkKzjmaV9aJCTFK8bRXKE1FFZq1tDb8sRMy56C6v8hWJfHD8bLa",
+      "slot": 450625403,
+      "source_attempt": 38,
+      "source_hash": "e70dba7cbea8db001e0ba8b29147d83d48ac81e21bbe17aac21423bce4cf8b4f",
+      "to_amount": "1999.895893",
+      "to_mint": "EKpQGSJtjMFqKZ9KQanSqYXRcF8fBopzLHYxdM65zcjm"
+    }
+  ],
+  "registry_version": "r3-research-classification-1",
+  "scope": "sample_preselection_not_qualified_wallets",
+  "selection_bias": "retrospective_on_r2_sample",
+  "threshold_usd": "500"
+}

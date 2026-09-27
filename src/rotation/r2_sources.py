@@ -9,7 +9,7 @@ from pathlib import Path
 
 import httpx
 
-from .r2_budget import _R2Session
+from .r2_budget import R2BudgetExceeded, _R2Session
 
 
 class R2SourceError(RuntimeError):
@@ -38,14 +38,21 @@ class R2Http:
 
     def _call(self, source: str, label: str, method: str, url: str, **kwargs) -> tuple[dict, dict]:
         delay = self.min_interval_seconds - (time.monotonic() - self.last_call.get(source, 0))
+        remaining = self.session.remaining_seconds()
+        if delay > 0 and delay + 0.25 >= remaining:
+            raise R2BudgetExceeded("deadline before rate-limit wait")
         if delay > 0:
             time.sleep(delay)
+        remaining = self.session.remaining_seconds()
+        if remaining <= 0.25:
+            raise R2BudgetExceeded("deadline before external request")
+        timeout = min(20.0, remaining - 0.25)
         number = self.session.reserve(source, label)
         self.last_call[source] = time.monotonic()
         self.archive.mkdir(parents=True, exist_ok=True)
         path = self.archive / f"attempt-{number:04d}.json"
         try:
-            response = self.client.request(method, url, **kwargs)
+            response = self.client.request(method, url, timeout=timeout, **kwargs)
             received_at = datetime.now(timezone.utc).isoformat()
             body = response.text
             response_hash = sha256(response.content).hexdigest()
@@ -69,7 +76,13 @@ class R2Http:
                 number, status=f"http_{response.status_code}", response_hash=response_hash
             )
             if response.status_code != 200:
-                raise R2SourceError(f"{source} HTTP {response.status_code}")
+                retry_after = response.headers.get("Retry-After")
+                suffix = (
+                    f"; retry_after={retry_after}"
+                    if response.status_code == 429 and retry_after
+                    else ""
+                )
+                raise R2SourceError(f"{source} HTTP {response.status_code}{suffix}")
             payload = json.loads(body)
             return payload, receipt
         except httpx.HTTPError as exc:

@@ -4,7 +4,7 @@ from datetime import datetime, timezone
 import httpx
 import pytest
 
-from rotation.r2_budget import R2Budget
+from rotation.r2_budget import R2Budget, R2BudgetExceeded
 from rotation.r2_sources import R2Http, R2SourceError
 
 T = datetime(2026, 9, 26, 9, tzinfo=timezone.utc)
@@ -77,3 +77,27 @@ def test_pool_search_requires_explicit_solana_network(tmp_path):
         payload, _ = client.gecko("/search/pools", {"query": "BONK", "network": "solana"})
         assert payload["data"] == []
     assert budget.snapshot()["calls_used"] == 1
+
+
+def test_deadline_refuses_rate_limit_sleep_that_cannot_finish(tmp_path):
+    import time
+    from datetime import timedelta
+
+    now = [T]
+    budget = R2Budget(
+        tmp_path / "budget.json", max_calls=2, max_active_seconds=2, now=lambda: now[0]
+    )
+    with budget.session("tight", max_calls=2, max_seconds=2) as session:
+        client = R2Http(
+            session,
+            tmp_path / "source",
+            client=httpx.Client(
+                transport=httpx.MockTransport(lambda _: httpx.Response(200, json={}))
+            ),
+            min_interval_seconds=10,
+        )
+        client.last_call["gecko"] = time.monotonic()
+        now[0] += timedelta(seconds=1)
+        with pytest.raises(R2BudgetExceeded, match="deadline"):
+            client.gecko("/networks/solana/pools")
+    assert budget.snapshot()["calls_used"] == 0

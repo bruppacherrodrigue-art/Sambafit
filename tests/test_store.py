@@ -84,6 +84,19 @@ def test_market_and_operations_respect_availability_and_dataset(store):
         )
 
 
+def test_r3_classification_is_versioned_and_mint_keyed(store):
+    from rotation.r3_registry import ResearchRegistry
+
+    registry = ResearchRegistry.load("config/r3-universe.json")
+    assert store.import_research_registry(registry) == 15
+    assert store.import_research_registry(registry) == 0
+    rows = store.list_research_registry(registry.version)
+    assert len(rows) == 15
+    assert {
+        r["mint"] for r in rows if r["status"] == "research_candidate"
+    } == registry.eligible_mints(datetime.fromisoformat(registry.known_at))
+
+
 def test_latest_decoder_version_and_wallet_scoped_evidence(store):
     at = datetime(2026, 1, 1, tzinfo=timezone.utc)
     for wallet in ("w1", "w2"):
@@ -114,6 +127,38 @@ def test_latest_decoder_version_and_wallet_scoped_evidence(store):
         row["decoder_version"] == "v2" for row in store.list_operations(at + timedelta(seconds=1))
     )
     assert store.get_evidence("shared", "REAL", "w2")["raw"]["payload"]["owner"] == "w2"
+
+
+def test_two_economic_operations_in_one_signature_remain_distinct(store):
+    at = datetime(2026, 1, 1, tzinfo=timezone.utc)
+    store.add_raw("shared-signature", "w1", {"slot": 1}, "rpc", "v1")
+    for index, destination in enumerate(("B", "C")):
+        operation = Operation(
+            f"solana:shared-signature:{index}:w1",
+            "w1",
+            "shared-signature",
+            at,
+            at,
+            "swap",
+            (Leg("A", -10, 0, None), Leg(destination, 10, 0, None)),
+            True,
+            "complete",
+        )
+        store.add_operation(
+            "shared-signature",
+            "w1",
+            operation,
+            0,
+            "v1",
+            decoded_at=at,
+            operation_index=index,
+        )
+    rows = store.list_operations(at)
+    assert {row["canonical_id"] for row in rows} == {
+        "solana:shared-signature:0:w1",
+        "solana:shared-signature:1:w1",
+    }
+    assert {row["legs"][1]["mint"] for row in rows} == {"B", "C"}
 
 
 def test_existing_demo_operations_repaired_for_historical_replay(store):

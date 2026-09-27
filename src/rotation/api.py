@@ -12,6 +12,7 @@ from pydantic import BaseModel, Field
 
 from .engine import Leg, Operation, aggregate_convergence, attribute_rotations
 from .market import parse_candles
+from .r2_collect import SIGNATURE
 from .r2_fomo import FomoProofStore
 from .research import price_operations
 from .signals import MarketBar, decide, market_features
@@ -32,7 +33,7 @@ class WalletImport(BaseModel):
 def _operations(rows: list[dict]) -> list[Operation]:
     return [
         Operation(
-            row["signature"],
+            row.get("canonical_id", row["signature"]),
             row["wallet"],
             row["signature"],
             row["economic_at"],
@@ -65,6 +66,156 @@ def create_app(store: Store | None = None) -> FastAPI:
             "ROTATION_R2_DIR", str(Path(__file__).resolve().parents[2] / "data" / "r2-20260926")
         )
     )
+    r3_root = Path(
+        os.getenv(
+            "ROTATION_R3_DIR", str(Path(__file__).resolve().parents[2] / "data" / "r3-20260927")
+        )
+    )
+    r31_root = Path(
+        os.getenv(
+            "ROTATION_R31_DIR", str(Path(__file__).resolve().parents[2] / "data" / "r3-1-20260927")
+        )
+    )
+
+    def r3_file(name: str):
+        path = r3_root / name
+        if not path.exists():
+            raise HTTPException(404, "R3 corpus unavailable")
+        return json.loads(path.read_text())
+
+    def r31_file(name: str):
+        path = r31_root / name
+        if not path.exists():
+            raise HTTPException(404, "R3.1 offline replay unavailable")
+        value = json.loads(path.read_text())
+        if (
+            value.get("dataset") != "REAL"
+            or value.get("synthetic") is True
+            or value.get("mode") != "REPLAY"
+        ):
+            raise HTTPException(409, "R3.1 REAL replay endpoint rejects DEMO or live artifacts")
+        return value
+
+    @app.get("/api/r3-1/replay")
+    def r31_replay():
+        return r31_file("replay.json")
+
+    @app.get("/api/r3-1/prospective")
+    def r31_prospective():
+        return r31_file("prospective.json")
+
+    @app.get("/api/r3-1/strategy")
+    def r31_strategy():
+        path = Path(__file__).resolve().parents[2] / "config" / "strategy-r3-1.json"
+        return json.loads(path.read_text())
+
+    @app.get("/api/r3/universe")
+    def r3_universe():
+        path = r3_root.parent.parent / "config" / "r3-universe.json"
+        if not path.exists():
+            raise HTTPException(404, "R3 classification unavailable")
+        return json.loads(path.read_text())
+
+    @app.get("/api/r3/cohort")
+    def r3_cohort():
+        return r3_file("cohort.json")
+
+    @app.get("/api/r3/replay")
+    def r3_replay():
+        return r3_file("replay.json")
+
+    @app.get("/api/r3/prospective")
+    def r3_prospective():
+        return r3_file("prospective.json")
+
+    @app.get("/api/r3/budget")
+    def r3_budget():
+        value = r3_file("budget.json")
+        return {
+            "limits": value["limits"],
+            "calls_used": value["calls_used"],
+            "active_seconds": value["active_seconds"],
+            "phase_limits": value["phase_limits"],
+            "active_session": value["active_session"],
+            "errors": [row for row in value["attempts"] if row["status"] != "http_200"],
+        }
+
+    @app.get("/api/r3/market/{mint}")
+    def r3_market(mint: str):
+        universe = r3_universe()
+        if mint not in {row["mint"] for row in universe["records"] if row["role"] == "target"}:
+            raise HTTPException(404, "R3 target mint unavailable")
+        from .r3_pipeline import load_r2_market_bars
+
+        bars = load_r2_market_bars(r2_root)
+        followed_path = r3_root / "market-bars.json"
+        followed = json.loads(followed_path.read_text())["bars"] if followed_path.exists() else []
+        historical = [
+            {
+                "mint": bar.mint,
+                "close_at": bar.close_at.isoformat(),
+                "available_at": bar.available_at.isoformat(),
+                "price_usd": str(bar.close_usd),
+                "volume_usd": str(bar.volume_usd) if bar.volume_usd is not None else None,
+                "liquidity_usd": None,
+                "interval_seconds": bar.interval_seconds,
+                "source": "R2 archived GeckoTerminal minute OHLCV",
+                "dataset": "REAL",
+            }
+            for bar in bars
+            if bar.mint == mint
+        ]
+        return sorted(
+            historical
+            + [
+                {**row, "dataset": "REAL", "source": "R3 received GeckoTerminal minute OHLCV"}
+                for row in followed
+                if row["mint"] == mint
+            ],
+            key=lambda row: (row["close_at"], row["available_at"]),
+        )
+
+    @app.get("/api/r3/operations/{signature}")
+    def r3_operation(signature: str):
+        if not SIGNATURE.fullmatch(signature):
+            raise HTTPException(404, "real Solana signature required")
+        selected = r3_file("preselection.json")["references"]
+        row = next((item for item in selected if item["signature"] == signature), None)
+        follow_path = r3_root / "follow-checkpoint.json"
+        follow = (
+            json.loads(follow_path.read_text()) if follow_path.exists() else {"transactions": {}}
+        )
+        followed = follow["transactions"].get(signature)
+        if row is None and followed is None:
+            raise HTTPException(404, "operation outside R3 corpus")
+        raw_path = r3_root / "raw" / f"{signature}.json"
+        if not raw_path.exists():
+            raw_path = r3_root / "follow-raw" / f"{signature}.json"
+        if not raw_path.exists():
+            raise HTTPException(404, "raw operation unavailable")
+        allocations = [
+            item
+            for item in r3_file("cohort.json")["sequences"]["allocations"]
+            if signature in (item["source_signature"], item["destination_signature"])
+        ]
+        replay_rows = r3_file("replay.json")
+        related_pairs = {
+            f"{item['source_mint']}:{item['destination_mint']}" for item in allocations
+        }
+        decisions = [item for item in replay_rows["decisions"] if item["pair"] in related_pairs]
+        return {
+            "dataset": "REAL",
+            "mode": "REPLAY" if row else "PAPER LIVE",
+            "operation": row or {"signature": signature, **followed},
+            "raw": json.loads(raw_path.read_text()),
+            "allocations": allocations,
+            "decisions": decisions,
+            "provenance": (row or followed).get("raw_source", "r3_follow_rpc"),
+            "limitations": [
+                "sampled coverage; opening positions unknown",
+                "provider USD is a trade-time proxy, not an executable quote",
+            ],
+        }
 
     def r2_file(name: str):
         path = r2_root / name

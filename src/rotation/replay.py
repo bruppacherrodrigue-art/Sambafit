@@ -1,12 +1,12 @@
 """Availability-clock replay using the same attribution and decision functions as live."""
 
 from dataclasses import dataclass
-from datetime import datetime
+from datetime import datetime, timedelta
 from decimal import Decimal
 from itertools import groupby
 
 from .engine import AggregateFlow, Operation, Rotation, aggregate_convergence, attribute_rotations
-from .signals import Decision, MarketBar, decide, market_features
+from .signals import Decision, MarketBar, PairPolicy, decide_pairs, market_features
 
 
 @dataclass(frozen=True)
@@ -23,6 +23,25 @@ class ReplayResult:
     aggregate_flows: tuple[AggregateFlow, ...] = ()
 
 
+def _semantic_decision(decision: Decision) -> tuple:
+    # Elapsed age is displayed at issuance, but its passage alone is not a new
+    # signal revision. Proof, state, quality and market features still are.
+    return (
+        decision.state,
+        decision.quality,
+        decision.score,
+        decision.components,
+        decision.reasons,
+        decision.version,
+        decision.execution_quality,
+        tuple(
+            (key, value)
+            for key, value in decision.metrics
+            if key not in {"economic_age_seconds", "observed_delay_seconds"}
+        ),
+    )
+
+
 def replay(
     operations: list[Operation],
     bars: list[MarketBar],
@@ -36,18 +55,28 @@ def replay(
     eligible_mints: set[str] | None = None,
     eligible_wallets: set[str] | None = None,
     invalidation_loss: Decimal = Decimal("0.10"),
+    policy: PairPolicy = PairPolicy(),
+    registry=None,
 ) -> ReplayResult:
     """Never evaluate a bar or operation before its local availability timestamp."""
     events: list[tuple[datetime, int, object]] = []
     events.extend((o.available_at, 0, o) for o in operations if o.available_at <= until)
     events.extend((b.available_at, 1, b) for b in bars if b.available_at <= until)
+    # A clock tick closes an episode even when no new swap or candle arrives.
+    for operation in operations:
+        expiry = max(
+            operation.available_at, operation.economic_at + policy.max_economic_flow_age
+        ) + timedelta(microseconds=1)
+        if expiry <= until:
+            events.append((expiry, 2, None))
+    if registry is not None and hasattr(registry, "knowledge_times"):
+        events.extend((value, 3, None) for value in registry.knowledge_times() if value <= until)
     events.sort(key=lambda x: (x[0], x[1]))
     active: dict[tuple[str, str], Operation] = {}
     visible_bars: list[MarketBar] = []
     records: list[DecisionRecord] = []
-    current_pair: str | None = None
-    entry_price: Decimal | None = None
-    last_state: tuple[str, str] | None = None
+    entry_prices: dict[str, Decimal] = {}
+    last_decisions: dict[str, Decision] = {}
     rotations: list[Rotation] = []
     aggregate: list[AggregateFlow] = []
     mint_known_at = mint_known_at or {}
@@ -61,10 +90,16 @@ def replay(
                 if event.available_at < wallet_known_at.get(event.wallet, event.available_at):
                     continue
                 if event.kind == "retracted":
-                    retracted = active.pop((event.wallet, event.signature), None) is not None
+                    for old_key in [
+                        key for key in active if key[1] in {event.id, event.supersedes_id}
+                    ]:
+                        retracted = active.pop(old_key, None) is not None or retracted
                 else:
-                    active[(event.wallet, event.signature)] = event
-            else:
+                    if event.supersedes_id:
+                        for old_key in [key for key in active if key[1] == event.supersedes_id]:
+                            active.pop(old_key)
+                    active[(event.wallet, event.id)] = event
+            elif isinstance(event, MarketBar):
                 visible_bars.append(event)
         rotations = attribute_rotations(
             list(active.values()),
@@ -87,6 +122,15 @@ def replay(
                 r.destination is None
                 or r.available_at >= mint_known_at.get(r.destination, r.available_at)
             )
+            and (
+                registry is None
+                or r.direction != "between_coins"
+                or (
+                    r.destination is not None
+                    and r.source in registry.eligible_mints(at)
+                    and r.destination in registry.eligible_mints(at)
+                )
+            )
         ]
         aggregate = [
             flow
@@ -97,23 +141,34 @@ def replay(
             )
             and flow.available_at >= mint_known_at.get(flow.source, flow.available_at)
             and flow.available_at >= mint_known_at.get(flow.destination, flow.available_at)
-        ]
-        relevant = [r for r in rotations if r.direction == "between_coins"]
-        if relevant:
-            latest = max(
-                relevant,
-                key=lambda r: (r.available_at, r.economic_at, r.source_op, r.destination_op or ""),
+            and (
+                registry is None
+                or (
+                    flow.source in registry.eligible_mints(at)
+                    and flow.destination in registry.eligible_mints(at)
+                )
             )
-            pair = f"{latest.source}:{latest.destination}"
-            if pair != current_pair:
-                current_pair, entry_price = pair, None
-            decision = decide(relevant, visible_bars, at)
-            feature = market_features(visible_bars, latest.destination, at)
-            if decision.state in ("candidate", "confirmed") and entry_price is None:
-                entry_price = feature.last_price
+        ]
+        decisions = decide_pairs(
+            rotations,
+            visible_bars,
+            at,
+            eligible_mints=eligible_mints,
+            policy=policy,
+            operations=list(active.values()),
+        )
+        current = set()
+        for (source, destination), decision in decisions.items():
+            pair = f"{source}:{destination}"
+            current.add(pair)
+            feature = market_features(visible_bars, destination, at)
+            if decision.state in ("candidate", "confirmed") and pair not in entry_prices:
+                if feature.last_price is not None:
+                    entry_prices[pair] = feature.last_price
+            entry_price = entry_prices.get(pair)
             if (
-                entry_price
-                and feature.last_price
+                entry_price is not None
+                and feature.last_price is not None
                 and feature.last_price < entry_price * (Decimal(1) - invalidation_loss)
             ):
                 decision = Decision(
@@ -122,15 +177,26 @@ def replay(
                     decision.score,
                     decision.components,
                     decision.reasons + ("loss threshold observed",),
+                    execution_quality=decision.execution_quality,
                 )
-        elif retracted and current_pair:
-            pair = current_pair
-            decision = Decision("observing", "retracted", 0, (), ("source transaction retracted",))
-            entry_price = None
-        else:
-            continue
-        status = (pair, decision.state)
-        if status != last_state or retracted:
-            records.append(DecisionRecord(at, pair, decision))
-            last_state = status
+            if pair not in last_decisions or _semantic_decision(
+                last_decisions[pair]
+            ) != _semantic_decision(decision):
+                records.append(DecisionRecord(at, pair, decision))
+                last_decisions[pair] = decision
+            if decision.state in {"invalidated", "expired"}:
+                entry_prices.pop(pair, None)
+        for pair in sorted(set(last_decisions) - current):
+            if last_decisions[pair].quality != "proof_removed":
+                had_live_signal = last_decisions[pair].state in {"candidate", "confirmed"}
+                decision = Decision(
+                    "invalidated" if had_live_signal else "observing",
+                    "proof_removed",
+                    0,
+                    (),
+                    ("source_transaction_retracted" if retracted else "attribution_proof_removed",),
+                )
+                records.append(DecisionRecord(at, pair, decision))
+                last_decisions[pair] = decision
+            entry_prices.pop(pair, None)
     return ReplayResult(tuple(rotations), tuple(records), tuple(aggregate))

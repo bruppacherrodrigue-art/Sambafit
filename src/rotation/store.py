@@ -52,6 +52,18 @@ class Store:
                     Path(__file__).parent / "migrations" / "003_demo_decoded_time.sql"
                 ).read_text()
                 conn.execute(script)
+            applied = conn.execute("SELECT 1 FROM schema_migrations WHERE version=4").fetchone()
+            if applied is None:
+                script = (
+                    Path(__file__).parent / "migrations" / "004_r3_classification.sql"
+                ).read_text()
+                conn.execute(script)
+            applied = conn.execute("SELECT 1 FROM schema_migrations WHERE version=5").fetchone()
+            if applied is None:
+                script = (
+                    Path(__file__).parent / "migrations" / "005_economic_operation_identity.sql"
+                ).read_text()
+                conn.execute(script)
 
     def drop_test_schema(self):
         if not self.schema.startswith("test_"):
@@ -110,6 +122,45 @@ class Store:
         with self.connect() as conn:
             return conn.execute(
                 "SELECT network,mint,symbol,decimals,active,exclusion_reason FROM tokens ORDER BY mint"
+            ).fetchall()
+
+    def import_research_registry(self, registry) -> int:
+        inserted = 0
+        with self.connect() as conn:
+            for row in registry.payload["records"]:
+                inserted += int(
+                    conn.execute(
+                        """INSERT INTO research_classifications
+                        (version,network,mint,symbol,category,study_role,status,known_at,
+                         effective_from,proof_at,proof,reason)
+                        VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)
+                        ON CONFLICT(version,network,mint) DO NOTHING RETURNING id""",
+                        (
+                            registry.version,
+                            row["network"],
+                            row["mint"],
+                            row["symbol"],
+                            row["category"],
+                            row["role"],
+                            row["status"],
+                            row["known_at"],
+                            row["effective_from"],
+                            row["proof_at"],
+                            Jsonb(row["proof"]),
+                            row["reason"],
+                        ),
+                    ).fetchone()
+                    is not None
+                )
+        return inserted
+
+    def list_research_registry(self, version: str) -> list[dict]:
+        with self.connect() as conn:
+            return conn.execute(
+                """SELECT version,network,mint,symbol,category,study_role AS role,status,
+                known_at,effective_from,proof_at,proof,reason
+                FROM research_classifications WHERE version=%s ORDER BY symbol,mint""",
+                (version,),
             ).fetchall()
 
     def import_wallets(self, entries: list[dict]):
@@ -309,7 +360,10 @@ class Store:
         decoder_version: str,
         dataset: str = "REAL",
         decoded_at: datetime | None = None,
+        operation_index: int = 0,
     ):
+        if operation_index < 0:
+            raise ValueError("operation_index must be nonnegative")
         legs = [
             {
                 "mint": leg.mint,
@@ -328,8 +382,8 @@ class Store:
                 raise ValueError("raw event required before operation")
             conn.execute(
                 """INSERT INTO operations(raw_event_id,wallet,economic_at,available_at,
-                kind,status,quality,fee_lamports,legs,decoder_version,decoded_at) VALUES
-                (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,COALESCE(%s,now())) ON CONFLICT DO NOTHING""",
+                kind,status,quality,fee_lamports,legs,decoder_version,decoded_at,operation_index) VALUES
+                (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,COALESCE(%s,now()),%s) ON CONFLICT DO NOTHING""",
                 (
                     raw["id"],
                     wallet,
@@ -342,6 +396,7 @@ class Store:
                     Jsonb(legs),
                     decoder_version,
                     decoded_at or (operation.available_at if dataset == "DEMO" else None),
+                    operation_index,
                 ),
             )
 
@@ -349,13 +404,14 @@ class Store:
         with self.connect() as conn:
             return conn.execute(
                 """SELECT signature,wallet,economic_at,available_at,kind,status,quality,
-                fee_lamports,legs,decoder_version,decoded_at FROM (
-                  SELECT DISTINCT ON (o.raw_event_id,o.wallet)
+                fee_lamports,legs,decoder_version,decoded_at,operation_index,
+                ('solana:' || signature || ':' || operation_index || ':' || wallet) AS canonical_id FROM (
+                  SELECT DISTINCT ON (o.raw_event_id,o.wallet,o.operation_index)
                     r.signature,o.wallet,o.economic_at,o.available_at,o.kind,o.status,
-                    o.quality,o.fee_lamports,o.legs,o.decoder_version,o.decoded_at,o.id
+                    o.quality,o.fee_lamports,o.legs,o.decoder_version,o.decoded_at,o.id,o.operation_index
                   FROM operations o JOIN raw_events r ON r.id=o.raw_event_id
                   WHERE o.available_at<=%s AND o.decoded_at<=%s AND r.dataset=%s
-                  ORDER BY o.raw_event_id,o.wallet,o.decoded_at DESC,o.id DESC
+                  ORDER BY o.raw_event_id,o.wallet,o.operation_index,o.decoded_at DESC,o.id DESC
                 ) latest ORDER BY available_at,id""",
                 (at, at, dataset),
             ).fetchall()

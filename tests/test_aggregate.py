@@ -59,9 +59,20 @@ def test_linked_wallets_cannot_confirm_by_simulating_diversity():
         for i, wallet in enumerate(("w1", "w2"))
     ]
     rotations = attribute_rotations(operations)
-    bars = [MarketBar("B", T, T, D("1"), D("10000"), D("100000"))]
+    bars = [
+        MarketBar(
+            mint,
+            T + timedelta(minutes=i),
+            T + timedelta(minutes=i),
+            D(price),
+            D("10000"),
+            D("100000"),
+        )
+        for mint, prices in (("A", ("5", "10", "9", "9")), ("B", ("10", "5", "5", "5.5")))
+        for i, price in zip(range(-3, 1), prices)
+    ]
     independent = decide(rotations, bars, T)
     linked = decide(rotations, bars, T, entity_groups={"w1": "group1", "w2": "group1"})
     assert independent.state == "confirmed"
     assert linked.state == "candidate"
-    assert dict(linked.components)["diversity"] == 8
+    assert dict(linked.components)["entity_diversity"] == 10

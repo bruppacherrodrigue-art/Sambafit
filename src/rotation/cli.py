@@ -21,11 +21,15 @@ from .pilot_collection import run_pilot_collection
 from .r2_budget import R2Budget
 from .r2_collect import collect_selected_transactions
 from .r2_corpus import finalize_corpus
-from .r2_follow import follow_once
+from .r2_follow import follow_once, refresh_follow_state
 from .r2_fomo import FomoProofStore
 from .r2_sequences import SequenceStore
 from .r2_sources import R2Http
 from .r2_universe import build_universe
+from .r3_cohort import audit_selected, build_manifest, rank_verified, select_references
+from .r3_market_follow import collect_pair_market
+from .r3_pipeline import process_follow, replay_r2_attribution, replay_verified_corpus
+from .r3_registry import ResearchRegistry
 from .real_corpus import import_corpus, summarize_corpus, verify_manifest
 from .replay import replay
 from .research import price_operations, study_events
@@ -118,9 +122,236 @@ def main(argv: list[str] | None = None) -> int:
     proof_review.add_argument("--reviewer", required=True)
     proof_review.add_argument("--decision", choices=("verified", "rejected"), required=True)
     proof_review.add_argument("--comment", required=True)
+    for name in (
+        "r3-select",
+        "r3-audit",
+        "r3-cohort",
+        "r3-replay",
+        "r3-process-follow",
+        "r3-refresh-follow",
+        "r3-budget",
+        "r3-manifest",
+    ):
+        command = sub.add_parser(name)
+        command.add_argument("--r2-root", default="data/r2-20260926")
+        command.add_argument("--root", default="data/r3-20260927")
+        command.add_argument("--registry", default="config/r3-universe.json")
+    for name in ("r3-1-replay", "r3-1-process-follow"):
+        command = sub.add_parser(name)
+        command.add_argument("--r2-root", default="data/r2-20260926")
+        command.add_argument("--root", default="data/r3-20260927")
+        command.add_argument("--out", default="data/r3-1-20260927")
+        command.add_argument("--registry", default="config/r3-universe.json")
+    sub.choices["r3-audit"].add_argument("--max-new-calls", type=int, default=24)
+    r3_follow = sub.add_parser("r3-follow-once")
+    r3_follow.add_argument("--root", default="data/r3-20260927")
+    r3_follow.add_argument("--wallets", type=int, default=4)
+    r3_follow.add_argument("--pages", type=int, default=2)
+    r3_follow.add_argument("--transactions", type=int, default=8)
+    r3_market = sub.add_parser("r3-market-follow")
+    r3_market.add_argument("--root", default="data/r3-20260927")
+    r3_market.add_argument("--registry", default="config/r3-universe.json")
+    r3_market.add_argument("--max-mints", type=int, default=6)
     sub.choices["report"] = sub.add_parser("report")
     sub.choices["report"].add_argument("--run-id", required=True)
     args = parser.parse_args(argv)
+    if args.command == "r3-1-replay":
+        registry = ResearchRegistry.load(args.registry)
+        comparison = replay_r2_attribution(args.r2_root, args.out, registry)
+        result = replay_verified_corpus(args.root, args.out, registry, r2_root=args.r2_root)
+        _print(
+            {
+                "dataset": "REAL",
+                "mode": "REPLAY",
+                "output": args.out,
+                "r2_allocations": comparison["r3_allocation_count"],
+                "target_rotations": result["target_rotations"],
+                "pairs_evaluated": result["pairs_evaluated"],
+                "strategy_config_hash": result["strategy_config_hash"],
+            }
+        )
+        return 0
+    if args.command == "r3-1-process-follow":
+        result = process_follow(
+            args.root, ResearchRegistry.load(args.registry), output_root=args.out
+        )
+        _print(
+            {
+                "dataset": result["dataset"],
+                "mode": result["mode"],
+                "output": args.out,
+                "stages": result["stages"],
+                "strategy_config_hash": result["strategy_config_hash"],
+            }
+        )
+        return 0
+    if args.command == "r3-budget":
+        _print(R2Budget(Path(args.root) / "budget.json").snapshot())
+        return 0
+    if args.command == "r3-manifest":
+        result = build_manifest(args.root)
+        _print({"transactions": len(result["transactions"]), "attempts": result["calls_used"]})
+        return 0
+    if args.command == "r3-select":
+        registry = ResearchRegistry.load(args.registry)
+        selection = select_references(args.r2_root, registry)
+        root = Path(args.root)
+        root.mkdir(parents=True, exist_ok=True)
+        (root / "preselection.json").write_text(
+            json.dumps(selection, indent=2, sort_keys=True) + "\n"
+        )
+        _print(
+            {
+                "references": len(selection["references"]),
+                "above_threshold": selection["eligible_references_above_threshold"],
+                "window": selection["common_window"],
+                "scope": selection["scope"],
+            }
+        )
+        return 0
+    if args.command == "r3-audit":
+        if not 1 <= args.max_new_calls <= 24:
+            raise ValueError("R3 audit call cap must be 1..24")
+        root = Path(args.root)
+        with R2Budget(root / "budget.json").session(
+            "r3-cohort-audit",
+            max_calls=30,
+            max_seconds=300,
+            phase="cohort_audit",
+            phase_max_calls=30,
+            phase_max_active_seconds=300,
+        ) as session:
+            http = R2Http(
+                session,
+                root / "source",
+                rpc_url=os.getenv("SOLANA_RPC_URL", "https://solana.publicnode.com"),
+            )
+            result = audit_selected(args.r2_root, root, http, max_new_calls=args.max_new_calls)
+        _print(
+            {
+                "new_calls": result["new_rpc_calls_last_run"],
+                "statuses": {
+                    status: sum(row["attribution_status"] == status for row in result["references"])
+                    for status in sorted(
+                        {row["attribution_status"] for row in result["references"]}
+                    )
+                },
+            }
+        )
+        return 0
+    if args.command == "r3-cohort":
+        result = rank_verified(args.root, ResearchRegistry.load(args.registry))
+        _print(
+            {
+                "strict_swaps": result["strict_swap_count"],
+                "wallets": len(result["wallets"]),
+                "qualified_wallets": result["qualified_wallets"],
+                "scope": result["scope"],
+            }
+        )
+        return 0
+    if args.command == "r3-replay":
+        registry = ResearchRegistry.load(args.registry)
+        comparison = replay_r2_attribution(args.r2_root, args.root, registry)
+        result = replay_verified_corpus(args.root, args.root, registry, r2_root=args.r2_root)
+        _print(
+            {
+                "dataset": "REAL",
+                "mode": "REPLAY",
+                "r2_allocations": comparison["r2_allocation_count"],
+                "r3_r2_allocations": comparison["r3_allocation_count"],
+                "verified_operations": result["verified_operations"],
+                "target_rotations": result["target_rotations"],
+                "pairs_evaluated": result["pairs_evaluated"],
+                "decisions": len(result["decisions"]),
+                "financial_edge": result["financial_edge"],
+            }
+        )
+        return 0
+    if args.command == "r3-process-follow":
+        result = process_follow(args.root, ResearchRegistry.load(args.registry))
+        _print(
+            {
+                "dataset": result["dataset"],
+                "mode": result["mode"],
+                "stages": result["stages"],
+                "missing_transitions": result["missing_transitions"],
+                "execution_status": result["execution_status"],
+            }
+        )
+        return 0
+    if args.command == "r3-refresh-follow":
+        result = refresh_follow_state(args.root)
+        _print(
+            {
+                "transactions": len(result["transactions"]),
+                "incomplete_enrichment": len(result["enrichment_queue"]),
+                "calls": 0,
+            }
+        )
+        return 0
+    if args.command == "r3-follow-once":
+        root = Path(args.root)
+        if (
+            not 1 <= args.wallets <= 10
+            or not 0 <= args.pages <= 2
+            or not 0 <= args.transactions <= 12
+        ):
+            raise ValueError("R3 prospective cycle exceeds preregistered bounds")
+        with R2Budget(root / "budget.json").session(
+            "r3-prospective-follow",
+            max_calls=40,
+            max_seconds=300,
+            phase="prospective_follow",
+            phase_max_calls=40,
+            phase_max_active_seconds=300,
+        ) as session:
+            http = R2Http(
+                session,
+                root / "source",
+                rpc_url=os.getenv("SOLANA_RPC_URL", "https://solana.publicnode.com"),
+            )
+            state = follow_once(
+                root,
+                http,
+                wallets_limit=args.wallets,
+                pools_limit=0,
+                transactions_limit=args.transactions,
+                pages_limit=args.pages,
+            )
+        _print(
+            {
+                "stop_reason": state["stop_reason"],
+                "transactions": len(state["transactions"]),
+                "gaps": len(state["gaps"]),
+                "queued": sum(
+                    len(w.get("pending_signatures", [])) for w in state["wallets"].values()
+                ),
+            }
+        )
+        return 0
+    if args.command == "r3-market-follow":
+        root = Path(args.root)
+        registry = ResearchRegistry.load(args.registry)
+        with R2Budget(root / "budget.json").session(
+            "r3-pair-market",
+            max_calls=20,
+            max_seconds=180,
+            phase="market_follow",
+            phase_max_calls=20,
+            phase_max_active_seconds=180,
+        ) as session:
+            http = R2Http(session, root / "source")
+            state = collect_pair_market(root, registry, http, max_mints=args.max_mints)
+        _print(
+            {
+                "selected_mints": state["selected_mints"],
+                "closed_bars": len(state["bars"]),
+                "snapshots": len(state["snapshots"]),
+                "stop_reason": state["stop_reason"],
+            }
+        )
+        return 0
     if args.command == "r2-budget":
         _print(R2Budget(Path(args.root) / "budget.json").snapshot())
         return 0
@@ -355,6 +586,20 @@ def main(argv: list[str] | None = None) -> int:
             operations = _operations(store.list_operations(until, dataset))
             bars = _bars(store.all_market_bars(until, dataset))
             operations = price_operations(operations, bars)
+            registry = (
+                ResearchRegistry.load(config.get("registry_file", "config/r3-universe.json"))
+                if dataset == "REAL"
+                else None
+            )
+            registry_mints = registry.eligible_mints(until) if registry else None
+            requested_mints = set(config["eligible_mints"]) if "eligible_mints" in config else None
+            eligible_mints = (
+                registry_mints & requested_mints
+                if registry_mints is not None and requested_mints is not None
+                else registry_mints
+                if registry_mints is not None
+                else requested_mints
+            )
             result = replay(
                 operations,
                 bars,
@@ -365,9 +610,7 @@ def main(argv: list[str] | None = None) -> int:
                 reserve_mints=set(
                     config.get("reserve_mints", ["So11111111111111111111111111111111111111112"])
                 ),
-                eligible_mints=set(config["eligible_mints"])
-                if "eligible_mints" in config
-                else None,
+                eligible_mints=eligible_mints,
                 eligible_wallets=set(config["eligible_wallets"])
                 if "eligible_wallets" in config
                 else None,
@@ -378,11 +621,14 @@ def main(argv: list[str] | None = None) -> int:
                     wallet: _dt(value)
                     for wallet, value in config.get("wallet_known_at", {}).items()
                 },
+                registry=registry,
             )
             study = study_events(
                 result, bars, tuple(int(x) for x in config.get("horizons_minutes", [60, 240, 1440]))
             )
             universe = {bar.mint for bar in bars}
+            if eligible_mints is not None:
+                universe &= eligible_mints
             comparison = (
                 compare_variants(
                     result.rotations,

@@ -58,10 +58,10 @@ def scenario():
             d("1000000"),
         )
         for mint, prices in (
-            ("DEMO-B", ("100", "100", "105", "80", "75")),
-            ("DEMO-A", ("100", "100", "100", "100", "100")),
+            ("DEMO-B", ("110", "95", "95", "100", "101", "101", "80", "75")),
+            ("DEMO-A", ("5", "10", "9", "9", "9", "9", "9", "9")),
         )
-        for i, price in enumerate(prices)
+        for i, price in zip(range(-3, 5), prices)
     ]
     return operations, bars
 
@@ -97,7 +97,7 @@ def seed_demo(store) -> dict:
             "DEMO",
         )
     result = replay(operations, bars, BASE + timedelta(minutes=4))
-    config_hash = digest({"scenario": "synthetic-demo-1", "score": "hypothesis-1"})
+    config_hash = digest({"scenario": "synthetic-demo-2", "score": "r3-pair-hypothesis-1"})
     for record in result.decisions:
         store.record_decision(
             record.pair,
