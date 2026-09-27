@@ -235,6 +235,14 @@ def decide(
             reasons or ("flow_window_expired",),
             metrics=(
                 (
+                    "attributed_amount_usd",
+                    str(sum((r.amount_usd or Decimal(0) for r in matching), Decimal(0))),
+                ),
+                (
+                    "evidence_operations",
+                    ",".join(sorted({f"{r.source_op}>{r.destination_op}" for r in matching})),
+                ),
+                (
                     "economic_age_seconds",
                     str(latest.economic_age.total_seconds()) if latest else None,
                 ),
@@ -322,6 +330,7 @@ def decide(
             "evidence_operations",
             ",".join(sorted({f"{r.source_op}>{r.destination_op}" for r in recent})),
         ),
+        ("evidence_wallets", ",".join(sorted({r.wallet for r in recent}))),
         ("economic_age_seconds", str((at - first_economic_at).total_seconds())),
         (
             "observation_delay_seconds",

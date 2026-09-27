@@ -4,9 +4,10 @@ from datetime import datetime
 from decimal import Decimal
 
 from .engine import Rotation
+from .flow_clock import assess_flow_clock
 from .paper import simulate_paper
 from .replay import DecisionRecord
-from .signals import Decision, MarketBar, decide
+from .signals import Decision, MarketBar, PairPolicy, decide
 
 
 def _record(at: datetime, pair: str, state: str, reason: str) -> DecisionRecord:
@@ -18,6 +19,7 @@ def compare_variants(
     bars: list[MarketBar],
     initial_cash: Decimal,
     universe: set[str],
+    policy: PairPolicy = PairPolicy(),
 ) -> dict[str, dict]:
     """Apply the same reserve policy and quotes to four fixed, unoptimized rules."""
     if initial_cash <= 0 or not universe:
@@ -68,6 +70,13 @@ def compare_variants(
             and r.destination in universe
             and r.direction == "between_coins"
             and r.available_at <= end
+            and not assess_flow_clock(
+                r.economic_at,
+                r.available_at,
+                r.available_at,
+                max_economic_age=policy.max_economic_flow_age,
+                max_observation_delay=policy.max_observation_delay,
+            ).reasons
         ),
         key=lambda r: (r.available_at, r.source_op, r.wallet),
     )
@@ -84,6 +93,7 @@ def compare_variants(
             ordered,
             rotation.available_at,
             pair=(rotation.source, rotation.destination),
+            policy=policy,
         )
         combined.append(
             DecisionRecord(

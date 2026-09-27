@@ -1,0 +1,37 @@
+{
+  "version": "r3.1-strategy-hypothesis-1",
+  "pair_policy": {
+    "flow_window_seconds": 21600,
+    "max_economic_flow_age_seconds": 21600,
+    "max_observation_delay_seconds": 900,
+    "lookback_bars": 24,
+    "min_bars": 3,
+    "max_age_seconds": 1800,
+    "min_flow_usd": "1000",
+    "min_source_range": "0.65",
+    "max_destination_range": "0.45",
+    "min_relative_step": "0"
+  },
+  "strategy_policy": {
+    "range_horizon_seconds": 604800,
+    "range_min_bars": 72,
+    "range_min_span_seconds": 259200,
+    "range_max_age_seconds": 7200,
+    "range_min_amplitude": "0.10",
+    "range_zone_fraction": "0.20",
+    "range_min_visits": 2,
+    "range_visit_gap_seconds": 21600,
+    "range_breakout_fraction": "0.05",
+    "source_high_fraction": "0.65",
+    "destination_low_fraction": "0.45",
+    "min_wallet_reallocated_usd": "10000",
+    "min_wallet_distinct_days": 3,
+    "min_wallet_coverage_seconds": 604800,
+    "min_independent_wallets": 2,
+    "max_position_fraction": "0.10",
+    "max_risk_fraction": "0.01",
+    "min_reward_risk": "1.5",
+    "min_depth_multiple": "10",
+    "max_quote_age_seconds": 60
+  }
+}

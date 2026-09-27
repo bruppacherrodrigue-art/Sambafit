@@ -101,3 +101,25 @@ def test_combined_variant_evaluates_each_pair_instead_of_ambiguous_destination()
         ("A:B", "candidate"),
         ("C:B", "candidate"),
     }
+
+
+def test_wallet_baseline_does_not_promote_week_old_flow_received_now():
+    at = datetime(2026, 9, 27, tzinfo=timezone.utc)
+    bars = [
+        MarketBar(mint, at, at, Decimal(1), Decimal(100), Decimal(100000)) for mint in ("A", "B")
+    ]
+    stale = Rotation(
+        "A",
+        "B",
+        "inferred",
+        "between_coins",
+        Decimal(1500),
+        "wallet",
+        "sale",
+        "buy",
+        at - timedelta(days=7),
+        at,
+    )
+    result = compare_variants([stale], bars, Decimal(1000), {"A", "B"})
+    assert result["wallets_only"]["signals"] == 0
+    assert result["combined"]["signals"] == 0
